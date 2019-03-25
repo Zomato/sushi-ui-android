@@ -6,7 +6,12 @@ import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import android.widget.TextView
 import com.zomato.sushilib.R
+import com.zomato.sushilib.utils.color.ColorContrastUtils
 
+/**
+ * A Text view that uses white or black color depending on
+ * the background color
+ */
 class AutoBnWTextView : TextView {
     constructor(context: Context?): super(context)
     constructor(context: Context?, attrs: AttributeSet): super(context, attrs)
@@ -22,9 +27,7 @@ class AutoBnWTextView : TextView {
 
     private fun setAutoContrastColor () {
         if (background is ColorDrawable) {
-            val c = (background as ColorDrawable).color
-
-            if (Color.red(c) + Color.green(c) + Color.blue(c) < 300) {
+            if (ColorContrastUtils.isDarkColor((background as ColorDrawable).color)) {
                 setTextColor(resources.getColor(R.color.sushi_grey_100))
             } else {
                 setTextColor(resources.getColor(R.color.sushi_black))
