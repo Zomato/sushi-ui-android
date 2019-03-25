@@ -10,7 +10,6 @@ class ColorContrastUtils {
          * on it
          * @param color Android color integer
          */
-        @JvmStatic
         fun isDarkColor (color: Int): Boolean {
             val r = color shr 16 and 0xFF // Color.red(color)
             val g = color shr 8 and 0xFF // Color.green(color)

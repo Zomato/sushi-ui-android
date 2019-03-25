@@ -1,41 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="SushiTheme" parent="Theme.AppCompat.DayNight">
-        <item name="android:fontFamily">@font/okra_regular</item>
-    </style>
-
-    <style name="SushiTheme.BaseTextAppearance" parent="TextAppearance.AppCompat">
-        <item name="android:fontFamily">@font/okra_regular</item>
-        <item name="android:textSize">@dimen/sushi_textsize_400</item>
-    </style>
-
-    <style name="SushiTheme.TextAppearance" parent="SushiTheme.BaseTextAppearance" />
-
-    <style name="SushiTheme.TextAppearance.100" parent="SushiTheme.TextAppearance">
-        <item name="android:textSize">@dimen/sushi_textsize_100</item>
-    </style>
-    <style name="SushiTheme.TextAppearance.200" parent="SushiTheme.TextAppearance">
-        <item name="android:textSize">@dimen/sushi_textsize_200</item>
-    </style>
-    <style name="SushiTheme.TextAppearance.300" parent="SushiTheme.TextAppearance">
-        <item name="android:textSize">@dimen/sushi_textsize_300</item>
-    </style>
-    <style name="SushiTheme.TextAppearance.400" parent="SushiTheme.TextAppearance">
-        <item name="android:textSize">@dimen/sushi_textsize_400</item>
-    </style>
-    <style name="SushiTheme.TextAppearance.500" parent="SushiTheme.TextAppearance">
-        <item name="android:textSize">@dimen/sushi_textsize_500</item>
-    </style>
-    <style name="SushiTheme.TextAppearance.600" parent="SushiTheme.TextAppearance">
-        <item name="android:textSize">@dimen/sushi_textsize_600</item>
-    </style>
-    <style name="SushiTheme.TextAppearance.700" parent="SushiTheme.TextAppearance">
-        <item name="android:textSize">@dimen/sushi_textsize_700</item>
-    </style>
-    <style name="SushiTheme.TextAppearance.800" parent="SushiTheme.TextAppearance">
-        <item name="android:textSize">@dimen/sushi_textsize_800</item>
-    </style>
-    <style name="SushiTheme.TextAppearance.900" parent="SushiTheme.TextAppearance">
-        <item name="android:textSize">@dimen/sushi_textsize_900</item>
+        <item name="android:fontFamily">@font/okra</item>
     </style>
 </resources>

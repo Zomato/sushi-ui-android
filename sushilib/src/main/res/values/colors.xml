@@ -64,11 +64,40 @@
     <color name="sushi_purple_800">#381D6E</color>
     <color name="sushi_purple_900">#27134E</color>
 
+    <!-- Indigo -->
     <color name="sushi_indigo_100">#ABB7F2</color>
     <color name="sushi_indigo_300">#5462A6</color>
     <color name="sushi_indigo_500">#1F2856</color>
     <color name="sushi_indigo_700">#161C3C</color>
     <color name="sushi_indigo_900">#060B23</color>
+
+    <!-- Brown -->
+    <color name="sushi_brown_100">#E2C2B6</color>
+    <color name="sushi_brown_300">#9C7263</color>
+    <color name="sushi_brown_500">#57372B</color>
+    <color name="sushi_brown_700">#41251B</color>
+    <color name="sushi_brown_900">#29120A</color>
+
+    <!-- Teal -->
+    <color name="sushi_teal_100">#B7E6E6</color>
+    <color name="sushi_teal_300">#7ACDCD</color>
+    <color name="sushi_teal_500">#009999</color>
+    <color name="sushi_teal_700">#0A6666</color>
+    <color name="sushi_teal_900">#003333</color>
+
+    <!-- Orange -->
+    <color name="sushi_orange_100">#FFC6B3</color>
+    <color name="sushi_orange_300">#FF8C66</color>
+    <color name="sushi_orange_500">#E84B17</color>
+    <color name="sushi_orange_700">#B53B12</color>
+    <color name="sushi_orange_900">#661A00</color>
+
+    <!-- Orange -->
+    <color name="sushi_pink_100">#FFCCE1</color>
+    <color name="sushi_pink_300">#FF66A6</color>
+    <color name="sushi_pink_500">#E8307D</color>
+    <color name="sushi_pink_700">#BD0F58</color>
+    <color name="sushi_pink_900">#66002B</color>
 
 
 </resources>
