@@ -92,5 +92,12 @@
     <color name="sushi_orange_700">#B53B12</color>
     <color name="sushi_orange_900">#661A00</color>
 
+    <!-- Orange -->
+    <color name="sushi_pink_100">#FFCCE1</color>
+    <color name="sushi_pink_300">#FF66A6</color>
+    <color name="sushi_pink_500">#E8307D</color>
+    <color name="sushi_pink_700">#BD0F58</color>
+    <color name="sushi_pink_900">#66002B</color>
+
 
 </resources>

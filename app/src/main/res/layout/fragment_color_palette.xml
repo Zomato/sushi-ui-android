@@ -242,6 +242,116 @@
             android:background="@color/sushi_purple_900"
             style="@style/AppTheme.ColorPreviewStrip" />
 
+        <!-- Brown -->
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Brown 100"
+            android:background="@color/sushi_brown_100"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Brown 300"
+            android:background="@color/sushi_brown_300"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Brown 500"
+            android:background="@color/sushi_brown_500"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Brown 700"
+            android:background="@color/sushi_brown_700"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Brown 900"
+            android:background="@color/sushi_brown_900"
+            style="@style/AppTheme.ColorPreviewStrip" />
+
+        <!-- Indigo -->
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Indigo 100"
+            android:background="@color/sushi_indigo_100"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Indigo 300"
+            android:background="@color/sushi_indigo_300"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Indigo 500"
+            android:background="@color/sushi_indigo_500"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Indigo 700"
+            android:background="@color/sushi_indigo_700"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Indigo 900"
+            android:background="@color/sushi_indigo_900"
+            style="@style/AppTheme.ColorPreviewStrip" />
+
+        <!-- Teal -->
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Teal 100"
+            android:background="@color/sushi_teal_100"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Teal 300"
+            android:background="@color/sushi_teal_300"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Teal 500"
+            android:background="@color/sushi_teal_500"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Teal 700"
+            android:background="@color/sushi_teal_700"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Teal 900"
+            android:background="@color/sushi_teal_900"
+            style="@style/AppTheme.ColorPreviewStrip" />
+
+        <!-- Orange -->
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Orange 100"
+            android:background="@color/sushi_orange_100"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Orange 300"
+            android:background="@color/sushi_orange_300"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Orange 500"
+            android:background="@color/sushi_orange_500"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Orange 700"
+            android:background="@color/sushi_orange_700"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Orange 900"
+            android:background="@color/sushi_orange_900"
+            style="@style/AppTheme.ColorPreviewStrip" />
+
+        <!-- Pink -->
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Pink 100"
+            android:background="@color/sushi_pink_100"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Pink 300"
+            android:background="@color/sushi_pink_300"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Pink 500"
+            android:background="@color/sushi_pink_500"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Pink 700"
+            android:background="@color/sushi_pink_700"
+            style="@style/AppTheme.ColorPreviewStrip" />
+        <com.zomato.sushilib.atoms.AutoBnWTextView
+            android:text="Pink 900"
+            android:background="@color/sushi_pink_900"
+            style="@style/AppTheme.ColorPreviewStrip" />
+
     </LinearLayout>
 
 
