@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="SushiTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/sushi_red_500</item>
+        <item name="colorPrimaryDark">@color/sushi_red_800</item>
+        <item name="colorAccent">@color/sushi_green_500</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.TextPreviewStrip">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.TextStylesFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:textAppearance="@style/SushiTheme.TextAppearance.900"
+            android:text="Text 900" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:textAppearance="@style/SushiTheme.TextAppearance.800"
+            android:text="Text 800" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:textAppearance="@style/SushiTheme.TextAppearance.700"
+            android:text="Text 700" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:textAppearance="@style/SushiTheme.TextAppearance.600"
+            android:text="Text 600" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:textAppearance="@style/SushiTheme.TextAppearance.500"
+            android:text="Text 500" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:textAppearance="@style/SushiTheme.TextAppearance.400"
+            android:text="Text 400" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:textAppearance="@style/SushiTheme.TextAppearance.300"
+            android:text="Text 300" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:textAppearance="@style/SushiTheme.TextAppearance.200"
+            android:text="Text 200" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:textAppearance="@style/SushiTheme.TextAppearance.100"
+            android:text="Text 100" />
+
+    </LinearLayout>
+
+
+
+</ScrollView>
