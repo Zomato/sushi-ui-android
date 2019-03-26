@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="SushiTheme" parent="Theme.AppCompat.DayNight">
         <item name="android:fontFamily">@font/okra</item>
     </style>
