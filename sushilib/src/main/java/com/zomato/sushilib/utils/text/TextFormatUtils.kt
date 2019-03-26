@@ -2,13 +2,13 @@ package com.zomato.sushilib.utils.text
 
 import android.content.Context
 import android.graphics.Typeface
-import android.support.v4.content.res.ResourcesCompat
+import androidx.core.content.res.ResourcesCompat
 import com.zomato.sushilib.R
 
 class TextFormatUtils {
     companion object {
         fun zTextSizeToAndroidSp(zTextSize: Int): Float {
-            return when(zTextSize) {
+            return when (zTextSize) {
                 100 -> 12f
                 200 -> 14f
                 300 -> 16f
@@ -23,7 +23,7 @@ class TextFormatUtils {
         }
 
         fun zFontWeightToTypeface(context: Context, zFontWeight: Int): Typeface? {
-            val fontResIt = when(zFontWeight) {
+            val fontResIt = when (zFontWeight) {
                 100 -> R.font.okra_thin
                 200 -> R.font.okra_extralight
                 300 -> R.font.okra_light

@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.zomato.sushiapp.fragments.ColorPaletteFragment
+import com.zomato.sushiapp.fragments.ImageViewsFragment
 import com.zomato.sushiapp.fragments.TextStylesFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -67,6 +68,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val fragment = when (item.itemId) {
             R.id.nav_text_styles -> TextStylesFragment()
             R.id.nav_color_palette -> ColorPaletteFragment()
+            R.id.nav_image_views -> ImageViewsFragment()
             else -> TextStylesFragment()
         }
 

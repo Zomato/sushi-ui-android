@@ -3,7 +3,6 @@ package com.zomato.sushilib.atoms
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
-import android.widget.TextView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.color.ColorContrastUtils
 
