@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import com.zomato.sushiapp.fragments.ButtonsFragment
 import com.zomato.sushiapp.fragments.ColorPaletteFragment
 import com.zomato.sushiapp.fragments.ImageViewsFragment
 import com.zomato.sushiapp.fragments.TextStylesFragment
@@ -69,6 +70,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_text_styles -> TextStylesFragment()
             R.id.nav_color_palette -> ColorPaletteFragment()
             R.id.nav_image_views -> ImageViewsFragment()
+            R.id.nav_buttons -> ButtonsFragment()
             else -> TextStylesFragment()
         }
 
