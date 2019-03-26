@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ZTextView">
+        <attr name="textSize" format="enum">
+            <enum name="s100" value="100" />
+            <enum name="s200" value="200" />
+            <enum name="s300" value="100" />
+            <enum name="s400" value="100" />
+            <enum name="s500" value="100" />
+            <enum name="s600" value="100" />
+            <enum name="s700" value="100" />
+            <enum name="s800" value="100" />
+            <enum name="s900" value="100" />
+        </attr>
+    </declare-styleable>
+</resources>

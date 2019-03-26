@@ -28,6 +28,9 @@
     <style name="AppTheme.TextPreviewStrip.SemiBold" parent="AppTheme.TextPreviewStrip">
         <item name="android:fontFamily">@font/okra_semibold</item>
     </style>
+    <style name="AppTheme.TextPreviewStrip.ExtraLight" parent="AppTheme.TextPreviewStrip">
+        <item name="android:fontFamily">@font/okra_extralight</item>
+    </style>
 
     <style name="AppTheme.ColorPreviewStrip">
         <item name="android:layout_height">wrap_content</item>

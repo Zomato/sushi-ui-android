@@ -57,7 +57,7 @@
             android:textSize="@dimen/sushi_textsize_100"
             android:text="Text 100" />
 
-        <!-- Semi Bold -->
+        <!-- SemiBold -->
         <TextView
             style="@style/AppTheme.TextPreviewStrip.SemiBold"
             android:textSize="@dimen/sushi_textsize_900"
@@ -102,6 +102,52 @@
             style="@style/AppTheme.TextPreviewStrip.SemiBold"
             android:textSize="@dimen/sushi_textsize_100"
             android:text="Text SemiBold 100" />
+
+        <!-- ExtraLight -->
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip.ExtraLight"
+            android:textSize="@dimen/sushi_textsize_900"
+            android:text="Text ExtraLight 900" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip.ExtraLight"
+            android:textSize="@dimen/sushi_textsize_800"
+            android:text="Text ExtraLight 800" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip.ExtraLight"
+            android:textSize="@dimen/sushi_textsize_700"
+            android:text="Text ExtraLight 700" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip.ExtraLight"
+            android:textSize="@dimen/sushi_textsize_600"
+            android:text="Text ExtraLight 600" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip.ExtraLight"
+            android:textSize="@dimen/sushi_textsize_500"
+            android:text="Text ExtraLight 500" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip.ExtraLight"
+            android:textSize="@dimen/sushi_textsize_400"
+            android:text="Text ExtraLight 400" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip.ExtraLight"
+            android:textSize="@dimen/sushi_textsize_300"
+            android:text="Text ExtraLight 300" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip.ExtraLight"
+            android:textSize="@dimen/sushi_textsize_200"
+            android:text="Text ExtraLight 200" />
+
+        <TextView
+            style="@style/AppTheme.TextPreviewStrip.ExtraLight"
+            android:textSize="@dimen/sushi_textsize_100"
+            android:text="Text ExtraLight 100" />
 
     </LinearLayout>
 
