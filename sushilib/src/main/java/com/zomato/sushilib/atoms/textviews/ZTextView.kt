@@ -1,4 +1,4 @@
-package com.zomato.sushilib.atoms
+package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
 import android.util.AttributeSet

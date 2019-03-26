@@ -1,9 +1,10 @@
-package com.zomato.sushilib.atoms
+package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import com.zomato.sushilib.R
+import com.zomato.sushilib.atoms.textviews.ZTextView
 import com.zomato.sushilib.utils.color.ColorContrastUtils
 
 /**
