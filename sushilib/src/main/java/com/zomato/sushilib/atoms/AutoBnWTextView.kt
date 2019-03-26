@@ -1,8 +1,6 @@
 package com.zomato.sushilib.atoms
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import android.widget.TextView
@@ -14,10 +12,13 @@ import com.zomato.sushilib.utils.color.ColorContrastUtils
  * the background color
  */
 class AutoBnWTextView : TextView {
-    constructor(context: Context?): super(context)
-    constructor(context: Context?, attrs: AttributeSet): super(context, attrs)
-    constructor(context: Context?, attrs: AttributeSet, defStyleAttr: Int): super(context, attrs, defStyleAttr)
-
+    constructor(context: Context?) : super(context)
+    constructor(context: Context?, attrs: AttributeSet) : super(context, attrs)
+    constructor(context: Context?, attrs: AttributeSet, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    )
 
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
@@ -26,7 +27,7 @@ class AutoBnWTextView : TextView {
         setAutoContrastColor()
     }
 
-    private fun setAutoContrastColor () {
+    private fun setAutoContrastColor() {
         if (background is ColorDrawable) {
             if (ColorContrastUtils.isDarkColor((background as ColorDrawable).color)) {
                 setTextColor(resources.getColor(R.color.sushi_grey_100))
