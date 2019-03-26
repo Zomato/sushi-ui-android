@@ -18,7 +18,7 @@
             android:title="Images" />
         <item
             android:id="@+id/nav_buttons"
-            android:icon="@drawable/ic_color_palette"
+            android:icon="@drawable/ic_buttons"
             android:title="Buttons" />
     </group>
 
