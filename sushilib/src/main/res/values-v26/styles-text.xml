@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="SushiTheme.TextAppearance.SemiBold" parent="SushiTheme.BaseTextAppearance">
-        <item name="android:fontWeight">600</item>
-    </style>
-</resources>

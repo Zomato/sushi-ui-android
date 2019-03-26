@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:app="http://schemas.android.com/apk/res-auto">
-    <style name="SushiTheme.BaseTextAppearance" parent="TextAppearance.AppCompat">
+    <style name="SushiTheme.TextAppearance" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/okra</item>
         <item name="android:textSize">@dimen/sushi_textsize_400</item>
     </style>
 
-    <style name="SushiTheme.TextAppearance" parent="SushiTheme.BaseTextAppearance" />
-
-    <style name="SushiTheme.TextAppearance.SemiBold" parent="SushiTheme.BaseTextAppearance">
-        <!-- Since fontWeight is only on API >= 26-->
+    <style name="SushiTheme.TextAppearance.SemiBold" parent="SushiTheme.TextAppearance">
         <item name="android:fontFamily">@font/okra_semibold</item>
     </style>
 </resources>
