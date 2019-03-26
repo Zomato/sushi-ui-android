@@ -12,8 +12,11 @@
             android:id="@+id/nav_color_palette"
             android:icon="@drawable/ic_color_palette"
             android:title="Colors" />
+        <item
+            android:id="@+id/nav_buttons"
+            android:icon="@drawable/ic_color_palette"
+            android:title="Buttons" />
     </group>
-
 
 
 </menu>
