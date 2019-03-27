@@ -61,7 +61,8 @@ class ZTagView : ZTextView, RoundedView {
             return when (type) {
                 1 -> R.style.SushiTheme_TagAppearance_RoundedTag
                 2 -> R.style.SushiTheme_TagAppearance_SmallRoundedTag
-                3 -> R.style.SushiTheme_TagAppearance_SemiBoldRoundedTag
+                3 -> R.style.SushiTheme_TagAppearance_HighlightRoundedTag
+                4-> R.style.SushiTheme_TagAppearance_SmallHighlightRoundedTag
                 else -> R.style.SushiTheme_TagAppearance_RoundedTag
             }
         }
