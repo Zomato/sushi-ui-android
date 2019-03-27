@@ -1,17 +1,17 @@
-package com.zomato.sushilib.atoms
+package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
-import android.widget.TextView
 import com.zomato.sushilib.R
+import com.zomato.sushilib.atoms.textviews.ZTextView
 import com.zomato.sushilib.utils.color.ColorContrastUtils
 
 /**
  * A Text view that uses white or black color depending on
  * the background color
  */
-class AutoBnWTextView : TextView {
+class ZAutoContrastTextView : ZTextView {
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet) : super(context, attrs)
     constructor(context: Context?, attrs: AttributeSet, defStyleAttr: Int) : super(

@@ -1,4 +1,4 @@
-package com.zomato.sushilib.atoms
+package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,7 +6,7 @@ import android.widget.TextView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.text.TextFormatUtils
 
-class ZTextView : TextView {
+open class ZTextView : TextView {
     constructor(context: Context?) : this(context, null)
     constructor(context: Context?, attrs: AttributeSet?) :
             this(context, attrs, 0)
