@@ -11,9 +11,6 @@ import android.view.View
  */
 class ZCircleView : View {
 
-    private var mCornerRadius: Float = 0f
-    private val imageOutlineProvider = ZViewOutlineProvider(OutlineType.CIRCLE, 0f)
-    private var mBorderPaint = Paint()
 
     constructor(context: Context?) : this(context, null)
     constructor(context: Context?, attrs: AttributeSet?) :
@@ -27,20 +24,12 @@ class ZCircleView : View {
         attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int
     ) : super(context, attrs, defStyleAttr, defStyleRes) {
 
-        mBorderPaint.style = Paint.Style.STROKE
-        mBorderPaint.isAntiAlias = true
 
-        outlineProvider = imageOutlineProvider
+        outlineProvider = ZViewOutlineProvider(OutlineType.CIRCLE)
         clipToOutline = true
-        notifyOutlineProvider()
-
-    }
-
-    private fun notifyOutlineProvider() {
-        imageOutlineProvider.apply {
-            cornerRadius = mCornerRadius
-        }
         invalidateOutline()
+
     }
+
 
 }

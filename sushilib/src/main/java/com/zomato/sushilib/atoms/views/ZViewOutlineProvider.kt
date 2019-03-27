@@ -10,16 +10,18 @@ import android.view.ViewOutlineProvider
  */
 class ZViewOutlineProvider(
     @OutlineType var outlineType: Int,
-    var cornerRadius: Float
+    var cornerRadius: Float = 0f
 ) : ViewOutlineProvider() {
 
     override fun getOutline(view: View?, outline: Outline?) {
 
         view?.also { v ->
-            var left = v.paddingLeft
-            var top = v.paddingTop
-            var right = v.width - v.paddingRight
-            var bottom = v.height - v.paddingBottom
+            val delta = Math.min(v.height, v.width)
+            val left = v.paddingLeft
+            val top = v.paddingTop
+            val right = delta - v.paddingRight
+            val bottom = delta - v.paddingBottom
+
 
             when (outlineType) {
                 OutlineType.CIRCLE -> {
