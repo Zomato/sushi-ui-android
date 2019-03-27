@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.zomato.sushilib.atoms.ZTagView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/sushi_blue_500"
+            android:text="Epic tag"
+            app:tagType="ROUNDED"
+            app:zTextSize="s800"
+            android:textColor="@color/sushi_white" />
+
+        <com.zomato.sushilib.atoms.ZTagView
+            app:tagType="SMALL_ROUNDED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_textsize_300"
+            android:background="@color/sushi_grey_900"
+            android:text="AD"
+            android:textColor="@color/sushi_white" />
+
+        <com.zomato.sushilib.atoms.ZTagView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_textsize_300"
+            android:background="@color/sushi_grey_900"
+            android:text="0.0"
+            app:tagType="SEMIBOLD_ROUNDED"
+            android:textColor="@color/sushi_white" />
+    </LinearLayout>
+</ScrollView>

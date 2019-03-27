@@ -20,6 +20,12 @@
             android:id="@+id/nav_buttons"
             android:icon="@drawable/ic_buttons"
             android:title="Buttons" />
+
+        <item
+            android:id="@+id/nav_tags"
+            android:icon="@drawable/ic_buttons"
+            android:title="Tags" />
+
     </group>
 
 

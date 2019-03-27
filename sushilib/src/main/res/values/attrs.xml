@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="cornerRadius" format="dimension" />
+    <declare-styleable name="ZTagView">
+        <attr name="cornerRadius" />
+        <attr name="tagType" format="enum">
+            <enum name="ROUNDED" value="1"/>
+            <enum name="SMALL_ROUNDED" value="2"/>
+            <enum name="SEMIBOLD_ROUNDED" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>

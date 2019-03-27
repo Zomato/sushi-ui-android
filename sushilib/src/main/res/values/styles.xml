@@ -4,4 +4,5 @@
     <style name="SushiTheme" parent="Theme.MaterialComponents.Light">
         <item name="android:fontFamily">@font/okra</item>
     </style>
+
 </resources>

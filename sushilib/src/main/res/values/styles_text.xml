@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="SushiTheme.TextAppearance" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/okra</item>
         <item name="android:textSize">@dimen/sushi_textsize_400</item>
@@ -12,4 +13,43 @@
     <style name="SushiTheme.TextAppearance.Icon">
         <item name="android:fontFamily">@font/wasabi</item>
     </style>
+
+
+    <style name="SushiTheme.TagAppearance" parent="SushiTheme.TextAppearance">
+        <item name="cornerRadius">@dimen/sushi_textsize_100</item>
+        <item name="android:text">Testing tag</item>
+    </style>
+
+    <style name="SushiTheme.TagAppearance.RoundedTag" parent="SushiTheme.TagAppearance">
+        <item name="cornerRadius">6dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="zTextSize">s500</item>
+        <item name="zFontWeight">medium</item>
+    </style>
+
+
+    <style name="SushiTheme.TagAppearance.HighlightRoundedTag" parent="SushiTheme.TagAppearance.RoundedTag">
+        <item name="zFontWeight">semibold</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="SushiTheme.TagAppearance.SmallHighlightRoundedTag" parent="SushiTheme.TagAppearance.HighlightRoundedTag">
+        <item name="zFontWeight">regular</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="zTextSize">s200</item>
+    </style>
+
+    <style name="SushiTheme.TagAppearance.SmallRoundedTag" parent="SushiTheme.TagAppearance.RoundedTag">
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="zTextSize">s200</item>
+    </style>
+
 </resources>

@@ -13,7 +13,7 @@ import com.zomato.sushilib.R
 
 class ZRoundRectView : View {
     private var mCornerRadius: Float = 0f
-    private val imageOutlineProvider = ZViewOutlineProvider(OutlineType.ROUNDED_RECT, 0f)
+    private val imageOutlineProvider = ZViewOutlineProvider()
     private var mBorderPaint = Paint()
 
     constructor(context: Context?) : this(context, null)

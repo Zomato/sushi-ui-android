@@ -7,10 +7,11 @@ import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.text.TextFormatUtils
 
 open class ZTextView : TextView {
+
+    // todo sp, dp based theme
     constructor(context: Context?) : this(context, null)
     constructor(context: Context?, attrs: AttributeSet?) :
             this(context, attrs, 0)
-
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
             this(context, attrs, defStyleAttr, 0)
 
@@ -23,7 +24,7 @@ open class ZTextView : TextView {
             attrs,
             R.styleable.ZTextView,
             defStyleAttr,
-            R.style.SushiTheme
+            defStyleRes
         )?.let {
             val zTextSize = it.getInt(R.styleable.ZTextView_zTextSize, 500)
             textSize = TextFormatUtils.zTextSizeToAndroidSp(zTextSize)
@@ -33,5 +34,10 @@ open class ZTextView : TextView {
 
             it.recycle()
         }
+    }
+
+    // todo implement this, to get custom attr from style
+    override fun setTextAppearance(resId: Int) {
+        super.setTextAppearance(resId)
     }
 }
