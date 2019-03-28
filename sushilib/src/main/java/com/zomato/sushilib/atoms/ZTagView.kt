@@ -34,7 +34,7 @@ class ZTagView : ZTextView, RoundedView {
             defStyleAttr,
             defStyleRes
         )?.let {
-            val cr = it.getDimension(R.styleable.ZTagView_cornerRadius, 0F)
+            val cr = it.getDimension(R.styleable.ZTagView_zCornerRadius, 0F)
             if (cr != 0f) {
                 cornerRadius = cr
             }
@@ -50,7 +50,7 @@ class ZTagView : ZTextView, RoundedView {
     companion object {
         private fun resolveDefStyleRes(theme: Resources.Theme?, attrs: AttributeSet?): Int {
             val a = theme?.obtainStyledAttributes(attrs, R.styleable.ZTagView, 0, 0)
-            val type = a?.getInt(R.styleable.ZTagView_tagType, 1)
+            val type = a?.getInt(R.styleable.ZTagView_zTagType, 1)
             a?.recycle()
             return getStyleForType(type)
         }

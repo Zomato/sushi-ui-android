@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+
+    <!--to be inflated inside a linear layout-->
+
+    <com.zomato.sushilib.atoms.textviews.ZTextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Some title text here"
+        android:textColor="@color/sushi_black"
+        app:zFontWeight="medium"
+        app:zTextSize="s500" />
+
+    <com.zomato.sushilib.atoms.textviews.ZTextView
+        android:id="@+id/subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_mini"
+        android:text="Some long description text here, that goes multiline because we want to test it out"
+        android:textColor="@color/sushi_grey_600"
+        app:zFontWeight="regular"
+        app:zTextSize="s300"
+        />
+
+</merge>

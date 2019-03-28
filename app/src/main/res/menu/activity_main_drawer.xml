@@ -26,6 +26,13 @@
             android:icon="@drawable/ic_buttons"
             android:title="Tags" />
 
+        <item
+            android:id="@+id/nav_listing"
+            android:icon="@drawable/ic_buttons"
+            android:title="Listing" />
+
+
+
     </group>
 
 

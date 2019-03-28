@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 
-
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,6 +70,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_image_views -> ImageViewsFragment()
             R.id.nav_buttons -> ButtonsFragment()
             R.id.nav_tags -> TagsFragment()
+            R.id.nav_listing -> ListingFragment()
             else -> TextStylesFragment()
         }
 

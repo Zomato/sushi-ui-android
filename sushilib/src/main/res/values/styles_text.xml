@@ -20,7 +20,7 @@
     </style>
 
     <style name="SushiTheme.TagAppearance.RoundedTag" parent="SushiTheme.TagAppearance">
-        <item name="cornerRadius">@dimen/corner_radius</item>
+        <item name="zCornerRadius">@dimen/corner_radius</item>
         <item name="android:paddingLeft">@dimen/spacing_macro</item>
         <item name="android:paddingRight">@dimen/spacing_macro</item>
         <item name="android:paddingTop">@dimen/spacing_mini</item>
@@ -37,13 +37,13 @@
     </style>
 
     <style name="SushiTheme.TagAppearance.Capsule" parent="SushiTheme.TagAppearance.HighlightRoundedTag">
-        <item name="cornerRadius">@dimen/size_18</item>
+        <item name="zCornerRadius">@dimen/size_18</item>
         <item name="android:paddingLeft">@dimen/spacing_base</item>
         <item name="android:paddingRight">@dimen/spacing_base</item>
     </style>
 
     <style name="SushiTheme.TagAppearance.SmallCapsule" parent="SushiTheme.TagAppearance.SmallHighlightRoundedTag">
-        <item name="cornerRadius">@dimen/size_12</item>
+        <item name="zCornerRadius">@dimen/size_12</item>
         <item name="zFontWeight">medium</item>
         <item name="android:paddingLeft">@dimen/spacing_mini</item>
         <item name="android:paddingRight">@dimen/spacing_mini</item>
