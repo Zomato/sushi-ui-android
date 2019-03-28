@@ -153,6 +153,7 @@ class ZCircleImageView : ImageView {
     }
 
     private fun drawableToBitmap(drawable: Drawable?): Bitmap? {
+
         if (drawable == null) return null
 
         if (drawable is BitmapDrawable) {
