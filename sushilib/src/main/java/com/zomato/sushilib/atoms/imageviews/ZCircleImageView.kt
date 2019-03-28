@@ -11,6 +11,7 @@ import android.widget.ImageView.ScaleType.CENTER_CROP
 import android.widget.ImageView.ScaleType.CENTER_INSIDE
 import com.zomato.sushilib.atoms.views.OutlineType
 import com.zomato.sushilib.atoms.views.ZViewOutlineProvider
+import com.zomato.sushilib.utils.graphics.BitmapUtils
 
 
 /**
@@ -59,6 +60,7 @@ class ZCircleImageView : ImageView {
     }
 
     override fun setBackgroundColor(color: Int) {
+        super.setBackgroundColor(color)
         mPaintBackground.apply {
             this.color = color
         }
@@ -108,7 +110,7 @@ class ZCircleImageView : ImageView {
         if (mDrawable == drawable) return
 
         mDrawable = drawable
-        mBitmap = drawableToBitmap(drawable)
+        mBitmap = BitmapUtils.drawableToBitmap(drawable)
         updateShader()
     }
 
@@ -148,25 +150,5 @@ class ZCircleImageView : ImageView {
             })
             mPaintImage.shader = shader
         }
-
-
-    }
-
-    private fun drawableToBitmap(drawable: Drawable?): Bitmap? {
-
-        if (drawable == null) return null
-
-        if (drawable is BitmapDrawable) {
-            return drawable.bitmap
-        }
-
-        val bmp = Bitmap.createBitmap(
-            drawable.intrinsicWidth, drawable.intrinsicHeight,
-            Bitmap.Config.ARGB_8888
-        )
-        val canvas = Canvas(bmp)
-        drawable.bounds = Rect(0, 0, canvas.width, canvas.height)
-        drawable.draw(canvas)
-        return bmp
     }
 }
