@@ -2,7 +2,7 @@ package com.zomato.sushilib.utils.text
 
 import android.content.Context
 import android.graphics.Typeface
-import androidx.core.content.res.ResourcesCompat
+import android.support.v4.content.res.ResourcesCompat
 import com.zomato.sushilib.R
 
 class TextFormatUtils {
