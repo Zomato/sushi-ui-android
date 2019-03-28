@@ -29,6 +29,7 @@ class ZViewOutlineProvider(
                     outline?.setOval(left, top, right, bottom)
                 }
                 OutlineType.ROUNDED_RECT -> {
+                    // todo make ovel check add
                     // TODO: When supporting corner flags
 //                    left -= cornerRadius.toInt()
 //                    top -= cornerRadius.toInt()

@@ -8,6 +8,8 @@
             <enum name="SMALL_ROUNDED" value="2"/>
             <enum name="HIGHLIGHT" value="3"/>
             <enum name="SMALL_HIGHLIGHT" value="4"/>
+            <enum name="CAPSULE" value="5"/>
+            <enum name="SMALL_CAPSULE" value="6"/>
         </attr>
     </declare-styleable>
 </resources>

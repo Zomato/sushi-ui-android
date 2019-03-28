@@ -16,7 +16,6 @@
             android:background="@color/sushi_blue_500"
             android:text="Epic tag"
             app:tagType="ROUNDED"
-            app:zTextSize="s800"
             android:textColor="@color/sushi_white" />
 
         <com.zomato.sushilib.atoms.ZTagView
@@ -32,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_textsize_300"
-            android:background="@color/sushi_grey_900"
+            android:background="@color/sushi_green_500"
             android:text="0.0"
             app:tagType="HIGHLIGHT"
             android:textColor="@color/sushi_white" />
@@ -41,9 +40,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_textsize_300"
-            android:background="@color/sushi_grey_900"
+            android:background="@color/sushi_green_500"
             android:text="0.0"
             app:tagType="SMALL_HIGHLIGHT"
+            android:textColor="@color/sushi_white" />
+
+        <com.zomato.sushilib.atoms.ZTagView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_textsize_300"
+            android:background="@color/sushi_green_500"
+            android:text="0.0"
+            app:tagType="CAPSULE"
+            android:textColor="@color/sushi_white" />
+
+        <com.zomato.sushilib.atoms.ZTagView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_textsize_300"
+            android:background="@color/sushi_green_500"
+            android:text="0.0"
+            app:tagType="SMALL_CAPSULE"
             android:textColor="@color/sushi_white" />
     </LinearLayout>
 </ScrollView>
