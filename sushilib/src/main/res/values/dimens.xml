@@ -9,4 +9,27 @@
     <dimen name="sushi_textsize_700">21sp</dimen>
     <dimen name="sushi_textsize_800">24sp</dimen>
     <dimen name="sushi_textsize_900">27sp</dimen>
+
+
+    <dimen name="size_2">2dp</dimen>
+    <dimen name="size_4">4dp</dimen>
+    <dimen name="size_6">6dp</dimen>
+    <dimen name="size_8">8dp</dimen>
+    <dimen name="size_10">10dp</dimen>
+    <dimen name="size_12">12dp</dimen>
+    <dimen name="size_18">18dp</dimen>
+    <dimen name="size_24">24dp</dimen>
+    <dimen name="size_32">32dp</dimen>
+
+    <dimen name="spacing_ultra_nano">@dimen/size_2</dimen>
+    <dimen name="spacing_nano">@dimen/size_4</dimen>
+    <dimen name="spacing_mini">@dimen/size_6</dimen>
+    <dimen name="spacing_macro">@dimen/size_8</dimen>
+    <dimen name="spacing_base">@dimen/size_12</dimen>
+    <dimen name="spacing_extra">@dimen/size_18</dimen>
+    <dimen name="spacing_loose">@dimen/size_24</dimen>
+    <dimen name="spacing_alone">@dimen/size_32</dimen>
+
+    <dimen name="corner_radius">@dimen/spacing_mini</dimen>
+    <dimen name="spacing_page_side">@dimen/spacing_base</dimen>
 </resources>

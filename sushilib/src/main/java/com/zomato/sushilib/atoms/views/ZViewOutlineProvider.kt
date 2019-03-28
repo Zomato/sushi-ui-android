@@ -9,25 +9,31 @@ import android.view.ViewOutlineProvider
  * Copyright © 2019 Zomato Media Pvt. Ltd.
  */
 class ZViewOutlineProvider(
-    @OutlineType var outlineType: Int,
+    @OutlineType
+    val outlineType: Int = OutlineType.ROUNDED_RECT,
     var cornerRadius: Float = 0f
 ) : ViewOutlineProvider() {
 
     override fun getOutline(view: View?, outline: Outline?) {
 
         view?.also { v ->
-            val delta = Math.min(v.height, v.width)
-            val left = v.paddingLeft
-            val top = v.paddingTop
-            val right = delta - v.paddingRight
-            val bottom = delta - v.paddingBottom
+            var left = v.paddingLeft
+            var top = v.paddingTop
+            var right = v.width - v.paddingRight
+            var bottom = v.height - v.paddingBottom
 
+            if (outlineType == OutlineType.CIRCLE) {
+                val delta = Math.min(v.height, v.width)
+                right = delta - v.paddingRight
+                bottom = delta - v.paddingBottom
+            }
 
             when (outlineType) {
                 OutlineType.CIRCLE -> {
                     outline?.setOval(left, top, right, bottom)
                 }
                 OutlineType.ROUNDED_RECT -> {
+                    // TODO: Add oval check
                     // TODO: When supporting corner flags
 //                    left -= cornerRadius.toInt()
 //                    top -= cornerRadius.toInt()
