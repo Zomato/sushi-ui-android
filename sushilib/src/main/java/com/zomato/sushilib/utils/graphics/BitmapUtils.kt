@@ -11,8 +11,7 @@ import android.view.View
  */
 object BitmapUtils {
     @JvmStatic
-    fun drawableToBitmap(drawable: Drawable?): Bitmap? {
-        if (drawable == null) return null
+    fun drawableToBitmap(drawable: Drawable): Bitmap {
 
         if (drawable is BitmapDrawable) {
             return drawable.bitmap
