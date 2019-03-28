@@ -1,20 +1,20 @@
 package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
-import android.graphics.Typeface
-import android.support.v4.graphics.TypefaceCompat
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.widget.TextView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.text.TextFormatUtils
-import org.intellij.lang.annotations.JdkConstants
 
 open class ZTextView : TextView {
 
     // todo sp, dp based theme
     constructor(context: Context?) : this(context, null)
+
     constructor(context: Context?, attrs: AttributeSet?) :
             this(context, attrs, 0)
+
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
             this(context, attrs, defStyleAttr, 0)
 
@@ -34,10 +34,11 @@ open class ZTextView : TextView {
 
             if (!isInEditMode) {
                 typeface = TextFormatUtils.zFontWeightToTypeface(context, zFontWeight)
-                textSize = TextFormatUtils.zTextSizeToAndroidSp(context, zTextSize)
+                setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                    TextFormatUtils.zTextSizeToAndroidPx(context, zTextSize))
             } else {
-                textSize = TextFormatUtils.zTextSizeToAndroidSp(null, zTextSize)
                 // TODO: See if we can load font variants in Android Studio
+                textSize = TextFormatUtils.zTextSizeToAndroidPx(null, zTextSize)
             }
 
             it.recycle()
