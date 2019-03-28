@@ -12,7 +12,7 @@ import android.view.View
 class ZCircleView : View {
 
     private var mCornerRadius: Float = 0f
-    private val imageOutlineProvider = ZViewOutlineProvider(OutlineType.CIRCLE, 0f)
+    private val imageOutlineProvider = ZViewOutlineProvider()
     private var mBorderPaint = Paint()
 
     constructor(context: Context?) : this(context, null)

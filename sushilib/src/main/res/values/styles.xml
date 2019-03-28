@@ -4,4 +4,11 @@
     <style name="SushiTheme" parent="Theme.MaterialComponents.Light">
         <item name="android:fontFamily">@font/okra</item>
     </style>
+
+
+    <style name="SnippetSidePaddingTheme">
+        <item name="android:paddingLeft">@dimen/spacing_page_side</item>
+        <item name="android:paddingRight">@dimen/spacing_page_side</item>
+    </style>
+
 </resources>
