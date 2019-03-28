@@ -7,7 +7,6 @@ import android.graphics.Outline
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewOutlineProvider
-import androidx.annotation.StyleRes
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.ZTextView
 import com.zomato.sushilib.atoms.views.OutlineType
@@ -56,7 +55,6 @@ class ZTagView : ZTextView, RoundedView {
             return getStyleForType(type)
         }
 
-        @StyleRes
         fun getStyleForType(type: Int?): Int {
             // todo create enums
             return when (type) {
