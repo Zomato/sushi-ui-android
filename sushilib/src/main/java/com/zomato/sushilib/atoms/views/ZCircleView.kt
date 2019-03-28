@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.View
+import android.widget.ImageView
 import com.zomato.sushilib.utils.graphics.BitmapUtils
 
 /**
@@ -50,7 +51,8 @@ class ZCircleView : View {
             mPaintBackground.apply {
                 shader = BitmapUtils.getShaderForBitmap(
                     BitmapUtils.drawableToBitmap(background),
-                    this@ZCircleView
+                    this@ZCircleView,
+                    ImageView.ScaleType.CENTER_CROP
                 )
             }
         }

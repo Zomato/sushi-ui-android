@@ -4,6 +4,7 @@ import android.graphics.*
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.view.View
+import android.widget.ImageView
 
 /**
  * created by championswimmer on 28/03/19
@@ -28,7 +29,19 @@ object BitmapUtils {
     }
 
     @JvmStatic
-    fun getShaderForBitmap(bmp: Bitmap, view: View): BitmapShader {
+    fun getShaderForBitmap(
+        bmp: Bitmap, view: View, scaleType: ImageView.ScaleType
+    ): BitmapShader {
+
+        // The background can only be CENTER_CROP or CENTER_INSIDE
+        if (scaleType != ImageView.ScaleType.CENTER_CROP && scaleType != ImageView.ScaleType.CENTER_INSIDE) {
+            throw IllegalArgumentException(
+                """|ScaleType $scaleType supported.
+                   |Use ScaleType.CENTER_CROP or ScaleType.CENTER_INSIDE"""
+                    .trimMargin()
+            )
+        }
+
         val shader = BitmapShader(bmp, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
 
         var scale = 0f
@@ -36,25 +49,27 @@ object BitmapUtils {
         var dy = 0f
 
         view.run {
-            // algorithm for CENTER_CROP scaling
-
-            if (bmp.width * height > width * bmp.height) {
-                scale = height / bmp.height.toFloat()
-                dx = (width - bmp.width * scale) * 0.5f
-            } else {
-                scale = width / bmp.width.toFloat()
-                dy = (height - bmp.height * scale) * 0.5f
+            if (scaleType == ImageView.ScaleType.CENTER_CROP) {
+                if (bmp.width * height > width * bmp.height) {
+                    scale = height / bmp.height.toFloat()
+                    dx = (width - bmp.width * scale) * 0.5f
+                } else {
+                    scale = width / bmp.width.toFloat()
+                    dy = (height - bmp.height * scale) * 0.5f
+                }
             }
 
-            // algorithm for CENTER_INSIDE scaling
+            if (scaleType == ImageView.ScaleType.CENTER_INSIDE) {
+                if (bmp.width * height < width * bmp.height) {
+                    scale = height / bmp.height.toFloat()
+                    dx = (width - bmp.width * scale) * 0.5f
+                } else {
+                    scale = width / bmp.width.toFloat()
+                    dy = (height - bmp.height * scale) * 0.5f
 
-//            if (bmp.width * height < width * bmp.height) {
-//                scale = height / bmp.height.toFloat()
-//                dx = (width - bmp.width * scale) * 0.5f
-//            } else {
-//                scale = width / bmp.width.toFloat()
-//                dy = (height - bmp.height * scale) * 0.5f
-//            }
+                }
+            }
+
 
             shader.setLocalMatrix(Matrix().apply {
                 setScale(scale, scale)
