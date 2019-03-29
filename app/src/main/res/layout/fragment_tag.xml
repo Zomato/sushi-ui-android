@@ -16,13 +16,14 @@
             android:background="@color/sushi_blue_500"
             android:text="Epic tag"
             app:zTagType="rounded"
+            style="@style/SushiTheme.TagAppearance.Capsule"
             android:textColor="@color/sushi_white" />
 
         <com.zomato.sushilib.atoms.ZTagView
             app:zTagType="small_rounded"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_extra"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
             android:background="@color/sushi_grey_900"
             android:text="AD"
             android:textColor="@color/sushi_white" />
@@ -30,7 +31,7 @@
         <com.zomato.sushilib.atoms.ZTagView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_extra"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
             android:background="@color/sushi_green_500"
             android:text="0.0"
             app:zTagType="highlight"
@@ -39,7 +40,7 @@
         <com.zomato.sushilib.atoms.ZTagView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_extra"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
             android:background="@color/sushi_green_500"
             android:text="0.0"
             app:zTagType="small_highlight"
@@ -48,7 +49,7 @@
         <com.zomato.sushilib.atoms.ZTagView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_extra"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
             android:background="@color/sushi_green_500"
             android:text="0.0"
             app:zTagType="capsule"
@@ -57,7 +58,7 @@
         <com.zomato.sushilib.atoms.ZTagView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_extra"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
             android:background="@color/sushi_green_500"
             android:text="0.0"
             app:zTagType="small_capsule"

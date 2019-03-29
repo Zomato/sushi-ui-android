@@ -7,7 +7,7 @@ import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.ZTextView
 import com.zomato.sushilib.utils.inflate
 
-class DualTextImpl(
+open class DualTextImpl(
     parent: ViewGroup,
     @LayoutRes layoutId: Int,
     attributeSet: AttributeSet?,

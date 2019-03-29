@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.zomato.sushilib.atoms.textviews.ZTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:zTextSize="s200"
+        android:textColor="@color/sushi_grey_400"
+        android:textAllCaps="true"
+        android:text="LABEL"
+        android:layout_marginBottom="@dimen/sushi_spacing_between_large"
+        />
+    <include layout="@layout/layout_dual_text" />
+
+</merge>

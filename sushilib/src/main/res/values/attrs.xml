@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="sushiIconAppearance" format="reference" type="style" />
     <attr name="cornerRadius" format="dimension" />
+    <attr name="random" format="reference" />
     <declare-styleable name="ZTagView">
         <attr name="zCornerRadius" />
         <attr name="zTagType" format="enum">
