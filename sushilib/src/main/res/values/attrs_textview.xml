@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SushiTextView" >
+
+        <attr name="sushiFontWeight" format="enum">
+            <enum name="thin" value="100" />
+            <enum name="extralight" value="200" />
+            <enum name="light" value="300" />
+            <enum name="regular" value="400" />
+            <enum name="medium" value="500" />
+            <enum name="semibold" value="600" />
+        </attr>
+
+    </declare-styleable>
+</resources>

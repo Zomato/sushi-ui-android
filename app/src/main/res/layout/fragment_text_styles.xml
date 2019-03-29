@@ -12,160 +12,160 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text 900"
-            app:zTextSize="s900" />
+            android:textSize="@dimen/sushi_textsize_900" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text 800"
-            app:zTextSize="s800" />
+            android:textSize="@dimen/sushi_textsize_800" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text 700"
-            app:zTextSize="s700" />
+            android:textSize="@dimen/sushi_textsize_700" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text 600"
-            app:zTextSize="s600" />
+            android:textSize="@dimen/sushi_textsize_600" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text 500"
-            app:zTextSize="s500" />
+            android:textSize="@dimen/sushi_textsize_500" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text 400"
-            app:zTextSize="s400" />
+            android:textSize="@dimen/sushi_textsize_400" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text 300"
-            app:zTextSize="s300" />
+            android:textSize="@dimen/sushi_textsize_300" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text 200"
-            app:zTextSize="s200" />
+            android:textSize="@dimen/sushi_textsize_200" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text 100"
-            app:zTextSize="s100" />
+            android:textSize="@dimen/sushi_textsize_100" />
 
         <!-- SemiBold -->
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text SemiBold 900"
-            app:zFontWeight="semibold"
-            app:zTextSize="s900" />
+            app:sushiFontWeight="semibold"
+            android:textSize="@dimen/sushi_textsize_900" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text SemiBold 800"
-            app:zFontWeight="semibold"
-            app:zTextSize="s800" />
+            app:sushiFontWeight="semibold"
+            android:textSize="@dimen/sushi_textsize_800" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text SemiBold 700"
-            app:zFontWeight="semibold"
-            app:zTextSize="s700" />
+            app:sushiFontWeight="semibold"
+            android:textSize="@dimen/sushi_textsize_700" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text SemiBold 600"
-            app:zFontWeight="semibold"
-            app:zTextSize="s600" />
+            app:sushiFontWeight="semibold"
+            android:textSize="@dimen/sushi_textsize_600" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text SemiBold 500"
-            app:zFontWeight="semibold"
-            app:zTextSize="s500" />
+            app:sushiFontWeight="semibold"
+            android:textSize="@dimen/sushi_textsize_500" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text SemiBold 400"
-            app:zFontWeight="semibold"
-            app:zTextSize="s400" />
+            app:sushiFontWeight="semibold"
+            android:textSize="@dimen/sushi_textsize_400" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text SemiBold 300"
-            app:zFontWeight="semibold"
-            app:zTextSize="s300" />
+            app:sushiFontWeight="semibold"
+            android:textSize="@dimen/sushi_textsize_300" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text SemiBold 200"
-            app:zFontWeight="semibold"
-            app:zTextSize="s200" />
+            app:sushiFontWeight="semibold"
+            android:textSize="@dimen/sushi_textsize_200" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text SemiBold 100"
-            app:zFontWeight="semibold"
-            app:zTextSize="s100" />
+            app:sushiFontWeight="semibold"
+            android:textSize="@dimen/sushi_textsize_100" />
 
         <!-- ExtraLight -->
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text ExtraLight 900"
-            app:zFontWeight="extralight"
-            app:zTextSize="s900" />
+            app:sushiFontWeight="extralight"
+            android:textSize="@dimen/sushi_textsize_900" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text ExtraLight 800"
-            app:zFontWeight="extralight"
-            app:zTextSize="s800" />
+            app:sushiFontWeight="extralight"
+            android:textSize="@dimen/sushi_textsize_800" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text ExtraLight 700"
-            app:zFontWeight="extralight"
-            app:zTextSize="s700" />
+            app:sushiFontWeight="extralight"
+            android:textSize="@dimen/sushi_textsize_700" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text ExtraLight 600"
-            app:zFontWeight="extralight"
-            app:zTextSize="s600" />
+            app:sushiFontWeight="extralight"
+            android:textSize="@dimen/sushi_textsize_600" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text ExtraLight 500"
-            app:zFontWeight="extralight"
-            app:zTextSize="s500" />
+            app:sushiFontWeight="extralight"
+            android:textSize="@dimen/sushi_textsize_500" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text ExtraLight 400"
-            app:zFontWeight="extralight"
-            app:zTextSize="s400" />
+            app:sushiFontWeight="extralight"
+            android:textSize="@dimen/sushi_textsize_400" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text ExtraLight 300"
-            app:zFontWeight="extralight"
-            app:zTextSize="s300" />
+            app:sushiFontWeight="extralight"
+            android:textSize="@dimen/sushi_textsize_300" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text ExtraLight 200"
-            app:zFontWeight="extralight"
-            app:zTextSize="s200" />
+            app:sushiFontWeight="extralight"
+            android:textSize="@dimen/sushi_textsize_200" />
 
-        <com.zomato.sushilib.atoms.textviews.ZTextView
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text ExtraLight 100"
-            app:zFontWeight="extralight"
-            app:zTextSize="s100" />
+            app:sushiFontWeight="extralight"
+            android:textSize="@dimen/sushi_textsize_100" />
 
     </LinearLayout>
 
