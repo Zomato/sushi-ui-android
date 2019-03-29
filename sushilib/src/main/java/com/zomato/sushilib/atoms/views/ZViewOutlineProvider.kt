@@ -12,16 +12,16 @@ class ZViewOutlineProvider(
     @OutlineType
     val outlineType: Int = OutlineType.ROUNDED_RECT,
     var cornerRadius: Float = 0f,
-    var keepPadding: Boolean = false
+    var paddingOutside: Boolean = false
 ) : ViewOutlineProvider() {
 
     override fun getOutline(view: View?, outline: Outline?) {
 
         view?.also { v ->
-            var left =  v.paddingLeft.takeIf { keepPadding } ?: 0
-            var top = v.paddingTop.takeIf { keepPadding } ?: 0
-            var right = v.width - (v.paddingLeft.takeIf { keepPadding } ?: 0)
-            var bottom = v.height - (v.paddingTop.takeIf { keepPadding } ?: 0)
+            var left =  if (paddingOutside) { v.paddingLeft } else { 0 }
+            var top = if (paddingOutside) { v.paddingTop } else { 0 }
+            var right = v.width - (if (paddingOutside) { v.paddingRight } else { 0 })
+            var bottom = v.height - (if (paddingOutside) { v.paddingBottom } else { 0 })
 
             if (outlineType == OutlineType.CIRCLE) {
                 val delta = Math.min(v.height, v.width)

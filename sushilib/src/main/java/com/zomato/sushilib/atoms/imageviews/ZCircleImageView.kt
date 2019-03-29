@@ -74,10 +74,14 @@ class ZCircleImageView : ImageView {
         }
     }
 
+    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+        super.onLayout(changed, left, top, right, bottom)
+        loadBitmap()
+    }
+
     @SuppressLint("CanvasSize")
     override fun onDraw(canvas: Canvas?) {
 
-        loadBitmap()
 
         if (mBitmap == null) {
             return

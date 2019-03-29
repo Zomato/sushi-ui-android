@@ -36,7 +36,7 @@ class ZCircleView : View {
 
         mCanvasSize = Math.min(height, width)
 
-        outlineProvider = ZViewOutlineProvider(OutlineType.CIRCLE)
+        outlineProvider = ZViewOutlineProvider(OutlineType.CIRCLE, paddingOutside = true)
         clipToOutline = true
         invalidateOutline()
     }

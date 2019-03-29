@@ -45,7 +45,7 @@
             android:background="@drawable/ic_launcher_background"
             android:backgroundTint="@color/sushi_blue_300"
             android:backgroundTintMode="add"
-            android:padding="10dp"
+            android:padding="50dp"
             android:elevation="5dp"
             android:layout_margin="10dp"
             android:layout_width="200dp"
