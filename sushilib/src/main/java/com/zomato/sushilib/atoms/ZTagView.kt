@@ -2,18 +2,13 @@ package com.zomato.sushilib.atoms
 
 import android.content.Context
 import android.content.res.Resources
-import android.graphics.Canvas
-import android.graphics.Outline
 import android.util.AttributeSet
-import android.view.View
-import android.view.ViewOutlineProvider
 import com.zomato.sushilib.R
-import com.zomato.sushilib.atoms.textviews.ZTextView
-import com.zomato.sushilib.atoms.views.OutlineType
+import com.zomato.sushilib.atoms.textviews.SushiTextView
 import com.zomato.sushilib.atoms.views.RoundedView
 import com.zomato.sushilib.atoms.views.ZViewOutlineProvider
 
-class ZTagView : ZTextView, RoundedView {
+class ZTagView : SushiTextView, RoundedView {
     override val imageOutlineProvider: ZViewOutlineProvider = ZViewOutlineProvider()
 
     constructor(context: Context?) : this(context, null)

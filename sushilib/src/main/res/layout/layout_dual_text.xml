@@ -2,30 +2,28 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
+    android:layout_height="match_parent">
 
 
     <!--to be inflated inside a linear layout-->
 
-    <com.zomato.sushilib.atoms.textviews.ZTextView
+    <com.zomato.sushilib.atoms.textviews.SushiTextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Some title text here"
         android:textColor="@color/sushi_black"
-        app:zFontWeight="medium"
-        app:zTextSize="s500" />
+        android:textSize="@dimen/sushi_textsize_500"
+        app:sushiFontWeight="medium" />
 
-    <com.zomato.sushilib.atoms.textviews.ZTextView
+    <com.zomato.sushilib.atoms.textviews.SushiTextView
         android:id="@+id/subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_mini"
         android:text="Some long description text here, that goes multiline because we want to test it out"
+        android:textSize="@dimen/sushi_textsize_500"
         android:textColor="@color/sushi_grey_600"
-        app:zFontWeight="regular"
-        app:zTextSize="s300"
-        />
+        app:sushiFontWeight="regular" />
 
 </merge>
