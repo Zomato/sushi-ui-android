@@ -25,13 +25,14 @@
         <item name="android:paddingRight">@dimen/sushi_spacing_macro</item>
         <item name="android:paddingTop">@dimen/sushi_spacing_mini</item>
         <item name="android:paddingBottom">@dimen/sushi_spacing_mini</item>
-        <item name="zTextSize">s500</item>
-        <item name="zFontWeight">medium</item>
+        <item name="android:textSize">@dimen/sushi_textsize_500</item>
+        <item name="sushiFontWeight">medium</item>
+        =
     </style>
 
 
     <style name="SushiTheme.TagAppearance.HighlightRoundedTag" parent="SushiTheme.TagAppearance.RoundedTag">
-        <item name="zFontWeight">semibold</item>
+        <item name="sushiFontWeight">semibold</item>
         <item name="android:paddingTop">@dimen/sushi_spacing_macro</item>
         <item name="android:paddingBottom">@dimen/sushi_spacing_macro</item>
     </style>
@@ -43,19 +44,19 @@
     </style>
 
     <style name="SushiTheme.TagAppearance.SmallCapsule" parent="SushiTheme.TagAppearance.SmallHighlightRoundedTag">
-        <item name="zCornerRadius">@dimen/sushi_spacing_base</item>
-        <item name="zFontWeight">medium</item>
+        <item name="zCornerRadius">@dimen/sushi_small_capsule_tag_corner_radius</item>
+        <item name="sushiFontWeight">medium</item>
         <item name="android:paddingLeft">@dimen/sushi_spacing_mini</item>
         <item name="android:paddingRight">@dimen/sushi_spacing_mini</item>
     </style>
 
     <style name="SushiTheme.TagAppearance.SmallHighlightRoundedTag" parent="SushiTheme.TagAppearance.HighlightRoundedTag">
-        <item name="zFontWeight">regular</item>
+        <item name="sushiFontWeight">regular</item>
         <item name="android:paddingTop">@dimen/sushi_spacing_micro</item>
         <item name="android:paddingBottom">@dimen/sushi_spacing_micro</item>
         <item name="android:paddingLeft">@dimen/sushi_spacing_micro</item>
         <item name="android:paddingRight">@dimen/sushi_spacing_micro</item>
-        <item name="zTextSize">s200</item>
+        <item name="android:textSize">@dimen/sushi_textsize_200</item>
     </style>
 
     <style name="SushiTheme.TagAppearance.SmallRoundedTag" parent="SushiTheme.TagAppearance.RoundedTag">
@@ -63,7 +64,7 @@
         <item name="android:paddingRight">@dimen/sushi_spacing_nano</item>
         <item name="android:paddingTop">@dimen/sushi_spacing_nano</item>
         <item name="android:paddingBottom">@dimen/sushi_spacing_nano</item>
-        <item name="zTextSize">s200</item>
+        <item name="android:textSize">@dimen/sushi_textsize_200</item>
     </style>
 
 </resources>

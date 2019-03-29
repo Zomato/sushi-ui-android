@@ -7,33 +7,33 @@
     // requires parent to be horizontal linearlayout
 
 
-    <!--<com.zomato.sushilib.atoms.views.ZRoundRectView-->
-    <!--android:layout_width="44dp"-->
-    <!--android:layout_height="44dp"-->
-    <!--android:id="@+id/image"-->
-    <!--android:background="@drawable/ic_launcher_background"-->
-    <!--android:backgroundTint="@color/sushi_red_500"-->
-    <!--android:backgroundTintMode="add"-->
-    <!--android:layout_gravity="top"-->
-    <!--app:zCornerRadius="22dp" />-->
+    <com.zomato.sushilib.atoms.views.ZRoundRectView
+    android:layout_width="44dp"
+    android:layout_height="44dp"
+    android:id="@+id/image"
+    android:background="@drawable/ic_launcher_background"
+    android:backgroundTint="@color/sushi_red_500"
+    android:backgroundTintMode="add"
+    android:layout_gravity="top"
+    app:zCornerRadius="22dp" />
 
-    <com.zomato.sushilib.atoms.textviews.SushiIcon
-        android:id="@+id/icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/icon_right_triangle"
-        android:textColor="@color/sushi_black" />
+    <!--<com.zomato.sushilib.atoms.textviews.SushiIcon-->
+        <!--android:id="@+id/icon"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/icon_right_triangle"-->
+        <!--android:textColor="@color/sushi_black" />-->
 
 
-    <!--&lt;!&ndash;todo: fix base spacing here, make a convention&ndash;&gt;-->
-    <!--<LinearLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginStart="@dimen/sushi_spacing_base"-->
-    <!--android:layout_gravity="top"-->
-    <!--android:orientation="vertical">-->
-    <!--<include layout="@layout/layout_dual_text" />-->
-    <!--</LinearLayout>-->
+    <!--todo: fix base spacing here, make a convention-->
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/sushi_spacing_base"
+    android:layout_gravity="top"
+    android:orientation="vertical">
+    <include layout="@layout/layout_dual_text" />
+    </LinearLayout>
 
 
 </merge>

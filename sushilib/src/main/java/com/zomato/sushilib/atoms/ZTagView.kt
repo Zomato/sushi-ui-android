@@ -2,25 +2,28 @@ package com.zomato.sushilib.atoms
 
 import android.content.Context
 import android.content.res.Resources
-import android.graphics.Canvas
-import android.graphics.Outline
 import android.util.AttributeSet
-import android.view.View
-import android.view.ViewOutlineProvider
 import com.zomato.sushilib.R
-import com.zomato.sushilib.atoms.textviews.ZTextView
-import com.zomato.sushilib.atoms.views.OutlineType
+import com.zomato.sushilib.atoms.textviews.SushiTextView
 import com.zomato.sushilib.atoms.views.RoundedView
 import com.zomato.sushilib.atoms.views.ZViewOutlineProvider
 
-class ZTagView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0,
-    defStyleRes: Int = 0
-) : ZTextView(context, attrs, defStyleAttr, defStyleRes), RoundedView {
+class ZTagView : SushiTextView, RoundedView {
+    override val imageOutlineProvider: ZViewOutlineProvider = ZViewOutlineProvider()
 
-    init {
-        context.theme?.obtainStyledAttributes(
+    constructor(context: Context?) : super(context, null) {
+        init(context)
+    }
+
+    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
+        init(context, attrs)
+    }
+
+    private fun init(
+        context: Context?,
+        attrs: AttributeSet? = null, defStyleAttr: Int = 0, defStyleRes: Int = 0
+    ) {
+        context?.theme?.obtainStyledAttributes(
             attrs,
             R.styleable.ZTagView,
             defStyleAttr,
@@ -33,8 +36,6 @@ class ZTagView @JvmOverloads constructor(
             it.recycle()
         }
     }
-
-    override val imageOutlineProvider: ZViewOutlineProvider = ZViewOutlineProvider()
 
     override fun setTextAppearance(resId: Int) {
         super.setTextAppearance(resId)
