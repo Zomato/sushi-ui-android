@@ -10,6 +10,7 @@ import com.zomato.sushilib.utils.color.ColorContrastUtils
  * A Text view that uses white or black color depending on
  * the background color
  */
+
 class ZAutoContrastTextView : SushiTextView {
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet) : super(context, attrs)
