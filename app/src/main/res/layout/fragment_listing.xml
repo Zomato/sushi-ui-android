@@ -12,6 +12,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <com.zomato.sushilib.molecule.listing.ZImageDualTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"/>
+
+        <com.zomato.sushilib.molecule.listing.ZLabelDualTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"/>
+
     </LinearLayout>
 
 </ScrollView>

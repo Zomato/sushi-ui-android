@@ -3,12 +3,20 @@
 
     <style name="SushiTheme" parent="Theme.MaterialComponents.Light">
         <item name="android:fontFamily">@font/okra</item>
+        <item name="android:textViewStyle">@style/SnippetPaddingTheme</item>
+        <item name="sushiIconAppearance">@style/SushiTheme.TextAppearance.Icon</item>
     </style>
 
+    <style name="SnippetPaddingTheme" />
 
-    <style name="SnippetSidePaddingTheme">
-        <item name="android:paddingLeft">@dimen/spacing_page_side</item>
-        <item name="android:paddingRight">@dimen/spacing_page_side</item>
+    <style name="SnippetSidePaddingTheme" parent="SnippetPaddingTheme">
+        <item name="android:paddingLeft">@dimen/sushi_spacing_page_side</item>
+        <item name="android:paddingRight">@dimen/sushi_spacing_page_side</item>
+    </style>
+
+    <style name="SnippetBaseVerticalPaddingTheme" parent="SnippetSidePaddingTheme">
+        <item name="android:paddingTop">@dimen/sushi_spacing_base</item>
+        <item name="android:paddingBottom">@dimen/sushi_spacing_base</item>
     </style>
 
 </resources>

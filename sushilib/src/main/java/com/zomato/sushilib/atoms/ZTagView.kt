@@ -11,18 +11,18 @@ import com.zomato.sushilib.atoms.views.ZViewOutlineProvider
 class ZTagView : SushiTextView, RoundedView {
     override val imageOutlineProvider: ZViewOutlineProvider = ZViewOutlineProvider()
 
-    constructor(context: Context?) : this(context, null)
-    constructor(context: Context?, attrs: AttributeSet?) :
-            this(context, attrs, 0)
+    constructor(context: Context?) : super(context, null) {
+        init(context)
+    }
 
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
-            this(context, attrs, defStyleAttr, resolveDefStyleRes(context?.theme, attrs))
+    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
+        init(context, attrs)
+    }
 
-    constructor(
+    private fun init(
         context: Context?,
-        attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int
-    ) : super(context, attrs, defStyleAttr, defStyleRes) {
-
+        attrs: AttributeSet? = null, defStyleAttr: Int = 0, defStyleRes: Int = 0
+    ) {
         context?.theme?.obtainStyledAttributes(
             attrs,
             R.styleable.ZTagView,
@@ -40,28 +40,6 @@ class ZTagView : SushiTextView, RoundedView {
     override fun setTextAppearance(resId: Int) {
         super.setTextAppearance(resId)
         // todo
-    }
-
-    companion object {
-        private fun resolveDefStyleRes(theme: Resources.Theme?, attrs: AttributeSet?): Int {
-            val a = theme?.obtainStyledAttributes(attrs, R.styleable.ZTagView, 0, 0)
-            val type = a?.getInt(R.styleable.ZTagView_zTagType, 1)
-            a?.recycle()
-            return getStyleForType(type)
-        }
-
-        fun getStyleForType(type: Int?): Int {
-            // todo create enums
-            return when (type) {
-                1 -> R.style.SushiTheme_TagAppearance_RoundedTag
-                2 -> R.style.SushiTheme_TagAppearance_SmallRoundedTag
-                3 -> R.style.SushiTheme_TagAppearance_HighlightRoundedTag
-                4 -> R.style.SushiTheme_TagAppearance_SmallHighlightRoundedTag
-                5 -> R.style.SushiTheme_TagAppearance_Capsule
-                6 -> R.style.SushiTheme_TagAppearance_SmallCapsule
-                else -> R.style.SushiTheme_TagAppearance_RoundedTag
-            }
-        }
     }
 
     // corner radius
