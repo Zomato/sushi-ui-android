@@ -1,6 +1,7 @@
 package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
+import android.support.design.resources.TextAppearance
 import android.util.AttributeSet
 import android.widget.TextView
 import com.zomato.sushilib.R
@@ -12,7 +13,7 @@ open class SushiTextView : TextView {
         init(context, null, 0 ,0)
     }
     constructor(context: Context?, attrs: AttributeSet?) :
-            super(context, attrs, 0) {
+            super(context, attrs) {
         init(context, attrs, 0 ,0)
     }
 
@@ -35,9 +36,9 @@ open class SushiTextView : TextView {
             defStyleAttr,
             defStyleRes
         )?.let {
-            val sushiFontWeight = it.getInt(R.styleable.SushiTextView_sushiFontWeight, 500)
+            val sushiFontWeight = it.getInt(R.styleable.SushiTextView_sushiFontWeight, -1)
 
-            if (!isInEditMode) {
+            if (!isInEditMode && sushiFontWeight != -1) {
                 typeface = TextFormatUtils.sushiFontWeightToTypeface(context, sushiFontWeight)
             }
 
