@@ -34,6 +34,8 @@ class ZCircleView : View {
 
         mPaintBackground.isAntiAlias = true
 
+        mCanvasSize = Math.min(height, width)
+
         outlineProvider = ZViewOutlineProvider(OutlineType.CIRCLE)
         clipToOutline = true
         invalidateOutline()
@@ -42,6 +44,8 @@ class ZCircleView : View {
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         mCanvasSize = Math.min(w, h)
+        layoutParams.height = mCanvasSize
+        layoutParams.width = mCanvasSize
     }
 
     override fun draw(canvas: Canvas?) {
@@ -70,8 +74,8 @@ class ZCircleView : View {
                 mCanvasSize = Math.min(it.height, it.width)
             }
             canvas.drawCircle(
-                (mCanvasSize / 2).toFloat(),
-                (mCanvasSize / 2).toFloat(),
+                (width / 2).toFloat(),
+                (height / 2).toFloat(),
                 (mCanvasSize / 2).toFloat(),
                 mPaintBackground
             )
