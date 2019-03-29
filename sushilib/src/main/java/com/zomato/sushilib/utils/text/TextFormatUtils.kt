@@ -7,19 +7,19 @@ import com.zomato.sushilib.R
 
 class TextFormatUtils {
     companion object {
-        fun zTextSizeToAndroidSp(zTextSize: Int): Float {
+        fun zTextSizeToAndroidPx(context: Context?, zTextSize: Int): Float {
             return when (zTextSize) {
-                100 -> 12f
-                200 -> 14f
-                300 -> 16f
-                400 -> 18f
-                500 -> 18f
-                600 -> 28f
-                700 -> 32f
-                800 -> 36f
-                900 -> 44f
-                else -> 24f
-            }
+                100 -> context?.resources?.getDimension(R.dimen.sushi_textsize_100) ?: 10f
+                200 -> context?.resources?.getDimension(R.dimen.sushi_textsize_200) ?: 12f
+                300 -> context?.resources?.getDimension(R.dimen.sushi_textsize_300) ?: 13f
+                400 -> context?.resources?.getDimension(R.dimen.sushi_textsize_400) ?: 15f
+                500 -> context?.resources?.getDimension(R.dimen.sushi_textsize_500) ?: 17f
+                600 -> context?.resources?.getDimension(R.dimen.sushi_textsize_600) ?: 19f
+                700 -> context?.resources?.getDimension(R.dimen.sushi_textsize_700) ?: 21f
+                800 -> context?.resources?.getDimension(R.dimen.sushi_textsize_800) ?: 24f
+                900 -> context?.resources?.getDimension(R.dimen.sushi_textsize_900) ?: 27f
+                else -> context?.resources?.getDimension(R.dimen.sushi_textsize_400) ?: 15f
+            }.toFloat()
         }
 
         fun zFontWeightToTypeface(context: Context, zFontWeight: Int): Typeface? {

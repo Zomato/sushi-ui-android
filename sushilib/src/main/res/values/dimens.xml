@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="sushi_textsize_100">12sp</dimen>
-    <dimen name="sushi_textsize_200">14sp</dimen>
-    <dimen name="sushi_textsize_300">16sp</dimen>
-    <dimen name="sushi_textsize_400">18sp</dimen>
-    <dimen name="sushi_textsize_500">24sp</dimen>
-    <dimen name="sushi_textsize_600">28sp</dimen>
-    <dimen name="sushi_textsize_700">32sp</dimen>
-    <dimen name="sushi_textsize_800">36sp</dimen>
-    <dimen name="sushi_textsize_900">44sp</dimen>
+    <dimen name="sushi_textsize_100">11sp</dimen>
+    <dimen name="sushi_textsize_200">12sp</dimen>
+    <dimen name="sushi_textsize_300">13sp</dimen>
+    <dimen name="sushi_textsize_400">15sp</dimen>
+    <dimen name="sushi_textsize_500">17sp</dimen>
+    <dimen name="sushi_textsize_600">19sp</dimen>
+    <dimen name="sushi_textsize_700">21sp</dimen>
+    <dimen name="sushi_textsize_800">24sp</dimen>
+    <dimen name="sushi_textsize_900">27sp</dimen>
 
 
     <dimen name="size_2">2dp</dimen>

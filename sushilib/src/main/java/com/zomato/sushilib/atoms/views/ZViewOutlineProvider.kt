@@ -10,26 +10,31 @@ import android.view.ViewOutlineProvider
  */
 class ZViewOutlineProvider(
     @OutlineType
-    val outlineType: Int = OutlineType.ROUNDED_RECT
+    val outlineType: Int = OutlineType.ROUNDED_RECT,
+    var cornerRadius: Float = 0f,
+    var paddingOutside: Boolean = false
 ) : ViewOutlineProvider() {
-
-    var cornerRadius: Float = 0f
-
 
     override fun getOutline(view: View?, outline: Outline?) {
 
         view?.also { v ->
-            var left = 0
-            var top = 0
-            var right = v.width
-            var bottom = v.height
+            var left =  if (paddingOutside) { v.paddingLeft } else { 0 }
+            var top = if (paddingOutside) { v.paddingTop } else { 0 }
+            var right = v.width - (if (paddingOutside) { v.paddingRight } else { 0 })
+            var bottom = v.height - (if (paddingOutside) { v.paddingBottom } else { 0 })
+
+            if (outlineType == OutlineType.CIRCLE) {
+                val delta = Math.min(v.height, v.width)
+                right = delta - v.paddingRight
+                bottom = delta - v.paddingBottom
+            }
 
             when (outlineType) {
                 OutlineType.CIRCLE -> {
                     outline?.setOval(left, top, right, bottom)
                 }
                 OutlineType.ROUNDED_RECT -> {
-                    // todo make ovel check add
+                    // TODO: Add oval check
                     // TODO: When supporting corner flags
 //                    left -= cornerRadius.toInt()
 //                    top -= cornerRadius.toInt()
