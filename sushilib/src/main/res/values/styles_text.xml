@@ -6,11 +6,7 @@
         <item name="android:textSize">@dimen/sushi_textsize_400</item>
     </style>
 
-    <style name="SushiTheme.TextAppearance.SemiBold">
-        <item name="android:fontFamily">@font/okra_semibold</item>
-    </style>
-
-    <style name="SushiTheme.TextAppearance.Icon" parent="SushiTheme.TextAppearance">
+    <style name="SushiTheme.TextAppearance.Icon">
         <item name="android:fontFamily">@font/wasabi</item>
     </style>
 

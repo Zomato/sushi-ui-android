@@ -13,7 +13,7 @@ open class SushiTextView : TextView {
     }
 
     constructor(context: Context?, attrs: AttributeSet?) :
-            super(context, attrs, 0) {
+            super(context, attrs) {
         init(context, attrs, 0, 0)
     }
 
@@ -37,8 +37,9 @@ open class SushiTextView : TextView {
             defStyleAttr,
             defStyleRes
         )?.let {
-            val sushiFontWeight = it.getInt(R.styleable.SushiTextView_sushiFontWeight, 500)
-            if (!isInEditMode) {
+            val sushiFontWeight = it.getInt(R.styleable.SushiTextView_sushiFontWeight, -1)
+
+            if (!isInEditMode && sushiFontWeight != -1) {
                 typeface = TextFormatUtils.sushiFontWeightToTypeface(context, sushiFontWeight)
             }
 
