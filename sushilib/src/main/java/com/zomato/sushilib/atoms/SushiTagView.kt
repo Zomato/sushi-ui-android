@@ -7,7 +7,7 @@ import com.zomato.sushilib.atoms.textviews.SushiTextView
 import com.zomato.sushilib.atoms.views.RoundedView
 import com.zomato.sushilib.atoms.views.ZViewOutlineProvider
 
-class ZTagView : SushiTextView, RoundedView {
+class SushiTagView : SushiTextView, RoundedView {
     override val imageOutlineProvider: ZViewOutlineProvider = ZViewOutlineProvider()
 
     constructor(context: Context?) : super(context, null) {
@@ -24,11 +24,11 @@ class ZTagView : SushiTextView, RoundedView {
     ) {
         context?.theme?.obtainStyledAttributes(
             attrs,
-            R.styleable.ZTagView,
+            R.styleable.SushiTagView,
             defStyleAttr,
             defStyleRes
         )?.let {
-            val cr = it.getDimension(R.styleable.ZTagView_zCornerRadius, 0F)
+            val cr = it.getDimension(R.styleable.SushiTagView_zCornerRadius, 0F)
             if (cr != 0f) {
                 cornerRadius = cr
             }

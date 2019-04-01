@@ -3,7 +3,7 @@
     <attr name="sushiIconAppearance" format="reference" type="style" />
     <attr name="cornerRadius" format="dimension" />
     <attr name="random" format="reference" />
-    <declare-styleable name="ZTagView">
+    <declare-styleable name="SushiTagView">
         <attr name="zCornerRadius" />
         <attr name="zTagType" format="enum">
             <enum name="rounded" value="1"/>
