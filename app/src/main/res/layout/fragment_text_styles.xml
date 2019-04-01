@@ -20,7 +20,8 @@
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
             android:text="Text 800"
-            android:textSize="@dimen/sushi_textsize_800" />
+            android:textSize="@dimen/sushi_textsize_800"
+            />
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.TextPreviewStrip"
