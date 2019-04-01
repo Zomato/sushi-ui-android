@@ -1,7 +1,6 @@
 package com.zomato.sushilib.atoms
 
 import android.content.Context
-import android.content.res.Resources
 import android.util.AttributeSet
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiTextView
