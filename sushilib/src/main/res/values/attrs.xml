@@ -4,7 +4,7 @@
     <attr name="sushiCornerRadius" format="dimension" />
     <attr name="random" format="reference" />
     <attr name="baseColor" format="color" />
-    <attr name="leftIcon" format="string"/>
+
 
     <declare-styleable name="SushiTagView">
         <attr name="sushiCornerRadius" />
@@ -22,9 +22,14 @@
         <attr name="baseColor" />
     </declare-styleable>
 
-
     <declare-styleable name="SushiListing">
-        <attr name="leftIcon"/>
+        <attr name="title" format="string"/>
+        <attr name="subtitle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiImageDualTextView">
+       <attr name="title"/>
+        <attr name="subtitle"/>
     </declare-styleable>
 
 

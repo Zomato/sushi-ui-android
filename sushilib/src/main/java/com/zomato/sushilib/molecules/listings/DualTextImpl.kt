@@ -21,5 +21,15 @@ open class DualTextImpl(
         val v = parent.inflate(layoutId, true)
         title = v.findViewById(R.id.title)
         subtitle = v.findViewById(R.id.subtitle)
+        parent.context?.theme?.obtainStyledAttributes(
+            attributeSet,
+            R.styleable.SushiListing,
+            defStyleAttr,
+            defStyleRes
+        )?.apply {
+            title.text = getString(R.styleable.SushiListing_title)
+            subtitle.text = getString(R.styleable.SushiListing_subtitle)
+            recycle()
+        }
     }
 }
