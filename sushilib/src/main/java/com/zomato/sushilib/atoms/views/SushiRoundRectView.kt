@@ -11,9 +11,9 @@ import com.zomato.sushilib.R
  * Copyright © 2019 Zomato Media Pvt. Ltd.
  */
 
-class ZRoundRectView : View {
+class SushiRoundRectView : View {
     private var mCornerRadius: Float = 0f
-    private val imageOutlineProvider = ZViewOutlineProvider()
+    private val imageOutlineProvider = SushiViewOutlineProvider()
     private var mBorderPaint = Paint()
 
     constructor(context: Context?) : this(context, null)
@@ -32,11 +32,11 @@ class ZRoundRectView : View {
         mBorderPaint.isAntiAlias = true
 
         context?.obtainStyledAttributes(
-            attrs, R.styleable.ZRoundRectView, defStyleAttr, 0
+            attrs, R.styleable.SushiRoundRectView, defStyleAttr, 0
         )?.let { ta ->
 
             mCornerRadius = ta.getDimensionPixelSize(
-                R.styleable.ZRoundRectView_sushiCornerRadius,
+                R.styleable.SushiRoundRectView_sushiCornerRadius,
                 0
             ).toFloat().takeIf { it > 0 } ?: 0f
 

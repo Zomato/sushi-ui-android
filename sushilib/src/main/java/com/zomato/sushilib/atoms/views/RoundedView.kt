@@ -4,7 +4,7 @@ import android.view.ViewOutlineProvider
 
 // todo rename
 interface RoundedView {
-    val imageOutlineProvider: ZViewOutlineProvider
+    val imageOutlineProvider: SushiViewOutlineProvider
     var cornerRadius: Float
         set(value) {
             notifyOutlineProvider(value)

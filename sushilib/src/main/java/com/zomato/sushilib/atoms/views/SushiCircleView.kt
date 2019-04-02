@@ -3,10 +3,7 @@ package com.zomato.sushilib.atoms.views
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
@@ -16,7 +13,7 @@ import com.zomato.sushilib.utils.graphics.BitmapUtils
  * created by championswimmer on 26/03/19
  * Copyright © 2019 Zomato Media Pvt. Ltd.
  */
-class ZCircleView : View {
+class SushiCircleView : View {
     private val mPaintBackground = Paint()
     private var mCanvasSize = 0
 
@@ -36,7 +33,7 @@ class ZCircleView : View {
 
         mCanvasSize = Math.min(height, width)
 
-        outlineProvider = ZViewOutlineProvider(OutlineType.CIRCLE, paddingOutside = true)
+        outlineProvider = SushiViewOutlineProvider(OutlineType.CIRCLE, paddingOutside = true)
         clipToOutline = true
         invalidateOutline()
     }
@@ -54,7 +51,7 @@ class ZCircleView : View {
             mPaintBackground.apply {
                 shader = BitmapUtils.getShaderForBitmap(
                     BitmapUtils.drawableToBitmap(background),
-                    this@ZCircleView,
+                    this@SushiCircleView,
                     ImageView.ScaleType.CENTER_CROP
                 )
             }

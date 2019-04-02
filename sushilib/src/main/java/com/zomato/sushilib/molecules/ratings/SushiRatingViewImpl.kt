@@ -1,4 +1,4 @@
-package com.zomato.sushilib.molecule.rating
+package com.zomato.sushilib.molecules.ratings
 
 import android.content.Context
 import android.content.res.Resources

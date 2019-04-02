@@ -11,7 +11,7 @@ import com.zomato.sushilib.utils.color.ColorContrastUtils
  * the background color
  */
 
-class ZAutoContrastTextView : SushiTextView {
+class SushiAutoContrastTextView : SushiTextView {
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet) : super(context, attrs)
     constructor(context: Context?, attrs: AttributeSet, defStyleAttr: Int) : super(

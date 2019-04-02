@@ -5,10 +5,10 @@ import android.util.AttributeSet
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 import com.zomato.sushilib.atoms.views.RoundedView
-import com.zomato.sushilib.atoms.views.ZViewOutlineProvider
+import com.zomato.sushilib.atoms.views.SushiViewOutlineProvider
 
 open class SushiTagView : SushiTextView, RoundedView {
-    override val imageOutlineProvider: ZViewOutlineProvider = ZViewOutlineProvider()
+    override val imageOutlineProvider: SushiViewOutlineProvider = SushiViewOutlineProvider()
 
     constructor(context: Context?) : super(context, null) {
         init(context)
