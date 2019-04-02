@@ -11,9 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiIconDrawable
+import com.zomato.sushilib.atoms.textviews.SushiTextView
 
 
 class SushiBottomNavigationBar : LinearLayout {
@@ -179,7 +179,7 @@ class SushiBottomNavigationBar : LinearLayout {
 
     private inner class TabView : LinearLayout(context) {
 
-        val textView: TextView
+        val textView: SushiTextView
         val imageView: ImageView
 
         private var tabData: TabViewData? = null
@@ -258,7 +258,8 @@ class SushiBottomNavigationBar : LinearLayout {
         fun onTabReselected(position: Int, tabId: String? = "")
     }
 
-    private inner class BottomTabViewManagerImpl(private val tabViewDataList: List<TabViewData>?) : BottomTabViewManager {
+    private inner class BottomTabViewManagerImpl(private val tabViewDataList: List<TabViewData>?) :
+        BottomTabViewManager {
         override fun getCount(): Int = tabViewDataList?.size ?: 0
 
         override fun createBottomTabView(parent: ViewGroup, position: Int): View = TabView().apply {
