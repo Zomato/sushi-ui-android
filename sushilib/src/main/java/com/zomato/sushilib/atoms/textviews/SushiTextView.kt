@@ -7,7 +7,7 @@ import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.text.TextFormatUtils
 
 open class SushiTextView : TextView {
-
+    val DEF_STYLE_ATTR = android.R.attr.textViewStyle
     constructor(context: Context?) : super(context, null) {
         init(context, null, 0, 0)
     }
@@ -38,11 +38,9 @@ open class SushiTextView : TextView {
             defStyleRes
         )?.let {
             val sushiFontWeight = it.getInt(R.styleable.SushiTextView_sushiFontWeight, -1)
-
             if (!isInEditMode && sushiFontWeight != -1) {
                 typeface = TextFormatUtils.sushiFontWeightToTypeface(context, sushiFontWeight)
             }
-
             it.recycle()
         }
     }

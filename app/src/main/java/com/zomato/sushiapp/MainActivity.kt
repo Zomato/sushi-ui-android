@@ -71,6 +71,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_buttons -> ButtonsFragment()
             R.id.nav_tags -> TagsFragment()
             R.id.nav_listing -> ListingFragment()
+            R.id.nav_navigation_comp -> NavigationComponentsFragment()
             else -> TextStylesFragment()
         }
 
