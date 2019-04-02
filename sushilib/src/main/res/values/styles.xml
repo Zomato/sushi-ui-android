@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="SushiTheme" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Sushi" parent="Theme.MaterialComponents.Light">
         <item name="android:fontFamily">@font/okra</item>
         <item name="android:textViewStyle">@style/SnippetPaddingTheme</item>
-        <item name="sushiIconAppearance">@style/SushiTheme.TextAppearance.Icon</item>
+        <item name="sushiIconAppearance">@style/TextAppearance.Sushi.Icon</item>
     </style>
 
     <style name="SnippetPaddingTheme" />

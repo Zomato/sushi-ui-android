@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SushiTextInputField">
+        <attr name="drawableLeft" format="reference"/>
+        <attr name="drawableRight" format="reference"/>
+        <attr name="drawableStart" format="reference"/>
+        <attr name="drawableEnd" format="reference"/>
+        <attr name="drawablePadding" format="dimension" />
+        <attr name="drawableTint" format="color" />
+    </declare-styleable>
+</resources>

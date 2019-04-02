@@ -10,6 +10,7 @@
     <dimen name="sushi_textsize_800">24sp</dimen>
     <dimen name="sushi_textsize_900">27sp</dimen>
 
+    <dimen name="sushi_spacing_pico">1dp</dimen>
     <dimen name="sushi_spacing_nano">2dp</dimen>
     <dimen name="sushi_spacing_micro">4dp</dimen>
     <dimen name="sushi_spacing_mini">6dp</dimen>

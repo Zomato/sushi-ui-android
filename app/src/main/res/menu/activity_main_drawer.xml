@@ -23,13 +23,18 @@
 
         <item
             android:id="@+id/nav_tags"
-            android:icon="@drawable/ic_buttons"
+            android:icon="@drawable/ic_tags"
             android:title="Tags" />
 
         <item
             android:id="@+id/nav_listing"
-            android:icon="@drawable/ic_buttons"
+            android:icon="@drawable/ic_listings"
             android:title="Listing" />
+
+        <item
+            android:id="@+id/nav_text_fields"
+            android:icon="@drawable/ic_text_fields"
+            android:title="Text Fields" />
 
 
         <item

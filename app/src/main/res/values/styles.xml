@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="SushiTheme">
+    <style name="AppTheme" parent="Theme.Sushi">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/sushi_red_500</item>
         <item name="colorPrimaryDark">@color/sushi_red_800</item>

@@ -6,31 +6,13 @@ import android.widget.TextView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.text.TextFormatUtils
 
-open class SushiTextView : TextView {
-    val DEF_STYLE_ATTR = android.R.attr.textViewStyle
-    constructor(context: Context?) : super(context, null) {
-        init(context, null, 0, 0)
-    }
+open class SushiTextView @JvmOverloads constructor(
+    context: Context?, attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0,
+    defStyleRes: Int = 0
+) : TextView(context, attrs, defStyleAttr, defStyleRes) {
 
-    constructor(context: Context?, attrs: AttributeSet?) :
-            super(context, attrs) {
-        init(context, attrs, 0, 0)
-    }
-
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
-            super(context, attrs, defStyleAttr, 0) {
-        init(context, null, defStyleAttr, 0)
-    }
-
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) :
-            super(context, attrs, defStyleAttr, defStyleRes) {
-        init(context, null, defStyleAttr, defStyleRes)
-    }
-
-    private fun init(
-        context: Context?,
-        attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int
-    ) {
+    init {
         context?.theme?.obtainStyledAttributes(
             attrs,
             R.styleable.SushiTextView,
@@ -38,15 +20,16 @@ open class SushiTextView : TextView {
             defStyleRes
         )?.let {
             val sushiFontWeight = it.getInt(R.styleable.SushiTextView_sushiFontWeight, -1)
-            if (!isInEditMode && sushiFontWeight != -1) {
-                typeface = TextFormatUtils.sushiFontWeightToTypeface(context, sushiFontWeight)
+
+            if (sushiFontWeight != -1) {
+                setTextAppearance(TextFormatUtils.sushiFontWeightToTextAppearance(sushiFontWeight))
             }
             it.recycle()
         }
     }
 
-    // todo implement this, to get custom attr from style
     override fun setTextAppearance(resId: Int) {
-        super.setTextAppearance(resId)
+        @Suppress("DEPRECATION")
+        super.setTextAppearance(context, resId)
     }
 }
