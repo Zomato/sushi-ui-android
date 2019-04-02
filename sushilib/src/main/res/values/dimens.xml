@@ -28,4 +28,9 @@
 
     <dimen name="sushi_large_capsule_tag_corner_radius">18dp</dimen>
     <dimen name="sushi_small_capsule_tag_corner_radius">12dp</dimen>
+    <dimen name="sushi_stoke_width_small">1dp</dimen>
+
+
+    <dimen name="sushi_big_rating_min_width">50dp</dimen>
+    <dimen name="sushi_small_rating_min_width">25dp</dimen>
 </resources>

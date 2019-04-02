@@ -70,13 +70,27 @@
             android:textColor="@color/sushi_white" />
 
 
-        <com.zomato.sushilib.atoms.tagviews.SushiBigRatingTag
+        <com.zomato.sushilib.molecule.rating.SushiBigRatingTag
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_extra"
-            android:background="@color/sushi_green_500"
+            app:baseColor="@color/sushi_green_500"
             android:textColor="@color/sushi_white"
             android:text="5"
             />
+
+        <com.zomato.sushilib.molecule.rating.SushiSmallRatingTag
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
+            app:baseColor="@color/sushi_green_500"
+            android:textColor="@color/sushi_white"
+            android:text="5"
+            />
+
+        <com.zomato.sushilib.molecule.rating.SushiRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"/>
     </LinearLayout>
 </ScrollView>

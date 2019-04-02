@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="sushiIconAppearance" format="reference" type="style" />
-    <attr name="cornerRadius" format="dimension" />
+    <attr name="sushiCornerRadius" format="dimension" />
     <attr name="random" format="reference" />
+    <attr name="baseColor" format="color" />
     <declare-styleable name="SushiTagView">
-        <attr name="zCornerRadius" />
+        <attr name="sushiCornerRadius" />
         <attr name="zTagType" format="enum">
-            <enum name="rounded" value="1"/>
-            <enum name="small_rounded" value="2"/>
-            <enum name="highlight" value="3"/>
-            <enum name="small_highlight" value="4"/>
-            <enum name="capsule" value="5"/>
-            <enum name="small_capsule" value="6"/>
+            <enum name="rounded" value="1" />
+            <enum name="small_rounded" value="2" />
+            <enum name="highlight" value="3" />
+            <enum name="small_highlight" value="4" />
+            <enum name="capsule" value="5" />
+            <enum name="small_capsule" value="6" />
         </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SushiBigRatingTag">
+        <attr name="baseColor" />
     </declare-styleable>
 </resources>

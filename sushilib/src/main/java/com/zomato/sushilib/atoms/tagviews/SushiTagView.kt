@@ -36,7 +36,7 @@ open class SushiTagView : SushiTextView, RoundedView {
             defStyleAttr,
             defStyleRes
         )?.let {
-            val cr = it.getDimension(R.styleable.SushiTagView_zCornerRadius, 0F)
+            val cr = it.getDimension(R.styleable.SushiTagView_sushiCornerRadius, 0F)
             if (cr != 0f) {
                 cornerRadius = cr
             }

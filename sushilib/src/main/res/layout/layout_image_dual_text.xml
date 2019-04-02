@@ -15,7 +15,7 @@
     android:backgroundTint="@color/sushi_red_500"
     android:backgroundTintMode="add"
     android:layout_gravity="top"
-    app:zCornerRadius="22dp" />
+    app:sushiCornerRadius="22dp" />
 
     <!--<com.zomato.sushilib.atoms.textviews.SushiIcon-->
         <!--android:id="@+id/icon"-->

@@ -36,7 +36,7 @@ class ZRoundRectView : View {
         )?.let { ta ->
 
             mCornerRadius = ta.getDimensionPixelSize(
-                R.styleable.ZRoundRectView_zCornerRadius,
+                R.styleable.ZRoundRectView_sushiCornerRadius,
                 0
             ).toFloat().takeIf { it > 0 } ?: 0f
 

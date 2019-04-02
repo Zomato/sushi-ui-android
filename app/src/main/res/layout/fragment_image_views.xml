@@ -19,7 +19,7 @@
             android:layout_margin="10dp"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            app:zCornerRadius="10dp"/>
+            app:sushiCornerRadius="10dp"/>
 
         <com.zomato.sushilib.atoms.views.ZRoundRectView
             android:background="@drawable/ic_launcher_background"
@@ -28,7 +28,7 @@
             android:layout_margin="10dp"
             android:layout_width="120dp"
             android:layout_height="80dp"
-            app:zCornerRadius="10dp"/>
+            app:sushiCornerRadius="10dp"/>
 
         <com.zomato.sushilib.atoms.views.ZCircleView
             android:id="@+id/cvGreen"
