@@ -32,6 +32,12 @@
             android:title="Listing" />
 
 
+        <item
+            android:id="@+id/nav_navigation_comp"
+            android:icon="@drawable/ic_buttons"
+            android:title="Navigation Components" />
+
+
 
     </group>
 

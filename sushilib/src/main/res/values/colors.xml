@@ -100,4 +100,7 @@
     <color name="sushi_pink_900">#66002B</color>
 
 
+    <color name="disabled_text_color">@color/sushi_grey_300</color>
+
+
 </resources>

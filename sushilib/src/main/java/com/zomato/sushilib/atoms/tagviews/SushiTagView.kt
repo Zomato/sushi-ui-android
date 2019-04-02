@@ -1,4 +1,4 @@
-package com.zomato.sushilib.atoms
+package com.zomato.sushilib.atoms.tagviews
 
 import android.content.Context
 import android.util.AttributeSet
@@ -7,7 +7,7 @@ import com.zomato.sushilib.atoms.textviews.SushiTextView
 import com.zomato.sushilib.atoms.views.RoundedView
 import com.zomato.sushilib.atoms.views.ZViewOutlineProvider
 
-class ZTagView : SushiTextView, RoundedView {
+open class SushiTagView : SushiTextView, RoundedView {
     override val imageOutlineProvider: ZViewOutlineProvider = ZViewOutlineProvider()
 
     constructor(context: Context?) : super(context, null) {
@@ -18,28 +18,36 @@ class ZTagView : SushiTextView, RoundedView {
         init(context, attrs)
     }
 
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+        init(context, attrs,defStyleAttr)
+    }
+
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
+        init(context, attrs,defStyleAttr,defStyleRes)
+    }
+
     private fun init(
         context: Context?,
         attrs: AttributeSet? = null, defStyleAttr: Int = 0, defStyleRes: Int = 0
     ) {
         context?.theme?.obtainStyledAttributes(
             attrs,
-            R.styleable.ZTagView,
+            R.styleable.SushiTagView,
             defStyleAttr,
             defStyleRes
         )?.let {
-            val cr = it.getDimension(R.styleable.ZTagView_zCornerRadius, 0F)
+            val cr = it.getDimension(R.styleable.SushiTagView_sushiCornerRadius, 0F)
             if (cr != 0f) {
                 cornerRadius = cr
             }
             it.recycle()
         }
     }
-
-    override fun setTextAppearance(resId: Int) {
-        super.setTextAppearance(resId)
-        // todo
-    }
+//
+//    override fun setTextAppearance(resId: Int) {
+//        super.setTextAppearance(resId)
+//        // todo
+//    }
 
     // corner radius
     // vertical - horizontal padding

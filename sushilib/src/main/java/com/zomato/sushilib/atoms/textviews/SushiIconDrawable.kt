@@ -1,6 +1,7 @@
 package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.*
 import android.graphics.drawable.Drawable
 import android.support.annotation.DimenRes
@@ -28,7 +29,6 @@ class SushiIconDrawable
 
     init {
         paint.typeface = ResourcesCompat.getFont(context, R.font.wasabi)
-        paint.style = Paint.Style.STROKE
         paint.textAlign = Paint.Align.CENTER
         paint.isUnderlineText = false
         paint.color = Color.WHITE
@@ -52,7 +52,7 @@ class SushiIconDrawable
      * @param size The size in pixels (px).
      * @return The current IconDrawable for chaining.
      */
-    private fun sizePx(size: Int): SushiIconDrawable {
+    override fun sizePx(size: Int): SushiIconDrawable {
         this.size = size
         setBounds(0, 0, size, size)
         invalidateSelf()
@@ -84,14 +84,14 @@ class SushiIconDrawable
      * @param alpha The alpha, between 0 (transparent) and 255 (opaque).
      * @return The current IconDrawable for chaining.
      */
-    override fun alpha(alpha: Int): SushiIconDrawable {
+    override fun alpha(alpha: Int): SushiIconEditor {
         setAlpha(alpha)
         invalidateSelf()
         return this
     }
 
 
-    fun editor(): SushiIconDrawable {
+    fun editor(): SushiIconEditor {
         return this
     }
 
@@ -109,7 +109,7 @@ class SushiIconDrawable
         paint.textSize = bounds.height().toFloat()
         val textBounds = Rect()
         val textValue = icon
-        paint.getTextBounds(textValue, 0, 1, textBounds)
+        paint.getTextBounds(textValue, 0, textValue.length, textBounds)
         val textBottom = (bounds.height() - textBounds.height()) / 2f + textBounds.height() - textBounds.bottom
         canvas.drawText(textValue, bounds.width() / 2f, textBottom, paint)
     }
