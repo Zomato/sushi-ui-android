@@ -15,11 +15,11 @@ class SushiRatingBar @JvmOverloads constructor(
 
     private val ratingColors = IntArray(5) {
         when (it) {
-            0 -> R.color.sushi_red_500
-            1 -> R.color.sushi_red_300
-            2 -> R.color.sushi_yellow_500
-            3 -> R.color.sushi_green_300
-            4 -> R.color.sushi_green_500
+            0 -> R.color.sushi_orange_500
+            1 -> R.color.sushi_yellow_500
+            2 -> R.color.sushi_green_500
+            3 -> R.color.sushi_green_600
+            4 -> R.color.sushi_green_700
             else -> R.color.sushi_red_500
         }
     }
