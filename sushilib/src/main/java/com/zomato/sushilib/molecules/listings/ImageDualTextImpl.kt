@@ -1,4 +1,4 @@
-package com.zomato.sushilib.molecule.listing
+package com.zomato.sushilib.molecules.listings
 
 import android.support.annotation.LayoutRes
 import android.util.AttributeSet

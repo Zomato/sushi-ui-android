@@ -1,4 +1,4 @@
-package com.zomato.sushilib.molecule.listing
+package com.zomato.sushilib.molecules.listings
 
 import android.content.Context
 import android.util.AttributeSet
@@ -8,7 +8,7 @@ import com.zomato.sushilib.R
 /**
  * General Listing / Type 1
  */
-class ZImageDualTextView : LinearLayout {
+class SushiImageDualTextView : LinearLayout {
     private var imageDualTextImpl: ImageDualTextImpl
 
     constructor(context: Context) : this(context, null)

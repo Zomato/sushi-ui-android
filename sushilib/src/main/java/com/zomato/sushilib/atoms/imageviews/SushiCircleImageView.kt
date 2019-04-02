@@ -3,14 +3,13 @@ package com.zomato.sushilib.atoms.imageviews
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.ImageView.ScaleType.CENTER_CROP
 import android.widget.ImageView.ScaleType.CENTER_INSIDE
 import com.zomato.sushilib.atoms.views.OutlineType
-import com.zomato.sushilib.atoms.views.ZViewOutlineProvider
+import com.zomato.sushilib.atoms.views.SushiViewOutlineProvider
 import com.zomato.sushilib.utils.graphics.BitmapUtils
 
 
@@ -18,7 +17,7 @@ import com.zomato.sushilib.utils.graphics.BitmapUtils
  * created by championswimmer on 28/03/19
  * Copyright © 2019 Zomato Media Pvt. Ltd.
  */
-class ZCircleImageView : ImageView {
+class SushiCircleImageView : ImageView {
 
     private val mPaintBackground = Paint()
     private val mPaintImage = Paint()
@@ -45,7 +44,7 @@ class ZCircleImageView : ImageView {
 
         scaleType = CENTER_CROP
         clipToOutline = true
-        outlineProvider = ZViewOutlineProvider(OutlineType.CIRCLE)
+        outlineProvider = SushiViewOutlineProvider(OutlineType.CIRCLE)
     }
 
     override fun setScaleType(scaleType: ScaleType?) {

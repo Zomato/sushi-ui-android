@@ -10,16 +10,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.zomato.sushilib.molecule.listing.ZDualTextView
+        <com.zomato.sushilib.molecules.listings.SushiDualTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <com.zomato.sushilib.molecule.listing.ZImageDualTextView
+        <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_extra"/>
 
-        <com.zomato.sushilib.molecule.listing.ZLabelDualTextView
+        <com.zomato.sushilib.molecules.listings.SushiLabelDualTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_extra"/>

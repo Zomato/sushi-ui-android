@@ -8,7 +8,7 @@ import android.view.ViewOutlineProvider
  * created by championswimmer on 26/03/19
  * Copyright © 2019 Zomato Media Pvt. Ltd.
  */
-class ZViewOutlineProvider(
+class SushiViewOutlineProvider(
     @OutlineType
     val outlineType: Int = OutlineType.ROUNDED_RECT,
     var cornerRadius: Float = 0f,

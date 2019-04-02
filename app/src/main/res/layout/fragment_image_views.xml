@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.zomato.sushilib.atoms.views.ZRoundRectView
+        <com.zomato.sushilib.atoms.views.SushiRoundRectView
             android:background="@drawable/ic_launcher_background"
             android:backgroundTint="@color/sushi_red_500"
             android:backgroundTintMode="add"
@@ -21,7 +21,7 @@
             android:layout_height="120dp"
             app:sushiCornerRadius="10dp"/>
 
-        <com.zomato.sushilib.atoms.views.ZRoundRectView
+        <com.zomato.sushilib.atoms.views.SushiRoundRectView
             android:background="@drawable/ic_launcher_background"
             android:backgroundTint="@color/sushi_purple_500"
             android:backgroundTintMode="add"
@@ -30,7 +30,7 @@
             android:layout_height="80dp"
             app:sushiCornerRadius="10dp"/>
 
-        <com.zomato.sushilib.atoms.views.ZCircleView
+        <com.zomato.sushilib.atoms.views.SushiCircleView
             android:id="@+id/cvGreen"
             android:background="@drawable/ic_launcher_background"
             android:backgroundTint="@color/sushi_green_500"
@@ -40,7 +40,7 @@
             android:layout_width="170dp"
             android:layout_height="120dp" />
 
-        <com.zomato.sushilib.atoms.views.ZCircleView
+        <com.zomato.sushilib.atoms.views.SushiCircleView
             android:id="@+id/cvBlue"
             android:background="@drawable/ic_launcher_background"
             android:backgroundTint="@color/sushi_blue_300"
@@ -51,7 +51,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp" />
 
-        <com.zomato.sushilib.atoms.imageviews.ZCircleImageView
+        <com.zomato.sushilib.atoms.imageviews.SushiCircleImageView
             android:id="@+id/civFoodPic"
             android:elevation="5dp"
             android:layout_margin="10dp"

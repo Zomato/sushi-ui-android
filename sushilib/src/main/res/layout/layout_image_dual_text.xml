@@ -9,7 +9,7 @@
     // requires parent to be horizontal linearlayout
 
 
-    <com.zomato.sushilib.atoms.views.ZRoundRectView
+    <com.zomato.sushilib.atoms.views.SushiRoundRectView
     android:layout_width="44dp"
     android:layout_height="44dp"
     android:id="@+id/image"
