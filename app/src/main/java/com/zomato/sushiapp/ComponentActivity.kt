@@ -15,6 +15,7 @@ class ComponentActivity : AppCompatActivity() {
     companion object {
         const val COLORS = 0
         const val TYPOGRAPHY = 1
+        const val IMAGES = 2
         const val ICONS = 3
         const val BUTTONS = 4
         const val FORM_FIELDS = 5
@@ -32,6 +33,7 @@ class ComponentActivity : AppCompatActivity() {
         private fun getFragment(component: Int): Fragment = when (component) {
             COLORS -> ColorPaletteFragment()
             TYPOGRAPHY -> TextStylesFragment()
+            IMAGES -> ImageViewsFragment()
             ICONS -> ColorPaletteFragment()
             BUTTONS -> ButtonsFragment()
             FORM_FIELDS -> TextFieldsFragment()
