@@ -6,12 +6,20 @@
         <item name="colorPrimary">@color/sushi_red_500</item>
         <item name="colorPrimaryDark">@color/sushi_red_800</item>
         <item name="colorAccent">@color/sushi_green_500</item>
+        <!--TODO: support for v21-->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/sushi_grey_100</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.FullScreen">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -34,12 +42,6 @@
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/bg_splash_screen</item>
-    </style>
-
-
-    <style name="SushiActionBar" parent="Theme.AppCompat.Light">
-        <item name="android:titleTextStyle">@style/TextAppearance.Sushi.SemiBold</item>
-        <item name="android:subtitleTextAppearance">@style/TextAppearance.Sushi</item>
     </style>
 
 </resources>

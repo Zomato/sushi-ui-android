@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import com.zomato.sushiapp.fragments.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 class ComponentActivity : AppCompatActivity() {
 
@@ -44,11 +46,26 @@ class ComponentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_component)
         val fragment = getFragment(intent?.getIntExtra("type", COLORS) ?: COLORS)
+        setupActionBar()
         supportFragmentManager.beginTransaction()
             .replace(R.id.container_main, fragment)
             .commit()
+    }
+
+    private fun setupActionBar() {
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.getItemId()
+        if (id == android.R.id.home) {
+            onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 
