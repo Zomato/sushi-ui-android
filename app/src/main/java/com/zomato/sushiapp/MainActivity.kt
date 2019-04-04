@@ -14,8 +14,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import android.view.WindowManager
 import android.os.Build
-
-
+import com.zomato.sushilib.utils.text.TextFormatUtils
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(){
@@ -24,11 +24,22 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val w = window
-        w.setFlags(
-            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        )
+        collapsible_toolbar.apply {
+            setExpandedTitleTypeface(
+                TextFormatUtils.sushiFontWeightToTypeface(
+                    context,
+                    600
+                )
+            )
+
+            setCollapsedTitleTypeface(
+                TextFormatUtils.sushiFontWeightToTypeface(
+                    context,
+                    600
+                )
+            )
+        }
+
         supportFragmentManager.beginTransaction()
             .replace(R.id.container_main, HomeFragment())
             .commit()
