@@ -10,35 +10,12 @@ import android.view.Menu
 import android.view.MenuItem
 import com.zomato.sushiapp.fragments.*
 
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
-import android.view.WindowManager
-import android.os.Build
-import com.zomato.sushilib.utils.text.TextFormatUtils
-import kotlinx.android.synthetic.main.activity_main.*
-
 
 class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        collapsible_toolbar.apply {
-            setExpandedTitleTypeface(
-                TextFormatUtils.sushiFontWeightToTypeface(
-                    context,
-                    600
-                )
-            )
-
-            setCollapsedTitleTypeface(
-                TextFormatUtils.sushiFontWeightToTypeface(
-                    context,
-                    600
-                )
-            )
-        }
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.container_main, HomeFragment())

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.zomato.sushiapp.ComponentActivity
 import com.zomato.sushiapp.R
+import com.zomato.sushilib.utils.text.TextFormatUtils
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class HomeFragment : Fragment() {
@@ -37,6 +38,22 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbar.title = resources.getString(R.string.app_name)
+
+        collapsible_toolbar.apply {
+            setExpandedTitleTypeface(
+                TextFormatUtils.sushiFontWeightToTypeface(
+                    context,
+                    600
+                )
+            )
+
+            setCollapsedTitleTypeface(
+                TextFormatUtils.sushiFontWeightToTypeface(
+                    context,
+                    600
+                )
+            )
+        }
         view.apply {
             findViewById<View>(R.id.nav_text_styles)?.setOnClickListener(clickListener)
             findViewById<View>(R.id.nav_text_fields)?.setOnClickListener(clickListener)
