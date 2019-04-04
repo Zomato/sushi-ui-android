@@ -113,6 +113,7 @@
             <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/nav_menu_tabs"
                 android:layout_marginTop="@dimen/sushi_spacing_extra"
                 app:subtitleText="Tab"
                 app:titleText="Bars" />
