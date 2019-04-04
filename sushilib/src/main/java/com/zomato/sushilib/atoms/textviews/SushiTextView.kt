@@ -20,7 +20,6 @@ open class SushiTextView @JvmOverloads constructor(
             defStyleRes
         )?.let {
             val sushiFontWeight = it.getInt(R.styleable.SushiTextView_sushiFontWeight, -1)
-
             if (sushiFontWeight != -1) {
                 setTextAppearance(TextFormatUtils.sushiFontWeightToTextAppearance(sushiFontWeight))
             }
