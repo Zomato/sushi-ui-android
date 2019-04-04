@@ -13,18 +13,14 @@
         android:layout_height="wrap_content">
 
         <com.zomato.sushilib.atoms.views.SushiRoundRectView
-            android:background="@drawable/ic_launcher_background"
-            android:backgroundTint="@color/sushi_red_500"
-            android:backgroundTintMode="add"
+            android:background="@drawable/bg_sample1"
             android:layout_margin="10dp"
             android:layout_width="120dp"
             android:layout_height="120dp"
             app:sushiCornerRadius="10dp"/>
 
         <com.zomato.sushilib.atoms.views.SushiRoundRectView
-            android:background="@drawable/ic_launcher_background"
-            android:backgroundTint="@color/sushi_purple_500"
-            android:backgroundTintMode="add"
+            android:background="@drawable/bg_sample2"
             android:layout_margin="10dp"
             android:layout_width="120dp"
             android:layout_height="80dp"
@@ -32,9 +28,9 @@
 
         <com.zomato.sushilib.atoms.views.SushiCircleView
             android:id="@+id/cvGreen"
-            android:background="@drawable/ic_launcher_background"
+            android:background="@drawable/bg_sample2"
             android:backgroundTint="@color/sushi_green_500"
-            android:backgroundTintMode="add"
+            android:backgroundTintMode="multiply"
             android:elevation="5dp"
             android:layout_margin="10dp"
             android:layout_width="170dp"
@@ -42,9 +38,9 @@
 
         <com.zomato.sushilib.atoms.views.SushiCircleView
             android:id="@+id/cvBlue"
-            android:background="@drawable/ic_launcher_background"
+            android:background="@drawable/bg_sample1"
             android:backgroundTint="@color/sushi_blue_300"
-            android:backgroundTintMode="add"
+            android:backgroundTintMode="multiply"
             android:padding="50dp"
             android:elevation="5dp"
             android:layout_margin="10dp"
