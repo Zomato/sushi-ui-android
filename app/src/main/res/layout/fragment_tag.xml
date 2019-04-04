@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,23 +11,23 @@
         android:padding="20dp">
 
         <com.zomato.sushilib.atoms.tagviews.SushiTagView
+            style="@style/SushiTheme.TagAppearance.RoundedTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/sushi_blue_500"
             android:text="Epic tag"
-            app:zTagType="rounded"
-            style="@style/SushiTheme.TagAppearance.RoundedTag"
-            android:textColor="@color/sushi_white" />
+            android:textColor="@color/sushi_white"
+            app:zTagType="rounded" />
 
         <com.zomato.sushilib.atoms.tagviews.SushiTagView
             style="@style/SushiTheme.TagAppearance.SmallRoundedTag"
-            app:zTagType="small_rounded"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_extra"
             android:background="@color/sushi_grey_900"
             android:text="AD"
-            android:textColor="@color/sushi_white" />
+            android:textColor="@color/sushi_white"
+            app:zTagType="small_rounded" />
 
         <com.zomato.sushilib.atoms.tagviews.SushiTagView
             style="@style/SushiTheme.TagAppearance.Capsule"
@@ -36,8 +36,8 @@
             android:layout_marginTop="@dimen/sushi_spacing_extra"
             android:background="@color/sushi_green_500"
             android:text="0.0"
-            app:zTagType="highlight"
-            android:textColor="@color/sushi_white" />
+            android:textColor="@color/sushi_white"
+            app:zTagType="highlight" />
 
         <com.zomato.sushilib.atoms.tagviews.SushiTagView
             style="@style/SushiTheme.TagAppearance.SmallCapsule"
@@ -46,8 +46,8 @@
             android:layout_marginTop="@dimen/sushi_spacing_extra"
             android:background="@color/sushi_green_500"
             android:text="0.0"
-            app:zTagType="small_highlight"
-            android:textColor="@color/sushi_white" />
+            android:textColor="@color/sushi_white"
+            app:zTagType="small_highlight" />
 
         <com.zomato.sushilib.atoms.tagviews.SushiTagView
             style="@style/SushiTheme.TagAppearance.HighlightRoundedTag"
@@ -56,8 +56,8 @@
             android:layout_marginTop="@dimen/sushi_spacing_extra"
             android:background="@color/sushi_green_500"
             android:text="0.0"
-            app:zTagType="capsule"
-            android:textColor="@color/sushi_white" />
+            android:textColor="@color/sushi_white"
+            app:zTagType="capsule" />
 
         <com.zomato.sushilib.atoms.tagviews.SushiTagView
             style="@style/SushiTheme.TagAppearance.SmallHighlightRoundedTag"
@@ -66,31 +66,35 @@
             android:layout_marginTop="@dimen/sushi_spacing_extra"
             android:background="@color/sushi_green_500"
             android:text="0.0"
-            app:zTagType="small_capsule"
-            android:textColor="@color/sushi_white" />
+            android:textColor="@color/sushi_white"
+            app:zTagType="small_capsule" />
 
 
         <com.zomato.sushilib.molecules.ratings.SushiBigRatingTag
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_extra"
-            app:baseColor="@color/sushi_green_500"
-            android:textColor="@color/sushi_white"
             android:text="5"
-            />
+            android:textColor="@color/sushi_white"
+            app:baseColor="@color/sushi_green_500" />
 
         <com.zomato.sushilib.molecules.ratings.SushiSmallRatingTag
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_extra"
-            app:baseColor="@color/sushi_green_500"
-            android:textColor="@color/sushi_white"
             android:text="5"
-            />
+            android:textColor="@color/sushi_white"
+            app:baseColor="@color/sushi_green_500" />
 
         <com.zomato.sushilib.molecules.ratings.SushiRatingBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/sushi_spacing_extra"/>
+            android:layout_marginTop="@dimen/sushi_spacing_extra" />
+
+        <com.zomato.sushilib.molecules.ratings.SushiSmallRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
+            app:rating="3" />
     </LinearLayout>
 </ScrollView>

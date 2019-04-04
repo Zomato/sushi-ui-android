@@ -18,8 +18,23 @@
         </attr>
     </declare-styleable>
 
+
+    <declare-styleable name="BaseRating">
+        <attr name="rating" format="integer" />
+    </declare-styleable>
+
     <declare-styleable name="SushiBigRatingTag">
         <attr name="baseColor" />
+        <attr name="rating" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SushiRatingBar">
+        <attr name="rating" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiSmallRatingBar">
+        <attr name="rating" />
     </declare-styleable>
 
     <declare-styleable name="SushiListing">
