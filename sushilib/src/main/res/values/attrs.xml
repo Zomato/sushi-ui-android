@@ -23,13 +23,25 @@
     </declare-styleable>
 
     <declare-styleable name="SushiListing">
-        <attr name="title" format="string"/>
-        <attr name="subtitle" format="string" />
+        <attr name="titleText" format="string" />
+        <attr name="subtitleText" format="string" />
+        <attr name="labelText" format="string" />
     </declare-styleable>
 
     <declare-styleable name="SushiImageDualTextView">
-       <attr name="title"/>
-        <attr name="subtitle"/>
+        <attr name="titleText" />
+        <attr name="subtitleText" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiDualTextView">
+        <attr name="titleText" />
+        <attr name="subtitleText" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiLabelDualTextView">
+        <attr name="titleText" />
+        <attr name="subtitleText" />
+        <attr name="labelText" />
     </declare-styleable>
 
 

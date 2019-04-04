@@ -36,4 +36,10 @@
         <item name="android:windowBackground">@drawable/bg_splash_screen</item>
     </style>
 
+
+    <style name="SushiActionBar" parent="Theme.AppCompat.Light">
+        <item name="android:titleTextStyle">@style/TextAppearance.Sushi.SemiBold</item>
+        <item name="android:subtitleTextAppearance">@style/TextAppearance.Sushi</item>
+    </style>
+
 </resources>

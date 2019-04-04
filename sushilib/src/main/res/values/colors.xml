@@ -102,7 +102,7 @@
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#B5B5B5</color>
 
 
-    <color name="disabled_text_color">@color/sushi_grey_300</color>
+    <color name="sushi_disabled_text_color">@color/sushi_grey_300</color>
 
 
 </resources>

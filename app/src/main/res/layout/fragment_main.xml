@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/expandedImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sushi_cover_image"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/SushiActionBar" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
+                android:id="@+id/nav_color_palette"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                app:subtitleText="Rich set of colors"
+                app:titleText="Color"
+               />
+
+            <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
+                android:id="@+id/nav_text_styles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                app:subtitleText="Rich set of text"
+                app:titleText="Typography" />
+
+            <!--<com.zomato.sushilib.molecules.listings.SushiImageDualTextView-->
+                <!--android:id="@+id/nav_icons"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/sushi_spacing_extra"-->
+                <!--app:subtitleText="Rich set of icons"-->
+                <!--app:titleText="Icons" />-->
+
+            <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
+                android:id="@+id/nav_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                app:subtitleText="Rich set of tags"
+                app:titleText="Tags"
+                />
+
+            <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
+                android:id="@+id/nav_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                app:subtitleText="Rich set of buttons"
+                app:titleText="Buttons" />
+
+            <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
+                android:id="@+id/nav_text_fields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                app:subtitleText="Rich set of colors"
+                app:titleText="Form components" />
+
+            <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
+                android:id="@+id/nav_listing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                app:subtitleText="Rich set of colors"
+                app:titleText="Snippets" />
+
+            <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                app:subtitleText="Tab"
+                app:titleText="Bars" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
+
+

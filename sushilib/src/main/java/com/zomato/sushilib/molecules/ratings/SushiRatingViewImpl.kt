@@ -34,7 +34,7 @@ class SushiRatingViewImpl(
     @ColorInt
     private var unselectedBackgroundColor = resources?.getColor(R.color.sushi_white) ?: 0 // unselected color
     @ColorInt
-    private var unselectedTextColor = resources?.getColor(R.color.disabled_text_color) ?: 0 // unselected text color
+    private var unselectedTextColor = resources?.getColor(R.color.sushi_disabled_text_color) ?: 0 // unselected text color
 
     private var icon: SushiIconDrawable? = null
     private var showText: Boolean = true

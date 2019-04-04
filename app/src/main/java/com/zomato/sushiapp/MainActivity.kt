@@ -12,38 +12,26 @@ import com.zomato.sushiapp.fragments.*
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import android.view.WindowManager
+import android.os.Build
 
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+
+class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, resources.getString(R.string.device_density), Snackbar.LENGTH_LONG).show()
-        }
-
-        val toggle = ActionBarDrawerToggle(
-            this,
-            drawer_layout,
-            toolbar,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
+        val w = window
+        w.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        nav_view.setNavigationItemSelectedListener(this)
-    }
-
-    override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container_main, HomeFragment())
+            .commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -62,26 +50,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        val fragment = when (item.itemId) {
-            R.id.nav_text_styles -> TextStylesFragment()
-            R.id.nav_color_palette -> ColorPaletteFragment()
-            R.id.nav_image_views -> ImageViewsFragment()
-            R.id.nav_buttons -> ButtonsFragment()
-            R.id.nav_tags -> TagsFragment()
-            R.id.nav_listing -> ListingFragment()
-            R.id.nav_text_fields -> TextFieldsFragment()
-            R.id.nav_navigation_comp -> NavigationComponentsFragment()
-            else -> TextStylesFragment()
-        }
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container_main, fragment)
-            .commit()
-
-
-        drawer_layout.closeDrawer(GravityCompat.START)
-        return true
-    }
 }
