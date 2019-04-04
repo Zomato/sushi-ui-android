@@ -58,6 +58,4 @@
         <attr name="subtitleText" />
         <attr name="labelText" />
     </declare-styleable>
-
-
 </resources>
