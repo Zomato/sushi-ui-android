@@ -2,6 +2,7 @@
 <resources>
 
     <style name="Widget.Sushi.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="android:fontFamily">@font/okra_medium</item>
         <item name="tabIndicatorColor">@color/sushi_red_500</item>
         <item name="tabIndicatorFullWidth">false</item>
         <item name="tabMode">scrollable</item>

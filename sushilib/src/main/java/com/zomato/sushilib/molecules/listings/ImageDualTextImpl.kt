@@ -14,4 +14,5 @@ class ImageDualTextImpl(
     defStyleRes: Int
 ) : DualTextImpl(parent, layoutId, attributeSet, defStyleAttr, defStyleRes) {
     val image: ImageView? = parent.findViewById(R.id.image) as? ImageView
+
 }

@@ -4,6 +4,8 @@
     <attr name="sushiCornerRadius" format="dimension" />
     <attr name="random" format="reference" />
     <attr name="baseColor" format="color" />
+
+
     <declare-styleable name="SushiTagView">
         <attr name="sushiCornerRadius" />
         <attr name="zTagType" format="enum">
@@ -19,4 +21,28 @@
     <declare-styleable name="SushiBigRatingTag">
         <attr name="baseColor" />
     </declare-styleable>
+
+    <declare-styleable name="SushiListing">
+        <attr name="titleText" format="string" />
+        <attr name="subtitleText" format="string" />
+        <attr name="labelText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiImageDualTextView">
+        <attr name="titleText" />
+        <attr name="subtitleText" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiDualTextView">
+        <attr name="titleText" />
+        <attr name="subtitleText" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiLabelDualTextView">
+        <attr name="titleText" />
+        <attr name="subtitleText" />
+        <attr name="labelText" />
+    </declare-styleable>
+
+
 </resources>

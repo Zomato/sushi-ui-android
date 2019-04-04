@@ -12,7 +12,7 @@
 
         <com.zomato.sushilib.atoms.tagviews.SushiTagView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:background="@color/sushi_blue_500"
             android:text="Epic tag"
             app:zTagType="rounded"

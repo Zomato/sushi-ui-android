@@ -9,43 +9,72 @@
     tools:context=".fragments.TextFieldsFragment">
 
     <com.zomato.sushilib.molecules.inputfields.SushiTextInputField
-        style="@style/Theme.Sushi.TextInputField"
         android:id="@+id/textField1"
+        style="@style/Theme.Sushi.TextInputField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Say something nice!"
-        app:drawableStart="@drawable/ic_tags"
-        app:drawableEnd="@drawable/ic_circle_cross"/>
+        app:drawableEnd="@drawable/ic_circle_cross"
+        app:drawableStart="@drawable/ic_tags" />
 
     <com.zomato.sushilib.molecules.inputfields.SushiTextInputField
         style="@style/Theme.Sushi.TextInputField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Say something nice!"
-        app:errorEnabled="false"
+        app:drawableEnd="@drawable/ic_circle_cross"
         app:drawableStart="@drawable/ic_tags"
-        app:drawableEnd="@drawable/ic_circle_cross"/>
+        app:errorEnabled="false" />
+
     <com.zomato.sushilib.molecules.inputfields.SushiTextInputField
         style="@style/Theme.Sushi.TextInputField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Say something nice!"
-        app:errorEnabled="false"
-        app:drawableStart="@drawable/ic_tags"/>
+        app:drawableStart="@drawable/ic_tags"
+        app:errorEnabled="false" />
+
     <com.zomato.sushilib.molecules.inputfields.SushiTextInputField
         style="@style/Theme.Sushi.TextInputField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Say something nice!"
-        app:errorEnabled="false"
-        app:drawableEnd="@drawable/ic_text_fields"/>
+        app:drawableEnd="@drawable/ic_text_fields"
+        app:errorEnabled="false" />
+
     <com.zomato.sushilib.molecules.inputfields.SushiTextInputField
         style="@style/Theme.Sushi.TextInputField.Outlined"
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:hint="Search"
-        app:errorEnabled="false"
-        app:drawableStart="@drawable/ic_search"/>
+        app:drawableStart="@drawable/ic_search"
+        app:errorEnabled="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" />
 
 </LinearLayout>
