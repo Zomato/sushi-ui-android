@@ -3,7 +3,7 @@
 
     <style name="Widget.Sushi.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:textAllCaps">false</item>
-        <item name="android:fontFamily">@font/okra_medium</item>
+        <item name="fontFamily">@font/okra_medium</item>
         <item name="iconGravity">textStart</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
@@ -32,7 +32,7 @@
 
     <style name="Widget.Sushi.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textAllCaps">false</item>
-        <item name="android:fontFamily">@font/okra_medium</item>
+        <item name="fontFamily">@font/okra_medium</item>
         <item name="iconGravity">textStart</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>

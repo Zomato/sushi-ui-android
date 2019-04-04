@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,168 +7,44 @@
     android:orientation="vertical"
     tools:context=".fragments.TextStylesFragment">
 
-    <LinearLayout
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_font_weight"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text 900"
-            android:textSize="@dimen/sushi_textsize_900" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text 800"
-            android:textSize="@dimen/sushi_textsize_800"
-            />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text 700"
-            android:textSize="@dimen/sushi_textsize_700" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text 600"
-            android:textSize="@dimen/sushi_textsize_600" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text 500"
-            android:textSize="@dimen/sushi_textsize_500" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text 400"
-            android:textSize="@dimen/sushi_textsize_400" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text 300"
-            android:textSize="@dimen/sushi_textsize_300" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text 200"
-            android:textSize="@dimen/sushi_textsize_200" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text 100"
-            android:textSize="@dimen/sushi_textsize_100" />
-
-        <!-- SemiBold -->
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text SemiBold 900"
-            app:sushiFontWeight="semibold"
-            android:textSize="@dimen/sushi_textsize_900" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text SemiBold 800"
-            app:sushiFontWeight="semibold"
-            android:textSize="@dimen/sushi_textsize_800" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text SemiBold 700"
-            app:sushiFontWeight="semibold"
-            android:textSize="@dimen/sushi_textsize_700" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text SemiBold 600"
-            app:sushiFontWeight="semibold"
-            android:textSize="@dimen/sushi_textsize_600" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text SemiBold 500"
-            app:sushiFontWeight="semibold"
-            android:textSize="@dimen/sushi_textsize_500" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text SemiBold 400"
-            app:sushiFontWeight="semibold"
-            android:textSize="@dimen/sushi_textsize_400" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text SemiBold 300"
-            app:sushiFontWeight="semibold"
-            android:textSize="@dimen/sushi_textsize_300" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text SemiBold 200"
-            app:sushiFontWeight="semibold"
-            android:textSize="@dimen/sushi_textsize_200" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text SemiBold 100"
-            app:sushiFontWeight="semibold"
-            android:textSize="@dimen/sushi_textsize_100" />
-
-        <!-- ExtraLight -->
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text ExtraLight 900"
-            app:sushiFontWeight="extralight"
-            android:textSize="@dimen/sushi_textsize_900" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text ExtraLight 800"
-            app:sushiFontWeight="extralight"
-            android:textSize="@dimen/sushi_textsize_800" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text ExtraLight 700"
-            app:sushiFontWeight="extralight"
-            android:textSize="@dimen/sushi_textsize_700" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text ExtraLight 600"
-            app:sushiFontWeight="extralight"
-            android:textSize="@dimen/sushi_textsize_600" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text ExtraLight 500"
-            app:sushiFontWeight="extralight"
-            android:textSize="@dimen/sushi_textsize_500" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text ExtraLight 400"
-            app:sushiFontWeight="extralight"
-            android:textSize="@dimen/sushi_textsize_400" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text ExtraLight 300"
-            app:sushiFontWeight="extralight"
-            android:textSize="@dimen/sushi_textsize_300" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text ExtraLight 200"
-            app:sushiFontWeight="extralight"
-            android:textSize="@dimen/sushi_textsize_200" />
-
-        <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/AppTheme.TextPreviewStrip"
-            android:text="Text ExtraLight 100"
-            app:sushiFontWeight="extralight"
-            android:textSize="@dimen/sushi_textsize_100" />
-
-    </LinearLayout>
+        android:layout_height="match_parent">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs_font_weight"
+            style="@style/Widget.Sushi.TabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_extralight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ExtraLight" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Light" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Regular" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_semibold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SemiBold" />
+        </android.support.design.widget.TabLayout>
+    </android.support.v4.view.ViewPager>
 
 
-</ScrollView>
+</FrameLayout>
