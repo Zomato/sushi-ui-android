@@ -2,13 +2,14 @@ package com.zomato.sushilib.atoms.tagviews
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.ViewOutlineProvider
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 import com.zomato.sushilib.atoms.views.RoundedView
-import com.zomato.sushilib.atoms.views.SushiViewOutlineProvider
+import com.zomato.sushilib.utils.view.OutlineType
+import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 
 open class SushiTagView : SushiTextView, RoundedView {
-    override val imageOutlineProvider: SushiViewOutlineProvider = SushiViewOutlineProvider()
 
     constructor(context: Context?) : super(context, null) {
         init(context)
@@ -19,11 +20,16 @@ open class SushiTagView : SushiTextView, RoundedView {
     }
 
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        init(context, attrs,defStyleAttr)
+        init(context, attrs, defStyleAttr)
     }
 
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
-        init(context, attrs,defStyleAttr,defStyleRes)
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(
+        context,
+        attrs,
+        defStyleAttr,
+        defStyleRes
+    ) {
+        init(context, attrs, defStyleAttr, defStyleRes)
     }
 
     private fun init(

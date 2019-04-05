@@ -23,9 +23,7 @@ class ImageViewsFragment : Fragment() {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_image_views, container, false)
 
-        rootView.cvGreen.layoutParams.height = 300
-        rootView.cvBlue.layoutParams.width = 500
-        rootView.civFoodPic.layoutParams.height = 200
+        rootView.civFoodPic4.layoutParams.height = 400
 
         return rootView
     }

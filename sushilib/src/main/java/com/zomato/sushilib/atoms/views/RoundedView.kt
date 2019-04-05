@@ -1,24 +1,25 @@
 package com.zomato.sushilib.atoms.views
 
 import android.view.ViewOutlineProvider
+import com.zomato.sushilib.utils.view.OutlineType
+import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 
-// todo rename
+/**
+ * created by championswimmer on 05/04/19
+ * Copyright © 2019 Zomato Media Pvt. Ltd.
+ */
 interface RoundedView {
-    val imageOutlineProvider: SushiViewOutlineProvider
-    var cornerRadius: Float
-        set(value) {
-            notifyOutlineProvider(value)
-            setClipToOutline(true)
-        }
-        get() = imageOutlineProvider.cornerRadius
-
-    private fun notifyOutlineProvider(cornerRad: Float = cornerRadius) {
-        imageOutlineProvider.apply {
-            this.cornerRadius = cornerRad
-        }
-        setOutlineProvider(imageOutlineProvider)
-    }
-
+    fun getOutlineProvider(): ViewOutlineProvider
     fun setOutlineProvider(outlineProvider: ViewOutlineProvider)
     fun setClipToOutline(clipToOutline: Boolean)
+    fun getClipToOutline(): Boolean
+
+    var cornerRadius: Float
+        get() = (getOutlineProvider() as? SushiViewOutlineProvider)?.cornerRadius ?: 0f
+        set(cr) {
+            (getOutlineProvider() as? SushiViewOutlineProvider)?.apply {
+                cornerRadius = cr
+            } ?: setOutlineProvider(SushiViewOutlineProvider(OutlineType.ROUNDED_RECT, cr))
+            setClipToOutline(true)
+        }
 }
