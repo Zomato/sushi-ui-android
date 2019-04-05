@@ -1,96 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/sushi_white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_marginStart="@dimen/sushi_spacing_page_side"
+        android:layout_marginEnd="@dimen/sushi_spacing_page_side"
+        android:orientation="vertical">
 
-        <com.zomato.sushilib.atoms.tagviews.SushiTagView
-            android:layout_width="wrap_content"
+        <include layout="@layout/layout_heading_large_tag" />
+
+        <include layout="@layout/layout_seperator" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/sushi_blue_500"
-            android:text="Epic tag"
-            app:zTagType="rounded"
-            style="@style/SushiTheme.TagAppearance.RoundedTag"
-            android:textColor="@color/sushi_white" />
-
-        <com.zomato.sushilib.atoms.tagviews.SushiTagView
-            style="@style/SushiTheme.TagAppearance.SmallRoundedTag"
-            app:zTagType="small_rounded"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/sushi_spacing_extra"
-            android:background="@color/sushi_grey_900"
-            android:text="AD"
-            android:textColor="@color/sushi_white" />
-
-        <com.zomato.sushilib.atoms.tagviews.SushiTagView
-            style="@style/SushiTheme.TagAppearance.Capsule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/sushi_spacing_extra"
-            android:background="@color/sushi_green_500"
-            android:text="0.0"
-            app:zTagType="highlight"
-            android:textColor="@color/sushi_white" />
-
-        <com.zomato.sushilib.atoms.tagviews.SushiTagView
-            style="@style/SushiTheme.TagAppearance.SmallCapsule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/sushi_spacing_extra"
-            android:background="@color/sushi_green_500"
-            android:text="0.0"
-            app:zTagType="small_highlight"
-            android:textColor="@color/sushi_white" />
-
-        <com.zomato.sushilib.atoms.tagviews.SushiTagView
-            style="@style/SushiTheme.TagAppearance.HighlightRoundedTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/sushi_spacing_extra"
-            android:background="@color/sushi_green_500"
-            android:text="0.0"
-            app:zTagType="capsule"
-            android:textColor="@color/sushi_white" />
-
-        <com.zomato.sushilib.atoms.tagviews.SushiTagView
-            style="@style/SushiTheme.TagAppearance.SmallHighlightRoundedTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/sushi_spacing_extra"
-            android:background="@color/sushi_green_500"
-            android:text="0.0"
-            app:zTagType="small_capsule"
-            android:textColor="@color/sushi_white" />
-
-
-        <com.zomato.sushilib.molecules.ratings.SushiBigRatingTag
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/sushi_spacing_extra"
-            app:baseColor="@color/sushi_green_500"
-            android:textColor="@color/sushi_white"
-            android:text="5"
-            />
-
-        <com.zomato.sushilib.molecules.ratings.SushiSmallRatingTag
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/sushi_spacing_extra"
-            app:baseColor="@color/sushi_green_500"
-            android:textColor="@color/sushi_white"
-            android:text="5"
-            />
+            android:layout_marginTop="@dimen/sushi_spacing_loose"
+            android:text="Tap to rate"
+            android:textColor="@color/sushi_black"
+            android:textSize="@dimen/sushi_textsize_600"
+            app:sushiFontWeight="medium" />
 
         <com.zomato.sushilib.molecules.ratings.SushiRatingBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/sushi_spacing_extra"/>
+            android:layout_marginTop="@dimen/sushi_spacing_macro"
+            android:layout_marginBottom="@dimen/sushi_spacing_loose" />
+
+        <include layout="@layout/layout_seperator" />
+
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_loose"
+            android:text="Static rating streak"
+            android:textColor="@color/sushi_black"
+            android:textSize="@dimen/sushi_textsize_600"
+            app:sushiFontWeight="medium" />
+
+        <com.zomato.sushilib.molecules.ratings.SushiSmallRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_macro"
+            android:layout_marginBottom="@dimen/sushi_spacing_loose"
+            app:rating="3" />
+
+        <include layout="@layout/layout_seperator" />
+
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_loose"
+            android:text="We have rich set of epic tags"
+            android:textColor="@color/sushi_black"
+            android:textSize="@dimen/sushi_textsize_600"
+            app:sushiFontWeight="medium" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_nano"
+            android:text="You guys call this chips as well :)"
+            android:textColor="@color/sushi_grey_700"
+            android:textSize="@dimen/sushi_textsize_300"
+            app:sushiFontWeight="medium" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_base"
+            android:orientation="horizontal">
+
+            <com.zomato.sushilib.atoms.tagviews.SushiTagView
+                style="@style/SushiTheme.TagAppearance.Capsule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/sushi_green_500"
+                android:text="0.0"
+                android:textColor="@color/sushi_white"
+                app:zTagType="highlight" />
+
+
+            <com.zomato.sushilib.atoms.tagviews.SushiTagView
+                style="@style/SushiTheme.TagAppearance.HighlightRoundedTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sushi_spacing_base"
+                android:background="@color/sushi_yellow_500"
+                android:text="2.1"
+                android:textColor="@color/sushi_white"
+                app:zTagType="rounded" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_base"
+            android:orientation="horizontal">
+
+            <com.zomato.sushilib.atoms.tagviews.SushiTagView
+                style="@style/SushiTheme.TagAppearance.RoundedTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/sushi_red_500"
+                android:text="Epic tag"
+                android:textColor="@color/sushi_white"
+                app:zTagType="rounded" />
+
+            <com.zomato.sushilib.atoms.tagviews.SushiTagView
+                style="@style/SushiTheme.TagAppearance.RoundedTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sushi_spacing_base"
+                android:background="@color/sushi_red_100"
+                android:text="Epic tag"
+                android:textColor="@color/sushi_red_500"
+                app:zTagType="rounded" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_base"
+            android:orientation="horizontal">
+
+            <com.zomato.sushilib.atoms.tagviews.SushiTagView
+                style="@style/SushiTheme.TagAppearance.SmallRoundedTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/sushi_grey_900"
+                android:text="AD"
+                android:textColor="@color/sushi_white" />
+
+            <com.zomato.sushilib.atoms.tagviews.SushiTagView
+                style="@style/SushiTheme.TagAppearance.SmallHighlightRoundedTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sushi_spacing_base"
+                android:background="@color/sushi_green_500"
+                android:text="0.0"
+                android:textColor="@color/sushi_white" />
+
+        </LinearLayout>
+
+
+        <!--<com.zomato.sushilib.atoms.tagviews.SushiTagView-->
+        <!--style="@style/SushiTheme.TagAppearance.SmallRoundedTag"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/sushi_spacing_extra"-->
+        <!--android:background="@color/sushi_grey_900"-->
+        <!--android:text="AD"-->
+        <!--android:textColor="@color/sushi_white"-->
+        <!--app:zTagType="small_rounded" />-->
+
+        <!--<com.zomato.sushilib.atoms.tagviews.SushiTagView-->
+        <!--style="@style/SushiTheme.TagAppearance.Capsule"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/sushi_spacing_extra"-->
+        <!--android:background="@color/sushi_green_500"-->
+        <!--android:text="0.0"-->
+        <!--android:textColor="@color/sushi_white"-->
+        <!--app:zTagType="highlight" />-->
+
+        <!--<com.zomato.sushilib.atoms.tagviews.SushiTagView-->
+        <!--style="@style/SushiTheme.TagAppearance.SmallCapsule"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/sushi_spacing_extra"-->
+        <!--android:background="@color/sushi_green_500"-->
+        <!--android:text="0.0"-->
+        <!--android:textColor="@color/sushi_white"-->
+        <!--app:zTagType="small_highlight" />-->
+
+        <!--<com.zomato.sushilib.atoms.tagviews.SushiTagView-->
+        <!--style="@style/SushiTheme.TagAppearance.HighlightRoundedTag"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/sushi_spacing_extra"-->
+        <!--android:background="@color/sushi_green_500"-->
+        <!--android:text="0.0"-->
+        <!--android:textColor="@color/sushi_white"-->
+        <!--app:zTagType="capsule" />-->
+
+        <!--<com.zomato.sushilib.atoms.tagviews.SushiTagView-->
+        <!--style="@style/SushiTheme.TagAppearance.SmallHighlightRoundedTag"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/sushi_spacing_extra"-->
+        <!--android:background="@color/sushi_green_500"-->
+        <!--android:text="0.0"-->
+        <!--android:textColor="@color/sushi_white"-->
+        <!--app:zTagType="small_capsule" />-->
+
+
+        <!--<com.zomato.sushilib.molecules.ratings.SushiBigRatingTag-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/sushi_spacing_extra"-->
+        <!--android:text="5"-->
+        <!--android:textColor="@color/sushi_white"-->
+        <!--app:baseColor="@color/sushi_green_500" />-->
+
+        <!--<com.zomato.sushilib.molecules.ratings.SushiSmallRatingTag-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/sushi_spacing_extra"-->
+        <!--android:text="5"-->
+        <!--android:textColor="@color/sushi_white"-->
+        <!--app:baseColor="@color/sushi_green_500" />-->
+
+        <!--<com.zomato.sushilib.molecules.ratings.SushiRatingBar-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/sushi_spacing_extra" />-->
+
+        <!--<com.zomato.sushilib.molecules.ratings.SushiSmallRatingBar-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/sushi_spacing_extra"-->
+        <!--app:rating="3" />-->
     </LinearLayout>
 </ScrollView>

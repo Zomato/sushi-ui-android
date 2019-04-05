@@ -21,6 +21,7 @@ class ComponentActivity : AppCompatActivity() {
         const val FORM_FIELDS = 5
         const val SNIPPETS = 6
         const val TAGS = 7
+        const val MENU_TABS = 8
 
         fun start(context: Context, component: Int) {
             Intent(context, ComponentActivity::class.java).apply {
@@ -39,7 +40,20 @@ class ComponentActivity : AppCompatActivity() {
             FORM_FIELDS -> TextFieldsFragment()
             SNIPPETS -> ListingFragment()
             TAGS -> TagsFragment()
+            MENU_TABS -> NavigationComponentsFragment()
             else -> ColorPaletteFragment()
+        }
+
+        private fun getPageTitle(component: Int): String = when (component) {
+            COLORS -> "Color palette"
+            TYPOGRAPHY -> "Typography"
+            ICONS -> "Icon palette"
+            BUTTONS -> "Buttons"
+            FORM_FIELDS -> "Text fields"
+            SNIPPETS -> "Listing snippets"
+            TAGS -> "Tags and rating"
+            MENU_TABS -> "Navigation components"
+            else -> "Color palette"
         }
 
 
@@ -49,16 +63,18 @@ class ComponentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_component)
-        val fragment = getFragment(intent?.getIntExtra("type", COLORS) ?: COLORS)
-        setupActionBar()
+        val type = intent?.getIntExtra("type", COLORS) ?: COLORS
+        val fragment = getFragment(type)
+        setupActionBar(type)
         supportFragmentManager.beginTransaction()
             .replace(R.id.container_main, fragment)
             .commit()
     }
 
-    private fun setupActionBar() {
+    private fun setupActionBar(type: Int) {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = getPageTitle(type)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
