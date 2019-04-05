@@ -22,6 +22,7 @@ class HomeFragment : Fragment() {
             R.id.nav_buttons -> ComponentActivity.BUTTONS
             R.id.nav_tags -> ComponentActivity.TAGS
             R.id.nav_listing -> ComponentActivity.SNIPPETS
+            R.id.nav_menu_tabs -> ComponentActivity.MENU_TABS
             else -> null
         }
         component ?: return@OnClickListener
@@ -62,6 +63,7 @@ class HomeFragment : Fragment() {
             findViewById<View>(R.id.nav_buttons)?.setOnClickListener(clickListener)
             findViewById<View>(R.id.nav_tags)?.setOnClickListener(clickListener)
             findViewById<View>(R.id.nav_listing)?.setOnClickListener(clickListener)
+            findViewById<View>(R.id.nav_menu_tabs)?.setOnClickListener(clickListener)
         }
     }
 }
