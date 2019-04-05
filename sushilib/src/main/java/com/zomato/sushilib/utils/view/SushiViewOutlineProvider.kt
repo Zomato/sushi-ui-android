@@ -1,8 +1,6 @@
 package com.zomato.sushilib.utils.view
 
 import android.graphics.Outline
-import android.graphics.drawable.shapes.OvalShape
-import android.graphics.drawable.shapes.Shape
 import android.view.View
 import android.view.ViewOutlineProvider
 
@@ -24,10 +22,26 @@ class SushiViewOutlineProvider(
     override fun getOutline(view: View?, outline: Outline?) {
 
         view?.also { v ->
-            left = if (paddingOutside) { v.paddingLeft } else { 0 }
-            top = if (paddingOutside) { v.paddingTop } else { 0 }
-            right = v.width - (if (paddingOutside) { v.paddingRight } else { 0 })
-            bottom = v.height - (if (paddingOutside) { v.paddingBottom } else { 0 })
+            left = if (paddingOutside) {
+                v.paddingLeft
+            } else {
+                0
+            }
+            top = if (paddingOutside) {
+                v.paddingTop
+            } else {
+                0
+            }
+            right = v.width - (if (paddingOutside) {
+                v.paddingRight
+            } else {
+                0
+            })
+            bottom = v.height - (if (paddingOutside) {
+                v.paddingBottom
+            } else {
+                0
+            })
 
             if (outlineType == OutlineType.CIRCLE) {
                 val radius = Math.min((right - left), (bottom - top)) / 2

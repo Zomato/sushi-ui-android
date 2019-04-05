@@ -1,6 +1,9 @@
 package com.zomato.sushilib.atoms.imageviews
 
 import android.content.Context
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.util.AttributeSet
 import android.util.Log
 import android.widget.ImageView
@@ -17,6 +20,12 @@ class SushiRoundedImageView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0, defStyleRes: Int = 0
 ) : ImageView(context, attrs, defStyleAttr, defStyleRes), RoundedView {
+
+    private val mPreviewPaint = Paint().apply {
+        this.style = Paint.Style.FILL
+        this.isAntiAlias = true
+        this.color = Color.DKGRAY
+    }
 
     init {
         context.theme.obtainStyledAttributes(
@@ -47,6 +56,22 @@ class SushiRoundedImageView @JvmOverloads constructor(
         }
         scaleType = ScaleType.CENTER_CROP
 
+    }
+
+    override fun onDraw(canvas: Canvas?) {
+        if (!isInEditMode) {
+            // At run time just rely on the outline provider
+            return super.onDraw(canvas)
+        } else {
+            // For previewing purpose draw a grey shape
+            (outlineProvider as SushiViewOutlineProvider).let {
+                canvas?.drawRoundRect(
+                    it.left.toFloat(), it.top.toFloat(), it.right.toFloat(), it.bottom.toFloat(),
+                    cornerRadius, cornerRadius,
+                    mPreviewPaint
+                )
+            }
+        }
     }
 
     override fun setScaleType(scaleType: ScaleType?) {

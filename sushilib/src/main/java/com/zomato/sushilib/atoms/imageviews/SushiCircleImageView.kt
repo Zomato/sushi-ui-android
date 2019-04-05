@@ -1,10 +1,13 @@
 package com.zomato.sushilib.atoms.imageviews
 
 import android.content.Context
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.util.AttributeSet
 import android.util.Log
 import android.widget.ImageView
-import android.widget.ImageView.ScaleType.*
+import android.widget.ImageView.ScaleType.CENTER_CROP
 import com.zomato.sushilib.utils.view.OutlineType
 import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 
@@ -17,7 +20,11 @@ class SushiCircleImageView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0, defStyleRes: Int = 0
 ) : ImageView(context, attrs, defStyleAttr, defStyleRes) {
-
+    private val mPreviewPaint = Paint().apply {
+        this.style = Paint.Style.FILL
+        this.isAntiAlias = true
+        this.color = Color.DKGRAY
+    }
     init {
         scaleType = CENTER_CROP
         outlineProvider = SushiViewOutlineProvider(
@@ -38,5 +45,20 @@ class SushiCircleImageView @JvmOverloads constructor(
     companion object {
         @JvmField
         val TAG = "SushiCircleImageView"
+    }
+
+    override fun onDraw(canvas: Canvas?) {
+        if (!isInEditMode) {
+            // At run time just rely on the outline provider
+            return super.onDraw(canvas)
+        } else {
+            // For previewing purpose draw a grey shape
+            (outlineProvider as SushiViewOutlineProvider).let {
+                canvas?.drawOval(
+                    it.left.toFloat(), it.top.toFloat(), it.right.toFloat(), it.bottom.toFloat(),
+                    mPreviewPaint
+                )
+            }
+        }
     }
 }
