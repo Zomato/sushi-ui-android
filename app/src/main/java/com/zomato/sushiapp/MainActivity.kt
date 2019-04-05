@@ -2,9 +2,7 @@ package com.zomato.sushiapp
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import com.zomato.sushiapp.fragments.*
+import com.zomato.sushilib.templates.navigation.SushiBottomNavigationBar
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,26 +10,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container_main, HomeFragment())
-            .commit()
-    }
+        val bottomNavigationBar = findViewById<SushiBottomNavigationBar>(R.id.bottom_nav_bar)
+        val mainFragmentProvider = MainFragmentProvider(applicationContext, supportFragmentManager)
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
+        bottomNavigationBar.addOnTabSelectedListener(object :
+            SushiBottomNavigationBar.OnTabSelectedListener {
+            override fun onTabSelected(position: Int) {
+                supportFragmentManager.beginTransaction()
+                    .replace(
+                        R.id.container_main,
+                        mainFragmentProvider.getItem(position)
+                    )
+                    .commit()
+            }
+        })
+        bottomNavigationBar.setup(mainFragmentProvider)
     }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        when (item.itemId) {
-            R.id.action_settings -> return true
-            else -> return super.onOptionsItemSelected(item)
-        }
-    }
-
 
 }
