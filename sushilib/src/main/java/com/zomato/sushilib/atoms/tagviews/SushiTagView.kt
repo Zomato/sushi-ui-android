@@ -2,40 +2,16 @@ package com.zomato.sushilib.atoms.tagviews
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.ViewOutlineProvider
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 import com.zomato.sushilib.atoms.views.RoundedView
-import com.zomato.sushilib.utils.view.OutlineType
-import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 
-open class SushiTagView : SushiTextView, RoundedView {
+open class SushiTagView @JvmOverloads constructor(
+    context: Context?, attrs: AttributeSet?,
+    defStyleAttr: Int = 0, defStyleRes: Int = 0
+) : SushiTextView(context, attrs, defStyleAttr, defStyleRes), RoundedView {
 
-    constructor(context: Context?) : super(context, null) {
-        init(context)
-    }
-
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
-        init(context, attrs)
-    }
-
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        init(context, attrs, defStyleAttr)
-    }
-
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(
-        context,
-        attrs,
-        defStyleAttr,
-        defStyleRes
-    ) {
-        init(context, attrs, defStyleAttr, defStyleRes)
-    }
-
-    private fun init(
-        context: Context?,
-        attrs: AttributeSet? = null, defStyleAttr: Int = 0, defStyleRes: Int = 0
-    ) {
+    init {
         context?.theme?.obtainStyledAttributes(
             attrs,
             R.styleable.SushiTagView,
