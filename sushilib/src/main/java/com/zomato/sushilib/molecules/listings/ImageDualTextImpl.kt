@@ -15,4 +15,13 @@ class ImageDualTextImpl(
 ) : DualTextImpl(parent, layoutId, attributeSet, defStyleAttr, defStyleRes) {
     val image: ImageView? = parent.findViewById(R.id.image) as? ImageView
 
+    init {
+        parent.context.theme?.obtainStyledAttributes(attributeSet, R.styleable.SushiListing, defStyleAttr, defStyleRes)
+            ?.let {
+                it.getDrawable(R.styleable.SushiListing_imageSrc)?.let {
+                    image?.setImageDrawable(it)
+                }
+                it.recycle()
+            }
+    }
 }
