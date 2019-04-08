@@ -8,7 +8,7 @@ import android.widget.ImageView
 
 /**
  * created by championswimmer on 28/03/19
- * Copyright © 2019 Zomato Media Pvt. Ltd.
+ * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
 object BitmapUtils {
     @JvmStatic
