@@ -48,11 +48,12 @@
             android:padding="@dimen/sushi_spacing_base"
             android:paddingBottom="128dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <com.zomato.sushilib.atoms.imageviews.SushiRoundedImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:layout_gravity="center"
-                android:src="@drawable/bg_pattern1" />
+                android:src="@drawable/logo_zomato"
+                app:cornerRadius="@dimen/sushi_spacing_base" />
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
                 style="@style/Theme.Sushi.Section.Heading"
