@@ -8,7 +8,6 @@ import android.support.v4.view.ViewPager
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import com.zomato.sushilib.R
@@ -24,12 +23,13 @@ class SushiBottomNavigationBar : LinearLayout {
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     private var viewPager: ViewPager? = null
-    private var adapter: PagerAdapter? = null
+    private var tabViewDataProvider: TabViewDataProvider? = null
 
-    private var bottomTabViewManager: BottomTabViewManager? = null
     private val selectedListeners = ArrayList<OnTabSelectedListener>()
     private val reselectedListeners = ArrayList<OnTabReselectedListener>()
     private var selectedPosition = -1
+
+    private val datasetObserver: ViewPagerAdapterObserver by lazy { ViewPagerAdapterObserver() }
 
     init {
         orientation = LinearLayout.HORIZONTAL
@@ -37,28 +37,19 @@ class SushiBottomNavigationBar : LinearLayout {
 
     fun setupWithViewPager(viewPager: ViewPager) {
         this.viewPager = viewPager
-        if (viewPager.adapter == null) {
-            throw RuntimeException("Adapter must be set on ViewPager before attaching it to  ${SushiBottomNavigationBar::class.java}")
-        }
-        viewPager.adapter?.let {
-            this.adapter = it
-//            if (it is BottomTabViewManager) {
-//
-//                this.bottomTabViewManager = it
-//            } else {
-//                throw RuntimeException("Adapter must implement " + BottomTabViewManager::class.java.name)
-//            }
-        }
+        viewPager.adapter?.let { setupBottomTabViewManager(it) } ?: throw RuntimeException(
+            "Adapter must be set on ViewPager before attaching it to ${SushiBottomNavigationBar::class.java}"
+        )
         viewPager.addOnAdapterChangeListener(AdapterChangeListener())
         viewPager.addOnPageChangeListener(OnPageChangeListener())
         addOnTabSelectedListener(ViewPagerOnTabSelectedListener())
-        adapter?.registerDataSetObserver(ViewPagerAdapterObserver())
-        populateFromPagerAdapter()
+        viewPager.adapter?.registerDataSetObserver(datasetObserver)
+        populateTabs()
     }
 
-    fun setData(list: List<TabViewData>?) {
-        bottomTabViewManager = BottomTabViewManagerImpl(list)
-        populateFromPagerAdapter()
+    fun setup(tabViewDataProvider: TabViewDataProvider) {
+        this.tabViewDataProvider = tabViewDataProvider
+        populateTabs()
     }
 
     fun addOnTabSelectedListener(listener: OnTabSelectedListener) {
@@ -115,23 +106,32 @@ class SushiBottomNavigationBar : LinearLayout {
         }
     }
 
-    // todo rename
-    private fun populateFromPagerAdapter() {
-        removeAllViews()
-        selectedPosition = -1
-
-        val adapterCount = bottomTabViewManager?.getCount()
-        if (adapterCount == null || adapterCount == 0) return
-
-        for (i in 0 until adapterCount) {
-            addView(bottomTabViewManager?.createBottomTabView(this, i))
-        }
-        viewPager?.currentItem?.takeIf { it < adapterCount }?.let {
-            onTabSelected(it)
+    private fun setupBottomTabViewManager(pagerAdapter: PagerAdapter) {
+        if (pagerAdapter is TabViewDataProvider) {
+            this.tabViewDataProvider = pagerAdapter
+        } else {
+            throw RuntimeException("Adapter must implement " + TabViewDataProvider::class.java.name)
         }
     }
 
-    private fun onTabSelected(position: Int, tabId: String? = "") {
+    private fun populateTabs() {
+        removeAllViews()
+        selectedPosition = -1
+
+        tabViewDataProvider?.let { dataProvider ->
+            val tabsCount = dataProvider.getCount()
+            if (tabsCount == 0) return
+
+            for (i in 0 until tabsCount) {
+                addView(TabView(dataProvider.getTabData(i)))
+            }
+            viewPager?.currentItem?.takeIf { it < tabsCount }?.let {
+                onTabSelected(it)
+            } ?: onTabSelected(0)
+        }
+    }
+
+    private fun onTabSelected(position: Int) {
         selectTab(position)
     }
 
@@ -153,37 +153,37 @@ class SushiBottomNavigationBar : LinearLayout {
     }
 
     private inner class ViewPagerOnTabSelectedListener : OnTabSelectedListener {
-        override fun onTabSelected(position: Int, tabId: String?) {
+        override fun onTabSelected(position: Int) {
             viewPager?.currentItem = position
         }
     }
 
     private inner class ViewPagerAdapterObserver : DataSetObserver() {
         override fun onChanged() {
-            populateFromPagerAdapter()
+            populateTabs()
         }
 
         override fun onInvalidated() {
-            populateFromPagerAdapter()
+            populateTabs()
         }
     }
 
     private inner class AdapterChangeListener internal constructor() : ViewPager.OnAdapterChangeListener {
 
         override fun onAdapterChanged(viewPager: ViewPager, oldAdapter: PagerAdapter?, newAdapter: PagerAdapter?) {
-            adapter = newAdapter
-//            tabDataProvider = newAdapter
-            // todo check if invalidation required
+            oldAdapter?.unregisterDataSetObserver(datasetObserver)
+            newAdapter?.let {
+                it.registerDataSetObserver(datasetObserver)
+                setupBottomTabViewManager(it)
+            }
+            populateTabs()
         }
     }
 
-    private inner class TabView : LinearLayout(context) {
+    private inner class TabView(private val tabData: TabViewData) : LinearLayout(context) {
 
-        val textView: SushiTextView
-        val imageView: ImageView
-
-        private var tabData: TabViewData? = null
-        private var position: Int = -1
+        private val textView: SushiTextView
+        private val imageView: ImageView
         private val iconDrawable = SushiIconDrawable(context)
 
         init {
@@ -199,16 +199,9 @@ class SushiBottomNavigationBar : LinearLayout {
             setData()
         }
 
-        fun setTabData(data: TabViewData, position: Int) {
-            tabData = data
-            this.position = position
-            setData()
-        }
-
         override fun performClick(): Boolean {
             super.performClick()
-//            tabClickListener?.onTabClicked(tabData.position, tabData.tabId, tabData.trackId)
-            onTabSelected(position, tabData?.tabId)
+            onTabSelected(tabData.position)
             return true
         }
 
@@ -218,17 +211,14 @@ class SushiBottomNavigationBar : LinearLayout {
         }
 
         fun setData() {
-            tabData?.let { tabData ->
-                textView.text = tabData.title
-                if (isSelected) {
-                    iconDrawable.editor().icon(tabData.activeIcon).colorInt(tabData.activeStateIconColor).apply()
-                    textView.setTextColor(tabData.activeStateTextColor)
-                } else {
-                    iconDrawable.editor().icon(tabData.inactiveIcon).colorInt(tabData.inactiveStateIconColor).apply()
-                    textView.setTextColor(tabData.inactiveStateTextColor)
-                }
+            textView.text = tabData.title
+            if (isSelected) {
+                iconDrawable.editor().icon(tabData.activeIcon).colorInt(tabData.activeStateIconColor).apply()
+                textView.setTextColor(tabData.activeStateTextColor)
+            } else {
+                iconDrawable.editor().icon(tabData.inactiveIcon).colorInt(tabData.inactiveStateIconColor).apply()
+                textView.setTextColor(tabData.inactiveStateTextColor)
             }
-
         }
     }
 
@@ -236,46 +226,23 @@ class SushiBottomNavigationBar : LinearLayout {
         val title: String,
         val activeIcon: String,
         val inactiveIcon: String,
+        val position: Int,
         @ColorInt val activeStateTextColor: Int,
         @ColorInt val inactiveStateTextColor: Int,
         @ColorInt val activeStateIconColor: Int,
-        @ColorInt val inactiveStateIconColor: Int, val tabId: String? = ""
+        @ColorInt val inactiveStateIconColor: Int
     )
 
-
-    interface BottomTabViewManager {
+    interface TabViewDataProvider {
         fun getCount(): Int
-        fun createBottomTabView(parent: ViewGroup, position: Int): View
-        // todo check if necessary
-//        fun bindDataToView(view: View, position: Int)
+        fun getTabData(position: Int): TabViewData
     }
 
     interface OnTabSelectedListener {
-        fun onTabSelected(position: Int, tabId: String? = "")
+        fun onTabSelected(position: Int)
     }
 
     interface OnTabReselectedListener {
-        fun onTabReselected(position: Int, tabId: String? = "")
+        fun onTabReselected(position: Int)
     }
-
-    private inner class BottomTabViewManagerImpl(private val tabViewDataList: List<TabViewData>?) :
-        BottomTabViewManager {
-        override fun getCount(): Int = tabViewDataList?.size ?: 0
-
-        override fun createBottomTabView(parent: ViewGroup, position: Int): View = TabView().apply {
-            tabViewDataList?.get(position)?.let {
-                setTabData(it, position)
-            }
-
-        }
-
-//        override fun bindDataToView(view: View, position: Int) {
-//            tabViewDataList?.get(position)?.let {
-//                (view as? TabView)?.setTabData(it,position)
-//            }
-//
-//        }
-
-    }
-
 }
