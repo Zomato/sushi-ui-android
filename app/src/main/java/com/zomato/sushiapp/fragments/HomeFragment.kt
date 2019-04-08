@@ -18,7 +18,7 @@ class HomeFragment : Fragment() {
             R.id.nav_text_styles -> ComponentActivity.TYPOGRAPHY
             R.id.nav_text_fields -> ComponentActivity.FORM_FIELDS
             R.id.nav_color_palette -> ComponentActivity.COLORS
-            R.id.nav_image_views -> ComponentActivity.TYPOGRAPHY
+            R.id.nav_image_views -> ComponentActivity.IMAGES
             R.id.nav_buttons -> ComponentActivity.BUTTONS
             R.id.nav_tags -> ComponentActivity.TAGS
             R.id.nav_listing -> ComponentActivity.SNIPPETS

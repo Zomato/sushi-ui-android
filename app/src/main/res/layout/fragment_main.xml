@@ -70,6 +70,14 @@
                 app:subtitleText="Rich set of text"
                 app:titleText="Typography" />
 
+            <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
+                android:id="@+id/nav_image_views"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                app:subtitleText="Images and Frames"
+                app:titleText="Images" />
+
             <!--<com.zomato.sushilib.molecules.listings.SushiImageDualTextView-->
                 <!--android:id="@+id/nav_icons"-->
                 <!--android:layout_width="match_parent"-->
