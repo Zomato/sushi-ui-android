@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_text_fields.view.*
  * A simple [Fragment] subclass.
  *
  */
-class TextFieldsFragment : Fragment() {
+class FormComponentFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,18 +24,18 @@ class TextFieldsFragment : Fragment() {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_text_fields, container, false)
 
-        rootView.textField1.setEdgeDrawableClickListener(object : SushiTextInputField.EdgeDrawableClickListener {
+        rootView.textFieldRecipient.setEdgeDrawableClickListener(object : SushiTextInputField.EdgeDrawableClickListener {
             override fun onDrawableStartClicked() {
 
             }
 
             override fun onDrawableEndClicked() {
-                rootView.textField1.editText?.setText("")
+                rootView.textFieldRecipient.editText?.setText("")
             }
 
         })
 
-        rootView.textField1.setTextValidator { text ->
+        rootView.textFieldRecipient.setTextValidator { text ->
             "Must be at least 5 characters".takeIf {
                 TextUtils.isEmpty(text) || TextUtils.getTrimmedLength(text) < 5
             }

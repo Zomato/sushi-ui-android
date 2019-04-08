@@ -3,11 +3,13 @@ package com.zomato.sushiapp
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.zomato.sushiapp.fragments.*
+import com.zomato.sushiapp.fragments.buttons.ButtonsMainFragment
+import com.zomato.sushiapp.fragments.images.ImagesMainFragment
+import com.zomato.sushiapp.fragments.typography.TypographyMainFragment
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 class ComponentActivity : AppCompatActivity() {
@@ -18,7 +20,7 @@ class ComponentActivity : AppCompatActivity() {
         const val IMAGES = 2
         const val ICONS = 3
         const val BUTTONS = 4
-        const val FORM_FIELDS = 5
+        const val FORM = 5
         const val SNIPPETS = 6
         const val TAGS = 7
         const val MENU_TABS = 8
@@ -33,11 +35,11 @@ class ComponentActivity : AppCompatActivity() {
 
         private fun getFragment(component: Int): Fragment = when (component) {
             COLORS -> ColorPaletteFragment()
-            TYPOGRAPHY -> TextStylesFragment()
-            IMAGES -> ImageViewsFragment()
+            TYPOGRAPHY -> TypographyMainFragment()
+            IMAGES -> ImagesMainFragment()
             ICONS -> ColorPaletteFragment()
-            BUTTONS -> ButtonsFragment()
-            FORM_FIELDS -> TextFieldsFragment()
+            BUTTONS -> ButtonsMainFragment()
+            FORM -> FormComponentFragment()
             SNIPPETS -> ListingFragment()
             TAGS -> TagsFragment()
             MENU_TABS -> NavigationComponentsFragment()
@@ -49,7 +51,7 @@ class ComponentActivity : AppCompatActivity() {
             TYPOGRAPHY -> "Typography"
             ICONS -> "Icon palette"
             BUTTONS -> "Buttons"
-            FORM_FIELDS -> "Text fields"
+            FORM -> "Form Components"
             SNIPPETS -> "Listing snippets"
             TAGS -> "Tags and rating"
             MENU_TABS -> "Navigation components"

@@ -7,5 +7,6 @@
         <attr name="drawableEnd" format="reference"/>
         <attr name="drawablePadding" format="dimension" />
         <attr name="drawableTint" format="color" />
+        <attr name="android:inputType"/>
     </declare-styleable>
 </resources>

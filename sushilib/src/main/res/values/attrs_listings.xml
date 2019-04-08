@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SushiTwoLineListing">
+        <attr name="headlineText" format="string"/>
+        <attr name="bodyText" format="string"/>
+    </declare-styleable>
+</resources>

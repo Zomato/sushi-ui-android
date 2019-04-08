@@ -6,7 +6,7 @@ import android.view.ViewOutlineProvider
 
 /**
  * created by championswimmer on 26/03/19
- * Copyright © 2019 Zomato Media Pvt. Ltd.
+ * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
 class SushiViewOutlineProvider(
     @OutlineType
