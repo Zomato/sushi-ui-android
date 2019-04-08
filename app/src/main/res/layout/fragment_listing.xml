@@ -31,8 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/sushi_spacing_page_side"
-            android:text="Image listing"
             android:layout_marginTop="@dimen/sushi_spacing_extra"
+            android:text="Image listing"
             android:textSize="@dimen/sushi_textsize_700" />
 
         <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
@@ -113,36 +113,37 @@
         </LinearLayout>
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_extra"
             android:background="@color/sushi_white"
-            android:padding="@dimen/sushi_spacing_page_side"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/sushi_spacing_page_side">
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Heading"
-
                 android:textSize="@dimen/sushi_textsize_700" />
 
-            <include layout="@layout/layout_sushi_label_text"
-                android:layout_marginTop="@dimen/sushi_spacing_extra"
+            <include
+                layout="@layout/layout_sushi_label_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra" />
 
-            <include layout="@layout/layout_sushi_label_text"
-                android:layout_marginTop="@dimen/sushi_spacing_extra"
+            <include
+                layout="@layout/layout_sushi_label_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra" />
 
-            <include layout="@layout/layout_sushi_label_text"
-                android:layout_marginTop="@dimen/sushi_spacing_extra"
+            <include
+                layout="@layout/layout_sushi_label_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra" />
 
         </LinearLayout>
 
