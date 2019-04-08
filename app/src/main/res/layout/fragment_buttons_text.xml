@@ -11,7 +11,7 @@
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             android:text="Large"
-            style="@style/Theme.Sushi.Listing.HeadLine"
+            style="@style/Theme.Sushi.Section.Heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -49,7 +49,7 @@
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             android:text="Medium"
-            style="@style/Theme.Sushi.Listing.HeadLine"
+            style="@style/Theme.Sushi.Section.Heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -86,8 +86,7 @@
             app:icon="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
-            android:text="Small"
-            style="@style/Theme.Sushi.Listing.HeadLine"
+            style="@style/Theme.Sushi.Section.Heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

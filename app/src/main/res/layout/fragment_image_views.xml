@@ -11,8 +11,7 @@
         android:layout_height="wrap_content">
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/Theme.Sushi.Listing.HeadLine"
-            android:layout_marginLeft="@dimen/sushi_spacing_mini"
+            style="@style/Theme.Sushi.Section.Heading"
             android:text="Info Cover"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -24,8 +23,7 @@
             android:layout_height="200dp" />
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/Theme.Sushi.Listing.HeadLine"
-            android:layout_marginLeft="@dimen/sushi_spacing_mini"
+            style="@style/Theme.Sushi.Section.Heading"
             android:text="Ads CTL"
             android:layout_marginTop="@dimen/sushi_spacing_base"
             android:layout_width="match_parent"
@@ -71,8 +69,7 @@
         </HorizontalScrollView>
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/Theme.Sushi.Listing.HeadLine"
-            android:layout_marginLeft="@dimen/sushi_spacing_mini"
+            style="@style/Theme.Sushi.Section.Heading"
             android:text="Profile Covers"
             android:layout_marginTop="@dimen/sushi_spacing_base"
             android:layout_width="match_parent"
