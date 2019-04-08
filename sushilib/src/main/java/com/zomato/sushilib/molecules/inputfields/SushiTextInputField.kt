@@ -13,12 +13,13 @@ import android.util.LayoutDirection
 import android.util.Log
 import android.view.MotionEvent
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.LinearLayout
 import com.zomato.sushilib.R
 
 /**
  * created by championswimmer on 02/04/19
- * Copyright © 2019 Zomato Media Pvt. Ltd.
+ * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
 class SushiTextInputField @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
@@ -26,7 +27,16 @@ class SushiTextInputField @JvmOverloads constructor(
 ) : TextInputLayout(context, attrs, defStyleAttr) {
 
     interface EdgeDrawableClickListener {
+        /**
+         * method called when drawableLeft (or drawableStart
+         * if RTL supported) is clicked
+         */
         fun onDrawableStartClicked()
+
+        /**
+         * method called when drawableRight (or drawableEnd
+         * if RTL supported) is clicked
+         */
         fun onDrawableEndClicked()
     }
 
@@ -36,7 +46,8 @@ class SushiTextInputField @JvmOverloads constructor(
          * hook into to generate error messages
          *
          * @param text The text currenly in the EditText
-         * @return An error as {@link java.lang.String} if the text is valid or {@code null} if the text is valid
+         * @return An error as [String] if the text is invalid
+         * or [null] if the text is valid
          */
         fun validateText (text: Editable?): String?
     }
@@ -47,6 +58,9 @@ class SushiTextInputField @JvmOverloads constructor(
 
     private var mEditText: TextInputEditText
 
+    /**
+     * Set an [EdgeDrawableClickListener]
+     */
     fun setEdgeDrawableClickListener(listener: EdgeDrawableClickListener?) {
         if (mEdgeDrawableClickListener == null && listener != null) {
             prepareOnTouchListener()
@@ -78,6 +92,10 @@ class SushiTextInputField @JvmOverloads constructor(
             defStyleAttr,
             0
         )?.let {
+            mEditText.inputType = it.getInt(
+                R.styleable.SushiTextInputField_android_inputType,
+                EditorInfo.TYPE_NULL
+            )
             // First set non-RTL type drawables
             mEditText.setCompoundDrawablesWithIntrinsicBounds(
                 it.getDrawable(R.styleable.SushiTextInputField_drawableLeft),
@@ -101,7 +119,6 @@ class SushiTextInputField @JvmOverloads constructor(
                     R.styleable.SushiTextInputField_drawableTint
                 )
             }
-
             it.recycle()
         }
         addView(mEditText)

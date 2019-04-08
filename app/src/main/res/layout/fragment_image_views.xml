@@ -4,95 +4,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fragments.ImageViewsFragment">
-
+    tools:context=".fragments.images.ImagesMainFragment">
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <com.zomato.sushilib.atoms.imageviews.SushiRoundedImageView
-            android:id="@+id/civFoodPic1"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_margin="10dp"
-            android:elevation="5dp"
-            android:src="@drawable/bg_food"
-            app:cornerRadius="10dp" />
+        android:layout_height="wrap_content">
 
-        <com.zomato.sushilib.atoms.imageviews.SushiRoundedImageView
-            android:id="@+id/civFoodPic2"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_margin="10dp"
-            android:padding="20dp"
-            android:elevation="5dp"
-            android:src="@drawable/bg_food"
-            app:cornerRadius="10dp" />
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/Theme.Sushi.Section.Heading"
+            android:text="Info Cover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-        <com.zomato.sushilib.atoms.imageviews.SushiRoundedImageView
-            android:id="@+id/civFoodPic3"
-            android:layout_width="120dp"
-            android:layout_height="80dp"
-            android:layout_margin="10dp"
-            android:elevation="5dp"
-            android:padding="20dp"
-            android:src="@drawable/bg_food"
-            app:cornerRadius="5dp"/>
+        <ImageView
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_sample1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
 
-        <com.zomato.sushilib.atoms.imageviews.SushiRoundedImageView
-            android:id="@+id/civFoodPic4"
-            android:layout_width="120dp"
-            android:layout_height="80dp"
-            android:layout_margin="10dp"
-            android:padding="20dp"
-            android:elevation="5dp"
-            android:src="@drawable/bg_food"
-            app:cornerRadius="10dp" />
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/Theme.Sushi.Section.Heading"
+            android:text="Ads CTL"
+            android:layout_marginTop="@dimen/sushi_spacing_base"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-        <com.zomato.sushilib.atoms.imageviews.SushiRoundedImageView
-            android:id="@+id/civFoodPic5"
-            android:layout_width="120dp"
-            android:layout_height="80dp"
-            android:padding="2dp"
-            android:layout_margin="2dp"
-            android:elevation="5dp"
-            android:src="@drawable/bg_food"
-            app:cornerRadius="10dp" />
-        <com.zomato.sushilib.atoms.imageviews.SushiRoundedImageView
-            android:id="@+id/civFoodPic6"
-            android:layout_width="120dp"
-            android:layout_height="80dp"
-            android:padding="2dp"
-            android:layout_margin="2dp"
-            android:elevation="5dp"
-            android:src="@drawable/bg_food"
-            app:cornerRadius="10dp" />
+        <HorizontalScrollView
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <com.zomato.sushilib.atoms.imageviews.SushiCircleImageView
-            android:id="@+id/civFoodPic7"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:elevation="5dp"
-            android:src="@drawable/bg_food"/>
-        <com.zomato.sushilib.atoms.imageviews.SushiCircleImageView
-            android:id="@+id/civFoodPic8"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:elevation="5dp"
-            android:src="@drawable/bg_food"/>
-        <com.zomato.sushilib.atoms.imageviews.SushiCircleImageView
-            android:id="@+id/civFoodPic9"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:elevation="5dp"
-            android:src="@drawable/bg_food"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:padding="@dimen/sushi_spacing_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.zomato.sushilib.atoms.imageviews.SushiRoundedImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:elevation="@dimen/sushi_spacing_micro"
+                    android:layout_margin="@dimen/sushi_spacing_mini"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_sample2"
+                    app:cornerRadius="@dimen/sushi_spacing_micro" />
+
+                <com.zomato.sushilib.atoms.imageviews.SushiRoundedImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="@dimen/sushi_spacing_mini"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_sample2"
+                    app:cornerRadius="@dimen/sushi_spacing_micro" />
+
+                <com.zomato.sushilib.atoms.imageviews.SushiRoundedImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="@dimen/sushi_spacing_mini"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_sample2"
+                    app:cornerRadius="@dimen/sushi_spacing_micro" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/Theme.Sushi.Section.Heading"
+            android:text="Profile Covers"
+            android:layout_marginTop="@dimen/sushi_spacing_base"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <HorizontalScrollView
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.zomato.sushilib.atoms.imageviews.SushiCircleImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:elevation="@dimen/sushi_spacing_micro"
+                    android:layout_margin="@dimen/sushi_spacing_mini"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_sample1" />
+
+                <com.zomato.sushilib.atoms.imageviews.SushiCircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:elevation="@dimen/sushi_spacing_micro"
+                    android:layout_margin="@dimen/sushi_spacing_mini"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_sample1" />
+
+                <com.zomato.sushilib.atoms.imageviews.SushiCircleImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="@dimen/sushi_spacing_mini"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_sample1" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
 
     </LinearLayout>
 

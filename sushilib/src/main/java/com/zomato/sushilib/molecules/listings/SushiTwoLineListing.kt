@@ -1,16 +1,16 @@
 package com.zomato.sushilib.molecules.listings
 
-import android.animation.LayoutTransition
 import android.content.Context
 import android.text.TextUtils
 import android.util.AttributeSet
+import android.view.View
 import android.widget.LinearLayout
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 
 /**
  * created by championswimmer on 29/03/19
- * Copyright © 2019 Zomato Media Pvt. Ltd.
+ * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  *
  * @constructor overloads all Java ones
  *
@@ -19,34 +19,34 @@ import com.zomato.sushilib.atoms.textviews.SushiTextView
  */
 class SushiTwoLineListing @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
-) : LinearLayout(context, attrs, defStyleAttr, R.style.Theme_Sushi_Listing) {
+    defStyleAttr: Int = 0, defStyleRes: Int = R.style.Theme_Sushi_Listing
+) : LinearLayout(context, attrs, defStyleAttr, defStyleRes) {
 
 
-    private var mHeadingTextView: SushiTextView? = null
+    private var mHeadlineTextView: SushiTextView? = null
     private var mBodyTextView: SushiTextView? = null
 
     var headingText: String?
-        get() = mHeadingTextView?.text?.toString()
+        get() = mHeadlineTextView?.text?.toString()
         set(value) {
             if (TextUtils.isEmpty(value)) {
-                removeView(mHeadingTextView)
-                mHeadingTextView = null
+                removeView(mHeadlineTextView)
+                mHeadlineTextView = null
             } else {
-                mHeadingTextView = mHeadingTextView ?: SushiTextView(
+                mHeadlineTextView = mHeadlineTextView ?: SushiTextView(
                     context,
                     defStyleRes = R.style.Theme_Sushi_Listing_HeadLine
                 )
-                if (indexOfChild(mHeadingTextView) == -1) {
-                    addView(mHeadingTextView, 0)
+                if (indexOfChild(mHeadlineTextView) == -1) {
+                    addView(mHeadlineTextView, 0)
                 }
-                mHeadingTextView!!.text = value
+                mHeadlineTextView!!.text = value
             }
         }
 
 
     init {
-        mHeadingTextView = SushiTextView(
+        mHeadlineTextView = SushiTextView(
             context,
             defStyleRes = R.style.Theme_Sushi_Listing_HeadLine
         )
@@ -54,9 +54,18 @@ class SushiTwoLineListing @JvmOverloads constructor(
             context,
             defStyleRes = R.style.Theme_Sushi_Listing_Body
         )
-        addView(mHeadingTextView)
+        context.theme.obtainStyledAttributes(
+            attrs,
+            R.styleable.SushiTwoLineListing,
+            defStyleAttr, defStyleRes
+        ).let {
+            mHeadlineTextView?.text = it.getString(R.styleable.SushiTwoLineListing_headlineText)
+            mBodyTextView?.text = it.getString(R.styleable.SushiTwoLineListing_bodyText)
+            it.recycle()
+        }
+
+        addView(mHeadlineTextView)
         addView(mBodyTextView)
     }
-
 
 }

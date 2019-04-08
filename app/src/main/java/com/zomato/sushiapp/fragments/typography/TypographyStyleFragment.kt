@@ -90,9 +90,8 @@ class TypographyStyleFragment : Fragment() {
          * this fragment using the provided parameters.
          *
          * @param fontWeight Parameter 1.
-         * @return A new instance of fragment TypographyStyleFragment.
+         * @return A new instance of fragment [TypographyStyleFragment].
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(fontWeight: Int) =
             TypographyStyleFragment().apply {

@@ -7,17 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.zomato.sushiapp.R
 
-/**
- * A simple [Fragment] subclass.
- *
- */
-class ButtonsFragment : Fragment() {
+class AboutSushiFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_buttons, container, false)
+        return inflater.inflate(R.layout.fragment_about_sushi, container, false)
     }
+
+
 }

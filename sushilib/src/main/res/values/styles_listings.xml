@@ -18,4 +18,11 @@
         <item name="android:padding">@dimen/sushi_spacing_micro</item>
     </style>
 
+    <style name="Theme.Sushi.Section.Heading" parent="TextAppearance.Sushi.Medium">
+        <item name="android:text">Headline Text</item>
+        <item name="android:textColor">@color/sushi_black</item>
+        <item name="android:textSize">@dimen/sushi_textsize_700</item>
+        <item name="android:padding">@dimen/sushi_spacing_mini</item>
+    </style>
+
 </resources>

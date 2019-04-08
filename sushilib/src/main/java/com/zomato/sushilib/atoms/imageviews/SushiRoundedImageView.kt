@@ -14,7 +14,7 @@ import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 
 /**
  * created by championswimmer on 04/04/19
- * Copyright © 2019 Zomato Media Pvt. Ltd.
+ * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
 class SushiRoundedImageView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,

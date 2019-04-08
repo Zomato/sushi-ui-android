@@ -6,7 +6,7 @@ import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 
 /**
  * created by championswimmer on 05/04/19
- * Copyright © 2019 Zomato Media Pvt. Ltd.
+ * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
 interface RoundedView {
     fun getOutlineProvider(): ViewOutlineProvider
