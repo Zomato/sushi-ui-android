@@ -30,11 +30,9 @@ open class DualTextImpl(
             getString(R.styleable.SushiListing_titleText)?.takeUnless { it.isEmpty() }?.apply {
                 title.text = this
             }
-
             getString(R.styleable.SushiListing_subtitleText)?.takeUnless { it.isEmpty() }?.apply {
                 subtitle.text = this
             }
-
             recycle()
         }
     }

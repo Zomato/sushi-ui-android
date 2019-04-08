@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/listingsContainer"
@@ -11,22 +11,107 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sushi_spacing_page_side"
+            android:text="Text listing"
+            android:textSize="@dimen/sushi_textsize_700" />
+
         <com.zomato.sushilib.molecules.listings.SushiDualTextView
             android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.zomato.sushilib.molecules.listings.SushiLabelDualTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            />
+            android:layout_marginStart="@dimen/sushi_spacing_page_side"
+            android:text="Image listing"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
+            android:textSize="@dimen/sushi_textsize_700" />
 
         <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="Blablabalbal"
+            app:imageSrc="@drawable/ic_color_palette"
             app:subtitle="nkljansdlnlsd"
-            android:layout_marginTop="@dimen/sushi_spacing_extra" />
+            app:title="Blablabalbal" />
 
-        <com.zomato.sushilib.molecules.listings.SushiLabelDualTextView
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/sushi_spacing_extra"/>
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
+            android:background="@color/sushi_white"
+            android:orientation="vertical">
+
+            <com.zomato.sushilib.atoms.textviews.SushiTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sushi_spacing_page_side"
+                android:text="Small listing - Scrolling"
+                android:textSize="@dimen/sushi_textsize_700" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/layout_small_listing_view" />
+
+                    <include layout="@layout/layout_small_listing_view" />
+
+                    <include layout="@layout/layout_small_listing_view" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
+            android:background="@color/sushi_white"
+            android:orientation="vertical"
+            android:padding="@dimen/sushi_spacing_page_side">
+
+            <com.zomato.sushilib.atoms.textviews.SushiTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Heading"
+                android:textSize="@dimen/sushi_textsize_700" />
+
+            <com.zomato.sushilib.molecules.listings.SushiIconText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                android:text="Listing title" />
+
+            <com.zomato.sushilib.molecules.listings.SushiIconText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                android:text="Listing title" />
+
+            <com.zomato.sushilib.molecules.listings.SushiIconText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                android:text="Listing title" />
+        </LinearLayout>
+
 
 
         <LinearLayout
@@ -38,30 +123,27 @@
             android:orientation="vertical">
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/sushi_textsize_700"
-                android:text="Heading"/>
+                android:text="Heading"
 
-            <com.zomato.sushilib.molecules.listings.SushiIconText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:textSize="@dimen/sushi_textsize_700" />
+
+            <include layout="@layout/layout_sushi_label_text"
                 android:layout_marginTop="@dimen/sushi_spacing_extra"
-                android:text="Listing title"
-                />
-            <com.zomato.sushilib.molecules.listings.SushiIconText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <include layout="@layout/layout_sushi_label_text"
                 android:layout_marginTop="@dimen/sushi_spacing_extra"
-                android:text="Listing title"
-                />
-            <com.zomato.sushilib.molecules.listings.SushiIconText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <include layout="@layout/layout_sushi_label_text"
                 android:layout_marginTop="@dimen/sushi_spacing_extra"
-                android:text="Listing title"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
 
 

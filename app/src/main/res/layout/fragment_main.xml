@@ -60,6 +60,7 @@
                 android:layout_marginTop="@dimen/sushi_spacing_extra"
                 app:subtitleText="Rich set of colors"
                 app:titleText="Color"
+                app:imageSrc="@drawable/ic_color_palette"
                />
 
             <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
