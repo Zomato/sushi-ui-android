@@ -2,6 +2,7 @@ package com.zomato.sushilib.molecules.inputfields
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.support.design.widget.TextInputEditText
@@ -10,12 +11,9 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.LayoutDirection
-import android.util.Log
 import android.view.MotionEvent
-import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
-import android.widget.LinearLayout
 import com.zomato.sushilib.R
+import com.zomato.sushilib.atoms.textviews.SushiIconHelper
 
 /**
  * created by championswimmer on 02/04/19
@@ -49,7 +47,7 @@ class SushiTextInputField @JvmOverloads constructor(
          * @return An error as [String] if the text is invalid
          * or [null] if the text is valid
          */
-        fun validateText (text: Editable?): String?
+        fun validateText(text: Editable?): String?
     }
 
 
@@ -75,8 +73,9 @@ class SushiTextInputField @JvmOverloads constructor(
 
         mTextValidator = validator
     }
+
     fun setTextValidator(validator: (text: Editable?) -> String?) {
-        setTextValidator(object: TextValidator {
+        setTextValidator(object : TextValidator {
             override fun validateText(text: Editable?): String? = validator(text)
         })
     }
@@ -99,18 +98,72 @@ class SushiTextInputField @JvmOverloads constructor(
             if (attrInputType != -1) {
                 mEditText.inputType = attrInputType
             }
-            // First set non-RTL type drawables
+
+            val drawableLeft =
+                try {
+                    it.getDrawable(R.styleable.SushiTextInputField_drawableLeft)
+                } catch (exception: Resources.NotFoundException) {
+
+                    it.getString(R.styleable.SushiTextInputField_drawableLeft)?.let {
+                        SushiIconHelper.getIconDrawableEditor(context)
+                            .icon(it)
+                            .colorRes(R.color.sushi_grey_400)
+                            .sizePx(mEditText.textSize.toInt())
+                            .apply()
+                    }
+                }
+            val drawableStart =
+                try {
+                    it.getDrawable(R.styleable.SushiTextInputField_drawableStart)
+                } catch (exception:  Resources.NotFoundException) {
+
+                    it.getString(R.styleable.SushiTextInputField_drawableStart)?.let {
+                        SushiIconHelper.getIconDrawableEditor(context)
+                            .icon(it)
+                            .sizePx(mEditText.textSize.toInt())
+                            .colorRes(R.color.sushi_grey_400)
+                            .apply()
+                    }
+                }
+            val drawableRight =
+                try {
+                    it.getDrawable(R.styleable.SushiTextInputField_drawableRight)
+                } catch (exception: Resources.NotFoundException) {
+
+                    it.getString(R.styleable.SushiTextInputField_drawableRight)?.let {
+                        SushiIconHelper.getIconDrawableEditor(context)
+                            .icon(it)
+                            .colorRes(R.color.sushi_grey_400)
+                            .sizePx(mEditText.textSize.toInt())
+                            .apply()
+                    }
+                }
+            val drawableEnd =
+                try {
+                    it.getDrawable(R.styleable.SushiTextInputField_drawableEnd)
+                } catch (exception:  Resources.NotFoundException) {
+
+                    it.getString(R.styleable.SushiTextInputField_drawableEnd)?.let {
+                        SushiIconHelper.getIconDrawableEditor(context)
+                            .icon(it)
+                            .sizePx(mEditText.textSize.toInt())
+                            .colorRes(R.color.sushi_grey_400)
+                            .apply()
+                    }
+                }
+
+//            // First set non-RTL type drawables
             mEditText.setCompoundDrawablesWithIntrinsicBounds(
-                it.getDrawable(R.styleable.SushiTextInputField_drawableLeft),
+                drawableLeft,
                 null,
-                it.getDrawable(R.styleable.SushiTextInputField_drawableRight),
+                drawableRight,
                 null
             )
             // Override with RTL-able drawables if avaialble
             mEditText.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                it.getDrawable(R.styleable.SushiTextInputField_drawableStart),
+                drawableStart,
                 null,
-                it.getDrawable(R.styleable.SushiTextInputField_drawableEnd),
+                drawableEnd,
                 null
             )
             mEditText.compoundDrawablePadding = it.getDimensionPixelSize(
@@ -128,7 +181,7 @@ class SushiTextInputField @JvmOverloads constructor(
     }
 
     private fun prepareOnTextChangedListener() {
-        mEditText.addTextChangedListener(object: TextWatcher {
+        mEditText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 error = mTextValidator?.validateText(s)
             }

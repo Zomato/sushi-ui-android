@@ -3,4 +3,5 @@
     <string name="icon_right_triangle">&#xe902;</string>
     <string name="icon_unfilled_star">&#xe904;</string>
     <string name="icon_filled_star">&#xe905;</string>
+    <string name="icon_cross_filled">&#xe93d;</string>
 </resources>

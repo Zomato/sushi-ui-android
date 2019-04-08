@@ -22,7 +22,7 @@
             style="@style/Theme.Sushi.TextInputField"
             app:errorEnabled="true"
             android:hint="Recipient Name"
-            app:drawableEnd="@drawable/ic_circle_cross"
+            app:drawableEnd="@string/icon_cross_filled"
             android:id="@+id/textFieldRecipient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
