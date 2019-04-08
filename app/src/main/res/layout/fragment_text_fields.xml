@@ -20,6 +20,7 @@
 
         <com.zomato.sushilib.molecules.inputfields.SushiTextInputField
             style="@style/Theme.Sushi.TextInputField"
+            app:errorEnabled="true"
             android:hint="Recipient Name"
             app:drawableEnd="@drawable/ic_circle_cross"
             android:id="@+id/textFieldRecipient"

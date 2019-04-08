@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.zomato.sushiapp.fragments.*
+import com.zomato.sushiapp.fragments.images.ImagesMainFragment
 import com.zomato.sushiapp.fragments.typography.TypographyMainFragment
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -34,7 +35,7 @@ class ComponentActivity : AppCompatActivity() {
         private fun getFragment(component: Int): Fragment = when (component) {
             COLORS -> ColorPaletteFragment()
             TYPOGRAPHY -> TypographyMainFragment()
-            IMAGES -> ImageViewsFragment()
+            IMAGES -> ImagesMainFragment()
             ICONS -> ColorPaletteFragment()
             BUTTONS -> ButtonsFragment()
             FORM -> FormComponentFragment()

@@ -1,4 +1,4 @@
-package com.zomato.sushiapp.fragments
+package com.zomato.sushiapp.fragments.images
 
 
 import android.os.Bundle
@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_image_views.view.*
  * A simple [Fragment] subclass.
  *
  */
-class ImageViewsFragment : Fragment() {
+class ImagesMainFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,8 +22,6 @@ class ImageViewsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_image_views, container, false)
-
-        rootView.civFoodPic4.layoutParams.height = 400
 
         return rootView
     }
