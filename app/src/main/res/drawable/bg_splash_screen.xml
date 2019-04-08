@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <color android:color="@color/sushi_black"/>
+        <bitmap
+            android:gravity="fill"
+            android:src="@drawable/bg_splash_image" />
     </item>
     <item>
-        <bitmap android:gravity="center" android:src="@drawable/bg_splash_image"/>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/text_splash" />
     </item>
 </layer-list>
