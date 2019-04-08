@@ -29,7 +29,7 @@ class SushiCircleImageView @JvmOverloads constructor(
         scaleType = CENTER_CROP
         outlineProvider = SushiViewOutlineProvider(
             OutlineType.CIRCLE,
-            paddingOutside = true
+            paddingOutside = false
         )
         clipToOutline = true
 
