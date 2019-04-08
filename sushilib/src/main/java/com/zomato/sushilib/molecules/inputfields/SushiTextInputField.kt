@@ -92,10 +92,13 @@ class SushiTextInputField @JvmOverloads constructor(
             defStyleAttr,
             0
         )?.let {
-            mEditText.inputType = it.getInt(
+            val attrInputType = it.getInt(
                 R.styleable.SushiTextInputField_android_inputType,
-                EditorInfo.TYPE_NULL
+                -1
             )
+            if (attrInputType != -1) {
+                mEditText.inputType = attrInputType
+            }
             // First set non-RTL type drawables
             mEditText.setCompoundDrawablesWithIntrinsicBounds(
                 it.getDrawable(R.styleable.SushiTextInputField_drawableLeft),
