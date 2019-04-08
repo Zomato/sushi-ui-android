@@ -1,4 +1,4 @@
-package com.zomato.sushiapp.fragments
+package com.zomato.sushiapp.fragments.typography
 
 
 import android.os.Bundle
@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_text_styles.view.*
  * A simple [Fragment] subclass.
  *
  */
-class TextStylesFragment : Fragment() {
+class TypographyMainFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

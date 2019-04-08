@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/sushi_red_500</item>
         <item name="colorPrimaryDark">@color/sushi_red_800</item>
-        <item name="colorAccent">@color/sushi_green_500</item>
+        <item name="colorAccent">@color/sushi_red_500</item>
         <!--TODO: support for v21-->
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@color/sushi_grey_100</item>
