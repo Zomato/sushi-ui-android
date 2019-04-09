@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="TextAppearance.Sushi.TextField.Error" parent="TextAppearance.Design.Error">
-        <item name="android:fontFamily">@font/okra_medium</item>
+        <item name="android:fontFamily">?fontFamilyMedium</item>
         <item name="android:textColor">@color/sushi_red_500</item>
     </style>
     <style name="TextAppearance.Sushi.TextField.Hint" parent="TextAppearance.Design.Hint">
-        <item name="android:fontFamily">@font/okra_medium</item>
+        <item name="android:fontFamily">?fontFamilyMedium</item>
         <item name="android:textColor">@color/sushi_grey_400</item>
     </style>
 
