@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.Sushi" parent="Theme.MaterialComponents.Light">
+    <style name="Base.Theme.Sushi" parent="Theme.MaterialComponents.Light">
+        <item name="android:colorBackground">@color/sushi_white</item>
+        <item name="android:windowBackground">@color/sushi_white</item>
+        <item name="android:textColorPrimary">@color/sushi_black</item>
+        <item name="android:textColorSecondary">@color/sushi_grey_800</item>
+        <item name="colorError">@color/sushi_red_500</item>
+        <item name="colorControlActivated">@color/sushi_green_500</item>
+    </style>
+    <style name="Theme.Sushi" parent="Base.Theme.Sushi">
         <item name="android:fontFamily">?fontFamilyRegular</item>
         <item name="android:textViewStyle">@style/SnippetPaddingTheme</item>
         <item name="sushiIconAppearance">@style/TextAppearance.Sushi.Icon</item>

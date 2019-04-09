@@ -13,6 +13,7 @@
         android:id="@+id/text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="?android:textColorPrimary"
         app:sushiFontWeight="medium"
         android:layout_marginBottom="@dimen/sushi_spacing_macro"
         android:textSize="@dimen/sushi_textsize_200" />

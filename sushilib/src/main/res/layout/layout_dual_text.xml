@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Some title text here"
-        android:textColor="@color/sushi_black"
+        android:textColor="?android:textColorPrimary"
         android:textSize="@dimen/sushi_textsize_500"
         app:sushiFontWeight="medium" />
 
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/sushi_spacing_between"
         android:text="Some long description text here, that goes multiline because we want to test it out"
-        android:textColor="@color/sushi_grey_600"
+        android:textColor="?android:textColorSecondary"
         android:textSize="@dimen/sushi_textsize_400"
         app:sushiFontWeight="regular" />
 
