@@ -4,7 +4,7 @@
         <item name="android:colorBackground">@color/sushi_white</item>
         <item name="android:windowBackground">@color/sushi_white</item>
         <item name="android:textColorPrimary">@color/sushi_black</item>
-        <item name="android:textColorSecondary">@color/sushi_grey_800</item>
+        <item name="android:textColorSecondary">@color/sushi_grey_600</item>
         <item name="colorError">@color/sushi_red_500</item>
         <item name="android:colorControlActivated">?colorAccent</item>
     </style>
