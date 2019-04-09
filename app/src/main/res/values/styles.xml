@@ -7,7 +7,7 @@
         <item name="android:colorPrimary">@color/sushi_red_500</item>
         <item name="android:colorPrimaryDark">@color/sushi_red_800</item>
         <item name="android:colorAccent">@color/sushi_red_500</item>
-        <item name="android:statusBarColor">@color/sushi_grey_100</item>
+        <item name="android:statusBarColor">@color/sushi_status_bar_color</item>
         <item name="android:theme">@style/ThemeOverlay.OkraFont</item>
     </style>
     <!-- Base application theme. -->

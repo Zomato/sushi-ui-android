@@ -45,6 +45,7 @@ class SushiRatingViewImpl(
         style = Paint.Style.STROKE
         color = unselectedTextColor ?: 0
         strokeWidth = resources?.getDimension(R.dimen.sushi_stoke_width_small) ?: 0f
+        isAntiAlias = true
     }
 
     init {

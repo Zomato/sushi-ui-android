@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_loose"
             android:text="Tap to rate"
-            android:textColor="@color/sushi_black"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/sushi_textsize_600"
             app:sushiFontWeight="medium" />
 
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_loose"
             android:text="Static rating streak"
-            android:textColor="@color/sushi_black"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/sushi_textsize_600"
             app:sushiFontWeight="medium" />
 
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_loose"
             android:text="We have rich set of epic tags"
-            android:textColor="@color/sushi_black"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/sushi_textsize_600"
             app:sushiFontWeight="medium" />
 
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_nano"
             android:text="You guys call this chips as well :)"
-            android:textColor="@color/sushi_grey_700"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="@dimen/sushi_textsize_300"
             app:sushiFontWeight="medium" />
 

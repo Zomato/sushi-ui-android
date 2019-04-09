@@ -3,7 +3,6 @@
     <color name="sushi_color_primary">@color/sushi_red_500</color>
     <color name="sushi_color_primary_dark">@color/sushi_red_800</color>
     <color name="sushi_color_accent">@color/sushi_red_500</color>
-    <color name="sushi_status_bar_color">@color/sushi_grey_100</color>
-    <bool name="sushi_status_bar_light">true</bool>
-
+    <color name="sushi_status_bar_color">@color/sushi_black</color>
+    <bool name="sushi_status_bar_light">false</bool>
 </resources>

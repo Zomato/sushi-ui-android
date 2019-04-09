@@ -12,8 +12,8 @@
         android:id="@+id/image"
         android:layout_width="44dp"
         android:layout_height="44dp"
-        android:src="@color/sushi_grey_500"
         android:backgroundTintMode="add"
+        android:src="@color/sushi_grey_500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:sushiCornerRadius="22dp" />
@@ -25,7 +25,7 @@
         android:layout_marginStart="@dimen/sushi_spacing_macro"
         android:layout_marginBottom="@dimen/sushi_spacing_between_large"
         android:text="LABEL"
-        android:textColor="@color/sushi_grey_400"
+        android:textColor="?android:attr/textColorSecondary"
         app:layout_constraintBottom_toTopOf="@+id/title"
         app:layout_constraintStart_toEndOf="@id/image"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,11 +36,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Detailed text"
-        android:textColor="@color/sushi_black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="@dimen/sushi_textsize_200"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/image"
         app:layout_constraintTop_toBottomOf="@+id/label"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:sushiFontWeight="regular" />
 
 </android.support.constraint.ConstraintLayout>
