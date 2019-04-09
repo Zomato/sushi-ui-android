@@ -20,7 +20,6 @@ class SushiImageDualTextView : LinearLayout {
         R.style.SnippetBaseVerticalPaddingTheme
     ) {
         orientation = HORIZONTAL
-        setBackgroundColor(resources.getColor(R.color.sushi_white))
         imageDualTextImpl = ImageDualTextImpl(
             this,
             R.layout.layout_image_dual_text,

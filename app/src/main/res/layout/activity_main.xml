@@ -2,7 +2,6 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sushi_white"
     android:fitsSystemWindows="true">
 
     <android.support.design.widget.CoordinatorLayout
@@ -13,10 +12,10 @@
 
     <com.zomato.sushilib.templates.navigation.SushiBottomNavigationBar
         android:id="@+id/bottom_nav_bar"
+        android:background="?android:windowBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/sushi_white"
-        android:elevation="4dp" />
+        android:elevation="@dimen/sushi_spacing_mini" />
 
 </android.support.design.widget.CoordinatorLayout>

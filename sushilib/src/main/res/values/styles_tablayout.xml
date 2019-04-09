@@ -2,12 +2,13 @@
 <resources>
 
     <style name="Widget.Sushi.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="android:background">?android:colorBackground</item>
         <item name="tabIndicatorColor">@color/sushi_red_500</item>
         <item name="tabIndicatorFullWidth">false</item>
         <item name="tabMode">scrollable</item>
         <item name="tabRippleColor">@null</item>
-        <item name="tabTextColor">@color/sushi_grey_700</item>
-        <item name="tabSelectedTextColor">@color/sushi_black</item>
+        <item name="tabTextColor">?android:textColorSecondary</item>
+        <item name="tabSelectedTextColor">?android:textColorPrimary</item>
         <item name="tabTextAppearance">@style/TextAppearance.Sushi.TabLayout</item>
     </style>
 

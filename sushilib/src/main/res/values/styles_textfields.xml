@@ -2,7 +2,7 @@
 <resources>
     <style name="TextAppearance.Sushi.TextField.Error" parent="TextAppearance.Design.Error">
         <item name="android:fontFamily">?fontFamilyMedium</item>
-        <item name="android:textColor">@color/sushi_red_500</item>
+        <item name="android:textColor">?colorError</item>
     </style>
     <style name="TextAppearance.Sushi.TextField.Hint" parent="TextAppearance.Design.Hint">
         <item name="android:fontFamily">?fontFamilyMedium</item>
@@ -11,7 +11,6 @@
 
     <style name="ThemeOverlay.Sushi.EditText.Cursor" parent="">
         <item name="android:textCursorDrawable">@drawable/sushi_text_cursor</item>
-        <item name="android:colorControlActivated">@color/sushi_green_500</item>
     </style>
 
     <style name="Theme.Sushi.TextInputField">

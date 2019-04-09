@@ -2,10 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
+        android:elevation="@dimen/sushi_spacing_mini"
         style="@style/Widget.Sushi.TabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -46,7 +48,9 @@
         android:id="@+id/bottom_nav_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?android:colorBackground"
+        android:elevation="@dimen/sushi_spacing_mini"
         android:layout_marginTop="@dimen/sushi_spacing_loose"
-        android:background="@color/sushi_white" />
+        android:layout_marginBottom="@dimen/sushi_spacing_loose" />
 
 </LinearLayout>

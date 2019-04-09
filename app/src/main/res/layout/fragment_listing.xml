@@ -47,7 +47,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_extra"
-            android:background="@color/sushi_white"
             android:orientation="vertical">
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
@@ -83,7 +82,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_extra"
-            android:background="@color/sushi_white"
             android:orientation="vertical"
             android:padding="@dimen/sushi_spacing_page_side">
 
@@ -117,7 +115,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_extra"
-            android:background="@color/sushi_white"
             android:orientation="vertical"
             android:padding="@dimen/sushi_spacing_page_side">
 
