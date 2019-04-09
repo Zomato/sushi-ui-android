@@ -7,6 +7,7 @@ import com.zomato.sushiapp.fragments.AboutSushiFragment
 import com.zomato.sushiapp.fragments.AboutZomatoFragment
 import com.zomato.sushiapp.fragments.HomeFragment
 import com.zomato.sushilib.templates.navigation.SushiBottomNavigationBar
+import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 
 class MainFragmentProvider(private val context: Context, private val fm: FragmentManager) :
     SushiBottomNavigationBar.TabViewDataProvider {
@@ -24,10 +25,22 @@ class MainFragmentProvider(private val context: Context, private val fm: Fragmen
             getTitle(position), context.resources.getString(R.string.icon_unfilled_star),
             context.resources.getString(R.string.icon_unfilled_star),
             position,
-            context.resources.getColor(R.color.sushi_black),
-            context.resources.getColor(R.color.sushi_grey_500),
-            context.resources.getColor(R.color.sushi_red_600),
-            context.resources.getColor(R.color.sushi_grey_500)
+            ResourceThemeResolver.getThemedColorFromAttr(
+                context,
+                android.R.attr.textColorPrimary
+            ),
+            ResourceThemeResolver.getThemedColorFromAttr(
+                context,
+                android.R.attr.textColorSecondary
+            ),
+            ResourceThemeResolver.getThemedColorFromAttr(
+                context,
+                android.R.attr.colorPrimary
+            ),
+            ResourceThemeResolver.getThemedColorFromAttr(
+                context,
+                android.R.attr.textColorSecondary
+            )
         )
     }
 

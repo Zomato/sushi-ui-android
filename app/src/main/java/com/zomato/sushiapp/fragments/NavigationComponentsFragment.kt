@@ -2,11 +2,13 @@ package com.zomato.sushiapp.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zomato.sushiapp.R
 import com.zomato.sushilib.templates.navigation.SushiBottomNavigationBar
+import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 import kotlinx.android.synthetic.main.fragment_nav_components.*
 
 class NavigationComponentsFragment : Fragment(), SushiBottomNavigationBar.TabViewDataProvider {
@@ -25,14 +27,27 @@ class NavigationComponentsFragment : Fragment(), SushiBottomNavigationBar.TabVie
     }
 
     override fun getTabData(position: Int): SushiBottomNavigationBar.TabViewData {
+
         return SushiBottomNavigationBar.TabViewData(
             "Menu $position", resources.getString(R.string.icon_unfilled_star),
             resources.getString(R.string.icon_unfilled_star),
             position,
-            resources.getColor(R.color.sushi_black),
-            resources.getColor(R.color.sushi_grey_500),
-            resources.getColor(R.color.sushi_red_600),
-            resources.getColor(R.color.sushi_grey_500)
+            context?.let {ResourceThemeResolver.getThemedColorFromAttr(
+                it,
+                android.R.attr.textColorPrimary
+            ) } ?: 0,
+            context?.let {ResourceThemeResolver.getThemedColorFromAttr(
+                it,
+                android.R.attr.textColorSecondary
+            ) } ?: 0,
+            context?.let {ResourceThemeResolver.getThemedColorFromAttr(
+                it,
+                android.R.attr.colorAccent
+            ) } ?: 0,
+            context?.let {ResourceThemeResolver.getThemedColorFromAttr(
+                it,
+                android.R.attr.textColorSecondary
+            ) } ?: 0
         )
     }
 }
