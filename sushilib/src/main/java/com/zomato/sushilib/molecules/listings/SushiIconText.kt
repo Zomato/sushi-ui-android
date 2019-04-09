@@ -18,7 +18,6 @@ class SushiIconText @JvmOverloads constructor(
             val icon = SushiIconHelper.getIconDrawableEditor(context)
                     // todo pick this from xml
                 .icon(resources.getString(R.string.icon_filled_star))
-                .colorRes(R.color.sushi_black)
                 .sizePx(textSize.toInt()).apply()
             setCompoundDrawables(icon, null, null, null)
             compoundDrawablePadding = resources.getDimensionPixelSize(R.dimen.sushi_spacing_between_large)
