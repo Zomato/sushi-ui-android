@@ -1,14 +1,33 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.Sushi">
-        <!-- Customize your theme here. -->
+    <style name="AppBaseTheme" parent="Theme.Sushi">
         <item name="colorPrimary">@color/sushi_red_500</item>
         <item name="colorPrimaryDark">@color/sushi_red_800</item>
         <item name="colorAccent">@color/sushi_red_500</item>
-        <!--TODO: support for v21-->
-        <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@color/sushi_grey_100</item>
+        <item name="android:theme">@style/ThemeOverlay.OkraFont</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ThemeOverlay.OkraFont" parent="">
+        <item name="fontFamilyThin">@font/okra_thin</item>
+        <item name="fontFamilyExtraLight">@font/okra_extralight</item>
+        <item name="fontFamilyLight">@font/okra_light</item>
+        <item name="fontFamilyRegular">@font/okra_regular</item>
+        <item name="fontFamilyMedium">@font/okra_medium</item>
+        <item name="fontFamilySemiBold">@font/okra_semibold</item>
+    </style>
+
+    <style name="ThemeOverlay.RobotoFont" parent="">
+        <item name="fontFamilyThin">sans-serif-thin</item>
+        <item name="fontFamilyExtraLight">sans-serif-thin</item>
+        <item name="fontFamilyLight">sans-serif-light</item>
+        <item name="fontFamilyRegular">sans-serif</item>
+        <item name="fontFamilyMedium">sans-serif-medium</item>
+        <item name="fontFamilySemiBold">sans-serif-black</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -19,7 +38,6 @@
     <style name="AppTheme.NoActionBar.FullScreen">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

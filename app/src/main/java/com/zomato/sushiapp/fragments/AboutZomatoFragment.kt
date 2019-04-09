@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.res.ResourcesCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,20 +29,10 @@ class AboutZomatoFragment : Fragment() {
         toolbar.title = "About Zomato"
 
         collapsible_toolbar.apply {
-            setExpandedTitleTypeface(
-                TextFormatUtils.sushiFontWeightToTypeface(
-                    context,
-                    600
-                )
-            )
-
-            setCollapsedTitleTypeface(
-                TextFormatUtils.sushiFontWeightToTypeface(
-                    context,
-                    600
-                )
-            )
+            setExpandedTitleTypeface(ResourcesCompat.getFont(context, R.font.okra_light))
+            setCollapsedTitleTypeface(ResourcesCompat.getFont(context, R.font.okra_light))
         }
+
 
         btn_get_app.setOnClickListener {
             with(Intent()) {

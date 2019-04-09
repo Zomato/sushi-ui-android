@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="fontFamilyThin" format="reference|string" />
+    <attr name="fontFamilyExtraLight" format="reference|string" />
+    <attr name="fontFamilyLight" format="reference|string" />
+    <attr name="fontFamilyRegular" format="reference|string" />
+    <attr name="fontFamilyMedium" format="reference|string" />
+    <attr name="fontFamilySemiBold" format="reference|string" />
+
+</resources>

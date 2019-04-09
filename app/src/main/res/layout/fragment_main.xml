@@ -14,6 +14,8 @@
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsible_toolbar"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.Sushi.Light"
+            app:expandedTitleTextAppearance="@style/TextAppearance.Sushi.Light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"

@@ -4,7 +4,7 @@
     <style name="TextAppearance.Sushi" parent="">
         <!-- We do not want to inherit from BaseTextAppearance etc as that
          sets a textSize here, which we do not want -->
-        <item name="android:fontFamily">@font/okra</item>
+        <item name="android:fontFamily">?attr/fontFamilyRegular</item>
     </style>
 
     <style name="TextAppearance.Sushi.Icon">
@@ -13,22 +13,24 @@
   
   <!-- Basic Font Weight Styles -->
     <style name="TextAppearance.Sushi.Thin">
-        <item name="android:fontFamily">@font/okra_thin</item>
+        <item name="android:fontFamily">?attr/fontFamilyThin</item>
     </style>
     <style name="TextAppearance.Sushi.ExtraLight">
-        <item name="android:fontFamily">@font/okra_extralight</item>
+        <item name="android:fontFamily">?attr/fontFamilyExtraLight</item>
     </style>
     <style name="TextAppearance.Sushi.Light">
-        <item name="android:fontFamily">@font/okra_light</item>
+        <item name="android:fontFamily">?attr/fontFamilyLight</item>
     </style>
-    <style name="TextAppearance.Sushi.Regular" />
+    <style name="TextAppearance.Sushi.Regular">
+        <item name="android:fontFamily">?attr/fontFamilyRegular</item>
+    </style>
 
     <style name="TextAppearance.Sushi.Medium">
-        <item name="android:fontFamily">@font/okra_medium</item>
+        <item name="android:fontFamily">?attr/fontFamilyMedium</item>
     </style>
 
     <style name="TextAppearance.Sushi.SemiBold">
-        <item name="android:fontFamily">@font/okra_semibold</item>
+        <item name="android:fontFamily">?attr/fontFamilySemiBold</item>
     </style>
 
 </resources>

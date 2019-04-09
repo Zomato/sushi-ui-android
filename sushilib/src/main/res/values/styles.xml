@@ -2,7 +2,7 @@
 <resources>
 
     <style name="Theme.Sushi" parent="Theme.MaterialComponents.Light">
-        <item name="android:fontFamily">@font/okra</item>
+        <item name="android:fontFamily">?fontFamilyRegular</item>
         <item name="android:textViewStyle">@style/SnippetPaddingTheme</item>
         <item name="sushiIconAppearance">@style/TextAppearance.Sushi.Icon</item>
         <item name="checkboxStyle">@style/Widget.Sushi.CompoundButton.CheckBox</item>
