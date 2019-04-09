@@ -1,10 +1,10 @@
 <resources>
 
     <style name="AppBaseTheme" parent="Theme.Sushi">
-        <item name="colorPrimary">@color/sushi_red_500</item>
-        <item name="colorPrimaryDark">@color/sushi_red_800</item>
-        <item name="colorAccent">@color/sushi_red_500</item>
-        <item name="android:statusBarColor">@color/sushi_grey_100</item>
+        <item name="colorPrimary">@color/sushi_color_primary</item>
+        <item name="colorPrimaryDark">@color/sushi_color_primary_dark</item>
+        <item name="colorAccent">@color/sushi_color_accent</item>
+        <item name="android:statusBarColor">@color/sushi_status_bar_color</item>
         <item name="android:theme">@style/ThemeOverlay.OkraFont</item>
     </style>
     <!-- Base application theme. -->
