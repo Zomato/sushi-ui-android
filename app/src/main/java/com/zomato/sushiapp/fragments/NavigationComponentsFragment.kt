@@ -27,39 +27,27 @@ class NavigationComponentsFragment : Fragment(), SushiBottomNavigationBar.TabVie
     }
 
     override fun getTabData(position: Int): SushiBottomNavigationBar.TabViewData {
-        Log.d("TEXT COLOR PRIMARY", ResourceThemeResolver.getThemedColorFromAttr(
-            context!!,
-            android.R.attr.textColorPrimary
-        ).toString())
-        Log.d("TEXT COLOR SECONDARY", ResourceThemeResolver.getThemedColorFromAttr(
-            context!!,
-            android.R.attr.textColorSecondary
-        ).toString())
 
         return SushiBottomNavigationBar.TabViewData(
             "Menu $position", resources.getString(R.string.icon_unfilled_star),
             resources.getString(R.string.icon_unfilled_star),
             position,
-            ResourceThemeResolver.getThemedColorFromAttr(
-                context!!,
+            context?.let {ResourceThemeResolver.getThemedColorFromAttr(
+                it,
                 android.R.attr.textColorPrimary
-            ),
-            ResourceThemeResolver.getThemedColorFromAttr(
-                context!!,
+            ) } ?: 0,
+            context?.let {ResourceThemeResolver.getThemedColorFromAttr(
+                it,
                 android.R.attr.textColorSecondary
-            ),
-            ResourceThemeResolver.getThemedColorFromAttr(
-                context!!,
-                android.R.attr.colorPrimary
-            ),
-            ResourceThemeResolver.getThemedColorFromAttr(
-                context!!,
+            ) } ?: 0,
+            context?.let {ResourceThemeResolver.getThemedColorFromAttr(
+                it,
+                android.R.attr.colorAccent
+            ) } ?: 0,
+            context?.let {ResourceThemeResolver.getThemedColorFromAttr(
+                it,
                 android.R.attr.textColorSecondary
-            )
-//            resources.getColor(R.color.sushi_black),
-//            resources.getColor(R.color.sushi_grey_500),
-//            resources.getColor(R.color.sushi_red_600),
-//            resources.getColor(R.color.sushi_grey_500)
+            ) } ?: 0
         )
     }
 }
