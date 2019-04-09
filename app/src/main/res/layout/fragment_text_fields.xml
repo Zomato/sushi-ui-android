@@ -14,7 +14,8 @@
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             android:text="Fill details to check"
-            android:textAppearance="@style/Theme.Sushi.Listing.HeadLine"
+            android:paddingLeft="@dimen/sushi_spacing_micro"
+            android:textAppearance="@style/Theme.Sushi.Section.Heading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -31,11 +32,10 @@
             style="@style/Theme.Sushi.TextInputField"
             android:inputType="textPassword"
             android:hint="Password"
-            app:drawableEnd="@drawable/ic_circle_cross"
+            app:drawableEnd="@string/icon_cross_filled"
             android:id="@+id/textFieldPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

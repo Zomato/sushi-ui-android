@@ -1,7 +1,9 @@
 package com.zomato.sushiapp.fragments
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.res.ResourcesCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,20 +43,10 @@ class HomeFragment : Fragment() {
         toolbar.title = resources.getString(R.string.app_name)
 
         collapsible_toolbar.apply {
-            setExpandedTitleTypeface(
-                TextFormatUtils.sushiFontWeightToTypeface(
-                    context,
-                    600
-                )
-            )
-
-            setCollapsedTitleTypeface(
-                TextFormatUtils.sushiFontWeightToTypeface(
-                    context,
-                    600
-                )
-            )
+            setExpandedTitleTypeface(ResourcesCompat.getFont(context, R.font.okra_light))
+            setCollapsedTitleTypeface(ResourcesCompat.getFont(context, R.font.okra_light))
         }
+
         view.apply {
             findViewById<View>(R.id.nav_text_styles)?.setOnClickListener(clickListener)
             findViewById<View>(R.id.nav_text_fields)?.setOnClickListener(clickListener)

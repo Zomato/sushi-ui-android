@@ -25,9 +25,15 @@ class FormComponentFragment : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_text_fields, container, false)
 
         rootView.textFieldRecipient.setEdgeDrawableClickListener(object : SushiTextInputField.EdgeDrawableClickListener {
-            override fun onDrawableStartClicked() {
+            override fun onDrawableStartClicked() {}
 
+            override fun onDrawableEndClicked() {
+                rootView.textFieldRecipient.editText?.setText("")
             }
+
+        })
+        rootView.textFieldPassword.setEdgeDrawableClickListener(object : SushiTextInputField.EdgeDrawableClickListener {
+            override fun onDrawableStartClicked() {}
 
             override fun onDrawableEndClicked() {
                 rootView.textFieldRecipient.editText?.setText("")
