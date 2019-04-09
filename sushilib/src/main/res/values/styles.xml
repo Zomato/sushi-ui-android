@@ -5,6 +5,8 @@
         <item name="android:fontFamily">@font/okra</item>
         <item name="android:textViewStyle">@style/SnippetPaddingTheme</item>
         <item name="sushiIconAppearance">@style/TextAppearance.Sushi.Icon</item>
+        <item name="checkboxStyle">@style/Widget.Sushi.CompoundButton.CheckBox</item>
+        <item name="radioButtonStyle">@style/Widget.Sushi.CompoundButton.RadioButton</item>
     </style>
 
     <style name="SnippetPaddingTheme" />

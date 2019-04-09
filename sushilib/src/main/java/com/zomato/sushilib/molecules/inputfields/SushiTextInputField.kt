@@ -3,17 +3,28 @@ package com.zomato.sushilib.molecules.inputfields
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.Resources
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.os.Build
+import android.support.design.widget.CheckableImageButton
 import android.support.design.widget.TextInputEditText
 import android.support.design.widget.TextInputLayout
+import android.support.v4.view.GravityCompat
 import android.text.Editable
+import android.text.InputType
 import android.text.TextWatcher
+import android.text.method.PasswordTransformationMethod
+import android.text.method.TransformationMethod
 import android.util.AttributeSet
 import android.util.LayoutDirection
+import android.view.Gravity
 import android.view.MotionEvent
+import android.view.ViewGroup
+import android.widget.FrameLayout
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiIconHelper
+
+
 
 /**
  * created by championswimmer on 02/04/19
@@ -115,7 +126,7 @@ class SushiTextInputField @JvmOverloads constructor(
             val drawableStart =
                 try {
                     it.getDrawable(R.styleable.SushiTextInputField_drawableStart)
-                } catch (exception:  Resources.NotFoundException) {
+                } catch (exception: Resources.NotFoundException) {
 
                     it.getString(R.styleable.SushiTextInputField_drawableStart)?.let {
                         SushiIconHelper.getIconDrawableEditor(context)
@@ -141,7 +152,7 @@ class SushiTextInputField @JvmOverloads constructor(
             val drawableEnd =
                 try {
                     it.getDrawable(R.styleable.SushiTextInputField_drawableEnd)
-                } catch (exception:  Resources.NotFoundException) {
+                } catch (exception: Resources.NotFoundException) {
 
                     it.getString(R.styleable.SushiTextInputField_drawableEnd)?.let {
                         SushiIconHelper.getIconDrawableEditor(context)
@@ -159,13 +170,16 @@ class SushiTextInputField @JvmOverloads constructor(
                 drawableRight,
                 null
             )
-            // Override with RTL-able drawables if avaialble
-            mEditText.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                drawableStart,
-                null,
-                drawableEnd,
-                null
-            )
+            // Override with RTL-able drawables if available
+            if (drawableStart != null || drawableEnd != null) {
+                mEditText.setCompoundDrawablesRelativeWithIntrinsicBounds(
+                    drawableStart,
+                    null,
+                    drawableEnd,
+                    null
+                )
+            }
+
             mEditText.compoundDrawablePadding = it.getDimensionPixelSize(
                 R.styleable.SushiTextInputField_drawablePadding,
                 0
