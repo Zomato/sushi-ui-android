@@ -23,7 +23,6 @@ class SushiLabelDualTextView : LinearLayout {
     constructor(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int, defStyleRes: Int)
             : super(context, attributeSet, defStyleAttr, defStyleRes) {
         orientation = VERTICAL
-        setBackgroundColor(resources.getColor(R.color.sushi_white))
         dualTextImpl = DualTextImpl(this, R.layout.layout_label_dual_text, attributeSet, defStyleAttr, defStyleRes)
     }
 }
