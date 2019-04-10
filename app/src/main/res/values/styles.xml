@@ -10,9 +10,11 @@
         <item name="android:statusBarColor">@color/sushi_status_bar_color</item>
         <item name="android:theme">@style/ThemeOverlay.OkraFont</item>
     </style>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- Customize your theme here. -->
+
     </style>
 
     <style name="ThemeOverlay.OkraFont" parent="">

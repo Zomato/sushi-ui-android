@@ -4,13 +4,22 @@ import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.res.ResourcesCompat
+import android.support.v7.app.AppCompatDelegate
+import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_NO
+import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_YES
+import android.transition.Fade
+import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zomato.sushiapp.ComponentActivity
 import com.zomato.sushiapp.R
+import com.zomato.sushilib.atoms.textviews.SushiIcon
 import com.zomato.sushilib.utils.text.TextFormatUtils
 import kotlinx.android.synthetic.main.fragment_main.*
+import android.content.Intent
+import com.zomato.sushiapp.MainActivity
+
 
 class HomeFragment : Fragment() {
 
@@ -29,7 +38,9 @@ class HomeFragment : Fragment() {
         }
         component ?: return@OnClickListener
         activity?.let {
+
             ComponentActivity.start(it, component)
+
         }
 
     }
@@ -56,6 +67,29 @@ class HomeFragment : Fragment() {
             findViewById<View>(R.id.nav_tags)?.setOnClickListener(clickListener)
             findViewById<View>(R.id.nav_listing)?.setOnClickListener(clickListener)
             findViewById<View>(R.id.nav_menu_tabs)?.setOnClickListener(clickListener)
+            (findViewById<View>(R.id.night_mode_icon) as? SushiIcon)?.let {
+                it.text = if (resources.getBoolean(R.bool.night_mode)) {
+                    resources.getString(R.string.icon_moon)
+                } else resources.getString(R.string.icon_moon_empty)
+
+                it.setOnClickListener {
+                    if (resources.getBoolean(R.bool.night_mode)) {
+                        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
+                    } else {
+                        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+                    }
+                    /**
+                     * Activity.recreate() is not called here to provide a smooth transition
+                     */
+                    val intent = Intent(activity, MainActivity::class.java)
+                    activity?.startActivity(intent)
+                    activity?.finish()
+                    activity?.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                }
+
+
+            }
         }
+
     }
 }
