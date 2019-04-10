@@ -10,6 +10,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- Content Samples uses in app -->
+    <string name="sample_listing_headline">Headline Text</string>
+    <string name="sample_listing_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida </string>
 
-    <string name="device_density">Default</string>
 </resources>
