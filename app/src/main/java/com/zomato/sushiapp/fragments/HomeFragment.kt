@@ -18,6 +18,7 @@ import com.zomato.sushilib.atoms.textviews.SushiIcon
 import com.zomato.sushilib.utils.text.TextFormatUtils
 import kotlinx.android.synthetic.main.fragment_main.*
 import android.content.Intent
+import android.transition.TransitionManager
 import com.zomato.sushiapp.MainActivity
 
 

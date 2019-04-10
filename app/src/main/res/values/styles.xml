@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppBaseTheme" parent="Theme.Sushi">
         <item name="colorPrimary">@color/sushi_red_500</item>
@@ -9,7 +9,6 @@
         <item name="android:colorAccent">@color/sushi_red_500</item>
         <item name="android:statusBarColor">@color/sushi_status_bar_color</item>
         <item name="android:theme">@style/ThemeOverlay.OkraFont</item>
-        <item name="android:windowAnimationStyle">@style/Animation.Window.FadeInOut</item>
     </style>
 
     <!-- Base application theme. -->
@@ -49,6 +48,7 @@
     <style name="AppTheme.NoActionBar.FullScreen">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Window.FadeInOut</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
