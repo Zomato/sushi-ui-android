@@ -78,13 +78,7 @@ class HomeFragment : Fragment() {
                     } else {
                         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
                     }
-                    /**
-                     * Activity.recreate() is not called here to provide a smooth transition
-                     */
-                    val intent = Intent(activity, MainActivity::class.java)
-                    activity?.startActivity(intent)
-                    activity?.finish()
-                    activity?.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                    activity?.recreate()
                 }
 
 

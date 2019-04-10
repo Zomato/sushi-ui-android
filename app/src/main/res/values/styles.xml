@@ -9,12 +9,18 @@
         <item name="android:colorAccent">@color/sushi_red_500</item>
         <item name="android:statusBarColor">@color/sushi_status_bar_color</item>
         <item name="android:theme">@style/ThemeOverlay.OkraFont</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Window.FadeInOut</item>
     </style>
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- Customize your theme here. -->
 
+    </style>
+
+    <style name="Animation.Window.FadeInOut" parent="">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
     <style name="ThemeOverlay.OkraFont" parent="">
