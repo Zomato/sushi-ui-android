@@ -7,8 +7,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="icfont_night_mode">@string/icon_moon_empty</string>
+
 
     <!-- Content Samples uses in app -->
     <string name="sample_listing_headline">Headline Text</string>

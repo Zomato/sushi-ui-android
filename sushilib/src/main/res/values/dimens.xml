@@ -34,4 +34,7 @@
 
     <dimen name="sushi_big_rating_min_width">50dp</dimen>
     <dimen name="sushi_small_rating_min_width">25dp</dimen>
+
+    <dimen name="sushi_action_item_size">48dp</dimen>
+    <dimen name="sushi_action_item_drawable_size">20dp</dimen>
 </resources>
