@@ -1,10 +1,9 @@
 package com.zomato.sushilib.utils.theme
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.support.v4.content.ContextCompat
 import android.util.TypedValue
-import com.zomato.sushilib.R
 
 
 /**
@@ -13,7 +12,6 @@ import com.zomato.sushilib.R
  */
 object ResourceThemeResolver {
 
-    @SuppressLint("NewApi")
     @JvmStatic
     fun getThemedColorFromAttr(context: Context, attrId: Int): Int {
         val outValue = TypedValue()
@@ -21,7 +19,7 @@ object ResourceThemeResolver {
             attrId,
             outValue, true
         )
-       return context.getColor(outValue.resourceId)
+        return ContextCompat.getColor(context, outValue.resourceId)
     }
 
     @JvmStatic
@@ -41,6 +39,6 @@ object ResourceThemeResolver {
             attrId,
             outValue, true
         )
-        return context.resources.getDrawable(outValue.resourceId)
+        return ContextCompat.getDrawable(context, outValue.resourceId)
     }
 }
