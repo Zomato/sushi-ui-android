@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <bool name="night_mode">true</bool>
     <color name="statusBarColor">@color/sushi_black</color>
 </resources>
