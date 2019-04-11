@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="sushi_color_primary">@color/sushi_red_500</color>
-    <color name="sushi_color_primary_dark">@color/sushi_red_800</color>
-    <color name="sushi_color_accent">@color/sushi_red_500</color>
-    <color name="sushi_status_bar_color">@color/sushi_grey_100</color>
-    <bool name="sushi_status_bar_light">true</bool>
-    <bool name="night_mode">false</bool>
-
+    <color name="statusBarColor">@color/sushi_grey_100</color>
 </resources>

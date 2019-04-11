@@ -8,6 +8,7 @@ import android.support.annotation.DimenRes
 import android.support.v4.content.res.ResourcesCompat
 import android.text.TextPaint
 import com.zomato.sushilib.R
+import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 
 
 // todo remove sushi specific impl from this
@@ -31,7 +32,7 @@ class SushiIconDrawable
         paint.typeface = ResourcesCompat.getFont(context, R.font.wasabi)
         paint.textAlign = Paint.Align.CENTER
         paint.isUnderlineText = false
-        paint.color = Color.WHITE
+        paint.color = ResourceThemeResolver.getThemedColorFromAttr(context, android.R.attr.textColorPrimary)
         paint.isAntiAlias = true
     }
 

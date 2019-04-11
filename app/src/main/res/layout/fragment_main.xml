@@ -20,8 +20,6 @@
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-
-
             <ImageView
                 android:id="@+id/expandedImage"
                 android:layout_width="match_parent"
@@ -31,22 +29,11 @@
                 android:src="@drawable/sushi_cover_image"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.7" />
-            <com.zomato.sushilib.atoms.textviews.SushiIcon
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/night_mode_icon"
-                android:layout_gravity="end|bottom"
-                android:text="@string/icon_moon"
-                android:padding="@dimen/sushi_spacing_page_side"
-                android:textSize="@dimen/sushi_textsize_500"
-                android:textColor="@color/sushi_white"
-                app:layout_collapseMode="parallax" />
-
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
+                app:title="@string/app_name"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:fitsSystemWindows="true"
                 app:layout_collapseMode="pin" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -56,6 +43,7 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/scrollViewMainNav"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout

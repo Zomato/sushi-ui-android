@@ -53,7 +53,7 @@ class MainFragmentProvider(private val context: Context, private val fm: Fragmen
         }
     }
 
-    private fun getTitle(position: Int): String {
+    fun getTitle(position: Int): String {
         return when (position) {
             0 -> "Sushi"
             1 -> "Zomato"
