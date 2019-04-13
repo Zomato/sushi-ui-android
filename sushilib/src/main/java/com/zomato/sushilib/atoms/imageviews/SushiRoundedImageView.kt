@@ -4,9 +4,9 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
 import android.util.Log
-import android.widget.ImageView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.views.RoundedView
 import com.zomato.sushilib.utils.view.OutlineType
@@ -19,7 +19,7 @@ import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 class SushiRoundedImageView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0, defStyleRes: Int = 0
-) : ImageView(context, attrs, defStyleAttr, defStyleRes), RoundedView {
+) : AppCompatImageView(context, attrs, defStyleAttr), RoundedView {
 
     private val mPreviewPaint = Paint().apply {
         this.style = Paint.Style.FILL
@@ -82,8 +82,7 @@ class SushiRoundedImageView @JvmOverloads constructor(
     }
 
     companion object {
-        @JvmField
-        val TAG = "SushiRoundedImageView"
+        private const val TAG = "SushiRoundedImageView"
     }
 
 }

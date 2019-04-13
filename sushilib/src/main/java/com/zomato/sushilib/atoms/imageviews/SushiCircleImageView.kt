@@ -4,9 +4,9 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
 import android.util.Log
-import android.widget.ImageView
 import android.widget.ImageView.ScaleType.CENTER_CROP
 import com.zomato.sushilib.utils.view.OutlineType
 import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
@@ -19,7 +19,7 @@ import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 class SushiCircleImageView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0, defStyleRes: Int = 0
-) : ImageView(context, attrs, defStyleAttr, defStyleRes) {
+) : AppCompatImageView(context, attrs, defStyleAttr) {
     private val mPreviewPaint = Paint().apply {
         this.style = Paint.Style.FILL
         this.isAntiAlias = true
