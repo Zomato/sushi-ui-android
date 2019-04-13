@@ -14,23 +14,29 @@
   <!-- Basic Font Weight Styles -->
     <style name="TextAppearance.Sushi.Thin">
         <item name="android:fontFamily">?attr/fontFamilyThin</item>
+        <item name="fontFamily">?attr/fontFamilyThin</item>
     </style>
     <style name="TextAppearance.Sushi.ExtraLight">
         <item name="android:fontFamily">?attr/fontFamilyExtraLight</item>
+        <item name="fontFamily">?attr/fontFamilyExtraLight</item>
     </style>
     <style name="TextAppearance.Sushi.Light">
         <item name="android:fontFamily">?attr/fontFamilyLight</item>
+        <item name="fontFamily">?attr/fontFamilyLight</item>
     </style>
     <style name="TextAppearance.Sushi.Regular">
         <item name="android:fontFamily">?attr/fontFamilyRegular</item>
+        <item name="fontFamily">?attr/fontFamilyRegular</item>
     </style>
 
     <style name="TextAppearance.Sushi.Medium">
         <item name="android:fontFamily">?attr/fontFamilyMedium</item>
+        <item name="fontFamily">?attr/fontFamilyMedium</item>
     </style>
 
     <style name="TextAppearance.Sushi.SemiBold">
         <item name="android:fontFamily">?attr/fontFamilySemiBold</item>
+        <item name="fontFamily">?attr/fontFamilySemiBold</item>
     </style>
 
 </resources>

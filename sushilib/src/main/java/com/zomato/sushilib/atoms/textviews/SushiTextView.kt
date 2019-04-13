@@ -1,8 +1,8 @@
 package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
+import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
-import android.widget.TextView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.text.TextFormatUtils
 
@@ -10,7 +10,7 @@ open class SushiTextView @JvmOverloads constructor(
     context: Context?, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
     defStyleRes: Int = 0
-) : TextView(context, attrs, defStyleAttr, defStyleRes) {
+) : AppCompatTextView(context, attrs, defStyleAttr) {
 
     init {
         context?.theme?.obtainStyledAttributes(
