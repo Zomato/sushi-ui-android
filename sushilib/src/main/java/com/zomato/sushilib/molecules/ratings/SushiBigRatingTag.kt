@@ -11,7 +11,7 @@ import com.zomato.sushilib.atoms.tagviews.SushiTagView
 open class SushiBigRatingTag @JvmOverloads constructor(
     context: Context?,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = R.attr.bigRatingTagStyle,
+    defStyleAttr: Int = 0,
     defStyleRes: Int = R.style.SushiTheme_BigRatingTag
 ) : SushiTagView(context, attrs, defStyleAttr, defStyleRes), SushiRatingViewSetter {
 
