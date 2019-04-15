@@ -11,7 +11,7 @@ import com.zomato.sushilib.atoms.tagviews.SushiTagView
 open class SushiBigRatingTag @JvmOverloads constructor(
     context: Context?,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0,
+    defStyleAttr: Int = R.attr.bigRatingTagStyle,
     defStyleRes: Int = R.style.SushiTheme_BigRatingTag
 ) : SushiTagView(context, attrs, defStyleAttr, defStyleRes), SushiRatingViewSetter {
 
@@ -19,10 +19,6 @@ open class SushiBigRatingTag @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        Log.e(
-            "test_Tag",
-            "draw called width = $width" + " 44dp = ${resources.getDimensionPixelSize(R.dimen.sushi_big_rating_min_width)}"
-        )
         sushiRatingViewImpl.dispatchDraw(canvas)
     }
 

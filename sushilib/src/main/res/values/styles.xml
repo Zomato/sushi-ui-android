@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Base.Theme.Sushi" parent="Theme.MaterialComponents.Light">
         <item name="android:colorBackground">@color/sushi_white</item>
         <item name="android:windowBackground">@color/sushi_white</item>
@@ -14,6 +15,9 @@
         <item name="sushiIconAppearance">@style/TextAppearance.Sushi.Icon</item>
         <item name="checkboxStyle">@style/Widget.Sushi.CompoundButton.CheckBox</item>
         <item name="radioButtonStyle">@style/Widget.Sushi.CompoundButton.RadioButton</item>
+        <item name="smallRatingTagStyle">@style/SushiTheme.SmallRatingTag</item>
+        <item name="bigRatingTagStyle">@style/SushiTheme.BigRatingTag</item>
+
     </style>
 
     <style name="SnippetPaddingTheme" />
