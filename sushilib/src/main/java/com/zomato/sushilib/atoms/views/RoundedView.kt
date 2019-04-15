@@ -17,9 +17,13 @@ interface RoundedView {
     var cornerRadius: Float
         get() = (getOutlineProvider() as? SushiViewOutlineProvider)?.cornerRadius ?: 0f
         set(cr) {
+            // If getOutlineProvider() is a SushiViewOutlineProvider
             (getOutlineProvider() as? SushiViewOutlineProvider)?.apply {
                 cornerRadius = cr
+
+                // If getOutlineProvider() turned out null, or not SushiViewOutlineProvider
             } ?: setOutlineProvider(SushiViewOutlineProvider(OutlineType.ROUNDED_RECT, cr))
+
             setClipToOutline(true)
         }
 }
