@@ -1,17 +1,21 @@
 package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
-import android.support.v7.view.ContextThemeWrapper
+import android.support.annotation.StyleRes
 import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.text.TextFormatUtils
+import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 
 open class SushiTextView @JvmOverloads constructor(
-    context: Context?, attrs: AttributeSet? = null,
+    ctx: Context?, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-    defStyleRes: Int = 0
-) : AppCompatTextView(ContextThemeWrapper(context, defStyleRes), attrs, defStyleAttr) {
+    @StyleRes defStyleRes: Int = 0
+) : AppCompatTextView(
+    getThemeWrappedContext(ctx, defStyleRes),
+    attrs, defStyleAttr
+) {
 
     init {
         context?.theme?.obtainStyledAttributes(
