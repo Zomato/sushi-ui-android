@@ -2,7 +2,10 @@ package com.zomato.sushilib.utils.theme
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.support.annotation.AttrRes
+import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
+import android.support.v7.view.ContextThemeWrapper
 import android.util.TypedValue
 
 
@@ -12,8 +15,24 @@ import android.util.TypedValue
  */
 object ResourceThemeResolver {
 
+    /**
+     * Creates a theme-wrapped context, given a context and a default style resId
+     *
+     * @param context Context wrapped with provided [defStyleRes]
+     * or the same [context] is returned if no defStyleRes is provided
+     * @param defStyleRes A style resource id
+     */
     @JvmStatic
-    fun getThemedColorFromAttr(context: Context, attrId: Int): Int {
+    fun getThemeWrappedContext(context: Context?, @StyleRes defStyleRes: Int = 0): Context? {
+        return (if (defStyleRes == 0) {
+            context
+        } else {
+            ContextThemeWrapper(context, defStyleRes)
+        })
+    }
+
+    @JvmStatic
+    fun getThemedColorFromAttr(context: Context, @AttrRes attrId: Int): Int {
         val outValue = TypedValue()
         context.theme.resolveAttribute(
             attrId,
@@ -23,7 +42,7 @@ object ResourceThemeResolver {
     }
 
     @JvmStatic
-    fun getThemedDimenPixelFromAttr(context: Context, attrId: Int): Int {
+    fun getThemedDimenPixelFromAttr(context: Context, @AttrRes attrId: Int): Int {
         val outValue = TypedValue()
         context.theme.resolveAttribute(
             attrId,
@@ -33,7 +52,7 @@ object ResourceThemeResolver {
     }
 
     @JvmStatic
-    fun getThemedDrawableFromAttr(context: Context, attrId: Int): Drawable? {
+    fun getThemedDrawableFromAttr(context: Context, @AttrRes attrId: Int): Drawable? {
         val outValue = TypedValue()
         context.theme.resolveAttribute(
             attrId,

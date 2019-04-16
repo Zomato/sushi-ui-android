@@ -9,6 +9,7 @@ import android.util.AttributeSet
 import android.util.Log
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.views.RoundedView
+import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 import com.zomato.sushilib.utils.view.OutlineType
 import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 
@@ -17,9 +18,11 @@ import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
 class SushiRoundedImageView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null,
+    ctx: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0, defStyleRes: Int = 0
-) : AppCompatImageView(context, attrs, defStyleAttr), RoundedView {
+) : AppCompatImageView(
+    getThemeWrappedContext(ctx, defStyleRes),
+    attrs, defStyleAttr), RoundedView {
 
     private val mPreviewPaint = Paint().apply {
         this.style = Paint.Style.FILL
