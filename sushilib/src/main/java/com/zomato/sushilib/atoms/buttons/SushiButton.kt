@@ -6,8 +6,11 @@ import android.support.v7.view.ContextThemeWrapper
 import android.util.AttributeSet
 
 class SushiButton @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null,
+    ctx: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0, defStyleRes: Int = 0
-) : MaterialButton(ContextThemeWrapper(context, defStyleRes), attrs, defStyleAttr) {
+) : MaterialButton(
+    (if (defStyleRes == 0) { ctx } else { ContextThemeWrapper(ctx, defStyleRes)}),
+    attrs,
+    defStyleAttr) {
 
 }

@@ -8,10 +8,12 @@ import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.text.TextFormatUtils
 
 open class SushiTextView @JvmOverloads constructor(
-    context: Context?, attrs: AttributeSet? = null,
+    ctx: Context?, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
     defStyleRes: Int = 0
-) : AppCompatTextView(ContextThemeWrapper(context, defStyleRes), attrs, defStyleAttr) {
+) : AppCompatTextView(
+    (if (defStyleRes == 0) { ctx } else { ContextThemeWrapper(ctx, defStyleRes)}),
+    attrs, defStyleAttr) {
 
     init {
         context?.theme?.obtainStyledAttributes(
