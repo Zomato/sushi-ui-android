@@ -7,11 +7,8 @@ import com.zomato.sushilib.R
 class SushiSmallRatingTag @JvmOverloads constructor(
     context: Context?,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = R.attr.smallRatingTagStyle,
+    defStyleAttr: Int = 0,
     defStyleRes: Int = R.style.SushiTheme_SmallRatingTag
 ) : SushiBigRatingTag(context, attrs, defStyleAttr, defStyleRes) {
 
-    init {
-
-    }
 }
