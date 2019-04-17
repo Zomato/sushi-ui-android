@@ -17,14 +17,14 @@
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
             style="@style/Widget.Sushi.TextButton.Large"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Large Button" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
             style="@style/Widget.Sushi.TextButton.Large"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:enabled="false"
@@ -32,7 +32,7 @@
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
             style="@style/Widget.Sushi.TextButton.Large"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Large Icon Button"
@@ -40,7 +40,7 @@
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
             style="@style/Widget.Sushi.TextButton.Large"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:layoutDirection="rtl"
