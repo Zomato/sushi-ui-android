@@ -1,7 +1,6 @@
 package com.zomato.sushilib.atoms.views
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.support.annotation.Keep
 import android.support.v4.view.ActionProvider
@@ -11,14 +10,11 @@ import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.FrameLayout
 import android.widget.ImageView
-import android.widget.Toast
 import com.zomato.sushilib.R
-import com.zomato.sushilib.atoms.textviews.SushiIconHelper
-import com.zomato.sushilib.utils.theme.ResourceThemeResolver
+import com.zomato.sushilib.atoms.textviews.SushiIconDrawable
 
 /**
  * created by championswimmer on 11/04/19
@@ -59,10 +55,10 @@ class SushiIconActionProvider(context: Context) : ActionProvider(context) {
                     )
                     // Sushi Icon Drawable in it
                     setImageDrawable(
-                        SushiIconHelper.getIconDrawableEditor(context)
-                            .sizeRes(R.dimen.sushi_action_item_drawable_size)
-                            .icon(forItem.title as String)
-                            .apply()
+                        SushiIconDrawable.Builder(context)
+                            .setIconSizeRes(R.dimen.sushi_action_item_drawable_size)
+                            .setIconChar(forItem.title as String)
+                            .build()
                     )
                 })
                 setOnClickListener {

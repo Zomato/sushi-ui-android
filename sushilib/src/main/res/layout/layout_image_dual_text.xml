@@ -30,7 +30,7 @@
         <include layout="@layout/layout_dual_text" />
     </LinearLayout>
 
-    <com.zomato.sushilib.atoms.textviews.SushiIcon
+    <com.zomato.sushilib.atoms.textviews.SushiIconTextView
         android:id="@+id/icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

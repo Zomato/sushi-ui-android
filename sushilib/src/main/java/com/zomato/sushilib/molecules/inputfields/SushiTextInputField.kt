@@ -3,27 +3,17 @@ package com.zomato.sushilib.molecules.inputfields
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.Resources
-import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.os.Build
-import android.support.design.widget.CheckableImageButton
 import android.support.design.widget.TextInputEditText
 import android.support.design.widget.TextInputLayout
-import android.support.v4.view.GravityCompat
 import android.text.Editable
-import android.text.InputType
 import android.text.TextWatcher
-import android.text.method.PasswordTransformationMethod
-import android.text.method.TransformationMethod
 import android.util.AttributeSet
 import android.util.LayoutDirection
-import android.view.Gravity
 import android.view.MotionEvent
-import android.view.ViewGroup
-import android.widget.FrameLayout
 import com.zomato.sushilib.R
-import com.zomato.sushilib.atoms.textviews.SushiIconHelper
-
+import com.zomato.sushilib.atoms.textviews.SushiIconDrawable
 
 
 /**
@@ -116,11 +106,11 @@ class SushiTextInputField @JvmOverloads constructor(
                 } catch (exception: Resources.NotFoundException) {
 
                     it.getString(R.styleable.SushiTextInputField_drawableLeft)?.let {
-                        SushiIconHelper.getIconDrawableEditor(context)
-                            .icon(it)
-                            .colorRes(R.color.sushi_grey_400)
-                            .sizePx(mEditText.textSize.toInt())
-                            .apply()
+                        SushiIconDrawable.Builder(context)
+                            .setIconChar(it)
+                            .setColorRes(R.color.sushi_grey_400)
+                            .setIconSize(mEditText.textSize.toInt())
+                            .build()
                     }
                 }
             val drawableStart =
@@ -129,11 +119,11 @@ class SushiTextInputField @JvmOverloads constructor(
                 } catch (exception: Resources.NotFoundException) {
 
                     it.getString(R.styleable.SushiTextInputField_drawableStart)?.let {
-                        SushiIconHelper.getIconDrawableEditor(context)
-                            .icon(it)
-                            .sizePx(mEditText.textSize.toInt())
-                            .colorRes(R.color.sushi_grey_400)
-                            .apply()
+                        SushiIconDrawable.Builder(context)
+                            .setIconChar(it)
+                            .setColorRes(R.color.sushi_grey_400)
+                            .setIconSize(mEditText.textSize.toInt())
+                            .build()
                     }
                 }
             val drawableRight =
@@ -142,11 +132,11 @@ class SushiTextInputField @JvmOverloads constructor(
                 } catch (exception: Resources.NotFoundException) {
 
                     it.getString(R.styleable.SushiTextInputField_drawableRight)?.let {
-                        SushiIconHelper.getIconDrawableEditor(context)
-                            .icon(it)
-                            .colorRes(R.color.sushi_grey_400)
-                            .sizePx(mEditText.textSize.toInt())
-                            .apply()
+                        SushiIconDrawable.Builder(context)
+                            .setIconChar(it)
+                            .setColorRes(R.color.sushi_grey_400)
+                            .setIconSize(mEditText.textSize.toInt())
+                            .build()
                     }
                 }
             val drawableEnd =
@@ -155,11 +145,11 @@ class SushiTextInputField @JvmOverloads constructor(
                 } catch (exception: Resources.NotFoundException) {
 
                     it.getString(R.styleable.SushiTextInputField_drawableEnd)?.let {
-                        SushiIconHelper.getIconDrawableEditor(context)
-                            .icon(it)
-                            .sizePx(mEditText.textSize.toInt())
-                            .colorRes(R.color.sushi_grey_400)
-                            .apply()
+                        SushiIconDrawable.Builder(context)
+                            .setIconChar(it)
+                            .setColorRes(R.color.sushi_grey_400)
+                            .setIconSize(mEditText.textSize.toInt())
+                            .build()
                     }
                 }
 

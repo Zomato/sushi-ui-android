@@ -184,7 +184,7 @@ class SushiBottomNavigationBar : LinearLayout {
 
         private val textView: SushiTextView
         private val imageView: ImageView
-        private val iconDrawable = SushiIconDrawable(context)
+        private val iconDrawable = SushiIconDrawable.Builder(context).build()
 
         init {
             gravity = Gravity.CENTER
@@ -213,10 +213,16 @@ class SushiBottomNavigationBar : LinearLayout {
         fun setData() {
             textView.text = tabData.title
             if (isSelected) {
-                iconDrawable.editor().icon(tabData.activeIcon).colorInt(tabData.activeStateIconColor).apply()
+                iconDrawable.apply {
+                    setIconChar(tabData.activeIcon)
+                    setColor(tabData.activeStateIconColor)
+                }
                 textView.setTextColor(tabData.activeStateTextColor)
             } else {
-                iconDrawable.editor().icon(tabData.inactiveIcon).colorInt(tabData.inactiveStateIconColor).apply()
+                iconDrawable.apply {
+                    setIconChar(tabData.inactiveIcon)
+                    setColor(tabData.inactiveStateIconColor)
+                }
                 textView.setTextColor(tabData.inactiveStateTextColor)
             }
         }

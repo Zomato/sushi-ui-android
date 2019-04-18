@@ -9,7 +9,6 @@ import android.util.AttributeSet
 import android.widget.TextView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiIconDrawable
-import com.zomato.sushilib.atoms.textviews.SushiIconHelper
 import com.zomato.sushilib.atoms.views.RoundedView
 
 class SushiRatingViewImpl(
@@ -34,7 +33,8 @@ class SushiRatingViewImpl(
     @ColorInt
     private var unselectedBackgroundColor = resources?.getColor(R.color.sushi_white) ?: 0 // unselected color
     @ColorInt
-    private var unselectedTextColor = resources?.getColor(R.color.sushi_disabled_text_color) ?: 0 // unselected text color
+    private var unselectedTextColor =
+        resources?.getColor(R.color.sushi_disabled_text_color) ?: 0 // unselected text color
 
     private var icon: SushiIconDrawable? = null
     private var showText: Boolean = true
@@ -51,10 +51,11 @@ class SushiRatingViewImpl(
     init {
         view.context?.let {
             resources?.let { r ->
-                icon = SushiIconHelper.getIconDrawableEditor(it)
-                    .icon(r.getString(R.string.icon_filled_star))
-                    .sizePx(view.textSize.toInt() - r.getDimensionPixelOffset(R.dimen.sushi_spacing_micro))
-                    .colorInt(r.getColor(R.color.sushi_white)).apply()
+                icon = SushiIconDrawable.Builder(it)
+                    .setIconStringRes(R.string.icon_filled_star)
+                    .setIconSize(view.textSize.toInt() - r.getDimensionPixelOffset(R.dimen.sushi_spacing_micro))
+                    .setColorRes(R.color.sushi_white)
+                    .build()
                 view.compoundDrawablePadding = r.getDimensionPixelOffset(R.dimen.sushi_spacing_between_small)
                 view.setCompoundDrawables(null, null, icon, null)
             }
@@ -107,14 +108,14 @@ class SushiRatingViewImpl(
             view.setBackgroundColor(baseColor)
             (if (showText) baseTextColor else baseColor).run {
                 view.setTextColor(this)
-                icon?.editor()?.colorInt(this)?.apply()
+                icon?.setColor(this)
             }
 
         } else {
             view.setBackgroundColor(unselectedBackgroundColor)
             (if (showText) unselectedTextColor else unselectedBackgroundColor).run {
                 view.setTextColor(this)
-                icon?.editor()?.colorInt(this)?.apply()
+                icon?.setColor(this)
             }
         }
     }
