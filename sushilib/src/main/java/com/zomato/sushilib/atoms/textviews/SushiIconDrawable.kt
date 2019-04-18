@@ -13,6 +13,9 @@ import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 
 /**
+ * A Drawable that uses Sushi's Wasabi fonticon
+ * to create icons based on icon characters
+ *
  * created by championswimmer on 18/04/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
@@ -22,22 +25,45 @@ class SushiIconDrawable private constructor() : Drawable() {
     private var size = -1
     private var iconChar = ""
 
+    /**
+     * Set size in pixels
+     *
+     * @param sizePx
+     */
     fun setIconSize(sizePx: Int) {
         this.size = sizePx
         setBounds(0, 0, size, size)
         invalidateSelf()
     }
 
+    /**
+     * Set Color with a [Color] integer
+     *
+     * @param colorInt
+     */
     fun setColor(colorInt: Int) {
         paint.color = colorInt
         invalidateSelf()
     }
 
+    /**
+     * Set transparency of the drawable.
+     *
+     * @param alpha A value between 0 and 255 (inclusive)
+     */
     override fun setAlpha(alpha: Int) {
         paint.alpha = alpha
         invalidateSelf()
     }
 
+    /**
+     * Set the icon character
+     *
+     * NOTE: This will give black boxes or weird characters if you
+     * do not set a valid icon character
+     *
+     * @param iconChar
+     */
     fun setIconChar(iconChar: String) {
         this.iconChar = iconChar
         invalidateSelf()
@@ -73,6 +99,12 @@ class SushiIconDrawable private constructor() : Drawable() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    /**
+     * Builder for [SushiIconDrawable], which itself is private
+     * and cannot be directly instantiated
+     *
+     * @property context An activity/view context to access resources
+     */
     class Builder(val context: Context) {
         var drawable: SushiIconDrawable = SushiIconDrawable()
 
@@ -86,7 +118,11 @@ class SushiIconDrawable private constructor() : Drawable() {
             }
         }
 
-
+        /**
+         * Set size with a dimen resource id
+         *
+         * @param sizeRes
+         */
         fun setIconSizeRes(@DimenRes sizeRes: Int): Builder {
             setIconSize(
                 context.resources.getDimensionPixelSize(sizeRes)
@@ -94,12 +130,22 @@ class SushiIconDrawable private constructor() : Drawable() {
             return this
         }
 
+        /**
+         * Set size in pixels
+         *
+         * @param sizePx
+         */
         fun setIconSize(sizePx: Int): Builder {
             drawable.setIconSize(sizePx)
             return this
         }
 
 
+        /**
+         * Set color with a color resource ID
+         *
+         * @param colorResId
+         */
         fun setColorRes(@ColorRes colorResId: Int): Builder {
             drawable.setColor(
                 ContextCompat.getColor(context, colorResId)
@@ -107,11 +153,21 @@ class SushiIconDrawable private constructor() : Drawable() {
             return this
         }
 
+        /**
+         * Set Color with a [Color] integer
+         *
+         * @param colorInt
+         */
         fun setColor(@ColorInt colorInt: Int): Builder {
             drawable.setColor(colorInt)
             return this
         }
 
+        /**
+         * Set transparency of the drawable.
+         *
+         * @param alpha A value between 0 (transparent) and 1 (opaque)
+         */
         fun setAlpha(alpha: Float): Builder {
             var a = alpha
             if (a > 1) a = 1f;
@@ -121,11 +177,22 @@ class SushiIconDrawable private constructor() : Drawable() {
             return this
         }
 
+        /**
+         * Set transparency of the drawable.
+         *
+         * @param alpha A value between 0 and 255 (inclusive)
+         */
         fun setAlpha(alpha: Int): Builder {
             drawable.alpha = alpha
             return this
         }
 
+        /**
+         * Set the icon's character (refer to Wasabi's character map)
+         * using a string resource
+         *
+         * @param resId Resource id of the string
+         */
         fun setIconStringRes(@StringRes resId: Int): Builder {
             setIconChar(
                 context.resources.getString(resId)
@@ -133,6 +200,14 @@ class SushiIconDrawable private constructor() : Drawable() {
             return this
         }
 
+        /**
+         * Set the icon character
+         *
+         * NOTE: This will give black boxes or weird characters if you
+         * do not set a valid icon character
+         *
+         * @param iconChar
+         */
         fun setIconChar(iconChar: String): Builder {
             drawable.setIconChar(iconChar)
             return this
