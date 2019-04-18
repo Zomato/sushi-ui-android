@@ -25,18 +25,30 @@ class SushiIconDrawable2 private constructor() : Drawable() {
     fun setIconSize(sizePx: Int) {
         this.size = sizePx
         setBounds(0, 0, size, size)
+        invalidateSelf()
     }
 
     fun setColor(colorInt: Int) {
         paint.color = colorInt
+        invalidateSelf()
     }
 
     override fun setAlpha(alpha: Int) {
         paint.alpha = alpha
+        invalidateSelf()
     }
 
     fun setIconChar(iconChar: String) {
         this.iconChar = iconChar
+        invalidateSelf()
+    }
+
+    override fun getIntrinsicHeight(): Int {
+        return size
+    }
+
+    override fun getIntrinsicWidth(): Int {
+        return size
     }
 
 
