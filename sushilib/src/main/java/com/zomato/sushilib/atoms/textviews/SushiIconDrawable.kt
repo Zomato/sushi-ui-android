@@ -1,102 +1,47 @@
 package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.graphics.*
 import android.graphics.drawable.Drawable
+import android.support.annotation.ColorInt
+import android.support.annotation.ColorRes
 import android.support.annotation.DimenRes
+import android.support.annotation.StringRes
+import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
-import android.text.TextPaint
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 
-
-// todo remove sushi specific impl from this
-class SushiIconDrawable
 /**
- * Create an IconDrawable.
- *
- * @param context Your activity or application context.
- * @param icon    The icon you want this drawable to display.
+ * created by championswimmer on 18/04/19
+ * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-    (private val context: Context) : Drawable(),
-    SushiIconEditor {
+class SushiIconDrawable private constructor() : Drawable() {
 
-    private val paint: TextPaint = TextPaint()
-
+    private var paint: Paint = Paint()
     private var size = -1
+    private var iconChar = ""
 
-    private var icon = ""
-
-    init {
-        paint.typeface = ResourcesCompat.getFont(context, R.font.wasabi)
-        paint.textAlign = Paint.Align.CENTER
-        paint.isUnderlineText = false
-        paint.color = ResourceThemeResolver.getThemedColorFromAttr(context, android.R.attr.textColorPrimary)
-        paint.isAntiAlias = true
-    }
-
-
-    /**
-     * Set the size of the drawable.
-     *
-     * @param dimenRes The dimension resource.
-     * @return The current IconDrawable for chaining.
-     */
-    override fun sizeRes(@DimenRes dimenRes: Int): SushiIconDrawable {
-        return sizePx(context.resources.getDimensionPixelSize(dimenRes))
-    }
-
-    /**
-     * Set the size of the drawable.
-     *
-     * @param size The size in pixels (px).
-     * @return The current IconDrawable for chaining.
-     */
-    override fun sizePx(size: Int): SushiIconDrawable {
-        this.size = size
+    fun setIconSize(sizePx: Int) {
+        this.size = sizePx
         setBounds(0, 0, size, size)
         invalidateSelf()
-        return this
     }
 
-
-    /**
-     * Set the color of the drawable.
-     *
-     * @param colorRes The color resource, from your R file.
-     * @return The current IconDrawable for chaining.
-     */
-    override fun colorRes(colorRes: Int): SushiIconDrawable {
-        paint.color = context.resources.getColor(colorRes)
-        invalidateSelf()
-        return this
-    }
-
-    override fun colorInt(colorInt: Int): SushiIconEditor {
+    fun setColor(colorInt: Int) {
         paint.color = colorInt
         invalidateSelf()
-        return this
     }
 
-    /**
-     * Set the alpha of this drawable.
-     *
-     * @param alpha The alpha, between 0 (transparent) and 255 (opaque).
-     * @return The current IconDrawable for chaining.
-     */
-    override fun alpha(alpha: Int): SushiIconEditor {
-        setAlpha(alpha)
+    override fun setAlpha(alpha: Int) {
+        paint.alpha = alpha
         invalidateSelf()
-        return this
     }
 
-
-    fun editor(): SushiIconEditor {
-        return this
+    fun setIconChar(iconChar: String) {
+        this.iconChar = iconChar
+        invalidateSelf()
     }
-
-    override fun apply(): SushiIconDrawable = this
 
     override fun getIntrinsicHeight(): Int {
         return size
@@ -106,49 +51,93 @@ class SushiIconDrawable
         return size
     }
 
+
     override fun draw(canvas: Canvas) {
         paint.textSize = bounds.height().toFloat()
         val textBounds = Rect()
-        val textValue = icon
+        val textValue = iconChar
         paint.getTextBounds(textValue, 0, textValue.length, textBounds)
         val textBottom = (bounds.height() - textBounds.height()) / 2f + textBounds.height() - textBounds.bottom
         canvas.drawText(textValue, bounds.width() / 2f, textBottom, paint)
     }
 
-    override fun isStateful(): Boolean {
-        return true
-    }
-
-    override fun setState(stateSet: IntArray): Boolean {
-        /**
-         * not supporting this, can be implemented if use case arises.
-         */
-
-        //        int oldValue = paint.getAlpha();
-        //        int newValue = isEnabled(stateSet) ? alpha : alpha / 2;
-        //        paint.setAlpha(newValue);
-        //        return oldValue != newValue;
-        return false
-    }
-
-    override fun setAlpha(alpha: Int) {
-        paint.alpha = alpha
-    }
-
-    override fun setColorFilter(cf: ColorFilter?) {
-        paint.colorFilter = cf
-    }
-
-    override fun clearColorFilter() {
-        paint.colorFilter = null
-    }
-
     override fun getOpacity(): Int {
-        return PixelFormat.OPAQUE
+        return when (paint.alpha) {
+            255 -> PixelFormat.OPAQUE
+            0 -> PixelFormat.TRANSPARENT
+            else -> PixelFormat.TRANSLUCENT
+        }
     }
 
-    override fun icon(icon: String): SushiIconEditor = apply {
-        this.icon = icon
-        invalidateSelf()
+    override fun setColorFilter(colorFilter: ColorFilter?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    class Builder(val context: Context) {
+        var drawable: SushiIconDrawable = SushiIconDrawable()
+
+        init {
+            drawable.apply {
+                paint.typeface = ResourcesCompat.getFont(context, R.font.wasabi)
+                paint.textAlign = Paint.Align.CENTER
+                paint.isUnderlineText = false
+                paint.color = ResourceThemeResolver.getThemedColorFromAttr(context, android.R.attr.textColorPrimary)
+                paint.isAntiAlias = true
+            }
+        }
+
+
+        fun setIconSizeRes(@DimenRes sizeRes: Int): Builder {
+            setIconSize(
+                context.resources.getDimensionPixelSize(sizeRes)
+            )
+            return this
+        }
+
+        fun setIconSize(sizePx: Int): Builder {
+            drawable.setIconSize(sizePx)
+            return this
+        }
+
+
+        fun setColorRes(@ColorRes colorResId: Int): Builder {
+            drawable.setColor(
+                ContextCompat.getColor(context, colorResId)
+            )
+            return this
+        }
+
+        fun setColor(@ColorInt colorInt: Int): Builder {
+            drawable.setColor(colorInt)
+            return this
+        }
+
+        fun setAlpha(alpha: Float): Builder {
+            var a = alpha
+            if (a > 1) a = 1f;
+            if (a < 0) a = 0f;
+
+            drawable.alpha = (a * 255).toInt()
+            return this
+        }
+
+        fun setAlpha(alpha: Int): Builder {
+            drawable.alpha = alpha
+            return this
+        }
+
+        fun setIconStringRes(@StringRes resId: Int): Builder {
+            setIconChar(
+                context.resources.getString(resId)
+            )
+            return this
+        }
+
+        fun setIconChar(iconChar: String): Builder {
+            drawable.setIconChar(iconChar)
+            return this
+        }
+
+        fun build(): SushiIconDrawable = drawable
     }
 }

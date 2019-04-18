@@ -3,7 +3,7 @@ package com.zomato.sushilib.molecules.listings
 import android.content.Context
 import android.util.AttributeSet
 import com.zomato.sushilib.R
-import com.zomato.sushilib.atoms.textviews.SushiIconHelper
+import com.zomato.sushilib.atoms.textviews.SushiIconDrawable
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 
 class SushiIconText @JvmOverloads constructor(
@@ -15,10 +15,10 @@ class SushiIconText @JvmOverloads constructor(
 
     init {
         context?.let {
-            val icon = SushiIconHelper.getIconDrawableEditor(context)
-                    // todo pick this from xml
-                .icon(resources.getString(R.string.icon_filled_star))
-                .sizePx(textSize.toInt()).apply()
+            val icon = SushiIconDrawable.Builder(context)
+                .setIconStringRes(R.string.icon_filled_star)
+                .setIconSize(textSize.toInt())
+                .build()
             setCompoundDrawables(icon, null, null, null)
             compoundDrawablePadding = resources.getDimensionPixelSize(R.dimen.sushi_spacing_between_large)
         }
