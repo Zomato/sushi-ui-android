@@ -7,7 +7,7 @@ import android.util.AttributeSet
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 
-class SushiIcon @JvmOverloads constructor(
+class SushiIconTextView @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = R.attr.sushiIconAppearance, @StyleRes defStyleRes: Int = 0
 ) : AppCompatTextView(
