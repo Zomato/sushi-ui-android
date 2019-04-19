@@ -10,6 +10,14 @@
     <dimen name="sushi_textsize_800">24sp</dimen>
     <dimen name="sushi_textsize_900">27sp</dimen>
 
+    <dimen name="sushi_iconsize_500">18sp</dimen>
+    <dimen name="sushi_iconsize_300">14sp</dimen>
+    <dimen name="sushi_iconsize_200">12sp</dimen>
+
+    <dimen name="sushi_button_large_minheight">48dp</dimen>
+    <dimen name="sushi_button_medium_minheight">32dp</dimen>
+    <dimen name="sushi_button_small_minheight">25dp</dimen>
+
     <dimen name="sushi_spacing_pico">1dp</dimen>
     <dimen name="sushi_spacing_nano">2dp</dimen>
     <dimen name="sushi_spacing_micro">4dp</dimen>

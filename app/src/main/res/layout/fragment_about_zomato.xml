@@ -87,7 +87,8 @@
 
             <com.zomato.sushilib.atoms.buttons.SushiButton
                 android:id="@+id/btn_get_app"
-                style="@style/Widget.Sushi.Button.Large"
+                style="@style/Widget.Sushi.Button"
+                app:buttonSize="large"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_base"

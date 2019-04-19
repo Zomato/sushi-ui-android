@@ -10,75 +10,24 @@
     </style>
 
     <style name="Widget.Sushi.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:minHeight">0dp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="android:theme">@style/ThemeOverlay.Sushi.Button</item>
-    </style>
-
-    <style name="Widget.Sushi.Button.Large">
-        <item name="iconSize">18dp</item>
-        <item name="android:minHeight">48dp</item>
-        <item name="android:textSize">@dimen/sushi_textsize_500</item>
-    </style>
-
-    <style name="Widget.Sushi.Button.Medium">
-        <item name="iconSize">14dp</item>
-        <item name="android:minHeight">32dp</item>
-        <item name="android:textSize">@dimen/sushi_textsize_300</item>
-    </style>
-
-    <style name="Widget.Sushi.Button.Small">
-        <item name="iconSize">12dp</item>
-        <item name="android:minHeight">25dp</item>
-        <item name="android:textSize">@dimen/sushi_textsize_200</item>
     </style>
 
     <style name="Widget.Sushi.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:minHeight">0dp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="android:theme">@style/ThemeOverlay.Sushi.Button</item>
-    </style>
-
-    <style name="Widget.Sushi.OutlinedButton.Large">
-        <item name="iconSize">18dp</item>
-        <item name="android:minHeight">48dp</item>
-        <item name="android:textSize">@dimen/sushi_textsize_500</item>
-    </style>
-
-    <style name="Widget.Sushi.OutlinedButton.Medium">
-        <item name="iconSize">14dp</item>
-        <item name="android:minHeight">32dp</item>
-        <item name="android:textSize">@dimen/sushi_textsize_300</item>
-    </style>
-
-    <style name="Widget.Sushi.OutlinedButton.Small">
-        <item name="iconSize">12dp</item>
-        <item name="android:minHeight">25dp</item>
-        <item name="android:textSize">@dimen/sushi_textsize_200</item>
     </style>
 
     <style name="Widget.Sushi.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:minHeight">0dp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="android:theme">@style/ThemeOverlay.Sushi.Button</item>
-    </style>
-
-    <style name="Widget.Sushi.TextButton.Large">
-        <item name="iconSize">18dp</item>
-        <item name="android:minHeight">48dp</item>
-        <item name="android:textSize">@dimen/sushi_textsize_500</item>
-    </style>
-
-    <style name="Widget.Sushi.TextButton.Medium">
-        <item name="iconSize">14dp</item>
-        <item name="android:minHeight">32dp</item>
-        <item name="android:textSize">@dimen/sushi_textsize_300</item>
-    </style>
-
-    <style name="Widget.Sushi.TextButton.Small">
-        <item name="iconSize">12dp</item>
-        <item name="android:minHeight">25dp</item>
-        <item name="android:textSize">@dimen/sushi_textsize_200</item>
     </style>
 
 </resources>
