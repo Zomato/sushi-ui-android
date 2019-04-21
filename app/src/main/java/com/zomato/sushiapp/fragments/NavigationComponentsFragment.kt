@@ -42,7 +42,7 @@ class NavigationComponentsFragment : Fragment(), SushiBottomNavigationBar.TabVie
             ) } ?: 0,
             context?.let {ResourceThemeResolver.getThemedColorFromAttr(
                 it,
-                android.R.attr.colorAccent
+                android.R.attr.colorControlActivated
             ) } ?: 0,
             context?.let {ResourceThemeResolver.getThemedColorFromAttr(
                 it,
