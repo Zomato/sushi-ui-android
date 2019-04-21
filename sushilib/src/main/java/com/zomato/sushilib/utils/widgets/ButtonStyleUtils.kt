@@ -13,10 +13,22 @@ import com.zomato.sushilib.annotations.ButtonType
 import com.zomato.sushilib.atoms.buttons.SushiButton
 
 /**
+ * A collection of static functions that help
+ * setup (and change) the style of SushiButton
+ *
+ * The reason this is an `object` with `@JvmStatic`
+ * functions inside, is so that is easy to consume
+ * in both Java and Kotlin. For Java consumers,
+ * call `ButtonStyleUtils.applyXXX(buttonInstance)`
+ * where applyXXX is one of the functions here
+ *
  * created by championswimmer on 19/04/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
 object ButtonStyleUtils {
+    /**
+     * Apply stroke width if button type is [ButtonType.OUTLINE]
+     */
     @JvmStatic
     fun SushiButton.applyStrokeWidth() {
         strokeWidth = if (getButtonType() == ButtonType.OUTLINE) {
@@ -49,6 +61,11 @@ object ButtonStyleUtils {
         strokeColor = colorStateList
     }
 
+    /**
+     * Apply ripple color to the button.
+     * For buttonType = [ButtonType.SOLID] we use a white alpha ripple
+     * otherwise we use a ripple based on the button's [SushiButton.getButtonColor]
+     */
     @JvmStatic
     fun SushiButton.applyRippleColor() {
         rippleColor = if (getButtonType() == ButtonType.SOLID) {
