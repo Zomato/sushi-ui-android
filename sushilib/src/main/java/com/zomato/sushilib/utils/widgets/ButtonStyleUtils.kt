@@ -68,7 +68,7 @@ object ButtonStyleUtils {
     }
 
     @JvmStatic
-    fun getTextColorStateList(@ColorInt color: Int): ColorStateList {
+    private fun getTextColorStateList(@ColorInt color: Int): ColorStateList {
 //        <item android:color="?attr/colorAccent" android:state_enabled="true"/>
 //        <item android:color="@color/mtrl_btn_text_color_disabled"/>
         return ColorStateList(
@@ -84,7 +84,7 @@ object ButtonStyleUtils {
     }
 
     @JvmStatic
-    fun getButtonBackgroundTintList(@ColorInt color: Int): ColorStateList {
+    private fun getButtonBackgroundTintList(@ColorInt color: Int): ColorStateList {
 //        <item android:color="?attr/colorAccent" android:state_enabled="true"/>
 //        <item android:color="@color/mtrl_btn_bg_color_disabled"/>
         return ColorStateList(
@@ -101,7 +101,7 @@ object ButtonStyleUtils {
     }
 
     @JvmStatic
-    fun getButtonRippleStateList(@ColorInt color: Int): ColorStateList {
+    private fun getButtonRippleStateList(@ColorInt color: Int): ColorStateList {
 //        <item android:alpha="0.16" android:color="?attr/colorAccent" android:state_pressed="true"/>
 //        <item android:alpha="0.12" android:color="?attr/colorAccent" android:state_focused="true" android:state_hovered="true"/>
 //        <item android:alpha="0.12" android:color="?attr/colorAccent" android:state_focused="true"/>
