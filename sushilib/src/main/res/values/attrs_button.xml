@@ -7,10 +7,12 @@
             <enum name="small" value="2" />
         </attr>
 
-        <attr name="buttonStyle" format="enum">
+        <attr name="buttonType" format="enum">
             <enum name="solid" value="0" />
             <enum name="outline" value="1" />
             <enum name="text" value="2" />
         </attr>
+
+        <attr name="buttonColor" format="color" />
     </declare-styleable>
 </resources>

@@ -6,6 +6,6 @@
         <item name="android:textColorPrimary">@color/sushi_white</item>
         <item name="android:textColorSecondary">@color/sushi_grey_400</item>
         <item name="colorError">@color/sushi_red_400</item>
-        <item name="android:colorControlActivated">?colorAccent</item>
+        <item name="android:colorControlActivated">?colorPrimary</item>
     </style>
 </resources>

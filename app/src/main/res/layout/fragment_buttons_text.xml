@@ -16,7 +16,7 @@
             android:layout_height="wrap_content" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
             android:text="Large Button" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:text="Large Disabled Button" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
             app:icon="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
             android:text="Medium Button" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
             android:text="Medium Disabled Button" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
             app:icon="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
             android:text="Small Button" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
             android:text="Small Disabled Button" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
             app:icon="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            style="@style/Widget.Sushi.TextButton"
+            app:buttonType="text"
             app:buttonSize="small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

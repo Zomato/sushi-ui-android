@@ -7,7 +7,7 @@
         <item name="android:textColorPrimary">@color/sushi_black</item>
         <item name="android:textColorSecondary">@color/sushi_grey_600</item>
         <item name="colorError">@color/sushi_red_500</item>
-        <item name="android:colorControlActivated">?colorAccent</item>
+        <item name="android:colorControlActivated">?colorPrimary</item>
     </style>
     <style name="Theme.Sushi" parent="Base.Theme.Sushi">
         <item name="android:fontFamily">?fontFamilyRegular</item>
@@ -15,6 +15,7 @@
         <item name="sushiIconAppearance">@style/TextAppearance.Sushi.Icon</item>
         <item name="checkboxStyle">@style/Widget.Sushi.CompoundButton.CheckBox</item>
         <item name="radioButtonStyle">@style/Widget.Sushi.CompoundButton.RadioButton</item>
+        <item name="buttonStyle">@style/Widget.Sushi.Button</item>
     </style>
 
     <style name="SnippetPaddingTheme" />

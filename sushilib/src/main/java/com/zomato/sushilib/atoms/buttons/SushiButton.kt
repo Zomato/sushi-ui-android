@@ -1,24 +1,34 @@
 package com.zomato.sushilib.atoms.buttons
 
 import android.content.Context
-import android.support.annotation.IntDef
+import android.support.annotation.ColorInt
 import android.support.annotation.StyleRes
 import android.support.design.button.MaterialButton
 import android.util.AttributeSet
 import android.util.TypedValue
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ButtonSize
-import com.zomato.sushilib.annotations.ButtonStyle
+import com.zomato.sushilib.annotations.ButtonType
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
+import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemedColorFromAttr
+import com.zomato.sushilib.utils.widgets.ButtonStyleUtils
 
 class SushiButton @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0, @StyleRes defStyleRes: Int = 0
+    defStyleAttr: Int = R.attr.buttonStyle, @StyleRes defStyleRes: Int = 0
 ) : MaterialButton(
     getThemeWrappedContext(ctx, defStyleRes),
     attrs,
     defStyleAttr
 ) {
+
+    @ButtonSize
+    private var buttonSize: Int = ButtonSize.LARGE
+    @ButtonType
+    private var buttonType: Int = ButtonType.SOLID
+    @ColorInt
+    private var buttonColor: Int = getThemedColorFromAttr(context, R.attr.colorAccent)
+
     init {
 
         context?.obtainStyledAttributes(
@@ -26,21 +36,66 @@ class SushiButton @JvmOverloads constructor(
             R.styleable.SushiButton
         )?.let {
 
-            val buttonSize = it.getInt(R.styleable.SushiButton_buttonSize, 0)
-            val buttonStyle: Int = it.getInt(R.styleable.SushiButton_buttonStyle, 0)
+            val size = it.getInt(R.styleable.SushiButton_buttonSize, 0)
+            val type = it.getInt(R.styleable.SushiButton_buttonType, 0)
+            val color = it.getColor(R.styleable.SushiButton_buttonColor, buttonColor)
 
-            setButtonSize(buttonSize)
-            setButtonStyle(buttonStyle)
+            setButtonSize(size)
+            setButtonColor(color)
+            setButtonType(type)
             it.recycle()
+        }
+
+        reapplySizes() // Need to set first time, if it is large
+    }
+
+    @ColorInt
+    fun getButtonColor(): Int {
+        return buttonColor
+    }
+
+    fun setButtonColor(@ColorInt color: Int) {
+        if (color == buttonColor) return
+        buttonColor = color
+        reapplyStyles()
+    }
+
+    @ButtonType
+    fun getButtonType(): Int {
+        return buttonType
+    }
+
+    fun setButtonType(@ButtonType style: Int) {
+        if (style == buttonType) return
+        buttonType = style
+        reapplyStyles()
+
+    }
+
+    private fun reapplyStyles() {
+        ButtonStyleUtils.apply {
+            applyStrokeWidth()
+            applyIconPadding()
+            applyRippleColor()
+            applyBackgroundTintList()
+            applyIconAndTextColor()
         }
     }
 
-    fun setButtonStyle(@ButtonStyle style: Int) {
-
+    @ButtonSize
+    fun getButtonSize(): Int {
+        return buttonSize
     }
 
     fun setButtonSize(@ButtonSize size: Int) {
-        when (size) {
+        if (size == buttonSize) return
+        buttonSize = size
+        reapplySizes()
+
+    }
+
+    private fun reapplySizes() {
+        when (buttonSize) {
             ButtonSize.LARGE -> {
                 iconSize = resources.getDimensionPixelSize(R.dimen.sushi_iconsize_500)
                 minHeight = resources.getDimensionPixelSize(R.dimen.sushi_button_large_minheight)

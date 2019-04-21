@@ -5,7 +5,7 @@ import android.support.annotation.IntDef;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import static com.zomato.sushilib.annotations.ButtonStyle.*;
+import static com.zomato.sushilib.annotations.ButtonType.*;
 
 /**
  * created by championswimmer on 19/04/19
@@ -13,7 +13,7 @@ import static com.zomato.sushilib.annotations.ButtonStyle.*;
  */
 @Retention(RetentionPolicy.SOURCE)
 @IntDef({SOLID, OUTLINE, TEXT})
-public @interface ButtonStyle {
+public @interface ButtonType {
     int SOLID = 0;
     int OUTLINE = 1;
     int TEXT = 2;
