@@ -3,10 +3,10 @@
     <style name="AppBaseTheme" parent="Theme.Sushi">
         <item name="colorPrimary">@color/sushi_red_500</item>
         <item name="colorPrimaryDark">@color/sushi_red_800</item>
-        <item name="colorAccent">@color/sushi_red_500</item>
+        <item name="colorAccent">@color/sushi_green_500</item>
         <item name="android:colorPrimary">@color/sushi_red_500</item>
         <item name="android:colorPrimaryDark">@color/sushi_red_800</item>
-        <item name="android:colorAccent">@color/sushi_red_500</item>
+        <item name="android:colorAccent">@color/sushi_green_500</item>
         <item name="android:statusBarColor">@color/statusBarColor</item>
         <item name="android:theme">@style/ThemeOverlay.OkraFont</item>
     </style>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SushiButton">
+        <attr name="buttonSize" format="enum">
+            <enum name="large" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="small" value="2" />
+        </attr>
+
+        <attr name="buttonType" format="enum">
+            <enum name="solid" value="0" />
+            <enum name="outline" value="1" />
+            <enum name="text" value="2" />
+        </attr>
+
+        <attr name="buttonColor" format="color" />
+
+        <attr name="strokeColor" format="color" />
+    </declare-styleable>
+</resources>
