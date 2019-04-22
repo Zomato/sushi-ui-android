@@ -1,12 +1,11 @@
 package com.zomato.sushilib.utils.widgets
 
-import android.R.attr.state_enabled
-import android.R.attr.state_focused
-import android.R.attr.state_hovered
-import android.R.attr.state_pressed
+import android.R.attr.*
+import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.support.annotation.ColorInt
+import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.ColorUtils
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ButtonType
@@ -50,15 +49,19 @@ object ButtonStyleUtils {
     @JvmStatic
     fun SushiButton.applyIconAndTextColor() {
         val colorStateList = if (getButtonType() == ButtonType.SOLID) {
-            getTextColorStateList(Color.WHITE)
+            getTextColorStateList(context, Color.WHITE)
         } else {
-            getTextColorStateList(getButtonColor())
+            getTextColorStateList(context, getButtonColor())
         }
         setTextColor(colorStateList)
         iconTint = colorStateList
+    }
 
-        // TODO: Handle stroke color independently
-        strokeColor = colorStateList
+    @JvmStatic
+    fun SushiButton.applyStrokeColor(@ColorInt strokeColorInt: Int) {
+        if (getButtonType() != ButtonType.SOLID) {
+            strokeColor = getTextColorStateList(context, strokeColorInt)
+        }
     }
 
     /**
@@ -78,43 +81,42 @@ object ButtonStyleUtils {
     @JvmStatic
     fun SushiButton.applyBackgroundTintList() {
         backgroundTintList = if (getButtonType() == ButtonType.SOLID) {
-            getButtonBackgroundTintList(getButtonColor())
+            getButtonBackgroundTintList(context, getButtonColor())
         } else {
             ColorStateList.valueOf(Color.argb(0, 255, 255, 255)) // #00FFFFFF
         }
     }
 
     @JvmStatic
-    private fun getTextColorStateList(@ColorInt color: Int): ColorStateList {
+    private fun getTextColorStateList(context: Context, @ColorInt color: Int): ColorStateList {
 //        <item android:color="?attr/colorAccent" android:state_enabled="true"/>
 //        <item android:color="@color/mtrl_btn_text_color_disabled"/>
         return ColorStateList(
             arrayOf(
-                intArrayOf(state_enabled),
+                intArrayOf(-state_enabled),
                 intArrayOf()
             ),
             intArrayOf(
-                color,
-                Color.argb(97, 0, 0, 0) // #61000000
+                ContextCompat.getColor(context, R.color.button_text_color_disabled),
+                color
             )
         )
     }
 
     @JvmStatic
-    private fun getButtonBackgroundTintList(@ColorInt color: Int): ColorStateList {
+    private fun getButtonBackgroundTintList(context: Context, @ColorInt color: Int): ColorStateList {
 //        <item android:color="?attr/colorAccent" android:state_enabled="true"/>
 //        <item android:color="@color/mtrl_btn_bg_color_disabled"/>
         return ColorStateList(
             arrayOf(
-                intArrayOf(state_enabled),
+                intArrayOf(-state_enabled),
                 intArrayOf()
             ),
             intArrayOf(
-                color,
-                Color.argb(31, 0, 0, 0) // #1F000000
+                ContextCompat.getColor(context, R.color.button_bg_color_disabled),
+                color
             )
         )
-
     }
 
     @JvmStatic

@@ -28,6 +28,8 @@ class SushiButton @JvmOverloads constructor(
     private var buttonType: Int = ButtonType.SOLID
     @ColorInt
     private var buttonColor: Int = getThemedColorFromAttr(context, R.attr.colorAccent)
+    @ColorInt
+    private var customStrokeColor: Int = buttonColor
 
     init {
 
@@ -36,17 +38,20 @@ class SushiButton @JvmOverloads constructor(
             R.styleable.SushiButton
         )?.let {
 
-            val size = it.getInt(R.styleable.SushiButton_buttonSize, 0)
-            val type = it.getInt(R.styleable.SushiButton_buttonType, 0)
-            val color = it.getColor(R.styleable.SushiButton_buttonColor, buttonColor)
+            buttonSize = it.getInt(R.styleable.SushiButton_buttonSize, ButtonSize.LARGE)
+            buttonType = it.getInt(R.styleable.SushiButton_buttonType, ButtonType.SOLID)
+            buttonColor = it.getColor(R.styleable.SushiButton_buttonColor, buttonColor)
+            customStrokeColor = buttonColor
 
-            setButtonSize(size)
-            setButtonColor(color)
-            setButtonType(type)
+            reapplySizes()
+            reapplyStyles()
+
+            it.getColorStateList(R.styleable.SushiButton_strokeColor)?.let { strokeColorStateList ->
+                strokeColor = strokeColorStateList
+            } ?: setStrokeColor(it.getColor(R.styleable.SushiButton_strokeColor, buttonColor))
+
             it.recycle()
         }
-
-        reapplySizes() // Need to set first time, if it is large
     }
 
     @ColorInt
@@ -69,7 +74,6 @@ class SushiButton @JvmOverloads constructor(
         if (style == buttonType) return
         buttonType = style
         reapplyStyles()
-
     }
 
     private fun reapplyStyles() {
@@ -79,6 +83,7 @@ class SushiButton @JvmOverloads constructor(
             applyRippleColor()
             applyBackgroundTintList()
             applyIconAndTextColor()
+            applyStrokeColor(customStrokeColor)
         }
     }
 
@@ -91,7 +96,13 @@ class SushiButton @JvmOverloads constructor(
         if (size == buttonSize) return
         buttonSize = size
         reapplySizes()
+    }
 
+    fun setStrokeColor(@ColorInt color: Int) {
+        customStrokeColor = color
+        ButtonStyleUtils.apply {
+            applyStrokeColor(customStrokeColor)
+        }
     }
 
     private fun reapplySizes() {

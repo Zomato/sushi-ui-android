@@ -14,5 +14,7 @@
         </attr>
 
         <attr name="buttonColor" format="color" />
+
+        <attr name="strokeColor" format="color" />
     </declare-styleable>
 </resources>
