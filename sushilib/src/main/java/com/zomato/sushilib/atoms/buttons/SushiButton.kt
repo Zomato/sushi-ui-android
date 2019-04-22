@@ -98,7 +98,7 @@ class SushiButton @JvmOverloads constructor(
         reapplySizes()
     }
 
-    fun setStrokeColor(@ColorInt color: Int) {
+    private fun setStrokeColor(@ColorInt color: Int) {
         customStrokeColor = color
         ButtonStyleUtils.apply {
             applyStrokeColor(customStrokeColor)

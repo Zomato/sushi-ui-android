@@ -1,6 +1,5 @@
 package com.zomato.sushilib.utils.widgets
 
-import android.R.attr.*
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -93,11 +92,11 @@ object ButtonStyleUtils {
 //        <item android:color="@color/mtrl_btn_text_color_disabled"/>
         return ColorStateList(
             arrayOf(
-                intArrayOf(-state_enabled),
+                intArrayOf(-android.R.attr.state_enabled),
                 intArrayOf()
             ),
             intArrayOf(
-                ContextCompat.getColor(context, R.color.button_text_color_disabled),
+                ContextCompat.getColor(context, R.color.sushi_button_text_color_disabled),
                 color
             )
         )
@@ -109,11 +108,11 @@ object ButtonStyleUtils {
 //        <item android:color="@color/mtrl_btn_bg_color_disabled"/>
         return ColorStateList(
             arrayOf(
-                intArrayOf(-state_enabled),
+                intArrayOf(-android.R.attr.state_enabled),
                 intArrayOf()
             ),
             intArrayOf(
-                ContextCompat.getColor(context, R.color.button_bg_color_disabled),
+                ContextCompat.getColor(context, R.color.sushi_button_bg_color_disabled),
                 color
             )
         )
@@ -129,10 +128,10 @@ object ButtonStyleUtils {
 
         return ColorStateList(
             arrayOf(
-                intArrayOf(state_pressed),
-                intArrayOf(state_focused, state_hovered),
-                intArrayOf(state_focused),
-                intArrayOf(state_hovered),
+                intArrayOf(android.R.attr.state_pressed),
+                intArrayOf(android.R.attr.state_focused, android.R.attr.state_hovered),
+                intArrayOf(android.R.attr.state_focused),
+                intArrayOf(android.R.attr.state_hovered),
                 intArrayOf()
             ),
             intArrayOf(
