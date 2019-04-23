@@ -1,14 +1,11 @@
 package com.zomato.sushilib.templates.navigation
 
 import android.content.Context
-import android.support.annotation.IntegerRes
+import android.support.annotation.IdRes
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.FragmentManager
 import android.util.AttributeSet
-import android.view.MenuItem
 import com.zomato.sushilib.atoms.menu.SushiMenuItem
-
-import java.util.Collections
 
 class SushiBottomNavigationView : BottomNavigationView {
 
@@ -22,7 +19,7 @@ class SushiBottomNavigationView : BottomNavigationView {
 
     //TODO Add IntRange
     @Throws(IllegalArgumentException::class)
-    fun setMenu(sushiMenuItems: List<SushiMenuItem>, supportFragmentManager: FragmentManager, containerMain: Int) {
+    fun setMenu(sushiMenuItems: List<SushiMenuItem>, supportFragmentManager: FragmentManager, @IdRes mainContainerId: Int) {
         this.sushiMenuItems.clear()
         this.sushiMenuItems.addAll(sushiMenuItems)
         if (sushiMenuItems.size >= 5) {
@@ -32,7 +29,7 @@ class SushiBottomNavigationView : BottomNavigationView {
         for (item in sushiMenuItems) {
             this.menu.add(item.groupId, item.itemId, item.order, item.title).setIcon(item.drawableId)
         }
-        setupNavigation(supportFragmentManager, containerMain)
+        setupNavigation(supportFragmentManager, mainContainerId)
         setStartDestination(sushiMenuItems[0].itemId)
     }
 
