@@ -2,6 +2,8 @@ package com.zomato.sushilib.templates.navigation
 
 import android.content.Context
 import android.support.annotation.IdRes
+import android.support.annotation.IntRange
+import android.support.annotation.Size
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.FragmentManager
 import android.util.AttributeSet
@@ -17,27 +19,30 @@ class SushiBottomNavigationView : BottomNavigationView {
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
-    //TODO Add IntRange
+    /**
+     * Sets up the navigation menu based on a supplied list of menu items
+     * If you wish to handle fragment transitions yourself, don't pass the fragmentManager and mainContainerId
+     */
     @Throws(IllegalArgumentException::class)
-    fun setMenu(sushiMenuItems: List<SushiMenuItem>, supportFragmentManager: FragmentManager, @IdRes mainContainerId: Int) {
-        this.sushiMenuItems.clear()
-        this.sushiMenuItems.addAll(sushiMenuItems)
+    fun setMenu(@Size(min=1, max=4) sushiMenuItems: List<SushiMenuItem>, supportFragmentManager: FragmentManager, @IdRes mainContainerId: Int, defaultMenuIndex: Int = 0) {
         if (sushiMenuItems.size >= 5) {
             throw IllegalArgumentException("Can't set more than 5 tabs")
         }
 
+        this.sushiMenuItems.clear()
+        this.sushiMenuItems.addAll(sushiMenuItems)
         for (item in sushiMenuItems) {
             this.menu.add(item.groupId, item.itemId, item.order, item.title).setIcon(item.drawableId)
         }
         setupNavigation(supportFragmentManager, mainContainerId)
-        setStartDestination(sushiMenuItems[0].itemId)
+        setStartDestination(sushiMenuItems[defaultMenuIndex].itemId)
     }
 
     /**
-     * Set a default selected item
+     * Set a default selected item represented by a menuItem.itemId
      */
-    fun setStartDestination(startDestination: Int) {
-        this.selectedItemId = startDestination
+    private fun setStartDestination(@IdRes startDestinationId: Int) {
+        this.selectedItemId = startDestinationId
     }
 
     private fun setupNavigation(supportFragmentManager: FragmentManager, containerMain: Int) {
