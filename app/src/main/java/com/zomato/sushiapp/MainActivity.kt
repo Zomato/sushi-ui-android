@@ -8,7 +8,9 @@ import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_YES
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import com.zomato.sushilib.atoms.menu.SushiMenuItem
 import com.zomato.sushilib.templates.navigation.SushiBottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,33 +21,44 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<SushiBottomNavigationView>(R.id.bottom_nav_bar)
         val mainFragmentProvider = MainFragmentProvider(this, supportFragmentManager)
 
+        val menuList = arrayListOf<SushiMenuItem>()
+        menuList.addAll(listOf(
+            SushiMenuItem(itemId = R.id.menu_sushi, title = "Sushi", drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(0)),
+            SushiMenuItem(itemId = R.id.menu_zomato, title = "About", drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(1)),
+            SushiMenuItem(itemId = R.id.menu_about, title = "Zomato", drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(2))
+        ))
 
-        // add menu programatically
-        // TODO handle IllegalArgumentException for bottom BottomNavigationView()
-        bottomNavigationView.menu.add(Menu.NONE, R.id.menu_sushi, Menu.NONE, "Sushi").setIcon(R.drawable.ic_topnav_star)
-        bottomNavigationView.menu.add(Menu.NONE, R.id.menu_zomato, Menu.NONE, "About").setIcon(R.drawable.ic_topnav_star)
-        bottomNavigationView.menu.add(Menu.NONE, R.id.menu_about, Menu.NONE, "Zomato").setIcon(R.drawable.ic_topnav_star)
-/*
+//
+//        menuList.addAll(listOf(
+//            SushiMenuItem(Menu.NONE, R.id.menu_sushi, Menu.NONE, "Sushi", R.drawable.ic_topnav_star, mainFragmentProvider.getItem(0)),
+//            SushiMenuItem(Menu.NONE, R.id.menu_zomato, Menu.NONE, "About", R.drawable.ic_topnav_star, mainFragmentProvider.getItem(1)),
+//            SushiMenuItem(Menu.NONE, R.id.menu_about, Menu.NONE, "Zomato", R.drawable.ic_topnav_star, mainFragmentProvider.getItem(2))
+//        ))
 
-        bottomNavigationView.menu.add(Menu.NONE, R.id.menu_sushi, Menu.NONE, "Sushi").setIcon(android.R.drawable.alert_dark_frame)
-        bottomNavigationView.menu.add(Menu.NONE, R.id.menu_zomato, Menu.NONE, "About").setIcon(android.R.drawable.alert_dark_frame)
-        bottomNavigationView.menu.add(Menu.NONE, R.id.menu_about, Menu.NONE, "Zomato").setIcon(android.R.drawable.alert_dark_frame)
-*/
+        bottomNavigationView.setMenu(menuList, supportFragmentManager, R.id.container_main)
+//
+//        bottomNavigationView.menu.add(Menu.NONE, R.id.menu_sushi, Menu.NONE, "Sushi").setIcon(R.drawable.ic_topnav_star)
+//        bottomNavigationView.menu.add(Menu.NONE, R.id.menu_zomato, Menu.NONE, "About").setIcon(R.drawable.ic_topnav_star)
+//        bottomNavigationView.menu.add(Menu.NONE, R.id.menu_about, Menu.NONE, "Zomato").setIcon(R.drawable.ic_topnav_star)
 
-        bottomNavigationView.setOnNavigationItemSelectedListener{ menuItem ->
-            val pos = when {
-                menuItem.itemId == R.id.menu_sushi -> 0
-                menuItem.itemId == R.id.menu_zomato -> 1
-                else -> 2
-            }
-            val tag = mainFragmentProvider.getTitle(pos)
-            val fragment = mainFragmentProvider.getItem(pos)
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container_main, fragment, tag)
-                .commit()
-            true
-        }
-        bottomNavigationView.selectedItemId = R.id.menu_sushi
+//        bottomNavigationView.setOnNavigationItemSelectedListener{ menuItem ->
+//            val pos = when {
+//                menuItem.itemId == R.id.menu_sushi -> 0
+//                menuItem.itemId == R.id.menu_zomato -> 1
+//                else -> 2
+//            }
+//            val tag = mainFragmentProvider.getTitle(pos)
+//            val fragment = mainFragmentProvider.getItem(pos)
+//            supportFragmentManager.beginTransaction()
+//                .replace(R.id.container_main, fragment, tag)
+//                .commit()
+//            true
+//        }
+//
+//        bottomNavigationView.setStartDestination(R.id.menu_sushi)
+
+        //bottomNavigationView.selectedItemId = R.id.menu_sushi
+
 
 //        bottomNavigationBar.addOnTabSelectedListener(obdject :
 //            SushiBottomNavigationBar.OnTabSelectedListener {
