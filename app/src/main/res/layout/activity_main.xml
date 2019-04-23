@@ -1,21 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/container_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true" />
 
-    <com.zomato.sushilib.templates.navigation.SushiBottomNavigationBar
+<!--    <com.zomato.sushilib.templates.navigation.SushiBottomNavigationBar
+        android:id="@+id/bottom_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"0
+        android:background="?android:windowBackground"
+        android:elevation="@dimen/sushi_spacing_mini" />-->
+
+    <!--<com.zomato.sushilib.templates.navigation.SushiBottomNavigationView
         android:id="@+id/bottom_nav_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="?android:windowBackground"
-        android:elevation="@dimen/sushi_spacing_mini" />
+        android:elevation="@dimen/sushi_spacing_mini"
+        app:menu="@menu/bottom_nav_menu"/>-->
 
+    <!-- If itemIconTint not specified, is picked up from styles/AppBaseTheme/colorPrimary -->
+    <com.zomato.sushilib.templates.navigation.SushiBottomNavigationView
+        android:id="@+id/bottom_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?android:windowBackground"
+        android:elevation="@dimen/sushi_spacing_mini"
+        app:itemBackground="@android:color/holo_purple"
+        app:itemTextColor="@android:color/white"
+        />
+
+   <!-- <fragment
+        android:id="@+id/nav_host"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/bottom_navigation" />-->
 </android.support.design.widget.CoordinatorLayout>
