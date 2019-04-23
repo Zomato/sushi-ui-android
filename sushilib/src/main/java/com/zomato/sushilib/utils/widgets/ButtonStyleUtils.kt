@@ -92,12 +92,12 @@ object ButtonStyleUtils {
 //        <item android:color="@color/mtrl_btn_text_color_disabled"/>
         return ColorStateList(
             arrayOf(
-                intArrayOf(-android.R.attr.state_enabled),
+                intArrayOf(android.R.attr.state_enabled),
                 intArrayOf()
             ),
             intArrayOf(
-                ContextCompat.getColor(context, R.color.sushi_button_text_color_disabled),
-                color
+                color,
+                ContextCompat.getColor(context, R.color.sushi_button_text_color_disabled)
             )
         )
     }
@@ -108,12 +108,12 @@ object ButtonStyleUtils {
 //        <item android:color="@color/mtrl_btn_bg_color_disabled"/>
         return ColorStateList(
             arrayOf(
-                intArrayOf(-android.R.attr.state_enabled),
+                intArrayOf(android.R.attr.state_enabled),
                 intArrayOf()
             ),
             intArrayOf(
-                ContextCompat.getColor(context, R.color.sushi_button_bg_color_disabled),
-                color
+                color,
+                ContextCompat.getColor(context, R.color.sushi_button_bg_color_disabled)
             )
         )
     }

@@ -46,6 +46,7 @@ class SushiButton @JvmOverloads constructor(
             reapplySizes()
             reapplyStyles()
 
+            // If user has set a ColorStateList or Color we take that
             it.getColorStateList(R.styleable.SushiButton_strokeColor)?.let { strokeColorStateList ->
                 strokeColor = strokeColorStateList
             } ?: setStrokeColor(it.getColor(R.styleable.SushiButton_strokeColor, buttonColor))
