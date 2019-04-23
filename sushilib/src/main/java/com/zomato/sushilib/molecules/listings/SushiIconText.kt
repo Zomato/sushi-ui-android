@@ -3,7 +3,7 @@ package com.zomato.sushilib.molecules.listings
 import android.content.Context
 import android.util.AttributeSet
 import com.zomato.sushilib.R
-import com.zomato.sushilib.atoms.textviews.SushiIconDrawable
+import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 
 class SushiIconText @JvmOverloads constructor(

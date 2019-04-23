@@ -13,7 +13,7 @@ import android.util.AttributeSet
 import android.util.LayoutDirection
 import android.view.MotionEvent
 import com.zomato.sushilib.R
-import com.zomato.sushilib.atoms.textviews.SushiIconDrawable
+import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 
 
 /**

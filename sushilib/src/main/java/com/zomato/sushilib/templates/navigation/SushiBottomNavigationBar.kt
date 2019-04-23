@@ -11,7 +11,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import com.zomato.sushilib.R
-import com.zomato.sushilib.atoms.textviews.SushiIconDrawable
+import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 
 

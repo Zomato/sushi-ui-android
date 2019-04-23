@@ -1,4 +1,4 @@
-package com.zomato.sushilib.atoms.textviews
+package com.zomato.sushilib.atoms.drawables
 
 import android.content.Context
 import android.graphics.*
@@ -106,7 +106,8 @@ class SushiIconDrawable private constructor() : Drawable() {
      * @property context An activity/view context to access resources
      */
     class Builder(val context: Context) {
-        var drawable: SushiIconDrawable = SushiIconDrawable()
+        var drawable: SushiIconDrawable =
+            SushiIconDrawable()
 
         init {
             drawable.apply {

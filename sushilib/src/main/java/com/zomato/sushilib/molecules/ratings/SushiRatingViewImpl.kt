@@ -8,7 +8,7 @@ import android.support.annotation.ColorInt
 import android.util.AttributeSet
 import android.widget.TextView
 import com.zomato.sushilib.R
-import com.zomato.sushilib.atoms.textviews.SushiIconDrawable
+import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 import com.zomato.sushilib.atoms.views.RoundedView
 
 class SushiRatingViewImpl(
