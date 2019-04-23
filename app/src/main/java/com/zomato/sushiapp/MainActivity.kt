@@ -22,7 +22,33 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupBottomNavigation()
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.action_nightmode) {
+            toggleNightMode()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun toggleNightMode() {
+        val currentMode = AppCompatDelegate.getDefaultNightMode()
+        if (currentMode != MODE_NIGHT_YES) {
+            AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+        } else if (currentMode != MODE_NIGHT_NO) {
+            AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
+        }
+        recreate()
+    }
+
+    private fun setupBottomNavigation() {
         val view = findViewById<CoordinatorLayout>(R.id.container_main)
         val params = CoordinatorLayout.LayoutParams(CoordinatorLayout.LayoutParams.MATCH_PARENT, CoordinatorLayout.LayoutParams.WRAP_CONTENT)
         params.gravity = Gravity.BOTTOM
@@ -40,29 +66,6 @@ class MainActivity : AppCompatActivity() {
             SushiMenuItem(itemId = R.id.menu_about, title = getString(R.string.zomato), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(2))
         ))
         bottomNavigationView.setMenu(menuList, supportFragmentManager, R.id.container_main)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        if (item?.itemId == R.id.action_nightmode) {
-            toggleNightMode()
-            return true
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    fun toggleNightMode() {
-        val currentMode = AppCompatDelegate.getDefaultNightMode()
-        if (currentMode != MODE_NIGHT_YES) {
-            AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
-        } else if (currentMode != MODE_NIGHT_NO) {
-            AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
-        }
-        recreate()
     }
 
 }
