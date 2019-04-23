@@ -61,9 +61,9 @@ class MainActivity : AppCompatActivity() {
 
         val menuList = arrayListOf<SushiMenuItem>()
         menuList.addAll(listOf(
-            SushiMenuItem(itemId = R.id.menu_sushi, title = getString(R.string.sushi), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(0)),
-            SushiMenuItem(itemId = R.id.menu_zomato, title = getString(R.string.about), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(1)),
-            SushiMenuItem(itemId = R.id.menu_about, title = getString(R.string.zomato), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(2))
+            SushiMenuItem(itemId = 0, title = getString(R.string.sushi), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(0)),
+            SushiMenuItem(itemId = 1, title = getString(R.string.about), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(1)),
+            SushiMenuItem(itemId = 2, title = getString(R.string.zomato), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(2))
         ))
         bottomNavigationView.setMenu(menuList, supportFragmentManager, R.id.container_main)
     }
