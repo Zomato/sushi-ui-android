@@ -15,13 +15,7 @@ class SushiCheckBox @JvmOverloads constructor(
     private val compoundButtonHelper = CompoundButtonHelper(this)
 
     init {
-        context?.obtainStyledAttributes(
-            attrs,
-            R.styleable.SushiCompoundButton
-        )?.let {
-            compoundButtonHelper.init(it)
-            it.recycle()
-        }
+        compoundButtonHelper.init(attrs)
     }
 
     fun setCheckBoxColor(@ColorInt color: Int) {

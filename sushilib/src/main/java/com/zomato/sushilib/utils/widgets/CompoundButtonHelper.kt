@@ -1,7 +1,7 @@
 package com.zomato.sushilib.utils.widgets
 
-import android.content.res.TypedArray
 import android.support.annotation.ColorInt
+import android.util.AttributeSet
 import android.widget.CompoundButton
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
@@ -12,9 +12,15 @@ class CompoundButtonHelper(private val compoundButton: CompoundButton) {
     private var color: Int =
         ResourceThemeResolver.getThemedColorFromAttr(compoundButton.context, android.R.attr.colorControlActivated)
 
-    fun init(typedArray: TypedArray) {
-        color = typedArray.getColor(R.styleable.SushiCompoundButton_controlColor, color)
-        applyCompundButtonColor()
+    fun init(attrs: AttributeSet?) {
+        compoundButton.context?.obtainStyledAttributes(
+            attrs,
+            R.styleable.SushiCompoundButton
+        )?.let {
+            color = it.getColor(R.styleable.SushiCompoundButton_controlColor, color)
+            applyCompundButtonColor()
+            it.recycle()
+        }
     }
 
     fun setControlColor(@ColorInt color: Int) {
