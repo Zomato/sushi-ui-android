@@ -16,6 +16,7 @@
         <item name="checkboxStyle">@style/Widget.Sushi.CompoundButton.CheckBox</item>
         <item name="radioButtonStyle">@style/Widget.Sushi.CompoundButton.RadioButton</item>
         <item name="buttonStyle">@style/Widget.Sushi.Button</item>
+        <item name="tagStyle">@style/Widget.Sushi.Tag</item>
     </style>
 
     <style name="SnippetPaddingTheme" />

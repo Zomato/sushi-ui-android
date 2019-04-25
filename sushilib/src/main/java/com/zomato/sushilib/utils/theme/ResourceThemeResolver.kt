@@ -3,6 +3,7 @@ package com.zomato.sushilib.utils.theme
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.support.annotation.AttrRes
+import android.support.annotation.ColorInt
 import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
 import android.support.v7.view.ContextThemeWrapper
@@ -31,7 +32,7 @@ object ResourceThemeResolver {
         })
     }
 
-    @JvmStatic
+    @JvmStatic @ColorInt
     fun getThemedColorFromAttr(context: Context, @AttrRes attrId: Int): Int {
         val outValue = TypedValue()
         context.theme.resolveAttribute(

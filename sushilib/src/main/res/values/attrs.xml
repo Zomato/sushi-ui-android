@@ -5,6 +5,8 @@
     <attr name="random" format="reference" />
     <attr name="baseColor" format="color" />
 
+    <attr name="tagStyle" format="reference"/>
+
 
     <declare-styleable name="SushiTagView">
         <attr name="sushiCornerRadius" />
