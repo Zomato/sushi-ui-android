@@ -50,7 +50,6 @@ object TagStyleUtils {
             // Capsule tags look better with a little more padding
             horizontalPadding = (horizontalPadding * 1.5).toInt()
         }
-        // Tiny tags have no fontPadding
         setPadding(horizontalPadding, verticalPadding, horizontalPadding, verticalPadding)
         setTextSize(TypedValue.COMPLEX_UNIT_PX, textSizePx)
         setTextAppearance(textApprStyleRes)
