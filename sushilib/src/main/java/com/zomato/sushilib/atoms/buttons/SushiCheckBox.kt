@@ -7,7 +7,7 @@ import android.util.AttributeSet
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.widgets.CompoundButtonHelper
 
-class SushiCheckBox @JvmOverloads constructor(
+open class SushiCheckBox @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = R.attr.checkboxStyle
 ) : AppCompatCheckBox(ctx, attrs, defStyleAttr) {

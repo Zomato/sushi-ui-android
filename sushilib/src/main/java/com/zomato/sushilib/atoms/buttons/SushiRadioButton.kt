@@ -7,7 +7,7 @@ import android.util.AttributeSet
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.widgets.CompoundButtonHelper
 
-class SushiRadioButton @JvmOverloads constructor(
+open class SushiRadioButton @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = R.attr.radioButtonStyle
 ) : AppCompatRadioButton(ctx, attrs, defStyleAttr) {

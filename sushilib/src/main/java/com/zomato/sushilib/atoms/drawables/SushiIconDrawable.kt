@@ -19,7 +19,7 @@ import com.zomato.sushilib.utils.theme.ResourceThemeResolver
  * created by championswimmer on 18/04/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-class SushiIconDrawable private constructor() : Drawable() {
+open class SushiIconDrawable private constructor() : Drawable() {
 
     private var paint: Paint = Paint()
     private var size = -1

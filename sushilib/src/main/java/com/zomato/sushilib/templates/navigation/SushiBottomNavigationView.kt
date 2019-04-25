@@ -2,14 +2,13 @@ package com.zomato.sushilib.templates.navigation
 
 import android.content.Context
 import android.support.annotation.IdRes
-import android.support.annotation.IntRange
 import android.support.annotation.Size
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.FragmentManager
 import android.util.AttributeSet
 import com.zomato.sushilib.atoms.menu.SushiMenuItem
 
-class SushiBottomNavigationView : BottomNavigationView {
+open class SushiBottomNavigationView : BottomNavigationView {
 
     private val sushiMenuItems = arrayListOf<SushiMenuItem>()
 

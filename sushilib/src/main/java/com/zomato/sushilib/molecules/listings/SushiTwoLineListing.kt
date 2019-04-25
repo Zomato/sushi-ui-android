@@ -3,7 +3,6 @@ package com.zomato.sushilib.molecules.listings
 import android.content.Context
 import android.text.TextUtils
 import android.util.AttributeSet
-import android.view.View
 import android.widget.LinearLayout
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiTextView
@@ -17,7 +16,7 @@ import com.zomato.sushilib.atoms.textviews.SushiTextView
  * NOTE: @JvmOverloads is fine here as the default
  * constructors do not have any defStyleRes or defStyleAttr
  */
-class SushiTwoLineListing @JvmOverloads constructor(
+open class SushiTwoLineListing @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0, defStyleRes: Int = R.style.Theme_Sushi_Listing
 ) : LinearLayout(context, attrs, defStyleAttr, defStyleRes) {

@@ -6,7 +6,7 @@ import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 
-class SushiIconText @JvmOverloads constructor(
+open class SushiIconText @JvmOverloads constructor(
     context: Context?,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,

@@ -9,7 +9,6 @@ import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
 import android.util.Log
 import android.widget.ImageView.ScaleType.CENTER_CROP
-import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 import com.zomato.sushilib.utils.view.OutlineType
 import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
@@ -19,7 +18,7 @@ import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
  * created by championswimmer on 28/03/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-class SushiCircleImageView @JvmOverloads constructor(
+open class SushiCircleImageView @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0, @StyleRes defStyleRes: Int = 0
 ) : AppCompatImageView(
