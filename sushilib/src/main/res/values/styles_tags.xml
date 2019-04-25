@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Widget.Sushi.Tag" parent="">
+        <item name="fontFamily">?attr/fontFamilyMedium</item>
+        <item name="android:textColor">@color/sushi_white</item>
+    </style>
+
     <style name="SushiTheme.BigRatingTag" parent = "SushiTheme.TagAppearance.Capsule">
         <item name="android:minWidth">@dimen/sushi_big_rating_min_width</item>
     </style>

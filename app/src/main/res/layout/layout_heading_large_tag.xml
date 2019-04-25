@@ -1,44 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     android:paddingTop="@dimen/sushi_spacing_loose"
     android:paddingBottom="@dimen/sushi_spacing_loose">
 
-    <com.zomato.sushilib.atoms.textviews.SushiTextView
-        android:id="@+id/heading"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Heading text with rating"
-        android:textColor="?android:attr/textColorPrimary"
-        android:textSize="@dimen/sushi_textsize_800"
-        app:layout_constraintEnd_toStartOf="@id/tag"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:sushiFontWeight="medium" />
+        android:layout_height="wrap_content">
 
-    <com.zomato.sushilib.atoms.textviews.SushiTextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="What do you think about this large rating tag"
-        android:textColor="?android:attr/textColorSecondary"
-        android:textSize="@dimen/sushi_textsize_300"
-        app:layout_constraintEnd_toStartOf="@id/tag"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/heading"
-        app:sushiFontWeight="regular" />
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Heading text with rating"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/sushi_textsize_800"
+            app:sushiFontWeight="medium" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What do you think about this large rating tag"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/sushi_textsize_300"
+            app:sushiFontWeight="regular" />
 
 
-    <com.zomato.sushilib.atoms.tagviews.SushiTagView
+    </LinearLayout>
+    <com.zomato.sushilib.atoms.textviews.SushiTag
+        android:layout_margin="@dimen/sushi_spacing_mini"
         android:id="@+id/tag"
-        style="@style/SushiTheme.TagAppearance.HighlightRoundedTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/sushi_green_500"
+        app:tagColor="@color/sushi_green_500"
         android:text="0.0"
-        android:textColor="@color/sushi_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+</LinearLayout>
