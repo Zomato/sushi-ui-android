@@ -3,5 +3,6 @@
     <declare-styleable name="SushiTwoLineListing">
         <attr name="headlineText" format="string"/>
         <attr name="bodyText" format="string"/>
+        <attr name="labelText"/>
     </declare-styleable>
 </resources>

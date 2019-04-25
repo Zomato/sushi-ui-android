@@ -6,6 +6,8 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:paddingStart="@dimen/sushi_spacing_page_side"
+        android:paddingEnd="@dimen/sushi_spacing_page_side"
         android:id="@+id/listingsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,13 +20,20 @@
             android:text="Text listing"
             android:textSize="@dimen/sushi_textsize_700" />
 
-        <com.zomato.sushilib.molecules.listings.SushiDualTextView
+        <com.zomato.sushilib.molecules.listings.SushiTwoLineListing
+            app:headlineText="Headline Text"
+            app:bodyText="This is a SushiTwoLineListing. \nThis is the app:bodyText value here"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
-        <com.zomato.sushilib.molecules.listings.SushiLabelDualTextView
+        <com.zomato.sushilib.molecules.listings.SushiTwoLineListing
+            app:labelText="LABEL"
+            app:headlineText="Headline Text"
+            app:bodyText="This is a SushiTwoLineListing. \nThis is the app:bodyText value here"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
+
+
 
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView

@@ -3,7 +3,6 @@ package com.zomato.sushilib.molecules.listings
 import android.content.Context
 import android.text.TextUtils
 import android.util.AttributeSet
-import android.view.View
 import android.widget.LinearLayout
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiTextView
@@ -22,50 +21,85 @@ class SushiTwoLineListing @JvmOverloads constructor(
     defStyleAttr: Int = 0, defStyleRes: Int = R.style.Theme_Sushi_Listing
 ) : LinearLayout(context, attrs, defStyleAttr, defStyleRes) {
 
+    private var initialized = false
 
-    private var mHeadlineTextView: SushiTextView? = null
-    private var mBodyTextView: SushiTextView? = null
+    private var labelTextView: SushiTextView? = null
+    private var headlineTextView: SushiTextView? = null
+    private var bodyTextView: SushiTextView? = null
 
     var headingText: String?
-        get() = mHeadlineTextView?.text?.toString()
+        get() = headlineTextView?.text?.toString()
         set(value) {
             if (TextUtils.isEmpty(value)) {
-                removeView(mHeadlineTextView)
-                mHeadlineTextView = null
+                headlineTextView = null
             } else {
-                mHeadlineTextView = mHeadlineTextView ?: SushiTextView(
+                headlineTextView = (headlineTextView ?: SushiTextView(
                     context,
                     defStyleRes = R.style.Theme_Sushi_Listing_HeadLine
-                )
-                if (indexOfChild(mHeadlineTextView) == -1) {
-                    addView(mHeadlineTextView, 0)
+                )).apply {
+                    text = value
                 }
-                mHeadlineTextView!!.text = value
             }
+            relayout()
         }
 
+    var bodyText: String?
+        get() = bodyTextView?.text?.toString()
+        set(value) {
+            if (TextUtils.isEmpty(value)) {
+                bodyTextView = null
+            } else {
+                bodyTextView = (bodyTextView ?: SushiTextView(
+                    context,
+                    defStyleRes = R.style.Theme_Sushi_Listing_Body
+                )).apply {
+                    text = value
+                }
+            }
+            relayout()
+        }
+
+    var labelText: String?
+        get() = labelTextView?.text?.toString()
+        set(value) {
+            if (TextUtils.isEmpty(value)) {
+                labelTextView = null
+            } else {
+                labelTextView = (labelTextView ?: SushiTextView(
+                    context,
+                    defStyleRes = R.style.Theme_Sushi_Listing_Label
+                )).apply {
+                    text = value
+                }
+            }
+            relayout()
+        }
 
     init {
-        mHeadlineTextView = SushiTextView(
-            context,
-            defStyleRes = R.style.Theme_Sushi_Listing_HeadLine
-        )
-        mBodyTextView = SushiTextView(
-            context,
-            defStyleRes = R.style.Theme_Sushi_Listing_Body
-        )
         context.theme.obtainStyledAttributes(
             attrs,
             R.styleable.SushiTwoLineListing,
             defStyleAttr, defStyleRes
         ).let {
-            mHeadlineTextView?.text = it.getString(R.styleable.SushiTwoLineListing_headlineText)
-            mBodyTextView?.text = it.getString(R.styleable.SushiTwoLineListing_bodyText)
+
+            headingText = it.getString(R.styleable.SushiTwoLineListing_headlineText)
+            bodyText = it.getString(R.styleable.SushiTwoLineListing_bodyText)
+            labelText = it.getString(R.styleable.SushiTwoLineListing_labelText)
+
+            initialized = true
+            relayout()
+
             it.recycle()
         }
+    }
 
-        addView(mHeadlineTextView)
-        addView(mBodyTextView)
+    private fun relayout() {
+        if (!initialized) return
+
+        removeAllViews()
+        labelTextView?.let { addView(it) }
+        headlineTextView?.let { addView(it) }
+        bodyTextView?.let { addView (it) }
     }
 
 }
