@@ -8,7 +8,7 @@ import com.zomato.sushilib.R
 /**
  * General Listing / Type 1
  */
-class SushiImageDualTextView : LinearLayout {
+open class SushiImageDualTextView : LinearLayout {
     private var imageDualTextImpl: ImageDualTextImpl
 
     constructor(context: Context) : this(context, null)

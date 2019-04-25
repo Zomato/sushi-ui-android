@@ -20,7 +20,7 @@ import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
  * created by championswimmer on 02/04/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-class SushiTextInputField @JvmOverloads constructor(
+open class SushiTextInputField @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = android.support.design.R.attr.textInputStyle
 ) : TextInputLayout(context, attrs, defStyleAttr) {

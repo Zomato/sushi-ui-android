@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import com.zomato.sushilib.R
 
-class SushiSmallRatingBar @JvmOverloads constructor(
+open class SushiSmallRatingBar @JvmOverloads constructor(
     context: Context,
     attributeSet: AttributeSet? = null,
     defStyleAttr: Int = 0,

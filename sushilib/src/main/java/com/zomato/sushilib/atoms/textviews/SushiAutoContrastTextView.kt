@@ -12,7 +12,7 @@ import com.zomato.sushilib.utils.color.ColorContrastUtils
  * the background color
  */
 
-class SushiAutoContrastTextView @JvmOverloads constructor(
+open class SushiAutoContrastTextView @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0, @StyleRes defStyleRes: Int = 0
 ) : SushiTextView(ctx, attrs, defStyleAttr, defStyleRes) {

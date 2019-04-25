@@ -13,7 +13,7 @@ import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedCont
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemedColorFromAttr
 import com.zomato.sushilib.utils.widgets.ButtonStyleUtils
 
-class SushiButton @JvmOverloads constructor(
+open class SushiButton @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = R.attr.buttonStyle, @StyleRes defStyleRes: Int = 0
 ) : MaterialButton(

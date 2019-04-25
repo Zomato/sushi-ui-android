@@ -15,7 +15,7 @@ import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 
 
-class SushiBottomNavigationBar : LinearLayout {
+open class SushiBottomNavigationBar : LinearLayout {
     constructor(context: Context) : super(context)
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
