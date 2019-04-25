@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="sushi_tag_large_horizontal_padding">@dimen/sushi_spacing_base</dimen>
+    <dimen name="sushi_tag_large_horizontal_padding">@dimen/sushi_spacing_macro</dimen>
     <dimen name="sushi_tag_large_vertical_padding">@dimen/sushi_spacing_macro</dimen>
 
-    <dimen name="sushi_tag_medium_horizontal_padding">@dimen/sushi_spacing_macro</dimen>
+    <dimen name="sushi_tag_medium_horizontal_padding">@dimen/sushi_spacing_mini</dimen>
     <dimen name="sushi_tag_medium_vertical_padding">@dimen/sushi_spacing_mini</dimen>
 
-    <dimen name="sushi_tag_small_horizontal_padding">@dimen/sushi_spacing_mini</dimen>
+    <dimen name="sushi_tag_small_horizontal_padding">@dimen/sushi_spacing_micro</dimen>
     <dimen name="sushi_tag_small_vertical_padding">@dimen/sushi_spacing_micro</dimen>
 
     <dimen name="sushi_tag_tiny_horizontal_padding">@dimen/sushi_spacing_nano</dimen>
-    <dimen name="sushi_tag_tiny_vertical_padding">@dimen/sushi_spacing_pico</dimen>
+    <dimen name="sushi_tag_tiny_vertical_padding">0dp</dimen>
 
     <dimen name="sushi_tag_large_textsize">@dimen/sushi_textsize_500</dimen>
     <dimen name="sushi_tag_medium_textsize">@dimen/sushi_textsize_300</dimen>
