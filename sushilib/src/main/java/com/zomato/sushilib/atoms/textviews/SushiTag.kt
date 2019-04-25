@@ -22,23 +22,28 @@ open class SushiTag @JvmOverloads constructor(
     @StyleRes defStyleRes: Int = R.style.Widget_Sushi_Tag
 ) : SushiTextView(ctx, attrs, defStyleAttr, defStyleRes) {
 
+    private var initialized = false
+
     @get:TagType
+    @setparam:TagType
     var tagType = TagType.ROUNDED
-        set(@setparam:TagType value) {
+        set(value) {
             field = value
             reapplyTagStyles()
         }
 
     @get:TagSize
+    @setparam:TagSize
     var tagSize = TagSize.LARGE
-        set(@setparam:TagSize value) {
+        set(value) {
             field = value
             reapplyTagStyles()
         }
 
     @get:ColorInt
+    @setparam:ColorInt
     var tagColor = ResourceThemeResolver.getThemedColorFromAttr(context, android.R.attr.colorAccent)
-        set(@setparam:ColorInt value) {
+        set(value) {
             field = value
             reapplyTagStyles()
         }
@@ -55,7 +60,7 @@ open class SushiTag @JvmOverloads constructor(
             tagType = it.getInt(R.styleable.SushiTag_tagType, TagType.ROUNDED)
             tagSize = it.getInt(R.styleable.SushiTag_tagSize, TagSize.LARGE)
             tagColor = it.getColor(R.styleable.SushiTag_tagColor, tagColor)
-
+            initialized = true
             reapplyTagStyles()
 
             it.getColor(R.styleable.SushiTag_android_textColor, -1).let { col ->
@@ -67,6 +72,8 @@ open class SushiTag @JvmOverloads constructor(
     }
 
     private fun reapplyTagStyles() {
+        if (!initialized) return
+
         TagStyleUtils.apply {
             applySize()
             applyBackground()
