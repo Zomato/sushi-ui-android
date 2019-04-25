@@ -58,9 +58,7 @@ object ButtonStyleUtils {
 
     @JvmStatic
     fun SushiButton.applyStrokeColor(@ColorInt strokeColorInt: Int) {
-        if (getButtonType() != ButtonType.SOLID) {
-            strokeColor = getTextColorStateList(context, strokeColorInt)
-        }
+        strokeColor = getTextColorStateList(context, strokeColorInt)
     }
 
     /**
