@@ -10,7 +10,7 @@ import com.zomato.sushilib.R
  * General Listing / Type 2
  */
 
-class SushiDualTextView : LinearLayout {
+open class SushiDualTextView : LinearLayout {
 
     var dualTextImpl: DualTextImpl? = null
 

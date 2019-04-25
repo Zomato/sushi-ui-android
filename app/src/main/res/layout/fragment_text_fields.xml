@@ -72,11 +72,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <RadioButton
+            <com.zomato.sushilib.atoms.buttons.SushiRadioButton
                 android:text="These show up on your mind"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <RadioButton
+
+            <com.zomato.sushilib.atoms.buttons.SushiRadioButton
+                app:controlColor="@color/sushi_yellow_500"
                 android:text="These show up in your phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -88,16 +90,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <CheckBox
+        <com.zomato.sushilib.atoms.buttons.SushiCheckBox
             android:text="Coca Cola"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <CheckBox
+
+        <com.zomato.sushilib.atoms.buttons.SushiCheckBox
             android:text="Pepsi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <CheckBox
+
+        <com.zomato.sushilib.atoms.buttons.SushiCheckBox
             android:text="Americano"
+            app:controlColor="@color/sushi_yellow_500"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

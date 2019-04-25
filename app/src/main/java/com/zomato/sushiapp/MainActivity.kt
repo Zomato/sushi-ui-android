@@ -1,35 +1,28 @@
 package com.zomato.sushiapp
 
 import android.os.Bundle
+import android.support.design.widget.CoordinatorLayout
+import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.app.AppCompatDelegate
 import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_NO
 import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_YES
+import android.util.Log
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
-import com.zomato.sushilib.templates.navigation.SushiBottomNavigationBar
+import android.view.View
+import android.widget.LinearLayout
+import com.zomato.sushilib.atoms.menu.SushiMenuItem
+import com.zomato.sushilib.templates.navigation.SushiBottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val bottomNavigationBar = findViewById<SushiBottomNavigationBar>(R.id.bottom_nav_bar)
-        val mainFragmentProvider = MainFragmentProvider(this, supportFragmentManager)
-
-        bottomNavigationBar.addOnTabSelectedListener(object :
-            SushiBottomNavigationBar.OnTabSelectedListener {
-            override fun onTabSelected(position: Int) {
-                val tag = mainFragmentProvider.getTitle(position)
-                val fragment = mainFragmentProvider.getItem(position)
-
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.container_main, fragment, tag)
-                    .commit()
-            }
-        })
-        bottomNavigationBar.setup(mainFragmentProvider)
+        setupBottomNavigation()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -45,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun toggleNightMode() {
+    private fun toggleNightMode() {
         val currentMode = AppCompatDelegate.getDefaultNightMode()
         if (currentMode != MODE_NIGHT_YES) {
             AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
@@ -53,6 +46,26 @@ class MainActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
         }
         recreate()
+    }
+
+    private fun setupBottomNavigation() {
+        val view = findViewById<CoordinatorLayout>(R.id.container_main)
+        val params = CoordinatorLayout.LayoutParams(CoordinatorLayout.LayoutParams.MATCH_PARENT, CoordinatorLayout.LayoutParams.WRAP_CONTENT)
+        params.gravity = Gravity.BOTTOM
+
+        val bottomNavigationView = SushiBottomNavigationView(this)
+        bottomNavigationView.elevation = resources.getDimension(R.dimen.sushi_spacing_mini)
+        view.addView(bottomNavigationView, params)
+
+        val mainFragmentProvider = MainFragmentProvider(this, supportFragmentManager)
+
+        val menuList = arrayListOf<SushiMenuItem>()
+        menuList.addAll(listOf(
+            SushiMenuItem(itemId = 0, title = getString(R.string.sushi), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(0)),
+            SushiMenuItem(itemId = 1, title = getString(R.string.about), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(1)),
+            SushiMenuItem(itemId = 2, title = getString(R.string.zomato), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(2))
+        ))
+        bottomNavigationView.setMenu(menuList, supportFragmentManager, R.id.container_main)
     }
 
 }

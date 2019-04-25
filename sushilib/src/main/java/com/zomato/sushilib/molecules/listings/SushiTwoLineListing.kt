@@ -16,7 +16,7 @@ import com.zomato.sushilib.atoms.textviews.SushiTextView
  * NOTE: @JvmOverloads is fine here as the default
  * constructors do not have any defStyleRes or defStyleAttr
  */
-class SushiTwoLineListing @JvmOverloads constructor(
+open class SushiTwoLineListing @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0, defStyleRes: Int = R.style.Theme_Sushi_Listing
 ) : LinearLayout(context, attrs, defStyleAttr, defStyleRes) {

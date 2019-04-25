@@ -14,4 +14,7 @@
     <string name="sample_listing_headline">Headline Text</string>
     <string name="sample_listing_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida </string>
 
+    <string name="sushi">Sushi</string>
+    <string name="about">About</string>
+    <string name="zomato">Zomato</string>
 </resources>

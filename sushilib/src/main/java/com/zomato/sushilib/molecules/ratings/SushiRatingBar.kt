@@ -3,10 +3,9 @@ package com.zomato.sushilib.molecules.ratings
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
-import android.widget.LinearLayout
 import com.zomato.sushilib.R
 
-class SushiRatingBar @JvmOverloads constructor(
+open class SushiRatingBar @JvmOverloads constructor(
     context: Context,
     attributeSet: AttributeSet? = null,
     defStyleAttr: Int = 0,

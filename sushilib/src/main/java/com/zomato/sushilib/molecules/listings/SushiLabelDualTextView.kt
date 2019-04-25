@@ -8,7 +8,7 @@ import com.zomato.sushilib.R
 /**
  * General Listing / Type 3
  */
-class SushiLabelDualTextView : LinearLayout {
+open class SushiLabelDualTextView : LinearLayout {
     private val dualTextImpl: DualTextImpl
 
     constructor(context: Context) : this(context, null)
