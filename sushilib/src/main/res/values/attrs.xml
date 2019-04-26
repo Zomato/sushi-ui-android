@@ -6,6 +6,7 @@
     <attr name="baseColor" format="color" />
 
     <attr name="tagStyle" format="reference"/>
+    <attr name="ratingTagStyle" format="reference"/>
 
     <!-- FOR TAGS AND EDIT TEXTS -->
     <attr name="drawableLeft" format="reference"/>

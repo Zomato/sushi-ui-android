@@ -17,6 +17,7 @@
         <item name="radioButtonStyle">@style/Widget.Sushi.CompoundButton.RadioButton</item>
         <item name="buttonStyle">@style/Widget.Sushi.Button</item>
         <item name="tagStyle">@style/Widget.Sushi.Tag</item>
+        <item name="ratingTagStyle">@style/Widget.Sushi.Tag.Rating</item>
     </style>
 
     <style name="SnippetPaddingTheme" />

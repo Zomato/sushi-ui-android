@@ -16,6 +16,12 @@
 
         <include layout="@layout/layout_seperator" />
 
+        <com.zomato.sushilib.molecules.ratings.SushiRatingBar2
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.zomato.sushilib.molecules.ratings.SushiRatingBar2>
+
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

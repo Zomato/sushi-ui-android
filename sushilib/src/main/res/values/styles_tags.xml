@@ -7,6 +7,12 @@
         <item name="drawablePadding">@dimen/sushi_spacing_nano</item>
     </style>
 
+    <style name="Widget.Sushi.Tag.Rating">
+        <item name="android:textAlignment">center</item>
+        <item name="drawableRight">@string/icon_filled_star</item>
+        <item name="tagType">capsule</item>
+    </style>
+
     <style name="SushiTheme.BigRatingTag" parent = "SushiTheme.TagAppearance.Capsule">
         <item name="android:minWidth">@dimen/sushi_big_rating_min_width</item>
     </style>

@@ -19,4 +19,6 @@
 
     <dimen name="sushi_tag_rounded_corner_radius">3dp</dimen>
     <dimen name="sushi_tag_capsule_corner_radius">30dp</dimen>
+
+    <dimen name="sushi_rating_tag_width">50dp</dimen>
 </resources>
