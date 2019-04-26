@@ -71,6 +71,52 @@
             android:textSize="@dimen/sushi_textsize_300"
             app:sushiFontWeight="medium" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sushi_spacing_base"
+        android:orientation="horizontal">
+
+        <com.zomato.sushilib.atoms.textviews.SushiTag
+            android:text="0"
+            app:tagColor="@color/sushi_black"
+            app:drawableRight="@string/icon_unfilled_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.zomato.sushilib.atoms.textviews.SushiTag
+            android:layout_marginStart="@dimen/sushi_spacing_base"
+            android:text="0"
+            app:tagType="rounded_outline"
+            app:tagColor="@color/sushi_grey_600"
+            app:drawableRight="@string/icon_unfilled_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.zomato.sushilib.atoms.textviews.SushiTag
+            android:layout_marginStart="@dimen/sushi_spacing_base"
+            android:text="0"
+            app:tagType="capsule"
+            app:tagColor="@color/sushi_black"
+            app:drawableRight="@string/icon_filled_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.zomato.sushilib.atoms.textviews.SushiTag
+            android:layout_marginStart="@dimen/sushi_spacing_base"
+            android:text="0"
+            app:tagType="capsule"
+            app:tagColor="@color/sushi_black"
+            app:drawableRight="@drawable/ic_topnav_colors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.zomato.sushilib.atoms.textviews.SushiTag
+            android:layout_marginStart="@dimen/sushi_spacing_base"
+            android:text="0"
+            app:tagType="capsule_outline"
+            app:tagColor="@color/sushi_grey_600"
+            app:drawableRight="@drawable/ic_topnav_colors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"

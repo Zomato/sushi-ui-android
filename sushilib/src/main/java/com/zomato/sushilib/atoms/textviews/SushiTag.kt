@@ -1,16 +1,20 @@
 package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
+import android.support.annotation.ColorRes
 import android.support.annotation.StyleRes
-import android.support.design.chip.Chip
+import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.TagSize
 import com.zomato.sushilib.annotations.TagType
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 import com.zomato.sushilib.utils.widgets.TagStyleUtils
+import com.zomato.sushilib.utils.widgets.TextViewUtils.applyDrawables
 
 /**
  * created by championswimmer on 24/04/19
@@ -60,6 +64,18 @@ open class SushiTag @JvmOverloads constructor(
             tagType = it.getInt(R.styleable.SushiTag_tagType, TagType.ROUNDED)
             tagSize = it.getInt(R.styleable.SushiTag_tagSize, TagSize.LARGE)
             tagColor = it.getColor(R.styleable.SushiTag_tagColor, tagColor)
+
+            applyDrawables(
+                it,
+                R.styleable.SushiTag_drawableLeft,
+                R.styleable.SushiTag_drawableRight,
+                R.styleable.SushiTag_drawableStart,
+                R.styleable.SushiTag_drawableEnd,
+                R.styleable.SushiTag_drawablePadding,
+                ContextCompat.getColor(context, R.color.sushi_white) ?: Color.WHITE,
+                (textSize * 0.8).toInt()
+            )
+
             initialized = true
             reapplyTagStyles()
 

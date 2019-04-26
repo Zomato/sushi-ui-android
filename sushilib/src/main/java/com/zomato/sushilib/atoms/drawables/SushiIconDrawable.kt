@@ -1,6 +1,7 @@
 package com.zomato.sushilib.atoms.drawables
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.*
 import android.graphics.drawable.Drawable
 import android.support.annotation.ColorInt
@@ -9,6 +10,7 @@ import android.support.annotation.DimenRes
 import android.support.annotation.StringRes
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
+import android.util.Log
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 
@@ -96,7 +98,8 @@ open class SushiIconDrawable private constructor() : Drawable() {
     }
 
     override fun setColorFilter(colorFilter: ColorFilter?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        paint.colorFilter = colorFilter
+        invalidateSelf()
     }
 
     /**

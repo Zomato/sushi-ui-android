@@ -4,6 +4,7 @@
     <style name="Widget.Sushi.Tag" parent="">
         <item name="fontFamily">?attr/fontFamilyMedium</item>
         <item name="android:textColor">@color/sushi_white</item>
+        <item name="drawablePadding">@dimen/sushi_spacing_nano</item>
     </style>
 
     <style name="SushiTheme.BigRatingTag" parent = "SushiTheme.TagAppearance.Capsule">

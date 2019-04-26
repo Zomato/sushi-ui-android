@@ -2,18 +2,18 @@ package com.zomato.sushilib.molecules.inputfields
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.res.Resources
+import android.graphics.Color
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.support.design.widget.TextInputEditText
 import android.support.design.widget.TextInputLayout
+import android.support.v4.content.ContextCompat
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.LayoutDirection
 import android.view.MotionEvent
 import com.zomato.sushilib.R
-import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
+import com.zomato.sushilib.utils.widgets.TextViewUtils.applyDrawables
 
 
 /**
@@ -99,86 +99,20 @@ open class SushiTextInputField @JvmOverloads constructor(
             if (attrInputType != -1) {
                 mEditText.inputType = attrInputType
             }
-
-            val drawableLeft =
-                try {
-                    it.getDrawable(R.styleable.SushiTextInputField_drawableLeft)
-                } catch (exception: Resources.NotFoundException) {
-
-                    it.getString(R.styleable.SushiTextInputField_drawableLeft)?.let {
-                        SushiIconDrawable.Builder(context)
-                            .setIconChar(it)
-                            .setColorRes(R.color.sushi_grey_400)
-                            .setIconSize(mEditText.textSize.toInt())
-                            .build()
-                    }
-                }
-            val drawableStart =
-                try {
-                    it.getDrawable(R.styleable.SushiTextInputField_drawableStart)
-                } catch (exception: Resources.NotFoundException) {
-
-                    it.getString(R.styleable.SushiTextInputField_drawableStart)?.let {
-                        SushiIconDrawable.Builder(context)
-                            .setIconChar(it)
-                            .setColorRes(R.color.sushi_grey_400)
-                            .setIconSize(mEditText.textSize.toInt())
-                            .build()
-                    }
-                }
-            val drawableRight =
-                try {
-                    it.getDrawable(R.styleable.SushiTextInputField_drawableRight)
-                } catch (exception: Resources.NotFoundException) {
-
-                    it.getString(R.styleable.SushiTextInputField_drawableRight)?.let {
-                        SushiIconDrawable.Builder(context)
-                            .setIconChar(it)
-                            .setColorRes(R.color.sushi_grey_400)
-                            .setIconSize(mEditText.textSize.toInt())
-                            .build()
-                    }
-                }
-            val drawableEnd =
-                try {
-                    it.getDrawable(R.styleable.SushiTextInputField_drawableEnd)
-                } catch (exception: Resources.NotFoundException) {
-
-                    it.getString(R.styleable.SushiTextInputField_drawableEnd)?.let {
-                        SushiIconDrawable.Builder(context)
-                            .setIconChar(it)
-                            .setColorRes(R.color.sushi_grey_400)
-                            .setIconSize(mEditText.textSize.toInt())
-                            .build()
-                    }
-                }
-
-//            // First set non-RTL type drawables
-            mEditText.setCompoundDrawablesWithIntrinsicBounds(
-                drawableLeft,
-                null,
-                drawableRight,
-                null
-            )
-            // Override with RTL-able drawables if available
-            if (drawableStart != null || drawableEnd != null) {
-                mEditText.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                    drawableStart,
-                    null,
-                    drawableEnd,
-                    null
-                )
-            }
-
-            mEditText.compoundDrawablePadding = it.getDimensionPixelSize(
+            mEditText.applyDrawables(
+                it,
+                R.styleable.SushiTextInputField_drawableLeft,
+                R.styleable.SushiTextInputField_drawableRight,
+                R.styleable.SushiTextInputField_drawableStart,
+                R.styleable.SushiTextInputField_drawableEnd,
                 R.styleable.SushiTextInputField_drawablePadding,
-                0
-            )
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                mEditText.compoundDrawableTintList = it.getColorStateList(
+                ContextCompat.getColor(context, R.color.sushi_grey_400) ?: Color.GRAY,
+                mEditText.textSize.toInt(),
+                it.getColorStateList(
                     R.styleable.SushiTextInputField_drawableTint
-                )
-            }
+                ) ?: mEditText.textColors
+            )
+
             it.recycle()
         }
         addView(mEditText)

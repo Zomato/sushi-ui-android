@@ -12,8 +12,10 @@ import static com.zomato.sushilib.annotations.TagType.*;
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
 @Retention(RetentionPolicy.SOURCE)
-@IntDef({ROUNDED, CAPSULE})
+@IntDef({ROUNDED, CAPSULE, ROUNDED_OUTLINE, CAPSULE_OUTLINE})
 public @interface TagType {
     int ROUNDED = 0;
     int CAPSULE = 1;
+    int ROUNDED_OUTLINE = 2;
+    int CAPSULE_OUTLINE = 3;
 }

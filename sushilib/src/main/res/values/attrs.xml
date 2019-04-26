@@ -7,6 +7,13 @@
 
     <attr name="tagStyle" format="reference"/>
 
+    <!-- FOR TAGS AND EDIT TEXTS -->
+    <attr name="drawableLeft" format="reference"/>
+    <attr name="drawableRight" format="reference"/>
+    <attr name="drawableStart" format="reference"/>
+    <attr name="drawableEnd" format="reference"/>
+    <attr name="drawablePadding" format="dimension"/>
+
 
     <declare-styleable name="SushiTagView">
         <attr name="sushiCornerRadius" />
