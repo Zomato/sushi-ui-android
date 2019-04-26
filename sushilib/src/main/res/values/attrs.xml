@@ -14,6 +14,13 @@
     <attr name="drawableStart" format="reference"/>
     <attr name="drawableEnd" format="reference"/>
     <attr name="drawablePadding" format="dimension"/>
+    
+    <!-- Rating States for ColorStateList -->
+    <attr name="state_rating_1" format="boolean" />
+    <attr name="state_rating_2" format="boolean" />
+    <attr name="state_rating_3" format="boolean" />
+    <attr name="state_rating_4" format="boolean" />
+    <attr name="state_rating_5" format="boolean" />
 
 
     <declare-styleable name="SushiTagView">

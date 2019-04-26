@@ -99,8 +99,16 @@
     <color name="sushi_pink_700">#BD0F58</color>
     <color name="sushi_pink_900">#66002B</color>
 
-    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#B5B5B5</color>
+    <!-- Rating Colors -->
+    <color name="sushi_rating_1">@color/sushi_orange_500</color>
+    <color name="sushi_rating_2">@color/sushi_yellow_600</color>
+    <color name="sushi_rating_3">@color/sushi_green_400</color>
+    <color name="sushi_rating_4">@color/sushi_green_600</color>
+    <color name="sushi_rating_5">@color/sushi_green_800</color>
+    <color name="sushi_rating_unchecked">@color/sushi_grey_400</color>
 
+
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#B5B5B5</color>
 
     <color name="sushi_disabled_text_color">@color/sushi_grey_300</color>
 

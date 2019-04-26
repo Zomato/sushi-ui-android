@@ -1,11 +1,10 @@
 package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Color
-import android.graphics.drawable.GradientDrawable
 import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
-import android.support.annotation.ColorRes
 import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
@@ -53,7 +52,6 @@ open class SushiTag @JvmOverloads constructor(
         }
 
     init {
-
         context?.theme?.obtainStyledAttributes(
             attrs,
             R.styleable.SushiTag,
@@ -73,7 +71,7 @@ open class SushiTag @JvmOverloads constructor(
                 R.styleable.SushiTag_drawableEnd,
                 R.styleable.SushiTag_drawablePadding,
                 ContextCompat.getColor(context, R.color.sushi_white) ?: Color.WHITE,
-                (textSize * 0.8).toInt()
+                (textSize * 0.9).toInt() // Looks best, at slightly (10%) less than text height
             )
 
             initialized = true
@@ -85,6 +83,11 @@ open class SushiTag @JvmOverloads constructor(
 
             it.recycle()
         }
+    }
+
+    override fun setTextColor(colors: ColorStateList?) {
+        super.setTextColor(colors)
+        compoundDrawableTintList = colors
     }
 
     private fun reapplyTagStyles() {

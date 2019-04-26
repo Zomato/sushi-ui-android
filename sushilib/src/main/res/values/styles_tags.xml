@@ -8,6 +8,9 @@
     </style>
 
     <style name="Widget.Sushi.Tag.Rating">
+        <item name="android:selectable">true</item>
+        <item name="android:checkable">true</item>
+        <item name="android:clickable">true</item>
         <item name="android:textAlignment">center</item>
         <item name="drawableRight">@string/icon_filled_star</item>
         <item name="tagType">capsule</item>

@@ -1,8 +1,10 @@
 package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
+import android.os.Build
 import android.support.annotation.StyleRes
 import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
@@ -47,5 +49,19 @@ open class SushiTextView @JvmOverloads constructor(
             d?.setColorFilter(color, PorterDuff.Mode.SRC_IN)
         }
     }
+
+    override fun setCompoundDrawableTintList(tint: ColorStateList?) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            super.setCompoundDrawableTintList(tint)
+        } else {
+            compoundDrawables.forEach { d ->
+                d?.setTintList(tint)
+            }
+            compoundDrawablesRelative.forEach { d ->
+                d?.setTintList(tint)
+            }
+        }
+    }
+
 
 }

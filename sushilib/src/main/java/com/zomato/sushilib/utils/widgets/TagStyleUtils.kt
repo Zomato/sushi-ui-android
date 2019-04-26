@@ -61,13 +61,16 @@ object TagStyleUtils {
     fun SushiTag.applyBackground() {
         fun applyBg(@DrawableRes bgDrawable: Int, colorList: ColorStateList, outlined: Boolean = false) {
             background = ContextCompat.getDrawable(context, bgDrawable)
+            background.mutate()
             if (outlined) {
-                setTextColor(colorList)
-                setCompoundDrawableColor(currentTextColor)
-                (background as? GradientDrawable)?.setStroke(
-                    resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico),
+                (background as GradientDrawable).setStroke(
+                    resources.getDimensionPixelSize(R.dimen.sushi_spacing_nano),
                     colorList
                 )
+                (background as GradientDrawable).setColor(Color.TRANSPARENT)
+                setTextColor(colorList)
+                compoundDrawableTintList = colorList
+
             } else {
                 backgroundTintList = colorList
                 setTextColor(ContextCompat.getColor(context, R.color.sushi_white))
