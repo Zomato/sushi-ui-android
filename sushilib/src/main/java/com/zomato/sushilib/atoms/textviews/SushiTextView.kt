@@ -6,11 +6,13 @@ import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.os.Build
 import android.support.annotation.StyleRes
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.text.TextFormatUtils
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
+import com.zomato.sushilib.utils.widgets.TextViewUtils
 
 open class SushiTextView @JvmOverloads constructor(
     ctx: Context?, attrs: AttributeSet? = null,
@@ -33,6 +35,13 @@ open class SushiTextView @JvmOverloads constructor(
                 setTextAppearance(TextFormatUtils.sushiFontWeightToTextAppearance(sushiFontWeight))
             }
             it.recycle()
+        }
+        TextViewUtils.apply {
+            applyDrawables(
+                attrs, defStyleAttr,
+                currentTextColor,
+                textSize.toInt()
+                )
         }
     }
 

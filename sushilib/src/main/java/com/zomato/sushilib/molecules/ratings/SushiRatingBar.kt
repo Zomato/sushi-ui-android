@@ -64,6 +64,7 @@ class SushiRatingBar @JvmOverloads constructor(
         } else {
             TagType.ROUNDED
         }
+        isClickable = ta.getBoolean(R.styleable.SushiRatingBar_android_clickable, true)
         ta.recycle()
 
         val tagMargin = resources.getDimensionPixelSize(R.dimen.sushi_spacing_nano)
@@ -79,9 +80,8 @@ class SushiRatingBar @JvmOverloads constructor(
                     }
                     minWidth = tagMinWidth
                     text = "$i"
-                    if (isClickable) {
-                        setOnClickListener { rating = i }
-                    }
+                    setOnClickListener { rating = i }
+                    this.isClickable = this@SushiRatingBar.isClickable
                 }
             )
         }
@@ -91,6 +91,11 @@ class SushiRatingBar @JvmOverloads constructor(
         }
         initialized = true
         reapplyRatingToAllTags()
+    }
+
+    override fun setClickable(clickable: Boolean) {
+        ratingTags.forEach { it.isClickable = clickable }
+        super.setClickable(clickable)
     }
 
     private fun reapplyRatingToAllTags() {
@@ -104,7 +109,7 @@ class SushiRatingBar @JvmOverloads constructor(
                         TagType.ROUNDED -> TagType.ROUNDED_OUTLINE
                         TagType.CAPSULE -> TagType.CAPSULE_OUTLINE; else -> TagType.CAPSULE_OUTLINE
                     }
-                    setTextColor(ColorStateList.valueOf(getRatingColor(0)))
+                    setTextColor(ColorStateList.valueOf(tagColor))
                 }
             }
             if (i <= rating) {
@@ -116,7 +121,7 @@ class SushiRatingBar @JvmOverloads constructor(
                     }
 
                     if (i < rating) {
-                        setTextColor(ColorStateList.valueOf(getRatingColor(rating)))
+                        setTextColor(ColorStateList.valueOf(tagColor))
                     }
 
                 }

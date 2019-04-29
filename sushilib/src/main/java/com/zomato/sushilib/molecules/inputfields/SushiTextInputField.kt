@@ -100,17 +100,9 @@ open class SushiTextInputField @JvmOverloads constructor(
                 mEditText.inputType = attrInputType
             }
             mEditText.applyDrawables(
-                it,
-                R.styleable.SushiTextInputField_drawableLeft,
-                R.styleable.SushiTextInputField_drawableRight,
-                R.styleable.SushiTextInputField_drawableStart,
-                R.styleable.SushiTextInputField_drawableEnd,
-                R.styleable.SushiTextInputField_drawablePadding,
+                attrs, defStyleAttr,
                 ContextCompat.getColor(context, R.color.sushi_grey_400) ?: Color.GRAY,
-                mEditText.textSize.toInt(),
-                it.getColorStateList(
-                    R.styleable.SushiTextInputField_drawableTint
-                ) ?: mEditText.textColors
+                mEditText.textSize.toInt()
             )
 
             it.recycle()

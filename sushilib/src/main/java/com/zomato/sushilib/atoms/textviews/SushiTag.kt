@@ -68,12 +68,7 @@ open class SushiTag @JvmOverloads constructor(
             reapplyTagStyles()
 
             applyDrawables(
-                it,
-                R.styleable.SushiTag_drawableLeft,
-                R.styleable.SushiTag_drawableRight,
-                R.styleable.SushiTag_drawableStart,
-                R.styleable.SushiTag_drawableEnd,
-                R.styleable.SushiTag_drawablePadding,
+                attrs, defStyleAttr,
                 ContextCompat.getColor(context, R.color.sushi_white) ?: Color.WHITE,
                 (textSize * 0.9).toInt() // Looks best, at slightly (10%) less than text height
             )

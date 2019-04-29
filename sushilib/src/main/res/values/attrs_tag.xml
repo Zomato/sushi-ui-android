@@ -17,18 +17,22 @@
         </attr>
         <attr name="tagColor" format="color" />
         <attr name="android:textColor" />
-        <attr name="drawableLeft" />
-        <attr name="drawableRight" />
-        <attr name="drawableStart" />
-        <attr name="drawableEnd" />
-        <attr name="drawablePadding" />
 
     </declare-styleable>
 
     <declare-styleable name="SushiRatingBar">
         <attr name="tagType" />
         <attr name="tagSize" />
-        <attr name="ratingTagStyle"/>
-        <attr name="rating"/>
+        <attr name="ratingTagStyle" />
+        <attr name="rating" />
+        <attr name="android:clickable" />
+
+        <!-- Drawables will simply be passed onto the internal tags -->
+        <attr name="drawableLeft" />
+        <attr name="drawableRight" />
+        <attr name="drawableStart" />
+        <attr name="drawableEnd" />
+        <attr name="drawablePadding" />
+
     </declare-styleable>
 </resources>

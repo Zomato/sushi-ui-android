@@ -12,13 +12,6 @@
     <attr name="tagStyle" format="reference" />
     <attr name="ratingTagStyle" format="reference" />
 
-    <!-- FOR TAGS AND EDIT TEXTS -->
-    <attr name="drawableLeft" format="reference" />
-    <attr name="drawableRight" format="reference" />
-    <attr name="drawableStart" format="reference" />
-    <attr name="drawableEnd" format="reference" />
-    <attr name="drawablePadding" format="dimension" />
-
     <!-- Rating States for ColorStateList -->
     <attr name="state_rating_1" format="boolean" />
     <attr name="state_rating_2" format="boolean" />

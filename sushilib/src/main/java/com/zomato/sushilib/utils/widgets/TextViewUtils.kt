@@ -1,12 +1,14 @@
 package com.zomato.sushilib.utils.widgets
 
-import android.content.res.ColorStateList
 import android.content.res.Resources
-import android.content.res.TypedArray
+import android.graphics.drawable.Drawable
 import android.os.Build
+import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
 import android.support.annotation.StyleableRes
+import android.util.AttributeSet
 import android.widget.TextView
+import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 
 /**
@@ -14,80 +16,69 @@ import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
 object TextViewUtils {
+    @StyleableRes
+    private val styleableDrLeft: Int = R.styleable.SushiTextView_drawableLeft
+    @StyleableRes
+    private val styleableDrRight: Int = R.styleable.SushiTextView_drawableRight
+    @StyleableRes
+    private val styleableDrStart: Int = R.styleable.SushiTextView_drawableStart
+    @StyleableRes
+    private val styleableDrEnd: Int = R.styleable.SushiTextView_drawableEnd
+    @StyleableRes
+    private val styleableDrPadding: Int = R.styleable.SushiTextView_drawablePadding
+    @StyleableRes
+    private val styleableDrTint: Int = R.styleable.SushiTextView_drawableTint
 
     @JvmStatic
     fun TextView.applyDrawables(
-        ta: TypedArray,
-        @StyleableRes styleableDrLeft: Int,
-        @StyleableRes styleableDrRight: Int,
-        @StyleableRes styleableDrStart: Int,
-        @StyleableRes styleableDrEnd: Int,
-        @StyleableRes styleableDrPadding: Int,
+        attrs: AttributeSet?,
+        @AttrRes defStyleAttr: Int = 0,
         @ColorInt drColor: Int,
-        iconSize: Int,
-        iconTintList: ColorStateList = textColors
+        iconSize: Int
     ) {
+        val ta = context.obtainStyledAttributes(attrs, R.styleable.SushiTextView, defStyleAttr, 0)
 
-        val drawableLeft =
+
+        /**
+         * Takes a fonticon character, builds a Drawable
+         * Using [drColor] and [iconSize] in function arguments
+         *
+         * Extracted as local function because reused below
+         *
+         * @param iconChar Wasabi font icon character
+         */
+        fun stringToIconDrawable(iconChar: String): Drawable =
+            SushiIconDrawable.Builder(context)
+                .setIconChar(iconChar)
+                .setColor(drColor)
+                .setIconSize(iconSize)
+                .build()
+
+        /**
+         * Takes a styleable attribute, and tries to turn it into a drawable
+         *
+         * 1. If it refers to a @drawable/xx or @android:drawable/xxx
+         * 2. If it is a string, tries to turn it into a [SushiIconDrawable]
+         * 3. Or else, returns null
+         *
+         * @param drStyleableId R.styleable.xxxx type id of the drawable field
+         */
+        fun createDrawableFromAttr(@StyleableRes drStyleableId: Int): Drawable? =
             try {
-                ta.getDrawable(styleableDrLeft)?.apply {
+                ta.getDrawable(drStyleableId)?.apply {
                     setBounds(0, 0, iconSize, iconSize)
                 }
             } catch (exception: Resources.NotFoundException) {
-
-                ta.getString(styleableDrLeft)?.let {
-                    SushiIconDrawable.Builder(context)
-                        .setIconChar(it)
-                        .setColor(drColor)
-                        .setIconSize(iconSize)
-                        .build()
+                ta.getString(drStyleableId)?.let {
+                    stringToIconDrawable(it)
                 }
             }
-        val drawableStart =
-            try {
-                ta.getDrawable(styleableDrStart)?.apply {
-                    setBounds(0, 0, iconSize, iconSize)
-                }
-            } catch (exception: Resources.NotFoundException) {
 
-                ta.getString(styleableDrStart)?.let {
-                    SushiIconDrawable.Builder(context)
-                        .setIconChar(it)
-                        .setColor(drColor)
-                        .setIconSize(iconSize)
-                        .build()
-                }
-            }
-        val drawableRight =
-            try {
-                ta.getDrawable(styleableDrRight)?.apply {
-                    setBounds(0, 0, iconSize, iconSize)
-                }
-            } catch (exception: Resources.NotFoundException) {
+        val drawableLeft = createDrawableFromAttr(styleableDrLeft)
+        val drawableStart = createDrawableFromAttr(styleableDrStart)
+        val drawableRight = createDrawableFromAttr(styleableDrRight)
+        val drawableEnd = createDrawableFromAttr(styleableDrEnd)
 
-                ta.getString(styleableDrRight)?.let {
-                    SushiIconDrawable.Builder(context)
-                        .setIconChar(it)
-                        .setColor(drColor)
-                        .setIconSize(iconSize)
-                        .build()
-                }
-            }
-        val drawableEnd =
-            try {
-                ta.getDrawable(styleableDrEnd)?.apply {
-                    setBounds(0, 0, iconSize, iconSize)
-                }
-            } catch (exception: Resources.NotFoundException) {
-
-                ta.getString(styleableDrEnd)?.let {
-                    SushiIconDrawable.Builder(context)
-                        .setIconChar(it)
-                        .setColor(drColor)
-                        .setIconSize(iconSize)
-                        .build()
-                }
-            }
         setCompoundDrawables(
             drawableLeft,
             null,
@@ -102,11 +93,19 @@ object TextViewUtils {
                 null
             )
         }
+        // =========== SETTING PADDINGS =====================
+
 
         compoundDrawablePadding = ta.getDimensionPixelSize(
             styleableDrPadding,
             0
         )
+
+        // =========== SETTING TINT =====================
+        val iconTintList = ta.getColorStateList(
+            R.styleable.SushiTextView_drawableTint
+        ) ?: textColors
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             compoundDrawableTintList = iconTintList
         } else {
@@ -115,5 +114,6 @@ object TextViewUtils {
             }
         }
 
+        ta.recycle()
     }
 }
