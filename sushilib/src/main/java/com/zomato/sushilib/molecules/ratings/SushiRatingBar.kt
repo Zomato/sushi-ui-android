@@ -57,7 +57,7 @@ class SushiRatingBar @JvmOverloads constructor(
         val ta = context.obtainStyledAttributes(attrs, R.styleable.SushiRatingBar, defStyleAttr, defStyleRes)
         val tagSize = ta.getInt(R.styleable.SushiRatingBar_tagSize, TagSize.LARGE)
         val attrTagType = ta.getInt(R.styleable.SushiRatingBar_tagType, TagType.CAPSULE)
-        rating = ta.getInt(R.styleable.SushiRatingBar_rating, 3)
+        rating = ta.getInt(R.styleable.SushiRatingBar_rating, 0)
 
         internalTagType = if (attrTagType == TagType.CAPSULE || attrTagType == TagType.CAPSULE_OUTLINE) {
             TagType.CAPSULE
