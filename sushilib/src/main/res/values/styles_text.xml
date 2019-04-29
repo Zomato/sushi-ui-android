@@ -9,6 +9,7 @@
 
     <style name="TextAppearance.Sushi.Icon">
         <item name="android:fontFamily">@font/wasabi</item>
+        <item name="fontFamily">@font/wasabi</item>
     </style>
   
   <!-- Basic Font Weight Styles -->

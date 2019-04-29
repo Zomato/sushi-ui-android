@@ -4,8 +4,6 @@
     <!-- Common Attributes used in multiple styleables-->
     <attr name="sushiIconAppearance" format="reference" type="style" />
     <attr name="sushiCornerRadius" format="dimension" />
-    <attr name="random" format="reference" />
-    <attr name="baseColor" format="color" />
     <attr name="rating" format="integer" />
 
     <!-- To Use in Default Style -->

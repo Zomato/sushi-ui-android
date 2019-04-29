@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <attr name="smallRatingTagStyle" format="reference"/>
-    <attr name="bigRatingTagStyle" format="reference"/>
-</resources>
