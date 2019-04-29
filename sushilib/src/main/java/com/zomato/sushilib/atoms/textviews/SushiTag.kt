@@ -63,6 +63,10 @@ open class SushiTag @JvmOverloads constructor(
             tagSize = it.getInt(R.styleable.SushiTag_tagSize, TagSize.LARGE)
             tagColor = it.getColor(R.styleable.SushiTag_tagColor, tagColor)
 
+
+            initialized = true
+            reapplyTagStyles()
+
             applyDrawables(
                 it,
                 R.styleable.SushiTag_drawableLeft,
@@ -73,9 +77,6 @@ open class SushiTag @JvmOverloads constructor(
                 ContextCompat.getColor(context, R.color.sushi_white) ?: Color.WHITE,
                 (textSize * 0.9).toInt() // Looks best, at slightly (10%) less than text height
             )
-
-            initialized = true
-            reapplyTagStyles()
 
             it.getColor(R.styleable.SushiTag_android_textColor, -1).let { col ->
                 if (col != -1) setTextColor(col)

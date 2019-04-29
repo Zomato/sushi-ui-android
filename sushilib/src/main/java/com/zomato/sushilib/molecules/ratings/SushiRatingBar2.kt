@@ -8,8 +8,10 @@ import android.util.AttributeSet
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.LinearLayout
 import com.zomato.sushilib.R
+import com.zomato.sushilib.annotations.TagSize
 import com.zomato.sushilib.annotations.TagType
 import com.zomato.sushilib.atoms.textviews.SushiTag
+import com.zomato.sushilib.utils.widgets.TagStyleUtils
 
 /**
  * created by championswimmer on 26/04/19
@@ -21,6 +23,10 @@ class SushiRatingBar2 @JvmOverloads constructor(
 ) : LinearLayout(ctx, attrs, defStyleAttr, defStyleRes) {
 
     private var ratingTags: ArrayList<SushiTag> = ArrayList(5)
+    @TagType
+    private var internalTagType: Int = TagType.CAPSULE
+
+    private var initialized = false
 
     var ratingColorStateList = resources.getColorStateList(R.color.sushi_rating_color_selector)
 
@@ -48,15 +54,30 @@ class SushiRatingBar2 @JvmOverloads constructor(
     }
 
     init {
+        val ta = context.obtainStyledAttributes(attrs, R.styleable.SushiRatingBar2, defStyleAttr, defStyleRes)
+        val tagSize = ta.getInt(R.styleable.SushiRatingBar2_tagSize, TagSize.LARGE)
+        val attrTagType = ta.getInt(R.styleable.SushiRatingBar2_tagType, TagType.CAPSULE)
+        rating = ta.getInt(R.styleable.SushiRatingBar2_rating, 3)
+
+        internalTagType = if (attrTagType == TagType.CAPSULE || attrTagType == TagType.CAPSULE_OUTLINE) {
+            TagType.CAPSULE
+        } else {
+            TagType.ROUNDED
+        }
+        ta.recycle()
+
         val tagMargin = resources.getDimensionPixelSize(R.dimen.sushi_spacing_nano)
-        val tagWidth = resources.getDimensionPixelSize(R.dimen.sushi_rating_tag_width)
+        val tagMinWidth = resources.getDimensionPixelSize(
+            TagStyleUtils.getMinWidthResIdForRatingTagBySize(tagSize)
+        )
 
         for (i in 1..5) {
             ratingTags.add(
-                SushiTag(context, null, R.attr.ratingTagStyle).apply {
-                    layoutParams = LayoutParams(tagWidth, WRAP_CONTENT).apply {
+                SushiTag(context, attrs, R.attr.ratingTagStyle).apply {
+                    layoutParams = LayoutParams(WRAP_CONTENT, WRAP_CONTENT).apply {
                         setMargins(tagMargin, tagMargin, tagMargin, tagMargin)
                     }
+                    minWidth = tagMinWidth
                     text = "$i"
                     setOnClickListener { rating = i }
                 }
@@ -66,22 +87,31 @@ class SushiRatingBar2 @JvmOverloads constructor(
         ratingTags.forEach { tag ->
             addView(tag)
         }
+        initialized = true
         reapplyRatingToAllTags()
     }
 
     private fun reapplyRatingToAllTags() {
+        if (!initialized) return
+
         for (i in 1..5) {
             if (i > rating) {
                 ratingTags[i - 1].apply {
                     tagColor = getRatingColor(0)
-                    tagType = TagType.CAPSULE_OUTLINE
+                    tagType = when (internalTagType) {
+                        TagType.ROUNDED -> TagType.ROUNDED_OUTLINE
+                        TagType.CAPSULE -> TagType.CAPSULE_OUTLINE; else -> TagType.CAPSULE_OUTLINE
+                    }
                     setTextColor(ColorStateList.valueOf(getRatingColor(0)))
                 }
             }
             if (i <= rating) {
                 ratingTags[i - 1].apply {
                     tagColor = getRatingColor(rating)
-                    tagType = TagType.CAPSULE
+                    tagType = when (internalTagType) {
+                        TagType.ROUNDED -> TagType.ROUNDED
+                        TagType.CAPSULE -> TagType.CAPSULE; else -> TagType.CAPSULE
+                    }
 
                     if (i < rating) {
                         setTextColor(ColorStateList.valueOf(getRatingColor(rating)))

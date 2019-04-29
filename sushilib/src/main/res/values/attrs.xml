@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Common Attributes used in multiple styleables-->
     <attr name="sushiIconAppearance" format="reference" type="style" />
     <attr name="sushiCornerRadius" format="dimension" />
     <attr name="random" format="reference" />
     <attr name="baseColor" format="color" />
+    <attr name="rating" format="integer" />
 
-    <attr name="tagStyle" format="reference"/>
-    <attr name="ratingTagStyle" format="reference"/>
+    <!-- To Use in Default Style -->
+    <attr name="tagStyle" format="reference" />
+    <attr name="ratingTagStyle" format="reference" />
 
     <!-- FOR TAGS AND EDIT TEXTS -->
-    <attr name="drawableLeft" format="reference"/>
-    <attr name="drawableRight" format="reference"/>
-    <attr name="drawableStart" format="reference"/>
-    <attr name="drawableEnd" format="reference"/>
-    <attr name="drawablePadding" format="dimension"/>
-    
+    <attr name="drawableLeft" format="reference" />
+    <attr name="drawableRight" format="reference" />
+    <attr name="drawableStart" format="reference" />
+    <attr name="drawableEnd" format="reference" />
+    <attr name="drawablePadding" format="dimension" />
+
     <!-- Rating States for ColorStateList -->
     <attr name="state_rating_1" format="boolean" />
     <attr name="state_rating_2" format="boolean" />
@@ -22,37 +26,6 @@
     <attr name="state_rating_4" format="boolean" />
     <attr name="state_rating_5" format="boolean" />
 
-
-    <declare-styleable name="SushiTagView">
-        <attr name="sushiCornerRadius" />
-        <attr name="zTagType" format="enum">
-            <enum name="rounded" value="1" />
-            <enum name="small_rounded" value="2" />
-            <enum name="highlight" value="3" />
-            <enum name="small_highlight" value="4" />
-            <enum name="capsule" value="5" />
-            <enum name="small_capsule" value="6" />
-        </attr>
-    </declare-styleable>
-
-
-    <declare-styleable name="BaseRating">
-        <attr name="rating" format="integer" />
-    </declare-styleable>
-
-    <declare-styleable name="SushiBigRatingTag">
-        <attr name="baseColor" />
-        <attr name="rating" />
-    </declare-styleable>
-
-
-    <declare-styleable name="SushiRatingBar">
-        <attr name="rating" />
-    </declare-styleable>
-
-    <declare-styleable name="SushiSmallRatingBar">
-        <attr name="rating" />
-    </declare-styleable>
 
     <declare-styleable name="SushiListing">
         <attr name="titleText" format="string" />
@@ -64,7 +37,7 @@
     <declare-styleable name="SushiImageDualTextView">
         <attr name="titleText" />
         <attr name="subtitleText" />
-        <attr name="imageSrc"/>
+        <attr name="imageSrc" />
     </declare-styleable>
 
     <declare-styleable name="SushiDualTextView">

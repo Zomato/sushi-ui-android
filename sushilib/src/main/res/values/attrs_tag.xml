@@ -23,6 +23,12 @@
         <attr name="drawableEnd" />
         <attr name="drawablePadding" />
 
+    </declare-styleable>
 
+    <declare-styleable name="SushiRatingBar2">
+        <attr name="tagType" />
+        <attr name="tagSize" />
+        <attr name="ratingTagStyle"/>
+        <attr name="rating"/>
     </declare-styleable>
 </resources>

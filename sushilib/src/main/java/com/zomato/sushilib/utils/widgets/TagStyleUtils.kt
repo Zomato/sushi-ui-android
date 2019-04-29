@@ -3,7 +3,9 @@ package com.zomato.sushilib.utils.widgets
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
+import android.support.annotation.DimenRes
 import android.support.annotation.DrawableRes
+import android.support.annotation.IdRes
 import android.support.v4.content.ContextCompat
 import android.util.TypedValue
 import com.zomato.sushilib.R
@@ -64,7 +66,7 @@ object TagStyleUtils {
             background.mutate()
             if (outlined) {
                 (background as GradientDrawable).setStroke(
-                    resources.getDimensionPixelSize(R.dimen.sushi_spacing_nano),
+                    resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico),
                     colorList
                 )
                 (background as GradientDrawable).setColor(Color.TRANSPARENT)
@@ -92,6 +94,17 @@ object TagStyleUtils {
             TagType.CAPSULE_OUTLINE -> applyBg(
                 R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true
             )
+        }
+    }
+
+    @JvmStatic @DimenRes
+    fun getMinWidthResIdForRatingTagBySize(@TagSize tagSize: Int): Int {
+        return when (tagSize) {
+            TagSize.LARGE -> R.dimen.sushi_rating_tag_large_minwidth
+            TagSize.MEDIUM -> R.dimen.sushi_rating_tag_large_minwidth
+            TagSize.SMALL -> R.dimen.sushi_rating_tag_small_minwidth
+            TagSize.TINY -> R.dimen.sushi_rating_tag_small_minwidth
+            else -> R.dimen.sushi_rating_tag_large_minwidth
         }
     }
 }

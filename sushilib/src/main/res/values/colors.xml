@@ -102,7 +102,7 @@
     <!-- Rating Colors -->
     <color name="sushi_rating_1">@color/sushi_orange_500</color>
     <color name="sushi_rating_2">@color/sushi_yellow_600</color>
-    <color name="sushi_rating_3">@color/sushi_green_400</color>
+    <color name="sushi_rating_3">@color/sushi_green_500</color>
     <color name="sushi_rating_4">@color/sushi_green_600</color>
     <color name="sushi_rating_5">@color/sushi_green_800</color>
     <color name="sushi_rating_unchecked">@color/sushi_grey_400</color>
