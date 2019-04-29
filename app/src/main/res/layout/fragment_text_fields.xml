@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.zomato.sushilib.molecules.listings.SushiTwoLineListing
+            <com.zomato.sushilib.molecules.listings.SushiTextListing
                 app:headlineText="See activity from other people"
                 app:bodyText="Lorem ipsum id good for long text demo :) dolor sit amet, consectetur adipiscing elit,"
                 android:layout_width="0dp"
@@ -62,7 +62,7 @@
             app:drawableStart="@drawable/ic_search"
             app:errorEnabled="false" />
 
-        <com.zomato.sushilib.molecules.listings.SushiTwoLineListing
+        <com.zomato.sushilib.molecules.listings.SushiTextListing
             app:headlineText="Where want to show"
             app:bodyText="Lorem ipsum id good for long text demo :) dolor sit amet, consectetur adipiscing elit,"
             android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content" />
         </RadioGroup>
 
-        <com.zomato.sushilib.molecules.listings.SushiTwoLineListing
+        <com.zomato.sushilib.molecules.listings.SushiTextListing
             app:headlineText="What you prefer"
             app:bodyText="Lorem ipsum id good for long text demo :) dolor sit amet, consectetur adipiscing elit,"
             android:layout_width="match_parent"

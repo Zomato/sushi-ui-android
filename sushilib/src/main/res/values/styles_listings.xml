@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Commonly Used Styles -->
-    <style name="Theme.Sushi.Listing">
-        <item name="android:animateLayoutChanges">true</item>
-        <item name="android:padding">@dimen/sushi_spacing_macro</item>
-        <item name="android:orientation">vertical</item>
-    </style>
+
     <style name="Theme.Sushi.Listing.HeadLine" parent="TextAppearance.Sushi.Medium">
         <item name="android:textColor">?android:textColorPrimary</item>
         <item name="android:textSize">@dimen/sushi_textsize_500</item>
         <item name="android:paddingTop">@dimen/sushi_spacing_micro</item>
         <item name="android:paddingBottom">@dimen/sushi_spacing_micro</item>
     </style>
+
     <style name="Theme.Sushi.Listing.Body" parent="TextAppearance.Sushi.Regular">
         <item name="android:textColor">?android:textColorSecondary</item>
         <item name="android:paddingTop">@dimen/sushi_spacing_micro</item>
         <item name="android:paddingBottom">@dimen/sushi_spacing_micro</item>
     </style>
 
-    <style name="Theme.Sushi.Listing.Label" parent="TextAppearance.Sushi.Regular">
-        <item name="android:textSize">@dimen/sushi_textsize_300</item>
-        <item name="android:textColor">@color/sushi_grey_400</item>
+    <style name="Theme.Sushi.Listing.Label" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.Sushi.Label</item>
         <item name="android:paddingTop">@dimen/sushi_spacing_micro</item>
         <item name="android:paddingBottom">@dimen/sushi_spacing_micro</item>
     </style>
@@ -31,6 +26,11 @@
         <item name="android:textSize">@dimen/sushi_textsize_700</item>
         <item name="android:paddingTop">@dimen/sushi_spacing_micro</item>
         <item name="android:paddingBottom">@dimen/sushi_spacing_micro</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.Label" parent="TextAppearance.Sushi.Regular">
+        <item name="android:textSize">@dimen/sushi_textsize_300</item>
+        <item name="android:textColor">@color/sushi_grey_400</item>
     </style>
 
 </resources>

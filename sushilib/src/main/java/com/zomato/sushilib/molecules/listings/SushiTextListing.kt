@@ -1,5 +1,6 @@
 package com.zomato.sushilib.molecules.listings
 
+import android.animation.LayoutTransition
 import android.content.Context
 import android.text.TextUtils
 import android.util.AttributeSet
@@ -16,9 +17,9 @@ import com.zomato.sushilib.atoms.textviews.SushiTextView
  * NOTE: @JvmOverloads is fine here as the default
  * constructors do not have any defStyleRes or defStyleAttr
  */
-open class SushiTwoLineListing @JvmOverloads constructor(
+open class SushiTextListing @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0, defStyleRes: Int = R.style.Theme_Sushi_Listing
+    defStyleAttr: Int = 0, defStyleRes: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr, defStyleRes) {
 
     private var initialized = false
@@ -76,15 +77,18 @@ open class SushiTwoLineListing @JvmOverloads constructor(
         }
 
     init {
+        orientation = LinearLayout.VERTICAL
+        layoutTransition = LayoutTransition()
+
         context.theme.obtainStyledAttributes(
             attrs,
-            R.styleable.SushiTwoLineListing,
+            R.styleable.SushiTextListing,
             defStyleAttr, defStyleRes
         ).let {
 
-            headingText = it.getString(R.styleable.SushiTwoLineListing_headlineText)
-            bodyText = it.getString(R.styleable.SushiTwoLineListing_bodyText)
-            labelText = it.getString(R.styleable.SushiTwoLineListing_labelText)
+            headingText = it.getString(R.styleable.SushiTextListing_headlineText)
+            bodyText = it.getString(R.styleable.SushiTextListing_bodyText)
+            labelText = it.getString(R.styleable.SushiTextListing_labelText)
 
             initialized = true
             relayout()

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="SushiTwoLineListing">
-        <attr name="headlineText" format="string"/>
-        <attr name="bodyText" format="string"/>
-        <attr name="labelText"/>
+    <declare-styleable name="SushiTextListing">
+        <attr name="headlineText" format="string" />
+        <attr name="bodyText" format="string" />
+        <attr name="labelText" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiLabeledStrip">
+        <attr name="text" format="string" />
+        <attr name="labelText" />
     </declare-styleable>
 </resources>
