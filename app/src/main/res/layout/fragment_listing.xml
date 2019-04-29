@@ -100,19 +100,25 @@
                 android:text="Heading"
                 android:textSize="@dimen/sushi_textsize_700" />
 
-            <com.zomato.sushilib.molecules.listings.SushiIconText
+            <com.zomato.sushilib.atoms.textviews.SushiTextView
+                app:drawableStart="@string/icon_filled_star"
+                app:drawablePadding="@dimen/sushi_spacing_mini"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_extra"
                 android:text="Listing title" />
 
-            <com.zomato.sushilib.molecules.listings.SushiIconText
+            <com.zomato.sushilib.atoms.textviews.SushiTextView
+                app:drawableStart="@string/icon_filled_star"
+                app:drawablePadding="@dimen/sushi_spacing_mini"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_extra"
                 android:text="Listing title" />
 
-            <com.zomato.sushilib.molecules.listings.SushiIconText
+            <com.zomato.sushilib.atoms.textviews.SushiTextView
+                app:drawableStart="@string/icon_filled_star"
+                app:drawablePadding="@dimen/sushi_spacing_mini"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_extra"

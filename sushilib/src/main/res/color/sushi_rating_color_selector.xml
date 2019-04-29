@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:color="@color/sushi_rating_1" app:state_rating_1="true"/>
+    <item android:color="@color/sushi_rating_2" app:state_rating_2="true"/>
+    <item android:color="@color/sushi_rating_3" app:state_rating_3="true"/>
+    <item android:color="@color/sushi_rating_4" app:state_rating_4="true"/>
+    <item android:color="@color/sushi_rating_5" app:state_rating_5="true"/>
+    <item android:color="@color/sushi_rating_unchecked"/>
+</selector>

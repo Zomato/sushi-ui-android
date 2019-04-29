@@ -1,16 +1,19 @@
 package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
 import android.support.annotation.StyleRes
-import android.support.design.chip.Chip
+import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.TagSize
 import com.zomato.sushilib.annotations.TagType
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 import com.zomato.sushilib.utils.widgets.TagStyleUtils
+import com.zomato.sushilib.utils.widgets.TextViewUtils.applyDrawables
 
 /**
  * created by championswimmer on 24/04/19
@@ -49,7 +52,6 @@ open class SushiTag @JvmOverloads constructor(
         }
 
     init {
-
         context?.theme?.obtainStyledAttributes(
             attrs,
             R.styleable.SushiTag,
@@ -60,8 +62,16 @@ open class SushiTag @JvmOverloads constructor(
             tagType = it.getInt(R.styleable.SushiTag_tagType, TagType.ROUNDED)
             tagSize = it.getInt(R.styleable.SushiTag_tagSize, TagSize.LARGE)
             tagColor = it.getColor(R.styleable.SushiTag_tagColor, tagColor)
+
+
             initialized = true
             reapplyTagStyles()
+
+            applyDrawables(
+                attrs, defStyleAttr,
+                ContextCompat.getColor(context, R.color.sushi_white) ?: Color.WHITE,
+                (textSize * 0.9).toInt() // Looks best, at slightly (10%) less than text height
+            )
 
             it.getColor(R.styleable.SushiTag_android_textColor, -1).let { col ->
                 if (col != -1) setTextColor(col)
@@ -69,6 +79,11 @@ open class SushiTag @JvmOverloads constructor(
 
             it.recycle()
         }
+    }
+
+    override fun setTextColor(colors: ColorStateList?) {
+        super.setTextColor(colors)
+        compoundDrawableTintList = colors
     }
 
     private fun reapplyTagStyles() {

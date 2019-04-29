@@ -1,6 +1,7 @@
 package com.zomato.sushilib.atoms.drawables
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.*
 import android.graphics.drawable.Drawable
 import android.support.annotation.ColorInt
@@ -9,6 +10,7 @@ import android.support.annotation.DimenRes
 import android.support.annotation.StringRes
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
+import android.widget.Checkable
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 
@@ -24,6 +26,7 @@ open class SushiIconDrawable private constructor() : Drawable() {
     private var paint: Paint = Paint()
     private var size = -1
     private var iconChar = ""
+    private var tintList: ColorStateList? = null
 
     /**
      * Set size in pixels
@@ -95,8 +98,31 @@ open class SushiIconDrawable private constructor() : Drawable() {
         }
     }
 
+    /**
+     * Called when state of this drawable changes
+     *
+     * @param state int array of new state (can be two states, like checked + selected)
+     */
+    override fun onStateChange(state: IntArray?): Boolean {
+        tintList?.let {
+            val newCol = it.getColorForState(state, paint.color)
+            setColorFilter(newCol, PorterDuff.Mode.SRC_IN)
+            return true
+        }
+        return super.onStateChange(state)
+    }
+
+    override fun setTintList(tint: ColorStateList?) {
+        this.tintList = tint
+        this.tintList?.let {
+            val newCol = it.getColorForState(state, paint.color)
+            setColorFilter(newCol, PorterDuff.Mode.SRC_IN)
+        }
+    }
+
     override fun setColorFilter(colorFilter: ColorFilter?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        paint.colorFilter = colorFilter
+        invalidateSelf()
     }
 
     /**
@@ -211,6 +237,17 @@ open class SushiIconDrawable private constructor() : Drawable() {
          */
         fun setIconChar(iconChar: String): Builder {
             drawable.setIconChar(iconChar)
+            return this
+        }
+
+        /**
+         * Add a [ColorStateList] for as tint, which will show based
+         * on the state of this drawable
+         *
+         * @param tintList
+         */
+        fun setTintList(tintList: ColorStateList): Builder {
+            drawable.setTintList(tintList)
             return this
         }
 
