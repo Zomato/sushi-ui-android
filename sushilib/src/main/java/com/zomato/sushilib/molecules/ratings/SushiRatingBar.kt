@@ -17,7 +17,7 @@ import com.zomato.sushilib.utils.widgets.TagStyleUtils
  * created by championswimmer on 26/04/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-class SushiRatingBar2 @JvmOverloads constructor(
+class SushiRatingBar @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0, defStyleRes: Int = 0
 ) : LinearLayout(ctx, attrs, defStyleAttr, defStyleRes) {
@@ -54,10 +54,10 @@ class SushiRatingBar2 @JvmOverloads constructor(
     }
 
     init {
-        val ta = context.obtainStyledAttributes(attrs, R.styleable.SushiRatingBar2, defStyleAttr, defStyleRes)
-        val tagSize = ta.getInt(R.styleable.SushiRatingBar2_tagSize, TagSize.LARGE)
-        val attrTagType = ta.getInt(R.styleable.SushiRatingBar2_tagType, TagType.CAPSULE)
-        rating = ta.getInt(R.styleable.SushiRatingBar2_rating, 3)
+        val ta = context.obtainStyledAttributes(attrs, R.styleable.SushiRatingBar, defStyleAttr, defStyleRes)
+        val tagSize = ta.getInt(R.styleable.SushiRatingBar_tagSize, TagSize.LARGE)
+        val attrTagType = ta.getInt(R.styleable.SushiRatingBar_tagType, TagType.CAPSULE)
+        rating = ta.getInt(R.styleable.SushiRatingBar_rating, 3)
 
         internalTagType = if (attrTagType == TagType.CAPSULE || attrTagType == TagType.CAPSULE_OUTLINE) {
             TagType.CAPSULE
@@ -79,7 +79,9 @@ class SushiRatingBar2 @JvmOverloads constructor(
                     }
                     minWidth = tagMinWidth
                     text = "$i"
-                    setOnClickListener { rating = i }
+                    if (isClickable) {
+                        setOnClickListener { rating = i }
+                    }
                 }
             )
         }

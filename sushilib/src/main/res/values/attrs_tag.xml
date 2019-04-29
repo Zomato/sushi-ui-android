@@ -25,7 +25,7 @@
 
     </declare-styleable>
 
-    <declare-styleable name="SushiRatingBar2">
+    <declare-styleable name="SushiRatingBar">
         <attr name="tagType" />
         <attr name="tagSize" />
         <attr name="ratingTagStyle"/>

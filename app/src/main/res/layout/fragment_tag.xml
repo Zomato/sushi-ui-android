@@ -25,11 +25,13 @@
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/sushi_textsize_600"
             app:sushiFontWeight="medium" />
-        <com.zomato.sushilib.molecules.ratings.SushiRatingBar2
+        <com.zomato.sushilib.molecules.ratings.SushiRatingBar
             android:layout_marginTop="@dimen/sushi_spacing_mini"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <com.zomato.sushilib.molecules.ratings.SushiRatingBar2
+        <com.zomato.sushilib.molecules.ratings.SushiRatingBar
+            app:drawableRight="@null"
+            app:drawableLeft="@string/icon_unfilled_star"
             android:layout_marginTop="@dimen/sushi_spacing_mini"
             app:tagType="rounded"
             android:layout_width="wrap_content"
@@ -47,13 +49,16 @@
             android:textSize="@dimen/sushi_textsize_600"
             app:sushiFontWeight="medium" />
 
-        <com.zomato.sushilib.molecules.ratings.SushiRatingBar2
+        <com.zomato.sushilib.molecules.ratings.SushiRatingBar
             app:tagSize="small"
+            android:clickable="false"
+            app:drawableRight="@string/icon_right_triangle"
             android:layout_marginTop="@dimen/sushi_spacing_mini"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <com.zomato.sushilib.molecules.ratings.SushiRatingBar2
+        <com.zomato.sushilib.molecules.ratings.SushiRatingBar
             app:tagSize="small"
+            android:clickable="false"
             android:layout_marginTop="@dimen/sushi_spacing_mini"
             app:tagType="rounded"
             android:layout_width="wrap_content"
