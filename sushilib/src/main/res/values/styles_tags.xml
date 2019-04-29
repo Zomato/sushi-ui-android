@@ -9,6 +9,7 @@
     </style>
 
     <style name="Widget.Sushi.Tag.Rating">
+        <item name="android:stateListAnimator">@animator/sushi_click_depress_animator</item>
         <item name="android:selectable">true</item>
         <item name="android:checkable">true</item>
         <item name="android:clickable">true</item>
