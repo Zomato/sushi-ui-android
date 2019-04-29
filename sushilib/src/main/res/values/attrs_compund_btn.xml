@@ -3,4 +3,10 @@
     <declare-styleable name="SushiCompoundButton">
         <attr name="controlColor" format="color" />
     </declare-styleable>
+    <declare-styleable name="SushiCheckBox">
+        <attr name="controlColor" />
+    </declare-styleable>
+    <declare-styleable name="SushiRadioButton">
+        <attr name="controlColor" />
+    </declare-styleable>
 </resources>
