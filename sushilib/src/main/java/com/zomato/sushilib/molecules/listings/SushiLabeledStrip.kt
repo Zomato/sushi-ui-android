@@ -57,7 +57,7 @@ open class SushiLabeledStrip @JvmOverloads constructor(
             defStyleRes
         ).let {
             text = it.getString(R.styleable.SushiLabeledStrip_text)
-            labelText = it.getString(R.styleable.SushiDualTextView_subtitleText)
+            labelText = it.getString(R.styleable.SushiLabeledStrip_labelText)
             it.recycle()
 
             initialized = true

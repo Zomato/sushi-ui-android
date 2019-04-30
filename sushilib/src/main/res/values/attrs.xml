@@ -20,28 +20,4 @@
     <attr name="state_rating_4" format="boolean" />
     <attr name="state_rating_5" format="boolean" />
 
-
-    <declare-styleable name="SushiListing">
-        <attr name="titleText" format="string" />
-        <attr name="subtitleText" format="string" />
-        <attr name="labelText" format="string" />
-        <attr name="imageSrc" />
-    </declare-styleable>
-
-    <declare-styleable name="SushiImageDualTextView">
-        <attr name="titleText" />
-        <attr name="subtitleText" />
-        <attr name="imageSrc" />
-    </declare-styleable>
-
-    <declare-styleable name="SushiDualTextView">
-        <attr name="titleText" />
-        <attr name="subtitleText" />
-    </declare-styleable>
-
-    <declare-styleable name="SushiLabelDualTextView">
-        <attr name="titleText" />
-        <attr name="subtitleText" />
-        <attr name="labelText" />
-    </declare-styleable>
 </resources>
