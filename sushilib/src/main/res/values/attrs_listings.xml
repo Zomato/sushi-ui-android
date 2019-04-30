@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="SushiTwoLineListing">
-        <attr name="headlineText" format="string"/>
-        <attr name="bodyText" format="string"/>
+    <declare-styleable name="SushiTextListing">
+        <attr name="headlineText" format="string" />
+        <attr name="bodyText" format="string" />
+        <attr name="labelText" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiLabeledStrip">
+        <attr name="text" format="string" />
+        <attr name="labelText" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiIconListing">
+        <attr name="text" />
+        <attr name="labelText" />
+        <attr name="iconChar" format="string" />
+        <attr name="iconColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiImageTextListing">
+        <attr name="headlineText" />
+        <attr name="bodyText" />
+        <attr name="cornerIconChar" format="string" />
+        <attr name="iconTint" format="color" />
+        <attr name="imageSrc" format="reference" />
+        <attr name="imagePadding" format="dimension" />
     </declare-styleable>
 </resources>

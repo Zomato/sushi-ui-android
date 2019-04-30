@@ -40,4 +40,10 @@
         <item name="fontFamily">?attr/fontFamilySemiBold</item>
     </style>
 
+    <style name="Widget.Sushi.CircleIconTextView" parent="TextAppearance.Sushi.Icon">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/sushi_spacing_base</item>
+        <item name="android:textSize">@dimen/sushi_iconsize_500</item>
+    </style>
+
 </resources>

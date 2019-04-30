@@ -10,7 +10,6 @@ import com.zomato.sushiapp.R
 class ListingFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_listing, container, false)
-
         return rootView
     }
 }
