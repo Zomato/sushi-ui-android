@@ -13,9 +13,10 @@ import com.zomato.sushilib.atoms.textviews.SushiIconTextView
 /**
  * Created by prempal on 2019-04-30.
  */
-open class SushiImageTextListing constructor(
-    ctx: Context, attrs: AttributeSet? = null
-) : LinearLayout(ctx, attrs) {
+open class SushiImageTextListing @JvmOverloads constructor(
+    ctx: Context, attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0, defStyleRes: Int = 0
+) : LinearLayout(ctx, attrs, defStyleAttr, defStyleRes) {
 
     private var initialized = false
 
@@ -45,7 +46,7 @@ open class SushiImageTextListing constructor(
         context.theme.obtainStyledAttributes(
             attrs,
             R.styleable.SushiImageTextListing,
-            0, 0
+            defStyleAttr, defStyleRes
         ).let {
             cornerIcon = it.getString(R.styleable.SushiImageTextListing_cornerIcon)
             iconTint = it.getColorStateList(R.styleable.SushiImageTextListing_iconTint)?.let { it }

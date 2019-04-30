@@ -12,9 +12,10 @@ import com.zomato.sushilib.atoms.textviews.SushiTextView
 /**
  * Created by prempal on 2019-04-30.
  */
-open class SushiIconListing constructor(
-    ctx: Context, attrs: AttributeSet? = null
-) : LinearLayout(ctx, attrs) {
+open class SushiIconListing @JvmOverloads constructor(
+    ctx: Context, attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0, defStyleRes: Int = 0
+) : LinearLayout(ctx, attrs, defStyleAttr, defStyleRes) {
 
     private var circleIconTextView = SushiCircleIconTextView(context)
     private var labelTextView = SushiTextView(context)
@@ -49,8 +50,7 @@ open class SushiIconListing constructor(
         context.theme.obtainStyledAttributes(
             attrs,
             R.styleable.SushiIconListing,
-            0,
-            0
+            defStyleAttr, defStyleRes
         ).let {
             text = it.getString(R.styleable.SushiIconListing_text)
             labelText = it.getString(R.styleable.SushiIconListing_labelText)
