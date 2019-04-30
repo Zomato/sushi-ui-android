@@ -9,5 +9,9 @@
   "private": true,
   "devDependencies": {
     "vuepress": "^0.14.11"
+  },
+  "scripts": {
+    "serve": "vuepress dev",
+    "build": "vuepress build"
   }
 }
