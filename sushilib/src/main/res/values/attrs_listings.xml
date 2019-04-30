@@ -10,4 +10,11 @@
         <attr name="text" format="string" />
         <attr name="labelText" />
     </declare-styleable>
+
+    <declare-styleable name="SushiIconListing">
+        <attr name="text" />
+        <attr name="labelText" />
+        <attr name="iconChar" format="string" />
+        <attr name="iconColor" format="color" />
+    </declare-styleable>
 </resources>

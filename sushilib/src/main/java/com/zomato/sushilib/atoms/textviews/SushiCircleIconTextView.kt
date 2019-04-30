@@ -31,7 +31,7 @@ open class SushiCircleIconTextView @JvmOverloads constructor(
                 ColorStateList.valueOf(
                     it.getColor(
                         R.styleable.SushiCircleIconTextView_strokeColor,
-                        ContextCompat.getColor(context, R.color.sushi_grey_400)
+                        ContextCompat.getColor(context, R.color.sushi_grey_200)
                     )
                 )
             )

@@ -69,11 +69,30 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <include layout="@layout/layout_small_listing_view" />
+                    <com.zomato.sushilib.molecules.listings.SushiIconListing
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sushi_spacing_base"
+                        app:iconChar="@string/icon_filled_star"
+                        app:labelText="Label"
+                        app:text="Detailed text" />
 
-                    <include layout="@layout/layout_small_listing_view" />
+                    <com.zomato.sushilib.molecules.listings.SushiIconListing
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sushi_spacing_base"
+                        app:iconChar="@string/icon_filled_star"
+                        app:labelText="Label"
+                        app:text="Detailed text" />
 
-                    <include layout="@layout/layout_small_listing_view" />
+                    <com.zomato.sushilib.molecules.listings.SushiIconListing
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sushi_spacing_base"
+                        app:iconChar="@string/icon_filled_star"
+                        app:labelText="Label"
+                        app:text="Detailed text" />
+
                 </LinearLayout>
             </HorizontalScrollView>
 
