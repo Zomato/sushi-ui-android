@@ -24,7 +24,7 @@ open class SushiImageTextListing @JvmOverloads constructor(
     private var cornerIconTextView: SushiIconTextView? = null
     var imageView = SushiCircleImageView(context)
 
-    var cornerIcon: String?
+    var cornerIconChar: String?
         get() = cornerIconTextView?.text?.toString()
         set(value) {
             if (TextUtils.isEmpty(value)) {
@@ -48,7 +48,7 @@ open class SushiImageTextListing @JvmOverloads constructor(
             R.styleable.SushiImageTextListing,
             defStyleAttr, defStyleRes
         ).let {
-            cornerIcon = it.getString(R.styleable.SushiImageTextListing_cornerIcon)
+            cornerIconChar = it.getString(R.styleable.SushiImageTextListing_cornerIconChar)
             iconTint = it.getColorStateList(R.styleable.SushiImageTextListing_iconTint)?.let { it }
                 ?: ColorStateList.valueOf(
                     it.getColor(

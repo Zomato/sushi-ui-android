@@ -21,7 +21,7 @@
     <declare-styleable name="SushiImageTextListing">
         <attr name="headlineText" />
         <attr name="bodyText" />
-        <attr name="cornerIcon" format="string" />
+        <attr name="cornerIconChar" format="string" />
         <attr name="iconTint" format="color" />
         <attr name="imageSrc" format="reference" />
     </declare-styleable>

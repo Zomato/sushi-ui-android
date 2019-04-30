@@ -46,7 +46,7 @@
             android:layout_marginTop="@dimen/sushi_spacing_extra"
             app:imageSrc="@drawable/ic_color_palette"
             app:bodyText="Some long description text here"
-            app:cornerIcon="@string/icon_right_triangle"
+            app:cornerIconChar="@string/icon_right_triangle"
             app:headlineText="Some title text here" />
 
         <LinearLayout
