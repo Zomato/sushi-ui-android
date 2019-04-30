@@ -44,10 +44,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sushi_spacing_extra"
-            app:imageSrc="@drawable/ic_color_palette"
             app:bodyText="Some long description text here"
             app:cornerIconChar="@string/icon_right_triangle"
-            app:headlineText="Some title text here" />
+            app:headlineText="Some title text here"
+            app:imageSrc="@drawable/ic_color_palette" />
 
         <LinearLayout
             android:layout_width="match_parent"

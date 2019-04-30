@@ -50,9 +50,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_marginStart="@dimen/sushi_spacing_base"
             android:layout_marginEnd="@dimen/sushi_spacing_base"
+            android:orientation="vertical"
             android:paddingBottom="128dp">
 
             <com.zomato.sushilib.molecules.listings.SushiImageTextListing
@@ -63,6 +63,7 @@
                 app:bodyText="Rich set of colors"
                 app:cornerIconChar="@string/icon_right_triangle"
                 app:headlineText="Color"
+                app:imagePadding="@dimen/sushi_spacing_micro"
                 app:imageSrc="@drawable/ic_topnav_colors" />
 
             <com.zomato.sushilib.molecules.listings.SushiImageTextListing
@@ -73,6 +74,7 @@
                 app:bodyText="Rich set of text"
                 app:cornerIconChar="@string/icon_right_triangle"
                 app:headlineText="Typography"
+                app:imagePadding="@dimen/sushi_spacing_micro"
                 app:imageSrc="@drawable/ic_topnav_typography" />
 
             <com.zomato.sushilib.molecules.listings.SushiImageTextListing
@@ -83,6 +85,7 @@
                 app:bodyText="Images and Frames"
                 app:cornerIconChar="@string/icon_right_triangle"
                 app:headlineText="Images"
+                app:imagePadding="@dimen/sushi_spacing_micro"
                 app:imageSrc="@drawable/ic_topnav_images" />
 
             <com.zomato.sushilib.molecules.listings.SushiImageTextListing
@@ -93,6 +96,7 @@
                 app:bodyText="Rich set of tags"
                 app:cornerIconChar="@string/icon_right_triangle"
                 app:headlineText="Tags"
+                app:imagePadding="@dimen/sushi_spacing_micro"
                 app:imageSrc="@drawable/ic_topnav_star" />
 
             <com.zomato.sushilib.molecules.listings.SushiImageTextListing
@@ -103,6 +107,7 @@
                 app:bodyText="Rich set of buttons"
                 app:cornerIconChar="@string/icon_right_triangle"
                 app:headlineText="Buttons"
+                app:imagePadding="@dimen/sushi_spacing_micro"
                 app:imageSrc="@drawable/ic_topnav_buttons" />
 
             <com.zomato.sushilib.molecules.listings.SushiImageTextListing
@@ -113,6 +118,7 @@
                 app:bodyText="Input elements"
                 app:cornerIconChar="@string/icon_right_triangle"
                 app:headlineText="Form components"
+                app:imagePadding="@dimen/sushi_spacing_micro"
                 app:imageSrc="@drawable/ic_topnav_forms" />
 
             <com.zomato.sushilib.molecules.listings.SushiImageTextListing
@@ -123,6 +129,7 @@
                 app:bodyText="Listings"
                 app:cornerIconChar="@string/icon_right_triangle"
                 app:headlineText="Snippets"
+                app:imagePadding="@dimen/sushi_spacing_micro"
                 app:imageSrc="@drawable/ic_topnav_snippets" />
 
             <com.zomato.sushilib.molecules.listings.SushiImageTextListing
@@ -133,6 +140,7 @@
                 app:bodyText="Tabs, Menus, Bottom Bars"
                 app:cornerIconChar="@string/icon_right_triangle"
                 app:headlineText="Bars"
+                app:imagePadding="@dimen/sushi_spacing_micro"
                 app:imageSrc="@drawable/ic_topnav_bars" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

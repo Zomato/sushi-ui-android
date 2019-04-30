@@ -24,6 +24,12 @@ open class SushiImageTextListing @JvmOverloads constructor(
     private var cornerIconTextView: SushiIconTextView? = null
     var imageView = SushiCircleImageView(context)
 
+    var imagePadding
+        get() = imageView.paddingLeft
+        set(value) {
+            imageView.setPadding(value, value, value, value)
+        }
+
     var cornerIconChar: String?
         get() = cornerIconTextView?.text?.toString()
         set(value) {
@@ -56,6 +62,7 @@ open class SushiImageTextListing @JvmOverloads constructor(
                         ContextCompat.getColor(context, R.color.sushi_grey_300)
                     )
                 )
+            imagePadding = it.getDimensionPixelOffset(R.styleable.SushiImageTextListing_imagePadding, 0)
             it.getDrawable(R.styleable.SushiImageTextListing_imageSrc)?.let {
                 imageView.setImageDrawable(it)
             }

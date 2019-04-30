@@ -24,5 +24,6 @@
         <attr name="cornerIconChar" format="string" />
         <attr name="iconTint" format="color" />
         <attr name="imageSrc" format="reference" />
+        <attr name="imagePadding" format="dimension" />
     </declare-styleable>
 </resources>
