@@ -1,0 +1,13 @@
+{
+  "name": "sushi-android-guide",
+  "version": "1.0.0",
+  "description": "A Developer's Guide for Sushi UI Kit by Zomato",
+  "main": "index.js",
+  "repository": " ",
+  "author": "Arnav Gupta <arnav.gupta@zomato.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "vuepress": "^0.14.11"
+  }
+}
