@@ -11,6 +11,7 @@
     <!-- To Use in Default Style -->
     <attr name="tagStyle" format="reference" />
     <attr name="ratingTagStyle" format="reference" />
+    <attr name="circleIconTextViewStyle" format="reference" />
 
     <!-- Rating States for ColorStateList -->
     <attr name="state_rating_1" format="boolean" />

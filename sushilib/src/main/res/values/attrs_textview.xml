@@ -19,4 +19,8 @@
         <attr name="drawableTint" format="color" />
 
     </declare-styleable>
+
+    <declare-styleable name="SushiCircleIconTextView">
+        <attr name="strokeColor" />
+    </declare-styleable>
 </resources>
