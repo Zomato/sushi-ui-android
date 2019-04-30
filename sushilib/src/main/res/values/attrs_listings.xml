@@ -23,6 +23,6 @@
         <attr name="bodyText" />
         <attr name="cornerIcon" format="string" />
         <attr name="iconTint" format="color" />
-        <!--TODO: imageSrc-->
+        <attr name="imageSrc" format="reference" />
     </declare-styleable>
 </resources>

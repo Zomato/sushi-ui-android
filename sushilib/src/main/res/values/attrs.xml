@@ -25,7 +25,7 @@
         <attr name="titleText" format="string" />
         <attr name="subtitleText" format="string" />
         <attr name="labelText" format="string" />
-        <attr name="imageSrc" format="reference" />
+        <attr name="imageSrc" />
     </declare-styleable>
 
     <declare-styleable name="SushiImageDualTextView">

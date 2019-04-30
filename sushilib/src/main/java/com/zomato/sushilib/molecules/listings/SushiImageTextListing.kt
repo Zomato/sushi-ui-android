@@ -55,6 +55,9 @@ open class SushiImageTextListing constructor(
                         ContextCompat.getColor(context, R.color.sushi_grey_300)
                     )
                 )
+            it.getDrawable(R.styleable.SushiImageTextListing_imageSrc)?.let {
+                imageView.setImageDrawable(it)
+            }
             it.recycle()
         }
         initialized = true
