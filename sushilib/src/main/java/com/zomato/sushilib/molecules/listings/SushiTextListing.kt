@@ -28,7 +28,7 @@ open class SushiTextListing @JvmOverloads constructor(
     private var headlineTextView: SushiTextView? = null
     private var bodyTextView: SushiTextView? = null
 
-    var headingText: String?
+    var headlineText: String?
         get() = headlineTextView?.text?.toString()
         set(value) {
             if (TextUtils.isEmpty(value)) {
@@ -86,7 +86,7 @@ open class SushiTextListing @JvmOverloads constructor(
             defStyleAttr, defStyleRes
         ).let {
 
-            headingText = it.getString(R.styleable.SushiTextListing_headlineText)
+            headlineText = it.getString(R.styleable.SushiTextListing_headlineText)
             bodyText = it.getString(R.styleable.SushiTextListing_bodyText)
             labelText = it.getString(R.styleable.SushiTextListing_labelText)
 
