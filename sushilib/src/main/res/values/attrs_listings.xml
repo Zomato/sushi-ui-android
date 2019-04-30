@@ -17,4 +17,12 @@
         <attr name="iconChar" format="string" />
         <attr name="iconColor" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="SushiImageTextListing">
+        <attr name="headlineText" />
+        <attr name="bodyText" />
+        <attr name="cornerIcon" format="string" />
+        <attr name="iconTint" format="color" />
+        <!--TODO: imageSrc-->
+    </declare-styleable>
 </resources>

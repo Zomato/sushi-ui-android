@@ -39,12 +39,14 @@
             android:text="Image listing"
             android:textSize="@dimen/sushi_textsize_700" />
 
-        <com.zomato.sushilib.molecules.listings.SushiImageDualTextView
+        <com.zomato.sushilib.molecules.listings.SushiImageTextListing
+            android:id="@+id/sushi_image_text_listing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:imageSrc="@drawable/ic_color_palette"
-            app:subtitle="nkljansdlnlsd"
-            app:title="Blablabalbal" />
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
+            app:bodyText="Some long description text here"
+            app:cornerIcon="@string/icon_right_triangle"
+            app:headlineText="Some title text here" />
 
         <LinearLayout
             android:layout_width="match_parent"
