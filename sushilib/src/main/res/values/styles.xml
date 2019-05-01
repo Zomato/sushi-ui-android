@@ -18,7 +18,7 @@
         <item name="buttonStyle">@style/Widget.Sushi.Button</item>
         <item name="tagStyle">@style/Widget.Sushi.Tag</item>
         <item name="ratingTagStyle">@style/Widget.Sushi.Tag.Rating</item>
-        <item name="circleIconTextViewStyle">@style/Widget.Sushi.CircleIconTextView</item>
+        <item name="circleIconTextStyle">@style/Widget.Sushi.CircleIconView</item>
     </style>
 
     <style name="SnippetPaddingTheme" />

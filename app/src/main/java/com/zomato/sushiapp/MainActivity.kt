@@ -2,20 +2,15 @@ package com.zomato.sushiapp
 
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
-import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.app.AppCompatDelegate
 import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_NO
 import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_YES
-import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.LinearLayout
 import com.zomato.sushilib.atoms.menu.SushiMenuItem
-import com.zomato.sushilib.templates.navigation.SushiBottomNavigationView
-import kotlinx.android.synthetic.main.activity_main.view.*
+import com.zomato.sushilib.organisms.navigation.SushiBottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 

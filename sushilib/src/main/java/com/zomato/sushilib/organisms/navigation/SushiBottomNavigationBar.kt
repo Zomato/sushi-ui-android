@@ -1,4 +1,4 @@
-package com.zomato.sushilib.templates.navigation
+package com.zomato.sushilib.organisms.navigation
 
 import android.content.Context
 import android.database.DataSetObserver

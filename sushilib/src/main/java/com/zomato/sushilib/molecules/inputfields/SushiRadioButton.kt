@@ -1,16 +1,16 @@
-package com.zomato.sushilib.atoms.buttons
+package com.zomato.sushilib.molecules.inputfields
 
 import android.content.Context
 import android.support.annotation.ColorInt
-import android.support.v7.widget.AppCompatCheckBox
+import android.support.v7.widget.AppCompatRadioButton
 import android.util.AttributeSet
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.widgets.CompoundButtonHelper
 
-open class SushiCheckBox @JvmOverloads constructor(
+open class SushiRadioButton @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = R.attr.checkboxStyle
-) : AppCompatCheckBox(ctx, attrs, defStyleAttr) {
+    defStyleAttr: Int = R.attr.radioButtonStyle
+) : AppCompatRadioButton(ctx, attrs, defStyleAttr) {
 
     private val compoundButtonHelper = CompoundButtonHelper(this)
 
@@ -18,7 +18,7 @@ open class SushiCheckBox @JvmOverloads constructor(
         compoundButtonHelper.init(attrs)
     }
 
-    fun setCheckBoxColor(@ColorInt color: Int) {
+    fun setRadioButtonColor(@ColorInt color: Int) {
         compoundButtonHelper.setControlColor(color)
     }
 }

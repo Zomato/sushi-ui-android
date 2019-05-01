@@ -1,4 +1,4 @@
-package com.zomato.sushilib.atoms.textviews
+package com.zomato.sushilib.molecules.tags
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -11,6 +11,7 @@ import android.util.AttributeSet
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.TagSize
 import com.zomato.sushilib.annotations.TagType
+import com.zomato.sushilib.atoms.textviews.SushiTextView
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 import com.zomato.sushilib.utils.widgets.TagStyleUtils
 import com.zomato.sushilib.utils.widgets.TextViewUtils.applyDrawables

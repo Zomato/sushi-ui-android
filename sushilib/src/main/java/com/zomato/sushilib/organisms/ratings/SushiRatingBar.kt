@@ -1,4 +1,4 @@
-package com.zomato.sushilib.molecules.ratings
+package com.zomato.sushilib.organisms.ratings
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -10,7 +10,7 @@ import android.widget.LinearLayout
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.TagSize
 import com.zomato.sushilib.annotations.TagType
-import com.zomato.sushilib.atoms.textviews.SushiTag
+import com.zomato.sushilib.molecules.tags.SushiTag
 import com.zomato.sushilib.utils.widgets.TagStyleUtils
 
 /**

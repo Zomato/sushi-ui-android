@@ -32,7 +32,7 @@
 
 
     </LinearLayout>
-    <com.zomato.sushilib.atoms.textviews.SushiTag
+    <com.zomato.sushilib.molecules.tags.SushiTag
         android:layout_margin="@dimen/sushi_spacing_mini"
         android:id="@+id/tag"
         android:layout_width="wrap_content"

@@ -5,13 +5,12 @@ import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.support.annotation.DimenRes
 import android.support.annotation.DrawableRes
-import android.support.annotation.IdRes
 import android.support.v4.content.ContextCompat
 import android.util.TypedValue
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.TagSize
 import com.zomato.sushilib.annotations.TagType
-import com.zomato.sushilib.atoms.textviews.SushiTag
+import com.zomato.sushilib.molecules.tags.SushiTag
 
 /**
  * created by championswimmer on 24/04/19

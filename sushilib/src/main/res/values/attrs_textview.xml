@@ -20,7 +20,7 @@
 
     </declare-styleable>
 
-    <declare-styleable name="SushiCircleIconTextView">
+    <declare-styleable name="SushiCircleIconView">
         <attr name="strokeColor" />
     </declare-styleable>
 </resources>

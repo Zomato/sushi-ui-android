@@ -6,7 +6,7 @@ import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.widget.LinearLayout
 import com.zomato.sushilib.R
-import com.zomato.sushilib.atoms.textviews.SushiCircleIconTextView
+import com.zomato.sushilib.molecules.tags.SushiCircleIconView
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 
 /**
@@ -17,7 +17,7 @@ open class SushiIconListing @JvmOverloads constructor(
     defStyleAttr: Int = 0, defStyleRes: Int = 0
 ) : LinearLayout(ctx, attrs, defStyleAttr, defStyleRes) {
 
-    private var circleIconTextView = SushiCircleIconTextView(context)
+    private var circleIconView = SushiCircleIconView(context)
     private var labelTextView = SushiTextView(context)
     private var textView = SushiTextView(context)
 
@@ -34,15 +34,15 @@ open class SushiIconListing @JvmOverloads constructor(
         }
 
     var iconChar: String?
-        get() = circleIconTextView.text.toString()
+        get() = circleIconView.text.toString()
         set(value) {
-            circleIconTextView.text = value
+            circleIconView.text = value
         }
 
     var iconColor: ColorStateList
-        get() = circleIconTextView.textColors
+        get() = circleIconView.textColors
         set(value) {
-            circleIconTextView.setTextColor(value)
+            circleIconView.setTextColor(value)
         }
 
     init {
@@ -69,7 +69,7 @@ open class SushiIconListing @JvmOverloads constructor(
     private fun setupView() {
         orientation = LinearLayout.HORIZONTAL
         labelTextView.setTextAppearance(R.style.TextAppearance_Sushi_Label)
-        addView(circleIconTextView)
+        addView(circleIconView)
         val linearLayout = LinearLayout(context)
         linearLayout.apply {
             orientation = LinearLayout.VERTICAL

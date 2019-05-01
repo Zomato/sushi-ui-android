@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager
 import com.zomato.sushiapp.fragments.AboutSushiFragment
 import com.zomato.sushiapp.fragments.AboutZomatoFragment
 import com.zomato.sushiapp.fragments.HomeFragment
-import com.zomato.sushilib.templates.navigation.SushiBottomNavigationBar
+import com.zomato.sushilib.organisms.navigation.SushiBottomNavigationBar
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 
 class MainFragmentProvider(private val context: Context, private val fm: FragmentManager) :
