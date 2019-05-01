@@ -5,6 +5,7 @@ import android.support.annotation.AttrRes
 import android.support.annotation.StyleRes
 import android.support.design.widget.TabLayout
 import android.util.AttributeSet
+import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 
 /**
@@ -13,7 +14,7 @@ import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedCont
  */
 class SushiTabLayout @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    @AttrRes defStyleAttr: Int = 0,
+    @AttrRes defStyleAttr: Int = R.attr.tabStyle,
     @StyleRes defStyleRes: Int = 0
 ) : TabLayout(
     getThemeWrappedContext(ctx, defStyleRes),
