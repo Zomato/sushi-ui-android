@@ -46,10 +46,12 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content" />
-            <android.support.v7.widget.SwitchCompat
-                android:layout_gravity="center"
+
+            <com.zomato.sushilib.molecules.inputfields.SushiSwitch
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:controlColor="@color/sushi_green_500" />
 
         </LinearLayout>
 
