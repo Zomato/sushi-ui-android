@@ -24,7 +24,7 @@
             android:text="Tap to rate"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/sushi_textsize_600"
-            app:sushiFontWeight="medium" />
+            app:textFontWeight="medium" />
         <com.zomato.sushilib.organisms.ratings.SushiRatingBar
             app:rating="3"
             android:layout_marginTop="@dimen/sushi_spacing_mini"
@@ -49,7 +49,7 @@
             android:text="Static rating streak"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/sushi_textsize_600"
-            app:sushiFontWeight="medium" />
+            app:textFontWeight="medium" />
 
         <com.zomato.sushilib.organisms.ratings.SushiRatingBar
             app:rating="4"
@@ -78,7 +78,7 @@
             android:text="We have rich set of epic tags"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/sushi_textsize_600"
-            app:sushiFontWeight="medium" />
+            app:textFontWeight="medium" />
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             android:layout_width="match_parent"
@@ -87,7 +87,7 @@
             android:text="You guys call this chips as well :)"
             android:textColor="?android:attr/textColorSecondary"
             android:textSize="@dimen/sushi_textsize_300"
-            app:sushiFontWeight="medium" />
+            app:textFontWeight="medium" />
 
     <LinearLayout
         android:layout_width="match_parent"
