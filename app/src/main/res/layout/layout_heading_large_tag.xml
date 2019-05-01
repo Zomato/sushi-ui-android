@@ -20,7 +20,7 @@
             android:text="Heading text with rating"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/sushi_textsize_800"
-            app:sushiFontWeight="medium" />
+            app:textFontWeight="medium" />
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
             android:text="What do you think about this large rating tag"
             android:textColor="?android:attr/textColorSecondary"
             android:textSize="@dimen/sushi_textsize_300"
-            app:sushiFontWeight="regular" />
+            app:textFontWeight="regular" />
 
 
     </LinearLayout>

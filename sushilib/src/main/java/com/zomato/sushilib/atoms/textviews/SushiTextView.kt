@@ -30,9 +30,9 @@ open class SushiTextView @JvmOverloads constructor(
             defStyleAttr,
             defStyleRes
         )?.let {
-            val sushiFontWeight = it.getInt(R.styleable.SushiTextView_sushiFontWeight, -1)
-            if (sushiFontWeight != -1) {
-                setTextAppearance(TextFormatUtils.sushiFontWeightToTextAppearance(sushiFontWeight))
+            val textFontWeight = it.getInt(R.styleable.SushiTextView_textFontWeight, -1)
+            if (textFontWeight != -1) {
+                setTextAppearance(TextFormatUtils.textFontWeightToTextAppearance(textFontWeight))
             }
             it.recycle()
         }

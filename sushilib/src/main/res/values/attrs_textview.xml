@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="SushiTextView" >
 
-        <attr name="sushiFontWeight" format="enum">
+        <attr name="textFontWeight" format="enum">
             <enum name="thin" value="100" />
             <enum name="extralight" value="200" />
             <enum name="light" value="300" />

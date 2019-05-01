@@ -9,8 +9,8 @@ import com.zomato.sushilib.R
 
 object TextFormatUtils {
 //    @JvmStatic
-//    fun sushiFontWeightToTypeface(context: Context, sushiFontWeight: Int): Typeface? {
-//        val fontResId = when (sushiFontWeight) {
+//    fun textFontWeightToTypeface(context: Context, textFontWeight: Int): Typeface? {
+//        val fontResId = when (textFontWeight) {
 //            100 -> R.font.okra_thin
 //            200 -> R.font.okra_extralight
 //            300 -> R.font.okra_light
@@ -26,8 +26,8 @@ object TextFormatUtils {
 //        }
 //    }
     @JvmStatic @StyleRes
-    fun sushiFontWeightToTextAppearance(sushiFontWeight: Int): Int {
-        return when (sushiFontWeight) {
+    fun textFontWeightToTextAppearance(textFontWeight: Int): Int {
+        return when (textFontWeight) {
             100 -> R.style.TextAppearance_Sushi_Thin
             200 -> R.style.TextAppearance_Sushi_ExtraLight
             300 -> R.style.TextAppearance_Sushi_Light
