@@ -3,6 +3,7 @@
     <declare-styleable name="SushiTextListing">
         <attr name="headlineText" format="string" />
         <attr name="bodyText" format="string" />
+        <attr name="subtitleText" format="string" />
         <attr name="labelText" />
     </declare-styleable>
 

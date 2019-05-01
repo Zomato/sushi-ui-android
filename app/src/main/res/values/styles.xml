@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="AppBaseTheme" parent="Theme.Sushi">
         <item name="colorPrimary">@color/sushi_red_500</item>
@@ -74,6 +74,11 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowBackground">@drawable/bg_splash_screen</item>
+    </style>
+
+    <style name="AppTheme.Section.Headline" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.Sushi.Headline</item>
+        <item name="android:layout_marginBottom">@dimen/sushi_spacing_micro</item>
     </style>
 
 </resources>

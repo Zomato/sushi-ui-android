@@ -55,34 +55,34 @@
                 android:src="@mipmap/ic_launcher" />
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
-                style="@style/Theme.Sushi.Section.Heading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_base"
                 android:gravity="center"
-                android:text="sushi" />
+                android:text="sushi"
+                android:textAppearance="@style/TextAppearance.Sushi.Headline" />
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
-                style="@style/Theme.Sushi.Listing.Body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_between_small"
                 android:gravity="center"
-                android:text="version 0.1 (beta)" />
+                android:text="version 0.1 (beta)"
+                android:textAppearance="@style/TextAppearance.Sushi.Body" />
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
-                style="@style/Theme.Sushi.Listing.HeadLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_base"
-                android:text="About Sushi" />
+                android:text="About Sushi"
+                android:textAppearance="@style/TextAppearance.Sushi.Headline" />
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
-                style="@style/Theme.Sushi.Listing.Body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_base"
-                android:text="Sushi is a delicious UIKit built by Zomato. It contains its own typography, colors, and a variety of basic components." />
+                android:text="Sushi is a delicious UIKit built by Zomato. It contains its own typography, colors, and a variety of basic components."
+                android:textAppearance="@style/TextAppearance.Sushi.Body" />
 
         </LinearLayout>
 

@@ -5,46 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.images.ImagesMainFragment">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/sushi_spacing_base"
+        android:orientation="vertical">
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/Theme.Sushi.Section.Heading"
-            android:text="Info Cover"
+            style="@style/AppTheme.Section.Headline"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Info Cover" />
 
         <ImageView
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg_sample1"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_sample1" />
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/Theme.Sushi.Section.Heading"
-            android:text="Ads CTL"
-            android:layout_marginTop="@dimen/sushi_spacing_base"
+            style="@style/AppTheme.Section.Headline"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_base"
+            android:text="Ads CTL" />
 
         <HorizontalScrollView
-            android:scrollbars="none"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:padding="@dimen/sushi_spacing_mini"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/sushi_spacing_mini">
 
                 <com.zomato.sushilib.atoms.imageviews.SushiRoundedImageView
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:elevation="@dimen/sushi_spacing_micro"
                     android:layout_margin="@dimen/sushi_spacing_mini"
+                    android:elevation="@dimen/sushi_spacing_micro"
                     android:scaleType="centerCrop"
                     android:src="@drawable/bg_sample2"
                     app:cornerRadius="@dimen/sushi_spacing_micro" />
@@ -69,36 +71,36 @@
         </HorizontalScrollView>
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/Theme.Sushi.Section.Heading"
-            android:text="Profile Covers"
-            android:layout_marginTop="@dimen/sushi_spacing_base"
+            style="@style/AppTheme.Section.Headline"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_base"
+            android:text="Profile Covers" />
 
 
         <HorizontalScrollView
-            android:scrollbars="none"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <com.zomato.sushilib.atoms.imageviews.SushiCircleImageView
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:elevation="@dimen/sushi_spacing_micro"
                     android:layout_margin="@dimen/sushi_spacing_mini"
+                    android:elevation="@dimen/sushi_spacing_micro"
                     android:scaleType="centerCrop"
                     android:src="@drawable/bg_sample1" />
 
                 <com.zomato.sushilib.atoms.imageviews.SushiCircleImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:elevation="@dimen/sushi_spacing_micro"
                     android:layout_margin="@dimen/sushi_spacing_mini"
+                    android:elevation="@dimen/sushi_spacing_micro"
                     android:scaleType="centerCrop"
                     android:src="@drawable/bg_sample1" />
 
@@ -113,6 +115,5 @@
         </HorizontalScrollView>
 
     </LinearLayout>
-
 
 </ScrollView>
