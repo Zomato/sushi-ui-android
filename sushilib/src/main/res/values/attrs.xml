@@ -2,14 +2,13 @@
 <resources>
 
     <!-- Common Attributes used in multiple styleables-->
-    <attr name="sushiIconAppearance" format="reference" type="style" />
-    <attr name="sushiCornerRadius" format="dimension" />
     <attr name="rating" format="integer" />
 
     <!-- To Use in Default Style -->
     <attr name="tagStyle" format="reference" />
     <attr name="ratingTagStyle" format="reference" />
     <attr name="circleIconTextStyle" format="reference" />
+    <attr name="sushiIconAppearance" format="reference" type="style" />
 
     <!-- Rating States for ColorStateList -->
     <attr name="state_rating_1" format="boolean" />
