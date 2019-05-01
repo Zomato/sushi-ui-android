@@ -1,5 +1,6 @@
 package com.zomato.sushilib.utils.widgets
 
+import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.os.Build
@@ -106,14 +107,22 @@ object TextViewUtils {
             R.styleable.SushiTextView_drawableTint
         ) ?: textColors
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            compoundDrawableTintList = iconTintList
-        } else {
-            compoundDrawables.forEach { d ->
-                d.setTintList(iconTintList)
-            }
-        }
+        setCompoundDrawableTintListCompat(iconTintList)
 
         ta.recycle()
+    }
+
+    @JvmStatic
+    fun TextView.setCompoundDrawableTintListCompat(tintList: ColorStateList?) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            this.compoundDrawableTintList = tintList
+        } else {
+            compoundDrawables.forEach { d ->
+                d?.setTintList(tintList)
+            }
+            compoundDrawablesRelative.forEach { d ->
+                d?.setTintList(tintList)
+            }
+        }
     }
 }
