@@ -6,18 +6,19 @@ module.exports = {
     sidebar: [
       '/pages/',
       {
+        title: 'Resources',
+        children: ['/pages/01-resources/Typography.md']
+      },
+      {
         title: 'Atoms',
-        collapsible: false,
-        children: ['/pages/atoms/Typography.md']
+        children: ['/pages/02-atoms/SushiTextView.md', '/pages/02-atoms/SushiButton.md']
       },
       {
         title: 'Molecules',
-        collapsible: false,
         children: []
       },
       {
         title: 'Organisms',
-        collapsible: false,
         children: []
       }
     ]
