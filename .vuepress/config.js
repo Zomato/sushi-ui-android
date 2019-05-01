@@ -3,6 +3,7 @@ module.exports = {
   description: 'A delicious UI Kit to build Android apps. Made with ❤ by Zomato',
   themeConfig: {
     nav: [{ text: 'Guide', link: '/pages/' }],
+    sidebarDepth: 2,
     sidebar: [
       '/pages/',
       {

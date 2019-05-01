@@ -17,16 +17,12 @@ SushiButton comes with following properties
 | drawableStart | `@drawable` or `@string` which is treated as iconfont character |
 | drawableEnd   | `@drawable` or `@string` which is treated as iconfont character |
 
-:::warning NOTE
-For all the four drawable properties, use `app:drawableLeft` and **never** `android:drawableLeft`.
-:::
+<DrawableWarning/>
 
 ### Unsupported Properties
 
 Do not set `textSize`, `textColor` and `background` manually. Rely only on above
 properties to set a proper button theme for you.
-
-Behaviour with `drawableTop` and `drawableBottom` is also unspecified
 
 Setting unsupported properties _may_ throw **UnsupportedException** in future
 
@@ -51,37 +47,39 @@ sushiButton.setButtonType(ButtonType.SOLID)
 sushiButton.setButtonSize(ButtonSize.LARGE)
 ```
 
-## Types
+## Examples
+
+### Types
 
 You can set button type using either XML in layouts, or programatically in Java/Kotlin
 
-### Solid
+#### Solid
 
 ![solid-button](../../img/buttons/btnsolid.png)
 
-### Outline
+#### Outline
 
 ![outline-button](../../img/buttons/btnoutline.png)
 
-### Text
+#### Text
 
 ![text-button](../../img/buttons/btntext.png)
 
-## Sizes
+### Sizes
 
-### Large
+#### Large
 
 ![solid-button](../../img/buttons/btnsolidlarge.png)
 
-### Medium
+#### Medium
 
 ![solid-button](../../img/buttons/btnsolid.png)
 
-### Small
+#### Small
 
 ![solid-button](../../img/buttons/btnsolidsmall.png)
 
-## Colors
+### Colors
 
 We support using any color (we set the text color, the disabled state tint lists accordingly).
 
