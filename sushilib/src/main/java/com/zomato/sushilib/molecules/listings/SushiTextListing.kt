@@ -26,7 +26,12 @@ open class SushiTextListing @JvmOverloads constructor(
 
     private var labelTextView: SushiTextView? = null
     private var headlineTextView: SushiTextView? = null
+    private var subtitleTextView: SushiTextView? = null
     private var bodyTextView: SushiTextView? = null
+
+    private val itemLayoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT).apply {
+        bottomMargin = resources.getDimensionPixelSize(R.dimen.sushi_spacing_micro)
+    }
 
     var headlineText: String?
         get() = headlineTextView?.text?.toString()
@@ -36,9 +41,27 @@ open class SushiTextListing @JvmOverloads constructor(
             } else {
                 headlineTextView = (headlineTextView ?: SushiTextView(
                     context,
-                    defStyleRes = R.style.Theme_Sushi_Listing_HeadLine
+                    defStyleRes = R.style.TextAppearance_Sushi_Headline
                 )).apply {
                     text = value
+                    layoutParams = itemLayoutParams
+                }
+            }
+            relayout()
+        }
+
+    var subtitleText: String?
+        get() = subtitleTextView?.text?.toString()
+        set(value) {
+            if (TextUtils.isEmpty(value)) {
+                subtitleTextView = null
+            } else {
+                subtitleTextView = (subtitleTextView ?: SushiTextView(
+                    context,
+                    defStyleRes = R.style.TextAppearance_Sushi_Subtitle
+                )).apply {
+                    text = value
+                    layoutParams = itemLayoutParams
                 }
             }
             relayout()
@@ -52,9 +75,10 @@ open class SushiTextListing @JvmOverloads constructor(
             } else {
                 bodyTextView = (bodyTextView ?: SushiTextView(
                     context,
-                    defStyleRes = R.style.Theme_Sushi_Listing_Body
+                    defStyleRes = R.style.TextAppearance_Sushi_Body
                 )).apply {
                     text = value
+                    layoutParams = itemLayoutParams
                 }
             }
             relayout()
@@ -68,9 +92,10 @@ open class SushiTextListing @JvmOverloads constructor(
             } else {
                 labelTextView = (labelTextView ?: SushiTextView(
                     context,
-                    defStyleRes = R.style.Theme_Sushi_Listing_Label
+                    defStyleRes = R.style.TextAppearance_Sushi_Label
                 )).apply {
                     text = value
+                    layoutParams = itemLayoutParams
                 }
             }
             relayout()
@@ -89,7 +114,7 @@ open class SushiTextListing @JvmOverloads constructor(
             headlineText = it.getString(R.styleable.SushiTextListing_headlineText)
             bodyText = it.getString(R.styleable.SushiTextListing_bodyText)
             labelText = it.getString(R.styleable.SushiTextListing_labelText)
-
+            subtitleText = it.getString(R.styleable.SushiTextListing_subtitleText)
             initialized = true
             relayout()
 
@@ -103,7 +128,8 @@ open class SushiTextListing @JvmOverloads constructor(
         removeAllViews()
         labelTextView?.let { addView(it) }
         headlineTextView?.let { addView(it) }
-        bodyTextView?.let { addView (it) }
+        subtitleTextView?.let { addView(it) }
+        bodyTextView?.let { addView(it) }
     }
 
 }

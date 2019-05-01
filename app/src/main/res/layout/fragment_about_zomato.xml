@@ -56,34 +56,34 @@
                 app:cornerRadius="@dimen/sushi_spacing_base" />
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
-                style="@style/Theme.Sushi.Section.Heading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_base"
                 android:gravity="center"
-                android:text="Zomato" />
+                android:text="Zomato"
+                android:textAppearance="@style/TextAppearance.Sushi.Headline" />
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
-                style="@style/Theme.Sushi.Listing.Body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_between_small"
                 android:gravity="center"
-                android:text="v14 is coming" />
+                android:text="v14 is coming"
+                android:textAppearance="@style/TextAppearance.Sushi.Body" />
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
-                style="@style/Theme.Sushi.Listing.HeadLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_base"
-                android:text="Restaurant and Food" />
+                android:text="Restaurant and Food"
+                android:textAppearance="@style/TextAppearance.Sushi.Headline" />
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
-                style="@style/Theme.Sushi.Listing.Body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_base"
-                android:text="Zomato lets you search for and discover restaurants to eat out at or order in from. Browse through restaurant menus, photos, reviews and ratings to decide where you want to eat, and use the map feature to guide you there." />
+                android:text="Zomato lets you search for and discover restaurants to eat out at or order in from. Browse through restaurant menus, photos, reviews and ratings to decide where you want to eat, and use the map feature to guide you there."
+                android:textAppearance="@style/TextAppearance.Sushi.Body" />
 
             <com.zomato.sushilib.atoms.buttons.SushiButton
                 android:id="@+id/btn_get_app"

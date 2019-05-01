@@ -1,137 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
+
     <LinearLayout
-        android:padding="@dimen/sushi_spacing_loose"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/sushi_spacing_loose">
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
-            android:text="Large"
-            style="@style/Theme.Sushi.Section.Heading"
+            style="@style/AppTheme.Section.Headline"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Large" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="Large Button" />
+            android:text="Large Button"
+            app:buttonSize="large"
+            app:buttonType="text" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:enabled="false"
-            android:text="Large Disabled Button" />
+            android:text="Large Disabled Button"
+            app:buttonSize="large"
+            app:buttonType="text" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Large Icon Button"
+            app:buttonSize="large"
+            app:buttonType="text"
             app:icon="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:layoutDirection="rtl"
             android:text="Large Icon Button"
+            app:buttonSize="large"
+            app:buttonType="text"
             app:icon="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
-            android:text="Medium"
-            style="@style/Theme.Sushi.Section.Heading"
+            style="@style/AppTheme.Section.Headline"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Medium" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="Medium Button" />
+            android:text="Medium Button"
+            app:buttonSize="medium"
+            app:buttonType="text" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:enabled="false"
-            android:text="Medium Disabled Button" />
+            android:text="Medium Disabled Button"
+            app:buttonSize="medium"
+            app:buttonType="text" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Medium Icon Button"
+            app:buttonSize="medium"
+            app:buttonType="text"
             app:icon="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:layoutDirection="rtl"
             android:text="Medium Icon Button"
+            app:buttonSize="medium"
+            app:buttonType="text"
             app:icon="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
-            style="@style/Theme.Sushi.Section.Heading"
+            style="@style/AppTheme.Section.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="Small Button" />
+            android:text="Small Button"
+            app:buttonSize="small"
+            app:buttonType="text" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:enabled="false"
-            android:text="Small Disabled Button" />
+            android:text="Small Disabled Button"
+            app:buttonSize="small"
+            app:buttonType="text" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Small Icon Button"
+            app:buttonSize="small"
+            app:buttonType="text"
             app:icon="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
-            app:buttonType="text"
-            app:buttonSize="small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:layoutDirection="rtl"
             android:text="Small Icon Button"
+            app:buttonSize="small"
+            app:buttonType="text"
             app:icon="@drawable/ic_color_palette" />
 
     </LinearLayout>

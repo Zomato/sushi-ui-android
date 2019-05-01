@@ -11,20 +11,23 @@
         <item name="android:fontFamily">@font/wasabi</item>
         <item name="fontFamily">@font/wasabi</item>
     </style>
-  
-  <!-- Basic Font Weight Styles -->
+
+    <!-- Basic Font Weight Styles -->
     <style name="TextAppearance.Sushi.Thin">
         <item name="android:fontFamily">?attr/fontFamilyThin</item>
         <item name="fontFamily">?attr/fontFamilyThin</item>
     </style>
+
     <style name="TextAppearance.Sushi.ExtraLight">
         <item name="android:fontFamily">?attr/fontFamilyExtraLight</item>
         <item name="fontFamily">?attr/fontFamilyExtraLight</item>
     </style>
+
     <style name="TextAppearance.Sushi.Light">
         <item name="android:fontFamily">?attr/fontFamilyLight</item>
         <item name="fontFamily">?attr/fontFamilyLight</item>
     </style>
+
     <style name="TextAppearance.Sushi.Regular">
         <item name="android:fontFamily">?attr/fontFamilyRegular</item>
         <item name="fontFamily">?attr/fontFamilyRegular</item>

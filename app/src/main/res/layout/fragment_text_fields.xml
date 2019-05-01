@@ -7,45 +7,47 @@
     android:orientation="vertical"
     android:padding="@dimen/sushi_spacing_base"
     tools:context=".fragments.FormComponentFragment">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
-            android:text="Fill details to check"
-            android:paddingLeft="@dimen/sushi_spacing_micro"
-            android:textAppearance="@style/Theme.Sushi.Section.Heading"
+            style="@style/AppTheme.Section.Headline"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/sushi_spacing_micro"
+            android:text="Fill details to check" />
 
         <com.zomato.sushilib.molecules.inputfields.SushiTextInputField
+            android:id="@+id/textFieldRecipient"
             style="@style/Theme.Sushi.TextInputField"
-            app:errorEnabled="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Recipient Name"
             app:drawableEnd="@string/icon_cross_filled"
-            android:id="@+id/textFieldRecipient"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            app:errorEnabled="true" />
 
         <com.zomato.sushilib.molecules.inputfields.SushiTextInputField
-            style="@style/Theme.Sushi.TextInputField"
-            android:inputType="textPassword"
-            android:hint="Password"
-            app:drawableEnd="@string/icon_cross_filled"
             android:id="@+id/textFieldPassword"
+            style="@style/Theme.Sushi.TextInputField"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            app:drawableEnd="@string/icon_cross_filled" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.zomato.sushilib.molecules.listings.SushiTextListing
-                app:headlineText="See activity from other people"
-                app:bodyText="Lorem ipsum id good for long text demo :) dolor sit amet, consectetur adipiscing elit,"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_height="wrap_content" />
+                app:bodyText="Lorem ipsum id good for long text demo :) dolor sit amet, consectetur adipiscing elit,"
+                app:headlineText="See activity from other people" />
 
             <com.zomato.sushilib.molecules.inputfields.SushiSwitch
                 android:layout_width="wrap_content"
@@ -65,51 +67,50 @@
             app:errorEnabled="false" />
 
         <com.zomato.sushilib.molecules.listings.SushiTextListing
-            app:headlineText="Where want to show"
-            app:bodyText="Lorem ipsum id good for long text demo :) dolor sit amet, consectetur adipiscing elit,"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:bodyText="Lorem ipsum id good for long text demo :) dolor sit amet, consectetur adipiscing elit,"
+            app:headlineText="Where want to show" />
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.zomato.sushilib.molecules.inputfields.SushiRadioButton
-                android:text="These show up on your mind"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="These show up on your mind" />
 
             <com.zomato.sushilib.molecules.inputfields.SushiRadioButton
-                app:controlColor="@color/sushi_yellow_500"
-                android:text="These show up in your phone"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="These show up in your phone"
+                app:controlColor="@color/sushi_yellow_500" />
         </RadioGroup>
 
         <com.zomato.sushilib.molecules.listings.SushiTextListing
-            app:headlineText="What you prefer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:bodyText="Lorem ipsum id good for long text demo :) dolor sit amet, consectetur adipiscing elit,"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            app:headlineText="What you prefer" />
 
         <com.zomato.sushilib.molecules.inputfields.SushiCheckBox
-            android:text="Coca Cola"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Coca Cola" />
 
         <com.zomato.sushilib.molecules.inputfields.SushiCheckBox
-            android:text="Pepsi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Pepsi" />
 
         <com.zomato.sushilib.molecules.inputfields.SushiCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Americano"
-            app:controlColor="@color/sushi_yellow_500"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            app:controlColor="@color/sushi_yellow_500" />
 
     </LinearLayout>
-
 
 
 </ScrollView>

@@ -27,6 +27,7 @@
         <com.zomato.sushilib.molecules.listings.SushiTextListing
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sushi_spacing_extra"
             app:bodyText="This is a SushiTwoLineListing. \nThis is the app:bodyText value here"
             app:headlineText="Headline Text"
             app:labelText="LABEL" />
