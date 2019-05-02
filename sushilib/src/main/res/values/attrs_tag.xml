@@ -24,7 +24,7 @@
         <attr name="tagType" />
         <attr name="tagSize" />
         <attr name="ratingTagStyle" />
-        <attr name="rating" />
+        <attr name="rating" format="float" />
         <attr name="android:clickable" />
 
         <!-- Drawables will simply be passed onto the internal tags -->

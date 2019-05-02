@@ -2,12 +2,10 @@ package com.zomato.sushilib.annotations;
 
 import android.support.annotation.IntDef;
 
-import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
 
-import static com.zomato.sushilib.annotations.ButtonSize.*;
+import static com.zomato.sushilib.annotations.ButtonDimension.*;
 
 /**
  * created by championswimmer on 19/04/19
@@ -15,7 +13,7 @@ import static com.zomato.sushilib.annotations.ButtonSize.*;
  */
 @Retention(RetentionPolicy.SOURCE)
 @IntDef({LARGE, MEDIUM, SMALL})
-public @interface ButtonSize {
+public @interface ButtonDimension {
     int LARGE = 0;
     int MEDIUM = 1;
     int SMALL = 2;

@@ -92,7 +92,7 @@
                 android:layout_marginTop="@dimen/sushi_spacing_base"
                 android:text="Get the app"
                 app:buttonColor="@color/sushi_red_500"
-                app:buttonSize="large" />
+                app:buttonDimension="large" />
 
         </LinearLayout>
 

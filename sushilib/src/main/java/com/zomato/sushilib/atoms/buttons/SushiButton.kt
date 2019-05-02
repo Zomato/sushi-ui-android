@@ -8,7 +8,7 @@ import android.support.design.button.MaterialButton
 import android.util.AttributeSet
 import android.util.TypedValue
 import com.zomato.sushilib.R
-import com.zomato.sushilib.annotations.ButtonSize
+import com.zomato.sushilib.annotations.ButtonDimension
 import com.zomato.sushilib.annotations.ButtonType
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemedColorFromAttr
@@ -23,8 +23,8 @@ open class SushiButton @JvmOverloads constructor(
     defStyleAttr
 ) {
 
-    @ButtonSize
-    private var buttonSize: Int = ButtonSize.LARGE
+    @ButtonDimension
+    private var buttonDimension: Int = ButtonDimension.LARGE
     @ButtonType
     private var buttonType: Int = ButtonType.SOLID
     @ColorInt
@@ -39,7 +39,7 @@ open class SushiButton @JvmOverloads constructor(
             R.styleable.SushiButton
         )?.let {
 
-            buttonSize = it.getInt(R.styleable.SushiButton_buttonSize, ButtonSize.LARGE)
+            buttonDimension = it.getInt(R.styleable.SushiButton_buttonDimension, ButtonDimension.LARGE)
             buttonType = it.getInt(R.styleable.SushiButton_buttonType, ButtonType.SOLID)
             buttonColor = it.getColor(R.styleable.SushiButton_buttonColor, buttonColor)
             customStrokeColor = buttonColor
@@ -89,14 +89,14 @@ open class SushiButton @JvmOverloads constructor(
         }
     }
 
-    @ButtonSize
-    fun getButtonSize(): Int {
-        return buttonSize
+    @ButtonDimension
+    fun getButtonDimension(): Int {
+        return buttonDimension
     }
 
-    fun setButtonSize(@ButtonSize size: Int) {
-        if (size == buttonSize) return
-        buttonSize = size
+    fun setButtonDimension(@ButtonDimension size: Int) {
+        if (size == buttonDimension) return
+        buttonDimension = size
         reapplySizes()
     }
 
@@ -108,8 +108,8 @@ open class SushiButton @JvmOverloads constructor(
     }
 
     private fun reapplySizes() {
-        when (buttonSize) {
-            ButtonSize.LARGE -> {
+        when (buttonDimension) {
+            ButtonDimension.LARGE -> {
                 iconSize = resources.getDimensionPixelSize(R.dimen.sushi_iconsize_500)
                 minHeight = resources.getDimensionPixelSize(R.dimen.sushi_button_large_minheight)
                 setTextSize(
@@ -117,7 +117,7 @@ open class SushiButton @JvmOverloads constructor(
                     resources.getDimension(R.dimen.sushi_textsize_500)
                 )
             }
-            ButtonSize.MEDIUM -> {
+            ButtonDimension.MEDIUM -> {
                 iconSize = resources.getDimensionPixelSize(R.dimen.sushi_iconsize_300)
                 minHeight = resources.getDimensionPixelSize(R.dimen.sushi_button_medium_minheight)
                 setTextSize(
@@ -125,7 +125,7 @@ open class SushiButton @JvmOverloads constructor(
                     resources.getDimension(R.dimen.sushi_textsize_300)
                 )
             }
-            ButtonSize.SMALL -> {
+            ButtonDimension.SMALL -> {
                 iconSize = resources.getDimensionPixelSize(R.dimen.sushi_iconsize_200)
                 minHeight = resources.getDimensionPixelSize(R.dimen.sushi_button_small_minheight)
                 setTextSize(

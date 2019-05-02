@@ -1,6 +1,5 @@
 package com.zomato.sushilib.utils.widgets
 
-import android.R
 import android.content.Context
 import android.content.res.ColorStateList
 import android.support.annotation.ColorInt
@@ -13,7 +12,7 @@ internal object CompoundButtonUtils {
     fun getBackgroundTintList(context: Context, @ColorInt color: Int): ColorStateList {
         return ColorStateList(
             arrayOf(
-                intArrayOf(R.attr.state_checked),
+                intArrayOf(android.R.attr.state_checked),
                 intArrayOf()
             ),
             intArrayOf(
