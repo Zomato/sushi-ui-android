@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Large Button"
-            app:buttonDimensions="large"
+            app:buttonDimension="large"
             app:buttonType="outline" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Large Button"
-            app:buttonDimensions="large"
+            app:buttonDimension="large"
             app:buttonType="outline"
             app:strokeColor="@color/sushi_grey_400" />
 
@@ -39,7 +39,7 @@
             android:layout_marginBottom="12dp"
             android:enabled="false"
             android:text="Large Disabled Button"
-            app:buttonDimensions="large"
+            app:buttonDimension="large"
             app:buttonType="outline" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -48,7 +48,7 @@
             android:layout_marginBottom="12dp"
             android:text="Large Icon Button"
             app:buttonColor="@color/sushi_teal_500"
-            app:buttonDimensions="large"
+            app:buttonDimension="large"
             app:buttonType="outline"
             app:icon="@drawable/ic_color_palette" />
 
@@ -59,7 +59,7 @@
             android:layoutDirection="rtl"
             android:text="Large Icon Button"
             app:buttonColor="@color/sushi_pink_500"
-            app:buttonDimensions="large"
+            app:buttonDimension="large"
             app:buttonType="outline"
             app:icon="@drawable/ic_color_palette" />
 
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Medium Button"
-            app:buttonDimensions="medium"
+            app:buttonDimension="medium"
             app:buttonType="outline" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -83,7 +83,7 @@
             android:layout_marginBottom="12dp"
             android:enabled="false"
             android:text="Medium Disabled Button"
-            app:buttonDimensions="medium"
+            app:buttonDimension="medium"
             app:buttonType="outline" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Medium Icon Button"
-            app:buttonDimensions="medium"
+            app:buttonDimension="medium"
             app:buttonType="outline"
             app:icon="@drawable/ic_color_palette" />
 
@@ -101,7 +101,7 @@
             android:layout_marginBottom="12dp"
             android:layoutDirection="rtl"
             android:text="Medium Icon Button"
-            app:buttonDimensions="medium"
+            app:buttonDimension="medium"
             app:buttonType="outline"
             app:icon="@drawable/ic_color_palette" />
 
@@ -116,7 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Small Button"
-            app:buttonDimensions="small"
+            app:buttonDimension="small"
             app:buttonType="outline" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -125,7 +125,7 @@
             android:layout_marginBottom="12dp"
             android:enabled="false"
             android:text="Small Disabled Button"
-            app:buttonDimensions="small"
+            app:buttonDimension="small"
             app:buttonType="outline" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Small Icon Button"
-            app:buttonDimensions="small"
+            app:buttonDimension="small"
             app:buttonType="outline"
             app:icon="@drawable/ic_color_palette" />
 
@@ -143,7 +143,7 @@
             android:layout_marginBottom="12dp"
             android:layoutDirection="rtl"
             android:text="Small Icon Button"
-            app:buttonDimensions="small"
+            app:buttonDimension="small"
             app:buttonType="outline"
             app:icon="@drawable/ic_color_palette" />
 

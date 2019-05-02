@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Large Button"
-            app:buttonDimensions="large"
+            app:buttonDimension="large"
             app:buttonType="solid" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -30,7 +30,7 @@
             android:layout_marginBottom="12dp"
             android:enabled="false"
             android:text="Large Disabled Button"
-            app:buttonDimensions="large"
+            app:buttonDimension="large"
             app:buttonType="solid" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -39,7 +39,7 @@
             android:layout_marginBottom="12dp"
             android:text="Large Icon Button"
             app:buttonColor="@color/sushi_blue_500"
-            app:buttonDimensions="large"
+            app:buttonDimension="large"
             app:buttonType="solid"
             app:icon="@drawable/ic_color_palette" />
 
@@ -50,7 +50,7 @@
             android:layoutDirection="rtl"
             android:text="Large Icon Button"
             app:buttonColor="@color/sushi_purple_500"
-            app:buttonDimensions="large"
+            app:buttonDimension="large"
             app:buttonType="solid"
             app:icon="@drawable/ic_color_palette" />
 
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Medium Button"
-            app:buttonDimensions="medium"
+            app:buttonDimension="medium"
             app:buttonType="solid" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -74,7 +74,7 @@
             android:layout_marginBottom="12dp"
             android:enabled="false"
             android:text="Medium Disabled Button"
-            app:buttonDimensions="medium"
+            app:buttonDimension="medium"
             app:buttonType="solid" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -83,7 +83,7 @@
             android:layout_marginBottom="12dp"
             android:text="Medium Icon Button"
             app:buttonColor="@color/sushi_orange_500"
-            app:buttonDimensions="medium"
+            app:buttonDimension="medium"
             app:buttonType="solid"
             app:icon="@drawable/ic_color_palette" />
 
@@ -94,7 +94,7 @@
             android:layoutDirection="rtl"
             android:text="Medium Icon Button"
             app:buttonColor="@color/sushi_yellow_800"
-            app:buttonDimensions="medium"
+            app:buttonDimension="medium"
             app:buttonType="solid"
             app:icon="@drawable/ic_color_palette" />
 
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Small Button"
-            app:buttonDimensions="small"
+            app:buttonDimension="small"
             app:buttonType="solid" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -118,7 +118,7 @@
             android:layout_marginBottom="12dp"
             android:enabled="false"
             android:text="Small Disabled Button"
-            app:buttonDimensions="small"
+            app:buttonDimension="small"
             app:buttonType="solid" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:text="Small Icon Button"
-            app:buttonDimensions="small"
+            app:buttonDimension="small"
             app:buttonType="solid"
             app:icon="@drawable/ic_color_palette" />
 
@@ -136,7 +136,7 @@
             android:layout_marginBottom="12dp"
             android:layoutDirection="rtl"
             android:text="Small Icon Button"
-            app:buttonDimensions="small"
+            app:buttonDimension="small"
             app:buttonType="solid"
             app:icon="@drawable/ic_color_palette" />
 
