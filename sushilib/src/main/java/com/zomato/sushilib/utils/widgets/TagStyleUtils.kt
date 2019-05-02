@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.support.annotation.DimenRes
 import android.support.annotation.DrawableRes
+import android.support.annotation.RestrictTo
 import android.support.v4.content.ContextCompat
 import android.util.TypedValue
 import com.zomato.sushilib.R
@@ -16,7 +17,9 @@ import com.zomato.sushilib.molecules.tags.SushiTag
  * created by championswimmer on 24/04/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-object TagStyleUtils {
+
+@RestrictTo(RestrictTo.Scope.LIBRARY)
+internal object TagStyleUtils {
     @JvmStatic
     fun SushiTag.applySize() {
         var verticalPadding = 0

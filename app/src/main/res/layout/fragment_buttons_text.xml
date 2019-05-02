@@ -97,7 +97,8 @@
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.Section.Headline"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Small" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
             android:layout_width="wrap_content"

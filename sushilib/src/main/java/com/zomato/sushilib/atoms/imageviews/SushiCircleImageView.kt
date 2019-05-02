@@ -4,13 +4,14 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.support.annotation.AttrRes
 import android.support.annotation.StyleRes
 import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
 import android.util.Log
 import android.widget.ImageView.ScaleType.CENTER_CROP
+import com.zomato.sushilib.annotations.OutlineType
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
-import com.zomato.sushilib.utils.view.OutlineType
 import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 
 
@@ -20,15 +21,17 @@ import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
  */
 open class SushiCircleImageView @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0, @StyleRes defStyleRes: Int = 0
+    @AttrRes defStyleAttr: Int = 0, @StyleRes defStyleRes: Int = 0
 ) : AppCompatImageView(
     getThemeWrappedContext(ctx, defStyleRes),
-    attrs, defStyleAttr) {
+    attrs, defStyleAttr
+) {
     private val mPreviewPaint = Paint().apply {
         this.style = Paint.Style.FILL
         this.isAntiAlias = true
         this.color = Color.DKGRAY
     }
+
     init {
         scaleType = CENTER_CROP
         outlineProvider = SushiViewOutlineProvider(

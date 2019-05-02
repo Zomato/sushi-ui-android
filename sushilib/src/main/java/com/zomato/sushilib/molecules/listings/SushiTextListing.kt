@@ -2,6 +2,8 @@ package com.zomato.sushilib.molecules.listings
 
 import android.animation.LayoutTransition
 import android.content.Context
+import android.support.annotation.AttrRes
+import android.support.annotation.StyleRes
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.widget.LinearLayout
@@ -19,7 +21,7 @@ import com.zomato.sushilib.atoms.textviews.SushiTextView
  */
 open class SushiTextListing @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0, defStyleRes: Int = 0
+    @AttrRes defStyleAttr: Int = 0, @StyleRes defStyleRes: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr, defStyleRes) {
 
     private var initialized = false

@@ -1,12 +1,14 @@
 package com.zomato.sushilib.utils.widgets
 
 import android.support.annotation.ColorInt
+import android.support.annotation.RestrictTo
 import android.util.AttributeSet
 import android.widget.CompoundButton
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 
-class CompoundButtonHelper(private val compoundButton: CompoundButton) {
+@RestrictTo(RestrictTo.Scope.LIBRARY)
+internal class CompoundButtonHelper(private val compoundButton: CompoundButton) {
 
     @ColorInt
     private var color: Int =

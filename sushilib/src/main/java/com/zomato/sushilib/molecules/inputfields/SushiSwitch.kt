@@ -2,7 +2,9 @@ package com.zomato.sushilib.molecules.inputfields
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
+import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.ColorUtils
 import android.support.v7.widget.SwitchCompat
@@ -16,7 +18,7 @@ import com.zomato.sushilib.utils.theme.ResourceThemeResolver
  */
 class SushiSwitch @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = R.attr.switchStyle, defStyleRes: Int = 0
+    @AttrRes defStyleAttr: Int = R.attr.switchStyle, @StyleRes defStyleRes: Int = 0
 ) : SwitchCompat(ctx, attrs, defStyleAttr) {
 
     @ColorInt

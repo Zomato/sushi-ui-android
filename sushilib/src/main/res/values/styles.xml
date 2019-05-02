@@ -9,9 +9,9 @@
         <item name="colorError">@color/sushi_red_500</item>
         <item name="android:colorControlActivated">?colorPrimary</item>
     </style>
+
     <style name="Theme.Sushi" parent="Base.Theme.Sushi">
         <item name="android:fontFamily">?fontFamilyRegular</item>
-        <item name="android:textViewStyle">@style/SnippetPaddingTheme</item>
         <item name="sushiIconAppearance">@style/TextAppearance.Sushi.Icon</item>
         <item name="checkboxStyle">@style/Widget.Sushi.CompoundButton.CheckBox</item>
         <item name="radioButtonStyle">@style/Widget.Sushi.CompoundButton.RadioButton</item>
@@ -20,18 +20,6 @@
         <item name="ratingTagStyle">@style/Widget.Sushi.Tag.Rating</item>
         <item name="circleIconTextStyle">@style/Widget.Sushi.CircleIconView</item>
         <item name="tabStyle">@style/Widget.Sushi.TabLayout</item>
-    </style>
-
-    <style name="SnippetPaddingTheme" />
-
-    <style name="SnippetSidePaddingTheme" parent="SnippetPaddingTheme">
-        <item name="android:paddingLeft">@dimen/sushi_spacing_page_side</item>
-        <item name="android:paddingRight">@dimen/sushi_spacing_page_side</item>
-    </style>
-
-    <style name="SnippetBaseVerticalPaddingTheme" parent="SnippetSidePaddingTheme">
-        <item name="android:paddingTop">@dimen/sushi_spacing_base</item>
-        <item name="android:paddingBottom">@dimen/sushi_spacing_base</item>
     </style>
 
 </resources>

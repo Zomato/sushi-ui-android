@@ -1,4 +1,4 @@
-package com.zomato.sushilib.utils.view;
+package com.zomato.sushilib.annotations;
 
 import android.support.annotation.IntDef;
 

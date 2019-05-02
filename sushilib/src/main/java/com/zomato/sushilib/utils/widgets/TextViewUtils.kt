@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable
 import android.os.Build
 import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
+import android.support.annotation.RestrictTo
 import android.support.annotation.StyleableRes
 import android.util.AttributeSet
 import android.widget.TextView
@@ -16,7 +17,9 @@ import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
  * created by championswimmer on 26/04/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-object TextViewUtils {
+
+@RestrictTo(RestrictTo.Scope.LIBRARY)
+internal object TextViewUtils {
     @StyleableRes
     private val styleableDrLeft: Int = R.styleable.SushiTextView_drawableLeft
     @StyleableRes

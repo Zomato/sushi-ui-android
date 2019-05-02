@@ -1,6 +1,9 @@
 package com.zomato.sushilib.utils.color
 
-object ColorContrastUtils {
+import android.support.annotation.RestrictTo
+
+@RestrictTo(RestrictTo.Scope.LIBRARY)
+internal object ColorContrastUtils {
     /**
      * Tells if the color is dark or not
      * For eg. if dark color, use a light font

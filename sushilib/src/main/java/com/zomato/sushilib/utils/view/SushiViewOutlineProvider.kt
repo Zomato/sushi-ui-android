@@ -3,6 +3,7 @@ package com.zomato.sushilib.utils.view
 import android.graphics.Outline
 import android.view.View
 import android.view.ViewOutlineProvider
+import com.zomato.sushilib.annotations.OutlineType
 
 /**
  * created by championswimmer on 26/03/19
