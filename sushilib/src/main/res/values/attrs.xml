@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Common Attributes used in multiple styleables-->
-    <attr name="rating" format="integer" />
-
     <!-- To Use in Default Style -->
     <attr name="tagStyle" format="reference" />
     <attr name="ratingTagStyle" format="reference" />

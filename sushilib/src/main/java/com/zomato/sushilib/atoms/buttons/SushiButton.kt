@@ -24,7 +24,7 @@ open class SushiButton @JvmOverloads constructor(
 ) {
 
     @ButtonSize
-    private var buttonSize: Int = ButtonSize.LARGE
+    private var buttonDimensions: Int = ButtonSize.LARGE
     @ButtonType
     private var buttonType: Int = ButtonType.SOLID
     @ColorInt
@@ -39,7 +39,7 @@ open class SushiButton @JvmOverloads constructor(
             R.styleable.SushiButton
         )?.let {
 
-            buttonSize = it.getInt(R.styleable.SushiButton_buttonSize, ButtonSize.LARGE)
+            buttonDimensions = it.getInt(R.styleable.SushiButton_buttonDimensions, ButtonSize.LARGE)
             buttonType = it.getInt(R.styleable.SushiButton_buttonType, ButtonType.SOLID)
             buttonColor = it.getColor(R.styleable.SushiButton_buttonColor, buttonColor)
             customStrokeColor = buttonColor
@@ -91,12 +91,12 @@ open class SushiButton @JvmOverloads constructor(
 
     @ButtonSize
     fun getButtonSize(): Int {
-        return buttonSize
+        return buttonDimensions
     }
 
     fun setButtonSize(@ButtonSize size: Int) {
-        if (size == buttonSize) return
-        buttonSize = size
+        if (size == buttonDimensions) return
+        buttonDimensions = size
         reapplySizes()
     }
 
@@ -108,7 +108,7 @@ open class SushiButton @JvmOverloads constructor(
     }
 
     private fun reapplySizes() {
-        when (buttonSize) {
+        when (buttonDimensions) {
             ButtonSize.LARGE -> {
                 iconSize = resources.getDimensionPixelSize(R.dimen.sushi_iconsize_500)
                 minHeight = resources.getDimensionPixelSize(R.dimen.sushi_button_large_minheight)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="SushiButton">
-        <attr name="buttonSize" format="enum">
+        <attr name="buttonDimensions" format="enum">
             <enum name="large" value="0" />
             <enum name="medium" value="1" />
             <enum name="small" value="2" />

@@ -36,7 +36,7 @@ class SushiSwitch @JvmOverloads constructor(
         }
     }
 
-    fun setSwitchColor(@ColorInt color: Int) {
+    fun setControlColor(@ColorInt color: Int) {
         if (this.color == color) return
         this.color = color
         applyTints()

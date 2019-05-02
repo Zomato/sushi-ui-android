@@ -16,10 +16,10 @@ open class SushiCheckBox @JvmOverloads constructor(
     private val compoundButtonHelper = CompoundButtonHelper(this)
 
     init {
-        compoundButtonHelper.init(attrs)
+        compoundButtonHelper.init(attrs, defStyleAttr)
     }
 
-    fun setCheckBoxColor(@ColorInt color: Int) {
+    fun setControlColor(@ColorInt color: Int) {
         compoundButtonHelper.setControlColor(color)
     }
 }
