@@ -10,7 +10,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.widget.ImageView.ScaleType.CENTER_CROP
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
-import com.zomato.sushilib.utils.view.OutlineType
+import com.zomato.sushilib.annotations.OutlineType
 import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 
 

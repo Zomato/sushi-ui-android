@@ -10,7 +10,7 @@ import android.util.Log
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.views.RoundedView
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
-import com.zomato.sushilib.utils.view.OutlineType
+import com.zomato.sushilib.annotations.OutlineType
 import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 
 /**

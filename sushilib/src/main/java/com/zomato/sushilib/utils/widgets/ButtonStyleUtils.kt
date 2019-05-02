@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.support.annotation.ColorInt
+import android.support.annotation.RestrictTo
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.ColorUtils
 import com.zomato.sushilib.R
@@ -23,7 +24,9 @@ import com.zomato.sushilib.atoms.buttons.SushiButton
  * created by championswimmer on 19/04/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-object ButtonStyleUtils {
+
+@RestrictTo(RestrictTo.Scope.LIBRARY)
+internal object ButtonStyleUtils {
     /**
      * Apply stroke width if button type is [ButtonType.OUTLINE]
      */

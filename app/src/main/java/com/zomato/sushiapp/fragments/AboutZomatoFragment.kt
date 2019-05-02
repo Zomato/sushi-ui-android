@@ -11,7 +11,6 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.zomato.sushiapp.R
-import com.zomato.sushilib.utils.text.TextFormatUtils
 import kotlinx.android.synthetic.main.fragment_about_zomato.*
 
 class AboutZomatoFragment : Fragment() {

@@ -1,7 +1,7 @@
 package com.zomato.sushilib.atoms.views
 
 import android.view.ViewOutlineProvider
-import com.zomato.sushilib.utils.view.OutlineType
+import com.zomato.sushilib.annotations.OutlineType
 import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
 
 /**
