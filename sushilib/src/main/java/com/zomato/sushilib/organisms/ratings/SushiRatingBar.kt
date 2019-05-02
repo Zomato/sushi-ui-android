@@ -2,8 +2,10 @@ package com.zomato.sushilib.organisms.ratings
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
 import android.support.annotation.IntRange
+import android.support.annotation.StyleRes
 import android.util.AttributeSet
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.LinearLayout
@@ -19,7 +21,7 @@ import com.zomato.sushilib.utils.widgets.TagStyleUtils
  */
 class SushiRatingBar @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0, defStyleRes: Int = 0
+    @AttrRes defStyleAttr: Int = 0, @StyleRes defStyleRes: Int = 0
 ) : LinearLayout(ctx, attrs, defStyleAttr, defStyleRes) {
 
     private var ratingTags: ArrayList<SushiTag> = ArrayList(5)

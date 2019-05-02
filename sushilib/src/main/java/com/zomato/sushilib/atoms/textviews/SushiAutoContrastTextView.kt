@@ -2,6 +2,7 @@ package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
+import android.support.annotation.AttrRes
 import android.support.annotation.StyleRes
 import android.util.AttributeSet
 import com.zomato.sushilib.R
@@ -14,7 +15,7 @@ import com.zomato.sushilib.utils.color.ColorContrastUtils
 
 open class SushiAutoContrastTextView @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0, @StyleRes defStyleRes: Int = 0
+    @AttrRes defStyleAttr: Int = 0, @StyleRes defStyleRes: Int = 0
 ) : SushiTextView(ctx, attrs, defStyleAttr, defStyleRes) {
 
 

@@ -2,6 +2,8 @@ package com.zomato.sushilib.molecules.listings
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.support.annotation.AttrRes
+import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
 import android.text.TextUtils
 import android.util.AttributeSet
@@ -15,7 +17,7 @@ import com.zomato.sushilib.atoms.textviews.SushiIconTextView
  */
 open class SushiImageTextListing @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0, defStyleRes: Int = 0
+    @AttrRes defStyleAttr: Int = 0, @StyleRes defStyleRes: Int = 0
 ) : LinearLayout(ctx, attrs, defStyleAttr, defStyleRes) {
 
     private var initialized = false

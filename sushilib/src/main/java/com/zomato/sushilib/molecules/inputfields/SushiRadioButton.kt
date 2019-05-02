@@ -1,6 +1,7 @@
 package com.zomato.sushilib.molecules.inputfields
 
 import android.content.Context
+import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
 import android.support.v7.widget.AppCompatRadioButton
 import android.util.AttributeSet
@@ -9,7 +10,7 @@ import com.zomato.sushilib.utils.widgets.CompoundButtonHelper
 
 open class SushiRadioButton @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = R.attr.radioButtonStyle
+    @AttrRes defStyleAttr: Int = R.attr.radioButtonStyle
 ) : AppCompatRadioButton(ctx, attrs, defStyleAttr) {
 
     private val compoundButtonHelper = CompoundButtonHelper(this)

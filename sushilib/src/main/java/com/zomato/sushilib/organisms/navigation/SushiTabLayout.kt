@@ -18,5 +18,5 @@ class SushiTabLayout @JvmOverloads constructor(
     @StyleRes defStyleRes: Int = 0
 ) : TabLayout(
     getThemeWrappedContext(ctx, defStyleRes),
-    attrs, defStyleAttr) {
-}
+    attrs, defStyleAttr
+)

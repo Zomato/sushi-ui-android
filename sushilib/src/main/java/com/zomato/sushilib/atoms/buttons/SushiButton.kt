@@ -1,6 +1,7 @@
 package com.zomato.sushilib.atoms.buttons
 
 import android.content.Context
+import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
 import android.support.annotation.StyleRes
 import android.support.design.button.MaterialButton
@@ -15,7 +16,7 @@ import com.zomato.sushilib.utils.widgets.ButtonStyleUtils
 
 open class SushiButton @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = R.attr.buttonStyle, @StyleRes defStyleRes: Int = 0
+    @AttrRes defStyleAttr: Int = R.attr.buttonStyle, @StyleRes defStyleRes: Int = 0
 ) : MaterialButton(
     getThemeWrappedContext(ctx, defStyleRes),
     attrs,

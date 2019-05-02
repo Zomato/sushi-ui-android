@@ -2,19 +2,21 @@ package com.zomato.sushilib.molecules.listings
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.support.annotation.AttrRes
+import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.widget.LinearLayout
 import com.zomato.sushilib.R
-import com.zomato.sushilib.molecules.tags.SushiCircleIconView
 import com.zomato.sushilib.atoms.textviews.SushiTextView
+import com.zomato.sushilib.molecules.tags.SushiCircleIconView
 
 /**
  * Created by prempal on 2019-04-30.
  */
 open class SushiIconListing @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0, defStyleRes: Int = 0
+    @AttrRes defStyleAttr: Int = 0, @StyleRes defStyleRes: Int = 0
 ) : LinearLayout(ctx, attrs, defStyleAttr, defStyleRes) {
 
     private var circleIconView = SushiCircleIconView(context)
