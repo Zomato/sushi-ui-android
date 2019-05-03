@@ -9,6 +9,7 @@ import android.support.annotation.StyleRes
 import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
 import com.zomato.sushilib.R
+import com.zomato.sushilib.annotations.FontWeight
 import com.zomato.sushilib.utils.text.TextFormatUtils
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 import com.zomato.sushilib.utils.widgets.TextViewUtils
@@ -21,6 +22,12 @@ open class SushiTextView @JvmOverloads constructor(
     getThemeWrappedContext(ctx, defStyleRes),
     attrs, defStyleAttr
 ) {
+    @get:FontWeight @setparam:FontWeight
+    var textFontWeight: Int = FontWeight.REGULAR
+    set(value) {
+        field = value
+        setTextAppearance(TextFormatUtils.textFontWeightToTextAppearance(value))
+    }
 
     init {
         context?.theme?.obtainStyledAttributes(
@@ -29,9 +36,10 @@ open class SushiTextView @JvmOverloads constructor(
             defStyleAttr,
             defStyleRes
         )?.let {
-            val textFontWeight = it.getInt(R.styleable.SushiTextView_textFontWeight, -1)
-            if (textFontWeight != -1) {
-                setTextAppearance(TextFormatUtils.textFontWeightToTextAppearance(textFontWeight))
+            val attrTextFontWeight = it.getInt(R.styleable.SushiTextView_textFontWeight, -1)
+            // Only do this is someone has actually set this attr in xml
+            if (attrTextFontWeight != -1) {
+                textFontWeight = attrTextFontWeight
             }
             it.recycle()
         }
