@@ -7,10 +7,12 @@ module.exports = {
     sidebar: [
       '/pages/',
       {
+        collapsable: false,
         title: 'Resources',
         children: ['/pages/01-resources/Typography.md', '/pages/01-resources/Colors.md']
       },
       {
+        collapsable: false,
         title: 'Atoms',
         children: [
           '/pages/02-atoms/SushiTextView.md',
@@ -20,6 +22,7 @@ module.exports = {
         ]
       },
       {
+        collapsable: false,
         title: 'Molecules',
         children: [
           'pages/03-molecules/SushiTextInputField.md',
@@ -29,8 +32,9 @@ module.exports = {
         ]
       },
       {
+        collapsable: false,
         title: 'Organisms',
-        children: []
+        children: ['pages/04-organisms/SushiRatingBar.md', 'pages/04-organisms/SushiTabLayout.md']
       }
     ]
   }
