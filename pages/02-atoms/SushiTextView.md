@@ -1,5 +1,7 @@
 # SushiTextView
 
+![text-medium](../../img/textviews/text-medium.png)
+
 A view that allows showing text to the user. Can use any of the typographies supported by _Sushi_
 This builds upon Android Support Library's [AppCompatTextView](https://developer.android.com/reference/android/support/v7/widget/AppCompatTextView)
 

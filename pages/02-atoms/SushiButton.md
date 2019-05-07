@@ -1,5 +1,7 @@
 # SushiButton
 
+<img alt="solid-button" style="width: 75%" src="../../img/buttons/btnsolid.png">
+
 A view that allows users to tap to trigger an action. `SushiButton` is fully based on
 [MaterialButton](https://material.io/develop/android/components/material-button/)
 
@@ -7,15 +9,15 @@ A view that allows users to tap to trigger an action. `SushiButton` is fully bas
 
 SushiButton comes with following properties
 
-| Attribute     | Value                                                           |
-| ------------- | --------------------------------------------------------------- |
-| buttonSize    | `large,`medium`or`small`                                        |
-| buttonType    | `solid`, `outline` or `text`                                    |
-| buttonColor   | And @color/ attribute that we use to theme the button           |
-| drawableLeft  | `@drawable` or `@string` which is treated as iconfont character |
-| drawableRight | `@drawable` or `@string` which is treated as iconfont character |
-| drawableStart | `@drawable` or `@string` which is treated as iconfont character |
-| drawableEnd   | `@drawable` or `@string` which is treated as iconfont character |
+| Attribute        | Value                                                           |
+| ---------------- | --------------------------------------------------------------- |
+| buttonDimensions | `large`, `medium` or `small`                                    |
+| buttonType       | `solid`, `outline` or `text`                                    |
+| buttonColor      | And @color/ attribute that we use to theme the button           |
+| drawableLeft     | `@drawable` or `@string` which is treated as iconfont character |
+| drawableRight    | `@drawable` or `@string` which is treated as iconfont character |
+| drawableStart    | `@drawable` or `@string` which is treated as iconfont character |
+| drawableEnd      | `@drawable` or `@string` which is treated as iconfont character |
 
 <DrawableWarning/>
 
@@ -33,7 +35,7 @@ Setting unsupported properties _may_ throw **UnsupportedException** in future
 ```xml
   <com.zomato.sushilib.atoms.buttons.SushiButton
       app:buttonType="solid"
-      app:buttonSize="large"
+      app:buttonDimensions="large"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Large Button" />
@@ -44,7 +46,7 @@ Setting unsupported properties _may_ throw **UnsupportedException** in future
 
 ```kotlin
 sushiButton.setButtonType(ButtonType.SOLID)
-sushiButton.setButtonSize(ButtonSize.LARGE)
+sushiButton.setButtonDimension(ButtonDimension.LARGE)
 ```
 
 ## Examples
@@ -65,7 +67,14 @@ You can set button type using either XML in layouts, or programatically in Java/
 
 ![text-button](../../img/buttons/btntext.png)
 
-### Sizes
+### Dimensions
+
+:::tip INFO
+Some libraries (including Google's GMS) use `buttonSize` as an attribute
+that accepts `@dimen` type values. So as to not conflict with that attribute,
+we use the attribute `buttonDimension`. Do not set size, padding and font size
+on your own, and use one of the preset `buttonDimension` values only.
+:::
 
 #### Large
 

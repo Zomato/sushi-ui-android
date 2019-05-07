@@ -12,11 +12,21 @@ module.exports = {
       },
       {
         title: 'Atoms',
-        children: ['/pages/02-atoms/SushiTextView.md', '/pages/02-atoms/SushiButton.md']
+        children: [
+          '/pages/02-atoms/SushiTextView.md',
+          '/pages/02-atoms/SushiButton.md',
+          '/pages/02-atoms/SushiCircleImageView.md',
+          '/pages/02-atoms/SushiRoundedImageView.md'
+        ]
       },
       {
         title: 'Molecules',
-        children: []
+        children: [
+          'pages/03-molecules/SushiTextInputField.md',
+          'pages/03-molecules/SushiSwitch.md',
+          'pages/03-molecules/SushiRadioButton.md',
+          'pages/03-molecules/SushiCheckBox.md'
+        ]
       },
       {
         title: 'Organisms',
