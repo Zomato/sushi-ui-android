@@ -6,6 +6,8 @@ A form component for selecting multiple options in a list. Based on [AppCompatCh
 
 Supports all features of [AppCompatCheckBox](https://developer.android.com/reference/android/support/v7/widget/AppCompatCheckBox)
 
+Additional attributes -
+
 | Attribute        | Value                                                   |
 | ---------------- | ------------------------------------------------------- |
 | app:controlColor | A `@color` uses to tint and shade enabled/checked state |

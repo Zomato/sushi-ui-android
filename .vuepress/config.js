@@ -25,6 +25,7 @@ module.exports = {
         collapsable: false,
         title: 'Molecules',
         children: [
+          'pages/03-molecules/SushiTag.md',
           'pages/03-molecules/SushiTextInputField.md',
           'pages/03-molecules/SushiSwitch.md',
           'pages/03-molecules/SushiRadioButton.md',

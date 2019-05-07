@@ -5,6 +5,16 @@ following an atomic, clean and simple design language.
 
 While Sushi builds up on it's own design language, it fully embraces and extends upon Android's native UI guidelines, and uses Google's Material Design components internally in many places.
 
+## Cross Platform, yet Native
+
+<p align="center">
+<img style="width: 50%;" src="../img/buttons/clickripple.gif">
+</p>
+
+The Sushi project aims to build a uniform and cohesive design language that works across iOS, Android and Web. But we respect and embrace the native UI guidelines of each platform. Sushi on Android produces beautiful ripples when clicked, keeps toolbar alignment just like what Android evangelizes.
+
+Apps and websites built with Sushi will look similar, yet not jarring for the respective native platforms.
+
 ## Atomic Design
 
 Sushi, following [atomic design](http://atomicdesign.bradfrost.com) principles, is built bottom-up

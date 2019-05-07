@@ -6,6 +6,8 @@ A form component for selecting one out of multiple options. Based on [AppCompatR
 
 Supports all features of [AppCompatRadioButton](https://developer.android.com/reference/android/support/v7/widget/AppCompatRadioButton)
 
+Additional attributes -
+
 | Attribute        | Value                                                   |
 | ---------------- | ------------------------------------------------------- |
 | app:controlColor | A `@color` uses to tint and shade enabled/checked state |
