@@ -1,6 +1,6 @@
 # SushiTextInputField
 
-<img alt="text input" style="width: 75%" src="../../img/textinputlayout/tif-error.png">
+<img alt="text input" style="width: 66%" src="../../img/textinputlayout/tif-error.png">
 
 Text input fields allow users to enter and edit text. It is not directly an `EditText`, but an
 extension of [TextInputLayout](https://material.io/develop/android/components/text-input-layout/) from Material Components. It contains an [TextInputEditText](https://developer.android.com/reference/android/support/design/widget/TextInputEditText) inside, which is exposed as `editText`

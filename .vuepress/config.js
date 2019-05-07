@@ -8,7 +8,7 @@ module.exports = {
       '/pages/',
       {
         title: 'Resources',
-        children: ['/pages/01-resources/Typography.md']
+        children: ['/pages/01-resources/Typography.md', '/pages/01-resources/Colors.md']
       },
       {
         title: 'Atoms',
