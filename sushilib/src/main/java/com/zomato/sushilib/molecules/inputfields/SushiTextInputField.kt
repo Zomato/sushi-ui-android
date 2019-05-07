@@ -21,10 +21,10 @@ import com.zomato.sushilib.utils.widgets.TextViewUtils.applyDrawables
  * created by championswimmer on 02/04/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-open class SushiTextInputField @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null,
+class SushiTextInputField @JvmOverloads constructor(
+    ctx: Context, attrs: AttributeSet? = null,
     @AttrRes defStyleAttr: Int = android.support.design.R.attr.textInputStyle
-) : TextInputLayout(context, attrs, defStyleAttr) {
+) : TextInputLayout(ctx, attrs, defStyleAttr) {
 
     interface EdgeDrawableClickListener {
         /**
@@ -56,7 +56,7 @@ open class SushiTextInputField @JvmOverloads constructor(
     private var mEdgeDrawableClickListener: EdgeDrawableClickListener? = null
     private var mTextValidator: TextValidator? = null
 
-    private var mEditText: TextInputEditText
+    var editText: TextInputEditText
 
     /**
      * Set an [EdgeDrawableClickListener]
@@ -85,9 +85,9 @@ open class SushiTextInputField @JvmOverloads constructor(
 
     init {
         // WARNING: Never change the theme of this context
-        mEditText = TextInputEditText(context)
+        editText = TextInputEditText(context)
 
-        context?.obtainStyledAttributes(
+        context?.theme?.obtainStyledAttributes(
             attrs,
             R.styleable.SushiTextInputField,
             defStyleAttr,
@@ -98,21 +98,21 @@ open class SushiTextInputField @JvmOverloads constructor(
                 -1
             )
             if (attrInputType != -1) {
-                mEditText.inputType = attrInputType
+                editText.inputType = attrInputType
             }
-            mEditText.applyDrawables(
+            editText.applyDrawables(
                 attrs, defStyleAttr,
                 ContextCompat.getColor(context, R.color.sushi_grey_400) ?: Color.GRAY,
-                mEditText.textSize.toInt()
+                editText.textSize.toInt()
             )
 
             it.recycle()
         }
-        addView(mEditText)
+        addView(editText)
     }
 
     private fun prepareOnTextChangedListener() {
-        mEditText.addTextChangedListener(object : TextWatcher {
+        editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 error = mTextValidator?.validateText(s)
             }
@@ -127,25 +127,25 @@ open class SushiTextInputField @JvmOverloads constructor(
 
     @SuppressLint("ClickableViewAccessibility")
     private fun prepareOnTouchListener() {
-        mEditText.setOnTouchListener { v, event ->
+        editText.setOnTouchListener { v, event ->
             val drRight: Drawable? =
-                editText?.compoundDrawablesRelative?.get(2)
-                    ?: editText?.compoundDrawables?.get(2)
+                editText.compoundDrawablesRelative.get(2)
+                    ?: editText.compoundDrawables.get(2)
 
             val drLeft: Drawable? =
-                editText?.compoundDrawablesRelative?.get(0)
-                    ?: editText?.compoundDrawables?.get(0)
+                editText.compoundDrawablesRelative.get(0)
+                    ?: editText.compoundDrawables.get(0)
 
             if (event.action == MotionEvent.ACTION_UP) {
 
                 if (drLeft != null) {
                     if (layoutDirection == LayoutDirection.LTR) {
-                        if (event.rawX <= (editText!!.left + editText!!.paddingLeft + drLeft.bounds.width())) {
+                        if (event.rawX <= (editText.left + editText.paddingLeft + drLeft.bounds.width())) {
                             mEdgeDrawableClickListener?.onDrawableStartClicked()
                             return@setOnTouchListener true
                         }
                     } else {
-                        if (event.rawX >= (editText!!.right - drLeft.bounds.width())) {
+                        if (event.rawX >= (editText.right - drLeft.bounds.width())) {
                             mEdgeDrawableClickListener?.onDrawableStartClicked()
                             return@setOnTouchListener true
                         }
@@ -154,12 +154,12 @@ open class SushiTextInputField @JvmOverloads constructor(
 
                 if (drRight != null) {
                     if (layoutDirection == LayoutDirection.LTR) {
-                        if (event.rawX >= (editText!!.right - drRight.bounds.width())) {
+                        if (event.rawX >= (editText.right - drRight.bounds.width())) {
                             mEdgeDrawableClickListener?.onDrawableEndClicked()
                             return@setOnTouchListener true
                         }
                     } else {
-                        if (event.rawX <= (editText!!.left + editText!!.paddingLeft + drRight.bounds.width())) {
+                        if (event.rawX <= (editText.left + editText.paddingLeft + drRight.bounds.width())) {
                             mEdgeDrawableClickListener?.onDrawableEndClicked()
                             return@setOnTouchListener true
                         }
