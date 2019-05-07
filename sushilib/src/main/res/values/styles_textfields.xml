@@ -13,7 +13,7 @@
         <item name="android:textCursorDrawable">@drawable/sushi_text_cursor</item>
     </style>
 
-    <style name="Theme.Sushi.TextInputField">
+    <style name="Widget.Sushi.TextInputField" parent="">
         <item name="drawableTint">@color/sushi_grey_400</item>
         <item name="passwordToggleTint">@color/sushi_grey_400</item>
         <item name="drawablePadding">@dimen/sushi_spacing_mini</item>
@@ -23,7 +23,7 @@
         <item name="android:theme">@style/ThemeOverlay.Sushi.EditText.Cursor</item>
     </style>
 
-    <style name="Theme.Sushi.TextInputField.Outlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="Widget.Sushi.TextInputField.Outlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="drawableTint">@color/sushi_grey_400</item>
         <item name="drawablePadding">@dimen/sushi_spacing_mini</item>
         <item name="errorTextAppearance">@style/TextAppearance.Sushi.TextField.Error</item>

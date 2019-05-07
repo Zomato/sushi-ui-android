@@ -22,7 +22,7 @@
 
         <com.zomato.sushilib.molecules.inputfields.SushiTextInputField
             android:id="@+id/textFieldRecipient"
-            style="@style/Theme.Sushi.TextInputField"
+            style="@style/Widget.Sushi.TextInputField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Recipient Name"
@@ -31,7 +31,7 @@
 
         <com.zomato.sushilib.molecules.inputfields.SushiTextInputField
             android:id="@+id/textFieldPassword"
-            style="@style/Theme.Sushi.TextInputField"
+            style="@style/Widget.Sushi.TextInputField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -58,7 +58,7 @@
         </LinearLayout>
 
         <com.zomato.sushilib.molecules.inputfields.SushiTextInputField
-            style="@style/Theme.Sushi.TextInputField.Outlined"
+            style="@style/Widget.Sushi.TextInputField.Outlined"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
