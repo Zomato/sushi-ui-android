@@ -21,7 +21,7 @@ import com.zomato.sushilib.utils.widgets.TextViewUtils.applyDrawables
  * created by championswimmer on 02/04/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-class SushiTextInputField @JvmOverloads constructor(
+open class SushiTextInputField @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
     @AttrRes defStyleAttr: Int = android.support.design.R.attr.textInputStyle
 ) : TextInputLayout(ctx, attrs, defStyleAttr) {
@@ -53,8 +53,8 @@ class SushiTextInputField @JvmOverloads constructor(
     }
 
 
-    private var mEdgeDrawableClickListener: EdgeDrawableClickListener? = null
-    private var mTextValidator: TextValidator? = null
+    private var edgeDrawableClickListener: EdgeDrawableClickListener? = null
+    private var textValidator: TextValidator? = null
 
     var editText: TextInputEditText
 
@@ -62,18 +62,18 @@ class SushiTextInputField @JvmOverloads constructor(
      * Set an [EdgeDrawableClickListener]
      */
     fun setEdgeDrawableClickListener(listener: EdgeDrawableClickListener?) {
-        if (mEdgeDrawableClickListener == null && listener != null) {
+        if (edgeDrawableClickListener == null && listener != null) {
             prepareOnTouchListener()
         }
-        mEdgeDrawableClickListener = listener
+        edgeDrawableClickListener = listener
     }
 
     fun setTextValidator(validator: TextValidator?) {
-        if (mTextValidator == null && validator != null) {
+        if (textValidator == null && validator != null) {
             prepareOnTextChangedListener()
         }
 
-        mTextValidator = validator
+        textValidator = validator
     }
 
     fun setTextValidator(validator: (text: Editable?) -> String?) {
@@ -108,13 +108,13 @@ class SushiTextInputField @JvmOverloads constructor(
 
             it.recycle()
         }
-        addView(editText)
+        this.addView(editText)
     }
 
     private fun prepareOnTextChangedListener() {
         editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                error = mTextValidator?.validateText(s)
+                error = textValidator?.validateText(s)
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -141,12 +141,12 @@ class SushiTextInputField @JvmOverloads constructor(
                 if (drLeft != null) {
                     if (layoutDirection == LayoutDirection.LTR) {
                         if (event.rawX <= (editText.left + editText.paddingLeft + drLeft.bounds.width())) {
-                            mEdgeDrawableClickListener?.onDrawableStartClicked()
+                            edgeDrawableClickListener?.onDrawableStartClicked()
                             return@setOnTouchListener true
                         }
                     } else {
                         if (event.rawX >= (editText.right - drLeft.bounds.width())) {
-                            mEdgeDrawableClickListener?.onDrawableStartClicked()
+                            edgeDrawableClickListener?.onDrawableStartClicked()
                             return@setOnTouchListener true
                         }
                     }
@@ -155,12 +155,12 @@ class SushiTextInputField @JvmOverloads constructor(
                 if (drRight != null) {
                     if (layoutDirection == LayoutDirection.LTR) {
                         if (event.rawX >= (editText.right - drRight.bounds.width())) {
-                            mEdgeDrawableClickListener?.onDrawableEndClicked()
+                            edgeDrawableClickListener?.onDrawableEndClicked()
                             return@setOnTouchListener true
                         }
                     } else {
                         if (event.rawX <= (editText.left + editText.paddingLeft + drRight.bounds.width())) {
-                            mEdgeDrawableClickListener?.onDrawableEndClicked()
+                            edgeDrawableClickListener?.onDrawableEndClicked()
                             return@setOnTouchListener true
                         }
                     }
