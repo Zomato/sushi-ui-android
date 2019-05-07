@@ -14,9 +14,9 @@ and hence is fully compatible with most image loaders like Glide, Picasso
 
 We can customize the following properties
 
-| Attribute    | Value                    |
-| ------------ | ------------------------ |
-| cornerRadius | A value of `@dimen` type |
+| Attribute        | Value                    |
+| ---------------- | ------------------------ |
+| app:cornerRadius | A value of `@dimen` type |
 
 ## Usage
 

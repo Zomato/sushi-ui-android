@@ -10,13 +10,13 @@ This builds upon Android Support Library's [AppCompatTextView](https://developer
 Supports all the features of `AppCompatTextView`. Additionally, we support
 font-icon based drawables, on left (start) and right (end).
 
-| Attribute      | Value                                                              |
-| -------------- | ------------------------------------------------------------------ |
-| textFontWeight | `extralight`, `light`, `regular` (default), `medium` or `semibold` |
-| drawableLeft   | `@drawable` or `@string` which is treated as iconfont character    |
-| drawableRight  | `@drawable` or `@string` which is treated as iconfont character    |
-| drawableStart  | `@drawable` or `@string` which is treated as iconfont character    |
-| drawableEnd    | `@drawable` or `@string` which is treated as iconfont character    |
+| Attribute          | Value                                                              |
+| ------------------ | ------------------------------------------------------------------ |
+| app:textFontWeight | `extralight`, `light`, `regular` (default), `medium` or `semibold` |
+| app:drawableLeft   | `@drawable` or `@string` which is treated as iconfont character    |
+| app:drawableRight  | `@drawable` or `@string` which is treated as iconfont character    |
+| app:drawableStart  | `@drawable` or `@string` which is treated as iconfont character    |
+| app:drawableEnd    | `@drawable` or `@string` which is treated as iconfont character    |
 
 <DrawableWarning/>
 

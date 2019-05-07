@@ -11,15 +11,15 @@ This is similar to Android's `RatingBar`, but **is not based** on it.
 
 SushiRatingBar is composed of `SushiTag` and thus, some tag properties can be proxied into the internal tags.
 
-| Attribute     | Value                                                           |
-| ------------- | --------------------------------------------------------------- |
-| tagType       | `capsule` (default) or `rounded`                                |
-| tagSize       | `large` (default), `medium`, `small` or `tiny`                  |
-| rating        | rating value. accepts floats, between 0 to 5                    |
-| drawableLeft  | `@drawable` or `@string` which is treated as iconfont character |
-| drawableRight | `@drawable` or `@string` which is treated as iconfont character |
-| drawableStart | `@drawable` or `@string` which is treated as iconfont character |
-| drawableEnd   | `@drawable` or `@string` which is treated as iconfont character |
+| Attribute         | Value                                                           |
+| ----------------- | --------------------------------------------------------------- |
+| app:tagType       | `capsule` (default) or `rounded`                                |
+| app:tagSize       | `large` (default), `medium`, `small` or `tiny`                  |
+| app:rating        | rating value. accepts floats, between 0 to 5                    |
+| app:drawableLeft  | `@drawable` or `@string` which is treated as iconfont character |
+| app:drawableRight | `@drawable` or `@string` which is treated as iconfont character |
+| app:drawableStart | `@drawable` or `@string` which is treated as iconfont character |
+| app:drawableEnd   | `@drawable` or `@string` which is treated as iconfont character |
 
 :::tip BEHAVIOUR NOTES
 

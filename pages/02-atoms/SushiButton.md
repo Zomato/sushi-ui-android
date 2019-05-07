@@ -9,15 +9,15 @@ A view that allows users to tap to trigger an action. `SushiButton` is fully bas
 
 SushiButton comes with following properties
 
-| Attribute        | Value                                                           |
-| ---------------- | --------------------------------------------------------------- |
-| buttonDimensions | `large`, `medium` or `small`                                    |
-| buttonType       | `solid`, `outline` or `text`                                    |
-| buttonColor      | And @color/ attribute that we use to theme the button           |
-| drawableLeft     | `@drawable` or `@string` which is treated as iconfont character |
-| drawableRight    | `@drawable` or `@string` which is treated as iconfont character |
-| drawableStart    | `@drawable` or `@string` which is treated as iconfont character |
-| drawableEnd      | `@drawable` or `@string` which is treated as iconfont character |
+| Attribute            | Value                                                           |
+| -------------------- | --------------------------------------------------------------- |
+| app:buttonDimensions | `large`, `medium` or `small`                                    |
+| app:buttonType       | `solid`, `outline` or `text`                                    |
+| app:buttonColor      | And @color/ attribute that we use to theme the button           |
+| app:drawableLeft     | `@drawable` or `@string` which is treated as iconfont character |
+| app:drawableRight    | `@drawable` or `@string` which is treated as iconfont character |
+| app:drawableStart    | `@drawable` or `@string` which is treated as iconfont character |
+| app:drawableEnd      | `@drawable` or `@string` which is treated as iconfont character |
 
 <DrawableWarning/>
 

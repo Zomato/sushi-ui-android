@@ -13,10 +13,10 @@ attributes of `EditText` like `hint`, `inputType` are proxied into the internal 
 | Attribute         | Value                                                                                 |
 | ----------------- | ------------------------------------------------------------------------------------- |
 | style             | `@style/Widget.Sushi.TextInputField` or `@style/Widget.Sushi.TextInputField.Outlined` |
-| drawableLeft      | `@drawable` or `@string` which is treated as iconfont character                       |
-| drawableRight     | `@drawable` or `@string` which is treated as iconfont character                       |
-| drawableStart     | `@drawable` or `@string` which is treated as iconfont character                       |
-| drawableEnd       | `@drawable` or `@string` which is treated as iconfont character                       |
+| app:drawableLeft  | `@drawable` or `@string` which is treated as iconfont character                       |
+| app:drawableRight | `@drawable` or `@string` which is treated as iconfont character                       |
+| app:drawableStart | `@drawable` or `@string` which is treated as iconfont character                       |
+| app:drawableEnd   | `@drawable` or `@string` which is treated as iconfont character                       |
 | android:hint      | The hint inside the internal EditText                                                 |
 | android:inputType | The input type, for eg. `text` `textPassword`, `date`, `number`                       |
 
