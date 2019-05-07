@@ -24,22 +24,24 @@ class FormComponentFragment : Fragment() {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_text_fields, container, false)
 
-        rootView.textFieldRecipient.setEdgeDrawableClickListener(object : SushiTextInputField.EdgeDrawableClickListener {
-            override fun onDrawableStartClicked() {}
+        rootView.textFieldRecipient.setEdgeDrawableClickListener(
+            object : SushiTextInputField.EdgeDrawableClickListener {
+                override fun onDrawableStartClicked() {}
 
-            override fun onDrawableEndClicked() {
-                rootView.textFieldRecipient.editText?.setText("")
-            }
+                override fun onDrawableEndClicked() {
+                    rootView.textFieldRecipient.editText?.setText("")
+                }
 
-        })
-        rootView.textFieldPassword.setEdgeDrawableClickListener(object : SushiTextInputField.EdgeDrawableClickListener {
-            override fun onDrawableStartClicked() {}
+            })
+        rootView.textFieldPassword.setEdgeDrawableClickListener(
+            object : SushiTextInputField.EdgeDrawableClickListener {
+                override fun onDrawableStartClicked() {}
 
-            override fun onDrawableEndClicked() {
-                rootView.textFieldRecipient.editText?.setText("")
-            }
+                override fun onDrawableEndClicked() {
+                    rootView.textFieldRecipient.editText?.setText("")
+                }
 
-        })
+            })
 
         rootView.textFieldRecipient.setTextValidator { text ->
             "Must be at least 5 characters".takeIf {
