@@ -1,6 +1,8 @@
 # SushiTabLayout
 
-![tabs](../../img/tabs/tabs.gif)
+<p align="center">
+<img src="../../img/tabs/tabs.gif" style="width: 65%" alt="tabs">
+</p>
 
 A set of tabs, usually used for switching between panes (fragments/viewpager). Based on Design Support Library's [TabLayout](https://developer.android.com/reference/android/support/design/widget/TabLayout)
 
