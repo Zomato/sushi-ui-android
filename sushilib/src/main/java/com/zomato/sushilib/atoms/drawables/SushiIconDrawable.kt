@@ -137,7 +137,7 @@ open class SushiIconDrawable private constructor() : Drawable() {
 
         init {
             drawable.apply {
-                paint.typeface = ResourcesCompat.getFont(context, R.font.wasabi)
+                paint.typeface = ResourceThemeResolver.getThemedFontFromAttr(context, R.attr.fontFamilyIcon)
                 paint.textAlign = Paint.Align.CENTER
                 paint.isUnderlineText = false
                 paint.color = ResourceThemeResolver.getThemedColorFromAttr(context, android.R.attr.textColorPrimary)

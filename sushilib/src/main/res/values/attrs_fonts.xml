@@ -6,5 +6,6 @@
     <attr name="fontFamilyRegular" format="reference|string" />
     <attr name="fontFamilyMedium" format="reference|string" />
     <attr name="fontFamilySemiBold" format="reference|string" />
+    <attr name="fontFamilyIcon" format="reference|string" />
 
 </resources>

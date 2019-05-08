@@ -1,11 +1,13 @@
 package com.zomato.sushilib.utils.theme
 
 import android.content.Context
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
 import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
+import android.support.v4.content.res.ResourcesCompat
 import android.support.v7.view.ContextThemeWrapper
 import android.util.TypedValue
 
@@ -32,7 +34,18 @@ object ResourceThemeResolver {
         })
     }
 
-    @JvmStatic @ColorInt
+    @JvmStatic
+    fun getThemedFontFromAttr(context: Context, @AttrRes attrId: Int): Typeface? {
+        val outValue = TypedValue()
+        context.theme.resolveAttribute(
+            attrId,
+            outValue, true
+        )
+        return ResourcesCompat.getFont(context, outValue.resourceId)
+    }
+
+    @JvmStatic
+    @ColorInt
     fun getThemedColorFromAttr(context: Context, @AttrRes attrId: Int): Int {
         val outValue = TypedValue()
         context.theme.resolveAttribute(

@@ -8,8 +8,8 @@
     </style>
 
     <style name="TextAppearance.Sushi.Icon">
-        <item name="android:fontFamily">@font/wasabi</item>
-        <item name="fontFamily">@font/wasabi</item>
+        <item name="android:fontFamily">?attr/fontFamilyIcon</item>
+        <item name="fontFamily">?attr/fontFamilyIcon</item>
     </style>
 
     <!-- Basic Font Weight Styles -->

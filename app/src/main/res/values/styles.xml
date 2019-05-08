@@ -29,6 +29,7 @@
         <item name="fontFamilyRegular">@font/okra_regular</item>
         <item name="fontFamilyMedium">@font/okra_medium</item>
         <item name="fontFamilySemiBold">@font/okra_semibold</item>
+        <item name="fontFamilyIcon">@font/wasabi</item>
     </style>
 
     <style name="ThemeOverlay.RobotoFont" parent="">
@@ -38,6 +39,7 @@
         <item name="fontFamilyRegular">sans-serif</item>
         <item name="fontFamilyMedium">sans-serif-medium</item>
         <item name="fontFamilySemiBold">sans-serif-black</item>
+        <item name="fontFamilyIcon">@font/wasabi</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
