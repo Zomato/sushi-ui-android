@@ -15,7 +15,7 @@
     <dimen name="sushi_tag_large_textsize">@dimen/sushi_textsize_500</dimen>
     <dimen name="sushi_tag_medium_textsize">@dimen/sushi_textsize_300</dimen>
     <dimen name="sushi_tag_small_textsize">@dimen/sushi_textsize_200</dimen>
-    <dimen name="sushi_tag_tiny_textsize">@dimen/sushi_textsize_200</dimen>
+    <dimen name="sushi_tag_tiny_textsize">@dimen/sushi_textsize_100</dimen>
 
     <dimen name="sushi_tag_rounded_corner_radius">3dp</dimen>
     <dimen name="sushi_tag_capsule_corner_radius">30dp</dimen>

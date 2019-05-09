@@ -48,7 +48,6 @@ internal object TagStyleUtils {
                 verticalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_vertical_padding)
                 horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_horizontal_padding)
                 textSizePx = r.getDimension(R.dimen.sushi_tag_tiny_textsize)
-                textApprStyleRes = R.style.TextAppearance_Sushi_Medium
             }
         }
         if (tagType == TagType.CAPSULE || tagType == TagType.CAPSULE_OUTLINE) {
