@@ -53,7 +53,7 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:2.8.9'
-    testImplementation 'org.robolectric:robolectric:4.2'
+    testImplementation "org.robolectric:robolectric:$robolectric_version"
 
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
