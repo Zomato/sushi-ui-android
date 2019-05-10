@@ -37,9 +37,8 @@ android {
         execution 'ANDROID_TEST_ORCHESTRATOR'
         // Animations slow down test startup time
         animationsDisabled true
-        unitTests.returnDefaultValues = true
-
         unitTests {
+            returnDefaultValues = true
             includeAndroidResources = true
         }
     }

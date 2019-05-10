@@ -3,7 +3,7 @@
 buildscript {
     ext.kotlin_version = '1.3.21'
     ext.jacoco_version = '0.8.1'
-    ext.robolectric_version = '3.8'
+    ext.robolectric_version = '4.1'
 
     repositories {
         google()
