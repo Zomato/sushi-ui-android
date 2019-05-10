@@ -12,7 +12,7 @@ import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedCont
  * created by championswimmer on 01/05/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-class SushiTabLayout @JvmOverloads constructor(
+open class SushiTabLayout @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
     @AttrRes defStyleAttr: Int = R.attr.tabStyle,
     @StyleRes defStyleRes: Int = 0
