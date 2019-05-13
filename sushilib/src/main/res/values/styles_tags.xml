@@ -5,7 +5,7 @@
         <item name="fontFamily">?attr/fontFamilyMedium</item>
         <item name="android:textColor">@color/sushi_white</item>
         <item name="drawablePadding">@dimen/sushi_spacing_nano</item>
-        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
     </style>
 
     <style name="Widget.Sushi.Tag.Rating">
