@@ -13,6 +13,7 @@ import com.zomato.sushilib.annotations.ButtonType
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemedColorFromAttr
 import com.zomato.sushilib.utils.widgets.ButtonStyleUtils
+import com.zomato.sushilib.utils.widgets.TextViewUtils
 
 open class SushiButton @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
@@ -44,8 +45,16 @@ open class SushiButton @JvmOverloads constructor(
             buttonColor = it.getColor(R.styleable.SushiButton_buttonColor, buttonColor)
             customStrokeColor = buttonColor
 
-            reapplySizes()
+            if (icon != null) {
+                throw IllegalArgumentException(
+                    """
+                    SushiButton uses app:drawableLeft, app:drawableStart etc
+                    app:icon attribute is not supported.
+                """.trimIndent()
+                )
+            }
             reapplyStyles()
+            reapplySizes()
 
             // If user has set a ColorStateList or Color we take that
             it.getColorStateList(R.styleable.SushiButton_strokeColor)?.let { strokeColorStateList ->
@@ -53,6 +62,15 @@ open class SushiButton @JvmOverloads constructor(
             } ?: setStrokeColor(it.getColor(R.styleable.SushiButton_strokeColor, buttonColor))
 
             it.recycle()
+
+            TextViewUtils.apply {
+                applyDrawables(
+                    attrs, defStyleAttr,
+                    currentTextColor,
+                    (textSize).toInt(),
+                    0.9f
+                )
+            }
         }
     }
 
@@ -116,6 +134,7 @@ open class SushiButton @JvmOverloads constructor(
                     TypedValue.COMPLEX_UNIT_PX,
                     resources.getDimension(R.dimen.sushi_textsize_500)
                 )
+                compoundDrawablePadding = resources.getDimensionPixelSize(R.dimen.sushi_spacing_micro)
             }
             ButtonDimension.MEDIUM -> {
                 iconSize = resources.getDimensionPixelSize(R.dimen.sushi_iconsize_300)
@@ -124,6 +143,7 @@ open class SushiButton @JvmOverloads constructor(
                     TypedValue.COMPLEX_UNIT_PX,
                     resources.getDimension(R.dimen.sushi_textsize_300)
                 )
+                compoundDrawablePadding = resources.getDimensionPixelSize(R.dimen.sushi_spacing_nano)
             }
             ButtonDimension.SMALL -> {
                 iconSize = resources.getDimensionPixelSize(R.dimen.sushi_iconsize_200)
@@ -132,7 +152,13 @@ open class SushiButton @JvmOverloads constructor(
                     TypedValue.COMPLEX_UNIT_PX,
                     resources.getDimension(R.dimen.sushi_textsize_200)
                 )
+                compoundDrawablePadding = resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico)
             }
+        }
+        if (buttonType == ButtonType.TEXT) {
+            minHeight = 0
+            val picoPad = resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico)
+            setPadding(picoPad, picoPad, picoPad, picoPad)
         }
     }
 

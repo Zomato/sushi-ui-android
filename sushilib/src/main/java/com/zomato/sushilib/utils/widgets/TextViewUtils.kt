@@ -38,7 +38,8 @@ internal object TextViewUtils {
         attrs: AttributeSet?,
         @AttrRes defStyleAttr: Int = 0,
         @ColorInt drColor: Int,
-        iconSize: Int
+        iconSize: Int,
+        iconFontScale: Float = 1f
     ) {
         val ta = context.obtainStyledAttributes(attrs, R.styleable.SushiTextView, defStyleAttr, 0)
 
@@ -55,7 +56,7 @@ internal object TextViewUtils {
             SushiIconDrawable.Builder(context)
                 .setIconChar(iconChar)
                 .setColor(drColor)
-                .setIconSize(iconSize)
+                .setIconSize((iconSize * iconFontScale).toInt())
                 .build()
 
         /**
