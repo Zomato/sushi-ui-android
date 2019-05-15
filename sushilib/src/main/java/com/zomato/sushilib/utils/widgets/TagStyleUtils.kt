@@ -38,6 +38,7 @@ internal object TagStyleUtils {
                 verticalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_medium_vertical_padding)
                 horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_medium_horizontal_padding)
                 textSizePx = r.getDimension(R.dimen.sushi_tag_medium_textsize)
+                textApprStyleRes = R.style.TextAppearance_Sushi_SemiBold
             }
             TagSize.SMALL -> {
                 verticalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_small_vertical_padding)
@@ -98,7 +99,8 @@ internal object TagStyleUtils {
         }
     }
 
-    @JvmStatic @DimenRes
+    @JvmStatic
+    @DimenRes
     fun getMinWidthResIdForRatingTagBySize(@TagSize tagSize: Int): Int {
         return when (tagSize) {
             TagSize.LARGE -> R.dimen.sushi_rating_tag_large_minwidth

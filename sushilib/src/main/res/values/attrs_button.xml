@@ -16,5 +16,13 @@
         <attr name="buttonColor" format="color" />
 
         <attr name="strokeColor" format="color" />
+
+        <!-- Same as in SushiTextView -->
+        <attr name="drawableLeft" />
+        <attr name="drawableRight" />
+        <attr name="drawableStart" />
+        <attr name="drawableEnd" />
+        <attr name="drawablePadding" />
+
     </declare-styleable>
 </resources>

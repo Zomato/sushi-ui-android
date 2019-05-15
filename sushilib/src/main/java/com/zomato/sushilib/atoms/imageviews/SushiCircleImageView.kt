@@ -8,8 +8,8 @@ import android.support.annotation.AttrRes
 import android.support.annotation.StyleRes
 import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
-import android.util.Log
 import android.widget.ImageView.ScaleType.CENTER_CROP
+import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.OutlineType
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 import com.zomato.sushilib.utils.view.SushiViewOutlineProvider
@@ -33,25 +33,22 @@ open class SushiCircleImageView @JvmOverloads constructor(
     }
 
     init {
-        scaleType = CENTER_CROP
+        context.theme.obtainStyledAttributes(
+            attrs, R.styleable.SushiCircleImageView, defStyleAttr, defStyleRes
+        ).let {
+            if (it.getInt(R.styleable.SushiCircleImageView_android_scaleType, -1) == -1) {
+                // If not set, default to CENTER_CROP
+                scaleType = CENTER_CROP
+            }
+
+            it.recycle()
+        }
         outlineProvider = SushiViewOutlineProvider(
             OutlineType.CIRCLE,
             paddingOutside = false
         )
         clipToOutline = true
 
-    }
-
-    override fun setScaleType(scaleType: ScaleType?) {
-        if (scaleType != ScaleType.CENTER_CROP) {
-            Log.e(TAG, "Only CENTER_CROP ScaleType supported, ignoring $scaleType")
-        }
-        super.setScaleType(ScaleType.CENTER_CROP)
-    }
-
-    companion object {
-        @JvmField
-        val TAG = "SushiCircleImageView"
     }
 
     override fun onDraw(canvas: Canvas?) {

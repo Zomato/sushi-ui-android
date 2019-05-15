@@ -60,7 +60,17 @@ open class SushiRoundedImageView @JvmOverloads constructor(
             }
             it.recycle()
         }
-        scaleType = ScaleType.CENTER_CROP
+
+        context.theme.obtainStyledAttributes(
+            attrs, R.styleable.SushiCircleImageView, defStyleAttr, defStyleRes
+        ).let {
+            if (it.getInt(R.styleable.SushiCircleImageView_android_scaleType, -1) == -1) {
+                // If not set, default to CENTER_CROP
+                scaleType = ScaleType.CENTER_CROP
+            }
+
+            it.recycle()
+        }
 
     }
 
@@ -78,13 +88,6 @@ open class SushiRoundedImageView @JvmOverloads constructor(
                 )
             }
         }
-    }
-
-    override fun setScaleType(scaleType: ScaleType?) {
-        if (scaleType != ScaleType.CENTER_CROP) {
-            Log.e(TAG, "Only CENTER_CROP ScaleType supported, ignoring $scaleType")
-        }
-        super.setScaleType(ScaleType.CENTER_CROP)
     }
 
     companion object {

@@ -50,7 +50,7 @@
             app:buttonColor="@color/sushi_teal_500"
             app:buttonDimension="large"
             app:buttonType="outline"
-            app:icon="@drawable/ic_color_palette" />
+            app:drawableStart="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
             android:layout_width="match_parent"
@@ -61,7 +61,7 @@
             app:buttonColor="@color/sushi_pink_500"
             app:buttonDimension="large"
             app:buttonType="outline"
-            app:icon="@drawable/ic_color_palette" />
+            app:drawableStart="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.Section.Headline"
@@ -93,7 +93,7 @@
             android:text="Medium Icon Button"
             app:buttonDimension="medium"
             app:buttonType="outline"
-            app:icon="@drawable/ic_color_palette" />
+            app:drawableStart="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
             android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
             android:text="Medium Icon Button"
             app:buttonDimension="medium"
             app:buttonType="outline"
-            app:icon="@drawable/ic_color_palette" />
+            app:drawableStart="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.Section.Headline"
@@ -135,7 +135,7 @@
             android:text="Small Icon Button"
             app:buttonDimension="small"
             app:buttonType="outline"
-            app:icon="@drawable/ic_color_palette" />
+            app:drawableStart="@drawable/ic_color_palette" />
 
         <com.zomato.sushilib.atoms.buttons.SushiButton
             android:layout_width="wrap_content"
@@ -145,7 +145,7 @@
             android:text="Small Icon Button"
             app:buttonDimension="small"
             app:buttonType="outline"
-            app:icon="@drawable/ic_color_palette" />
+            app:drawableStart="@drawable/ic_color_palette" />
 
     </LinearLayout>
 </ScrollView>
