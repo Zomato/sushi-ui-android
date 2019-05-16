@@ -51,8 +51,8 @@ dependencies {
     testImplementation "org.robolectric:robolectric:$robolectric_version"
     testImplementation 'junit:junit:4.12'
 
-    androidTestImplementation 'com.android.support.test:rules:1.0.2'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestUtil "com.android.support.test:orchestrator:$android_test_version"
+    androidTestImplementation "com.android.support.test:rules:$android_test_version"
+    androidTestImplementation "com.android.support.test:runner:$android_test_version"
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    androidTestUtil 'com.android.support.test:orchestrator:1.0.2'
 }
