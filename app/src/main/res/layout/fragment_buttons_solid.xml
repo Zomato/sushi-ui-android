@@ -98,6 +98,17 @@
             app:buttonType="solid"
             app:drawableStart="@drawable/ic_color_palette" />
 
+        <com.zomato.sushilib.atoms.buttons.SushiButton
+            android:id="@+id/btnDrawableSetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Click to Change Drawables"
+            app:buttonColor="@color/sushi_yellow_800"
+            app:buttonDimension="medium"
+            app:buttonType="solid"
+            app:drawableEnd="@drawable/ic_color_palette" />
+
         <com.zomato.sushilib.atoms.textviews.SushiTextView
             style="@style/AppTheme.Section.Headline"
             android:layout_width="wrap_content"

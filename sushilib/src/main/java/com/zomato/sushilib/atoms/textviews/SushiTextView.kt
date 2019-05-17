@@ -12,6 +12,7 @@ import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.FontWeight
 import com.zomato.sushilib.utils.text.TextFormatUtils
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
+import com.zomato.sushilib.utils.widgets.DrawableSetters
 import com.zomato.sushilib.utils.widgets.TextViewUtils
 
 open class SushiTextView @JvmOverloads constructor(
@@ -21,7 +22,7 @@ open class SushiTextView @JvmOverloads constructor(
 ) : AppCompatTextView(
     getThemeWrappedContext(ctx, defStyleRes),
     attrs, defStyleAttr
-) {
+), DrawableSetters {
     @get:FontWeight @setparam:FontWeight
     var textFontWeight: Int = FontWeight.REGULAR
     set(value) {

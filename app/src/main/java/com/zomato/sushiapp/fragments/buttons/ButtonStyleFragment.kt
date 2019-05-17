@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zomato.sushiapp.R
+import com.zomato.sushilib.atoms.buttons.SushiButton
+import kotlinx.android.synthetic.main.fragment_buttons_solid.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -28,7 +30,7 @@ class ButtonStyleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return when (mButtonStyle) {
+        val rootView =  when (mButtonStyle) {
             BUTTON_STYLE_SOLID -> inflater.inflate(
                 R.layout.fragment_buttons_solid,
                 container,
@@ -50,6 +52,25 @@ class ButtonStyleFragment : Fragment() {
                 false
             )
         }
+
+        if (mButtonStyle == BUTTON_STYLE_SOLID) {
+            rootView.btnDrawableSetter.setOnClickListener {
+                (it as SushiButton).apply {
+                    when (System.currentTimeMillis() % 8) {
+                        0L -> setDrawableEnd(context.getDrawable(R.drawable.ic_circle_cross))
+                        1L -> setDrawableStart(context.getDrawable(R.drawable.ic_color_palette))
+                        2L -> setDrawableStart(context.getString(R.string.icon_filled_star))
+                        3L -> setDrawableEnd(context.getString(R.string.icon_moon_empty))
+                        4L -> setDrawableRight(context.getDrawable(R.drawable.ic_image_views))
+                        5L -> setDrawableLeft(context.getDrawable(R.drawable.ic_search))
+                        6L -> setDrawableRight(context.getString(R.string.icon_unfilled_star))
+                        7L -> setDrawableLeft(context.getString(R.string.icon_right_triangle))
+                    }
+                }
+            }
+        }
+
+        return rootView
     }
 
     companion object {

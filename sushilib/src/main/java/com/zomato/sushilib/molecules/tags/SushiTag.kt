@@ -13,6 +13,7 @@ import com.zomato.sushilib.annotations.TagSize
 import com.zomato.sushilib.annotations.TagType
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
+import com.zomato.sushilib.utils.widgets.DrawableSetters
 import com.zomato.sushilib.utils.widgets.TagStyleUtils
 import com.zomato.sushilib.utils.widgets.TextViewUtils.applyDrawables
 
@@ -24,7 +25,7 @@ open class SushiTag @JvmOverloads constructor(
     ctx: Context?, attrs: AttributeSet?,
     @AttrRes defStyleAttr: Int = R.attr.tagStyle,
     @StyleRes defStyleRes: Int = R.style.Widget_Sushi_Tag
-) : SushiTextView(ctx, attrs, defStyleAttr, defStyleRes) {
+) : SushiTextView(ctx, attrs, defStyleAttr, defStyleRes), DrawableSetters {
 
     private var initialized = false
 

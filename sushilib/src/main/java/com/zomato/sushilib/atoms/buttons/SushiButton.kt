@@ -13,6 +13,7 @@ import com.zomato.sushilib.annotations.ButtonType
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemedColorFromAttr
 import com.zomato.sushilib.utils.widgets.ButtonStyleUtils
+import com.zomato.sushilib.utils.widgets.DrawableSetters
 import com.zomato.sushilib.utils.widgets.TextViewUtils
 
 open class SushiButton @JvmOverloads constructor(
@@ -22,7 +23,7 @@ open class SushiButton @JvmOverloads constructor(
     getThemeWrappedContext(ctx, defStyleRes),
     attrs,
     defStyleAttr
-) {
+), DrawableSetters {
 
     @ButtonDimension
     private var buttonDimension: Int = ButtonDimension.LARGE
@@ -35,9 +36,10 @@ open class SushiButton @JvmOverloads constructor(
 
     init {
 
-        context?.obtainStyledAttributes(
+        context?.theme?.obtainStyledAttributes(
             attrs,
-            R.styleable.SushiButton
+            R.styleable.SushiButton,
+            defStyleAttr, 0
         )?.let {
 
             buttonDimension = it.getInt(R.styleable.SushiButton_buttonDimension, ButtonDimension.LARGE)
