@@ -6,6 +6,7 @@ import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
 import android.support.annotation.IntRange
 import android.support.annotation.StyleRes
+import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.LinearLayout
@@ -27,10 +28,12 @@ class SushiRatingBar @JvmOverloads constructor(
     private var ratingTags: ArrayList<SushiTag> = ArrayList(5)
     @TagType
     private var internalTagType: Int = TagType.CAPSULE
-
     private var initialized = false
-
-    var ratingColorStateList = resources.getColorStateList(R.color.sushi_rating_color_selector)
+    private var ratingColorStateList = ContextCompat.getColorStateList(
+        context,
+        R.color.sushi_rating_color_selector
+    )
+    private var onRatingChangeListener: OnRatingChangeListener? = null
 
     @get:IntRange(from = 0, to = 5)
     @setparam:IntRange(from = 0, to = 5)
@@ -39,21 +42,6 @@ class SushiRatingBar @JvmOverloads constructor(
             field = value
             reapplyRatingToAllTags()
         }
-
-    @ColorInt
-    private fun getRatingColor(r: Int): Int {
-        return ratingColorStateList.getColorForState(
-            when (r) {
-                1 -> intArrayOf(R.attr.state_rating_1)
-                2 -> intArrayOf(R.attr.state_rating_2)
-                3 -> intArrayOf(R.attr.state_rating_3)
-                4 -> intArrayOf(R.attr.state_rating_4)
-                5 -> intArrayOf(R.attr.state_rating_5)
-                else -> intArrayOf()
-            },
-            0
-        )
-    }
 
     init {
         val ta = context.obtainStyledAttributes(attrs, R.styleable.SushiRatingBar, defStyleAttr, defStyleRes)
@@ -82,7 +70,10 @@ class SushiRatingBar @JvmOverloads constructor(
                     }
                     minWidth = tagMinWidth
                     text = "$i"
-                    setOnClickListener { rating = i }
+                    setOnClickListener {
+                        rating = i
+                        onRatingChangeListener?.onRatingChanged(i)
+                    }
                     this.isClickable = this@SushiRatingBar.isClickable
                 }
             )
@@ -93,6 +84,27 @@ class SushiRatingBar @JvmOverloads constructor(
         }
         initialized = true
         reapplyRatingToAllTags()
+    }
+
+    /**
+     * Sets the listener to be called when the rating changes.
+     *
+     * @param listener The listener.
+     */
+    fun setOnRatingChangeListener(listener: OnRatingChangeListener?) {
+        onRatingChangeListener = listener
+    }
+
+
+    /**
+     * Sets the lambda to be called when the rating changes.
+     *
+     * @param listener The lambda.
+     */
+    fun setOnRatingChangeListener(listener: (rating: Int) -> Unit) {
+        setOnRatingChangeListener(object : OnRatingChangeListener {
+            override fun onRatingChanged(rating: Int) = listener(rating)
+        })
     }
 
     override fun setClickable(clickable: Boolean) {
@@ -131,4 +143,30 @@ class SushiRatingBar @JvmOverloads constructor(
         }
     }
 
+    @ColorInt
+    private fun getRatingColor(r: Int): Int {
+        return ratingColorStateList?.getColorForState(
+            when (r) {
+                1 -> intArrayOf(R.attr.state_rating_1)
+                2 -> intArrayOf(R.attr.state_rating_2)
+                3 -> intArrayOf(R.attr.state_rating_3)
+                4 -> intArrayOf(R.attr.state_rating_4)
+                5 -> intArrayOf(R.attr.state_rating_5)
+                else -> intArrayOf()
+            },
+            0
+        ) ?: 0
+    }
+
+    /**
+     * Interface definition for a callback to be invoked when the rating has been changed.
+     */
+    interface OnRatingChangeListener {
+        /**
+         * Called when the rating has been changed.
+         *
+         * @param rating The current rating.
+         */
+        fun onRatingChanged(rating: Int)
+    }
 }
