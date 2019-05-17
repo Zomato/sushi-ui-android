@@ -86,10 +86,21 @@ class SushiRatingBar @JvmOverloads constructor(
         reapplyRatingToAllTags()
     }
 
+    /**
+     * Sets the listener to be called when the rating changes.
+     *
+     * @param listener The listener.
+     */
     fun setOnRatingChangeListener(listener: OnRatingChangeListener?) {
         onRatingChangeListener = listener
     }
 
+
+    /**
+     * Sets the lambda to be called when the rating changes.
+     *
+     * @param listener The lambda.
+     */
     fun setOnRatingChangeListener(listener: (rating: Int) -> Unit) {
         setOnRatingChangeListener(object : OnRatingChangeListener {
             override fun onRatingChanged(rating: Int) = listener(rating)
@@ -147,7 +158,15 @@ class SushiRatingBar @JvmOverloads constructor(
         ) ?: 0
     }
 
+    /**
+     * Interface definition for a callback to be invoked when the rating has been changed.
+     */
     interface OnRatingChangeListener {
+        /**
+         * Called when the rating has been changed.
+         *
+         * @param rating The current rating.
+         */
         fun onRatingChanged(rating: Int)
     }
 }
