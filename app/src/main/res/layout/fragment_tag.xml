@@ -26,6 +26,7 @@
             android:textSize="@dimen/sushi_textsize_600"
             app:textFontWeight="medium" />
         <com.zomato.sushilib.organisms.ratings.SushiRatingBar
+            android:id="@+id/rating_bar"
             app:rating="3"
             android:layout_marginTop="@dimen/sushi_spacing_mini"
             android:layout_width="wrap_content"
