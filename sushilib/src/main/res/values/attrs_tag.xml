@@ -17,6 +17,12 @@
         </attr>
         <attr name="tagColor" format="color" />
         <attr name="android:textColor" />
+        <attr name="android:paddingLeft" />
+        <attr name="android:paddingRight" />
+        <attr name="android:paddingTop" />
+        <attr name="android:paddingBottom" />
+        <attr name="android:padding" />
+
 
     </declare-styleable>
 

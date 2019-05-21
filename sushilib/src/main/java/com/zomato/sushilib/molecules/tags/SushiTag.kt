@@ -5,6 +5,7 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
+import android.support.annotation.RestrictTo
 import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
@@ -28,6 +29,13 @@ open class SushiTag @JvmOverloads constructor(
 ) : SushiTextView(ctx, attrs, defStyleAttr, defStyleRes), DrawableSetters {
 
     private var initialized = false
+
+    // Using hungarian notation to avoid clash with existing getter/setter of same
+    @RestrictTo(RestrictTo.Scope.LIBRARY) internal var mPadding = -1
+    @RestrictTo(RestrictTo.Scope.LIBRARY) internal var mPaddingLeft = -1
+    @RestrictTo(RestrictTo.Scope.LIBRARY) internal var mPaddingRight = -1
+    @RestrictTo(RestrictTo.Scope.LIBRARY) internal var mPaddingTop = -1
+    @RestrictTo(RestrictTo.Scope.LIBRARY) internal var mPaddingBottom = -1
 
     @get:TagType
     @setparam:TagType
@@ -65,6 +73,12 @@ open class SushiTag @JvmOverloads constructor(
             tagSize = it.getInt(R.styleable.SushiTag_tagSize, TagSize.LARGE)
             tagColor = it.getColor(R.styleable.SushiTag_tagColor, tagColor)
 
+            mPadding = it.getDimensionPixelSize(R.styleable.SushiTag_android_padding, -1)
+            mPaddingLeft = it.getDimensionPixelSize(R.styleable.SushiTag_android_paddingLeft, -1)
+            mPaddingRight = it.getDimensionPixelSize(R.styleable.SushiTag_android_paddingRight, -1)
+            mPaddingTop = it.getDimensionPixelSize(R.styleable.SushiTag_android_paddingTop, -1)
+            mPaddingBottom = it.getDimensionPixelSize(R.styleable.SushiTag_android_paddingBottom, -1)
+
 
             initialized = true
             reapplyTagStyles()
@@ -78,7 +92,6 @@ open class SushiTag @JvmOverloads constructor(
             it.getColor(R.styleable.SushiTag_android_textColor, -1).let { col ->
                 if (col != -1) setTextColor(col)
             }
-
             it.recycle()
         }
     }

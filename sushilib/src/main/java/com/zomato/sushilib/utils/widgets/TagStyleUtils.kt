@@ -55,7 +55,16 @@ internal object TagStyleUtils {
             // Capsule tags look better with a little more padding
             horizontalPadding = (horizontalPadding * 1.5).toInt()
         }
-        setPadding(horizontalPadding, verticalPadding, horizontalPadding, verticalPadding)
+        if (mPadding != -1) {
+            verticalPadding = mPadding
+            horizontalPadding = mPadding
+        }
+        if (mPaddingLeft == -1) mPaddingLeft = horizontalPadding
+        if (mPaddingRight == -1) mPaddingRight = horizontalPadding
+        if (mPaddingTop == -1) mPaddingTop = verticalPadding
+        if (mPaddingBottom == -1) mPaddingBottom = verticalPadding
+
+        setPadding(mPaddingLeft, mPaddingTop, mPaddingRight, mPaddingBottom)
         setTextSize(TypedValue.COMPLEX_UNIT_PX, textSizePx)
         setTextAppearance(textApprStyleRes)
         includeFontPadding = false

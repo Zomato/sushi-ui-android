@@ -190,6 +190,7 @@
 
         <LinearLayout
             android:layout_marginTop="@dimen/sushi_spacing_base"
+            android:textAlignment="gravity"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -198,6 +199,19 @@
                 android:text="Normal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <com.zomato.sushilib.molecules.tags.SushiTag
+                android:layout_marginStart="@dimen/sushi_spacing_base"
+                android:text="Padded"
+                android:paddingLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <com.zomato.sushilib.molecules.tags.SushiTag
+                android:layout_marginStart="@dimen/sushi_spacing_base"
+                android:text="Padded"
+                android:paddingTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tagSize="small"/>
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="@dimen/sushi_spacing_base"
