@@ -12,4 +12,13 @@
     <declare-styleable name="SushiSwitch">
         <attr name="controlColor" />
     </declare-styleable>
+    <declare-styleable name="SushiCheckableStrip">
+        <attr name="controlColor" />
+        <attr name="selectorType" format="enum">
+            <enum name="radiobutton" value="0" />
+            <enum name="checkbox" value="1" />
+        </attr>
+        <attr name="primaryText" format="string" />
+        <attr name="secondaryText" format="string" />
+    </declare-styleable>
 </resources>
