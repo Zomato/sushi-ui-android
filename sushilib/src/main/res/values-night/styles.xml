@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.Sushi" parent="Theme.MaterialComponents">
+        <item name="android:colorBackground">@color/sushi_grey_900</item>
+        <item name="android:windowBackground">@color/sushi_black</item>
+        <item name="android:textColorPrimary">@color/sushi_white</item>
+        <item name="android:textColorSecondary">@color/sushi_grey_400</item>
+        <item name="colorError">@color/sushi_red_400</item>
+        <item name="android:colorControlActivated">?colorPrimary</item>
+    </style>
+</resources>

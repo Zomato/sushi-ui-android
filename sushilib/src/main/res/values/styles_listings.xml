@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Sushi.Subtitle" parent="TextAppearance.Sushi.Regular">
+        <item name="android:textSize">@dimen/sushi_textsize_200</item>
+        <item name="android:textColor">@color/sushi_grey_400</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.Body" parent="TextAppearance.Sushi.Regular">
+        <item name="android:textSize">@dimen/sushi_textsize_300</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.Headline" parent="TextAppearance.Sushi.Medium">
+        <item name="android:textSize">@dimen/sushi_textsize_500</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.Label" parent="TextAppearance.Sushi.Regular">
+        <item name="android:textSize">@dimen/sushi_textsize_300</item>
+        <item name="android:textColor">@color/sushi_grey_400</item>
+    </style>
+
+</resources>

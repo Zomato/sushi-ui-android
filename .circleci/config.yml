@@ -1,0 +1,91 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/code
+    docker:
+      - image: circleci/android:api-28
+    environment:
+      JVM_OPTS: -Xmx4000m
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ .Environment.CACHE_VERSION }}-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}-{{ checksum  "sushilib/build.gradle" }}
+      #      - run:
+      #         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
+      #         command: sudo chmod +x ./gradlew
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ .Environment.CACHE_VERSION }}-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}-{{ checksum  "sushilib/build.gradle" }}
+
+#      # Install Emulator
+#      - restore_cache:
+#          key: sysimg-android-24-google_apis-armeabi-v7a-{{ .Environment.CACHE_VERSION }}
+#      - run:
+#          name: Install emulator
+#          command: |
+#            sudo apt install -y libpulse0
+#            sdkmanager "system-images;android-24;google_apis;armeabi-v7a"
+#      - save_cache:
+#          paths:
+#            - /opt/android/sdk/system-images
+#          key: sysimg-android-24-google_apis-armeabi-v7a-{{ .Environment.CACHE_VERSION }}
+#
+#      # Setup Emulator
+#      - restore_cache:
+#          key: emulator-android-24-google_apis-armeabi-v7a-{{ .Environment.CACHE_VERSION }}
+#      - run:
+#          name: Setup emulator
+#          command: echo no | avdmanager create avd --force -n test -k "system-images;android-24;google_apis;armeabi-v7a"
+#      - save_cache:
+#          paths:
+#            - ~/.android/avd
+#          key: emulator-android-24-google_apis-armeabi-v7a-{{ .Environment.CACHE_VERSION }}
+#
+#      # Launch Emulator
+#      - run:
+#          name: Launch emulator
+#          command:  |
+#            export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib:${ANDROID_HOME}/emulator/lib64/qt/lib
+#            emulator -avd test -noaudio -no-boot-anim -no-window -accel on
+#          background: true
+
+      - run:
+          name: Build
+          command: ./gradlew assembleDebug
+          # assembleDebugAndroidTest
+      - run:
+          name: Unit Test
+          command: ./gradlew testDebugUnitTest  --no-daemon --max-workers 2
+      - run:
+          name: Lint
+          command: ./gradlew lintDebug
+
+#      - run:
+#          name: Wait for emulator
+#          command: |
+#            circle-android wait-for-boot
+#            adb shell input keyevent 82
+#      - run:
+#          name: Instrumentation Coverage
+#          command: ./gradlew jacocoTestReport
+
+      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: app/build/reports
+          destination: app-reports
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: app/build/test-results
+          destination: app-results
+      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: sushilib/build/reports
+          destination: lib-reports
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: sushilib/build/test-results
+          destination: lib-results
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: build/coverage-report
+          destination: coverage-report
+      # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples

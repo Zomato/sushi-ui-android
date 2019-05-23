@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Sushi.BottomNavigationView" parent="">
+        <item name="android:background">?android:colorBackground</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.Sushi.BottomNavigation</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.Sushi.BottomNavigation</item>
+        <item name="itemTextColor">@color/sushi_bottom_nav_text_color_selector</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.BottomNavigation" parent="">
+        <item name="fontFamily">?fontFamilyMedium</item>
+        <item name="android:textSize">@dimen/sushi_textsize_200</item>
+    </style>
+</resources>

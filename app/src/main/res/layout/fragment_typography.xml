@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.typography.TypographyMainFragment">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_font_weight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.zomato.sushilib.organisms.navigation.SushiTabLayout
+            android:id="@+id/tabs_font_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_extralight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ExtraLight" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Light" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Regular" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_semibold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SemiBold" />
+        </com.zomato.sushilib.organisms.navigation.SushiTabLayout>
+    </android.support.v4.view.ViewPager>
+
+</FrameLayout>

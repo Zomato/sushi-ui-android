@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:shape="rectangle">
+    <!--
+    Color and Size only for Studio preview
+    Width = arbitrary
+    Height = 17 (text) + 8 + 8 (vertical padding)
+
+    <size
+        tools:width="40dp"
+        tools:height="25dp"/>
+    <solid tools:color="@color/sushi_green_800"/>
+    -->
+    <corners android:radius="@dimen/sushi_tag_capsule_corner_radius"/>
+</shape>

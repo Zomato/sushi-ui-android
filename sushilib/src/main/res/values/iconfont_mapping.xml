@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="icon_right_triangle">&#xe902;</string>
+    <string name="icon_unfilled_star">&#xe904;</string>
+    <string name="icon_filled_star">&#xe905;</string>
+    <string name="icon_cross_filled">&#xe93d;</string>
+    <string name="icon_moon">&#xe926;</string>
+    <string name="icon_moon_empty">&#xe927;</string>
 </resources>

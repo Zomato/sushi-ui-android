@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SushiCompoundButton">
+        <attr name="controlColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="SushiCheckBox">
+        <attr name="controlColor" />
+    </declare-styleable>
+    <declare-styleable name="SushiRadioButton">
+        <attr name="controlColor" />
+    </declare-styleable>
+    <declare-styleable name="SushiSwitch">
+        <attr name="controlColor" />
+    </declare-styleable>
+</resources>

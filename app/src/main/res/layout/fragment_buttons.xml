@@ -1,63 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".fragments.buttons.ButtonsMainFragment">
 
-    <LinearLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_buttons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <android.support.design.button.MaterialButton
-            style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:textAllCaps="false" />
+        <com.zomato.sushilib.organisms.navigation.SushiTabLayout
+            android:id="@+id/tabs_font_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <android.support.design.button.MaterialButton
-            style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="Disabled Button"
-            android:textAllCaps="false" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_solid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solid" />
 
-        <android.support.design.button.MaterialButton
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Outline Button"
-            android:textAllCaps="false" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_outline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Outline" />
 
-        <android.support.design.button.MaterialButton
-            style="@style/Widget.MaterialComponents.Button.Icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Icon Button"
-            android:textAllCaps="false"
-            app:icon="@drawable/ic_color_palette" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text" />
+        </com.zomato.sushilib.organisms.navigation.SushiTabLayout>
+    </android.support.v4.view.ViewPager>
 
-        <android.support.design.button.MaterialButton
-            style="@style/Widget.MaterialComponents.Button.Icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="Icon Button"
-            android:textAllCaps="false"
-            app:icon="@drawable/ic_color_palette" />
-
-        <android.support.design.button.MaterialButton
-            style="@style/Widget.MaterialComponents.Button.Icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layoutDirection="rtl"
-            android:text="Icon Button"
-            android:textAllCaps="false"
-            app:icon="@drawable/ic_color_palette" />
-
-    </LinearLayout>
-
-</ScrollView>
+</FrameLayout>

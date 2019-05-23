@@ -1,85 +1,76 @@
 package com.zomato.sushiapp
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.design.widget.NavigationView
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
+import android.support.design.widget.CoordinatorLayout
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.app.AppCompatDelegate
+import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_NO
+import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_YES
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
-import com.zomato.sushiapp.fragments.*
+import com.zomato.sushilib.atoms.menu.SushiMenuItem
+import com.zomato.sushilib.organisms.navigation.SushiBottomNavigationView
 
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
-
-
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, resources.getString(R.string.device_density), Snackbar.LENGTH_LONG).show()
-        }
-
-        val toggle = ActionBarDrawerToggle(
-            this,
-            drawer_layout,
-            toolbar,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
-        )
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        nav_view.setNavigationItemSelectedListener(this)
+        setupBottomNavigation()
     }
 
-    override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        when (item.itemId) {
-            R.id.action_settings -> return true
-            else -> return super.onOptionsItemSelected(item)
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.action_nightmode) {
+            toggleNightMode()
+            return true
         }
+        return super.onOptionsItemSelected(item)
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        val fragment = when (item.itemId) {
-            R.id.nav_text_styles -> TextStylesFragment()
-            R.id.nav_color_palette -> ColorPaletteFragment()
-            R.id.nav_image_views -> ImageViewsFragment()
-            R.id.nav_buttons -> ButtonsFragment()
-            R.id.nav_tags -> TagsFragment()
-            R.id.nav_listing -> ListingFragment()
-            else -> TextStylesFragment()
+    private fun toggleNightMode() {
+        val currentMode = AppCompatDelegate.getDefaultNightMode()
+        if (currentMode != MODE_NIGHT_YES) {
+            AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+        } else if (currentMode != MODE_NIGHT_NO) {
+            AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
+        }
+        recreate()
+    }
+
+    private fun setupBottomNavigation() {
+        val view = findViewById<CoordinatorLayout>(R.id.container_main)
+        val params = CoordinatorLayout.LayoutParams(CoordinatorLayout.LayoutParams.MATCH_PARENT, CoordinatorLayout.LayoutParams.WRAP_CONTENT)
+        params.gravity = Gravity.BOTTOM
+
+        val bottomNavigationView = SushiBottomNavigationView(this)
+        bottomNavigationView.elevation = resources.getDimension(R.dimen.sushi_spacing_mini)
+        view.addView(bottomNavigationView, params)
+
+        val mainFragmentProvider = MainFragmentProvider(this, supportFragmentManager)
+
+        bottomNavigationView.setOnNavigationItemSelectedListener {
+            val fragment = mainFragmentProvider.getItem(it.itemId)
+            supportFragmentManager.beginTransaction().replace(R.id.container_main, fragment).commit()
+            true
         }
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container_main, fragment)
-            .commit()
-
-
-        drawer_layout.closeDrawer(GravityCompat.START)
-        return true
+        val menuList = arrayListOf<SushiMenuItem>()
+        val drawable = resources.getDrawable(R.drawable.ic_topnav_star)
+        menuList.addAll(listOf(
+            SushiMenuItem(itemId = 0, title = getString(R.string.sushi), drawable = drawable),
+            SushiMenuItem(itemId = 1, title = getString(R.string.about), drawable = drawable),
+            SushiMenuItem(itemId = 2, title = getString(R.string.zomato), drawable = drawable)
+        ))
+        bottomNavigationView.itemIconTintList =
+            ContextCompat.getColorStateList(this, R.color.bottom_nav_item_color_selector)
+        bottomNavigationView.setMenu(menuList)
     }
+
 }

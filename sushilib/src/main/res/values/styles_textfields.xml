@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.Sushi.TextField.Error" parent="TextAppearance.Design.Error">
+        <item name="android:fontFamily">?fontFamilyMedium</item>
+        <item name="android:textColor">?colorError</item>
+    </style>
+    <style name="TextAppearance.Sushi.TextField.Hint" parent="TextAppearance.Design.Hint">
+        <item name="android:fontFamily">?fontFamilyMedium</item>
+        <item name="android:textColor">@color/sushi_grey_400</item>
+    </style>
+
+    <style name="ThemeOverlay.Sushi.EditText.Cursor" parent="">
+        <item name="android:textCursorDrawable">@drawable/sushi_text_cursor</item>
+    </style>
+
+    <style name="Widget.Sushi.TextInputField" parent="">
+        <item name="drawableTint">@color/sushi_grey_400</item>
+        <item name="passwordToggleTint">@color/sushi_grey_400</item>
+        <item name="drawablePadding">@dimen/sushi_spacing_mini</item>
+        <item name="errorTextAppearance">@style/TextAppearance.Sushi.TextField.Error</item>
+        <item name="hintTextAppearance">@style/TextAppearance.Sushi.TextField.Hint</item>
+        <item name="errorEnabled">true</item>
+        <item name="android:theme">@style/ThemeOverlay.Sushi.EditText.Cursor</item>
+    </style>
+
+    <style name="Widget.Sushi.TextInputField.Outlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="drawableTint">@color/sushi_grey_400</item>
+        <item name="drawablePadding">@dimen/sushi_spacing_mini</item>
+        <item name="errorTextAppearance">@style/TextAppearance.Sushi.TextField.Error</item>
+        <item name="hintTextAppearance">@style/TextAppearance.Sushi.TextField.Hint</item>
+        <item name="errorEnabled">true</item>
+        <item name="boxStrokeColor">@color/sushi_grey_400</item>
+        <item name="boxStrokeWidth">@dimen/sushi_spacing_pico</item>
+        <item name="android:theme">@style/ThemeOverlay.Sushi.EditText.Cursor</item>
+    </style>
+
+    <style name="Widget.Sushi.CompoundButton.RadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textSize">@dimen/sushi_textsize_500</item>
+        <item name="android:paddingLeft">@dimen/sushi_spacing_mini</item>
+    </style>
+
+    <style name="Widget.Sushi.CompoundButton.CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:textSize">@dimen/sushi_textsize_500</item>
+        <item name="android:paddingLeft">@dimen/sushi_spacing_mini</item>
+    </style>
+</resources>

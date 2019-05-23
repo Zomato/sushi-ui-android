@@ -10,12 +10,13 @@
     <dimen name="sushi_textsize_800">24sp</dimen>
     <dimen name="sushi_textsize_900">27sp</dimen>
 
+    <dimen name="sushi_spacing_pico">1dp</dimen>
     <dimen name="sushi_spacing_nano">2dp</dimen>
     <dimen name="sushi_spacing_micro">4dp</dimen>
     <dimen name="sushi_spacing_mini">6dp</dimen>
     <dimen name="sushi_spacing_macro">8dp</dimen>
     <dimen name="sushi_spacing_base">12dp</dimen>
-    <dimen name="sushi_spacing_extra">18dp</dimen>
+    <dimen name="sushi_spacing_extra">16dp</dimen>
     <dimen name="sushi_spacing_loose">24dp</dimen>
     <dimen name="sushi_spacing_alone">32dp</dimen>
 
@@ -28,4 +29,12 @@
 
     <dimen name="sushi_large_capsule_tag_corner_radius">18dp</dimen>
     <dimen name="sushi_small_capsule_tag_corner_radius">12dp</dimen>
+    <dimen name="sushi_stoke_width_small">1dp</dimen>
+
+
+    <dimen name="sushi_big_rating_min_width">50dp</dimen>
+    <dimen name="sushi_small_rating_min_width">25dp</dimen>
+
+    <dimen name="sushi_action_item_size">48dp</dimen>
+    <dimen name="sushi_action_item_drawable_size">20dp</dimen>
 </resources>

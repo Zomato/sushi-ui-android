@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:height="200dp" android:width="200dp">
+        <bitmap android:src="@drawable/bg_pattern2" android:tileMode="repeat"/>
+    </item>
+    <item>
+        <color android:color="#8A3F51B5" />
+    </item>
+</layer-list>

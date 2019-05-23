@@ -1,66 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="SushiTheme.TextAppearance" parent="TextAppearance.AppCompat">
-        <item name="android:fontFamily">@font/okra</item>
-        <item name="android:textSize">@dimen/sushi_textsize_400</item>
+    <style name="TextAppearance.Sushi" parent="">
+        <!-- We do not want to inherit from BaseTextAppearance etc as that
+         sets a textSize here, which we do not want -->
+        <item name="android:fontFamily">?attr/fontFamilyRegular</item>
     </style>
 
-    <style name="SushiTheme.TextAppearance.Icon">
-        <item name="android:fontFamily">@font/wasabi</item>
+    <style name="TextAppearance.Sushi.Icon">
+        <item name="android:fontFamily">?attr/fontFamilyIcon</item>
+        <item name="fontFamily">?attr/fontFamilyIcon</item>
     </style>
 
-
-    <style name="SushiTheme.TagAppearance" parent="SushiTheme.TextAppearance">
-        <item name="android:text">Testing tag</item>
+    <!-- Basic Font Weight Styles -->
+    <style name="TextAppearance.Sushi.Thin">
+        <item name="android:fontFamily">?attr/fontFamilyThin</item>
+        <item name="fontFamily">?attr/fontFamilyThin</item>
     </style>
 
-    <style name="SushiTheme.TagAppearance.RoundedTag" parent="SushiTheme.TagAppearance">
-        <item name="zCornerRadius">@dimen/sushi_corner_radius</item>
-        <item name="android:paddingLeft">@dimen/sushi_spacing_macro</item>
-        <item name="android:paddingRight">@dimen/sushi_spacing_macro</item>
-        <item name="android:paddingTop">@dimen/sushi_spacing_mini</item>
-        <item name="android:paddingBottom">@dimen/sushi_spacing_mini</item>
-        <item name="android:textSize">@dimen/sushi_textsize_500</item>
-        <item name="sushiFontWeight">medium</item>
-        =
+    <style name="TextAppearance.Sushi.ExtraLight">
+        <item name="android:fontFamily">?attr/fontFamilyExtraLight</item>
+        <item name="fontFamily">?attr/fontFamilyExtraLight</item>
     </style>
 
-
-    <style name="SushiTheme.TagAppearance.HighlightRoundedTag" parent="SushiTheme.TagAppearance.RoundedTag">
-        <item name="sushiFontWeight">semibold</item>
-        <item name="android:paddingTop">@dimen/sushi_spacing_macro</item>
-        <item name="android:paddingBottom">@dimen/sushi_spacing_macro</item>
+    <style name="TextAppearance.Sushi.Light">
+        <item name="android:fontFamily">?attr/fontFamilyLight</item>
+        <item name="fontFamily">?attr/fontFamilyLight</item>
     </style>
 
-    <style name="SushiTheme.TagAppearance.Capsule" parent="SushiTheme.TagAppearance.HighlightRoundedTag">
-        <item name="zCornerRadius">@dimen/sushi_large_capsule_tag_corner_radius</item>
-        <item name="android:paddingLeft">@dimen/sushi_spacing_base</item>
-        <item name="android:paddingRight">@dimen/sushi_spacing_base</item>
+    <style name="TextAppearance.Sushi.Regular">
+        <item name="android:fontFamily">?attr/fontFamilyRegular</item>
+        <item name="fontFamily">?attr/fontFamilyRegular</item>
     </style>
 
-    <style name="SushiTheme.TagAppearance.SmallCapsule" parent="SushiTheme.TagAppearance.SmallHighlightRoundedTag">
-        <item name="zCornerRadius">@dimen/sushi_small_capsule_tag_corner_radius</item>
-        <item name="sushiFontWeight">medium</item>
-        <item name="android:paddingLeft">@dimen/sushi_spacing_mini</item>
-        <item name="android:paddingRight">@dimen/sushi_spacing_mini</item>
+    <style name="TextAppearance.Sushi.Medium">
+        <item name="android:fontFamily">?attr/fontFamilyMedium</item>
+        <item name="fontFamily">?attr/fontFamilyMedium</item>
     </style>
 
-    <style name="SushiTheme.TagAppearance.SmallHighlightRoundedTag" parent="SushiTheme.TagAppearance.HighlightRoundedTag">
-        <item name="sushiFontWeight">regular</item>
-        <item name="android:paddingTop">@dimen/sushi_spacing_micro</item>
-        <item name="android:paddingBottom">@dimen/sushi_spacing_micro</item>
-        <item name="android:paddingLeft">@dimen/sushi_spacing_micro</item>
-        <item name="android:paddingRight">@dimen/sushi_spacing_micro</item>
-        <item name="android:textSize">@dimen/sushi_textsize_200</item>
+    <style name="TextAppearance.Sushi.SemiBold">
+        <item name="android:fontFamily">?attr/fontFamilySemiBold</item>
+        <item name="fontFamily">?attr/fontFamilySemiBold</item>
     </style>
 
-    <style name="SushiTheme.TagAppearance.SmallRoundedTag" parent="SushiTheme.TagAppearance.RoundedTag">
-        <item name="android:paddingLeft">@dimen/sushi_spacing_nano</item>
-        <item name="android:paddingRight">@dimen/sushi_spacing_nano</item>
-        <item name="android:paddingTop">@dimen/sushi_spacing_nano</item>
-        <item name="android:paddingBottom">@dimen/sushi_spacing_nano</item>
-        <item name="android:textSize">@dimen/sushi_textsize_200</item>
+    <style name="Widget.Sushi.CircleIconView" parent="TextAppearance.Sushi.Icon">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/sushi_spacing_base</item>
+        <item name="android:textSize">@dimen/sushi_iconsize_500</item>
     </style>
 
 </resources>
