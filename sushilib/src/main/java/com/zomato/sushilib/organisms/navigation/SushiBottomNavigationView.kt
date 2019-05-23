@@ -4,60 +4,54 @@ import android.content.Context
 import android.support.annotation.IdRes
 import android.support.annotation.Size
 import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.FragmentManager
 import android.util.AttributeSet
+import android.view.Menu
+import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.menu.SushiMenuItem
 
-open class SushiBottomNavigationView : BottomNavigationView {
+open class SushiBottomNavigationView @JvmOverloads constructor(
+    ctx: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = android.support.design.R.attr.bottomNavigationStyle
+) : BottomNavigationView(ctx, attrs, defStyleAttr) {
 
-    private val sushiMenuItems = arrayListOf<SushiMenuItem>()
-
-    constructor(context: Context) : super(context)
-
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
-
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
+    init {
+        context.theme?.obtainStyledAttributes(
+            attrs,
+            R.styleable.SushiBottomNavigationView,
+            defStyleAttr, 0
+        )?.let {
+            // Resetting this as we do not want to use the icon tint list that BottomNavigationView internally sets.
+            itemIconTintList = it.getColorStateList(R.styleable.SushiBottomNavigationView_itemIconTint)
+            it.recycle()
+        }
+    }
 
     /**
-     * Sets up the navigation menu based on a supplied list of menu items
-     * If you wish to handle fragment transitions yourself, don't pass the fragmentManager and mainContainerId
+     * Sets up the navigation menu based on a supplied list of menu items.
+     *
+     * @param sushiMenuItems List of [SushiMenuItem]
+     * @param defaultMenuItemIndex Index of default selected menu item. Default value is 0.
      */
     @Throws(IllegalArgumentException::class)
-    fun setMenu(@Size(min=1, max=4) sushiMenuItems: List<SushiMenuItem>, supportFragmentManager: FragmentManager, @IdRes mainContainerId: Int, defaultMenuIndex: Int = 0) {
-        if (sushiMenuItems.size >= 5) {
+    fun setMenu(@Size(min = 1, max = 5) sushiMenuItems: List<SushiMenuItem>, defaultMenuItemIndex: Int = 0) {
+        if (sushiMenuItems.size > 5) {
             throw IllegalArgumentException("Can't set more than 5 tabs")
         }
 
-        this.sushiMenuItems.clear()
-        this.sushiMenuItems.addAll(sushiMenuItems)
         for (item in sushiMenuItems) {
-            this.menu.add(item.groupId, item.itemId, item.order, item.title).setIcon(item.drawableId)
-        }
-        setupNavigation(supportFragmentManager, mainContainerId)
-        setStartDestination(sushiMenuItems[defaultMenuIndex].itemId)
-    }
-
-    /**
-     * Set a default selected item represented by a menuItem.itemId
-     */
-    private fun setStartDestination(@IdRes startDestinationId: Int) {
-        this.selectedItemId = startDestinationId
-    }
-
-    private fun setupNavigation(supportFragmentManager: FragmentManager, containerMain: Int) {
-        this.setOnNavigationItemSelectedListener{ menuItem ->
-            this.sushiMenuItems.forEach { sushiMenuItem ->
-                if (sushiMenuItem.itemId == menuItem.itemId) {
-                    val tag = sushiMenuItem.fragment?.tag
-                    val fragment = sushiMenuItem.fragment
-                    fragment?.let {
-                        supportFragmentManager.beginTransaction()
-                            .replace(containerMain, it, tag)
-                            .commit()
-                    }
+            this.menu.add(Menu.NONE, item.itemId, Menu.NONE, item.title).also {
+                item.drawable?.run {
+                    it.icon = this
+                } ?: item.drawableId?.run {
+                    it.setIcon(this)
                 }
             }
-            true
         }
+        setStartDestination(sushiMenuItems[defaultMenuItemIndex].itemId)
+    }
+
+    private fun setStartDestination(@IdRes startDestinationId: Int) {
+        this.selectedItemId = startDestinationId
     }
 }

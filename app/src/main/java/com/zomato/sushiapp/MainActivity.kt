@@ -2,6 +2,7 @@ package com.zomato.sushiapp
 
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.app.AppCompatDelegate
 import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_NO
@@ -54,13 +55,22 @@ class MainActivity : AppCompatActivity() {
 
         val mainFragmentProvider = MainFragmentProvider(this, supportFragmentManager)
 
+        bottomNavigationView.setOnNavigationItemSelectedListener {
+            val fragment = mainFragmentProvider.getItem(it.itemId)
+            supportFragmentManager.beginTransaction().replace(R.id.container_main, fragment).commit()
+            true
+        }
+
         val menuList = arrayListOf<SushiMenuItem>()
+        val drawable = resources.getDrawable(R.drawable.ic_topnav_star)
         menuList.addAll(listOf(
-            SushiMenuItem(itemId = 0, title = getString(R.string.sushi), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(0)),
-            SushiMenuItem(itemId = 1, title = getString(R.string.about), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(1)),
-            SushiMenuItem(itemId = 2, title = getString(R.string.zomato), drawableId = R.drawable.ic_topnav_star, fragment = mainFragmentProvider.getItem(2))
+            SushiMenuItem(itemId = 0, title = getString(R.string.sushi), drawable = drawable),
+            SushiMenuItem(itemId = 1, title = getString(R.string.about), drawable = drawable),
+            SushiMenuItem(itemId = 2, title = getString(R.string.zomato), drawable = drawable)
         ))
-        bottomNavigationView.setMenu(menuList, supportFragmentManager, R.id.container_main)
+        bottomNavigationView.itemIconTintList =
+            ContextCompat.getColorStateList(this, R.color.bottom_nav_item_color_selector)
+        bottomNavigationView.setMenu(menuList)
     }
 
 }

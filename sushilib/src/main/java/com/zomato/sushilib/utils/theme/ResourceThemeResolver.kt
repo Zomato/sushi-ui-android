@@ -1,6 +1,7 @@
 package com.zomato.sushilib.utils.theme
 
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.support.annotation.AttrRes
@@ -41,7 +42,11 @@ object ResourceThemeResolver {
             attrId,
             outValue, true
         )
-        return ResourcesCompat.getFont(context, outValue.resourceId)
+        return try {
+            ResourcesCompat.getFont(context, outValue.resourceId)
+        } catch (e: Resources.NotFoundException) {
+            Typeface.DEFAULT
+        }
     }
 
     @JvmStatic
