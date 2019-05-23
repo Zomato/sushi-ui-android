@@ -84,6 +84,7 @@ open class SushiButton @JvmOverloads constructor(
     fun setButtonColor(@ColorInt color: Int) {
         if (color == buttonColor) return
         buttonColor = color
+        customStrokeColor = color
         reapplyStyles()
     }
 
