@@ -7,6 +7,7 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.zomato.sushiapp.R
 import com.zomato.sushilib.molecules.inputfields.SushiTextInputField
 import kotlinx.android.synthetic.main.fragment_text_fields.view.*
@@ -47,6 +48,29 @@ class FormComponentFragment : Fragment() {
             "Must be at least 5 characters".takeIf {
                 TextUtils.isEmpty(text) || TextUtils.getTrimmedLength(text) < 5
             }
+        }
+        rootView.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            val message = when (checkedId) {
+                R.id.radioPepsi -> "Pepsi"
+                R.id.radioMountainDew -> "Mountain Dew"
+                R.id.radioCocaCola -> "Coca Cola"
+                else -> throw IllegalStateException()
+            }
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        }
+        rootView.checkboxGroup.setOnCheckedChangeListener { group, checkedId, isChecked ->
+            if (isChecked) {
+                val message = when (checkedId) {
+                    R.id.checkPepsi -> "Pepsi"
+                    R.id.checkMountainDew -> "Mountain Dew"
+                    R.id.checkCocaCola -> "Coca Cola"
+                    else -> throw IllegalStateException()
+                }
+                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+            }
+        }
+        rootView.checkboxGroup.setOnMaxCheckedReachedListener {
+            Toast.makeText(context, "You can only select max 2 options", Toast.LENGTH_SHORT).show()
         }
 
         return rootView
