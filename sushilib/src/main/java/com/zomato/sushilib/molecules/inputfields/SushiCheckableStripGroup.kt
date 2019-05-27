@@ -19,7 +19,7 @@ open class SushiCheckableStripGroup @JvmOverloads constructor(
     private var maxChecked = -1
     private var checkedCount = 0
 
-    private var checkAllowedListener: SushiCheckBox.CheckAllowedListener
+    private var checkChangeAllowedListener: SushiCheckBox.CheckChangeAllowedListener
     private var childOnCheckedChangeListener: SushiCheckableStrip.OnCheckedChangeListener
 
     private var onCheckedChangeListener: OnCheckedChangeListener? = null
@@ -32,8 +32,8 @@ open class SushiCheckableStripGroup @JvmOverloads constructor(
 
     init {
         orientation = VERTICAL
-        checkAllowedListener = object : SushiCheckBox.CheckAllowedListener {
-            override fun allowCheck(isChecked: Boolean): Boolean {
+        checkChangeAllowedListener = object : SushiCheckBox.CheckChangeAllowedListener {
+            override fun isCheckChangeAllowed(isChecked: Boolean): Boolean {
                 return if (isChecked || maxChecked == -1) {
                     true
                 } else {
@@ -63,20 +63,40 @@ open class SushiCheckableStripGroup @JvmOverloads constructor(
         }
     }
 
+    /**
+     * Sets the listener to be called when the group has reached the max number of checked strips.
+     *
+     * @param listener The listener.
+     */
     fun setOnMaxCheckedReachedListener(listener: OnMaxCheckedReachedListener?) {
         onMaxCheckedReachedListener = listener
     }
 
+    /**
+     * Sets the lambda to be called when the group has reached the max number of checked strips.
+     *
+     * @param listener The lambda.
+     */
     fun setOnMaxCheckedReachedListener(listener: () -> Unit) {
         setOnMaxCheckedReachedListener(object : OnMaxCheckedReachedListener {
             override fun onMaxCheckedReached() = listener()
         })
     }
 
+    /**
+     * Sets the listener to be called when a checked strip changes its checked state in this group.
+     *
+     * @param listener The listener.
+     */
     fun setOnCheckedChangeListener(listener: OnCheckedChangeListener?) {
         onCheckedChangeListener = listener
     }
 
+    /**
+     * Sets the lambda to be called when a checked strip changes its checked state in this group.
+     *
+     * @param listener The lambda.
+     */
     fun setOnCheckedChangeListener(listener: (group: SushiCheckableStripGroup, checkedId: Int, isChecked: Boolean) -> Unit) {
         setOnCheckedChangeListener(object : OnCheckedChangeListener {
             override fun onCheckedChange(group: SushiCheckableStripGroup, checkedId: Int, isChecked: Boolean) =
@@ -84,6 +104,12 @@ open class SushiCheckableStripGroup @JvmOverloads constructor(
         })
     }
 
+    /**
+     * Returns whether the group is in valid state or not.
+     * The group is in valid state if the number of checked items in the group is within the set allowed range.
+     *
+     * @return boolean indicating whether the group is in valid state or not
+     */
     fun isValid(): Boolean {
         return checkedCount >= minChecked && (maxChecked == -1 || checkedCount <= maxChecked)
     }
@@ -101,7 +127,7 @@ open class SushiCheckableStripGroup @JvmOverloads constructor(
                     it.isChecked = false
                 }
             }
-            it.setCheckAllowedListener(checkAllowedListener)
+            it.setCheckChangeAllowedListener(checkChangeAllowedListener)
             it.setOnCheckedChangeListener(childOnCheckedChangeListener)
         }
         super.addView(child, index, params)
@@ -121,7 +147,13 @@ open class SushiCheckableStripGroup @JvmOverloads constructor(
         fun onCheckedChange(group: SushiCheckableStripGroup, @IdRes checkedId: Int, isChecked: Boolean)
     }
 
+    /**
+     * Interface definition for a callback to be invoked when the group has reached the max number of checked strips.
+     */
     interface OnMaxCheckedReachedListener {
+        /**
+         * Called when the group has reached the max number of checked strips
+         */
         fun onMaxCheckedReached()
     }
 }

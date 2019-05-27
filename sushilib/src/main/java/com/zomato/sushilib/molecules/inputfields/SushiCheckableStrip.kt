@@ -37,7 +37,7 @@ open class SushiCheckableStrip @JvmOverloads constructor(
     private var compoundButton: CompoundButton? = null
     private var secondaryTextView: SushiTextView? = null
     private var onCheckedChangeListener: OnCheckedChangeListener? = null
-    private var checkAllowedListener: SushiCheckBox.CheckAllowedListener? = null
+    private var checkChangeAllowedListener: SushiCheckBox.CheckChangeAllowedListener? = null
 
     var primaryText: String?
         get() = compoundButton?.text?.toString()
@@ -96,14 +96,26 @@ open class SushiCheckableStrip @JvmOverloads constructor(
         }
     }
 
-    fun setCheckAllowedListener(listener: SushiCheckBox.CheckAllowedListener) {
-        checkAllowedListener = listener
-        (compoundButton as? SushiCheckBox)?.setCheckAllowedListener(listener)
+    /**
+     * Sets the listener that checks whether it is allowed for the checkable strip to change checked state.
+     * Only works for [CheckableSelectorType.CHECKBOX]
+     *
+     * @param listener The listener.
+     */
+    fun setCheckChangeAllowedListener(listener: SushiCheckBox.CheckChangeAllowedListener) {
+        checkChangeAllowedListener = listener
+        (compoundButton as? SushiCheckBox)?.setCheckChangeAllowedListener(listener)
     }
 
-    fun setCheckAllowedListener(listener: (isChecked: Boolean) -> Boolean) {
-        setCheckAllowedListener(object : SushiCheckBox.CheckAllowedListener {
-            override fun allowCheck(isChecked: Boolean): Boolean = listener(isChecked)
+    /**
+     * Sets the lambda to be called that checks whether it is allowed for the checkable strip to change checked state.
+     * Only works for [CheckableSelectorType.CHECKBOX]
+     *
+     * @param listener The lambda.
+     */
+    fun setCheckChangeAllowedListener(listener: (isChecked: Boolean) -> Boolean) {
+        setCheckChangeAllowedListener(object : SushiCheckBox.CheckChangeAllowedListener {
+            override fun isCheckChangeAllowed(isChecked: Boolean): Boolean = listener(isChecked)
         })
     }
 

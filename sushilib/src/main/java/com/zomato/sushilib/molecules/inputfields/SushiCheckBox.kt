@@ -14,7 +14,7 @@ open class SushiCheckBox @JvmOverloads constructor(
 ) : AppCompatCheckBox(ctx, attrs, defStyleAttr) {
 
     private val compoundButtonHelper = CompoundButtonHelper(this)
-    private var checkAllowedListener: CheckAllowedListener? = null
+    private var checkChangeAllowedListener: CheckChangeAllowedListener? = null
 
     init {
         compoundButtonHelper.init(attrs, defStyleAttr)
@@ -24,18 +24,28 @@ open class SushiCheckBox @JvmOverloads constructor(
         compoundButtonHelper.setControlColor(color)
     }
 
-    fun setCheckAllowedListener(listener: CheckAllowedListener) {
-        checkAllowedListener = listener
+    /**
+     * Sets the listener that checks whether it is allowed for the checkbox to change checked state.
+     *
+     * @param listener The listener.
+     */
+    fun setCheckChangeAllowedListener(listener: CheckChangeAllowedListener) {
+        checkChangeAllowedListener = listener
     }
 
-    fun setCheckAllowedListener(listener: (isChecked: Boolean) -> Boolean) {
-        setCheckAllowedListener(object : CheckAllowedListener {
-            override fun allowCheck(isChecked: Boolean): Boolean = listener(isChecked)
+    /**
+     * Sets the lambda to be called that checks whether it is allowed for the checkbox to change checked state.
+     *
+     * @param listener The lambda.
+     */
+    fun setCheckChangeAllowedListener(listener: (isChecked: Boolean) -> Boolean) {
+        setCheckChangeAllowedListener(object : CheckChangeAllowedListener {
+            override fun isCheckChangeAllowed(isChecked: Boolean): Boolean = listener(isChecked)
         })
     }
 
     override fun performClick(): Boolean {
-        return if (checkAllowedListener == null || checkAllowedListener?.allowCheck(isChecked) == true) {
+        return if (checkChangeAllowedListener == null || checkChangeAllowedListener?.isCheckChangeAllowed(isChecked) == true) {
             super.performClick()
         } else {
             true
@@ -43,15 +53,15 @@ open class SushiCheckBox @JvmOverloads constructor(
     }
 
     /**
-     * Interface definition for a callback that checks whether it is allowed for the checkbox to change checked states.
+     * Interface definition for a callback that checks whether it is allowed for the checkbox to change checked state.
      */
-    interface CheckAllowedListener {
+    interface CheckChangeAllowedListener {
         /**
-         * Checks whether it is allowed for the checkbox to change checked states.
+         * Checks whether it is allowed for the checkbox to change checked state.
          *
-         * @param isChecked Checked state of the checkbox
-         * @return boolean whether it is allowed for the checkbox to change checked states
+         * @param isChecked Current checked state of the checkbox
+         * @return boolean whether it is allowed for the checkbox to change checked state
          */
-        fun allowCheck(isChecked: Boolean): Boolean
+        fun isCheckChangeAllowed(isChecked: Boolean): Boolean
     }
 }
