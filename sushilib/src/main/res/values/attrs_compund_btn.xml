@@ -18,6 +18,7 @@
             <enum name="radiobutton" value="0" />
             <enum name="checkbox" value="1" />
         </attr>
+        <attr name="checked" format="boolean" />
         <attr name="primaryText" format="string" />
         <attr name="secondaryText" format="string" />
     </declare-styleable>

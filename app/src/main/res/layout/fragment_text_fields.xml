@@ -94,6 +94,38 @@
             app:bodyText="Lorem ipsum id good for long text demo :) dolor sit amet, consectetur adipiscing elit,"
             app:headlineText="What you prefer" />
 
+        <com.zomato.sushilib.molecules.inputfields.SushiCheckableStripRadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
+                android:id="@+id/checkablePepsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:checked="true"
+                app:primaryText="Pepsi"
+                app:secondaryText="Rs.35"
+                app:selectorType="radiobutton" />
+
+            <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
+                android:id="@+id/checkableCocaCola"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:primaryText="Coca Cola"
+                app:secondaryText="Rs.35"
+                app:selectorType="radiobutton" />
+
+            <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
+                android:id="@+id/checkableMountainDew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:primaryText="Mountain Dew"
+                app:secondaryText="Rs.35"
+                app:selectorType="radiobutton" />
+
+        </com.zomato.sushilib.molecules.inputfields.SushiCheckableStripRadioGroup>
+
         <com.zomato.sushilib.molecules.inputfields.SushiCheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -110,22 +142,6 @@
             android:text="Americano"
             app:controlColor="@color/sushi_yellow_500" />
 
-        <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:primaryText="Pepsi"
-            app:secondaryText="Rs.35"
-            app:selectorType="radiobutton" />
-
-        <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:controlColor="@color/sushi_blue_500"
-            app:primaryText="Coca Cola"
-            app:secondaryText="Rs.35"
-            app:selectorType="checkbox" />
-
     </LinearLayout>
-
 
 </ScrollView>

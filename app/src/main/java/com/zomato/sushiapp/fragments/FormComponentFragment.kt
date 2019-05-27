@@ -4,6 +4,7 @@ package com.zomato.sushiapp.fragments
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.text.TextUtils
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,6 +48,9 @@ class FormComponentFragment : Fragment() {
             "Must be at least 5 characters".takeIf {
                 TextUtils.isEmpty(text) || TextUtils.getTrimmedLength(text) < 5
             }
+        }
+        rootView.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            Log.d("FormComponentFragment", checkedId.toString())
         }
 
         return rootView
