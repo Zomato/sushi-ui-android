@@ -126,6 +126,35 @@
 
         </com.zomato.sushilib.molecules.inputfields.SushiCheckableStripRadioGroup>
 
+        <com.zomato.sushilib.molecules.inputfields.SushiCheckableStripGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:maxChecked="2">
+
+            <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:checked="true"
+                app:primaryText="Pepsi"
+                app:secondaryText="Rs.35"
+                app:selectorType="checkbox" />
+
+            <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:primaryText="Coca Cola"
+                app:secondaryText="Rs.35"
+                app:selectorType="checkbox" />
+
+            <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:primaryText="Mountain Dew"
+                app:secondaryText="Rs.35"
+                app:selectorType="checkbox" />
+
+        </com.zomato.sushilib.molecules.inputfields.SushiCheckableStripGroup>
+
         <com.zomato.sushilib.molecules.inputfields.SushiCheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

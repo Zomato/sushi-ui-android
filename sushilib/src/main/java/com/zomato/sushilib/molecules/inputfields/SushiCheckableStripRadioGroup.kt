@@ -104,7 +104,7 @@ open class SushiCheckableStripRadioGroup @JvmOverloads constructor(
         /**
          * Called when the checked strip changes in this group.
          *
-         * @param groupthe group in which the checked strip has changed
+         * @param group the group in which the checked strip has changed
          * @param checkedId the unique identifier of the newly checked strip
          */
         fun onCheckedChange(group: SushiCheckableStripRadioGroup, @IdRes checkedId: Int)

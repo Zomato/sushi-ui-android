@@ -37,6 +37,7 @@ open class SushiCheckableStrip @JvmOverloads constructor(
     private var compoundButton: CompoundButton? = null
     private var secondaryTextView: SushiTextView? = null
     private var onCheckedChangeListener: OnCheckedChangeListener? = null
+    private var checkAllowedListener: SushiCheckBox.CheckAllowedListener? = null
 
     var primaryText: String?
         get() = compoundButton?.text?.toString()
@@ -80,6 +81,8 @@ open class SushiCheckableStrip @JvmOverloads constructor(
             secondaryText = it.getString(R.styleable.SushiCheckableStrip_secondaryText)
 
             setChecked(it.getBoolean(R.styleable.SushiCheckableStrip_checked, false))
+
+            it.recycle()
         }
 
         setColors()
@@ -89,11 +92,19 @@ open class SushiCheckableStrip @JvmOverloads constructor(
         }
 
         setOnClickListener {
-            when (selectorType) {
-                CheckableSelectorType.RADIO_BUTTON -> setChecked(true)
-                CheckableSelectorType.CHECKBOX -> toggle()
-            }
+            compoundButton?.performClick()
         }
+    }
+
+    fun setCheckAllowedListener(listener: SushiCheckBox.CheckAllowedListener) {
+        checkAllowedListener = listener
+        (compoundButton as? SushiCheckBox)?.setCheckAllowedListener(listener)
+    }
+
+    fun setCheckAllowedListener(listener: (isChecked: Boolean) -> Boolean) {
+        setCheckAllowedListener(object : SushiCheckBox.CheckAllowedListener {
+            override fun allowCheck(isChecked: Boolean): Boolean = listener(isChecked)
+        })
     }
 
     /**

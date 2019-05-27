@@ -22,4 +22,8 @@
         <attr name="primaryText" format="string" />
         <attr name="secondaryText" format="string" />
     </declare-styleable>
+    <declare-styleable name="SushiCheckableStripGroup">
+        <attr name="minChecked" format="integer" />
+        <attr name="maxChecked" format="integer" />
+    </declare-styleable>
 </resources>

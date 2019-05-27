@@ -14,6 +14,7 @@ open class SushiCheckBox @JvmOverloads constructor(
 ) : AppCompatCheckBox(ctx, attrs, defStyleAttr) {
 
     private val compoundButtonHelper = CompoundButtonHelper(this)
+    private var checkAllowedListener: CheckAllowedListener? = null
 
     init {
         compoundButtonHelper.init(attrs, defStyleAttr)
@@ -21,5 +22,36 @@ open class SushiCheckBox @JvmOverloads constructor(
 
     fun setControlColor(@ColorInt color: Int) {
         compoundButtonHelper.setControlColor(color)
+    }
+
+    fun setCheckAllowedListener(listener: CheckAllowedListener) {
+        checkAllowedListener = listener
+    }
+
+    fun setCheckAllowedListener(listener: (isChecked: Boolean) -> Boolean) {
+        setCheckAllowedListener(object : CheckAllowedListener {
+            override fun allowCheck(isChecked: Boolean): Boolean = listener(isChecked)
+        })
+    }
+
+    override fun performClick(): Boolean {
+        return if (checkAllowedListener == null || checkAllowedListener?.allowCheck(isChecked) == true) {
+            super.performClick()
+        } else {
+            true
+        }
+    }
+
+    /**
+     * Interface definition for a callback that checks whether it is allowed for the checkbox to change checked states.
+     */
+    interface CheckAllowedListener {
+        /**
+         * Checks whether it is allowed for the checkbox to change checked states.
+         *
+         * @param isChecked Checked state of the checkbox
+         * @return boolean whether it is allowed for the checkbox to change checked states
+         */
+        fun allowCheck(isChecked: Boolean): Boolean
     }
 }
