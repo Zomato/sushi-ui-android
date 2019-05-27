@@ -103,7 +103,7 @@
                 android:id="@+id/checkablePepsi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:checked="true"
+                android:checked="true"
                 app:primaryText="Pepsi"
                 app:secondaryText="Rs.35"
                 app:selectorType="radiobutton" />
@@ -134,7 +134,7 @@
             <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:checked="true"
+                android:checked="true"
                 app:primaryText="Pepsi"
                 app:secondaryText="Rs.35"
                 app:selectorType="checkbox" />

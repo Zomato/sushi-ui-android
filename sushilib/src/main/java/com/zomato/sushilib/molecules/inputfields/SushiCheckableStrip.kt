@@ -80,7 +80,7 @@ open class SushiCheckableStrip @JvmOverloads constructor(
             primaryText = it.getString(R.styleable.SushiCheckableStrip_primaryText)
             secondaryText = it.getString(R.styleable.SushiCheckableStrip_secondaryText)
 
-            setChecked(it.getBoolean(R.styleable.SushiCheckableStrip_checked, false))
+            setChecked(it.getBoolean(R.styleable.SushiCheckableStrip_android_checked, false))
 
             it.recycle()
         }
