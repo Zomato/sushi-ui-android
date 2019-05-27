@@ -14,8 +14,8 @@
     </declare-styleable>
     <declare-styleable name="SushiCheckableStrip">
         <attr name="controlColor" />
-        <attr name="selectorType" format="enum">
-            <enum name="radiobutton" value="0" />
+        <attr name="selector" format="enum">
+            <enum name="radio" value="0" />
             <enum name="checkbox" value="1" />
         </attr>
         <attr name="android:checked" />

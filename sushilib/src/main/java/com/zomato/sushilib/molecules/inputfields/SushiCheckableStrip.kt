@@ -33,7 +33,7 @@ open class SushiCheckableStrip @JvmOverloads constructor(
 
     private var isChecked = false
     @CheckableSelectorType
-    private var selectorType = CheckableSelectorType.RADIO_BUTTON
+    private var selectorType = CheckableSelectorType.RADIO
     private var compoundButton: CompoundButton? = null
     private var secondaryTextView: SushiTextView? = null
     private var onCheckedChangeListener: OnCheckedChangeListener? = null
@@ -66,11 +66,11 @@ open class SushiCheckableStrip @JvmOverloads constructor(
             defStyleAttr, defStyleRes
         ).let {
             selectorType =
-                it.getInt(R.styleable.SushiCheckableStrip_selectorType, selectorType)
+                it.getInt(R.styleable.SushiCheckableStrip_selector, selectorType)
             color = it.getColor(R.styleable.SushiCheckableStrip_controlColor, color)
 
             compoundButton = when (selectorType) {
-                CheckableSelectorType.RADIO_BUTTON -> SushiRadioButton(context)
+                CheckableSelectorType.RADIO -> SushiRadioButton(context)
                 CheckableSelectorType.CHECKBOX -> SushiCheckBox(context)
                 else -> null
             }
@@ -156,7 +156,7 @@ open class SushiCheckableStrip @JvmOverloads constructor(
             compoundButton?.setTextColor(defaultColor)
         }
         when (selectorType) {
-            CheckableSelectorType.RADIO_BUTTON -> (compoundButton as? SushiRadioButton)?.setControlColor(color)
+            CheckableSelectorType.RADIO -> (compoundButton as? SushiRadioButton)?.setControlColor(color)
             CheckableSelectorType.CHECKBOX -> (compoundButton as? SushiCheckBox)?.setControlColor(color)
         }
     }

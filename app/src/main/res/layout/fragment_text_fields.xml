@@ -106,7 +106,7 @@
                 android:checked="true"
                 app:primaryText="Pepsi"
                 app:secondaryText="Rs.35"
-                app:selectorType="radiobutton" />
+                app:selector="radio" />
 
             <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
                 android:id="@+id/checkableCocaCola"
@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 app:primaryText="Coca Cola"
                 app:secondaryText="Rs.35"
-                app:selectorType="radiobutton" />
+                app:selector="radio" />
 
             <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
                 android:id="@+id/checkableMountainDew"
@@ -122,7 +122,7 @@
                 android:layout_height="wrap_content"
                 app:primaryText="Mountain Dew"
                 app:secondaryText="Rs.35"
-                app:selectorType="radiobutton" />
+                app:selector="radio" />
 
         </com.zomato.sushilib.molecules.inputfields.SushiCheckableStripRadioGroup>
 
@@ -137,21 +137,21 @@
                 android:checked="true"
                 app:primaryText="Pepsi"
                 app:secondaryText="Rs.35"
-                app:selectorType="checkbox" />
+                app:selector="checkbox" />
 
             <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:primaryText="Coca Cola"
                 app:secondaryText="Rs.35"
-                app:selectorType="checkbox" />
+                app:selector="checkbox" />
 
             <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:primaryText="Mountain Dew"
                 app:secondaryText="Rs.35"
-                app:selectorType="checkbox" />
+                app:selector="checkbox" />
 
         </com.zomato.sushilib.molecules.inputfields.SushiCheckableStripGroup>
 

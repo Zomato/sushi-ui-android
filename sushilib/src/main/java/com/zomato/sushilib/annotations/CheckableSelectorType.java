@@ -9,8 +9,8 @@ import java.lang.annotation.RetentionPolicy;
  * Created by prempal on 2019-05-21.
  */
 @Retention(RetentionPolicy.SOURCE)
-@IntDef({CheckableSelectorType.RADIO_BUTTON, CheckableSelectorType.CHECKBOX})
+@IntDef({CheckableSelectorType.RADIO, CheckableSelectorType.CHECKBOX})
 public @interface CheckableSelectorType {
-    int RADIO_BUTTON = 0;
+    int RADIO = 0;
     int CHECKBOX = 1;
 }
