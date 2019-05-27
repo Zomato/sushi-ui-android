@@ -100,7 +100,7 @@
             android:layout_height="wrap_content">
 
             <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
-                android:id="@+id/checkablePepsi"
+                android:id="@+id/radioPepsi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
@@ -109,7 +109,7 @@
                 app:selector="radio" />
 
             <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
-                android:id="@+id/checkableCocaCola"
+                android:id="@+id/radioCocaCola"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:primaryText="Coca Cola"
@@ -117,7 +117,7 @@
                 app:selector="radio" />
 
             <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
-                android:id="@+id/checkableMountainDew"
+                android:id="@+id/radioMountainDew"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:primaryText="Mountain Dew"
@@ -127,11 +127,13 @@
         </com.zomato.sushilib.molecules.inputfields.SushiCheckableStripRadioGroup>
 
         <com.zomato.sushilib.molecules.inputfields.SushiCheckableStripGroup
+            android:id="@+id/checkboxGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:maxChecked="2">
 
             <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
+                android:id="@+id/checkPepsi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
@@ -140,6 +142,7 @@
                 app:selector="checkbox" />
 
             <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
+                android:id="@+id/checkCocaCola"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:primaryText="Coca Cola"
@@ -147,6 +150,7 @@
                 app:selector="checkbox" />
 
             <com.zomato.sushilib.molecules.inputfields.SushiCheckableStrip
+                android:id="@+id/checkMountainDew"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:primaryText="Mountain Dew"

@@ -51,12 +51,26 @@ class FormComponentFragment : Fragment() {
         }
         rootView.radioGroup.setOnCheckedChangeListener { group, checkedId ->
             val message = when (checkedId) {
-                R.id.checkablePepsi -> "Pepsi"
-                R.id.checkableMountainDew -> "Mountain Dew"
-                R.id.checkableCocaCola -> "Coca Cola"
+                R.id.radioPepsi -> "Pepsi"
+                R.id.radioMountainDew -> "Mountain Dew"
+                R.id.radioCocaCola -> "Coca Cola"
                 else -> throw IllegalStateException()
             }
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        }
+        rootView.checkboxGroup.setOnCheckedChangeListener { group, checkedId, isChecked ->
+            if (isChecked) {
+                val message = when (checkedId) {
+                    R.id.checkPepsi -> "Pepsi"
+                    R.id.checkMountainDew -> "Mountain Dew"
+                    R.id.checkCocaCola -> "Coca Cola"
+                    else -> throw IllegalStateException()
+                }
+                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+            }
+        }
+        rootView.checkboxGroup.setOnMaxCheckedReachedListener {
+            Toast.makeText(context, "You can only select max 2 options", Toast.LENGTH_SHORT).show()
         }
 
         return rootView
