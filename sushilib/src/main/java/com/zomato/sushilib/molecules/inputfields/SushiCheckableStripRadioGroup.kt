@@ -38,10 +38,29 @@ open class SushiCheckableStripRadioGroup @JvmOverloads constructor(
         }
     }
 
+    /**
+     * <p>Returns the identifier of the selected [SushiCheckableStrip] in this group.
+     * Upon empty selection, the returned value is -1.</p>
+     *
+     * @return the unique id of the selected [SushiCheckableStrip] in this group
+     */
+    @IdRes
+    fun getCheckedId() = checkedId
+
+    /**
+     * Sets the listener to be called when the checked strip changes in this group.
+     *
+     * @param listener The listener.
+     */
     fun setOnCheckedChangeListener(listener: OnCheckedChangeListener?) {
         onCheckedChangeListener = listener
     }
 
+    /**
+     * Sets the lambda to be called when the checked strip changes in this group.
+     *
+     * @param listener The lambda.
+     */
     fun setOnCheckedChangeListener(listener: (group: SushiCheckableStripRadioGroup, checkedId: Int) -> Unit) {
         setOnCheckedChangeListener(object : OnCheckedChangeListener {
             override fun onCheckedChange(group: SushiCheckableStripRadioGroup, checkedId: Int) =
@@ -78,7 +97,16 @@ open class SushiCheckableStripRadioGroup @JvmOverloads constructor(
         checkedView?.isChecked = checked
     }
 
+    /**
+     * Interface definition for a callback to be invoked when the checked strip changes in this group.
+     */
     interface OnCheckedChangeListener {
+        /**
+         * Called when the checked strip changes in this group.
+         *
+         * @param groupthe group in which the checked strip has changed
+         * @param checkedId the unique identifier of the newly checked strip
+         */
         fun onCheckedChange(group: SushiCheckableStripRadioGroup, @IdRes checkedId: Int)
     }
 
