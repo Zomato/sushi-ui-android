@@ -61,10 +61,10 @@ open class SushiCheckableStripRadioGroup @JvmOverloads constructor(
      *
      * @param listener The lambda.
      */
-    fun setOnCheckedChangeListener(listener: (group: SushiCheckableStripRadioGroup, checkedId: Int) -> Unit) {
+    fun setOnCheckedChangeListener(listener: (group: SushiCheckableStripRadioGroup, id: Int, isChecked: Boolean) -> Unit) {
         setOnCheckedChangeListener(object : OnCheckedChangeListener {
-            override fun onCheckedChange(group: SushiCheckableStripRadioGroup, checkedId: Int) =
-                listener(group, checkedId)
+            override fun onCheckedChange(group: SushiCheckableStripRadioGroup, id: Int, isChecked: Boolean) =
+                listener(group, checkedId, isChecked)
         })
     }
 
@@ -89,12 +89,13 @@ open class SushiCheckableStripRadioGroup @JvmOverloads constructor(
 
     private fun setCheckedId(@IdRes id: Int) {
         checkedId = id
-        onCheckedChangeListener?.onCheckedChange(this, id)
+        onCheckedChangeListener?.onCheckedChange(this, id, true)
     }
 
     private fun setCheckedStateForView(@IdRes viewId: Int, checked: Boolean) {
         val checkedView = findViewById<SushiCheckableStrip>(viewId)
         checkedView?.isChecked = checked
+        onCheckedChangeListener?.onCheckedChange(this, viewId, checked)
     }
 
     /**
@@ -105,9 +106,10 @@ open class SushiCheckableStripRadioGroup @JvmOverloads constructor(
          * Called when the checked strip changes in this group.
          *
          * @param group the group in which the checked strip has changed
-         * @param checkedId the unique identifier of the newly checked strip
+         * @param id the unique identifier of the checked strip
+         * @param isChecked the new checked state
          */
-        fun onCheckedChange(group: SushiCheckableStripRadioGroup, @IdRes checkedId: Int)
+        fun onCheckedChange(group: SushiCheckableStripRadioGroup, @IdRes id: Int, isChecked: Boolean)
     }
 
 }
