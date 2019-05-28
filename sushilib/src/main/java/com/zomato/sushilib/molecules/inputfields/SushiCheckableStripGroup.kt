@@ -97,10 +97,10 @@ open class SushiCheckableStripGroup @JvmOverloads constructor(
      *
      * @param listener The lambda.
      */
-    fun setOnCheckedChangeListener(listener: (group: SushiCheckableStripGroup, checkedId: Int, isChecked: Boolean) -> Unit) {
+    fun setOnCheckedChangeListener(listener: (group: SushiCheckableStripGroup, id: Int, isChecked: Boolean) -> Unit) {
         setOnCheckedChangeListener(object : OnCheckedChangeListener {
-            override fun onCheckedChange(group: SushiCheckableStripGroup, checkedId: Int, isChecked: Boolean) =
-                listener(group, checkedId, isChecked)
+            override fun onCheckedChange(group: SushiCheckableStripGroup, id: Int, isChecked: Boolean) =
+                listener(group, id, isChecked)
         })
     }
 
@@ -141,10 +141,10 @@ open class SushiCheckableStripGroup @JvmOverloads constructor(
          * Called when a checked strip changes its checked state in this group
          *
          * @param group the group in which a checked strip has changed
-         * @param checkedId the unique identifier of the checked strip
+         * @param id the unique identifier of the checked strip
          * @param isChecked the new checked state
          */
-        fun onCheckedChange(group: SushiCheckableStripGroup, @IdRes checkedId: Int, isChecked: Boolean)
+        fun onCheckedChange(group: SushiCheckableStripGroup, @IdRes id: Int, isChecked: Boolean)
     }
 
     /**

@@ -48,9 +48,9 @@ open class SushiCheckableStrip @JvmOverloads constructor(
     var secondaryText: String?
         get() = secondaryTextView?.text?.toString()
         set(value) {
-            secondaryTextView = (secondaryTextView ?: SushiTextView(context)).also {
+            secondaryTextView = (secondaryTextView ?: SushiTextView(context).also {
                 addView(it)
-            }.apply { text = value }
+            }).apply { text = value }
         }
 
     constructor(ctx: Context, @CheckableSelectorType selectorType: Int) : this(ctx) {

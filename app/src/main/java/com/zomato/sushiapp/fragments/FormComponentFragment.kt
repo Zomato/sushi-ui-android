@@ -49,18 +49,18 @@ class FormComponentFragment : Fragment() {
                 TextUtils.isEmpty(text) || TextUtils.getTrimmedLength(text) < 5
             }
         }
-        rootView.radioGroup.setOnCheckedChangeListener { group, checkedId ->
-            val message = when (checkedId) {
+        rootView.radioGroup.setOnCheckedChangeListener { group, id, isChecked ->
+            val message = when (id) {
                 R.id.radioPepsi -> "Pepsi"
                 R.id.radioMountainDew -> "Mountain Dew"
                 R.id.radioCocaCola -> "Coca Cola"
                 else -> throw IllegalStateException()
             }
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "$isChecked $message", Toast.LENGTH_SHORT).show()
         }
-        rootView.checkboxGroup.setOnCheckedChangeListener { group, checkedId, isChecked ->
+        rootView.checkboxGroup.setOnCheckedChangeListener { group, id, isChecked ->
             if (isChecked) {
-                val message = when (checkedId) {
+                val message = when (id) {
                     R.id.checkPepsi -> "Pepsi"
                     R.id.checkMountainDew -> "Mountain Dew"
                     R.id.checkCocaCola -> "Coca Cola"
