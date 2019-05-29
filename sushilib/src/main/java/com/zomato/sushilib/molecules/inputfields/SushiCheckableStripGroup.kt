@@ -133,6 +133,17 @@ open class SushiCheckableStripGroup @JvmOverloads constructor(
         super.addView(child, index, params)
     }
 
+    override fun onViewRemoved(child: View?) {
+        (child as? SushiCheckableStrip)?.let {
+            if (it.isChecked) {
+                checkedCount--
+            }
+            it.setOnCheckedChangeListener(null)
+            it.setCheckChangeAllowedListener(null)
+        }
+        super.onViewRemoved(child)
+    }
+
     /**
      * Interface definition for a callback to be invoked when a checked strip changes its checked state in this group.
      */

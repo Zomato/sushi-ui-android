@@ -87,6 +87,16 @@ open class SushiCheckableStripRadioGroup @JvmOverloads constructor(
         super.addView(child, index, params)
     }
 
+    override fun onViewRemoved(child: View?) {
+        (child as? SushiCheckableStrip)?.let {
+            if (it.isChecked) {
+                checkedId = View.NO_ID
+            }
+            it.setOnCheckedChangeListener(null)
+        }
+        super.onViewRemoved(child)
+    }
+
     private fun setCheckedId(@IdRes id: Int) {
         checkedId = id
         onCheckedChangeListener?.onCheckedChange(this, id, true)
