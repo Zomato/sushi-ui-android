@@ -105,6 +105,27 @@ open class SushiCheckableStripGroup @JvmOverloads constructor(
     }
 
     /**
+     * Sets the minimum number of checked items allowed by this group.
+     *
+     * @param minChecked minimum number of checked items
+     */
+    fun setMinChecked(minChecked: Int) {
+        this.minChecked = minChecked
+    }
+
+    /**
+     * Sets the maximum number of checked items allowed by this group.
+     *
+     * @param maxChecked maximum number of checked items
+     */
+    @Throws(IllegalArgumentException::class)
+    fun setMaxChecked(maxChecked: Int) {
+        if (checkedCount <= maxChecked) {
+            this.maxChecked = maxChecked
+        } else throw IllegalArgumentException("Existing checked items in group greater than maxChecked")
+    }
+
+    /**
      * Returns whether the group is in valid state or not.
      * The group is in valid state if the number of checked items in the group is within the set allowed range.
      *
@@ -131,6 +152,17 @@ open class SushiCheckableStripGroup @JvmOverloads constructor(
             it.setOnCheckedChangeListener(childOnCheckedChangeListener)
         }
         super.addView(child, index, params)
+    }
+
+    override fun onViewRemoved(child: View?) {
+        (child as? SushiCheckableStrip)?.let {
+            if (it.isChecked) {
+                checkedCount--
+            }
+            it.setOnCheckedChangeListener(null)
+            it.setCheckChangeAllowedListener(null)
+        }
+        super.onViewRemoved(child)
     }
 
     /**

@@ -102,7 +102,7 @@ open class SushiCheckableStrip @JvmOverloads constructor(
      *
      * @param listener The listener.
      */
-    fun setCheckChangeAllowedListener(listener: SushiCheckBox.CheckChangeAllowedListener) {
+    fun setCheckChangeAllowedListener(listener: SushiCheckBox.CheckChangeAllowedListener?) {
         checkChangeAllowedListener = listener
         (compoundButton as? SushiCheckBox)?.setCheckChangeAllowedListener(listener)
     }

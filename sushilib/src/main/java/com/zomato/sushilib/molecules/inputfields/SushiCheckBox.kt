@@ -29,7 +29,7 @@ open class SushiCheckBox @JvmOverloads constructor(
      *
      * @param listener The listener.
      */
-    fun setCheckChangeAllowedListener(listener: CheckChangeAllowedListener) {
+    fun setCheckChangeAllowedListener(listener: CheckChangeAllowedListener?) {
         checkChangeAllowedListener = listener
     }
 
