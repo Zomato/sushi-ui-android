@@ -21,7 +21,8 @@ open class SushiCheckableStrip @JvmOverloads constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
     @AttrRes defStyleAttr: Int = 0,
-    @StyleRes defStyleRes: Int = 0
+    @StyleRes defStyleRes: Int = 0,
+    @CheckableSelectorType private var selectorType: Int = CheckableSelectorType.RADIO
 ) : LinearLayout(ctx, attrs, defStyleAttr), Checkable {
 
     @ColorInt
@@ -32,8 +33,6 @@ open class SushiCheckableStrip @JvmOverloads constructor(
         ResourceThemeResolver.getThemedColorFromAttr(context, android.R.attr.textColorPrimary)
 
     private var isChecked = false
-    @CheckableSelectorType
-    private var selectorType = CheckableSelectorType.RADIO
     private var compoundButton: CompoundButton? = null
     private var secondaryTextView: SushiTextView? = null
     private var onCheckedChangeListener: OnCheckedChangeListener? = null
@@ -52,10 +51,6 @@ open class SushiCheckableStrip @JvmOverloads constructor(
                 addView(it)
             }).apply { text = value }
         }
-
-    constructor(ctx: Context, @CheckableSelectorType selectorType: Int) : this(ctx) {
-        this.selectorType = selectorType
-    }
 
     init {
         orientation = HORIZONTAL
