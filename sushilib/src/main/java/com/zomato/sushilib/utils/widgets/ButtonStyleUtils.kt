@@ -10,6 +10,7 @@ import android.support.v4.graphics.ColorUtils
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ButtonType
 import com.zomato.sushilib.atoms.buttons.SushiButton
+import com.zomato.sushilib.utils.widgets.TextViewUtils.setCompoundDrawableTintListCompat
 
 /**
  * A collection of static functions that help
@@ -41,7 +42,7 @@ internal object ButtonStyleUtils {
 
     @JvmStatic
     fun SushiButton.applyIconPadding() {
-        iconPadding = if (getButtonType() == ButtonType.TEXT) {
+        compoundDrawablePadding = if (getButtonType() == ButtonType.TEXT) {
             resources.getDimensionPixelSize(R.dimen.sushi_text_button_icon_padding)
         } else {
             resources.getDimensionPixelSize(R.dimen.sushi_button_icon_padding)
@@ -56,7 +57,7 @@ internal object ButtonStyleUtils {
             getTextColorStateList(context, getButtonColor())
         }
         setTextColor(colorStateList)
-        iconTint = colorStateList
+        setCompoundDrawableTintListCompat(colorStateList)
     }
 
     @JvmStatic

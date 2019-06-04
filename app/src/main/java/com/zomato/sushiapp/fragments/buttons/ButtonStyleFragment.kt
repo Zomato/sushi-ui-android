@@ -3,10 +3,12 @@ package com.zomato.sushiapp.fragments.buttons
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zomato.sushiapp.R
+import com.zomato.sushilib.annotations.ButtonType
 import com.zomato.sushilib.atoms.buttons.SushiButton
 import kotlinx.android.synthetic.main.fragment_buttons_solid.view.*
 
@@ -54,8 +56,21 @@ class ButtonStyleFragment : Fragment() {
         }
 
         if (mButtonStyle == BUTTON_STYLE_SOLID) {
+
             rootView.btnDrawableSetter.setOnClickListener {
                 (it as SushiButton).apply {
+
+                    when (System.currentTimeMillis() % 3) {
+                        0L -> setButtonType(ButtonType.TEXT)
+                        1L -> setButtonType(ButtonType.OUTLINE)
+                        2L -> setButtonType(ButtonType.SOLID)
+                    }
+                    when (System.currentTimeMillis() % 3) {
+                        0L -> setButtonColor(ContextCompat.getColor(context, R.color.sushi_red_300))
+                        1L -> setButtonColor(ContextCompat.getColor(context, R.color.sushi_green_400))
+                        2L -> setButtonColor(ContextCompat.getColor(context, R.color.sushi_blue_500))
+                    }
+
                     when (System.currentTimeMillis() % 8) {
                         0L -> setDrawableEnd(context.getDrawable(R.drawable.ic_circle_cross))
                         1L -> setDrawableStart(context.getDrawable(R.drawable.ic_color_palette))
