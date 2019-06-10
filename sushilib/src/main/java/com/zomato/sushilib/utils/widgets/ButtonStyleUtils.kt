@@ -1,5 +1,6 @@
 package com.zomato.sushilib.utils.widgets
 
+import android.animation.AnimatorInflater
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -72,10 +73,17 @@ internal object ButtonStyleUtils {
      */
     @JvmStatic
     fun SushiButton.applyRippleColor() {
-        rippleColor = if (getButtonType() == ButtonType.SOLID) {
-            getButtonRippleStateList(Color.WHITE)
+        val buttonType = getButtonType()
+        rippleColor = when (buttonType) {
+            ButtonType.SOLID -> getButtonRippleStateList(Color.WHITE)
+            ButtonType.OUTLINE -> getButtonRippleStateList(getButtonColor())
+            else -> null
+        }
+        if (buttonType == ButtonType.TEXT) {
+            stateListAnimator =
+                AnimatorInflater.loadStateListAnimator(context, R.animator.sushi_text_button_click_animator)
         } else {
-            getButtonRippleStateList(getButtonColor())
+            stateListAnimator = null
         }
     }
 
