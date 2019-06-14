@@ -32,6 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <com.zomato.sushilib.organisms.ratings.SushiRatingBar
+            android:id="@+id/rating_bar2"
             app:rating="2"
             app:drawableRight="@null"
             app:drawableLeft="@string/icon_unfilled_star"

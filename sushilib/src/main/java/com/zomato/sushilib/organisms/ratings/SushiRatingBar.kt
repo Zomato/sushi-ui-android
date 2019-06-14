@@ -71,8 +71,9 @@ class SushiRatingBar @JvmOverloads constructor(
                     minWidth = tagMinWidth
                     text = "$i"
                     setOnClickListener {
-                        rating = i
-                        onRatingChangeListener?.onRatingChanged(i)
+                        // If someone returns false, do not change rating
+                        if (onRatingChangeListener?.onRatingChanged(i) != false)
+                            rating = i
                     }
                     this.isClickable = this@SushiRatingBar.isClickable
                 }
@@ -101,7 +102,7 @@ class SushiRatingBar @JvmOverloads constructor(
      *
      * @param listener The lambda.
      */
-    fun setOnRatingChangeListener(listener: (rating: Int) -> Unit) {
+    fun setOnRatingChangeListener(listener: (rating: Int) -> Boolean) {
         setOnRatingChangeListener(object : OnRatingChangeListener {
             override fun onRatingChanged(rating: Int) = listener(rating)
         })
@@ -166,7 +167,8 @@ class SushiRatingBar @JvmOverloads constructor(
          * Called when the rating has been changed.
          *
          * @param rating The current rating.
+         * @return false if you want to prevent the rating actually being changed
          */
-        fun onRatingChanged(rating: Int)
+        fun onRatingChanged(rating: Int): Boolean
     }
 }
