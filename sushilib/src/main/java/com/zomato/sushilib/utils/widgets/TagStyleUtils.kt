@@ -71,30 +71,31 @@ internal object TagStyleUtils {
     }
 
     @JvmStatic
-    fun SushiTag.applyBackground() {
-        fun applyBg(
-            @DrawableRes bgDrawable: Int, colorList: ColorStateList,
-            outlined: Boolean = false, dashed: Boolean = false
-        ) {
-            background = ContextCompat.getDrawable(context, bgDrawable)
-            background.mutate()
-            backgroundTintList = colorList
-            if (outlined) {
-                (background as GradientDrawable).setColor(Color.TRANSPARENT)
-                (background as GradientDrawable).setStroke(
-                    resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico),
-                    colorList,
-                    10F.takeIf { dashed } ?: 0F,
-                    10F.takeIf { dashed } ?: 0F
-                )
-                setTextColor(colorList)
-            } else {
-                setTextColor(ContextCompat.getColor(context, R.color.sushi_white))
-                (background as? GradientDrawable)?.setStroke(0, 0)
-            }
-
+    private fun SushiTag.applyBg(
+        @DrawableRes bgDrawable: Int, colorList: ColorStateList,
+        outlined: Boolean = false, dashed: Boolean = false
+    ) {
+        background = ContextCompat.getDrawable(context, bgDrawable)
+        background.mutate()
+        backgroundTintList = colorList
+        if (outlined) {
+            (background as GradientDrawable).setColor(Color.TRANSPARENT)
+            (background as GradientDrawable).setStroke(
+                resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico),
+                colorList,
+                10F.takeIf { dashed } ?: 0F,
+                10F.takeIf { dashed } ?: 0F
+            )
+            setTextColor(colorList)
+        } else {
+            setTextColor(ContextCompat.getColor(context, R.color.sushi_white))
+            (background as? GradientDrawable)?.setStroke(0, 0)
         }
 
+    }
+
+    @JvmStatic
+    fun SushiTag.applyBackground() {
         when (tagType) {
             TagType.ROUNDED -> applyBg(
                 R.drawable.sushi_tag_rounded_bg, ColorStateList.valueOf(tagColor)
