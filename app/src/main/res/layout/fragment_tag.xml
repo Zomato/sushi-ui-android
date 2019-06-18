@@ -214,6 +214,18 @@
                 android:layout_height="wrap_content"
                 app:tagSize="small"/>
         </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/sushi_spacing_base"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.zomato.sushilib.molecules.tags.SushiTag
+            android:id="@+id/tagClicker"
+            app:tagSize="medium"
+            android:text="Click To Change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
         <LinearLayout
             android:layout_marginTop="@dimen/sushi_spacing_base"
             android:orientation="horizontal"

@@ -75,17 +75,15 @@ internal object TagStyleUtils {
         fun applyBg(@DrawableRes bgDrawable: Int, colorList: ColorStateList, outlined: Boolean = false) {
             background = ContextCompat.getDrawable(context, bgDrawable)
             background.mutate()
+            backgroundTintList = colorList
             if (outlined) {
+                (background as GradientDrawable).setColor(Color.TRANSPARENT)
                 (background as GradientDrawable).setStroke(
                     resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico),
                     colorList
                 )
-                (background as GradientDrawable).setColor(Color.TRANSPARENT)
                 setTextColor(colorList)
-                compoundDrawableTintList = colorList
-
             } else {
-                backgroundTintList = colorList
                 setTextColor(ContextCompat.getColor(context, R.color.sushi_white))
                 (background as? GradientDrawable)?.setStroke(0, 0)
             }
