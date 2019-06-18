@@ -33,11 +33,13 @@ class TagsFragment : Fragment() {
 
         view.tagClicker.setOnClickListener {
             (it as SushiTag).apply {
-                when (System.currentTimeMillis() % 4) {
+                when (System.currentTimeMillis() % 6) {
                     0L -> tagType = TagType.CAPSULE
                     1L -> tagType = TagType.ROUNDED
                     2L -> tagType = TagType.CAPSULE_OUTLINE
                     3L -> tagType = TagType.ROUNDED_OUTLINE
+                    4L -> tagType = TagType.CAPSULE_DASHED
+                    5L -> tagType = TagType.ROUNDED_DASHED
                 }
 
                 when (System.currentTimeMillis() % 3) {
@@ -58,8 +60,14 @@ class TagsFragment : Fragment() {
                 }
 
                 when (System.currentTimeMillis() % 2) {
-                    0L -> text = "Click to Change"
-                    1L -> text = ""
+                    0L -> {
+                        text = "Click to Change"
+                        compoundDrawablePadding = resources.getDimensionPixelSize(R.dimen.sushi_spacing_mini)
+                    }
+                    1L -> {
+                        text = ""
+                        compoundDrawablePadding = 0
+                    }
                 }
             }
         }

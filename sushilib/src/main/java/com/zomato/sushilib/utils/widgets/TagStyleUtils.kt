@@ -72,7 +72,10 @@ internal object TagStyleUtils {
 
     @JvmStatic
     fun SushiTag.applyBackground() {
-        fun applyBg(@DrawableRes bgDrawable: Int, colorList: ColorStateList, outlined: Boolean = false) {
+        fun applyBg(
+            @DrawableRes bgDrawable: Int, colorList: ColorStateList,
+            outlined: Boolean = false, dashed: Boolean = false
+        ) {
             background = ContextCompat.getDrawable(context, bgDrawable)
             background.mutate()
             backgroundTintList = colorList
@@ -80,7 +83,9 @@ internal object TagStyleUtils {
                 (background as GradientDrawable).setColor(Color.TRANSPARENT)
                 (background as GradientDrawable).setStroke(
                     resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico),
-                    colorList
+                    colorList,
+                    10F.takeIf { dashed } ?: 0F,
+                    10F.takeIf { dashed } ?: 0F
                 )
                 setTextColor(colorList)
             } else {
@@ -102,6 +107,12 @@ internal object TagStyleUtils {
             )
             TagType.CAPSULE_OUTLINE -> applyBg(
                 R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true
+            )
+            TagType.ROUNDED_DASHED -> applyBg(
+                R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true, true
+            )
+            TagType.CAPSULE_DASHED -> applyBg(
+                R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true, true
             )
         }
     }
