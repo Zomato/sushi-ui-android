@@ -33,8 +33,8 @@ open class SushiCheckableStrip @JvmOverloads constructor(
         ResourceThemeResolver.getThemedColorFromAttr(context, android.R.attr.textColorPrimary)
 
     private var isChecked = false
-    private var compoundButton: CompoundButton? = null
-    private var secondaryTextView: SushiTextView? = null
+    protected var compoundButton: CompoundButton? = null
+    protected var secondaryTextView: SushiTextView? = null
     private var onCheckedChangeListener: OnCheckedChangeListener? = null
     private var checkChangeAllowedListener: SushiCheckBox.CheckChangeAllowedListener? = null
 

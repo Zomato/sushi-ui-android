@@ -7,7 +7,7 @@ import com.zomato.sushilib.annotations.FontWeight
 import com.zomato.sushilib.annotations.FontWeight.*
 
 @RestrictTo(RestrictTo.Scope.LIBRARY)
-internal object TextFormatUtils {
+object TextFormatUtils {
     @JvmStatic
     @StyleRes
     fun textFontWeightToTextAppearance(@FontWeight textFontWeight: Int): Int {
