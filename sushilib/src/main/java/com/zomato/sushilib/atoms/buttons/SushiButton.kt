@@ -38,7 +38,6 @@ open class SushiButton @JvmOverloads constructor(
     private var buttonTextColor: Int = WHITE
     @ColorInt
     private var customStrokeColor: Int = buttonColor
-    @ColorInt
     private var buttonStrokeWidth: Int = -1
 
     init {
