@@ -13,6 +13,8 @@ import android.util.TypedValue
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ButtonDimension
 import com.zomato.sushilib.annotations.ButtonType
+import com.zomato.sushilib.annotations.FontWeight
+import com.zomato.sushilib.utils.text.TextFormatUtils
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemedColorFromAttr
 import com.zomato.sushilib.utils.widgets.ButtonStyleUtils
@@ -40,6 +42,13 @@ open class SushiButton @JvmOverloads constructor(
     private var customStrokeColor: Int = buttonColor
     private var buttonStrokeWidth: Int = -1
 
+    @FontWeight
+    var textFontWeight: Int = FontWeight.REGULAR
+        set(value) {
+            field = value
+            setTextAppearance(TextFormatUtils.textFontWeightToTextAppearance(value))
+        }
+
     init {
 
         context?.theme?.obtainStyledAttributes(
@@ -55,6 +64,11 @@ open class SushiButton @JvmOverloads constructor(
             buttonStrokeWidth = it.getDimensionPixelOffset(R.styleable.SushiButton_buttonStrokeWidth, -1)
             customStrokeColor = buttonColor
 
+            val attrTextFontWeight = it.getInt(R.styleable.SushiButton_textFontWeight, -1)
+            // Only do this if someone has actually set this attr in xml
+            if (attrTextFontWeight != -1) {
+                textFontWeight = attrTextFontWeight
+            }
             if (icon != null) {
                 throw IllegalArgumentException(
                     """
@@ -84,6 +98,11 @@ open class SushiButton @JvmOverloads constructor(
         }
     }
 
+    override fun setTextAppearance(resId: Int) {
+        @Suppress("DEPRECATION")
+        super.setTextAppearance(context, resId)
+    }
+
     @ColorInt
     fun getButtonColor(): Int {
         return buttonColor
@@ -92,6 +111,7 @@ open class SushiButton @JvmOverloads constructor(
     fun setButtonColor(@ColorInt color: Int) {
         if (color == buttonColor) return
         buttonColor = color
+        customStrokeColor = color
         reapplyStyles()
     }
 

@@ -25,6 +25,7 @@
         <attr name="drawableStart" />
         <attr name="drawableEnd" />
         <attr name="drawablePadding" />
+        <attr name="textFontWeight" />
 
     </declare-styleable>
 </resources>

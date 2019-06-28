@@ -71,27 +71,31 @@ internal object TagStyleUtils {
     }
 
     @JvmStatic
-    fun SushiTag.applyBackground() {
-        fun applyBg(@DrawableRes bgDrawable: Int, colorList: ColorStateList, outlined: Boolean = false) {
-            background = ContextCompat.getDrawable(context, bgDrawable)
-            background.mutate()
-            if (outlined) {
-                (background as GradientDrawable).setStroke(
-                    resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico),
-                    colorList
-                )
-                (background as GradientDrawable).setColor(Color.TRANSPARENT)
-                setTextColor(colorList)
-                compoundDrawableTintList = colorList
-
-            } else {
-                backgroundTintList = colorList
-                setTextColor(ContextCompat.getColor(context, R.color.sushi_white))
-                (background as? GradientDrawable)?.setStroke(0, 0)
-            }
-
+    private fun SushiTag.applyBg(
+        @DrawableRes bgDrawable: Int, colorList: ColorStateList,
+        outlined: Boolean = false, dashed: Boolean = false
+    ) {
+        background = ContextCompat.getDrawable(context, bgDrawable)
+        background.mutate()
+        backgroundTintList = colorList
+        if (outlined) {
+            (background as GradientDrawable).setColor(Color.TRANSPARENT)
+            (background as GradientDrawable).setStroke(
+                resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico),
+                colorList,
+                10F.takeIf { dashed } ?: 0F,
+                10F.takeIf { dashed } ?: 0F
+            )
+            setTextColor(colorList)
+        } else {
+            setTextColor(ContextCompat.getColor(context, R.color.sushi_white))
+            (background as? GradientDrawable)?.setStroke(0, 0)
         }
 
+    }
+
+    @JvmStatic
+    fun SushiTag.applyBackground() {
         when (tagType) {
             TagType.ROUNDED -> applyBg(
                 R.drawable.sushi_tag_rounded_bg, ColorStateList.valueOf(tagColor)
@@ -104,6 +108,12 @@ internal object TagStyleUtils {
             )
             TagType.CAPSULE_OUTLINE -> applyBg(
                 R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true
+            )
+            TagType.ROUNDED_DASHED -> applyBg(
+                R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true, true
+            )
+            TagType.CAPSULE_DASHED -> applyBg(
+                R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true, true
             )
         }
     }

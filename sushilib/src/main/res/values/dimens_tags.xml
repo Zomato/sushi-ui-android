@@ -12,7 +12,7 @@
     <dimen name="sushi_tag_tiny_horizontal_padding">@dimen/sushi_spacing_nano</dimen>
     <dimen name="sushi_tag_tiny_vertical_padding">0dp</dimen>
 
-    <dimen name="sushi_tag_large_textsize">@dimen/sushi_textsize_500</dimen>
+    <dimen name="sushi_tag_large_textsize">@dimen/sushi_textsize_400</dimen>
     <dimen name="sushi_tag_medium_textsize">@dimen/sushi_textsize_300</dimen>
     <dimen name="sushi_tag_small_textsize">@dimen/sushi_textsize_200</dimen>
     <dimen name="sushi_tag_tiny_textsize">@dimen/sushi_textsize_100</dimen>

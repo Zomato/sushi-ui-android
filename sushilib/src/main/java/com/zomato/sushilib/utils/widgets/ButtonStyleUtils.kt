@@ -1,5 +1,6 @@
 package com.zomato.sushilib.utils.widgets
 
+import android.animation.AnimatorInflater
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -10,6 +11,7 @@ import android.support.v4.graphics.ColorUtils
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ButtonType
 import com.zomato.sushilib.atoms.buttons.SushiButton
+import com.zomato.sushilib.utils.widgets.TextViewUtils.setCompoundDrawableTintListCompat
 
 /**
  * A collection of static functions that help
@@ -42,7 +44,7 @@ internal object ButtonStyleUtils {
 
     @JvmStatic
     fun SushiButton.applyIconPadding() {
-        iconPadding = if (getButtonType() == ButtonType.TEXT) {
+        compoundDrawablePadding = if (getButtonType() == ButtonType.TEXT) {
             resources.getDimensionPixelSize(R.dimen.sushi_text_button_icon_padding)
         } else {
             resources.getDimensionPixelSize(R.dimen.sushi_button_icon_padding)
@@ -57,7 +59,7 @@ internal object ButtonStyleUtils {
             getTextColorStateList(context, if (getButtonTextColor() == -1) getButtonColor() else getButtonTextColor())
         }
         setTextColor(colorStateList)
-        iconTint = colorStateList
+        setCompoundDrawableTintListCompat(colorStateList)
     }
 
     @JvmStatic
@@ -72,10 +74,17 @@ internal object ButtonStyleUtils {
      */
     @JvmStatic
     fun SushiButton.applyRippleColor() {
-        rippleColor = if (getButtonType() == ButtonType.SOLID) {
-            getButtonRippleStateList(if (getButtonColor() == Color.WHITE) Color.GRAY else Color.WHITE)
+        val buttonType = getButtonType()
+        rippleColor = when (buttonType) {
+            ButtonType.SOLID -> getButtonRippleStateList(if (getButtonColor() == Color.WHITE) Color.GRAY else Color.WHITE)
+            ButtonType.OUTLINE -> getButtonRippleStateList(getButtonColor())
+            else -> null
+        }
+        if (buttonType == ButtonType.TEXT) {
+            stateListAnimator =
+                AnimatorInflater.loadStateListAnimator(context, R.animator.sushi_text_button_click_animator)
         } else {
-            getButtonRippleStateList(getButtonColor())
+            stateListAnimator = null
         }
     }
 
