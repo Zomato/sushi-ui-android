@@ -73,7 +73,7 @@ internal object ButtonStyleUtils {
     @JvmStatic
     fun SushiButton.applyRippleColor() {
         rippleColor = if (getButtonType() == ButtonType.SOLID) {
-            getButtonRippleStateList(Color.WHITE)
+            getButtonRippleStateList(if (getButtonColor() == Color.WHITE) Color.GRAY else Color.WHITE)
         } else {
             getButtonRippleStateList(getButtonColor())
         }
