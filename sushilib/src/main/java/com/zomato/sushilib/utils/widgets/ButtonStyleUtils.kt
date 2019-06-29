@@ -76,7 +76,7 @@ internal object ButtonStyleUtils {
     fun SushiButton.applyRippleColor() {
         val buttonType = getButtonType()
         rippleColor = when (buttonType) {
-            ButtonType.SOLID -> getButtonRippleStateList(Color.WHITE)
+            ButtonType.SOLID -> getButtonRippleStateList(if (getButtonColor() == Color.WHITE) ContextCompat.getColor(context, R.color.sushi_grey_500) else Color.WHITE)
             ButtonType.OUTLINE -> getButtonRippleStateList(getButtonColor())
             else -> null
         }
