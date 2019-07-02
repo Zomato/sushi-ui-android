@@ -29,6 +29,7 @@ public @interface ColorName {
     String GREY = "grey";
     String YELLOW = "yellow";
     String PURPLE = "purple";
+    String LIME = "lime";
 
     // Secondary Colors
     String INDIGO = "indigo";
