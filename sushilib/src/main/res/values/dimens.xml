@@ -20,7 +20,7 @@
     <dimen name="sushi_spacing_loose">24dp</dimen>
     <dimen name="sushi_spacing_alone">32dp</dimen>
 
-    <dimen name="sushi_corner_radius">4dp</dimen>
+    <dimen name="sushi_corner_radius">8dp</dimen>
     <dimen name="sushi_spacing_page_side">@dimen/sushi_spacing_base</dimen>
     <dimen name="sushi_spacing_between">@dimen/sushi_spacing_micro</dimen>
     <dimen name="sushi_spacing_between_large">@dimen/sushi_spacing_mini</dimen>
