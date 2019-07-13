@@ -6,7 +6,7 @@
     </style>
     <style name="TextAppearance.Sushi.TextField.Hint" parent="TextAppearance.Design.Hint">
         <item name="android:fontFamily">?fontFamilyMedium</item>
-        <item name="android:textColor">@color/sushi_grey_600</item>
+        <item name="android:textColor">@color/sushi_grey_400</item>
     </style>
 
     <style name="ThemeOverlay.Sushi.EditText.Cursor" parent="">
