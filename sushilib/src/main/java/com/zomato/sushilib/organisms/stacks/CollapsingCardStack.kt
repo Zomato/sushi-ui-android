@@ -2,10 +2,15 @@ package com.zomato.sushilib.organisms.stacks
 
 import android.content.Context
 import android.os.Handler
+import android.support.v4.widget.NestedScrollView
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
-import android.util.Log
+import android.view.GestureDetector
+import android.view.MotionEvent
+import android.view.View.OnTouchListener
+import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.ScrollView
 
 /**
  * created by championswimmer on 2019-07-15
@@ -23,14 +28,13 @@ class CollapsingCardStack @JvmOverloads constructor(
         orientation = VERTICAL
     }
 
-    fun setAdjustedPosition(recyclerView: RecyclerView) {
+    fun setAdjustedPosition(parent: ViewGroup) {
         val screenPos = IntArray(2)
         val rvScreenPos = IntArray(2)
-        recyclerView.getLocationOnScreen(rvScreenPos)
+        parent.getLocationOnScreen(rvScreenPos)
         getLocationOnScreen(screenPos)
 
         if (screenPos[1] < rvScreenPos[1]) {
-            Log.d(TAG, "We are out")
             for (i in 0 until childCount) {
                 val transY =
                     (childCount - i - 1) * (1.0f / (childCount - 1)) * (rvScreenPos[1] - screenPos[1]).toFloat()
@@ -41,10 +45,23 @@ class CollapsingCardStack @JvmOverloads constructor(
             }
 
         } else {
-            Log.d(TAG, "We are in")
             for (i in 0 until childCount) {
                 getChildAt(i).translationY = 0f
             }
+        }
+    }
+
+    private var parentView: ViewGroup? = null
+
+    private val simpleGestureDetector = object : GestureDetector.SimpleOnGestureListener() {
+        override fun onScroll(e1: MotionEvent?, e2: MotionEvent?, distanceX: Float, distanceY: Float): Boolean {
+            parentView?.let { setAdjustedPosition(it) }
+            return super.onScroll(e1, e2, distanceX, distanceY)
+        }
+
+        override fun onFling(e1: MotionEvent?, e2: MotionEvent?, velocityX: Float, velocityY: Float): Boolean {
+            parentView?.let { setAdjustedPosition(it) }
+            return super.onFling(e1, e2, velocityX, velocityY)
         }
     }
 
@@ -53,38 +70,43 @@ class CollapsingCardStack @JvmOverloads constructor(
             setAdjustedPosition(recyclerView)
             super.onScrolled(recyclerView, dx, dy)
         }
+    }
 
-        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-            if (newState == RecyclerView.SCROLL_STATE_SETTLING) {
-
-                Handler().postDelayed({
-                    setAdjustedPosition(recyclerView)
-                }, 100)
-            }
-            super.onScrollStateChanged(recyclerView, newState)
+    private val gestureDetector = GestureDetector(context, simpleGestureDetector)
+    private val touchListener = OnTouchListener { v, event ->
+        if (event.action == MotionEvent.ACTION_UP) {
+            Handler().postDelayed({
+                parentView?.let { setAdjustedPosition(it) }
+            }, 200)
         }
+        gestureDetector.onTouchEvent(event)
     }
 
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-        Log.d(TAG, "onAttachedToWindow");
 
         parent?.let {
             if (it is RecyclerView) {
+                parentView = it
                 it.addOnScrollListener(scrollListener)
+            } else if (it.parent is ScrollView || it.parent is NestedScrollView) {
+                parentView = it.parent as ViewGroup?
+                (it.parent as ViewGroup).setOnTouchListener(touchListener)
             }
+
         }
     }
 
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
-        Log.d(TAG, "onDetachedFromWindow");
-        parent?.let {
+        parentView = null
+        parent.let {
             if (it is RecyclerView) {
                 it.removeOnScrollListener(scrollListener)
             }
         }
+
     }
 
 }
