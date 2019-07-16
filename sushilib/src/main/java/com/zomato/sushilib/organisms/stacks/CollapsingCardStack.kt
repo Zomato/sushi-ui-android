@@ -8,11 +8,8 @@ import android.support.annotation.Px
 import android.support.v4.widget.NestedScrollView
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
-import android.view.GestureDetector
-import android.view.MotionEvent
-import android.view.View
+import android.view.*
 import android.view.View.OnTouchListener
-import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import com.zomato.sushilib.organisms.stacks.page.ExpandablePageLayout
@@ -38,10 +35,10 @@ class CollapsingCardStack @JvmOverloads constructor(
 
     /**
      * Set the [ExpandablePageLayout] to be used with this list.
-     * The pull-to-collapse threshold is set to 85% of the standard toolbar height.
+     * The pull-to-collapse threshold is set to 75% of the standard toolbar height.
      */
     fun setExpandablePage(page: ExpandablePageLayout) {
-        setExpandablePage(page, (Views.toolbarHeight(context) * 0.85F).toInt())
+        setExpandablePage(page, (Views.toolbarHeight(context) * 0.75F).toInt())
     }
 
     /**
@@ -94,6 +91,12 @@ class CollapsingCardStack @JvmOverloads constructor(
         orientation = VERTICAL
     }
 
+    /**
+     * Moves the cards downwards when this view is scrolled up (and vice versa)
+     * to provide the stacking up of cards effect.
+     *
+     * @param parent The container inside which the [CollapsingCardStack] is
+     */
     fun setAdjustedPosition(parent: ViewGroup) {
         val screenPos = IntArray(2)
         val rvScreenPos = IntArray(2)
@@ -148,6 +151,9 @@ class CollapsingCardStack @JvmOverloads constructor(
         }
         gestureDetector.onTouchEvent(event)
     }
+    private val scrollChangeListener = ViewTreeObserver.OnScrollChangedListener {
+        parentView?.let { setAdjustedPosition(it) }
+    }
 
     override fun onViewAdded(child: View?) {
         super.onViewAdded(child)
@@ -192,6 +198,10 @@ class CollapsingCardStack @JvmOverloads constructor(
                             p2.setOnScrollChangeListener { v, _, _, _, _ ->
                                 setAdjustedPosition((v as ViewGroup))
                             }
+                        } else {
+                            p2.viewTreeObserver.addOnScrollChangedListener(
+                                scrollChangeListener
+                            )
                         }
                     } else if (p2 is NestedScrollView) {
                         parentView = p2
@@ -208,9 +218,17 @@ class CollapsingCardStack @JvmOverloads constructor(
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         parentView = null
-        parent.let {
-            if (it is RecyclerView) {
-                it.removeOnScrollListener(rvScrollListener)
+        parent.let { p1 ->
+            if (p1 is RecyclerView) {
+                p1.removeOnScrollListener(rvScrollListener)
+            } else {
+                p1.parent.let { p2 ->
+                    if (p2 is ScrollView) {
+                        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                            p2.viewTreeObserver.removeOnScrollChangedListener(scrollChangeListener)
+                        }
+                    }
+                }
             }
         }
 

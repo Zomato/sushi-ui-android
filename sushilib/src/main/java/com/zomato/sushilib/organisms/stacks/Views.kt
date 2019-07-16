@@ -37,7 +37,6 @@ fun View.executeOnNextLayout(listener: () -> Unit) {
 /**
  * Execute a runnable when a [view]'s dimensions get measured and is laid out on the screen.
  */
-@SuppressLint("LogNotTimber")
 fun View.executeOnMeasure(listener: () -> Unit) {
     if (isInEditMode || isLaidOut) {
         listener()
