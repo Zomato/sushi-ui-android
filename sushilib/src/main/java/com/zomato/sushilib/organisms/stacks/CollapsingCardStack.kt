@@ -1,8 +1,10 @@
 package com.zomato.sushilib.organisms.stacks
 
 import android.content.Context
+import android.graphics.Rect
 import android.os.Build
 import android.os.Handler
+import android.support.annotation.Px
 import android.support.v4.widget.NestedScrollView
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
@@ -13,6 +15,7 @@ import android.view.View.OnTouchListener
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import com.zomato.sushilib.organisms.stacks.page.ExpandablePageLayout
 
 /**
  * created by championswimmer on 2019-07-15
@@ -23,8 +26,69 @@ class CollapsingCardStack @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
     defStyleRes: Int = 0
-) : LinearLayout(context, attrs, defStyleAttr) {
+) : LinearLayout(context, attrs, defStyleAttr), InternalPageCallbacks {
+
     val TAG = "CCS"
+
+    /** Details about the currently expanded item. */
+    var expandedItem: ExpandedItem = ExpandedItem.EMPTY
+
+    lateinit var page: ExpandablePageLayout
+        private set
+
+    /**
+     * Set the [ExpandablePageLayout] to be used with this list.
+     * The pull-to-collapse threshold is set to 85% of the standard toolbar height.
+     */
+    fun setExpandablePage(page: ExpandablePageLayout) {
+        setExpandablePage(page, (Views.toolbarHeight(context) * 0.85F).toInt())
+    }
+
+    /**
+     * Set the [ExpandablePageLayout] to be used with this list.
+     * @param collapseDistanceThreshold Minimum Y-distance the page has to be pulled before it's eligible for collapse.
+     */
+    fun setExpandablePage(page: ExpandablePageLayout, @Px collapseDistanceThreshold: Int) {
+        setExpandablePageInternal(page)
+        page.pullToCollapseThresholdDistance = collapseDistanceThreshold
+    }
+
+    /**
+     * @param itemId ID of the item to expand.
+     */
+    @JvmOverloads
+    fun expandItem(itemView: View) {
+
+        if (isLaidOut.not()) {
+            post { expandItem(itemView) }
+            return
+        }
+
+        if (page.isExpandedOrExpanding) {
+            return
+        }
+
+        val itemRect = Rect(
+            left + itemView.left,
+            top + itemView.top,
+            width - right + itemView.right,
+            top + itemView.bottom
+        )
+
+        expandedItem = ExpandedItem(itemRect)
+        page.expand(expandedItem)
+    }
+
+    fun collapse() {
+        if (page.isCollapsedOrCollapsing.not()) {
+            page.collapse(expandedItem)
+        }
+    }
+
+    private fun setExpandablePageInternal(expandablePage: ExpandablePageLayout) {
+        page = expandablePage
+        expandablePage.internalStateCallbacksForRecyclerView = this
+    }
 
     init {
         orientation = VERTICAL
@@ -85,6 +149,33 @@ class CollapsingCardStack @JvmOverloads constructor(
         gestureDetector.onTouchEvent(event)
     }
 
+    override fun onViewAdded(child: View?) {
+        super.onViewAdded(child)
+        child?.setOnClickListener {
+            expandItem(it)
+        }
+    }
+
+    override fun onPageAboutToExpand() {
+    }
+
+    override fun onPageFullyCovered() {
+    }
+
+    override fun onPageAboutToCollapse() {
+    }
+
+    override fun onPageCollapsed() {
+    }
+
+    override fun onPagePull(deltaY: Float) {
+    }
+
+    override fun onPageRelease(collapseEligible: Boolean) {
+        if (collapseEligible) {
+            collapse()
+        }
+    }
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()

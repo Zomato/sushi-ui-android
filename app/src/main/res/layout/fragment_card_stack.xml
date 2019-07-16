@@ -6,9 +6,17 @@
     tools:context=".fragments.CardStackFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="20dp"
         android:id="@+id/rvSample"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <com.zomato.sushilib.organisms.stacks.page.ExpandablePageLayout
+        android:id="@+id/expandable_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/sushi_blue_100"
+        android:translationZ="12dp">
+
+    </com.zomato.sushilib.organisms.stacks.page.ExpandablePageLayout>
 
 </FrameLayout>

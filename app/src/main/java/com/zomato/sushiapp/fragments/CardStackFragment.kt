@@ -85,6 +85,7 @@ class CardStackFragment : Fragment() {
                             )
                         }
 
+                        setExpandablePage(view.expandable_page)
                     })
                 }
 
