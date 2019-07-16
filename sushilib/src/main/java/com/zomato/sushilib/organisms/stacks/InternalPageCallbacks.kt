@@ -17,7 +17,7 @@ internal interface InternalPageCallbacks {
     fun onPageCollapsed()
 
     /** Page is being pulled. Sync the scroll with the list. */
-    fun onPagePull(deltaY: Float)
+    fun onPagePull(deltaY: Float, translationY: Float)
 
     /** Called when this page was released after being pulled. */
     fun onPageRelease(collapseEligible: Boolean)
@@ -32,7 +32,7 @@ internal interface InternalPageCallbacks {
 
         override fun onPageCollapsed() {}
 
-        override fun onPagePull(deltaY: Float) {}
+        override fun onPagePull(deltaY: Float, translationY: Float) {}
 
         override fun onPageRelease(collapseEligible: Boolean) {}
     }

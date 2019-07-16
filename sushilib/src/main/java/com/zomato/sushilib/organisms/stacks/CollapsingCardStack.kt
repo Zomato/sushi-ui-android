@@ -8,6 +8,7 @@ import android.support.annotation.Px
 import android.support.v4.widget.NestedScrollView
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
+import android.util.Log
 import android.view.*
 import android.view.View.OnTouchListener
 import android.widget.LinearLayout
@@ -38,7 +39,7 @@ class CollapsingCardStack @JvmOverloads constructor(
      * The pull-to-collapse threshold is set to 75% of the standard toolbar height.
      */
     fun setExpandablePage(page: ExpandablePageLayout) {
-        setExpandablePage(page, (Views.toolbarHeight(context) * 0.75F).toInt())
+        setExpandablePage(page, (Views.toolbarHeight(context) * 0.8F).toInt())
     }
 
     /**
@@ -174,7 +175,8 @@ class CollapsingCardStack @JvmOverloads constructor(
     override fun onPageCollapsed() {
     }
 
-    override fun onPagePull(deltaY: Float) {
+    override fun onPagePull(deltaY: Float, translationY: Float) {
+        page.alpha = 1f - (translationY / page.height)
     }
 
     override fun onPageRelease(collapseEligible: Boolean) {

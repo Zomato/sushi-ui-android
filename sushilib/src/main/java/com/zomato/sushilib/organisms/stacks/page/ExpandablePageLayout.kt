@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
@@ -17,9 +18,10 @@ open class ExpandablePageLayout @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null
 ) : BaseExpandablePageLayout(context, attrs), PullToCollapseListener.OnPullListener {
+    val TAG = "EXPAGE"
 
     /** Alpha of this page when it's collapsed. */
-    internal var collapsedAlpha = 0F
+    internal var collapsedAlpha = 0.5F
 
     var pullToCollapseInterceptor: OnPullToCollapseInterceptor = IGNORE_ALL_PULL_TO_COLLAPSE_INTERCEPTOR
 
@@ -40,6 +42,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
 
     private var nestedPage: ExpandablePageLayout? = null
     private val expandedAlpha = 1F
+    private val threshHoldAlpha = 0.8F
     private var isFullyCoveredByNestedPage = false
 
     val isExpanded: Boolean
@@ -145,7 +148,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
         collapseEligible: Boolean
     ) {
         // Sync the positions of the list items with this page.
-        dispatchOnPagePullCallbacks(deltaY)
+        dispatchOnPagePullCallbacks(deltaY, currentTranslationY)
     }
 
     override fun onRelease(collapseEligible: Boolean) {
@@ -275,7 +278,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
             visibility = View.VISIBLE
         }
 
-        alpha = if (expand) collapsedAlpha else expandedAlpha
+        alpha = if (expand) collapsedAlpha else threshHoldAlpha
         stopAnyOngoingPageAnimation()
         animate()
             .withLayer()
@@ -321,9 +324,9 @@ open class ExpandablePageLayout @JvmOverloads constructor(
         }
     }
 
-    private fun dispatchOnPagePullCallbacks(deltaY: Float) {
-        internalStateCallbacksForNestedPage.onPagePull(deltaY)
-        internalStateCallbacksForRecyclerView.onPagePull(deltaY)
+    private fun dispatchOnPagePullCallbacks(deltaY: Float, translationY: Float) {
+        internalStateCallbacksForNestedPage.onPagePull(deltaY, translationY)
+        internalStateCallbacksForRecyclerView.onPagePull(deltaY, translationY)
     }
 
     private fun dispatchOnPageReleaseCallback(collapseEligible: Boolean) {
