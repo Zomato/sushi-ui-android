@@ -16,6 +16,7 @@ import android.widget.LinearLayout
 import com.zomato.sushiapp.R
 import com.zomato.sushilib.organisms.stacks.CollapsingCardStack
 import com.zomato.sushilib.utils.dimens.DimenUtils
+import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 import kotlinx.android.synthetic.main.fragment_card_stack.view.*
 
 /**
@@ -69,8 +70,8 @@ class CardStackFragment : Fragment() {
                                     parent,
                                     false
                                 ) as CardView).apply {
-                                    cardElevation = it * DimenUtils.dp2px(context, 4f)
-                                    radius = DimenUtils.dp2px(context, 6f)
+                                    cardElevation = it * dp2px(context, 4f)
+                                    radius = dp2px(context, 6f)
 
                                     setBackgroundColor(
                                         when (it) {

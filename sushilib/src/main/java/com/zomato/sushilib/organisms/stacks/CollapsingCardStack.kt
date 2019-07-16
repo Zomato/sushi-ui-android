@@ -1,19 +1,22 @@
 package com.zomato.sushilib.organisms.stacks
 
 import android.content.Context
+import android.graphics.Color
 import android.graphics.Rect
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Handler
 import android.support.annotation.Px
+import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.support.v4.widget.NestedScrollView
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
-import android.util.Log
 import android.view.*
 import android.view.View.OnTouchListener
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import com.zomato.sushilib.organisms.stacks.page.ExpandablePageLayout
+import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 
 /**
  * created by championswimmer on 2019-07-15
@@ -73,7 +76,10 @@ class CollapsingCardStack @JvmOverloads constructor(
             top + itemView.bottom
         )
 
-        expandedItem = ExpandedItem(itemRect)
+        expandedItem = ExpandedItem(itemRect, itemView)
+        page.setBackgroundColor(
+            (itemView.background as ColorDrawable).color
+        )
         page.expand(expandedItem)
     }
 
@@ -164,12 +170,51 @@ class CollapsingCardStack @JvmOverloads constructor(
     }
 
     override fun onPageAboutToExpand() {
+        animate()
+            .translationYBy(200f)
+            .setDuration(250L)
+            .setInterpolator(FastOutSlowInInterpolator())
+            .start()
+        this.apply {
+            animate()
+                .alpha(0f)
+                .setDuration(250L)
+                .setInterpolator(FastOutSlowInInterpolator())
+                .start()
+        }
+        expandedItem.itemViewComingFrom?.apply {
+            animate()
+                .translationYBy(-400f)
+                .setDuration(250L)
+                .setInterpolator(FastOutSlowInInterpolator())
+                .start()
+        }
     }
 
     override fun onPageFullyCovered() {
     }
 
     override fun onPageAboutToCollapse() {
+        animate()
+            .translationY(0f)
+            .setDuration(250L)
+            .setInterpolator(FastOutSlowInInterpolator())
+            .start()
+
+        this.apply {
+            animate()
+                .alpha(1f)
+                .setDuration(250L)
+                .setInterpolator(FastOutSlowInInterpolator())
+                .start()
+        }
+        expandedItem.itemViewComingFrom?.apply {
+            animate()
+                .translationYBy(400f)
+                .setDuration(250L)
+                .setInterpolator(FastOutSlowInInterpolator())
+                .start()
+        }
     }
 
     override fun onPageCollapsed() {
