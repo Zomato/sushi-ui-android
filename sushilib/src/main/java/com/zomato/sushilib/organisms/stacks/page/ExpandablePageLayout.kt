@@ -23,8 +23,6 @@ open class ExpandablePageLayout @JvmOverloads constructor(
     /** Alpha of this page when it's collapsed. */
     internal var collapsedAlpha = 0F
 
-    var pullToCollapseInterceptor: OnPullToCollapseInterceptor = IGNORE_ALL_PULL_TO_COLLAPSE_INTERCEPTOR
-
     /** Minimum Y-distance the page has to be pulled before it's eligible for collapse. */
     var pullToCollapseThresholdDistance: Int
         get() = pullToCollapseListener.collapseDistanceThreshold
@@ -96,7 +94,6 @@ open class ExpandablePageLayout @JvmOverloads constructor(
     }
 
     override fun onDetachedFromWindow() {
-        pullToCollapseInterceptor = IGNORE_ALL_PULL_TO_COLLAPSE_INTERCEPTOR
         nestedPage = null
         internalStateCallbacksForNestedPage = InternalPageCallbacks.NoOp()
         internalStateCallbacksForRecyclerView = InternalPageCallbacks.NoOp()
@@ -445,7 +442,6 @@ open class ExpandablePageLayout @JvmOverloads constructor(
             nestedPageCopy.handleOnPullToCollapseIntercept(event, downX, downY, deltaUpwardSwipe)
             true
         } else run {
-            pullToCollapseInterceptor(downX, downY, deltaUpwardSwipe)
             false
         }
     }
