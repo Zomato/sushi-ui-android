@@ -10,7 +10,7 @@ package com.zomato.sushilib.organisms.stacks.page
  * ```
  * val directionInt = if (upwardPull) +1 else -1
  * val canScrollFurther = scrollableChild.canScrollVertically(directionInt)
- * return if (canScrollFurther) InterceptResult.INTERCEPTED else InterceptResult.IGNORED
+ * return if (canScrollFurther) true else false
  * ```
  *
  * @param downX      X-coordinate from where the gesture started, relative to the screen window.
@@ -19,6 +19,6 @@ package com.zomato.sushilib.organisms.stacks.page
  *
  * @return True to consume this touch event. False otherwise.
  */
-typealias OnPullToCollapseInterceptor = (downX: Float, downY: Float, upwardPull: Boolean) -> InterceptResult
+typealias OnPullToCollapseInterceptor = (downX: Float, downY: Float, upwardPull: Boolean) -> Boolean
 
-val IGNORE_ALL_PULL_TO_COLLAPSE_INTERCEPTOR: OnPullToCollapseInterceptor = { _, _, _ -> InterceptResult.IGNORED }
+val IGNORE_ALL_PULL_TO_COLLAPSE_INTERCEPTOR: OnPullToCollapseInterceptor = { _, _, _ -> false }

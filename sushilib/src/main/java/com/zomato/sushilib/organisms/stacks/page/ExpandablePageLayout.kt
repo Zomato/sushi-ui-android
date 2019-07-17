@@ -423,13 +423,15 @@ open class ExpandablePageLayout @JvmOverloads constructor(
     /**
      * Offer a pull-to-collapse to a listener if it wants to block it. If a nested page is registered
      * and the touch was made on it, block it right away.
+     *
+     * @return true if intercepted, else false
      */
     internal fun handleOnPullToCollapseIntercept(
         event: MotionEvent,
         downX: Float,
         downY: Float,
         deltaUpwardSwipe: Boolean
-    ): InterceptResult {
+    ): Boolean {
         val nestedPageCopy = nestedPage
 
         return if (nestedPageCopy != null
@@ -441,10 +443,10 @@ open class ExpandablePageLayout @JvmOverloads constructor(
             // in the future to make this smarter.
             // TODO: 20/03/17 Do we even need to call the nested page's listener?
             nestedPageCopy.handleOnPullToCollapseIntercept(event, downX, downY, deltaUpwardSwipe)
-            InterceptResult.INTERCEPTED
-
+            true
         } else run {
             pullToCollapseInterceptor(downX, downY, deltaUpwardSwipe)
+            false
         }
     }
 

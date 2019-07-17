@@ -117,7 +117,7 @@ class PullToCollapseListener(context: Context, private val expandablePage: Expan
                 if (interceptedUntilNextGesture == null) {
                     val interceptResult =
                         expandablePage.handleOnPullToCollapseIntercept(event, downX, downY, deltaUpwardSwipe)
-                    interceptedUntilNextGesture = interceptResult == InterceptResult.INTERCEPTED
+                    interceptedUntilNextGesture = interceptResult == true
 
                     if (interceptedUntilNextGesture!!) {
                         return false
