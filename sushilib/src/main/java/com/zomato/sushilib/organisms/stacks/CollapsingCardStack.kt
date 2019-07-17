@@ -17,6 +17,7 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import com.zomato.sushilib.organisms.stacks.page.ExpandablePageLayout
 import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
+import com.zomato.sushilib.utils.view.ViewUtils
 
 /**
  * created by championswimmer on 2019-07-15
@@ -42,7 +43,7 @@ class CollapsingCardStack @JvmOverloads constructor(
      * The pull-to-collapse threshold is set to 75% of the standard toolbar height.
      */
     fun setExpandablePage(page: ExpandablePageLayout) {
-        setExpandablePage(page, (Views.toolbarHeight(context) * 0.8F).toInt())
+        setExpandablePage(page, (ViewUtils.run { toolbarHeight * 0.8F }).toInt())
     }
 
     /**

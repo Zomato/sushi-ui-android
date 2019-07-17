@@ -4,14 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import com.zomato.sushilib.organisms.stacks.ExpandedItem
 import com.zomato.sushilib.organisms.stacks.InternalPageCallbacks
-import com.zomato.sushilib.organisms.stacks.executeOnMeasure
-import com.zomato.sushilib.organisms.stacks.withEndAction
+import com.zomato.sushilib.utils.view.ViewUtils.withEndAction
+import com.zomato.sushilib.utils.view.ViewUtils
 import java.lang.reflect.Method
 
 open class ExpandablePageLayout @JvmOverloads constructor(
@@ -213,11 +212,13 @@ open class ExpandablePageLayout @JvmOverloads constructor(
         visibility = View.VISIBLE
         alpha = expandedAlpha
 
-        executeOnMeasure {
-            // Cover the whole screen right away. Don't need any animations.
-            alignPageToCoverScreen()
-            dispatchOnPageAboutToExpandCallback(0)
-            dispatchOnPageFullyExpandedCallback()
+        ViewUtils.apply {
+            executeOnMeasure {
+                // Cover the whole screen right away. Don't need any animations.
+                alignPageToCoverScreen()
+                dispatchOnPageAboutToExpandCallback(0)
+                dispatchOnPageFullyExpandedCallback()
+            }
         }
     }
 
