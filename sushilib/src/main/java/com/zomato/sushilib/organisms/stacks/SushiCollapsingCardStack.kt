@@ -40,36 +40,6 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
         orientation = VERTICAL
     }
 
-    /**
-     * Moves the cards downwards when this view is scrolled up (and vice versa)
-     * to provide the stacking up of cards effect.
-     *
-     * @param parent The container inside which the [SushiCollapsingCardStack] is
-     */
-    fun setAdjustedPosition(parent: ViewGroup) {
-        val screenPos = IntArray(2)
-        val rvScreenPos = IntArray(2)
-        parent.getLocationOnScreen(rvScreenPos)
-        getLocationOnScreen(screenPos)
-
-        if (screenPos[1] < rvScreenPos[1]) {
-            val gap = rvScreenPos[1] - screenPos[1]
-
-            for (i in 0 until childCount) {
-                val transY = ((gap.toFloat() / (childCount - 1)) * (childCount - i - 1))
-
-                if (gap / childCount < getChildAt(i).height * 0.5) {
-                    getChildAt(i).translationY = transY
-                }
-            }
-
-        } else {
-            for (i in 0 until childCount) {
-                getChildAt(i).translationY = 0f
-            }
-        }
-    }
-
     private var cardStackAdapter: Adapter? = null
     private var parentView: ViewGroup? = null
     private val rvScrollListener = object : RecyclerView.OnScrollListener() {
@@ -138,6 +108,36 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
                         }
                     }
                 }
+            }
+        }
+    }
+
+    /**
+     * Moves the cards downwards when this view is scrolled up (and vice versa)
+     * to provide the stacking up of cards effect.
+     *
+     * @param parent The container inside which the [SushiCollapsingCardStack] is
+     */
+    private fun setAdjustedPosition(parent: ViewGroup) {
+        val screenPos = IntArray(2)
+        val rvScreenPos = IntArray(2)
+        parent.getLocationOnScreen(rvScreenPos)
+        getLocationOnScreen(screenPos)
+
+        if (screenPos[1] < rvScreenPos[1]) {
+            val gap = rvScreenPos[1] - screenPos[1]
+
+            for (i in 0 until childCount) {
+                val transY = ((gap.toFloat() / (childCount - 1)) * (childCount - i - 1))
+
+                if (gap / childCount < getChildAt(i).height * 0.5) {
+                    getChildAt(i).translationY = transY
+                }
+            }
+
+        } else {
+            for (i in 0 until childCount) {
+                getChildAt(i).translationY = 0f
             }
         }
     }

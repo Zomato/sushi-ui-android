@@ -6,10 +6,11 @@ import android.graphics.drawable.ColorDrawable
 import android.support.annotation.Px
 import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.util.AttributeSet
-import android.view.*
-import com.zomato.sushilib.organisms.stacks.SushiCollapsingCardStack
+import android.view.View
+import com.zomato.sushiapp.DemoPullCollapsibleActivity
 import com.zomato.sushilib.organisms.stacks.ExpandedItem
 import com.zomato.sushilib.organisms.stacks.InternalPageCallbacks
+import com.zomato.sushilib.organisms.stacks.SushiCollapsingCardStack
 import com.zomato.sushilib.organisms.stacks.page.ExpandablePageLayout
 import com.zomato.sushilib.utils.view.ViewUtils
 
@@ -37,7 +38,7 @@ class DemoCollapsingCardStack @JvmOverloads constructor(
      * The pull-to-collapse threshold is set to 75% of the standard toolbar height.
      */
     fun setExpandablePage(page: ExpandablePageLayout) {
-        setExpandablePage(page, (ViewUtils.run { toolbarHeight * 0.8F }).toInt())
+        setExpandablePage(page, (ViewUtils.run { toolbarHeight(context) * 0.8F }).toInt())
     }
 
     /**
@@ -66,16 +67,17 @@ class DemoCollapsingCardStack @JvmOverloads constructor(
 
         val itemRect = Rect(
             left + itemView.left,
-            top + itemView.top,
+            top + itemView.top + ViewUtils.toolbarHeight(context),
             width - right + itemView.right,
-            top + itemView.bottom
+            top + itemView.bottom + ViewUtils.toolbarHeight(context)
         )
 
         expandedItem = ExpandedItem(itemRect, itemView)
         page.setBackgroundColor(
             (itemView.background as ColorDrawable).color
         )
-        page.expand(expandedItem)
+//        page.expand(expandedItem)
+        DemoPullCollapsibleActivity.start(context, expandedItem.expandedItemLocationRect)
     }
 
     fun collapse() {

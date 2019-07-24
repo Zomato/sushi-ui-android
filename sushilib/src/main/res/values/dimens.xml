@@ -37,4 +37,6 @@
 
     <dimen name="sushi_action_item_size">48dp</dimen>
     <dimen name="sushi_action_item_drawable_size">20dp</dimen>
+
+    <dimen name="pull_collapsible_activity_elevation">40dp</dimen>
 </resources>

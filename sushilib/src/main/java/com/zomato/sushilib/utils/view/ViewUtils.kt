@@ -80,8 +80,7 @@ object ViewUtils {
         })
     }
 
-
-    val View.toolbarHeight get(): Int {
+    fun toolbarHeight(context: Context): Int {
         val typedArray = context.obtainStyledAttributes(intArrayOf(android.R.attr.actionBarSize))
         val standardToolbarHeight = typedArray.getDimensionPixelSize(0, 0)
         typedArray.recycle()
