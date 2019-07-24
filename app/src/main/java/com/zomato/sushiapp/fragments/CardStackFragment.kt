@@ -15,7 +15,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.zomato.sushiapp.R
 import com.zomato.sushiapp.viewimpls.DemoCollapsingCardStack
-import com.zomato.sushilib.organisms.stacks.CollapsingCardStack
+import com.zomato.sushilib.organisms.stacks.SushiCollapsingCardStack
 import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 import kotlinx.android.synthetic.main.fragment_card_stack.view.*
 
@@ -37,7 +37,7 @@ class CardStackFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val cardStackAdapter = object : CollapsingCardStack.Adapter {
+        val cardStackAdapter = object : SushiCollapsingCardStack.Adapter {
             override fun getItemCount(): Int = 5
 
             override fun getView(parent: ViewGroup, position: Int): View {

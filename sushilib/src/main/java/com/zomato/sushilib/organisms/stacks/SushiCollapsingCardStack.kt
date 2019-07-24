@@ -19,20 +19,20 @@ import android.widget.ScrollView
  * grandchild of [ScrollView] / [NestedScrollView]
  * <pre>
  *     RecyclerView
- *     └── CollapsingCardStack
+ *     └── SushiCollapsingCardStack
  *
  *     or
  *
  *     ScrollView
  *     └── <T: ViewGroup>
- *          └── CollapsingCardStack
+ *          └── SushiCollapsingCardStack
  *
  * </pre>
  *
  * created by championswimmer on 2019-07-24
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-open class CollapsingCardStack @JvmOverloads constructor(
+open class SushiCollapsingCardStack @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
@@ -44,7 +44,7 @@ open class CollapsingCardStack @JvmOverloads constructor(
      * Moves the cards downwards when this view is scrolled up (and vice versa)
      * to provide the stacking up of cards effect.
      *
-     * @param parent The container inside which the [CollapsingCardStack] is
+     * @param parent The container inside which the [SushiCollapsingCardStack] is
      */
     fun setAdjustedPosition(parent: ViewGroup) {
         val screenPos = IntArray(2)
@@ -87,7 +87,7 @@ open class CollapsingCardStack @JvmOverloads constructor(
         cardStackAdapter?.apply {
             removeAllViews()
             for (i in 0 until getItemCount()) {
-                addView(getView(this@CollapsingCardStack, i))
+                addView(getView(this@SushiCollapsingCardStack, i))
             }
         }
     }

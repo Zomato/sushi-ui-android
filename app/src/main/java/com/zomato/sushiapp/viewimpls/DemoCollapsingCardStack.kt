@@ -7,7 +7,7 @@ import android.support.annotation.Px
 import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.util.AttributeSet
 import android.view.*
-import com.zomato.sushilib.organisms.stacks.CollapsingCardStack
+import com.zomato.sushilib.organisms.stacks.SushiCollapsingCardStack
 import com.zomato.sushilib.organisms.stacks.ExpandedItem
 import com.zomato.sushilib.organisms.stacks.InternalPageCallbacks
 import com.zomato.sushilib.organisms.stacks.page.ExpandablePageLayout
@@ -22,7 +22,7 @@ class DemoCollapsingCardStack @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
     defStyleRes: Int = 0
-) : CollapsingCardStack(context, attrs, defStyleAttr),
+) : SushiCollapsingCardStack(context, attrs, defStyleAttr),
     InternalPageCallbacks by InternalPageCallbacks.NoOp() {
 
     /** Details about the currently expanded item. */
