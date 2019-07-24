@@ -33,6 +33,7 @@ public @interface ColorName {
 
     // Secondary Colors
     String INDIGO = "indigo";
+    String CIDER = "cider";
     String TEAL = "teal";
     String ORANGE = "orange";
     String BROWN = "brown";
