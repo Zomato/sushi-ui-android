@@ -1,6 +1,6 @@
 package com.zomato.sushilib.organisms.stacks
 
-internal interface InternalPageCallbacks {
+interface InternalPageCallbacks {
 
     fun onPageAboutToExpand()
 

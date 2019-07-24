@@ -14,8 +14,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.zomato.sushiapp.R
+import com.zomato.sushiapp.viewimpls.DemoCollapsingCardStack
 import com.zomato.sushilib.organisms.stacks.CollapsingCardStack
-import com.zomato.sushilib.utils.dimens.DimenUtils
 import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 import kotlinx.android.synthetic.main.fragment_card_stack.view.*
 
@@ -37,6 +37,34 @@ class CardStackFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val cardStackAdapter = object : CollapsingCardStack.Adapter {
+            override fun getItemCount(): Int = 5
+
+            override fun getView(parent: ViewGroup, position: Int): View {
+                val cardView = (layoutInflater.inflate(
+                    R.layout.list_item_stackable_card,
+                    parent,
+                    false
+                ) as CardView)
+
+                cardView.apply {
+                    cardElevation = position * dp2px(context, 4f)
+                    radius = dp2px(context, 6f)
+
+                    setBackgroundColor(
+                        when (position) {
+                            0 -> ContextCompat.getColor(context, R.color.sushi_blue_100)
+                            1 -> ContextCompat.getColor(context, R.color.sushi_red_100)
+                            2 -> ContextCompat.getColor(context, R.color.sushi_green_100)
+                            3 -> ContextCompat.getColor(context, R.color.sushi_yellow_200)
+                            else -> ContextCompat.getColor(context, R.color.sushi_indigo_100)
+                        }
+                    )
+                }
+                return cardView
+            }
+
+        }
         view.rvSample.layoutManager = LinearLayoutManager(view.context)
         view.rvSample.adapter = object : ListAdapter<Any, DummyVH>(
             object : DiffUtil.ItemCallback<Any>() {
@@ -57,48 +85,23 @@ class CardStackFragment : Fragment() {
                     )
 
                 } else {
-                    return DummyVH(CollapsingCardStack(parent.context).apply {
+                    return DummyVH(DemoCollapsingCardStack(parent.context).apply {
                         layoutParams = LinearLayout.LayoutParams(
                             ViewGroup.LayoutParams.MATCH_PARENT,
                             ViewGroup.LayoutParams.WRAP_CONTENT
                         )
-                        repeat(5) {
-
-                            addView(
-                                (layoutInflater.inflate(
-                                    R.layout.list_item_stackable_card,
-                                    parent,
-                                    false
-                                ) as CardView).apply {
-                                    cardElevation = it * dp2px(context, 4f)
-                                    radius = dp2px(context, 6f)
-
-                                    setBackgroundColor(
-                                        when (it) {
-                                            0 -> ContextCompat.getColor(context, R.color.sushi_blue_100)
-                                            1 -> ContextCompat.getColor(context, R.color.sushi_red_100)
-                                            2 -> ContextCompat.getColor(context, R.color.sushi_green_100)
-                                            3 -> ContextCompat.getColor(context, R.color.sushi_yellow_200)
-                                            else -> ContextCompat.getColor(context, R.color.sushi_indigo_100)
-                                        }
-                                    )
-                                }
-                            )
-                        }
-
+                        setAdapter(cardStackAdapter)
                         setExpandablePage(view.expandable_page)
                     })
                 }
 
             }
 
-            override fun getItemViewType(position: Int): Int {
-                return if (position == 1) {
-                    0
-                } else {
-                    1
+            override fun getItemViewType(position: Int): Int =
+                when (position) {
+                    1 -> 0
+                    else -> 1
                 }
-            }
 
             override fun onBindViewHolder(viewHolder: DummyVH, pos: Int) {
                 // NADA

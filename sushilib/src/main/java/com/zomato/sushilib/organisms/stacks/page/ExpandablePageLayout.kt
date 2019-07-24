@@ -33,7 +33,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
     val pullToCollapseListener: PullToCollapseListener
     lateinit var currentState: PageState
 
-    internal var internalStateCallbacksForRecyclerView: InternalPageCallbacks = InternalPageCallbacks.NoOp()
+    var internalStateCallbacksForRecyclerView: InternalPageCallbacks = InternalPageCallbacks.NoOp()
     private var internalStateCallbacksForNestedPage: InternalPageCallbacks = InternalPageCallbacks.NoOp()
     private var stateChangeCallbacks: MutableList<PageStateChangeCallbacks> = ArrayList(4)
 
@@ -181,7 +181,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
     /**
      * Expands this page (with animation) so that it fills the whole screen.
      */
-    internal fun expand(expandedItem: ExpandedItem) {
+    fun expand(expandedItem: ExpandedItem) {
         if (isLaidOut.not() && visibility != View.GONE) {
             throw IllegalAccessError("Width / Height not available to expand")
         }
@@ -225,7 +225,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
     /**
      * Collapses this page, back to its original state.
      */
-    internal fun collapse(expandedItem: ExpandedItem) {
+    fun collapse(expandedItem: ExpandedItem) {
         if (currentState == PageState.COLLAPSED || currentState == PageState.COLLAPSING) {
             return
         }

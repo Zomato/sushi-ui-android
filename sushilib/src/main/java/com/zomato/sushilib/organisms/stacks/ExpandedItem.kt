@@ -16,6 +16,6 @@ data class ExpandedItem(
     }
 
     companion object {
-        internal val EMPTY = ExpandedItem(Rect(0, 0, 0, 0), null)
+        val EMPTY = ExpandedItem(Rect(0, 0, 0, 0), null)
     }
 }
