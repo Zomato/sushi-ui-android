@@ -4,6 +4,8 @@ import android.content.Context
 import android.graphics.Rect
 import android.util.AttributeSet
 import com.zomato.sushilib.organisms.stacks.ExpandedItem
+import com.zomato.sushilib.organisms.stacks.InternalPageCallbacks
+import com.zomato.sushilib.organisms.stacks.SushiCollapsingCardStack
 
 class StandaloneExpandablePageLayout(
     context: Context,
@@ -28,8 +30,6 @@ class StandaloneExpandablePageLayout(
     internal lateinit var callbacks: Callbacks
 
     init {
-        collapsedAlpha = 1F
-        animationDurationMillis = 300
 
         addOnPullListener(object : PullToCollapseListener.OnPullListener {
             override fun onPull(
@@ -65,6 +65,10 @@ class StandaloneExpandablePageLayout(
             }
 
         })
+
+        (SushiCollapsingCardStack.instance as? InternalPageCallbacks)?.apply {
+            internalStateCallbacksForRecyclerView = this
+        }
     }
 
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {

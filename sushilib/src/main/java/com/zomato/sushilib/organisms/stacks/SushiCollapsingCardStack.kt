@@ -36,8 +36,13 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
+    companion object {
+        var instance: SushiCollapsingCardStack? = null
+    }
+
     init {
         orientation = VERTICAL
+        instance = this
     }
 
     private var cardStackAdapter: Adapter? = null
