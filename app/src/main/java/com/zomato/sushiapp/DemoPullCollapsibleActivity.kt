@@ -5,12 +5,12 @@ import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
 import android.widget.LinearLayout
-import com.zomato.sushilib.organisms.stacks.page.PullCollapsibleActivity
+import com.zomato.sushilib.organisms.stacks.page.SushiPullCollapsibleActivity
 
 /**
  * Created by prempal on 2019-07-24.
  */
-class DemoPullCollapsibleActivity : PullCollapsibleActivity() {
+class DemoPullCollapsibleActivity : SushiPullCollapsibleActivity() {
 
     companion object {
         fun start(context: Context, expandFromRect: Rect) {
@@ -26,7 +26,6 @@ class DemoPullCollapsibleActivity : PullCollapsibleActivity() {
             setBackgroundColor(resources.getColor(R.color.sushi_yellow_100))
         }
         setContentView(layout)
-        expandFrom(intent.getParcelableExtra(EXTRA_EXPAND_FROM_RECT))
     }
 
 }
