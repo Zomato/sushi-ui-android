@@ -6,6 +6,7 @@ import android.graphics.Rect
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
 import android.util.TypedValue
 import android.view.View
@@ -13,7 +14,6 @@ import android.view.ViewGroup
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.view.ViewUtils
 import com.zomato.sushilib.utils.view.ViewUtils.executeOnMeasure
-
 
 /**
  * created by championswimmer on 2019-07-26
@@ -32,6 +32,18 @@ internal class PullCollapsibleActivityHelper(val activity: Activity) {
 
     private var bypassHandleFinish = false
 
+    fun onPreCreate(@StyleRes translucentTheme: Int) {
+        setPullToCollapseEnabled(
+            activity.intent.getBooleanExtra(
+                SushiPullCollapsibleActivity.EXTRA_ENABLE_PULL_COLLAPSE,
+                false
+            )
+        )
+        if (pullCollapsibleEnabled) {
+            activity.setTheme(translucentTheme)
+        }
+    }
+
     fun onCreate(savedInstanceState: Bundle?) {
         activity.apply {
             wasActivityRecreated = savedInstanceState == null
@@ -42,7 +54,6 @@ internal class PullCollapsibleActivityHelper(val activity: Activity) {
 
             standardToolbarHeight = ViewUtils.toolbarHeight(this)
         }
-
     }
 
     fun onStart() {
@@ -64,21 +75,31 @@ internal class PullCollapsibleActivityHelper(val activity: Activity) {
     }
 
     public fun expand() {
+        if (!pullCollapsibleEnabled) {
+            expandCalled = true
+            return
+        }
+
         activity.apply {
             intent.getParcelableExtra<Rect>(SushiPullCollapsibleActivity.EXTRA_EXPAND_FROM_RECT)?.let {
                 expandFrom(it)
             } ?: expandFromBottom()
         }
-
     }
 
-    fun setContentView(layoutResID: Int) {
+    fun setContentView(layoutResID: Int): View? {
+        if (!pullCollapsibleEnabled) {
+            return null
+        }
         val parent = activity.findViewById<ViewGroup>(android.R.id.content)
         val view = activity.layoutInflater.inflate(layoutResID, parent, false)
-        setContentView(view)
+        return setContentView(view)
     }
 
     fun setContentView(view: View): View {
+        if (!pullCollapsibleEnabled) {
+            return view
+        }
         activityPageLayout = wrapInExpandablePage(view)
         return activityPageLayout
     }
@@ -124,7 +145,6 @@ internal class PullCollapsibleActivityHelper(val activity: Activity) {
                         overridePendingTransition(0, 0)
                     }
                 }
-
             } else {
                 pageLayout.pullToCollapseEnabled = false
                 pageLayout.expandImmediately()
@@ -133,7 +153,6 @@ internal class PullCollapsibleActivityHelper(val activity: Activity) {
             pageLayout.addView(view)
             return pageLayout
         }
-
     }
 
     protected fun expandFromTop() {
@@ -181,5 +200,4 @@ internal class PullCollapsibleActivityHelper(val activity: Activity) {
             else -> ContextCompat.getDrawable(activity, attributes.resourceId)!!
         }
     }
-
 }

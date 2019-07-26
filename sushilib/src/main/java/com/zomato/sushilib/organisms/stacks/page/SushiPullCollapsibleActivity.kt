@@ -1,9 +1,11 @@
 package com.zomato.sushilib.organisms.stacks.page
 
 import android.os.Bundle
+import android.support.annotation.StyleRes
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewGroup
+import com.zomato.sushilib.R
 
 /**
  * An Activity that can be dismissed by pulling it vertically.
@@ -16,11 +18,16 @@ open class SushiPullCollapsibleActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_EXPAND_FROM_RECT = "expand_from_rect"
+        const val EXTRA_ENABLE_PULL_COLLAPSE = "enable_pull_collapse"
     }
 
     private val pcaHelper = PullCollapsibleActivityHelper(this)
 
+    @StyleRes
+    open fun getTranslucentTheme(): Int = R.style.Theme_AppCompat_Dialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        pcaHelper.onPreCreate(getTranslucentTheme())
         super.onCreate(savedInstanceState)
         pcaHelper.onCreate(savedInstanceState)
     }
@@ -31,7 +38,10 @@ open class SushiPullCollapsibleActivity : AppCompatActivity() {
     }
 
     override fun setContentView(layoutResID: Int) {
-        pcaHelper.setContentView(layoutResID)
+        pcaHelper.setContentView(layoutResID)?.let {
+            super.setContentView(it)
+        } ?: super.setContentView(layoutResID)
+        pcaHelper.expand()
     }
 
     override fun setContentView(view: View) {
@@ -43,7 +53,6 @@ open class SushiPullCollapsibleActivity : AppCompatActivity() {
         super.setContentView(pcaHelper.setContentView(view), params)
         pcaHelper.expand()
     }
-
 
     override fun finish() {
         if (!pcaHelper.handleFinish()) {
