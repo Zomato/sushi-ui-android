@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.zomato.sushilib.organisms.stacks.ExpandedItem
 import com.zomato.sushilib.organisms.stacks.InternalPageCallbacks
+import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 import com.zomato.sushilib.utils.view.ViewUtils.withEndAction
 import com.zomato.sushilib.utils.view.ViewUtils
 import java.lang.reflect.Method
@@ -34,13 +35,10 @@ open class ExpandablePageLayout @JvmOverloads constructor(
     lateinit var currentState: PageState
 
     var internalStateCallbacksForRecyclerView: InternalPageCallbacks = InternalPageCallbacks.NoOp()
-    private var internalStateCallbacksForNestedPage: InternalPageCallbacks = InternalPageCallbacks.NoOp()
     private var stateChangeCallbacks: MutableList<PageStateChangeCallbacks> = ArrayList(4)
 
-    private var nestedPage: ExpandablePageLayout? = null
     private val expandedAlpha = 1F
     private val threshHoldAlpha = 0.8F
-    private var isFullyCoveredByNestedPage = false
 
     val isExpanded: Boolean
         get() = currentState == PageState.EXPANDED
@@ -93,8 +91,6 @@ open class ExpandablePageLayout @JvmOverloads constructor(
     }
 
     override fun onDetachedFromWindow() {
-        nestedPage = null
-        internalStateCallbacksForNestedPage = InternalPageCallbacks.NoOp()
         internalStateCallbacksForRecyclerView = InternalPageCallbacks.NoOp()
         stateChangeCallbacks.clear()
         super.onDetachedFromWindow()
@@ -315,25 +311,23 @@ open class ExpandablePageLayout @JvmOverloads constructor(
 
     override fun drawChild(canvas: Canvas, child: View, drawingTime: Long): Boolean {
         // When this page is fully covered by a nested ExpandablePage, avoid drawing any other child Views.
-        return if (isFullyCoveredByNestedPage && child !is ExpandablePageLayout) {
-            false
-        } else {
-            super.drawChild(canvas, child, drawingTime)
-        }
+//        return if (isFullyCoveredByNestedPage && child !is ExpandablePageLayout) {
+//            false
+//        } else {
+//            super.drawChild(canvas, child, drawingTime)
+//        }
+        return super.drawChild(canvas, child, drawingTime)
     }
 
     private fun dispatchOnPagePullCallbacks(deltaY: Float, translationY: Float) {
-        internalStateCallbacksForNestedPage.onPagePull(deltaY, translationY)
         internalStateCallbacksForRecyclerView.onPagePull(deltaY, translationY)
     }
 
     private fun dispatchOnPageReleaseCallback(collapseEligible: Boolean) {
-        internalStateCallbacksForNestedPage.onPageRelease(collapseEligible)
         internalStateCallbacksForRecyclerView.onPageRelease(collapseEligible)
     }
 
     private fun dispatchOnPageAboutToExpandCallback(expandAnimDuration: Long) {
-        internalStateCallbacksForNestedPage.onPageAboutToExpand()
         internalStateCallbacksForRecyclerView.onPageAboutToExpand()
 
         for (i in stateChangeCallbacks.indices.reversed()) {
@@ -364,12 +358,10 @@ open class ExpandablePageLayout @JvmOverloads constructor(
      * usually when the user is pulling the page.
      */
     private fun dispatchOnPageFullyCoveredCallback() {
-        internalStateCallbacksForNestedPage.onPageFullyCovered()
         internalStateCallbacksForRecyclerView.onPageFullyCovered()
     }
 
     private fun dispatchOnPageAboutToCollapseCallback() {
-        internalStateCallbacksForNestedPage.onPageAboutToCollapse()
         internalStateCallbacksForRecyclerView.onPageAboutToCollapse()
 
         for (i in stateChangeCallbacks.indices.reversed()) {
@@ -386,7 +378,6 @@ open class ExpandablePageLayout @JvmOverloads constructor(
     private fun dispatchOnPageCollapsedCallback() {
         changeState(PageState.COLLAPSED)
 
-        internalStateCallbacksForNestedPage.onPageCollapsed()
         internalStateCallbacksForRecyclerView.onPageCollapsed()
 
         for (i in stateChangeCallbacks.indices.reversed()) {
@@ -430,21 +421,9 @@ open class ExpandablePageLayout @JvmOverloads constructor(
         downY: Float,
         deltaUpwardSwipe: Boolean
     ): Boolean {
-        val nestedPageCopy = nestedPage
-
-        return if (nestedPageCopy != null
-            && nestedPageCopy.isExpandedOrExpanding
-            && nestedPageCopy.clippedDimens.contains(downX.toInt(), downY.toInt())
-        ) {
-            // Block this pull if it was made inside a nested page. Let the nested
-            // page's pull-listener consume this event. I should use nested scrolling
-            // in the future to make this smarter.
-            // TODO: 20/03/17 Do we even need to call the nested page's listener?
-            nestedPageCopy.handleOnPullToCollapseIntercept(event, downX, downY, deltaUpwardSwipe)
-            true
-        } else run {
-            false
-        }
+        // TODO: todo_v14: Major hack here, fix it properly
+        // Consuming touch events on top 200dp of screen 😂
+        return downY > dp2px(context, 200f)
     }
 
     fun addStateChangeCallbacks(callbacks: PageStateChangeCallbacks) {
