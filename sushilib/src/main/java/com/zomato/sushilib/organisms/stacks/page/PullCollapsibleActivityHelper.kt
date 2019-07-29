@@ -6,13 +6,11 @@ import android.graphics.Rect
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import com.zomato.sushilib.R
-import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 import com.zomato.sushilib.utils.view.ViewUtils
 import com.zomato.sushilib.utils.view.ViewUtils.executeOnMeasure
 
@@ -33,21 +31,14 @@ internal class PullCollapsibleActivityHelper(val activity: Activity) {
 
     private var bypassHandleFinish = false
 
-    fun onPreCreate(@StyleRes translucentTheme: Int) {
+    fun onCreate(savedInstanceState: Bundle?) {
         setPullToCollapseEnabled(
             activity.intent.getBooleanExtra(
                 SushiPullCollapsibleActivity.EXTRA_ENABLE_PULL_COLLAPSE,
                 false
             )
         )
-        if (pullCollapsibleEnabled) {
-            activity.setTheme(translucentTheme)
-            activity.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            activity.window.decorView.setBackgroundColor(Color.TRANSPARENT)
-        }
-    }
 
-    fun onCreate(savedInstanceState: Bundle?) {
         activity.apply {
             wasActivityRecreated = savedInstanceState == null
 
