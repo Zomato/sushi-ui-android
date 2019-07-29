@@ -1,11 +1,9 @@
 package com.zomato.sushilib.organisms.stacks.page
 
 import android.os.Bundle
-import android.support.annotation.StyleRes
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewGroup
-import com.zomato.sushilib.R
 
 /**
  * An Activity that can be dismissed by pulling it vertically.
@@ -23,11 +21,7 @@ open class SushiPullCollapsibleActivity : AppCompatActivity() {
 
     private val pcaHelper = PullCollapsibleActivityHelper(this)
 
-    @StyleRes
-    open fun getTranslucentTheme(): Int = R.style.Theme_AppCompat_Dialog
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        pcaHelper.onPreCreate(getTranslucentTheme())
         super.onCreate(savedInstanceState)
         pcaHelper.onCreate(savedInstanceState)
     }
