@@ -2,6 +2,7 @@ package com.zomato.sushilib.organisms.stacks
 
 import android.content.Context
 import android.os.Build
+import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.support.v4.widget.NestedScrollView
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
@@ -34,10 +35,48 @@ import android.widget.ScrollView
  */
 open class SushiCollapsingCardStack @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : LinearLayout(context, attrs, defStyleAttr) {
+) : LinearLayout(context, attrs, defStyleAttr), InternalPageCallbacks by InternalPageCallbacks.NoOp() {
 
     companion object {
         var instance: SushiCollapsingCardStack? = null
+    }
+    private var clickedItem: View? = null
+
+    public fun itemClicked(view: View) {
+        clickedItem = view
+    }
+
+    override fun onPageAboutToExpand() {
+        animate()
+            .translationYBy(200f)
+            .alpha(0f)
+            .setDuration(250L)
+            .setInterpolator(FastOutSlowInInterpolator())
+            .start()
+        clickedItem?.apply {
+            animate()
+                .translationYBy(-400f)
+                .setDuration(250L)
+                .setInterpolator(FastOutSlowInInterpolator())
+                .start()
+        }
+    }
+
+    override fun onPageAboutToCollapse() {
+        animate()
+            .translationY(0f)
+            .alpha(1f)
+            .setDuration(250L)
+            .setInterpolator(FastOutSlowInInterpolator())
+            .start()
+
+        clickedItem?.apply {
+            animate()
+                .translationYBy(400f)
+                .setDuration(250L)
+                .setInterpolator(FastOutSlowInInterpolator())
+                .start()
+        }
     }
 
     init {
