@@ -39,7 +39,7 @@ class StandaloneExpandablePageLayout(
                 deltaUpwardPull: Boolean,
                 collapseEligible: Boolean
             ) {
-
+                alpha = 1f - (translationY / height)
             }
 
             override fun onRelease(collapseEligible: Boolean) {

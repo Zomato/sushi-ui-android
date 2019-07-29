@@ -12,6 +12,7 @@ import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import com.zomato.sushilib.R
+import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 import com.zomato.sushilib.utils.view.ViewUtils
 import com.zomato.sushilib.utils.view.ViewUtils.executeOnMeasure
 
@@ -41,6 +42,8 @@ internal class PullCollapsibleActivityHelper(val activity: Activity) {
         )
         if (pullCollapsibleEnabled) {
             activity.setTheme(translucentTheme)
+            activity.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            activity.window.decorView.setBackgroundColor(Color.TRANSPARENT)
         }
     }
 
