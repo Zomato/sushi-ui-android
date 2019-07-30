@@ -11,6 +11,7 @@ import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import com.zomato.sushilib.R
+import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 import com.zomato.sushilib.utils.view.ViewUtils
 import com.zomato.sushilib.utils.view.ViewUtils.executeOnMeasure
 
@@ -118,8 +119,7 @@ internal class PullCollapsibleActivityHelper(val activity: Activity) {
     private fun wrapInExpandablePage(view: View): StandaloneExpandablePageLayout {
         activity.apply {
             val pageLayout = StandaloneExpandablePageLayout(this)
-            pageLayout.elevation =
-                resources.getDimensionPixelSize(R.dimen.pull_collapsible_activity_elevation).toFloat()
+            pageLayout.elevation = dp2px(view.context, 6f)
             pageLayout.background = windowBackgroundFromTheme()
 
             window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
