@@ -261,8 +261,9 @@ open class ExpandablePageLayout @JvmOverloads constructor(
         targetHeight: Int,
         expandedItem: ExpandedItem
     ) {
-        var targetPageTranslationY = if (expand) 0F else expandedItem.expandedItemLocationRect.top.toFloat()
+        val targetPageTranslationY = if (expand) 0F else expandedItem.expandedItemLocationRect.top.toFloat()
         val targetPageTranslationX = if (expand) 0F else expandedItem.expandedItemLocationRect.left.toFloat()
+        val targetPageTranslationZ = if (expand) dp2px(context, 6f) else 0f
 
         if (expand.not()) {
             setSuppressLayoutMethodUsingReflection(this, true)
@@ -279,6 +280,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
             .alpha(if (expand) expandedAlpha else collapsedAlpha)
             .translationY(targetPageTranslationY)
             .translationX(targetPageTranslationX)
+            .translationZ(targetPageTranslationZ)
             .setDuration(animationDurationMillis)
             .setInterpolator(animationInterpolator)
             .withEndAction { canceled ->

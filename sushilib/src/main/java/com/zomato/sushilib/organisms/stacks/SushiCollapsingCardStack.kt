@@ -50,13 +50,13 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
         animate()
             .translationYBy(200f)
             .alpha(0f)
-            .setDuration(250L)
+            .setDuration(300L)
             .setInterpolator(FastOutSlowInInterpolator())
             .start()
         clickedItem?.apply {
             animate()
                 .translationYBy(-400f)
-                .setDuration(250L)
+                .setDuration(300L)
                 .setInterpolator(FastOutSlowInInterpolator())
                 .start()
         }
@@ -66,14 +66,14 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
         animate()
             .translationY(0f)
             .alpha(1f)
-            .setDuration(250L)
+            .setDuration(300L)
             .setInterpolator(FastOutSlowInInterpolator())
             .start()
 
         clickedItem?.apply {
             animate()
                 .translationYBy(400f)
-                .setDuration(250L)
+                .setDuration(300L)
                 .setInterpolator(FastOutSlowInInterpolator())
                 .start()
         }
