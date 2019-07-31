@@ -21,6 +21,21 @@ open class SushiPullCollapsibleActivity : AppCompatActivity() {
 
     private val pcaHelper = PullCollapsibleActivityHelper(this)
 
+    /**
+     * Called when the user is pulling down / up the expandable page or the list.
+     *
+     * @param deltaY              Delta translation-Y since the last onPull call.
+     * @param currentTranslationY Current translation-Y of the page.
+     * @param upwardPull          Whether or not the page is being pulled in the upward direction.
+     * @param deltaUpwardPull     Whether or not the last delta-pull was made in the upward direction.
+     * @param collapseEligible    Whether or not the pull distance was enough to trigger a collapse.
+     */
+    public fun onPull(deltaY: Float, currentTranslationY: Float,
+                      upwardPull: Boolean, deltaUpwardPull: Boolean, collapseEligible: Boolean) {
+        // available for rent
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         pcaHelper.onCreate(savedInstanceState)

@@ -25,6 +25,23 @@ class StandaloneExpandablePageLayout(
          * @param collapseEligible Whether the page was pulled enough for collapsing it.
          */
         fun onPageRelease(collapseEligible: Boolean)
+
+        /**
+         * Callback triggered when page is pulled (gets called multiple times as it is being pulled)
+         *
+         * @param deltaY
+         * @param currentTranslationY
+         * @param upwardPull
+         * @param deltaUpwardPull
+         * @param collapseEligible
+         */
+        fun onPull(
+            deltaY: Float,
+            currentTranslationY: Float,
+            upwardPull: Boolean,
+            deltaUpwardPull: Boolean,
+            collapseEligible: Boolean
+        )
     }
 
     internal lateinit var callbacks: Callbacks
@@ -40,6 +57,7 @@ class StandaloneExpandablePageLayout(
                 collapseEligible: Boolean
             ) {
                 alpha = 1f - (translationY / height)
+                callbacks.onPull(deltaY, currentTranslationY, upwardPull, deltaUpwardPull, collapseEligible)
             }
 
             override fun onRelease(collapseEligible: Boolean) {
