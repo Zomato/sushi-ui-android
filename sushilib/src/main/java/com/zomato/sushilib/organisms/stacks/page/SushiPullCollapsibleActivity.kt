@@ -30,7 +30,7 @@ open class SushiPullCollapsibleActivity : AppCompatActivity() {
      * @param deltaUpwardPull     Whether or not the last delta-pull was made in the upward direction.
      * @param collapseEligible    Whether or not the pull distance was enough to trigger a collapse.
      */
-    public fun onPull(deltaY: Float, currentTranslationY: Float,
+    open fun onPull(deltaY: Float, currentTranslationY: Float,
                       upwardPull: Boolean, deltaUpwardPull: Boolean, collapseEligible: Boolean) {
         // available for rent
 
