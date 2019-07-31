@@ -10,7 +10,6 @@ import android.support.v4.content.ContextCompat
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
-import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 import com.zomato.sushilib.utils.view.ViewUtils
 import com.zomato.sushilib.utils.view.ViewUtils.executeOnMeasure
@@ -19,7 +18,7 @@ import com.zomato.sushilib.utils.view.ViewUtils.executeOnMeasure
  * created by championswimmer on 2019-07-26
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-internal class PullCollapsibleActivityHelper(val activity: Activity) {
+internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleActivity) {
 
     private lateinit var activityPageLayout: StandaloneExpandablePageLayout
 
@@ -127,6 +126,16 @@ internal class PullCollapsibleActivityHelper(val activity: Activity) {
             if (pullCollapsibleEnabled) {
                 pageLayout.pullToCollapseThresholdDistance = standardToolbarHeight
                 pageLayout.callbacks = object : StandaloneExpandablePageLayout.Callbacks {
+                    override fun onPull(
+                        deltaY: Float,
+                        currentTranslationY: Float,
+                        upwardPull: Boolean,
+                        deltaUpwardPull: Boolean,
+                        collapseEligible: Boolean) {
+                        // call the activity's onPull
+                        activity.onPull(deltaY, currentTranslationY, upwardPull, deltaUpwardPull, collapseEligible)
+                    }
+
                     override fun onPageRelease(collapseEligible: Boolean) {
                         if (collapseEligible) {
                             finish()
