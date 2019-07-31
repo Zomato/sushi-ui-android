@@ -118,7 +118,7 @@ internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleA
     private fun wrapInExpandablePage(view: View): StandaloneExpandablePageLayout {
         activity.apply {
             val pageLayout = StandaloneExpandablePageLayout(this)
-            pageLayout.elevation = dp2px(view.context, 6f)
+//            pageLayout.elevation = dp2px(view.context, 6f)
             pageLayout.background = windowBackgroundFromTheme()
 
             window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -137,6 +137,7 @@ internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleA
                     }
 
                     override fun onPageRelease(collapseEligible: Boolean) {
+                        activity.onPageRelease(collapseEligible)
                         if (collapseEligible) {
                             finish()
                         }

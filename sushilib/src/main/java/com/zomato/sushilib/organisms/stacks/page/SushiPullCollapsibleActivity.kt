@@ -36,6 +36,15 @@ open class SushiPullCollapsibleActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * Page was released while being pulled.
+     *
+     * @param collapseEligible Whether the page was pulled enough for collapsing it.
+     */
+    open fun onPageRelease(collapseEligible: Boolean) {
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         pcaHelper.onCreate(savedInstanceState)
