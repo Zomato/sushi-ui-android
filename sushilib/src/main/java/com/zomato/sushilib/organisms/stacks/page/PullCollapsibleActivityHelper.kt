@@ -118,10 +118,7 @@ internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleA
         return false
     }
     private fun StandaloneExpandablePageLayout.fadeBg() {
-        if (background != transBg) {
-            background = transBg
-        }
-        transBg.reverseTransition(100)
+        background = null
 
     }
     private val transBg = TransitionDrawable(arrayOf(
@@ -139,9 +136,9 @@ internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleA
         activity.apply {
             val pageLayout = StandaloneExpandablePageLayout(this)
             pageLayout.elevation = dp2px(view.context, 0f)
-            pageLayout.background = BG_COL_TRANS_ALPHA_0
+            pageLayout.background = null
 
-            window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            window.setBackgroundDrawable(BG_COL_TRANS_ALPHA_0)
 
             if (pullCollapsibleEnabled) {
                 pageLayout.pullToCollapseThresholdDistance = standardToolbarHeight

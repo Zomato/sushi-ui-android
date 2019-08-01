@@ -49,16 +49,18 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
 
     override fun onPageAboutToExpand() {
         animate()
-            .translationYBy(200f)
+            .withLayer()
+            .translationY(200f)
             .alpha(0f)
             .setDuration(DEFAULT_ANIM_DURATION)
             .setInterpolator(AnimationConstants.DEFAULT_EASE_INTERPOLATOR)
             .start()
         clickedItem?.apply {
             animate()
-                .translationYBy(-400f)
+                .withLayer()
+                .translationY(-400f)
                 .setDuration(DEFAULT_ANIM_DURATION)
-                .setInterpolator(AnimationConstants.DEFAULT_EASE_INTERPOLATOR)
+                .setInterpolator(AnimationConstants.DEFAULT_ANTICIPATE_INTERPOLATOR)
                 .start()
         }
         isEnabled = false
@@ -66,17 +68,19 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
 
     override fun onPageAboutToCollapse() {
         animate()
+            .withLayer()
             .translationY(0f)
             .alpha(1f)
             .setDuration(DEFAULT_ANIM_DURATION)
-            .setInterpolator(AnimationConstants.DEFAULT_EASE_INTERPOLATOR)
+            .setInterpolator(AnimationConstants.DEFAULT_OVERSHOOT_INTERPOLATOR)
             .start()
 
         clickedItem?.apply {
             animate()
-                .translationYBy(400f)
-                .setDuration(DEFAULT_ANIM_DURATION)
-                .setInterpolator(AnimationConstants.DEFAULT_BOUNCE_INTERPOLATOR)
+                .withLayer()
+                .translationY(0f)
+                .setDuration((DEFAULT_ANIM_DURATION))
+                .setInterpolator(AnimationConstants.DEFAULT_OVERSHOOT_INTERPOLATOR)
                 .start()
         }
         isEnabled = true

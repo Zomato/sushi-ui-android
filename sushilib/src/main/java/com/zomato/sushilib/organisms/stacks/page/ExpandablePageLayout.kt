@@ -166,8 +166,13 @@ open class ExpandablePageLayout @JvmOverloads constructor(
         if (translationY != 0F) {
             animate()
                 .withLayer()
-                .translationY(0F)
                 .alpha(expandedAlpha)
+                .setDuration(animationDurationMillis)
+                .setInterpolator(AnimationConstants.DEFAULT_EASE_INTERPOLATOR)
+                .start()
+            animate()
+                .withLayer()
+                .translationY(0F)
                 .setDuration(animationDurationMillis)
                 .setInterpolator(AnimationConstants.DEFAULT_BOUNCE_INTERPOLATOR)
                 .withEndAction { dispatchOnPageFullyCoveredCallback() }
