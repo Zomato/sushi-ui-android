@@ -7,6 +7,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import com.zomato.sushilib.organisms.stacks.AnimationConstants
 import com.zomato.sushilib.organisms.stacks.ExpandedItem
 import com.zomato.sushilib.organisms.stacks.InternalPageCallbacks
 import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
@@ -168,7 +169,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
                 .translationY(0F)
                 .alpha(expandedAlpha)
                 .setDuration(animationDurationMillis)
-                .setInterpolator(animationInterpolator)
+                .setInterpolator(AnimationConstants.DEFAULT_BOUNCE_INTERPOLATOR)
                 .withEndAction { dispatchOnPageFullyCoveredCallback() }
                 .start()
         }
@@ -263,7 +264,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
     ) {
         val targetPageTranslationY = if (expand) 0F else expandedItem.expandedItemLocationRect.top.toFloat()
         val targetPageTranslationX = if (expand) 0F else expandedItem.expandedItemLocationRect.left.toFloat()
-        val targetPageTranslationZ = if (expand) dp2px(context, 6f) else 0f
+        val targetPageTranslationZ = if (!expand) dp2px(context, 6f) else 0f
 
         if (expand.not()) {
             setSuppressLayoutMethodUsingReflection(this, true)
@@ -282,7 +283,13 @@ open class ExpandablePageLayout @JvmOverloads constructor(
             .translationX(targetPageTranslationX)
             .translationZ(targetPageTranslationZ)
             .setDuration(animationDurationMillis)
-            .setInterpolator(animationInterpolator)
+            .setInterpolator(
+                if (expand) {
+                    AnimationConstants.DEFAULT_EASE_INTERPOLATOR
+                } else {
+                    AnimationConstants.DEFAULT_EASE_INTERPOLATOR
+                }
+            )
             .withEndAction { canceled ->
                 setSuppressLayoutMethodUsingReflection(this@ExpandablePageLayout, false)
 
@@ -297,7 +304,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
             }
             .start()
 
-        animateDimensions(targetWidth, targetHeight)
+        animateDimensions(targetWidth, targetHeight, expand)
     }
 
     internal fun stopAnyOngoingPageAnimation() {

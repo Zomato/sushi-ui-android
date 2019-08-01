@@ -20,6 +20,25 @@ class StandaloneExpandablePageLayout(
         fun onPageCollapsed()
 
         /**
+         * Page has fully expanded
+         */
+        fun onPageExpanded()
+
+        /**
+         * Page is about to expand
+         *
+         * @param animDuration time it will take
+         */
+        fun onPageAboutToExpand(animDuration: Long)
+
+        /**
+         * Page is about to collapse
+         *
+         * @param animDuration time it will take
+         */
+        fun onPageAboutToCollapse(animDuration: Long)
+
+        /**
          * Page was released while being pulled.
          *
          * @param collapseEligible Whether the page was pulled enough for collapsing it.
@@ -67,15 +86,15 @@ class StandaloneExpandablePageLayout(
 
         addStateChangeCallbacks(object : PageStateChangeCallbacks {
             override fun onPageAboutToExpand(expandAnimDuration: Long) {
-
+                callbacks.onPageAboutToExpand(expandAnimDuration)
             }
 
             override fun onPageExpanded() {
-
+                callbacks.onPageExpanded()
             }
 
             override fun onPageAboutToCollapse(collapseAnimDuration: Long) {
-
+                callbacks.onPageAboutToCollapse(collapseAnimDuration)
             }
 
             override fun onPageCollapsed() {

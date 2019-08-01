@@ -2,7 +2,6 @@ package com.zomato.sushilib.organisms.stacks
 
 import android.content.Context
 import android.os.Build
-import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.support.v4.widget.NestedScrollView
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
@@ -11,6 +10,7 @@ import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import com.zomato.sushilib.organisms.stacks.AnimationConstants.DEFAULT_ANIM_DURATION
 
 /**
  * A view inside which you can put other views that collapses together
@@ -51,14 +51,14 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
         animate()
             .translationYBy(200f)
             .alpha(0f)
-            .setDuration(300L)
-            .setInterpolator(FastOutSlowInInterpolator())
+            .setDuration(DEFAULT_ANIM_DURATION)
+            .setInterpolator(AnimationConstants.DEFAULT_EASE_INTERPOLATOR)
             .start()
         clickedItem?.apply {
             animate()
                 .translationYBy(-400f)
-                .setDuration(300L)
-                .setInterpolator(FastOutSlowInInterpolator())
+                .setDuration(DEFAULT_ANIM_DURATION)
+                .setInterpolator(AnimationConstants.DEFAULT_EASE_INTERPOLATOR)
                 .start()
         }
         isEnabled = false
@@ -68,15 +68,15 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
         animate()
             .translationY(0f)
             .alpha(1f)
-            .setDuration(300L)
-            .setInterpolator(FastOutSlowInInterpolator())
+            .setDuration(DEFAULT_ANIM_DURATION)
+            .setInterpolator(AnimationConstants.DEFAULT_EASE_INTERPOLATOR)
             .start()
 
         clickedItem?.apply {
             animate()
                 .translationYBy(400f)
-                .setDuration(300L)
-                .setInterpolator(FastOutSlowInInterpolator())
+                .setDuration(DEFAULT_ANIM_DURATION)
+                .setInterpolator(AnimationConstants.DEFAULT_BOUNCE_INTERPOLATOR)
                 .start()
         }
         isEnabled = true

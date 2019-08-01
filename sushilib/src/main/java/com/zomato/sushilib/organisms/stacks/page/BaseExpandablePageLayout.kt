@@ -10,7 +10,10 @@ import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewOutlineProvider
+import android.view.animation.BounceInterpolator
 import android.widget.FrameLayout
+import com.zomato.sushilib.organisms.stacks.AnimationConstants
+import com.zomato.sushilib.organisms.stacks.AnimationConstants.DEFAULT_ANIM_DURATION
 
 /**
  * Animating change in dimensions by changing the actual width and height is expensive.
@@ -29,7 +32,6 @@ abstract class BaseExpandablePageLayout @JvmOverloads constructor(
     private var isFullyVisible: Boolean = false
 
     var animationDurationMillis = DEFAULT_ANIM_DURATION
-    var animationInterpolator: TimeInterpolator = DEFAULT_ANIM_INTERPOLATOR
 
     init {
         clipBounds = Rect()
@@ -50,12 +52,16 @@ abstract class BaseExpandablePageLayout @JvmOverloads constructor(
         }
     }
 
-    fun animateDimensions(toWidth: Int, toHeight: Int) {
+    fun animateDimensions(toWidth: Int, toHeight: Int, expand: Boolean) {
         dimensionAnimator.cancel()
 
         dimensionAnimator = ObjectAnimator.ofFloat(0F, 1F).apply {
             duration = animationDurationMillis
-            interpolator = animationInterpolator
+            interpolator = if (expand) {
+                AnimationConstants.DEFAULT_EASE_INTERPOLATOR
+            } else {
+                AnimationConstants.DEFAULT_EASE_INTERPOLATOR
+            }
 
             val fromWidth = clipBounds.width()
             val fromHeight = clipBounds.height()
@@ -80,10 +86,5 @@ abstract class BaseExpandablePageLayout @JvmOverloads constructor(
     /** Immediately reset the clipping so that this layout is fully visible. */
     fun resetClipping() {
         setClippedDimensions(width, height)
-    }
-
-    companion object {
-        private const val DEFAULT_ANIM_DURATION = 250L
-        private val DEFAULT_ANIM_INTERPOLATOR = FastOutSlowInInterpolator()
     }
 }

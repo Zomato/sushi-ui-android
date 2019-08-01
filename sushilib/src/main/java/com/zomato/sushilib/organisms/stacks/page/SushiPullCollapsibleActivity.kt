@@ -57,7 +57,9 @@ open class SushiPullCollapsibleActivity : AppCompatActivity() {
 
     override fun setContentView(layoutResID: Int) {
         pcaHelper.setContentView(layoutResID)?.let {
+            // If not null, pass again to helper to wrap in expandable layout
             super.setContentView(it)
+            // If null, use Activity's default way to layout
         } ?: super.setContentView(layoutResID)
         pcaHelper.expand()
     }

@@ -1,10 +1,10 @@
 package com.zomato.sushilib.organisms.stacks.page
 
-import android.app.Activity
 import android.graphics.Color
 import android.graphics.Rect
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
+import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.util.TypedValue
@@ -21,6 +21,9 @@ import com.zomato.sushilib.utils.view.ViewUtils.executeOnMeasure
 internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleActivity) {
 
     private lateinit var activityPageLayout: StandaloneExpandablePageLayout
+
+    private val BG_COL_TRANS_ALPHA_75 = ColorDrawable(Color.argb(191, 0, 0, 0))
+    private val BG_COL_TRANS_ALPHA_0 = ColorDrawable(Color.TRANSPARENT)
 
     private var expandCalled = false
     private var expandedFromRect: Rect? = null
@@ -114,24 +117,46 @@ internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleA
 
         return false
     }
+    private fun StandaloneExpandablePageLayout.fadeBg() {
+        if (background != transBg) {
+            background = transBg
+        }
+        transBg.reverseTransition(100)
+
+    }
+    private val transBg = TransitionDrawable(arrayOf(
+        BG_COL_TRANS_ALPHA_0, BG_COL_TRANS_ALPHA_75
+    ))
+    private fun StandaloneExpandablePageLayout.unFadeBg() {
+        if (background != transBg) {
+            background = transBg
+            transBg.startTransition(400)
+        }
+
+    }
 
     private fun wrapInExpandablePage(view: View): StandaloneExpandablePageLayout {
         activity.apply {
             val pageLayout = StandaloneExpandablePageLayout(this)
-//            pageLayout.elevation = dp2px(view.context, 6f)
-            pageLayout.background = windowBackgroundFromTheme()
+            pageLayout.elevation = dp2px(view.context, 0f)
+            pageLayout.background = BG_COL_TRANS_ALPHA_0
 
             window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
             if (pullCollapsibleEnabled) {
                 pageLayout.pullToCollapseThresholdDistance = standardToolbarHeight
                 pageLayout.callbacks = object : StandaloneExpandablePageLayout.Callbacks {
-                    override fun onPull(
-                        deltaY: Float,
-                        currentTranslationY: Float,
-                        upwardPull: Boolean,
-                        deltaUpwardPull: Boolean,
-                        collapseEligible: Boolean) {
+                    override fun onPageAboutToExpand(animDuration: Long) {
+                    }
+
+                    override fun onPageAboutToCollapse(animDuration: Long) {
+                        pageLayout.fadeBg()
+                    }
+
+                    override fun onPull(deltaY: Float, currentTranslationY: Float, upwardPull: Boolean,
+                                        deltaUpwardPull: Boolean, collapseEligible: Boolean) {
+
+                        pageLayout.fadeBg()
                         // call the activity's onPull
                         activity.onPull(deltaY, currentTranslationY, upwardPull, deltaUpwardPull, collapseEligible)
                     }
@@ -147,6 +172,10 @@ internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleA
                         bypassHandleFinish = true
                         activity.finish()
                         overridePendingTransition(0, 0)
+                    }
+
+                    override fun onPageExpanded() {
+                        pageLayout.unFadeBg()
                     }
                 }
             } else {
