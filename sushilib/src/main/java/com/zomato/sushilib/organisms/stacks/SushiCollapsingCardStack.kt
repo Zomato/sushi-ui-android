@@ -40,6 +40,7 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
     companion object {
         var instance: SushiCollapsingCardStack? = null
     }
+
     private var clickedItem: View? = null
 
     public fun itemClicked(view: View) {
@@ -60,6 +61,7 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
                 .setInterpolator(FastOutSlowInInterpolator())
                 .start()
         }
+        isEnabled = false
     }
 
     override fun onPageAboutToCollapse() {
@@ -77,6 +79,7 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
                 .setInterpolator(FastOutSlowInInterpolator())
                 .start()
         }
+        isEnabled = true
     }
 
     init {
@@ -178,7 +181,6 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
                     getChildAt(i).translationY = transY
                 }
             }
-
         } else {
             for (i in 0 until childCount) {
                 getChildAt(i).translationY = 0f
@@ -190,5 +192,4 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
         fun getItemCount(): Int
         fun getView(parent: ViewGroup, position: Int): View
     }
-
 }
