@@ -60,7 +60,7 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
                 .withLayer()
                 .translationY(-400f)
                 .setDuration(DEFAULT_ANIM_DURATION)
-                .setInterpolator(AnimationConstants.DEFAULT_ANTICIPATE_INTERPOLATOR)
+                .setInterpolator(AnimationConstants.DEFAULT_DECELERATE_INTERPOLATOR)
                 .start()
         }
         isEnabled = false

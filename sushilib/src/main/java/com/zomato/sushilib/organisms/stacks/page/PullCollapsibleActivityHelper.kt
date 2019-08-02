@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.content.ContextCompat
 import android.util.TypedValue
 import android.view.View
@@ -13,6 +14,7 @@ import android.view.ViewGroup
 import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 import com.zomato.sushilib.utils.view.ViewUtils
 import com.zomato.sushilib.utils.view.ViewUtils.executeOnMeasure
+import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * created by championswimmer on 2019-07-26
@@ -33,6 +35,7 @@ internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleA
     private var entryAnimationEnabled = true
 
     private var bypassHandleFinish = false
+    private var isUnFading = AtomicBoolean(false)
 
     fun onCreate(savedInstanceState: Bundle?) {
         setPullToCollapseEnabled(
@@ -117,17 +120,21 @@ internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleA
 
         return false
     }
-    private fun StandaloneExpandablePageLayout.fadeBg() {
-        background = null
 
-    }
-    private val transBg = TransitionDrawable(arrayOf(
+    private val bgTransUnFade = TransitionDrawable(arrayOf(
         BG_COL_TRANS_ALPHA_0, BG_COL_TRANS_ALPHA_75
     ))
+
+    private fun StandaloneExpandablePageLayout.fadeBg() {
+        background = BG_COL_TRANS_ALPHA_0
+    }
+
     private fun StandaloneExpandablePageLayout.unFadeBg() {
-        if (background != transBg) {
-            background = transBg
-            transBg.startTransition(400)
+        if (background != bgTransUnFade && !isUnFading.getAndSet(true)) {
+            bgTransUnFade.resetTransition()
+            background = bgTransUnFade
+            bgTransUnFade.startTransition(300)
+            isUnFading.compareAndSet(true, false)
         }
 
     }
@@ -139,6 +146,7 @@ internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleA
             pageLayout.background = null
 
             window.setBackgroundDrawable(BG_COL_TRANS_ALPHA_0)
+            window.transitionBackgroundFadeDuration = 200
 
             if (pullCollapsibleEnabled) {
                 pageLayout.pullToCollapseThresholdDistance = standardToolbarHeight

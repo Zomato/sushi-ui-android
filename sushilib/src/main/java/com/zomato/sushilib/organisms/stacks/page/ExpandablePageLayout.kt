@@ -162,7 +162,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
 
         // Restore everything to their expanded position.
 
-        // Expand page again.
+        // Expand page again. (this is when released before threshold)
         if (translationY != 0F) {
             animate()
                 .withLayer()

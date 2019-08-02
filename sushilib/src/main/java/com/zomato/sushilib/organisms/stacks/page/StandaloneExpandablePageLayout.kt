@@ -75,7 +75,7 @@ class StandaloneExpandablePageLayout(
                 deltaUpwardPull: Boolean,
                 collapseEligible: Boolean
             ) {
-                alpha = 1f - (translationY / height)
+//                alpha = 1f - (translationY / height)
                 callbacks.onPull(deltaY, currentTranslationY, upwardPull, deltaUpwardPull, collapseEligible)
             }
 
