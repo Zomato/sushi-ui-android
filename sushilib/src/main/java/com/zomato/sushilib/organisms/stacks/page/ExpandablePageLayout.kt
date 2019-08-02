@@ -1,8 +1,10 @@
 package com.zomato.sushilib.organisms.stacks.page
 
+import android.animation.TimeInterpolator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
+import android.os.Build
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
@@ -14,6 +16,7 @@ import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 import com.zomato.sushilib.utils.view.ViewUtils.withEndAction
 import com.zomato.sushilib.utils.view.ViewUtils
 import java.lang.reflect.Method
+import kotlin.math.roundToLong
 
 open class ExpandablePageLayout @JvmOverloads constructor(
     context: Context,
@@ -288,13 +291,7 @@ open class ExpandablePageLayout @JvmOverloads constructor(
             .translationX(targetPageTranslationX)
             .translationZ(targetPageTranslationZ)
             .setDuration(animationDurationMillis)
-            .setInterpolator(
-                if (expand) {
-                    AnimationConstants.DEFAULT_EASE_INTERPOLATOR
-                } else {
-                    AnimationConstants.DEFAULT_EASE_INTERPOLATOR
-                }
-            )
+            .setInterpolator(AnimationConstants.DEFAULT_EASE_INTERPOLATOR)
             .withEndAction { canceled ->
                 setSuppressLayoutMethodUsingReflection(this@ExpandablePageLayout, false)
 

@@ -56,9 +56,9 @@ abstract class BaseExpandablePageLayout @JvmOverloads constructor(
         dimensionAnimator.cancel()
 
         dimensionAnimator = ObjectAnimator.ofFloat(0F, 1F).apply {
-            duration = animationDurationMillis
+            duration = (animationDurationMillis * 0.6).toLong()
             interpolator = if (expand) {
-                AnimationConstants.DEFAULT_EASE_INTERPOLATOR
+                AnimationConstants.DEFAULT_DECELERATE_INTERPOLATOR
             } else {
                 AnimationConstants.DEFAULT_EASE_INTERPOLATOR
             }
