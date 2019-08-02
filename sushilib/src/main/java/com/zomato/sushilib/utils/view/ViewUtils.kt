@@ -20,6 +20,7 @@ object ViewUtils {
      * Execute a runnable when the next global layout happens for a `View`. Example usage includes
      * waiting for a list to draw its children just after you have updated its adapter's data-set.
      */
+    @JvmStatic
     fun View.executeOnNextLayout(listener: () -> Unit) {
         viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
@@ -32,6 +33,7 @@ object ViewUtils {
     /**
      * Execute a runnable when a [view]'s dimensions get measured and is laid out on the screen.
      */
+    @JvmStatic
     fun View.executeOnMeasure(listener: () -> Unit) {
         if (isInEditMode || isLaidOut) {
             listener()
@@ -56,12 +58,14 @@ object ViewUtils {
         })
     }
 
-    fun View.globalVisibleRect(): RectF {
+    @JvmStatic
+    fun View.globalVisibleRect(): Rect {
         val rect = Rect()
         getGlobalVisibleRect(rect)
-        return RectF(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat())
+        return Rect(rect.left, rect.top, rect.right, rect.bottom)
     }
 
+    @JvmStatic
     fun ViewPropertyAnimator.withEndAction(action: (Boolean) -> Unit): ViewPropertyAnimator {
         return setListener(object : AnimatorListenerAdapter() {
             var canceled = false
@@ -80,6 +84,7 @@ object ViewUtils {
         })
     }
 
+    @JvmStatic
     fun toolbarHeight(context: Context): Int {
         val typedArray = context.obtainStyledAttributes(intArrayOf(android.R.attr.actionBarSize))
         val standardToolbarHeight = typedArray.getDimensionPixelSize(0, 0)

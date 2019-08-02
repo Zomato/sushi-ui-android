@@ -6,7 +6,6 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
-import android.os.Handler
 import android.support.v4.content.ContextCompat
 import android.util.TypedValue
 import android.view.View
@@ -136,7 +135,6 @@ internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleA
             bgTransUnFade.startTransition(300)
             isUnFading.compareAndSet(true, false)
         }
-
     }
 
     private fun wrapInExpandablePage(view: View): StandaloneExpandablePageLayout {
