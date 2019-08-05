@@ -208,7 +208,7 @@ open class SushiButton @JvmOverloads constructor(
         }
         if (buttonType == ButtonType.TEXT) {
             minHeight = 0
-            val picoPad = resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico)
+            val picoPad = resources.getDimensionPixelSize(R.dimen.sushi_spacing_femto)
             setPadding(picoPad, picoPad, picoPad, picoPad)
         }
     }
