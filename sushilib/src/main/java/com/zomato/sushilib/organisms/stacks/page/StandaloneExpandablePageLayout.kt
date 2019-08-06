@@ -103,7 +103,7 @@ class StandaloneExpandablePageLayout(
 
         })
 
-        (SushiCollapsingCardStack.instance as? InternalPageCallbacks)?.apply {
+        (SushiCollapsingCardStack.instance.get())?.apply {
             internalStateCallbacksForRecyclerView = this
         }
     }
