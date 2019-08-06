@@ -21,9 +21,9 @@ open class SushiImageTextListing @JvmOverloads constructor(
 ) : LinearLayout(ctx, attrs, defStyleAttr, defStyleRes) {
 
     private var initialized = false
-
-    private var textListing = SushiTextListing(context, attrs)
     private var cornerIconTextView: SushiIconTextView? = null
+
+    var textListing = SushiTextListing(context, attrs)
     var imageView = SushiCircleImageView(context)
 
     var imagePadding
@@ -95,5 +95,4 @@ open class SushiImageTextListing @JvmOverloads constructor(
             it.setPadding(resources.getDimensionPixelOffset(R.dimen.sushi_spacing_micro), 0, 0, 0)
         }
     }
-
 }

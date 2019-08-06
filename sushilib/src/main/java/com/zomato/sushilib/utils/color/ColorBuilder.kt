@@ -62,6 +62,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_green_500
             }
             ColorName.BLUE -> when (tint) {
+                50 -> R.color.sushi_blue_050
                 100 -> R.color.sushi_blue_100
                 200 -> R.color.sushi_blue_200
                 300 -> R.color.sushi_blue_300
@@ -74,6 +75,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_blue_500
             }
             ColorName.YELLOW -> when (tint) {
+                50 -> R.color.sushi_yellow_050
                 100 -> R.color.sushi_yellow_100
                 200 -> R.color.sushi_yellow_200
                 300 -> R.color.sushi_yellow_300
@@ -119,6 +121,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_lime_500
             }
             ColorName.INDIGO -> when (tint) {
+                50 -> R.color.sushi_indigo_050
                 100 -> R.color.sushi_indigo_100
                 200 -> R.color.sushi_indigo_200
                 300 -> R.color.sushi_indigo_300
@@ -126,6 +129,16 @@ class ColorBuilder(val context: Context) {
                 700 -> R.color.sushi_indigo_700
                 900 -> R.color.sushi_indigo_900
                 else -> R.color.sushi_indigo_500
+            }
+            ColorName.CIDER -> when (tint) {
+                50 -> R.color.sushi_cider_050
+                100 -> R.color.sushi_cider_100
+                200 -> R.color.sushi_cider_200
+                300 -> R.color.sushi_cider_300
+                500 -> R.color.sushi_cider_500
+                700 -> R.color.sushi_cider_700
+                900 -> R.color.sushi_cider_900
+                else -> R.color.sushi_cider_500
             }
             ColorName.BROWN -> when (tint) {
                 100 -> R.color.sushi_brown_100
@@ -137,6 +150,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_brown_500
             }
             ColorName.TEAL -> when (tint) {
+                50 -> R.color.sushi_teal_050
                 100 -> R.color.sushi_teal_100
                 200 -> R.color.sushi_teal_200
                 300 -> R.color.sushi_teal_300

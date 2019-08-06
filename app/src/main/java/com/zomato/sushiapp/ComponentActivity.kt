@@ -24,6 +24,7 @@ class ComponentActivity : AppCompatActivity() {
         const val SNIPPETS = 6
         const val TAGS = 7
         const val MENU_TABS = 8
+        const val CARD_STACK = 9
 
         fun start(context: Context, component: Int) {
             Intent(context, ComponentActivity::class.java).apply {
@@ -43,6 +44,7 @@ class ComponentActivity : AppCompatActivity() {
             SNIPPETS -> ListingFragment()
             TAGS -> TagsFragment()
             MENU_TABS -> NavigationComponentsFragment()
+            CARD_STACK -> CardStackFragment()
             else -> ColorPaletteFragment()
         }
 
@@ -55,6 +57,7 @@ class ComponentActivity : AppCompatActivity() {
             SNIPPETS -> "Listing snippets"
             TAGS -> "Tags and rating"
             MENU_TABS -> "Navigation components"
+            CARD_STACK -> "Card Stack"
             else -> "Color palette"
         }
 

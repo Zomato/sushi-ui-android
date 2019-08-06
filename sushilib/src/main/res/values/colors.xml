@@ -36,6 +36,7 @@
     <color name="sushi_green_800">#165C26</color>
     <color name="sushi_green_900">#144620</color>
 
+    <color name="sushi_blue_050">#F3F7FC</color>
     <color name="sushi_blue_100">#ECF3FB</color>
     <color name="sushi_blue_200">#AED1FA</color>
     <color name="sushi_blue_300">#79B6FC</color>
@@ -46,6 +47,7 @@
     <color name="sushi_blue_800">#023774</color>
     <color name="sushi_blue_900">#011F41</color>
 
+    <color name="sushi_yellow_050">#FDFCF7</color>
     <color name="sushi_yellow_100">#FAF9F3</color>
     <color name="sushi_yellow_200">#FCEEC0</color>
     <color name="sushi_yellow_300">#FCDF82</color>
@@ -67,6 +69,7 @@
     <color name="sushi_purple_900">#27134E</color>
 
     <!-- Indigo -->
+    <color name="sushi_indigo_050">#F5F5F9</color>
     <color name="sushi_indigo_100">#EAECF5</color>
     <color name="sushi_indigo_200">#A0A8CF</color>
     <color name="sushi_indigo_300">#5462A6</color>
@@ -80,17 +83,19 @@
     <color name="sushi_brown_300">#A45C41</color>
     <color name="sushi_brown_500">#64311E</color>
     <color name="sushi_brown_700">#41251B</color>
-    <color name="sushi_brown_900">#979797</color>
+    <color name="sushi_brown_900">#2F1911</color>
 
     <!-- Cider -->
-    <color name="sushi_cider_100">#F8F3F1</color>
-    <color name="sushi_cider_200">#C8A699</color>
-    <color name="sushi_cider_300">#A45C41</color>
-    <color name="sushi_cider_500">#64311E</color>
-    <color name="sushi_cider_700">#41251B</color>
-    <color name="sushi_cider_900">#979797</color>
+    <color name="sushi_cider_050">#FFFBF7</color>
+    <color name="sushi_cider_100">#FDF5E9</color>
+    <color name="sushi_cider_200">#FFEDD2</color>
+    <color name="sushi_cider_300">#BE9357</color>
+    <color name="sushi_cider_500">#B17726</color>
+    <color name="sushi_cider_700">#885611</color>
+    <color name="sushi_cider_900">#492D06</color>
 
     <!-- Teal -->
+    <color name="sushi_teal_050">#F1FAFA</color>
     <color name="sushi_teal_100">#E7F3F3</color>
     <color name="sushi_teal_200">#B5DCDC</color>
     <color name="sushi_teal_300">#7ACDCD</color>

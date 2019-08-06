@@ -142,6 +142,16 @@
                 app:headlineText="Bars"
                 app:imagePadding="@dimen/sushi_spacing_micro"
                 app:imageSrc="@drawable/ic_topnav_bars" />
+            <com.zomato.sushilib.molecules.listings.SushiImageTextListing
+                android:id="@+id/nav_card_stack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sushi_spacing_extra"
+                app:bodyText="Card Stacks"
+                app:cornerIconChar="@string/icon_right_triangle"
+                app:headlineText="Bars"
+                app:imagePadding="@dimen/sushi_spacing_micro"
+                app:imageSrc="@drawable/ic_topnav_bars" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>
