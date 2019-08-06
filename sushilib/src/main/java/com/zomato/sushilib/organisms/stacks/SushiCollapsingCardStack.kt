@@ -11,6 +11,7 @@ import android.view.ViewTreeObserver
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import com.zomato.sushilib.organisms.stacks.AnimationConstants.DEFAULT_ANIM_DURATION
+import java.lang.ref.WeakReference
 
 /**
  * A view inside which you can put other views that collapses together
@@ -38,7 +39,7 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
 ) : LinearLayout(context, attrs, defStyleAttr), InternalPageCallbacks by InternalPageCallbacks.NoOp() {
 
     companion object {
-        var instance: SushiCollapsingCardStack? = null
+        var instance = WeakReference<SushiCollapsingCardStack>(null)
     }
 
     private var clickedItem: View? = null
@@ -90,7 +91,7 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
 
     init {
         orientation = VERTICAL
-        instance = this
+        instance = WeakReference(this)
     }
 
     private var cardStackAdapter: Adapter? = null
