@@ -4,7 +4,14 @@ import android.support.annotation.RestrictTo
 import android.support.annotation.StyleRes
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.FontWeight
-import com.zomato.sushilib.annotations.FontWeight.*
+import com.zomato.sushilib.annotations.FontWeight.BOLD
+import com.zomato.sushilib.annotations.FontWeight.EXTRABOLD
+import com.zomato.sushilib.annotations.FontWeight.EXTRALIGHT
+import com.zomato.sushilib.annotations.FontWeight.LIGHT
+import com.zomato.sushilib.annotations.FontWeight.MEDIUM
+import com.zomato.sushilib.annotations.FontWeight.REGULAR
+import com.zomato.sushilib.annotations.FontWeight.SEMIBOLD
+import com.zomato.sushilib.annotations.FontWeight.THIN
 
 @RestrictTo(RestrictTo.Scope.LIBRARY)
 object TextFormatUtils {
@@ -18,6 +25,8 @@ object TextFormatUtils {
             REGULAR -> R.style.TextAppearance_Sushi_Regular
             MEDIUM -> R.style.TextAppearance_Sushi_Medium
             SEMIBOLD -> R.style.TextAppearance_Sushi_SemiBold
+            BOLD -> R.style.TextAppearance_Sushi_Bold
+            EXTRABOLD -> R.style.TextAppearance_Sushi_ExtraBold
             else -> R.style.TextAppearance_Sushi_Regular
         }
     }
