@@ -151,11 +151,11 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         parentView = null
-        parent.let { p1 ->
+        parent?.let { p1 ->
             if (p1 is RecyclerView) {
                 p1.removeOnScrollListener(rvScrollListener)
             } else {
-                p1.parent.let { p2 ->
+                p1.parent?.let { p2 ->
                     if (p2 is ScrollView) {
                         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
                             p2.viewTreeObserver.removeOnScrollChangedListener(scrollChangeListener)
