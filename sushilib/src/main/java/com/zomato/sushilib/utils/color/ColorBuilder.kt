@@ -38,6 +38,7 @@ class ColorBuilder(val context: Context) {
     private fun getColorResId(): Int {
         return when (color) {
             ColorName.RED -> when (tint) {
+                50 -> R.color.sushi_red_050
                 100 -> R.color.sushi_red_100
                 200 -> R.color.sushi_red_200
                 300 -> R.color.sushi_red_300
@@ -50,6 +51,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_red_500
             }
             ColorName.GREEN -> when (tint) {
+                50 -> R.color.sushi_green_050
                 100 -> R.color.sushi_green_100
                 200 -> R.color.sushi_green_200
                 300 -> R.color.sushi_green_300
@@ -88,6 +90,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_yellow_500
             }
             ColorName.GREY -> when (tint) {
+                50 -> R.color.sushi_grey_050
                 100 -> R.color.sushi_grey_100
                 200 -> R.color.sushi_grey_200
                 300 -> R.color.sushi_grey_300
@@ -100,6 +103,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_grey_500
             }
             ColorName.PURPLE -> when (tint) {
+                50 -> R.color.sushi_purple_050
                 100 -> R.color.sushi_purple_100
                 200 -> R.color.sushi_purple_200
                 300 -> R.color.sushi_purple_300
@@ -112,6 +116,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_purple_500
             }
             ColorName.LIME -> when (tint) {
+                50 -> R.color.sushi_lime_050
                 100 -> R.color.sushi_lime_100
                 200 -> R.color.sushi_lime_200
                 300 -> R.color.sushi_lime_300
@@ -141,6 +146,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_cider_500
             }
             ColorName.BROWN -> when (tint) {
+                50 -> R.color.sushi_brown_050
                 100 -> R.color.sushi_brown_100
                 200 -> R.color.sushi_brown_200
                 300 -> R.color.sushi_brown_300
@@ -160,6 +166,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_teal_500
             }
             ColorName.ORANGE -> when (tint) {
+                50 -> R.color.sushi_orange_050
                 100 -> R.color.sushi_orange_100
                 200 -> R.color.sushi_orange_200
                 300 -> R.color.sushi_orange_300
@@ -169,6 +176,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_orange_500
             }
             ColorName.PINK -> when (tint) {
+                50 -> R.color.sushi_pink_050
                 100 -> R.color.sushi_pink_100
                 200 -> R.color.sushi_pink_200
                 300 -> R.color.sushi_pink_300
