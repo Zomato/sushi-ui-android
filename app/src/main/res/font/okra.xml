@@ -47,15 +47,15 @@
     <font
         android:font="@font/okra_bold"
         android:fontStyle="normal"
-        android:fontWeight="600"
+        android:fontWeight="700"
         app:font="@font/okra_bold"
         app:fontStyle="normal"
-        app:fontWeight="600"/>
+        app:fontWeight="700"/>
     <font
         android:font="@font/okra_extrabold"
         android:fontStyle="normal"
-        android:fontWeight="600"
+        android:fontWeight="800"
         app:font="@font/okra_extrabold"
         app:fontStyle="normal"
-        app:fontWeight="600"/>
+        app:fontWeight="800"/>
 </font-family>
