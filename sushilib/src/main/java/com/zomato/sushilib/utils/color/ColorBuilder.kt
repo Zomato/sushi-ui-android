@@ -18,6 +18,7 @@ class ColorBuilder(val context: Context) {
         this.color = color
         this.tint = tint
     }
+
     @ColorName
     private var color = ColorName.RED
 
@@ -120,8 +121,11 @@ class ColorBuilder(val context: Context) {
                 100 -> R.color.sushi_lime_100
                 200 -> R.color.sushi_lime_200
                 300 -> R.color.sushi_lime_300
+                400 -> R.color.sushi_lime_400
                 500 -> R.color.sushi_lime_500
+                600 -> R.color.sushi_lime_600
                 700 -> R.color.sushi_lime_700
+                800 -> R.color.sushi_lime_800
                 900 -> R.color.sushi_lime_900
                 else -> R.color.sushi_lime_500
             }
@@ -130,8 +134,11 @@ class ColorBuilder(val context: Context) {
                 100 -> R.color.sushi_indigo_100
                 200 -> R.color.sushi_indigo_200
                 300 -> R.color.sushi_indigo_300
+                400 -> R.color.sushi_indigo_400
                 500 -> R.color.sushi_indigo_500
+                600 -> R.color.sushi_indigo_600
                 700 -> R.color.sushi_indigo_700
+                800 -> R.color.sushi_indigo_800
                 900 -> R.color.sushi_indigo_900
                 else -> R.color.sushi_indigo_500
             }
@@ -140,8 +147,11 @@ class ColorBuilder(val context: Context) {
                 100 -> R.color.sushi_cider_100
                 200 -> R.color.sushi_cider_200
                 300 -> R.color.sushi_cider_300
+                400 -> R.color.sushi_cider_400
                 500 -> R.color.sushi_cider_500
+                600 -> R.color.sushi_cider_600
                 700 -> R.color.sushi_cider_700
+                800 -> R.color.sushi_cider_800
                 900 -> R.color.sushi_cider_900
                 else -> R.color.sushi_cider_500
             }
@@ -150,8 +160,11 @@ class ColorBuilder(val context: Context) {
                 100 -> R.color.sushi_brown_100
                 200 -> R.color.sushi_brown_200
                 300 -> R.color.sushi_brown_300
+                400 -> R.color.sushi_brown_400
                 500 -> R.color.sushi_brown_500
+                600 -> R.color.sushi_brown_600
                 700 -> R.color.sushi_brown_700
+                800 -> R.color.sushi_brown_800
                 900 -> R.color.sushi_brown_900
                 else -> R.color.sushi_brown_500
             }
@@ -160,8 +173,11 @@ class ColorBuilder(val context: Context) {
                 100 -> R.color.sushi_teal_100
                 200 -> R.color.sushi_teal_200
                 300 -> R.color.sushi_teal_300
+                400 -> R.color.sushi_teal_400
                 500 -> R.color.sushi_teal_500
+                600 -> R.color.sushi_teal_600
                 700 -> R.color.sushi_teal_700
+                800 -> R.color.sushi_teal_800
                 900 -> R.color.sushi_teal_900
                 else -> R.color.sushi_teal_500
             }
@@ -170,8 +186,11 @@ class ColorBuilder(val context: Context) {
                 100 -> R.color.sushi_orange_100
                 200 -> R.color.sushi_orange_200
                 300 -> R.color.sushi_orange_300
+                400 -> R.color.sushi_orange_400
                 500 -> R.color.sushi_orange_500
+                600 -> R.color.sushi_orange_600
                 700 -> R.color.sushi_orange_700
+                800 -> R.color.sushi_orange_800
                 900 -> R.color.sushi_orange_900
                 else -> R.color.sushi_orange_500
             }
@@ -180,8 +199,11 @@ class ColorBuilder(val context: Context) {
                 100 -> R.color.sushi_pink_100
                 200 -> R.color.sushi_pink_200
                 300 -> R.color.sushi_pink_300
+                400 -> R.color.sushi_pink_400
                 500 -> R.color.sushi_pink_500
+                600 -> R.color.sushi_pink_600
                 700 -> R.color.sushi_pink_700
+                800 -> R.color.sushi_pink_800
                 900 -> R.color.sushi_pink_900
                 else -> R.color.sushi_pink_500
             }
@@ -195,5 +217,4 @@ class ColorBuilder(val context: Context) {
     fun build(): Int {
         return ContextCompat.getColor(context, getColorResId())
     }
-
 }
