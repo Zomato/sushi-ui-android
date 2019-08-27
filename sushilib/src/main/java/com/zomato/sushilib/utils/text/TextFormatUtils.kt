@@ -4,17 +4,10 @@ import android.support.annotation.RestrictTo
 import android.support.annotation.StyleRes
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.FontWeight
-import com.zomato.sushilib.annotations.FontWeight.BOLD
-import com.zomato.sushilib.annotations.FontWeight.EXTRABOLD
-import com.zomato.sushilib.annotations.FontWeight.EXTRALIGHT
-import com.zomato.sushilib.annotations.FontWeight.LIGHT
-import com.zomato.sushilib.annotations.FontWeight.MEDIUM
-import com.zomato.sushilib.annotations.FontWeight.REGULAR
-import com.zomato.sushilib.annotations.FontWeight.SEMIBOLD
-import com.zomato.sushilib.annotations.FontWeight.THIN
+import com.zomato.sushilib.annotations.FontWeight.*
 
 @RestrictTo(RestrictTo.Scope.LIBRARY)
-object TextFormatUtils {
+internal object TextFormatUtils {
     @JvmStatic
     @StyleRes
     fun textFontWeightToTextAppearance(@FontWeight textFontWeight: Int): Int {
