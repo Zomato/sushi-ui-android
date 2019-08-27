@@ -2,7 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <color name="sushi_black">#1C1C1C</color>
     <color name="sushi_white">#FFFFFF</color>
-    <color name="sushi_zred">#E23744</color>
 
     <color name="sushi_grey_050">#FCFCFC</color>
     <color name="sushi_grey_100">#F8F8F8</color>
