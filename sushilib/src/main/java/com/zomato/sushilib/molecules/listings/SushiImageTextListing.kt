@@ -21,10 +21,10 @@ open class SushiImageTextListing @JvmOverloads constructor(
 ) : LinearLayout(ctx, attrs, defStyleAttr, defStyleRes) {
 
     private var initialized = false
-    private var cornerIconTextView: SushiIconTextView? = null
 
-    var textListing = SushiTextListing(context, attrs)
-    var imageView = SushiCircleImageView(context)
+    protected var cornerIconTextView: SushiIconTextView? = null
+    protected var textListing = SushiTextListing(context, attrs)
+    protected var imageView = SushiCircleImageView(context)
 
     var imagePadding
         get() = imageView.paddingLeft
