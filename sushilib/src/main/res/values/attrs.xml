@@ -6,7 +6,6 @@
     <attr name="ratingTagStyle" format="reference" />
     <attr name="circleIconTextStyle" format="reference" />
     <attr name="sushiIconAppearance" format="reference" type="style" />
-    <attr name="textColorSecondaryLight" format="color"/>
 
     <!-- Rating States for ColorStateList -->
     <attr name="state_rating_1" format="boolean" />

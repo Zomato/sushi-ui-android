@@ -7,7 +7,7 @@
         <item name="tabIndicatorFullWidth">false</item>
         <item name="tabMode">scrollable</item>
         <item name="tabRippleColor">@null</item>
-        <item name="tabTextColor">?textColorSecondaryLight</item>
+        <item name="tabTextColor">?android:textColorSecondary</item>
         <item name="tabSelectedTextColor">?android:textColorPrimary</item>
         <item name="tabTextAppearance">@style/TextAppearance.Sushi.TabLayout</item>
     </style>
