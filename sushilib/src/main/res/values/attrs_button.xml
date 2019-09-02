@@ -17,7 +17,6 @@
 
         <attr name="strokeColor" format="color" />
         <attr name="buttonTextColor" format="color" />
-        <attr name="buttonStrokeWidth" format="dimension" />
 
         <!-- Same as in SushiTextView -->
         <attr name="drawableLeft" />
