@@ -35,20 +35,11 @@ internal object ButtonStyleUtils {
      */
     @JvmStatic
     fun SushiButton.applyStrokeWidth() {
-        strokeWidth = if (getButtonStrokeWidth() != -1) getButtonStrokeWidth()
-        else if (getButtonType() == ButtonType.OUTLINE) {
-            resources.getDimensionPixelSize(R.dimen.sushi_outline_button_stroke_width)
-        } else {
-            0
-        }
-    }
-
-    @JvmStatic
-    fun SushiButton.applyIconPadding() {
-        compoundDrawablePadding = if (getButtonType() == ButtonType.TEXT) {
-            resources.getDimensionPixelSize(R.dimen.sushi_text_button_icon_padding)
-        } else {
-            resources.getDimensionPixelSize(R.dimen.sushi_button_icon_padding)
+        strokeWidth = when {
+            getButtonType() == ButtonType.OUTLINE -> {
+                if (strokeWidth != 0) strokeWidth else resources.getDimensionPixelSize(R.dimen.sushi_outline_button_stroke_width)
+            }
+            else -> 0
         }
     }
 

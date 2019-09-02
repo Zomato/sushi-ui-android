@@ -40,7 +40,6 @@ open class SushiButton @JvmOverloads constructor(
     private var buttonTextColor: Int = WHITE
     @ColorInt
     private var customStrokeColor: Int = buttonColor
-    private var buttonStrokeWidth: Int = -1
 
     @FontWeight
     var textFontWeight: Int = FontWeight.REGULAR
@@ -61,7 +60,6 @@ open class SushiButton @JvmOverloads constructor(
             buttonType = it.getInt(R.styleable.SushiButton_buttonType, ButtonType.SOLID)
             buttonColor = it.getColor(R.styleable.SushiButton_buttonColor, buttonColor)
             buttonTextColor = it.getColor(R.styleable.SushiButton_buttonTextColor, buttonTextColor)
-            buttonStrokeWidth = it.getDimensionPixelOffset(R.styleable.SushiButton_buttonStrokeWidth, -1)
             customStrokeColor = buttonColor
 
             val attrTextFontWeight = it.getInt(R.styleable.SushiButton_textFontWeight, -1)
@@ -129,7 +127,6 @@ open class SushiButton @JvmOverloads constructor(
     private fun reapplyStyles() {
         ButtonStyleUtils.apply {
             applyStrokeWidth()
-            applyIconPadding()
             applyRippleColor()
             applyBackgroundTintList()
             applyIconAndTextColor()
@@ -159,10 +156,6 @@ open class SushiButton @JvmOverloads constructor(
                 d?.setTintList(tintList)
             }
         }
-    }
-
-    fun getButtonStrokeWidth(): Int {
-        return buttonStrokeWidth
     }
 
     fun getButtonTextColor(): Int {
