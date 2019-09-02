@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Rect
 import android.util.AttributeSet
 import com.zomato.sushilib.organisms.stacks.ExpandedItem
-import com.zomato.sushilib.organisms.stacks.InternalPageCallbacks
 import com.zomato.sushilib.organisms.stacks.SushiCollapsingCardStack
 
 class StandaloneExpandablePageLayout(

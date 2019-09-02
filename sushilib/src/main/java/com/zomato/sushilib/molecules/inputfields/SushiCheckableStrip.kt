@@ -1,14 +1,14 @@
 package com.zomato.sushilib.molecules.inputfields
 
 import android.content.Context
-import android.support.annotation.AttrRes
-import android.support.annotation.ColorInt
-import android.support.annotation.StyleRes
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.widget.Checkable
 import android.widget.CompoundButton
 import android.widget.LinearLayout
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
+import androidx.annotation.StyleRes
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.CheckableSelectorType
 import com.zomato.sushilib.atoms.textviews.SushiTextView

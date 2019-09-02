@@ -1,10 +1,10 @@
 package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
-import android.support.annotation.AttrRes
-import android.support.annotation.StyleRes
-import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
+import androidx.annotation.AttrRes
+import androidx.annotation.StyleRes
+import androidx.appcompat.widget.AppCompatTextView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 

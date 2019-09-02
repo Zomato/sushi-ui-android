@@ -5,10 +5,10 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Build
-import android.support.annotation.ColorInt
-import android.support.annotation.RestrictTo
-import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.ColorUtils
+import androidx.annotation.ColorInt
+import androidx.annotation.RestrictTo
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.ColorUtils
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ButtonType
 import com.zomato.sushilib.atoms.buttons.SushiButton

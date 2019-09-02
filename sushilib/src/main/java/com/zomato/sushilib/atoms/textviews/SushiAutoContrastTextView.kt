@@ -2,9 +2,9 @@ package com.zomato.sushilib.atoms.textviews
 
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
-import android.support.annotation.AttrRes
-import android.support.annotation.StyleRes
 import android.util.AttributeSet
+import androidx.annotation.AttrRes
+import androidx.annotation.StyleRes
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.color.ColorContrastUtils
 

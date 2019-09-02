@@ -4,12 +4,12 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Build
-import android.support.annotation.AttrRes
-import android.support.annotation.ColorInt
-import android.support.annotation.StyleRes
-import android.support.design.button.MaterialButton
 import android.util.AttributeSet
 import android.util.TypedValue
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
+import androidx.annotation.StyleRes
+import com.google.android.material.button.MaterialButton
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ButtonDimension
 import com.zomato.sushilib.annotations.ButtonType

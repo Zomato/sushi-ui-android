@@ -3,11 +3,11 @@ package com.zomato.sushilib.utils.widgets
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
-import android.support.annotation.DimenRes
-import android.support.annotation.DrawableRes
-import android.support.annotation.RestrictTo
-import android.support.v4.content.ContextCompat
 import android.util.TypedValue
+import androidx.annotation.DimenRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.RestrictTo
+import androidx.core.content.ContextCompat
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.TagSize
 import com.zomato.sushilib.annotations.TagType

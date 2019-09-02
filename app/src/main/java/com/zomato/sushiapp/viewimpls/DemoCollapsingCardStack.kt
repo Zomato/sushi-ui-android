@@ -3,10 +3,10 @@ package com.zomato.sushiapp.viewimpls
 import android.content.Context
 import android.graphics.Rect
 import android.graphics.drawable.ColorDrawable
-import android.support.annotation.Px
-import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.util.AttributeSet
 import android.view.View
+import androidx.annotation.Px
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.zomato.sushiapp.DemoPullCollapsibleActivity
 import com.zomato.sushilib.organisms.stacks.ExpandedItem
 import com.zomato.sushilib.organisms.stacks.InternalPageCallbacks

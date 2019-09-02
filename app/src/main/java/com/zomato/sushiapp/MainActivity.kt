@@ -2,15 +2,15 @@ package com.zomato.sushiapp
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.support.design.widget.CoordinatorLayout
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.app.AppCompatDelegate
-import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_NO
-import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_YES
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.content.ContextCompat
 import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 import com.zomato.sushilib.atoms.menu.SushiMenuItem
 import com.zomato.sushilib.organisms.navigation.SushiBottomNavigationView

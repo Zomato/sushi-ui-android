@@ -2,13 +2,13 @@ package com.zomato.sushilib.molecules.inputfields
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.support.annotation.AttrRes
-import android.support.annotation.ColorInt
-import android.support.annotation.StyleRes
-import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.ColorUtils
-import android.support.v7.widget.SwitchCompat
 import android.util.AttributeSet
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
+import androidx.annotation.StyleRes
+import androidx.appcompat.widget.SwitchCompat
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.ColorUtils
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 

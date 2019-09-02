@@ -2,11 +2,11 @@ package com.zomato.sushilib.molecules.listings
 
 import android.animation.LayoutTransition
 import android.content.Context
-import android.support.annotation.AttrRes
-import android.support.annotation.StyleRes
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.widget.LinearLayout
+import androidx.annotation.AttrRes
+import androidx.annotation.StyleRes
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 

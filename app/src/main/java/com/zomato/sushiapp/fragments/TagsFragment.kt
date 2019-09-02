@@ -1,12 +1,12 @@
 package com.zomato.sushiapp.fragments
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.zomato.sushiapp.R
 import com.zomato.sushilib.annotations.TagType
 import com.zomato.sushilib.molecules.tags.SushiTag

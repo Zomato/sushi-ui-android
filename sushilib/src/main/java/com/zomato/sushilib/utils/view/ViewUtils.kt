@@ -4,7 +4,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.content.Context
 import android.graphics.Rect
-import android.graphics.RectF
 import android.util.Log
 import android.view.View
 import android.view.ViewPropertyAnimator

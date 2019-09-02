@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 app:cardBackgroundColor="@color/sushi_blue_100"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,9 +77,9 @@
                     app:headlineText="Bars"
                     app:imagePadding="@dimen/sushi_spacing_micro"
                     app:imageSrc="@drawable/ic_topnav_bars" />
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 app:cardBackgroundColor="@color/sushi_red_100"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,9 +96,9 @@
                     app:headlineText="Bars"
                     app:imagePadding="@dimen/sushi_spacing_micro"
                     app:imageSrc="@drawable/ic_topnav_bars" />
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 app:cardBackgroundColor="@color/sushi_green_100"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -115,8 +115,8 @@
                     app:headlineText="Bars"
                     app:imagePadding="@dimen/sushi_spacing_micro"
                     app:imageSrc="@drawable/ic_topnav_bars" />
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 app:cardBackgroundColor="@color/sushi_purple_100"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
                     app:headlineText="Bars"
                     app:imagePadding="@dimen/sushi_spacing_micro"
                     app:imageSrc="@drawable/ic_topnav_bars" />
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
         </com.zomato.sushiapp.viewimpls.DemoCollapsingCardStack>
 
         <com.zomato.sushilib.atoms.textviews.SushiTextView

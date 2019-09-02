@@ -1,11 +1,11 @@
 package com.zomato.sushilib.molecules.inputfields
 
 import android.content.Context
-import android.support.annotation.IdRes
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.annotation.IdRes
 
 /**
  * Created by prempal on 2019-05-23.
