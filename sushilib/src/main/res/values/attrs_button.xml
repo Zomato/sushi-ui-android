@@ -16,7 +16,7 @@
         <attr name="buttonColor" format="color" />
 
         <attr name="strokeColor" format="color" />
-        <attr name="buttonTextColor" format="color" />
+        <attr name="android:textColor" />
 
         <!-- Same as in SushiTextView -->
         <attr name="drawableLeft" />
