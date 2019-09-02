@@ -123,9 +123,9 @@ internal object TagStyleUtils {
     fun getMinWidthResIdForRatingTagBySize(@TagSize tagSize: Int): Int {
         return when (tagSize) {
             TagSize.LARGE -> R.dimen.sushi_rating_tag_large_minwidth
-            TagSize.MEDIUM -> R.dimen.sushi_rating_tag_large_minwidth
+            TagSize.MEDIUM -> R.dimen.sushi_rating_tag_medium_minwidth
             TagSize.SMALL -> R.dimen.sushi_rating_tag_small_minwidth
-            TagSize.TINY -> R.dimen.sushi_rating_tag_small_minwidth
+            TagSize.TINY -> R.dimen.sushi_rating_tag_tiny_minwidth
             else -> R.dimen.sushi_rating_tag_large_minwidth
         }
     }

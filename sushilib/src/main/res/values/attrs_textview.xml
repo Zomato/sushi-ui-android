@@ -9,6 +9,8 @@
             <enum name="regular" value="400" />
             <enum name="medium" value="500" />
             <enum name="semibold" value="600" />
+            <enum name="bold" value="700" />
+            <enum name="extrabold" value="800" />
         </attr>
 
         <attr name="drawableLeft" format="reference" />

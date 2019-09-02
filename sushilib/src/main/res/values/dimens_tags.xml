@@ -21,5 +21,7 @@
     <dimen name="sushi_tag_capsule_corner_radius">30dp</dimen>
 
     <dimen name="sushi_rating_tag_large_minwidth">50dp</dimen>
-    <dimen name="sushi_rating_tag_small_minwidth">30dp</dimen>
+    <dimen name="sushi_rating_tag_medium_minwidth">40dp</dimen>
+    <dimen name="sushi_rating_tag_small_minwidth">35dp</dimen>
+    <dimen name="sushi_rating_tag_tiny_minwidth">30dp</dimen>
 </resources>

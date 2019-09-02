@@ -43,6 +43,16 @@
         <item name="fontFamily">?attr/fontFamilySemiBold</item>
     </style>
 
+    <style name="TextAppearance.Sushi.Bold">
+        <item name="android:fontFamily">?attr/fontFamilyBold</item>
+        <item name="fontFamily">?attr/fontFamilyBold</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.ExtraBold">
+        <item name="android:fontFamily">?attr/fontFamilyExtraBold</item>
+        <item name="fontFamily">?attr/fontFamilyExtraBold</item>
+    </style>
+
     <style name="Widget.Sushi.CircleIconView" parent="TextAppearance.Sushi.Icon">
         <item name="android:gravity">center</item>
         <item name="android:padding">@dimen/sushi_spacing_base</item>

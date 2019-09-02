@@ -34,7 +34,8 @@ internal object ButtonStyleUtils {
      */
     @JvmStatic
     fun SushiButton.applyStrokeWidth() {
-        strokeWidth = if (getButtonType() == ButtonType.OUTLINE) {
+        strokeWidth = if (getButtonStrokeWidth() != -1) getButtonStrokeWidth()
+        else if (getButtonType() == ButtonType.OUTLINE) {
             resources.getDimensionPixelSize(R.dimen.sushi_outline_button_stroke_width)
         } else {
             0
@@ -53,9 +54,9 @@ internal object ButtonStyleUtils {
     @JvmStatic
     fun SushiButton.applyIconAndTextColor() {
         val colorStateList = if (getButtonType() == ButtonType.SOLID) {
-            getTextColorStateList(context, Color.WHITE)
+            getTextColorStateList(context, getButtonTextColor())
         } else {
-            getTextColorStateList(context, getButtonColor())
+            getTextColorStateList(context, if (getButtonTextColor() == -1) getButtonColor() else getButtonTextColor())
         }
         setTextColor(colorStateList)
         setCompoundDrawableTintListCompat(colorStateList)
@@ -75,7 +76,7 @@ internal object ButtonStyleUtils {
     fun SushiButton.applyRippleColor() {
         val buttonType = getButtonType()
         rippleColor = when (buttonType) {
-            ButtonType.SOLID -> getButtonRippleStateList(Color.WHITE)
+            ButtonType.SOLID -> getButtonRippleStateList(if (getButtonColor() == Color.WHITE) ContextCompat.getColor(context, R.color.sushi_grey_500) else Color.WHITE)
             ButtonType.OUTLINE -> getButtonRippleStateList(getButtonColor())
             else -> null
         }

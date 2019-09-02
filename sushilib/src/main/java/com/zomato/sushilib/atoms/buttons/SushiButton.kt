@@ -1,6 +1,9 @@
 package com.zomato.sushilib.atoms.buttons
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color.WHITE
+import android.os.Build
 import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
 import android.support.annotation.StyleRes
@@ -34,7 +37,10 @@ open class SushiButton @JvmOverloads constructor(
     @ColorInt
     private var buttonColor: Int = getThemedColorFromAttr(context, R.attr.colorAccent)
     @ColorInt
+    private var buttonTextColor: Int = WHITE
+    @ColorInt
     private var customStrokeColor: Int = buttonColor
+    private var buttonStrokeWidth: Int = -1
 
     @FontWeight
     var textFontWeight: Int = FontWeight.REGULAR
@@ -54,6 +60,8 @@ open class SushiButton @JvmOverloads constructor(
             buttonDimension = it.getInt(R.styleable.SushiButton_buttonDimension, ButtonDimension.LARGE)
             buttonType = it.getInt(R.styleable.SushiButton_buttonType, ButtonType.SOLID)
             buttonColor = it.getColor(R.styleable.SushiButton_buttonColor, buttonColor)
+            buttonTextColor = it.getColor(R.styleable.SushiButton_buttonTextColor, buttonTextColor)
+            buttonStrokeWidth = it.getDimensionPixelOffset(R.styleable.SushiButton_buttonStrokeWidth, -1)
             customStrokeColor = buttonColor
 
             val attrTextFontWeight = it.getInt(R.styleable.SushiButton_textFontWeight, -1)
@@ -140,6 +148,27 @@ open class SushiButton @JvmOverloads constructor(
         reapplySizes()
     }
 
+    override fun setCompoundDrawableTintList(tintList: ColorStateList?) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            super.setCompoundDrawableTintList(tintList)
+        } else {
+            compoundDrawables.forEach { d ->
+                d?.setTintList(tintList)
+            }
+            compoundDrawablesRelative.forEach { d ->
+                d?.setTintList(tintList)
+            }
+        }
+    }
+
+    fun getButtonStrokeWidth(): Int {
+        return buttonStrokeWidth
+    }
+
+    fun getButtonTextColor(): Int {
+        return buttonTextColor
+    }
+
     private fun setStrokeColor(@ColorInt color: Int) {
         customStrokeColor = color
         ButtonStyleUtils.apply {
@@ -179,7 +208,7 @@ open class SushiButton @JvmOverloads constructor(
         }
         if (buttonType == ButtonType.TEXT) {
             minHeight = 0
-            val picoPad = resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico)
+            val picoPad = resources.getDimensionPixelSize(R.dimen.sushi_spacing_femto)
             setPadding(picoPad, picoPad, picoPad, picoPad)
         }
     }

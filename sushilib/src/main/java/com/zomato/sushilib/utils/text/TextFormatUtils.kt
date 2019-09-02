@@ -18,6 +18,8 @@ internal object TextFormatUtils {
             REGULAR -> R.style.TextAppearance_Sushi_Regular
             MEDIUM -> R.style.TextAppearance_Sushi_Medium
             SEMIBOLD -> R.style.TextAppearance_Sushi_SemiBold
+            BOLD -> R.style.TextAppearance_Sushi_Bold
+            EXTRABOLD -> R.style.TextAppearance_Sushi_ExtraBold
             else -> R.style.TextAppearance_Sushi_Regular
         }
     }

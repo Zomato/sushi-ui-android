@@ -56,6 +56,16 @@ class TypographyStyleFragment : Fragment() {
                 container,
                 false
             )
+            FONT_WEIGHT_BOLD -> inflater.inflate(
+                R.layout.fragment_typography_style_bold,
+                container,
+                false
+            )
+            FONT_WEIGHT_EXTRABOLD -> inflater.inflate(
+                R.layout.fragment_typography_style_extrabold,
+                container,
+                false
+            )
             else -> inflater.inflate(
                 R.layout.fragment_typography_style_regular,
                 container,
@@ -75,6 +85,8 @@ class TypographyStyleFragment : Fragment() {
         const val FONT_WEIGHT_REGULAR = 2
         const val FONT_WEIGHT_MEDIUM = 3
         const val FONT_WEIGHT_SEMIBOLD = 4
+        const val FONT_WEIGHT_BOLD = 5
+        const val FONT_WEIGHT_EXTRABOLD = 6
 
         fun getTitle(pos: Int) = when (pos) {
             FONT_WEIGHT_EXTRALIGHT -> "ExtraLight"
@@ -82,6 +94,8 @@ class TypographyStyleFragment : Fragment() {
             FONT_WEIGHT_REGULAR -> "Regular"
             FONT_WEIGHT_MEDIUM -> "Medium"
             FONT_WEIGHT_SEMIBOLD -> "SemiBold"
+            FONT_WEIGHT_BOLD -> "Bold"
+            FONT_WEIGHT_EXTRABOLD -> "ExtraBold"
             else -> "Regular"
         }
 

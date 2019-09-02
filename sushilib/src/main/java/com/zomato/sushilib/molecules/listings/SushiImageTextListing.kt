@@ -22,9 +22,9 @@ open class SushiImageTextListing @JvmOverloads constructor(
 
     private var initialized = false
 
-    private var textListing = SushiTextListing(context, attrs)
-    private var cornerIconTextView: SushiIconTextView? = null
-    var imageView = SushiCircleImageView(context)
+    protected var cornerIconTextView: SushiIconTextView? = null
+    protected var textListing = SushiTextListing(context, attrs)
+    protected var imageView = SushiCircleImageView(context)
 
     var imagePadding
         get() = imageView.paddingLeft
@@ -95,5 +95,4 @@ open class SushiImageTextListing @JvmOverloads constructor(
             it.setPadding(resources.getDimensionPixelOffset(R.dimen.sushi_spacing_micro), 0, 0, 0)
         }
     }
-
 }

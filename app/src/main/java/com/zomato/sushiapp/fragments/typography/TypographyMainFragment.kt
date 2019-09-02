@@ -27,7 +27,7 @@ class TypographyMainFragment : Fragment() {
             override fun getItem(pos: Int): Fragment =
                 TypographyStyleFragment.newInstance(pos)
 
-            override fun getCount(): Int = 5
+            override fun getCount(): Int = 7
 
             override fun getPageTitle(pos: Int): CharSequence? =
                 TypographyStyleFragment.getTitle(pos)
