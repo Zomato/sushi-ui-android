@@ -2,7 +2,7 @@ package com.zomato.sushilib.atoms.buttons
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.graphics.Color.WHITE
+import android.graphics.Color
 import android.os.Build
 import android.support.annotation.AttrRes
 import android.support.annotation.ColorInt
@@ -37,8 +37,6 @@ open class SushiButton @JvmOverloads constructor(
     @ColorInt
     private var buttonColor: Int = getThemedColorFromAttr(context, R.attr.colorAccent)
     @ColorInt
-    private var buttonTextColor: Int = WHITE
-    @ColorInt
     private var customStrokeColor: Int = buttonColor
 
     @FontWeight
@@ -59,7 +57,6 @@ open class SushiButton @JvmOverloads constructor(
             buttonDimension = it.getInt(R.styleable.SushiButton_buttonDimension, ButtonDimension.LARGE)
             buttonType = it.getInt(R.styleable.SushiButton_buttonType, ButtonType.SOLID)
             buttonColor = it.getColor(R.styleable.SushiButton_buttonColor, buttonColor)
-            buttonTextColor = it.getColor(R.styleable.SushiButton_buttonTextColor, buttonTextColor)
             customStrokeColor = buttonColor
 
             val attrTextFontWeight = it.getInt(R.styleable.SushiButton_textFontWeight, -1)
@@ -83,6 +80,14 @@ open class SushiButton @JvmOverloads constructor(
                 strokeColor = strokeColorStateList
             } ?: setStrokeColor(it.getColor(R.styleable.SushiButton_strokeColor, buttonColor))
 
+            it.getColorStateList(R.styleable.SushiButton_android_textColor)?.let {
+                setTextColor(it)
+            } ?: run {
+                if (it.hasValue(R.styleable.SushiButton_android_textColor)) {
+                    setTextColor(it.getColor(R.styleable.SushiButton_android_textColor, Color.WHITE))
+                }
+            }
+
             it.recycle()
 
             TextViewUtils.apply {
@@ -93,6 +98,12 @@ open class SushiButton @JvmOverloads constructor(
                     0.9f
                 )
             }
+        }
+    }
+
+    override fun setTextColor(@ColorInt color: Int) {
+        ButtonStyleUtils.apply {
+            applyIconAndTextColor(color)
         }
     }
 
@@ -156,10 +167,6 @@ open class SushiButton @JvmOverloads constructor(
                 d?.setTintList(tintList)
             }
         }
-    }
-
-    fun getButtonTextColor(): Int {
-        return buttonTextColor
     }
 
     private fun setStrokeColor(@ColorInt color: Int) {

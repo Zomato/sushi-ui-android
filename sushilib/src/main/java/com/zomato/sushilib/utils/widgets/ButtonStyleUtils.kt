@@ -44,11 +44,11 @@ internal object ButtonStyleUtils {
     }
 
     @JvmStatic
-    fun SushiButton.applyIconAndTextColor() {
+    fun SushiButton.applyIconAndTextColor(color: Int? = null) {
         val colorStateList = if (getButtonType() == ButtonType.SOLID) {
-            getTextColorStateList(context, getButtonTextColor())
+            getTextColorStateList(context, color ?: Color.WHITE)
         } else {
-            getTextColorStateList(context, if (getButtonTextColor() == -1) getButtonColor() else getButtonTextColor())
+            getTextColorStateList(context, color ?: getButtonColor())
         }
         setTextColor(colorStateList)
         setCompoundDrawableTintListCompat(colorStateList)
