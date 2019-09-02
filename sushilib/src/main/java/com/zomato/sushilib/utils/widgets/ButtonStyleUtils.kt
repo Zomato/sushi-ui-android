@@ -4,6 +4,7 @@ import android.animation.AnimatorInflater
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.os.Build
 import android.support.annotation.ColorInt
 import android.support.annotation.RestrictTo
 import android.support.v4.content.ContextCompat
@@ -80,11 +81,13 @@ internal object ButtonStyleUtils {
             ButtonType.OUTLINE -> getButtonRippleStateList(getButtonColor())
             else -> null
         }
-        if (buttonType == ButtonType.TEXT) {
-            stateListAnimator =
-                AnimatorInflater.loadStateListAnimator(context, R.animator.sushi_text_button_click_animator)
-        } else {
-            stateListAnimator = null
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (buttonType == ButtonType.TEXT) {
+                stateListAnimator =
+                    AnimatorInflater.loadStateListAnimator(context, R.animator.sushi_text_button_click_animator)
+            } else {
+                stateListAnimator = null
+            }
         }
     }
 
