@@ -36,9 +36,8 @@ internal object ButtonStyleUtils {
     @JvmStatic
     fun SushiButton.applyStrokeWidth() {
         strokeWidth = when {
-            getButtonType() == ButtonType.OUTLINE -> {
-                if (strokeWidth != 0) strokeWidth else resources.getDimensionPixelSize(R.dimen.sushi_outline_button_stroke_width)
-            }
+            strokeWidth != 0 -> strokeWidth
+            getButtonType() == ButtonType.OUTLINE -> resources.getDimensionPixelSize(R.dimen.sushi_outline_button_stroke_width)
             else -> 0
         }
     }
