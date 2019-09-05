@@ -16,7 +16,7 @@ import com.zomato.sushilib.utils.theme.ResourceThemeResolver
  * created by championswimmer on 01/05/19
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
-class SushiSwitch @JvmOverloads constructor(
+open class SushiSwitch @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
     @AttrRes defStyleAttr: Int = R.attr.switchStyle, @StyleRes defStyleRes: Int = 0
 ) : SwitchCompat(ctx, attrs, defStyleAttr) {
