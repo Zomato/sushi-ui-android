@@ -1,3 +1,3 @@
 
 # Because we perform reflection into menus
--keep class android.support.v7.view.menu.** {*;}
+-keep class androidx.appcompat.view.menu.** {*;}
