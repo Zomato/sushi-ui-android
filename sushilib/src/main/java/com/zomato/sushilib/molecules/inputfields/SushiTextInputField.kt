@@ -4,15 +4,15 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.Drawable
-import android.support.annotation.AttrRes
-import android.support.design.widget.TextInputEditText
-import android.support.design.widget.TextInputLayout
-import android.support.v4.content.ContextCompat
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.LayoutDirection
 import android.view.MotionEvent
+import androidx.annotation.AttrRes
+import androidx.core.content.ContextCompat
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.widgets.TextViewUtils.applyDrawables
 
@@ -23,7 +23,7 @@ import com.zomato.sushilib.utils.widgets.TextViewUtils.applyDrawables
  */
 open class SushiTextInputField @JvmOverloads constructor(
     ctx: Context, attrs: AttributeSet? = null,
-    @AttrRes defStyleAttr: Int = android.support.design.R.attr.textInputStyle
+    @AttrRes defStyleAttr: Int = com.google.android.material.R.attr.textInputStyle
 ) : TextInputLayout(ctx, attrs, defStyleAttr) {
 
     interface EdgeDrawableClickListener {

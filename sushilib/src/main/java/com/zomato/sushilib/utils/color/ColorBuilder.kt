@@ -1,9 +1,9 @@
 package com.zomato.sushilib.utils.color
 
 import android.content.Context
-import android.support.annotation.ColorInt
-import android.support.annotation.ColorRes
-import android.support.v4.content.ContextCompat
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ColorName
 import com.zomato.sushilib.annotations.ColorTint

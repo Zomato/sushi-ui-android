@@ -1,16 +1,13 @@
 package com.zomato.sushilib.organisms.stacks.page
 
 import android.animation.ObjectAnimator
-import android.animation.TimeInterpolator
 import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Outline
 import android.graphics.Rect
-import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewOutlineProvider
-import android.view.animation.BounceInterpolator
 import android.widget.FrameLayout
 import com.zomato.sushilib.organisms.stacks.AnimationConstants
 import com.zomato.sushilib.organisms.stacks.AnimationConstants.DEFAULT_ANIM_DURATION

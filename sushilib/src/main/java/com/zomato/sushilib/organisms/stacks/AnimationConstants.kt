@@ -1,9 +1,9 @@
 package com.zomato.sushilib.organisms.stacks
 
-import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.view.animation.BounceInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.OvershootInterpolator
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 
 /**
  * created by championswimmer on 2019-08-01

@@ -1,10 +1,8 @@
 package com.zomato.sushilib.organisms.stacks.page
 
-import android.animation.TimeInterpolator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
-import android.os.Build
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
@@ -13,10 +11,9 @@ import com.zomato.sushilib.organisms.stacks.AnimationConstants
 import com.zomato.sushilib.organisms.stacks.ExpandedItem
 import com.zomato.sushilib.organisms.stacks.InternalPageCallbacks
 import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
-import com.zomato.sushilib.utils.view.ViewUtils.withEndAction
 import com.zomato.sushilib.utils.view.ViewUtils
+import com.zomato.sushilib.utils.view.ViewUtils.withEndAction
 import java.lang.reflect.Method
-import kotlin.math.roundToLong
 
 open class ExpandablePageLayout @JvmOverloads constructor(
     context: Context,

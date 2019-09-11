@@ -2,9 +2,9 @@ package com.zomato.sushilib.utils.widgets
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.support.annotation.ColorInt
-import android.support.annotation.RestrictTo
-import android.support.v4.content.ContextCompat
+import androidx.annotation.ColorInt
+import androidx.annotation.RestrictTo
+import androidx.core.content.ContextCompat
 
 @RestrictTo(RestrictTo.Scope.LIBRARY)
 internal object CompoundButtonUtils {

@@ -1,10 +1,10 @@
 package com.zomato.sushilib.molecules.inputfields
 
 import android.content.Context
-import android.support.annotation.AttrRes
-import android.support.annotation.ColorInt
-import android.support.v7.widget.AppCompatCheckBox
 import android.util.AttributeSet
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
+import androidx.appcompat.widget.AppCompatCheckBox
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.widgets.CompoundButtonHelper
 

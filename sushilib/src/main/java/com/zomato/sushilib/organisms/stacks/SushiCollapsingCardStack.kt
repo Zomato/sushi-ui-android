@@ -2,14 +2,14 @@ package com.zomato.sushilib.organisms.stacks
 
 import android.content.Context
 import android.os.Build
-import android.support.v4.widget.NestedScrollView
-import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import androidx.core.widget.NestedScrollView
+import androidx.recyclerview.widget.RecyclerView
 import com.zomato.sushilib.organisms.stacks.AnimationConstants.DEFAULT_ANIM_DURATION
 import java.lang.ref.WeakReference
 

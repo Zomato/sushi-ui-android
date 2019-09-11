@@ -2,14 +2,14 @@ package com.zomato.sushilib.organisms.ratings
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.support.annotation.AttrRes
-import android.support.annotation.ColorInt
-import android.support.annotation.IntRange
-import android.support.annotation.StyleRes
-import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.LinearLayout
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
+import androidx.annotation.IntRange
+import androidx.annotation.StyleRes
+import androidx.core.content.ContextCompat
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.TagSize
 import com.zomato.sushilib.annotations.TagType

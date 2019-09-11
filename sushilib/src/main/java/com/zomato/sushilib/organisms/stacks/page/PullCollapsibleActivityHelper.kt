@@ -6,10 +6,10 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import com.zomato.sushilib.utils.dimens.DimenUtils.dp2px
 import com.zomato.sushilib.utils.view.ViewUtils
 import com.zomato.sushilib.utils.view.ViewUtils.executeOnMeasure
