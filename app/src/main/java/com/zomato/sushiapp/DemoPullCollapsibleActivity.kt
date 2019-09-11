@@ -15,6 +15,7 @@ class DemoPullCollapsibleActivity : SushiPullCollapsibleActivity() {
     companion object {
         fun start(context: Context, expandFromRect: Rect) {
             val intent = Intent(context, DemoPullCollapsibleActivity::class.java)
+            intent.putExtra(EXTRA_ENABLE_PULL_COLLAPSE, true)
             intent.putExtra(EXTRA_EXPAND_FROM_RECT, expandFromRect)
             context.startActivity(intent)
         }
@@ -22,10 +23,7 @@ class DemoPullCollapsibleActivity : SushiPullCollapsibleActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val layout = LinearLayout(this).apply {
-            setBackgroundColor(resources.getColor(R.color.sushi_yellow_100))
-        }
-        setContentView(layout)
+        setContentView(R.layout.activity_demo_pull_collapsible)
     }
 
 }

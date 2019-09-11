@@ -3,16 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="-10dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="-24dp"
     app:cardBackgroundColor="@color/sushi_green_100"
-    app:cardCornerRadius="10dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardCornerRadius="16dp"
     app:cardElevation="12dp">
 
     <com.zomato.sushilib.molecules.listings.SushiImageTextListing
+        android:id="@+id/cardTextListing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/sushi_spacing_extra"
-        android:paddingBottom="10dp"
+        android:paddingBottom="16dp"
         app:bodyText="Tabs, Menus, Bottom Bars"
         app:headlineText="Bars"
         app:imagePadding="@dimen/sushi_spacing_micro"
