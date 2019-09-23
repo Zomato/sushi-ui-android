@@ -57,7 +57,8 @@ internal class PullCollapsibleActivityHelper(val activity: SushiPullCollapsibleA
 
     fun onStart() {
         if (expandCalled.not()) {
-            throw AssertionError("Did you forget to call expandFromTop()/expandFrom()?")
+            throw AssertionError("This activity wasn't expanded when it was created " +
+                "You have to call setContentView either through conventional way or through passing null ")
         }
     }
 
