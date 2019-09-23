@@ -63,9 +63,14 @@ open class SushiPullCollapsibleActivity : AppCompatActivity() {
         } ?: super.setContentView(layoutResID)
         pcaHelper.expand()
     }
-
-    override fun setContentView(view: View) {
-        super.setContentView(pcaHelper.setContentView(view))
+    /**
+     * For cases where an activity does *NOT* need to call setContentView at all,
+     * they must call setContentView with null value
+     */
+    override fun setContentView(view: View?) {
+        if(view != null){
+            super.setContentView(pcaHelper.setContentView(view))
+        }
         pcaHelper.expand()
     }
 
