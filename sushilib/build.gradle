@@ -8,9 +8,9 @@ def tryApplyFrom(libName) {
 }
 
 // Maven Publishing Details
-ext.libraryGroupId = 'com.zomato'
+ext.libraryGroupId = 'sushi-android'
 ext.libraryArtifactId = 'sushilib'
-ext.libraryVersion = '0.9.1-beta1'
+ext.libraryVersion = '0.9.2'
 
 
 apply from: "../versions.gradle"
