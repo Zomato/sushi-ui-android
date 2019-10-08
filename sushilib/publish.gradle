@@ -1,6 +1,27 @@
 apply plugin: 'maven-publish'
-
 def GITHUB_TOKEN = System.getenv("GITHUB_TOKEN")
+
+task sourcesJar(type: Jar) {
+    println(android.sourceSets.main.java.srcDirs)
+    from android.sourceSets.main.java.srcDirs
+    archiveClassifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    failOnError false
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    classpath += configurations.compile
+}
+
+// build a jar with javadoc
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+publish.dependsOn javadocJar
+publish.dependsOn sourcesJar
+publish.dependsOn build
 
 publishing {
     publications {
@@ -9,7 +30,10 @@ publishing {
             version "$libraryVersion"
             artifactId "$libraryArtifactId"
 
-            artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+            artifact "$buildDir/outputs/aar/${project.name}-release.aar"
+            // Github doesn't support classified artifacts yet.
+//            artifact (sourcesJar)
+//            artifact (javadocJar)
 
             pom.withXml {
                 //Creating additional node for dependencies
@@ -46,7 +70,7 @@ publishing {
         maven {
             credentials(HttpHeaderCredentials) {
                 name = "Authorization"
-                value = "Bearer ${GITHUB_TOKEN}"
+                value = "token ${GITHUB_TOKEN}"
             }
             url = "https://maven.pkg.github.com/Zomato/Sushi-Android"
             authentication {
