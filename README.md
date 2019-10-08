@@ -15,7 +15,7 @@ Add the Github Maven repository and the dependency in your app's build.gradle
 repositories {
     // ... google(), jcenter() etc
     maven {
-        url "https://maven.pkg.github.com/Zomato/Jumbo2-Android"
+        url "https://maven.pkg.github.com/Zomato/Sushi-Android"
         credentials(HttpHeaderCredentials) {
             name = "Authorization"
             value = "token ${System.getenv("GITHUB_TOKEN")}"
