@@ -93,16 +93,6 @@ open class SushiTextInputField @JvmOverloads constructor(
         })
     }
 
-    fun setEditable(editable: Boolean) {
-        editText.isCursorVisible = editable
-        editText.isFocusableInTouchMode = editable
-    }
-
-    fun setInputType(inputType: Int) {
-        editText.inputType = inputType
-    }
-
-
     private fun prepareOnTextChangedListener() {
         editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
