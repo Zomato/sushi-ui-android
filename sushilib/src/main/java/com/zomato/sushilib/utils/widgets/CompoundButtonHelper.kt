@@ -1,10 +1,10 @@
 package com.zomato.sushilib.utils.widgets
 
-import android.support.annotation.AttrRes
-import android.support.annotation.ColorInt
-import android.support.annotation.RestrictTo
 import android.util.AttributeSet
 import android.widget.CompoundButton
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
+import androidx.annotation.RestrictTo
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 

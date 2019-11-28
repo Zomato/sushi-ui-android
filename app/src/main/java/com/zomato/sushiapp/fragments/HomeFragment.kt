@@ -1,12 +1,12 @@
 package com.zomato.sushiapp.fragments
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.content.res.ResourcesCompat
-import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
+import androidx.fragment.app.Fragment
 import com.zomato.sushiapp.ComponentActivity
 import com.zomato.sushiapp.R
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -25,6 +25,7 @@ class HomeFragment : Fragment() {
             R.id.nav_tags -> ComponentActivity.TAGS
             R.id.nav_listing -> ComponentActivity.SNIPPETS
             R.id.nav_menu_tabs -> ComponentActivity.MENU_TABS
+            R.id.nav_card_stack -> ComponentActivity.CARD_STACK
             else -> null
         }
         component ?: return@OnClickListener
@@ -59,6 +60,7 @@ class HomeFragment : Fragment() {
             findViewById<View>(R.id.nav_tags)?.setOnClickListener(clickListener)
             findViewById<View>(R.id.nav_listing)?.setOnClickListener(clickListener)
             findViewById<View>(R.id.nav_menu_tabs)?.setOnClickListener(clickListener)
+            findViewById<View>(R.id.nav_card_stack)?.setOnClickListener(clickListener)
         }
     }
 

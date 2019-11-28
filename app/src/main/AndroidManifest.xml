@@ -27,6 +27,9 @@
         <activity
             android:name=".ComponentActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".DemoPullCollapsibleActivity"
+            android:theme="@style/AppTheme.NoActionBar.PullCollapsible" />
     </application>
 
 </manifest>

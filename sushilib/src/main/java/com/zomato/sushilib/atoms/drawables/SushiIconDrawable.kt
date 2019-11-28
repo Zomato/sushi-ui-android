@@ -4,11 +4,11 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.*
 import android.graphics.drawable.Drawable
-import android.support.annotation.ColorInt
-import android.support.annotation.ColorRes
-import android.support.annotation.DimenRes
-import android.support.annotation.StringRes
-import android.support.v4.content.ContextCompat
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.DimenRes
+import androidx.annotation.StringRes
+import androidx.core.content.ContextCompat
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver
 
@@ -48,16 +48,6 @@ open class SushiIconDrawable private constructor() : Drawable() {
     }
 
     /**
-     * Set transparency of the drawable.
-     *
-     * @param alpha A value between 0 and 255 (inclusive)
-     */
-    override fun setAlpha(alpha: Int) {
-        paint.alpha = alpha
-        invalidateSelf()
-    }
-
-    /**
      * Set the icon character
      *
      * NOTE: This will give black boxes or weird characters if you
@@ -70,6 +60,16 @@ open class SushiIconDrawable private constructor() : Drawable() {
         invalidateSelf()
     }
 
+    /**
+     * Set transparency of the drawable.
+     *
+     * @param alpha A value between 0 and 255 (inclusive)
+     */
+    override fun setAlpha(alpha: Int) {
+        paint.alpha = alpha
+        invalidateSelf()
+    }
+
     override fun getIntrinsicHeight(): Int {
         return size
     }
@@ -77,7 +77,6 @@ open class SushiIconDrawable private constructor() : Drawable() {
     override fun getIntrinsicWidth(): Int {
         return size
     }
-
 
     override fun draw(canvas: Canvas) {
         paint.textSize = bounds.height().toFloat()
@@ -103,19 +102,19 @@ open class SushiIconDrawable private constructor() : Drawable() {
      */
     override fun onStateChange(state: IntArray?): Boolean {
         tintList?.let {
-            val newCol = it.getColorForState(state, paint.color)
-            setColorFilter(newCol, PorterDuff.Mode.SRC_IN)
+            paint.color = it.getColorForState(state, paint.color)
             return true
         }
         return super.onStateChange(state)
     }
 
+    override fun isStateful(): Boolean {
+        return tintList != null
+    }
+
     override fun setTintList(tint: ColorStateList?) {
         this.tintList = tint
-        this.tintList?.let {
-            val newCol = it.getColorForState(state, paint.color)
-            setColorFilter(newCol, PorterDuff.Mode.SRC_IN)
-        }
+        onStateChange(state)
     }
 
     override fun setColorFilter(colorFilter: ColorFilter?) {

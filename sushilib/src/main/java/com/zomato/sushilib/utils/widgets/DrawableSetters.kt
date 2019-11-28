@@ -57,9 +57,9 @@ internal interface DrawableSetters {
      *
      * @param iconFontChar the icon font character
      */
-    fun TextView.setDrawableLeft(iconFontChar: String) {
+    fun TextView.setDrawableLeft(iconFontChar: String?) {
         val drawables = compoundDrawables
-        val drawable = createDrawable(iconFontChar)
+        val drawable = iconFontChar?.let { createDrawable(it) }
 
         setCompoundDrawables(drawable, drawables[1], drawables[2], drawables[3])
     }
@@ -74,9 +74,9 @@ internal interface DrawableSetters {
      *
      * @param iconFontChar the icon font character
      */
-    fun TextView.setDrawableRight(iconFontChar: String) {
+    fun TextView.setDrawableRight(iconFontChar: String?) {
         val drawables = compoundDrawables
-        val drawable = createDrawable(iconFontChar)
+        val drawable = iconFontChar?.let { createDrawable(it) }
 
         setCompoundDrawables(drawables[0], drawables[1], drawable, drawables[3])
     }
@@ -115,9 +115,9 @@ internal interface DrawableSetters {
      * @param drawable the drawable to set, null
      */
 
-    fun TextView.setDrawableStart(iconFontChar: String) {
+    fun TextView.setDrawableStart(iconFontChar: String?) {
         val drawables = compoundDrawablesRelative
-        val drawable = createDrawable(iconFontChar)
+        val drawable = iconFontChar?.let { createDrawable(it) }
 
         setCompoundDrawablesRelative(drawable, drawables[1], drawables[2], drawables[3])
     }
@@ -130,9 +130,9 @@ internal interface DrawableSetters {
      *
      * @param drawable the drawable to set, null
      */
-    fun TextView.setDrawableEnd(iconFontChar: String) {
+    fun TextView.setDrawableEnd(iconFontChar: String?) {
         val drawables = compoundDrawablesRelative
-        val drawable = createDrawable(iconFontChar)
+        val drawable = iconFontChar?.let { createDrawable(it) }
 
         setCompoundDrawablesRelative(drawables[0], drawables[1], drawable, drawables[3])
     }

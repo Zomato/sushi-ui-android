@@ -1,6 +1,6 @@
 # Sushi Android UI Kit
 
-[![CircleCI](https://circleci.com/gh/Zomato/Sushi-Android.svg?style=svg&circle-token=0452d8e3cb8267473eaf2d1c5ede9c3a478a21b5)](https://circleci.com/gh/Zomato/Sushi-Android)
+[![Actions Status](https://github.com/Zomato/Sushi-Android/workflows/android/badge.svg)](https://github.com/Zomato/Sushi-Android/actions)
 
 ## Documentation
 

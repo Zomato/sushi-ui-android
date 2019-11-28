@@ -1,6 +1,6 @@
 package com.zomato.sushilib.annotations;
 
-import android.support.annotation.StringDef;
+import androidx.annotation.StringDef;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -29,9 +29,11 @@ public @interface ColorName {
     String GREY = "grey";
     String YELLOW = "yellow";
     String PURPLE = "purple";
+    String LIME = "lime";
 
     // Secondary Colors
     String INDIGO = "indigo";
+    String CIDER = "cider";
     String TEAL = "teal";
     String ORANGE = "orange";
     String BROWN = "brown";

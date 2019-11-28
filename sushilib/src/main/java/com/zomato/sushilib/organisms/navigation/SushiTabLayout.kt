@@ -1,10 +1,10 @@
 package com.zomato.sushilib.organisms.navigation
 
 import android.content.Context
-import android.support.annotation.AttrRes
-import android.support.annotation.StyleRes
-import android.support.design.widget.TabLayout
 import android.util.AttributeSet
+import androidx.annotation.AttrRes
+import androidx.annotation.StyleRes
+import com.google.android.material.tabs.TabLayout
 import com.zomato.sushilib.R
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext
 

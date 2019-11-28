@@ -3,7 +3,8 @@
     <color name="sushi_black">#1C1C1C</color>
     <color name="sushi_white">#FFFFFF</color>
 
-    <color name="sushi_grey_100">#F4F4F4</color>
+    <color name="sushi_grey_050">#FCFCFC</color>
+    <color name="sushi_grey_100">#F8F8F8</color>
     <color name="sushi_grey_200">#E8E8E8</color>
     <color name="sushi_grey_300">#CFCFCF</color>
     <color name="sushi_grey_400">#B5B5B5</color>
@@ -13,29 +14,31 @@
     <color name="sushi_grey_800">#4F4F4F</color>
     <color name="sushi_grey_900">#363636</color>
 
-    <color name="sushi_red_100">#FEE6E8</color>
-    <color name="sushi_red_200">#FDB4BA</color>
-    <color name="sushi_red_300">#FC838C</color>
-    <color name="sushi_red_400">#F25A65</color>
-    <color name="sushi_red_500">#E23744</color>
-    <color name="sushi_red_600">#D41120</color>
-    <color name="sushi_red_700">#A50D19</color>
+    <color name="sushi_red_050">#FBF6F7</color>
+    <color name="sushi_red_100">#F7EBEC</color>
+    <color name="sushi_red_200">#FDC9D1</color>
+    <color name="sushi_red_300">#F8A2B2</color>
+    <color name="sushi_red_400">#F57082</color>
+    <color name="sushi_red_500">#ED5A6B</color>
+    <color name="sushi_red_600">#EC4654</color>
+    <color name="sushi_red_700">#D02A38</color>
     <color name="sushi_red_800">#760A12</color>
     <color name="sushi_red_900">#47060B</color>
 
-
-    <color name="sushi_green_100">#DCFFE4</color>
-    <color name="sushi_green_200">#BEF5CB</color>
-    <color name="sushi_green_300">#85E89D</color>
-    <color name="sushi_green_400">#34D058</color>
-    <color name="sushi_green_500">#28A745</color>
-    <color name="sushi_green_600">#22863A</color>
-    <color name="sushi_green_700">#176F2C</color>
+    <color name="sushi_green_050">#F5FAF6</color>
+    <color name="sushi_green_100">#E7F5EA</color>
+    <color name="sushi_green_200">#C8EDD0</color>
+    <color name="sushi_green_300">#8ADC82</color>
+    <color name="sushi_green_400">#67C54F</color>
+    <color name="sushi_green_500">#50B547</color>
+    <color name="sushi_green_600">#4B9B42</color>
+    <color name="sushi_green_700">#38882F</color>
     <color name="sushi_green_800">#165C26</color>
     <color name="sushi_green_900">#144620</color>
 
-    <color name="sushi_blue_100">#DDECFD</color>
-    <color name="sushi_blue_200">#AED1FA</color>
+    <color name="sushi_blue_050">#F6F9FD</color>
+    <color name="sushi_blue_100">#E4EEFA</color>
+    <color name="sushi_blue_200">#BCD9FA</color>
     <color name="sushi_blue_300">#79B6FC</color>
     <color name="sushi_blue_400">#539CEE</color>
     <color name="sushi_blue_500">#2781E7</color>
@@ -44,68 +47,121 @@
     <color name="sushi_blue_800">#023774</color>
     <color name="sushi_blue_900">#011F41</color>
 
-    <color name="sushi_yellow_100">#FFFBDD</color>
-    <color name="sushi_yellow_200">#FFF5B8</color>
-    <color name="sushi_yellow_300">#FFEE7F</color>
-    <color name="sushi_yellow_400">#FFE370</color>
+    <color name="sushi_yellow_050">#FFFDF6</color>
+    <color name="sushi_yellow_100">#FEFAEC</color>
+    <color name="sushi_yellow_200">#FCEEC0</color>
+    <color name="sushi_yellow_300">#FCDF82</color>
+    <color name="sushi_yellow_400">#F8D149</color>
     <color name="sushi_yellow_500">#F3C117</color>
-    <color name="sushi_yellow_600">#F9C513</color>
-    <color name="sushi_yellow_700">#DBAB09</color>
-    <color name="sushi_yellow_800">#B08700</color>
-    <color name="sushi_yellow_900">#614902</color>
+    <color name="sushi_yellow_600">#E9B501</color>
+    <color name="sushi_yellow_700">#DC9D09</color>
+    <color name="sushi_yellow_800">#A16E17</color>
+    <color name="sushi_yellow_900">#6B4900</color>
 
-    <color name="sushi_purple_100">#E7DCFD</color>
-    <color name="sushi_purple_200">#D0BCF9</color>
-    <color name="sushi_purple_300">#B192F0</color>
-    <color name="sushi_purple_400">#8863D2</color>
+    <!-- Purple -->
+
+    <color name="sushi_purple_050">#FBF8FE</color>
+    <color name="sushi_purple_100">#F5ECFF</color>
+    <color name="sushi_purple_200">#DACBF9</color>
+    <color name="sushi_purple_300">#B89DF0</color>
+    <color name="sushi_purple_400">#8D68D6</color>
     <color name="sushi_purple_500">#6C42C1</color>
     <color name="sushi_purple_600">#5832A3</color>
     <color name="sushi_purple_700">#482889</color>
-    <color name="sushi_purple_800">#381D6E</color>
+    <color name="sushi_purple_800">#361C6F</color>
     <color name="sushi_purple_900">#27134E</color>
 
     <!-- Indigo -->
-    <color name="sushi_indigo_100">#ABB7F2</color>
-    <color name="sushi_indigo_300">#5462A6</color>
-    <color name="sushi_indigo_500">#1F2856</color>
-    <color name="sushi_indigo_700">#161C3C</color>
+    <color name="sushi_indigo_050">#F8F8FB</color>
+    <color name="sushi_indigo_100">#E8EAF5</color>
+    <color name="sushi_indigo_200">#B3BADA</color>
+    <color name="sushi_indigo_300">#717DBA</color>
+    <color name="sushi_indigo_400">#3C4886</color>
+    <color name="sushi_indigo_500">#2C3875</color>
+    <color name="sushi_indigo_600">#242F64</color>
+    <color name="sushi_indigo_700">#1A2456</color>
+    <color name="sushi_indigo_800">#192045</color>
     <color name="sushi_indigo_900">#060B23</color>
 
     <!-- Brown -->
-    <color name="sushi_brown_100">#E2C2B6</color>
-    <color name="sushi_brown_300">#9C7263</color>
-    <color name="sushi_brown_500">#57372B</color>
+    <color name="sushi_brown_050">#FAF5F3</color>
+    <color name="sushi_brown_100">#EBD9D2</color>
+    <color name="sushi_brown_200">#C49C8E</color>
+    <color name="sushi_brown_300">#B57962</color>
+    <color name="sushi_brown_400">#A45C41</color>
+    <color name="sushi_brown_500">#864129</color>
+    <color name="sushi_brown_600">#64311E</color>
     <color name="sushi_brown_700">#41251B</color>
+    <color name="sushi_brown_800">#341B12</color>
     <color name="sushi_brown_900">#29120A</color>
 
+    <!-- Cider -->
+    <color name="sushi_cider_050">#FFFBF7</color>
+    <color name="sushi_cider_100">#FDF5E9</color>
+    <color name="sushi_cider_200">#F5D7A7</color>
+    <color name="sushi_cider_300">#E4B96E</color>
+    <color name="sushi_cider_400">#D1A44D</color>
+    <color name="sushi_cider_500">#B48535</color>
+    <color name="sushi_cider_600">#9F6E1A</color>
+    <color name="sushi_cider_700">#80540F</color>
+    <color name="sushi_cider_800">#68440F</color>
+    <color name="sushi_cider_900">#492E06</color>
+
     <!-- Teal -->
-    <color name="sushi_teal_100">#B7E6E6</color>
+    <color name="sushi_teal_050">#F6FCFC</color>
+    <color name="sushi_teal_100">#E5F3F3</color>
+    <color name="sushi_teal_200">#B6DEE0</color>
     <color name="sushi_teal_300">#7ACDCD</color>
-    <color name="sushi_teal_500">#009999</color>
-    <color name="sushi_teal_700">#0A6666</color>
-    <color name="sushi_teal_900">#003333</color>
+    <color name="sushi_teal_400">#12A2AB</color>
+    <color name="sushi_teal_500">#119199</color>
+    <color name="sushi_teal_600">#0A757C</color>
+    <color name="sushi_teal_700">#0A6166</color>
+    <color name="sushi_teal_800">#034F50</color>
+    <color name="sushi_teal_900">#003331</color>
 
     <!-- Orange -->
-    <color name="sushi_orange_100">#FFC6B3</color>
-    <color name="sushi_orange_300">#FF8C66</color>
-    <color name="sushi_orange_500">#E84B17</color>
+    <color name="sushi_orange_050">#FEFCF9</color>
+    <color name="sushi_orange_100">#FFF1E6</color>
+    <color name="sushi_orange_200">#F9D0A9</color>
+    <color name="sushi_orange_300">#F4A266</color>
+    <color name="sushi_orange_400">#ED8449</color>
+    <color name="sushi_orange_500">#E86C37</color>
+    <color name="sushi_orange_600">#CE501A</color>
     <color name="sushi_orange_700">#B53B12</color>
+    <color name="sushi_orange_800">#802C10</color>
     <color name="sushi_orange_900">#661A00</color>
 
     <!-- Pink -->
-    <color name="sushi_pink_100">#FFCCE1</color>
-    <color name="sushi_pink_300">#FF66A6</color>
+    <color name="sushi_pink_050">#FCF8F9</color>
+    <color name="sushi_pink_100">#F9E1EB</color>
+    <color name="sushi_pink_200">#F8A3C7</color>
+    <color name="sushi_pink_300">#FB77AE</color>
+    <color name="sushi_pink_400">#F74E95</color>
     <color name="sushi_pink_500">#E8307D</color>
+    <color name="sushi_pink_600">#D61B69</color>
     <color name="sushi_pink_700">#BD0F58</color>
+    <color name="sushi_pink_800">#81073A</color>
     <color name="sushi_pink_900">#66002B</color>
 
+    <!-- Lime -->
+    <color name="sushi_lime_050">#FCFEEF</color>
+    <color name="sushi_lime_100">#F4FECD</color>
+    <color name="sushi_lime_200">#E4F6A6</color>
+    <color name="sushi_lime_300">#D2EF7F</color>
+    <color name="sushi_lime_400">#BCDB6C</color>
+    <color name="sushi_lime_500">#A3CD42</color>
+    <color name="sushi_lime_600">#83AD3B</color>
+    <color name="sushi_lime_700">#60842E</color>
+    <color name="sushi_lime_800">#415E24</color>
+    <color name="sushi_lime_900">#254000</color>
+
     <!-- Rating Colors -->
-    <color name="sushi_rating_1">@color/sushi_orange_500</color>
-    <color name="sushi_rating_2">@color/sushi_yellow_600</color>
-    <color name="sushi_rating_3">@color/sushi_green_500</color>
-    <color name="sushi_rating_4">@color/sushi_green_600</color>
-    <color name="sushi_rating_5">@color/sushi_green_800</color>
-    <color name="sushi_rating_unchecked">@color/sushi_grey_400</color>
+    <color name="sushi_rating_1">@color/sushi_red_600</color>
+    <color name="sushi_rating_2">@color/sushi_yellow_500</color>
+    <color name="sushi_rating_3">@color/sushi_lime_500</color>
+    <color name="sushi_rating_4">@color/sushi_lime_700</color>
+    <color name="sushi_rating_5">@color/sushi_lime_900</color>
+    <color name="sushi_rating_unchecked">@color/sushi_grey_500</color>
 
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/sushi_grey_400</color>
 

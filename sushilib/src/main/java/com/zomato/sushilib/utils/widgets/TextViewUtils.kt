@@ -4,12 +4,12 @@ import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.os.Build
-import android.support.annotation.AttrRes
-import android.support.annotation.ColorInt
-import android.support.annotation.RestrictTo
-import android.support.annotation.StyleableRes
 import android.util.AttributeSet
 import android.widget.TextView
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
+import androidx.annotation.RestrictTo
+import androidx.annotation.StyleableRes
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 

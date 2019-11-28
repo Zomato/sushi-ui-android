@@ -12,4 +12,18 @@
     <declare-styleable name="SushiSwitch">
         <attr name="controlColor" />
     </declare-styleable>
+    <declare-styleable name="SushiCheckableStrip">
+        <attr name="controlColor" />
+        <attr name="selector" format="enum">
+            <enum name="radio" value="0" />
+            <enum name="checkbox" value="1" />
+        </attr>
+        <attr name="android:checked" />
+        <attr name="primaryText" format="string" />
+        <attr name="secondaryText" format="string" />
+    </declare-styleable>
+    <declare-styleable name="SushiCheckableStripGroup">
+        <attr name="minChecked" format="integer" />
+        <attr name="maxChecked" format="integer" />
+    </declare-styleable>
 </resources>

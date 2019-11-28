@@ -16,6 +16,7 @@
         <attr name="buttonColor" format="color" />
 
         <attr name="strokeColor" format="color" />
+        <attr name="android:textColor" />
 
         <!-- Same as in SushiTextView -->
         <attr name="drawableLeft" />
@@ -23,6 +24,7 @@
         <attr name="drawableStart" />
         <attr name="drawableEnd" />
         <attr name="drawablePadding" />
+        <attr name="textFontWeight" />
 
     </declare-styleable>
 </resources>
