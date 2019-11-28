@@ -14,6 +14,8 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.zomato.sushilib.R
+import com.zomato.sushilib.annotations.FontWeight
+import com.zomato.sushilib.utils.text.TextFormatUtils
 import com.zomato.sushilib.utils.widgets.TextViewUtils.applyDrawables
 
 
@@ -26,37 +28,46 @@ open class SushiTextInputField @JvmOverloads constructor(
     @AttrRes defStyleAttr: Int = com.google.android.material.R.attr.textInputStyle
 ) : TextInputLayout(ctx, attrs, defStyleAttr) {
 
-    interface EdgeDrawableClickListener {
-        /**
-         * method called when drawableLeft (or drawableStart
-         * if RTL supported) is clicked
-         */
-        fun onDrawableStartClicked()
+    var editText: TextInputEditText = TextInputEditText(context)
 
-        /**
-         * method called when drawableRight (or drawableEnd
-         * if RTL supported) is clicked
-         */
-        fun onDrawableEndClicked()
-    }
-
-    interface TextValidator {
-        /**
-         * A function called every time the text changes, which you can
-         * hook into to generate error messages
-         *
-         * @param text The text currenly in the EditText
-         * @return An error as [String] if the text is invalid
-         * or [null] if the text is valid
-         */
-        fun validateText(text: Editable?): String?
-    }
-
+    @get:FontWeight
+    @setparam:FontWeight
+    var textFontWeight: Int = FontWeight.REGULAR
+        set(value) {
+            field = value
+            editText.setTextAppearance(
+                context,
+                TextFormatUtils.textFontWeightToTextAppearance(value)
+            )
+        }
 
     private var edgeDrawableClickListener: EdgeDrawableClickListener? = null
     private var textValidator: TextValidator? = null
 
-    var editText: TextInputEditText
+    init {
+        context?.theme?.obtainStyledAttributes(
+            attrs,
+            R.styleable.SushiTextInputField,
+            defStyleAttr,
+            0
+        )?.let {
+            val attrInputType = it.getInt(
+                R.styleable.SushiTextInputField_android_inputType,
+                -1
+            )
+            if (attrInputType != -1) {
+                editText.inputType = attrInputType
+            }
+            editText.applyDrawables(
+                attrs, defStyleAttr,
+                ContextCompat.getColor(context, R.color.sushi_grey_400) ?: Color.GRAY,
+                editText.textSize.toInt()
+            )
+
+            it.recycle()
+        }
+        this.addView(editText)
+    }
 
     /**
      * Set an [EdgeDrawableClickListener]
@@ -80,35 +91,6 @@ open class SushiTextInputField @JvmOverloads constructor(
         setTextValidator(object : TextValidator {
             override fun validateText(text: Editable?): String? = validator(text)
         })
-    }
-
-
-    init {
-        // WARNING: Never change the theme of this context
-        editText = TextInputEditText(context)
-
-        context?.theme?.obtainStyledAttributes(
-            attrs,
-            R.styleable.SushiTextInputField,
-            defStyleAttr,
-            0
-        )?.let {
-            val attrInputType = it.getInt(
-                R.styleable.SushiTextInputField_android_inputType,
-                -1
-            )
-            if (attrInputType != -1) {
-                editText.inputType = attrInputType
-            }
-            editText.applyDrawables(
-                attrs, defStyleAttr,
-                ContextCompat.getColor(context, R.color.sushi_grey_400) ?: Color.GRAY,
-                editText.textSize.toInt()
-            )
-
-            it.recycle()
-        }
-        this.addView(editText)
     }
 
     private fun prepareOnTextChangedListener() {
@@ -172,4 +154,31 @@ open class SushiTextInputField @JvmOverloads constructor(
             return@setOnTouchListener false
         }
     }
+
+    interface EdgeDrawableClickListener {
+        /**
+         * method called when drawableLeft (or drawableStart
+         * if RTL supported) is clicked
+         */
+        fun onDrawableStartClicked()
+
+        /**
+         * method called when drawableRight (or drawableEnd
+         * if RTL supported) is clicked
+         */
+        fun onDrawableEndClicked()
+    }
+
+    interface TextValidator {
+        /**
+         * A function called every time the text changes, which you can
+         * hook into to generate error messages
+         *
+         * @param text The text currenly in the EditText
+         * @return An error as [String] if the text is invalid
+         * or [null] if the text is valid
+         */
+        fun validateText(text: Editable?): String?
+    }
+
 }
