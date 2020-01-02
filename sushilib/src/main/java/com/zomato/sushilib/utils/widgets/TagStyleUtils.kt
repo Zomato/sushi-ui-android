@@ -50,6 +50,11 @@ internal object TagStyleUtils {
                 horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_horizontal_padding)
                 textSizePx = r.getDimension(R.dimen.sushi_tag_tiny_textsize)
             }
+            TagSize.NANO -> {
+                verticalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_nano_vertical_padding)
+                horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_nano_horizontal_padding)
+                textSizePx = r.getDimension(R.dimen.sushi_tag_nano_textsize)
+            }
         }
         if (tagType == TagType.CAPSULE || tagType == TagType.CAPSULE_OUTLINE) {
             // Capsule tags look better with a little more padding
@@ -126,6 +131,7 @@ internal object TagStyleUtils {
             TagSize.MEDIUM -> R.dimen.sushi_rating_tag_medium_minwidth
             TagSize.SMALL -> R.dimen.sushi_rating_tag_small_minwidth
             TagSize.TINY -> R.dimen.sushi_rating_tag_tiny_minwidth
+            TagSize.NANO -> R.dimen.sushi_rating_tag_nano_minwidth
             else -> R.dimen.sushi_rating_tag_large_minwidth
         }
     }

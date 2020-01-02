@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="sushi_textsize_050">9sp</dimen>
     <dimen name="sushi_textsize_100">11sp</dimen>
     <dimen name="sushi_textsize_200">12sp</dimen>
     <dimen name="sushi_textsize_300">13sp</dimen>

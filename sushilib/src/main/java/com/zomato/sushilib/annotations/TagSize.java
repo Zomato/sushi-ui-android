@@ -12,10 +12,11 @@ import static com.zomato.sushilib.annotations.TagSize.*;
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
 @Retention(RetentionPolicy.SOURCE)
-@IntDef({LARGE, MEDIUM, SMALL, TINY})
+@IntDef({LARGE, MEDIUM, SMALL, TINY, NANO})
 public @interface TagSize {
     int LARGE = 0;
     int MEDIUM = 1;
     int SMALL = 2;
     int TINY = 3;
+    int NANO = 4;
 }
