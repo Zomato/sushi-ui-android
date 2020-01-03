@@ -22,6 +22,7 @@
     <dimen name="sushi_tag_nano_textsize">@dimen/sushi_textsize_050</dimen>
 
     <dimen name="sushi_tag_rounded_corner_radius">3dp</dimen>
+    <dimen name="sushi_tag_extra_rounded_corner_radius">4dp</dimen>
     <dimen name="sushi_tag_capsule_corner_radius">30dp</dimen>
 
     <dimen name="sushi_rating_tag_large_minwidth">50dp</dimen>
