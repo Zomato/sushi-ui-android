@@ -10,6 +10,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
+      - name: Git Headers
+        run: |
+          git config --global url."https://api:${{ secrets.GITHUB_ACTIONS_TOKEN }}@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://ssh:${{ secrets.GITHUB_ACTIONS_TOKEN }}@github.com/".insteadOf "ssh://git@github.com/"
+          git config --global url."https://git:${{ secrets.GITHUB_ACTIONS_TOKEN }}@github.com/".insteadOf "git@github.com:"
+
       - name: Build and Deploy
         uses: testthedocs/github-pages-deploy-action@master
         env:
