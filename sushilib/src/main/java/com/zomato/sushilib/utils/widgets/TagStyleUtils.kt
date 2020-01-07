@@ -50,6 +50,12 @@ internal object TagStyleUtils {
                 horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_horizontal_padding)
                 textSizePx = r.getDimension(R.dimen.sushi_tag_tiny_textsize)
             }
+            TagSize.NANO -> {
+                verticalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_nano_vertical_padding)
+                horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_spacing_micro)
+                textSizePx = r.getDimension(R.dimen.sushi_tag_nano_textsize)
+                textApprStyleRes = R.style.TextAppearance_Sushi_SemiBold
+            }
         }
         if (tagType == TagType.CAPSULE || tagType == TagType.CAPSULE_OUTLINE) {
             // Capsule tags look better with a little more padding
@@ -97,9 +103,17 @@ internal object TagStyleUtils {
     @JvmStatic
     fun SushiTag.applyBackground() {
         when (tagType) {
-            TagType.ROUNDED -> applyBg(
-                R.drawable.sushi_tag_rounded_bg, ColorStateList.valueOf(tagColor)
-            )
+            TagType.ROUNDED -> {
+                if (tagSize == TagSize.NANO) {
+                    applyBg(
+                        R.drawable.sushi_tag_extra_rounded_bg, ColorStateList.valueOf(tagColor)
+                    )
+                } else {
+                    applyBg(
+                        R.drawable.sushi_tag_rounded_bg, ColorStateList.valueOf(tagColor)
+                    )
+                }
+            }
             TagType.CAPSULE -> applyBg(
                 R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor)
             )
@@ -126,6 +140,7 @@ internal object TagStyleUtils {
             TagSize.MEDIUM -> R.dimen.sushi_rating_tag_medium_minwidth
             TagSize.SMALL -> R.dimen.sushi_rating_tag_small_minwidth
             TagSize.TINY -> R.dimen.sushi_rating_tag_tiny_minwidth
+            TagSize.NANO -> R.dimen.sushi_rating_tag_nano_minwidth
             else -> R.dimen.sushi_rating_tag_large_minwidth
         }
     }
