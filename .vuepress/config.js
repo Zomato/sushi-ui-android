@@ -1,15 +1,23 @@
 module.exports = {
   title: 'Sushi UI Kit for Android',
-  description: 'A delicious UI Kit to build Android apps. Made with ❤ by Zomato',
+  description:
+    'A delicious UI Kit to build Android apps. Made with ❤ by Zomato',
   themeConfig: {
-    nav: [{ text: 'Guide', link: '/pages/' }],
+    nav: [
+      { text: 'Guide', link: '/pages/' },
+      { text: 'Blog', link: 'https://www.zomato.com/blog/sushi' },
+      { text: 'Github', link: 'https://github.com/Zomato/Sushi-Android' }
+    ],
     sidebarDepth: 2,
     sidebar: [
       '/pages/',
       {
         collapsable: false,
         title: 'Resources',
-        children: ['/pages/01-resources/Typography.md', '/pages/01-resources/Colors.md']
+        children: [
+          '/pages/01-resources/Typography.md',
+          '/pages/01-resources/Colors.md'
+        ]
       },
       {
         collapsable: false,
@@ -35,8 +43,11 @@ module.exports = {
       {
         collapsable: false,
         title: 'Organisms',
-        children: ['pages/04-organisms/SushiRatingBar.md', 'pages/04-organisms/SushiTabLayout.md']
+        children: [
+          'pages/04-organisms/SushiRatingBar.md',
+          'pages/04-organisms/SushiTabLayout.md'
+        ]
       }
     ]
   }
-}
+};

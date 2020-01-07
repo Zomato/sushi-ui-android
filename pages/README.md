@@ -21,8 +21,10 @@ Sushi, following [atomic design](http://atomicdesign.bradfrost.com) principles, 
 using composable components, ordered as atoms ➡️ molecules ➡️ organisms.
 
 <figure>
-<img alt="Atomic Design" src="http://atomicdesign.bradfrost.com/images/content/atomic-design-process.png">
-<figcaption align="center">Atomic Design layers, as described by Brad Frost</figcaption>
+<img alt="Atomic Design" src="../img/readme/atomic-design.png">
+<figcaption align="center">
+  <small><b>Atomic Design</b> (as described by Brad Frost) mapped to our system</small>
+</figcaption>
 </figure>
 
 ### Atoms

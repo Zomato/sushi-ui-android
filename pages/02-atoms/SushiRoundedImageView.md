@@ -62,5 +62,6 @@ simply set an `ViewOutlineProvider`. Only for preview we draw the shape, as a pl
 
 ![riv](../../img/imageviews/rounded-preview.png)
 
-<figcaption align="center">Preview in Android Studio</figcaption>
-````
+<figcaption align="center">
+<small>Preview in Android Studio. First with elevation, others unelevated</small>
+</figcaption>
