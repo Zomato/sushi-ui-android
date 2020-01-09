@@ -18,6 +18,7 @@ jobs:
 
       - name: Build Docs
         run: |
+          npm install
           npm run-script build
 
       - name: Build and Deploy
