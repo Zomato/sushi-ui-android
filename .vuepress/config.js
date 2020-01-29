@@ -3,7 +3,7 @@ module.exports = {
   title: 'Sushi UI Kit for Android',
   description:
     'A delicious UI Kit to build Android apps. Made with ❤ by Zomato',
-  base: '/Sushi-Android/',
+  base: '/',
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/pages/' },
