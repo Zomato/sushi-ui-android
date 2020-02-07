@@ -12,14 +12,22 @@
     <dimen name="sushi_tag_tiny_horizontal_padding">@dimen/sushi_spacing_nano</dimen>
     <dimen name="sushi_tag_tiny_vertical_padding">0dp</dimen>
 
-    <dimen name="sushi_tag_large_textsize">@dimen/sushi_textsize_500</dimen>
+    <dimen name="sushi_tag_nano_horizontal_padding">@dimen/sushi_spacing_nano</dimen>
+    <dimen name="sushi_tag_nano_vertical_padding">0dp</dimen>
+
+    <dimen name="sushi_tag_large_textsize">@dimen/sushi_textsize_400</dimen>
     <dimen name="sushi_tag_medium_textsize">@dimen/sushi_textsize_300</dimen>
     <dimen name="sushi_tag_small_textsize">@dimen/sushi_textsize_200</dimen>
     <dimen name="sushi_tag_tiny_textsize">@dimen/sushi_textsize_100</dimen>
+    <dimen name="sushi_tag_nano_textsize">@dimen/sushi_textsize_050</dimen>
 
     <dimen name="sushi_tag_rounded_corner_radius">3dp</dimen>
+    <dimen name="sushi_tag_extra_rounded_corner_radius">4dp</dimen>
     <dimen name="sushi_tag_capsule_corner_radius">30dp</dimen>
 
     <dimen name="sushi_rating_tag_large_minwidth">50dp</dimen>
-    <dimen name="sushi_rating_tag_small_minwidth">30dp</dimen>
+    <dimen name="sushi_rating_tag_medium_minwidth">40dp</dimen>
+    <dimen name="sushi_rating_tag_small_minwidth">35dp</dimen>
+    <dimen name="sushi_rating_tag_tiny_minwidth">30dp</dimen>
+    <dimen name="sushi_rating_tag_nano_minwidth">20dp</dimen>
 </resources>

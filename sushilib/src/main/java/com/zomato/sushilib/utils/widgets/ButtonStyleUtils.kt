@@ -1,15 +1,18 @@
 package com.zomato.sushilib.utils.widgets
 
+import android.animation.AnimatorInflater
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.support.annotation.ColorInt
-import android.support.annotation.RestrictTo
-import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.ColorUtils
+import android.os.Build
+import androidx.annotation.ColorInt
+import androidx.annotation.RestrictTo
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.ColorUtils
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ButtonType
 import com.zomato.sushilib.atoms.buttons.SushiButton
+import com.zomato.sushilib.utils.widgets.TextViewUtils.setCompoundDrawableTintListCompat
 
 /**
  * A collection of static functions that help
@@ -32,31 +35,23 @@ internal object ButtonStyleUtils {
      */
     @JvmStatic
     fun SushiButton.applyStrokeWidth() {
-        strokeWidth = if (getButtonType() == ButtonType.OUTLINE) {
-            resources.getDimensionPixelSize(R.dimen.sushi_outline_button_stroke_width)
-        } else {
-            0
+        strokeWidth = when {
+            getButtonType() == ButtonType.TEXT -> 0
+            strokeWidth != 0 -> strokeWidth
+            getButtonType() == ButtonType.OUTLINE -> resources.getDimensionPixelSize(R.dimen.sushi_outline_button_stroke_width)
+            else -> 0
         }
     }
 
     @JvmStatic
-    fun SushiButton.applyIconPadding() {
-        iconPadding = if (getButtonType() == ButtonType.TEXT) {
-            resources.getDimensionPixelSize(R.dimen.sushi_text_button_icon_padding)
-        } else {
-            resources.getDimensionPixelSize(R.dimen.sushi_button_icon_padding)
-        }
-    }
-
-    @JvmStatic
-    fun SushiButton.applyIconAndTextColor() {
+    fun SushiButton.applyIconAndTextColor(color: Int? = null) {
         val colorStateList = if (getButtonType() == ButtonType.SOLID) {
-            getTextColorStateList(context, Color.WHITE)
+            getTextColorStateList(context, color ?: Color.WHITE)
         } else {
-            getTextColorStateList(context, getButtonColor())
+            getTextColorStateList(context, color ?: getButtonColor())
         }
         setTextColor(colorStateList)
-        iconTint = colorStateList
+        setCompoundDrawableTintListCompat(colorStateList)
     }
 
     @JvmStatic
@@ -71,10 +66,19 @@ internal object ButtonStyleUtils {
      */
     @JvmStatic
     fun SushiButton.applyRippleColor() {
-        rippleColor = if (getButtonType() == ButtonType.SOLID) {
-            getButtonRippleStateList(Color.WHITE)
-        } else {
-            getButtonRippleStateList(getButtonColor())
+        val buttonType = getButtonType()
+        rippleColor = when (buttonType) {
+            ButtonType.SOLID -> getButtonRippleStateList(if (getButtonColor() == Color.WHITE) ContextCompat.getColor(context, R.color.sushi_grey_500) else Color.WHITE)
+            ButtonType.OUTLINE -> getButtonRippleStateList(getButtonColor())
+            else -> null
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (buttonType == ButtonType.TEXT) {
+                stateListAnimator =
+                    AnimatorInflater.loadStateListAnimator(context, R.animator.sushi_text_button_click_animator)
+            } else {
+                stateListAnimator = null
+            }
         }
     }
 

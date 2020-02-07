@@ -2,9 +2,6 @@ package com.zomato.sushilib.atoms.views
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.support.annotation.Keep
-import android.support.v4.view.ActionProvider
-import android.support.v7.view.menu.MenuBuilder
 import android.text.TextUtils
 import android.util.Log
 import android.view.Gravity
@@ -13,6 +10,9 @@ import android.view.View
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.FrameLayout
 import android.widget.ImageView
+import androidx.annotation.Keep
+import androidx.appcompat.view.menu.MenuBuilder
+import androidx.core.view.ActionProvider
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 

@@ -1,17 +1,20 @@
 package com.zomato.sushiapp
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.support.design.widget.CoordinatorLayout
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.app.AppCompatDelegate
-import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_NO
-import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_YES
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.content.ContextCompat
+import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 import com.zomato.sushilib.atoms.menu.SushiMenuItem
 import com.zomato.sushilib.organisms.navigation.SushiBottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -62,15 +65,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         val menuList = arrayListOf<SushiMenuItem>()
-        val drawable = resources.getDrawable(R.drawable.ic_topnav_star)
         menuList.addAll(listOf(
-            SushiMenuItem(itemId = 0, title = getString(R.string.sushi), drawable = drawable),
-            SushiMenuItem(itemId = 1, title = getString(R.string.about), drawable = drawable),
-            SushiMenuItem(itemId = 2, title = getString(R.string.zomato), drawable = drawable)
+            SushiMenuItem(itemId = 0, title = getString(R.string.sushi), drawable = getBottomNavDrawable()),
+            SushiMenuItem(itemId = 1, title = getString(R.string.about), drawable = getBottomNavDrawable()),
+            SushiMenuItem(itemId = 2, title = getString(R.string.zomato), drawable = getBottomNavDrawable())
         ))
         bottomNavigationView.itemIconTintList =
             ContextCompat.getColorStateList(this, R.color.bottom_nav_item_color_selector)
         bottomNavigationView.setMenu(menuList)
+    }
+
+    private fun getBottomNavDrawable(): Drawable {
+        return SushiIconDrawable.Builder(container_main.context)
+            .setIconChar(resources.getString(R.string.icon_filled_star))
+            .build()
     }
 
 }

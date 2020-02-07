@@ -2,14 +2,14 @@ package com.zomato.sushilib.organisms.ratings
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.support.annotation.AttrRes
-import android.support.annotation.ColorInt
-import android.support.annotation.IntRange
-import android.support.annotation.StyleRes
-import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.LinearLayout
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
+import androidx.annotation.IntRange
+import androidx.annotation.StyleRes
+import androidx.core.content.ContextCompat
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.TagSize
 import com.zomato.sushilib.annotations.TagType
@@ -71,8 +71,9 @@ class SushiRatingBar @JvmOverloads constructor(
                     minWidth = tagMinWidth
                     text = "$i"
                     setOnClickListener {
-                        rating = i
-                        onRatingChangeListener?.onRatingChanged(i)
+                        // If someone returns false, do not change rating
+                        if (onRatingChangeListener?.onRatingChanged(i) != false)
+                            rating = i
                     }
                     this.isClickable = this@SushiRatingBar.isClickable
                 }
@@ -101,7 +102,7 @@ class SushiRatingBar @JvmOverloads constructor(
      *
      * @param listener The lambda.
      */
-    fun setOnRatingChangeListener(listener: (rating: Int) -> Unit) {
+    fun setOnRatingChangeListener(listener: (rating: Int) -> Boolean) {
         setOnRatingChangeListener(object : OnRatingChangeListener {
             override fun onRatingChanged(rating: Int) = listener(rating)
         })
@@ -166,7 +167,8 @@ class SushiRatingBar @JvmOverloads constructor(
          * Called when the rating has been changed.
          *
          * @param rating The current rating.
+         * @return false if you want to prevent the rating actually being changed
          */
-        fun onRatingChanged(rating: Int)
+        fun onRatingChanged(rating: Int): Boolean
     }
 }

@@ -2,12 +2,12 @@ package com.zomato.sushilib.molecules.listings
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.support.annotation.AttrRes
-import android.support.annotation.StyleRes
-import android.support.v4.content.ContextCompat
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.widget.LinearLayout
+import androidx.annotation.AttrRes
+import androidx.annotation.StyleRes
+import androidx.core.content.ContextCompat
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.imageviews.SushiCircleImageView
 import com.zomato.sushilib.atoms.textviews.SushiIconTextView
@@ -22,9 +22,9 @@ open class SushiImageTextListing @JvmOverloads constructor(
 
     private var initialized = false
 
-    private var textListing = SushiTextListing(context, attrs)
-    private var cornerIconTextView: SushiIconTextView? = null
-    var imageView = SushiCircleImageView(context)
+    protected var cornerIconTextView: SushiIconTextView? = null
+    protected var textListing = SushiTextListing(context, attrs)
+    protected var imageView = SushiCircleImageView(context)
 
     var imagePadding
         get() = imageView.paddingLeft
@@ -95,5 +95,4 @@ open class SushiImageTextListing @JvmOverloads constructor(
             it.setPadding(resources.getDimensionPixelOffset(R.dimen.sushi_spacing_micro), 0, 0, 0)
         }
     }
-
 }

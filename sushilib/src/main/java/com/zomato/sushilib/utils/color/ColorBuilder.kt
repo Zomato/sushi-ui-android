@@ -1,9 +1,9 @@
 package com.zomato.sushilib.utils.color
 
 import android.content.Context
-import android.support.annotation.ColorInt
-import android.support.annotation.ColorRes
-import android.support.v4.content.ContextCompat
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ColorName
 import com.zomato.sushilib.annotations.ColorTint
@@ -18,6 +18,7 @@ class ColorBuilder(val context: Context) {
         this.color = color
         this.tint = tint
     }
+
     @ColorName
     private var color = ColorName.RED
 
@@ -38,6 +39,7 @@ class ColorBuilder(val context: Context) {
     private fun getColorResId(): Int {
         return when (color) {
             ColorName.RED -> when (tint) {
+                50 -> R.color.sushi_red_050
                 100 -> R.color.sushi_red_100
                 200 -> R.color.sushi_red_200
                 300 -> R.color.sushi_red_300
@@ -50,6 +52,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_red_500
             }
             ColorName.GREEN -> when (tint) {
+                50 -> R.color.sushi_green_050
                 100 -> R.color.sushi_green_100
                 200 -> R.color.sushi_green_200
                 300 -> R.color.sushi_green_300
@@ -62,6 +65,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_green_500
             }
             ColorName.BLUE -> when (tint) {
+                50 -> R.color.sushi_blue_050
                 100 -> R.color.sushi_blue_100
                 200 -> R.color.sushi_blue_200
                 300 -> R.color.sushi_blue_300
@@ -74,6 +78,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_blue_500
             }
             ColorName.YELLOW -> when (tint) {
+                50 -> R.color.sushi_yellow_050
                 100 -> R.color.sushi_yellow_100
                 200 -> R.color.sushi_yellow_200
                 300 -> R.color.sushi_yellow_300
@@ -86,6 +91,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_yellow_500
             }
             ColorName.GREY -> when (tint) {
+                50 -> R.color.sushi_grey_050
                 100 -> R.color.sushi_grey_100
                 200 -> R.color.sushi_grey_200
                 300 -> R.color.sushi_grey_300
@@ -98,6 +104,7 @@ class ColorBuilder(val context: Context) {
                 else -> R.color.sushi_grey_500
             }
             ColorName.PURPLE -> when (tint) {
+                50 -> R.color.sushi_purple_050
                 100 -> R.color.sushi_purple_100
                 200 -> R.color.sushi_purple_200
                 300 -> R.color.sushi_purple_300
@@ -109,43 +116,94 @@ class ColorBuilder(val context: Context) {
                 900 -> R.color.sushi_purple_900
                 else -> R.color.sushi_purple_500
             }
+            ColorName.LIME -> when (tint) {
+                50 -> R.color.sushi_lime_050
+                100 -> R.color.sushi_lime_100
+                200 -> R.color.sushi_lime_200
+                300 -> R.color.sushi_lime_300
+                400 -> R.color.sushi_lime_400
+                500 -> R.color.sushi_lime_500
+                600 -> R.color.sushi_lime_600
+                700 -> R.color.sushi_lime_700
+                800 -> R.color.sushi_lime_800
+                900 -> R.color.sushi_lime_900
+                else -> R.color.sushi_lime_500
+            }
             ColorName.INDIGO -> when (tint) {
+                50 -> R.color.sushi_indigo_050
                 100 -> R.color.sushi_indigo_100
+                200 -> R.color.sushi_indigo_200
                 300 -> R.color.sushi_indigo_300
+                400 -> R.color.sushi_indigo_400
                 500 -> R.color.sushi_indigo_500
+                600 -> R.color.sushi_indigo_600
                 700 -> R.color.sushi_indigo_700
+                800 -> R.color.sushi_indigo_800
                 900 -> R.color.sushi_indigo_900
                 else -> R.color.sushi_indigo_500
             }
+            ColorName.CIDER -> when (tint) {
+                50 -> R.color.sushi_cider_050
+                100 -> R.color.sushi_cider_100
+                200 -> R.color.sushi_cider_200
+                300 -> R.color.sushi_cider_300
+                400 -> R.color.sushi_cider_400
+                500 -> R.color.sushi_cider_500
+                600 -> R.color.sushi_cider_600
+                700 -> R.color.sushi_cider_700
+                800 -> R.color.sushi_cider_800
+                900 -> R.color.sushi_cider_900
+                else -> R.color.sushi_cider_500
+            }
             ColorName.BROWN -> when (tint) {
+                50 -> R.color.sushi_brown_050
                 100 -> R.color.sushi_brown_100
+                200 -> R.color.sushi_brown_200
                 300 -> R.color.sushi_brown_300
+                400 -> R.color.sushi_brown_400
                 500 -> R.color.sushi_brown_500
+                600 -> R.color.sushi_brown_600
                 700 -> R.color.sushi_brown_700
+                800 -> R.color.sushi_brown_800
                 900 -> R.color.sushi_brown_900
                 else -> R.color.sushi_brown_500
             }
             ColorName.TEAL -> when (tint) {
+                50 -> R.color.sushi_teal_050
                 100 -> R.color.sushi_teal_100
+                200 -> R.color.sushi_teal_200
                 300 -> R.color.sushi_teal_300
+                400 -> R.color.sushi_teal_400
                 500 -> R.color.sushi_teal_500
+                600 -> R.color.sushi_teal_600
                 700 -> R.color.sushi_teal_700
+                800 -> R.color.sushi_teal_800
                 900 -> R.color.sushi_teal_900
                 else -> R.color.sushi_teal_500
             }
             ColorName.ORANGE -> when (tint) {
+                50 -> R.color.sushi_orange_050
                 100 -> R.color.sushi_orange_100
+                200 -> R.color.sushi_orange_200
                 300 -> R.color.sushi_orange_300
+                400 -> R.color.sushi_orange_400
                 500 -> R.color.sushi_orange_500
+                600 -> R.color.sushi_orange_600
                 700 -> R.color.sushi_orange_700
+                800 -> R.color.sushi_orange_800
                 900 -> R.color.sushi_orange_900
                 else -> R.color.sushi_orange_500
             }
             ColorName.PINK -> when (tint) {
+                50 -> R.color.sushi_pink_050
                 100 -> R.color.sushi_pink_100
+                200 -> R.color.sushi_pink_200
                 300 -> R.color.sushi_pink_300
+                400 -> R.color.sushi_pink_400
                 500 -> R.color.sushi_pink_500
+                600 -> R.color.sushi_pink_600
                 700 -> R.color.sushi_pink_700
+                800 -> R.color.sushi_pink_800
                 900 -> R.color.sushi_pink_900
                 else -> R.color.sushi_pink_500
             }
@@ -159,5 +217,4 @@ class ColorBuilder(val context: Context) {
     fun build(): Int {
         return ContextCompat.getColor(context, getColorResId())
     }
-
 }

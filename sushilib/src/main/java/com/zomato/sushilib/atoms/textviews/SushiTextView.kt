@@ -4,10 +4,10 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff
 import android.os.Build
-import android.support.annotation.AttrRes
-import android.support.annotation.StyleRes
-import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
+import androidx.annotation.AttrRes
+import androidx.annotation.StyleRes
+import androidx.appcompat.widget.AppCompatTextView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.FontWeight
 import com.zomato.sushilib.utils.text.TextFormatUtils

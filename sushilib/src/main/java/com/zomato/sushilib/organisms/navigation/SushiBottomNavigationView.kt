@@ -1,18 +1,18 @@
 package com.zomato.sushilib.organisms.navigation
 
 import android.content.Context
-import android.support.annotation.IdRes
-import android.support.annotation.Size
-import android.support.design.widget.BottomNavigationView
 import android.util.AttributeSet
 import android.view.Menu
+import androidx.annotation.IdRes
+import androidx.annotation.Size
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.menu.SushiMenuItem
 
 open class SushiBottomNavigationView @JvmOverloads constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = android.support.design.R.attr.bottomNavigationStyle
+    defStyleAttr: Int = com.google.android.material.R.attr.bottomNavigationStyle
 ) : BottomNavigationView(ctx, attrs, defStyleAttr) {
 
     init {
