@@ -22,55 +22,70 @@ import com.zomato.sushilib.molecules.tags.SushiTag
 internal object TagStyleUtils {
     @JvmStatic
     fun SushiTag.applySize() {
-        var verticalPadding = 0
-        var horizontalPadding = 0
+        var paddingLeft = 0
+        var paddingRight = 0
+        var paddingTop = 0
+        var paddingBottom = 0
         var textSizePx = 0f
         var textApprStyleRes = R.style.TextAppearance_Sushi_Medium
         val r = context.resources
         when (tagSize) {
             TagSize.LARGE -> {
-                verticalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_large_vertical_padding)
-                horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_large_horizontal_padding)
+                paddingTop = r.getDimensionPixelSize(R.dimen.sushi_tag_large_vertical_padding)
+                paddingLeft = r.getDimensionPixelSize(R.dimen.sushi_tag_large_horizontal_padding)
+                paddingRight = r.getDimensionPixelSize(R.dimen.sushi_tag_large_horizontal_padding)
+                paddingBottom = r.getDimensionPixelSize(R.dimen.sushi_tag_large_vertical_padding)
                 textSizePx = r.getDimension(R.dimen.sushi_tag_large_textsize)
                 textApprStyleRes = R.style.TextAppearance_Sushi_SemiBold
             }
             TagSize.MEDIUM -> {
-                verticalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_medium_vertical_padding)
-                horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_medium_horizontal_padding)
+                paddingTop = r.getDimensionPixelSize(R.dimen.sushi_tag_medium_vertical_padding)
+                paddingLeft = r.getDimensionPixelSize(R.dimen.sushi_tag_medium_horizontal_padding)
+                paddingRight = r.getDimensionPixelSize(R.dimen.sushi_tag_medium_horizontal_padding)
+                paddingBottom = r.getDimensionPixelSize(R.dimen.sushi_tag_medium_vertical_padding)
                 textSizePx = r.getDimension(R.dimen.sushi_tag_medium_textsize)
                 textApprStyleRes = R.style.TextAppearance_Sushi_SemiBold
             }
             TagSize.SMALL -> {
-                verticalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_small_vertical_padding)
-                horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_small_horizontal_padding)
+                paddingTop = r.getDimensionPixelSize(R.dimen.sushi_tag_small_vertical_padding)
+                paddingLeft = r.getDimensionPixelSize(R.dimen.sushi_tag_small_horizontal_padding)
+                paddingRight = r.getDimensionPixelSize(R.dimen.sushi_tag_small_horizontal_padding)
+                paddingBottom = r.getDimensionPixelSize(R.dimen.sushi_tag_small_vertical_padding)
                 textSizePx = r.getDimension(R.dimen.sushi_tag_small_textsize)
             }
             TagSize.TINY -> {
-                verticalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_vertical_padding)
-                horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_horizontal_padding)
+                paddingTop = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_vertical_padding)
+                paddingLeft = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_horizontal_padding)
+                paddingRight = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_horizontal_padding)
+                paddingBottom = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_vertical_padding)
                 textSizePx = r.getDimension(R.dimen.sushi_tag_tiny_textsize)
             }
             TagSize.NANO -> {
-                verticalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_nano_vertical_padding)
-                horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_spacing_micro)
+                paddingTop = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_vertical_padding)
+                paddingLeft = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_horizontal_padding)
+                paddingRight = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_horizontal_padding)
+                paddingBottom = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_vertical_padding)
                 textSizePx = r.getDimension(R.dimen.sushi_tag_nano_textsize)
                 textApprStyleRes = R.style.TextAppearance_Sushi_SemiBold
             }
         }
         if (tagType == TagType.CAPSULE || tagType == TagType.CAPSULE_OUTLINE) {
             // Capsule tags look better with a little more padding
-            horizontalPadding = (horizontalPadding * 1.5).toInt()
+            paddingLeft = (paddingLeft * 1.5).toInt()
+            paddingRight = (paddingRight * 1.5).toInt()
         }
         if (mPadding != -1) {
-            verticalPadding = mPadding
-            horizontalPadding = mPadding
+            paddingLeft = mPadding
+            paddingRight = mPadding
+            paddingBottom = mPadding
+            paddingTop = mPadding
         }
-        if (mPaddingLeft == -1) mPaddingLeft = horizontalPadding
-        if (mPaddingRight == -1) mPaddingRight = horizontalPadding
-        if (mPaddingTop == -1) mPaddingTop = verticalPadding
-        if (mPaddingBottom == -1) mPaddingBottom = verticalPadding
+        if (mPaddingLeft != -1) paddingLeft = mPaddingLeft
+        if (mPaddingRight != -1) paddingRight = mPaddingRight
+        if (mPaddingTop != -1) paddingTop = mPaddingTop
+        if (mPaddingBottom != -1) paddingBottom = mPaddingBottom
 
-        setPadding(mPaddingLeft, mPaddingTop, mPaddingRight, mPaddingBottom)
+        setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom)
         setTextSize(TypedValue.COMPLEX_UNIT_PX, textSizePx)
         setTextAppearance(textApprStyleRes)
         includeFontPadding = false
@@ -97,7 +112,6 @@ internal object TagStyleUtils {
             setTextColor(ContextCompat.getColor(context, R.color.sushi_white))
             (background as? GradientDrawable)?.setStroke(0, 0)
         }
-
     }
 
     @JvmStatic
