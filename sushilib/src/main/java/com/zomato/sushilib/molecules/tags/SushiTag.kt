@@ -61,6 +61,14 @@ open class SushiTag @JvmOverloads constructor(
             reapplyTagStyles()
         }
 
+    @get:ColorInt
+    @setparam:ColorInt
+    var borderColor = ResourceThemeResolver.getThemedColorFromAttr(context, android.R.attr.colorAccent)
+        set(value) {
+            field = value
+            reapplyTagStyles()
+        }
+
     init {
         context?.theme?.obtainStyledAttributes(
             attrs,

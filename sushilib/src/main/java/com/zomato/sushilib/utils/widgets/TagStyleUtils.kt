@@ -1,11 +1,9 @@
 package com.zomato.sushilib.utils.widgets
 
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.util.TypedValue
 import androidx.annotation.DimenRes
-import androidx.annotation.DrawableRes
 import androidx.annotation.RestrictTo
 import androidx.core.content.ContextCompat
 import com.zomato.sushilib.R
@@ -93,55 +91,50 @@ internal object TagStyleUtils {
 
     @JvmStatic
     private fun SushiTag.applyBg(
-        @DrawableRes bgDrawable: Int, colorList: ColorStateList,
-        outlined: Boolean = false, dashed: Boolean = false
+        r: Float, colorList: ColorStateList,
+        outlined: Boolean = false, dashed: Boolean = false,
+        strokeColor: Int = 0
     ) {
-        background = ContextCompat.getDrawable(context, bgDrawable)
-        background.mutate()
-        backgroundTintList = colorList
+        var strokeWidth = context.resources.getDimensionPixelOffset(R.dimen.sushi_spacing_pico)
+
+        val shape = GradientDrawable()
+        shape.shape = GradientDrawable.RECTANGLE
+        shape.setColor(colorList)
+        shape.cornerRadii = floatArrayOf(r,r,r,r,r,r,r,r,r)
         if (outlined) {
-            (background as GradientDrawable).setColor(Color.TRANSPARENT)
-            (background as GradientDrawable).setStroke(
-                resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico),
-                colorList,
-                10F.takeIf { dashed } ?: 0F,
-                10F.takeIf { dashed } ?: 0F
-            )
             setTextColor(colorList)
+            shape.setStroke(strokeWidth, colorList, 10F.takeIf { dashed } ?: 0F, 10F.takeIf { dashed } ?: 0F)
         } else {
             setTextColor(ContextCompat.getColor(context, R.color.sushi_white))
-            (background as? GradientDrawable)?.setStroke(0, 0)
+            if (strokeColor == 0) {
+                strokeWidth = 0
+            }
+            shape.setStroke(strokeWidth, strokeColor)
         }
+        setBackground(shape)
     }
 
     @JvmStatic
     fun SushiTag.applyBackground() {
+        val roundedDrawableRadius = if (tagSize == TagSize.NANO) resources.getDimensionPixelOffset(R.dimen.sushi_tag_extra_rounded_corner_radius).toFloat() else resources.getDimensionPixelOffset(R.dimen.sushi_tag_rounded_corner_radius).toFloat()
         when (tagType) {
-            TagType.ROUNDED -> {
-                if (tagSize == TagSize.NANO) {
-                    applyBg(
-                        R.drawable.sushi_tag_extra_rounded_bg, ColorStateList.valueOf(tagColor)
-                    )
-                } else {
-                    applyBg(
-                        R.drawable.sushi_tag_rounded_bg, ColorStateList.valueOf(tagColor)
-                    )
-                }
-            }
+            TagType.ROUNDED -> applyBg(
+                roundedDrawableRadius, ColorStateList.valueOf(tagColor), strokeColor = borderColor
+            )
             TagType.CAPSULE -> applyBg(
-                R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor)
+                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(), ColorStateList.valueOf(tagColor)
             )
             TagType.ROUNDED_OUTLINE -> applyBg(
-                R.drawable.sushi_tag_rounded_bg, ColorStateList.valueOf(tagColor), true
+                roundedDrawableRadius, ColorStateList.valueOf(tagColor), true
             )
             TagType.CAPSULE_OUTLINE -> applyBg(
-                R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true
+                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(), ColorStateList.valueOf(tagColor), true
             )
             TagType.ROUNDED_DASHED -> applyBg(
-                R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true, true
+                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(), ColorStateList.valueOf(tagColor), true, true
             )
             TagType.CAPSULE_DASHED -> applyBg(
-                R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true, true
+                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(), ColorStateList.valueOf(tagColor), true, true
             )
         }
     }
