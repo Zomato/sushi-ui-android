@@ -19,6 +19,7 @@
             <enum name="nano" value="4" />
         </attr>
         <attr name="tagColor" format="color" />
+        <attr name="borderColor" format="color" />
         <attr name="android:textColor" />
         <attr name="android:paddingLeft" />
         <attr name="android:paddingRight" />
