@@ -11,11 +11,12 @@ import com.zomato.sushilib.atoms.drawables.SushiIconDrawable
 internal interface DrawableSetters {
 
     private fun TextView.iconSize(): Int = (textSize * 0.9).toInt()
-    private fun TextView.createDrawable(iconFontChar: String) = SushiIconDrawable.Builder(context)
-        .setIconChar(iconFontChar)
-        .setTintList(textColors)
-        .setIconSize((textSize * 0.9).toInt())
-        .build()
+    private fun TextView.createDrawable(iconFontChar: String, iconSize: Int? = null) =
+        SushiIconDrawable.Builder(context)
+            .setIconChar(iconFontChar)
+            .setTintList(textColors)
+            .setIconSize(iconSize ?: iconSize())
+            .build()
 
     /**
      * Set the left drawable
@@ -117,10 +118,12 @@ internal interface DrawableSetters {
 
     fun TextView.setDrawableStart(iconFontChar: String?) {
         val drawables = compoundDrawablesRelative
-        val drawable = iconFontChar?.let { createDrawable(it) }
+        val drawable = iconFontChar?.let { createDrawable(it, overrideStartDrawableSize()) }
 
         setCompoundDrawablesRelative(drawable, drawables[1], drawables[2], drawables[3])
     }
+
+    fun overrideStartDrawableSize(): Int? = null
 
     /**
      * Set the end drawable (right for LTR and left for RTL layouts)

@@ -22,7 +22,8 @@ open class SushiCheckableStrip @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     @AttrRes defStyleAttr: Int = 0,
     @StyleRes defStyleRes: Int = 0,
-    @CheckableSelectorType private var selectorType: Int = CheckableSelectorType.RADIO
+    @CheckableSelectorType private var selectorType: Int = CheckableSelectorType.RADIO,
+    private var reverseLayout: Boolean = false
 ) : LinearLayout(ctx, attrs, defStyleAttr), Checkable {
 
     @ColorInt
@@ -34,21 +35,29 @@ open class SushiCheckableStrip @JvmOverloads constructor(
 
     private var isChecked = false
     protected var compoundButton: CompoundButton? = null
+    protected var primaryTextView: SushiTextView? = null
     protected var secondaryTextView: SushiTextView? = null
     private var onCheckedChangeListener: OnCheckedChangeListener? = null
     private var checkChangeAllowedListener: SushiCheckBox.CheckChangeAllowedListener? = null
 
     var primaryText: String?
-        get() = compoundButton?.text?.toString()
+        get() = if (reverseLayout)
+            primaryTextView?.text?.toString()
+        else
+            compoundButton?.text?.toString()
         set(value) {
-            compoundButton?.text = value
+            if (reverseLayout)
+                primaryTextView = (primaryTextView ?: SushiTextView(context)).apply { text = value }
+            else
+                compoundButton?.text = value
         }
 
     var secondaryText: String?
         get() = secondaryTextView?.text?.toString()
         set(value) {
             secondaryTextView = (secondaryTextView ?: SushiTextView(context).also {
-                addView(it)
+                if (!reverseLayout)
+                    addView(it)
             }).apply { text = value }
         }
 
@@ -60,6 +69,7 @@ open class SushiCheckableStrip @JvmOverloads constructor(
             R.styleable.SushiCheckableStrip,
             defStyleAttr, defStyleRes
         ).let {
+
             selectorType =
                 it.getInt(R.styleable.SushiCheckableStrip_selector, selectorType)
             color = it.getColor(R.styleable.SushiCheckableStrip_controlColor, color)
@@ -69,11 +79,16 @@ open class SushiCheckableStrip @JvmOverloads constructor(
                 CheckableSelectorType.CHECKBOX -> SushiCheckBox(context)
                 else -> null
             }
-            compoundButton?.ellipsize = TextUtils.TruncateAt.END
-            addView(compoundButton, LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f))
-
             primaryText = it.getString(R.styleable.SushiCheckableStrip_primaryText)
             secondaryText = it.getString(R.styleable.SushiCheckableStrip_secondaryText)
+            compoundButton?.ellipsize = TextUtils.TruncateAt.END
+            if (reverseLayout) {
+                addView(primaryTextView, LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f))
+                addView(secondaryTextView, LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT))
+                addView(compoundButton, LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT))
+            } else {
+                addView(compoundButton, 0, LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f))
+            }
 
             setChecked(it.getBoolean(R.styleable.SushiCheckableStrip_android_checked, false))
 
@@ -156,9 +171,11 @@ open class SushiCheckableStrip @JvmOverloads constructor(
 
     private fun setColors() {
         if (isChecked) {
+            primaryTextView?.setTextColor(color)
             secondaryTextView?.setTextColor(color)
             compoundButton?.setTextColor(color)
         } else {
+            primaryTextView?.setTextColor(defaultColor)
             secondaryTextView?.setTextColor(defaultColor)
             compoundButton?.setTextColor(defaultColor)
         }
