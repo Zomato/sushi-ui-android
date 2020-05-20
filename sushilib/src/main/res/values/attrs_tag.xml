@@ -7,6 +7,8 @@
             <enum name="capsule" value="1" />
             <enum name="rounded_outline" value="2" />
             <enum name="capsule_outline" value="3" />
+            <enum name="rounded_dashed" value="4" />
+            <enum name="capsule_dashed" value="5" />
         </attr>
         <attr name="tagSize" format="enum">
             <!-- Values should be same as com.zomato.sushilib.annotations.TagSize  -->
@@ -14,6 +16,7 @@
             <enum name="medium" value="1" />
             <enum name="small" value="2" />
             <enum name="tiny" value="3" />
+            <enum name="nano" value="4" />
         </attr>
         <attr name="tagColor" format="color" />
         <attr name="android:textColor" />

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".fragments.buttons.ButtonsMainFragment">
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager_buttons"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,24 +15,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.design.widget.TabItem
+            <com.google.android.material.tabs.TabItem
                 android:id="@+id/tab_item_solid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Solid" />
 
-            <android.support.design.widget.TabItem
+            <com.google.android.material.tabs.TabItem
                 android:id="@+id/tab_item_outline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Outline" />
 
-            <android.support.design.widget.TabItem
+            <com.google.android.material.tabs.TabItem
                 android:id="@+id/tab_item_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Text" />
         </com.zomato.sushilib.organisms.navigation.SushiTabLayout>
-    </android.support.v4.view.ViewPager>
+    </androidx.viewpager.widget.ViewPager>
 
 </FrameLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/sushi_spacing_base"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/sushi_cider_050">
+
+    <com.zomato.sushilib.molecules.listings.SushiTextListing
+        app:headlineText="Pull Collapsible Activity"
+        app:subtitleText="Opened from collapsible card"
+        app:bodyText="Pull down from the top to close this screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

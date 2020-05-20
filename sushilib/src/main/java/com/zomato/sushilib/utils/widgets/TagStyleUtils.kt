@@ -3,11 +3,11 @@ package com.zomato.sushilib.utils.widgets
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
-import android.support.annotation.DimenRes
-import android.support.annotation.DrawableRes
-import android.support.annotation.RestrictTo
-import android.support.v4.content.ContextCompat
 import android.util.TypedValue
+import androidx.annotation.DimenRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.RestrictTo
+import androidx.core.content.ContextCompat
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.TagSize
 import com.zomato.sushilib.annotations.TagType
@@ -50,6 +50,12 @@ internal object TagStyleUtils {
                 horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_tiny_horizontal_padding)
                 textSizePx = r.getDimension(R.dimen.sushi_tag_tiny_textsize)
             }
+            TagSize.NANO -> {
+                verticalPadding = r.getDimensionPixelSize(R.dimen.sushi_tag_nano_vertical_padding)
+                horizontalPadding = r.getDimensionPixelSize(R.dimen.sushi_spacing_micro)
+                textSizePx = r.getDimension(R.dimen.sushi_tag_nano_textsize)
+                textApprStyleRes = R.style.TextAppearance_Sushi_SemiBold
+            }
         }
         if (tagType == TagType.CAPSULE || tagType == TagType.CAPSULE_OUTLINE) {
             // Capsule tags look better with a little more padding
@@ -71,31 +77,43 @@ internal object TagStyleUtils {
     }
 
     @JvmStatic
-    fun SushiTag.applyBackground() {
-        fun applyBg(@DrawableRes bgDrawable: Int, colorList: ColorStateList, outlined: Boolean = false) {
-            background = ContextCompat.getDrawable(context, bgDrawable)
-            background.mutate()
-            if (outlined) {
-                (background as GradientDrawable).setStroke(
-                    resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico),
-                    colorList
-                )
-                (background as GradientDrawable).setColor(Color.TRANSPARENT)
-                setTextColor(colorList)
-                compoundDrawableTintList = colorList
-
-            } else {
-                backgroundTintList = colorList
-                setTextColor(ContextCompat.getColor(context, R.color.sushi_white))
-                (background as? GradientDrawable)?.setStroke(0, 0)
-            }
-
+    private fun SushiTag.applyBg(
+        @DrawableRes bgDrawable: Int, colorList: ColorStateList,
+        outlined: Boolean = false, dashed: Boolean = false
+    ) {
+        background = ContextCompat.getDrawable(context, bgDrawable)
+        background.mutate()
+        backgroundTintList = colorList
+        if (outlined) {
+            (background as GradientDrawable).setColor(Color.TRANSPARENT)
+            (background as GradientDrawable).setStroke(
+                resources.getDimensionPixelSize(R.dimen.sushi_spacing_pico),
+                colorList,
+                10F.takeIf { dashed } ?: 0F,
+                10F.takeIf { dashed } ?: 0F
+            )
+            setTextColor(colorList)
+        } else {
+            setTextColor(ContextCompat.getColor(context, R.color.sushi_white))
+            (background as? GradientDrawable)?.setStroke(0, 0)
         }
 
+    }
+
+    @JvmStatic
+    fun SushiTag.applyBackground() {
         when (tagType) {
-            TagType.ROUNDED -> applyBg(
-                R.drawable.sushi_tag_rounded_bg, ColorStateList.valueOf(tagColor)
-            )
+            TagType.ROUNDED -> {
+                if (tagSize == TagSize.NANO) {
+                    applyBg(
+                        R.drawable.sushi_tag_extra_rounded_bg, ColorStateList.valueOf(tagColor)
+                    )
+                } else {
+                    applyBg(
+                        R.drawable.sushi_tag_rounded_bg, ColorStateList.valueOf(tagColor)
+                    )
+                }
+            }
             TagType.CAPSULE -> applyBg(
                 R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor)
             )
@@ -105,6 +123,12 @@ internal object TagStyleUtils {
             TagType.CAPSULE_OUTLINE -> applyBg(
                 R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true
             )
+            TagType.ROUNDED_DASHED -> applyBg(
+                R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true, true
+            )
+            TagType.CAPSULE_DASHED -> applyBg(
+                R.drawable.sushi_tag_capsule_bg, ColorStateList.valueOf(tagColor), true, true
+            )
         }
     }
 
@@ -113,9 +137,10 @@ internal object TagStyleUtils {
     fun getMinWidthResIdForRatingTagBySize(@TagSize tagSize: Int): Int {
         return when (tagSize) {
             TagSize.LARGE -> R.dimen.sushi_rating_tag_large_minwidth
-            TagSize.MEDIUM -> R.dimen.sushi_rating_tag_large_minwidth
+            TagSize.MEDIUM -> R.dimen.sushi_rating_tag_medium_minwidth
             TagSize.SMALL -> R.dimen.sushi_rating_tag_small_minwidth
-            TagSize.TINY -> R.dimen.sushi_rating_tag_small_minwidth
+            TagSize.TINY -> R.dimen.sushi_rating_tag_tiny_minwidth
+            TagSize.NANO -> R.dimen.sushi_rating_tag_nano_minwidth
             else -> R.dimen.sushi_rating_tag_large_minwidth
         }
     }

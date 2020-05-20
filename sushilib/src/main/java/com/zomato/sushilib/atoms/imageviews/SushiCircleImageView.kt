@@ -4,11 +4,11 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import android.support.annotation.AttrRes
-import android.support.annotation.StyleRes
-import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
 import android.widget.ImageView.ScaleType.CENTER_CROP
+import androidx.annotation.AttrRes
+import androidx.annotation.StyleRes
+import androidx.appcompat.widget.AppCompatImageView
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.OutlineType
 import com.zomato.sushilib.utils.theme.ResourceThemeResolver.getThemeWrappedContext

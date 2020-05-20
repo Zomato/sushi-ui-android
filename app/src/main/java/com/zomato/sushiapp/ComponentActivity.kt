@@ -3,9 +3,9 @@ package com.zomato.sushiapp
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.zomato.sushiapp.fragments.*
 import com.zomato.sushiapp.fragments.buttons.ButtonsMainFragment
 import com.zomato.sushiapp.fragments.images.ImagesMainFragment
@@ -24,6 +24,7 @@ class ComponentActivity : AppCompatActivity() {
         const val SNIPPETS = 6
         const val TAGS = 7
         const val MENU_TABS = 8
+        const val CARD_STACK = 9
 
         fun start(context: Context, component: Int) {
             Intent(context, ComponentActivity::class.java).apply {
@@ -43,6 +44,7 @@ class ComponentActivity : AppCompatActivity() {
             SNIPPETS -> ListingFragment()
             TAGS -> TagsFragment()
             MENU_TABS -> NavigationComponentsFragment()
+            CARD_STACK -> CardStackFragment()
             else -> ColorPaletteFragment()
         }
 
@@ -55,6 +57,7 @@ class ComponentActivity : AppCompatActivity() {
             SNIPPETS -> "Listing snippets"
             TAGS -> "Tags and rating"
             MENU_TABS -> "Navigation components"
+            CARD_STACK -> "Card Stack"
             else -> "Color palette"
         }
 

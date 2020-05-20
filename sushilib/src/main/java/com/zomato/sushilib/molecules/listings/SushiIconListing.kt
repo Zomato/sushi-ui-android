@@ -2,11 +2,11 @@ package com.zomato.sushilib.molecules.listings
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.support.annotation.AttrRes
-import android.support.annotation.StyleRes
-import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.widget.LinearLayout
+import androidx.annotation.AttrRes
+import androidx.annotation.StyleRes
+import androidx.core.content.ContextCompat
 import com.zomato.sushilib.R
 import com.zomato.sushilib.atoms.textviews.SushiTextView
 import com.zomato.sushilib.molecules.tags.SushiCircleIconView
