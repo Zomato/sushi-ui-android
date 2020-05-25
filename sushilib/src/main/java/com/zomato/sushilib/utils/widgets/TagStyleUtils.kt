@@ -100,10 +100,14 @@ internal object TagStyleUtils {
         val shape = GradientDrawable()
         shape.shape = GradientDrawable.RECTANGLE
         shape.setColor(colorList)
-        shape.cornerRadii = floatArrayOf(r,r,r,r,r,r,r,r,r)
+        shape.cornerRadii = floatArrayOf(r, r, r, r, r, r, r, r, r)
         if (outlined) {
             setTextColor(colorList)
-            shape.setStroke(strokeWidth, colorList, 10F.takeIf { dashed } ?: 0F, 10F.takeIf { dashed } ?: 0F)
+            if (strokeColor != 0) {
+                shape.setStroke(strokeWidth, strokeColor, 10F.takeIf { dashed } ?: 0F, 10F.takeIf { dashed } ?: 0F)
+            } else {
+                shape.setStroke(strokeWidth, colorList, 10F.takeIf { dashed } ?: 0F, 10F.takeIf { dashed } ?: 0F)
+            }
         } else {
             setTextColor(ContextCompat.getColor(context, R.color.sushi_white))
             if (strokeColor == 0) {
@@ -116,25 +120,40 @@ internal object TagStyleUtils {
 
     @JvmStatic
     fun SushiTag.applyBackground() {
-        val roundedDrawableRadius = if (tagSize == TagSize.NANO) resources.getDimensionPixelOffset(R.dimen.sushi_tag_extra_rounded_corner_radius).toFloat() else resources.getDimensionPixelOffset(R.dimen.sushi_tag_rounded_corner_radius).toFloat()
+        val roundedDrawableRadius =
+            if (tagSize == TagSize.NANO) resources.getDimensionPixelOffset(R.dimen.sushi_tag_extra_rounded_corner_radius).toFloat() else resources.getDimensionPixelOffset(
+                R.dimen.sushi_tag_rounded_corner_radius
+            ).toFloat()
         when (tagType) {
             TagType.ROUNDED -> applyBg(
                 roundedDrawableRadius, ColorStateList.valueOf(tagColor), strokeColor = borderColor
             )
             TagType.CAPSULE -> applyBg(
-                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(), ColorStateList.valueOf(tagColor)
+                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(),
+                ColorStateList.valueOf(tagColor)
             )
             TagType.ROUNDED_OUTLINE -> applyBg(
-                roundedDrawableRadius, ColorStateList.valueOf(tagColor), true
+                roundedDrawableRadius, ColorStateList.valueOf(tagColor), true, strokeColor = borderColor
             )
             TagType.CAPSULE_OUTLINE -> applyBg(
-                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(), ColorStateList.valueOf(tagColor), true
+                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(),
+                ColorStateList.valueOf(tagColor),
+                true,
+                strokeColor = borderColor
             )
             TagType.ROUNDED_DASHED -> applyBg(
-                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(), ColorStateList.valueOf(tagColor), true, true
+                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(),
+                ColorStateList.valueOf(tagColor),
+                true,
+                true,
+                strokeColor = borderColor
             )
             TagType.CAPSULE_DASHED -> applyBg(
-                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(), ColorStateList.valueOf(tagColor), true, true
+                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(),
+                ColorStateList.valueOf(tagColor),
+                true,
+                true,
+                strokeColor = borderColor
             )
         }
     }
