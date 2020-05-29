@@ -37,11 +37,10 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'crea
                            'outputs/code_coverage/debugAndroidTest/connected/**/*.ec'])
     }
 
-    sourceDirectories = files([javaSrc, kotlinSrc])
-    classDirectories = files([javaClasses, kotlinClasses])
+    getSourceDirectories().setFrom(javaSrc, kotlinSrc)
+    getClassDirectories().setFrom(javaClasses, kotlinClasses)
 
-
-    executionData = files(execution)
+    getExecutionData().setFrom(execution)
 
     doLast() {
         print execution
