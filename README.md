@@ -3,7 +3,7 @@
 [![Actions Status](https://github.com/Zomato/Sushi-Android/workflows/Android%20CI/badge.svg)](https://github.com/Zomato/Sushi-Android/actions)
 
 ## Documentation
-A delicious UI Kit to build Android apps. Made with ❤ by Zomato
+A delicious UI Kit to build Android apps. Made with ❤ by Zomato <br />
 <https://zomato.github.io/Sushi-Android/>
 
 ## Testing & Coverage
