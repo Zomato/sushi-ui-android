@@ -1,14 +1,12 @@
 # Sushi Android UI Kit
 
-[![Actions Status](https://github.com/Zomato/Sushi-Android/workflows/android/badge.svg)](https://github.com/Zomato/Sushi-Android/actions)
+[![Actions Status](https://github.com/Zomato/Sushi-Android/workflows/Android%20CI/badge.svg)](https://github.com/Zomato/Sushi-Android/actions)
 
 ## Documentation
+A delicious UI Kit to build Android apps. Made with ❤ by Zomato
+<https://zomato.github.io/Sushi-Android/>
 
-***REMOVED***
-
-## Testing
-
-### Coverage
+## Testing & Coverage
 
 Run all tests and get coverage report
 ```shell 
