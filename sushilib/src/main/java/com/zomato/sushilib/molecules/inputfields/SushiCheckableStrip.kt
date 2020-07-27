@@ -3,6 +3,8 @@ package com.zomato.sushilib.molecules.inputfields
 import android.content.Context
 import android.text.TextUtils
 import android.util.AttributeSet
+import android.view.Gravity
+import android.view.View
 import android.widget.Checkable
 import android.widget.CompoundButton
 import android.widget.LinearLayout
@@ -46,18 +48,19 @@ open class SushiCheckableStrip @JvmOverloads constructor(
         else
             compoundButton?.text?.toString()
         set(value) {
-            if (reverseLayout)
-                primaryTextView = (primaryTextView ?: SushiTextView(context)).apply { text = value }
-            else
-                compoundButton?.text = value
+            // if (reverseLayout)
+            //     primaryTextView = (primaryTextView ?: SushiTextView(context)).apply { text = value }
+            // else
+            //     compoundButton?.text = value
+            primaryTextView = (primaryTextView ?: SushiTextView(context)).apply { text = value }
         }
 
     var secondaryText: String?
         get() = secondaryTextView?.text?.toString()
         set(value) {
             secondaryTextView = (secondaryTextView ?: SushiTextView(context).also {
-                if (!reverseLayout)
-                    addView(it)
+                // if (!reverseLayout)
+                //     addView(it)
             }).apply { text = value }
         }
 
@@ -87,10 +90,18 @@ open class SushiCheckableStrip @JvmOverloads constructor(
                 addView(secondaryTextView, LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT))
                 addView(compoundButton, LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT))
             } else {
-                addView(compoundButton, 0, LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f))
+                addView(compoundButton, LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT))
+                addView(LinearLayout(context).apply {
+                    orientation = VERTICAL
+                    addView(primaryTextView, LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT))
+                    addView(secondaryTextView, LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT))
+                }, LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f).apply {
+                    gravity = Gravity.CENTER_VERTICAL
+                })
             }
 
             setChecked(it.getBoolean(R.styleable.SushiCheckableStrip_android_checked, false))
+            layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
 
             it.recycle()
         }
@@ -161,6 +172,7 @@ open class SushiCheckableStrip @JvmOverloads constructor(
     }
 
     override fun setChecked(checked: Boolean) {
+        secondaryTextView?.visibility = if (checked) View.VISIBLE else View.GONE
         if (isChecked != checked) {
             isChecked = checked
             compoundButton?.isChecked = checked
@@ -171,12 +183,12 @@ open class SushiCheckableStrip @JvmOverloads constructor(
 
     private fun setColors() {
         if (isChecked) {
-            primaryTextView?.setTextColor(color)
-            secondaryTextView?.setTextColor(color)
+            // primaryTextView?.setTextColor(color)
+            // secondaryTextView?.setTextColor(color)
             compoundButton?.setTextColor(color)
         } else {
-            primaryTextView?.setTextColor(defaultColor)
-            secondaryTextView?.setTextColor(defaultColor)
+            // primaryTextView?.setTextColor(defaultColor)
+            // secondaryTextView?.setTextColor(defaultColor)
             compoundButton?.setTextColor(defaultColor)
         }
         when (selectorType) {
