@@ -142,7 +142,7 @@ internal object TagStyleUtils {
                 strokeColor = borderColor
             )
             TagType.ROUNDED_DASHED -> applyBg(
-                resources.getDimensionPixelOffset(R.dimen.sushi_tag_capsule_corner_radius).toFloat(),
+                roundedDrawableRadius,
                 ColorStateList.valueOf(tagColor),
                 true,
                 true,
