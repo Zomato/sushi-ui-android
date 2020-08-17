@@ -25,7 +25,8 @@ open class SushiCheckableStrip @JvmOverloads constructor(
     @AttrRes defStyleAttr: Int = 0,
     @StyleRes defStyleRes: Int = 0,
     @CheckableSelectorType private var selectorType: Int = CheckableSelectorType.RADIO,
-    private var reverseLayout: Boolean = false
+    private var reverseLayout: Boolean = false,
+    private val textViewsVerticallyAligned: Boolean = false
 ) : LinearLayout(ctx, attrs, defStyleAttr), Checkable {
 
     @ColorInt
@@ -48,19 +49,18 @@ open class SushiCheckableStrip @JvmOverloads constructor(
         else
             compoundButton?.text?.toString()
         set(value) {
-            // if (reverseLayout)
-            //     primaryTextView = (primaryTextView ?: SushiTextView(context)).apply { text = value }
-            // else
-            //     compoundButton?.text = value
-            primaryTextView = (primaryTextView ?: SushiTextView(context)).apply { text = value }
+            if (reverseLayout || textViewsVerticallyAligned)
+                primaryTextView = (primaryTextView ?: SushiTextView(context)).apply { text = value }
+            else
+                compoundButton?.text = value
         }
 
     var secondaryText: String?
         get() = secondaryTextView?.text?.toString()
         set(value) {
             secondaryTextView = (secondaryTextView ?: SushiTextView(context).also {
-                // if (!reverseLayout)
-                //     addView(it)
+                if (!reverseLayout && !textViewsVerticallyAligned)
+                    addView(it)
             }).apply { text = value }
         }
 
@@ -89,7 +89,7 @@ open class SushiCheckableStrip @JvmOverloads constructor(
                 addView(primaryTextView, LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f))
                 addView(secondaryTextView, LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT))
                 addView(compoundButton, LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT))
-            } else {
+            } else if (textViewsVerticallyAligned) {
                 addView(compoundButton, LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT))
                 addView(LinearLayout(context).apply {
                     orientation = VERTICAL
@@ -98,7 +98,8 @@ open class SushiCheckableStrip @JvmOverloads constructor(
                 }, LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f).apply {
                     gravity = Gravity.CENTER_VERTICAL
                 })
-            }
+            } else addView(compoundButton, 0, LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f))
+
 
             setChecked(it.getBoolean(R.styleable.SushiCheckableStrip_android_checked, false))
             layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
@@ -172,7 +173,8 @@ open class SushiCheckableStrip @JvmOverloads constructor(
     }
 
     override fun setChecked(checked: Boolean) {
-        secondaryTextView?.visibility = if (checked) View.VISIBLE else View.GONE
+        if (textViewsVerticallyAligned)
+            secondaryTextView?.visibility = if (checked) View.VISIBLE else View.GONE
         if (isChecked != checked) {
             isChecked = checked
             compoundButton?.isChecked = checked
@@ -183,12 +185,12 @@ open class SushiCheckableStrip @JvmOverloads constructor(
 
     private fun setColors() {
         if (isChecked) {
-            // primaryTextView?.setTextColor(color)
-            // secondaryTextView?.setTextColor(color)
+            if (!textViewsVerticallyAligned) primaryTextView?.setTextColor(color)
+            if (!textViewsVerticallyAligned) secondaryTextView?.setTextColor(color)
             compoundButton?.setTextColor(color)
         } else {
-            // primaryTextView?.setTextColor(defaultColor)
-            // secondaryTextView?.setTextColor(defaultColor)
+            if (!textViewsVerticallyAligned) primaryTextView?.setTextColor(defaultColor)
+            if (!textViewsVerticallyAligned) secondaryTextView?.setTextColor(defaultColor)
             compoundButton?.setTextColor(defaultColor)
         }
         when (selectorType) {
