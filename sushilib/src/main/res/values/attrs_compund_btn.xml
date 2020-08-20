@@ -20,6 +20,10 @@
             <enum name="radio" value="0" />
             <enum name="checkbox" value="1" />
         </attr>
+        <attr name="textViewOrientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
         <attr name="android:checked" />
         <attr name="primaryText" format="string" />
         <attr name="secondaryText" format="string" />

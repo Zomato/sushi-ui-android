@@ -28,7 +28,7 @@ open class SushiCheckableStrip @JvmOverloads constructor(
     @StyleRes defStyleRes: Int = 0,
     @CheckableSelectorType private var selectorType: Int = CheckableSelectorType.RADIO,
     private var reverseLayout: Boolean = false,
-    @TextViewOrientation private val textViewOrientation: Int = TextViewOrientation.HORIZONTAL
+    @TextViewOrientation private var textViewOrientation: Int = TextViewOrientation.HORIZONTAL
 ) : LinearLayout(ctx, attrs, defStyleAttr), Checkable {
 
     @ColorInt
@@ -80,8 +80,10 @@ open class SushiCheckableStrip @JvmOverloads constructor(
 
             selectorType =
                 it.getInt(R.styleable.SushiCheckableStrip_selector, selectorType)
+            textViewOrientation = it.getInt(R.styleable.SushiCheckableStrip_textViewOrientation, textViewOrientation)
             color = it.getColor(R.styleable.SushiCheckableStrip_controlColor, color)
             titleColor = it.getColor(R.styleable.SushiCheckableStrip_titleColor, titleColor)
+
 
             compoundButton = when (selectorType) {
                 CheckableSelectorType.RADIO -> SushiRadioButton(context)
