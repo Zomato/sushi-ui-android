@@ -1,0 +1,58 @@
+name: Package Publish CI
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  READ_ARTIFACTS_TOKEN: ${{ secrets.READ_ARTIFACTS_TOKEN }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cancel previous job
+        uses: styfle/cancel-workflow-action@0.4.1
+        with:
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: true
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Build with Gradle
+        run: |
+          ./gradlew sushilib:assembleRelease
+
+      - name: Publish the new package
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./gradlew publish
+          echo "New release: ${{ env.UPCOMING_TAG }} is now live!"
+
+      - name: Tag release
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version_name=v$($GITHUB_WORKSPACE/scripts/get-app-version.sh $GITHUB_WORKSPACE/version.properties)
+          chmod +x scripts/release_tag.sh
+          scripts/release_tag.sh $version_name
+
+      - name: Master branch syncup
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          chmod +x scripts/merge.sh
+          scripts/merge.sh dev master

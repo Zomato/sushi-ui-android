@@ -1,3 +1,5 @@
+def rootConfiguration = rootProject.ext
+
 def tryApplyFrom(libName) {
     try {
         apply from: libName
@@ -8,10 +10,8 @@ def tryApplyFrom(libName) {
 }
 
 // Maven Publishing Details
-ext.libraryGroupId = 'sushi-android'
-ext.libraryArtifactId = 'sushilib'
-ext.libraryVersion = '0.9.3'
-
+ext.libraryGroupId = 'com.zomato.sushilib'
+ext.libraryArtifactId = 'sushilib-android'
 
 apply from: "../versions.gradle"
 apply plugin: 'com.android.library'
@@ -25,8 +25,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 1
-        versionName "${libraryVersion}"
+        versionCode rootConfiguration.global_version_code
+        versionName rootConfiguration.global_version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true

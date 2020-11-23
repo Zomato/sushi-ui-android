@@ -1,9 +1,7 @@
 # Sushi Android UI Kit
 
-
-[![Actions Status](https://github.com/Zomato/Sushi-Android/workflows/Android%20CI/badge.svg)](https://github.com/Zomato/Sushi-Android/actions)
-
 ## Usage
+The master branch is being used for release and dev is the default branch.
 
 ### Installation
 This package is available via Github Package Registry. To use this, follow these steps.
@@ -25,7 +23,7 @@ repositories {
 
 dependencies {
     // ... other dependencies
-    implementation "sushi-android:sushilib:0.9.3"
+    implementation "com.zomato.sushilib:sushilib-android:${latest_version}"
 }
 
 ```
@@ -45,12 +43,5 @@ Run all tests and get coverage report
 ```
 
 ## Publishing
-
-To publish this package run 
-
-```bash
-./gradlew assemble publish
-```
-
-> For publish to work you need to have `GITHUB_TOKEN` env variable with `write:packages` scope.
+To publish this package, go to Actions tab of the repo and select "Version Bump CI" workflow. This workflow has to be manually triggered by clicking "Run Workflow" button. It will create a PR on "master" branch which after merge will generate and publish a new package.
 

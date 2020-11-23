@@ -23,6 +23,13 @@ allprojects {
         
     }
 }
+ext {
+    def props = new Properties()
+    file("version.properties").withInputStream { props.load(it) }
+
+    global_version_code = props.getProperty("VERSION_CODE").toInteger()
+    global_version_name = props.get("VERSION_NAME")
+}
 
 task clean(type: Delete) {
     delete rootProject.buildDir
