@@ -1,8 +1,7 @@
 # Sushi Android UI Kit
 
-A common UI Kit that implement's Zomato's Sushi Design Library for Android.
 
-[![Actions Status](https://github.com/Zomato/Sushi-Android/workflows/android/badge.svg)](https://github.com/Zomato/Sushi-Android/actions)
+[![Actions Status](https://github.com/Zomato/Sushi-Android/workflows/Android%20CI/badge.svg)](https://github.com/Zomato/Sushi-Android/actions)
 
 ## Usage
 
@@ -35,12 +34,10 @@ dependencies {
 
 
 ## Documentation
+A delicious UI Kit to build Android apps. Made with ❤ by Zomato <br />
+<https://zomato.github.io/Sushi-Android/>
 
-***REMOVED***
-
-## Testing
-
-### Coverage
+## Testing & Coverage
 
 Run all tests and get coverage report
 ```shell 
@@ -56,3 +53,4 @@ To publish this package run
 ```
 
 > For publish to work you need to have `GITHUB_TOKEN` env variable with `write:packages` scope.
+

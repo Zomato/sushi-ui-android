@@ -173,6 +173,9 @@ open class SushiCollapsingCardStack @JvmOverloads constructor(
      * @param parent The container inside which the [SushiCollapsingCardStack] is
      */
     private fun setAdjustedPosition(parent: ViewGroup) {
+        if (childCount <= 1) {
+            return
+        }
         val screenPos = IntArray(2)
         val rvScreenPos = IntArray(2)
         parent.getLocationOnScreen(rvScreenPos)

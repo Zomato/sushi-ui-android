@@ -16,8 +16,10 @@
             <enum name="medium" value="1" />
             <enum name="small" value="2" />
             <enum name="tiny" value="3" />
+            <enum name="nano" value="4" />
         </attr>
         <attr name="tagColor" format="color" />
+        <attr name="borderColor" format="color" />
         <attr name="android:textColor" />
         <attr name="android:paddingLeft" />
         <attr name="android:paddingRight" />

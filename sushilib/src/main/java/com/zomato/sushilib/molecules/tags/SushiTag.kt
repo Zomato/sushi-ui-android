@@ -58,6 +58,18 @@ open class SushiTag @JvmOverloads constructor(
     var tagColor = ResourceThemeResolver.getThemedColorFromAttr(context, android.R.attr.colorAccent)
         set(value) {
             field = value
+            borderColor = value
+            reapplyTagStyles()
+        }
+
+    /*
+    * Disclaimer - Make sure to set border color after tag color else it will not work
+    */
+    @get:ColorInt
+    @setparam:ColorInt
+    var borderColor = ResourceThemeResolver.getThemedColorFromAttr(context, android.R.attr.colorAccent)
+        set(value) {
+            field = value
             reapplyTagStyles()
         }
 
@@ -72,6 +84,7 @@ open class SushiTag @JvmOverloads constructor(
             tagType = it.getInt(R.styleable.SushiTag_tagType, TagType.ROUNDED)
             tagSize = it.getInt(R.styleable.SushiTag_tagSize, TagSize.LARGE)
             tagColor = it.getColor(R.styleable.SushiTag_tagColor, tagColor)
+            borderColor = it.getColor(R.styleable.SushiTag_borderColor, tagColor)
 
             mPadding = it.getDimensionPixelSize(R.styleable.SushiTag_android_padding, -1)
             mPaddingLeft = it.getDimensionPixelSize(R.styleable.SushiTag_android_paddingLeft, -1)
