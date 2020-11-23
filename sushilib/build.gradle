@@ -1,9 +1,23 @@
+def tryApplyFrom(libName) {
+    try {
+        apply from: libName
+    } catch (e) {
+        println("Could not load publishing configuration")
+        e.printStackTrace()
+    }
+}
+
+// Maven Publishing Details
+ext.libraryGroupId = 'sushi-android'
+ext.libraryArtifactId = 'sushilib'
+ext.libraryVersion = '0.9.3'
+
+
 apply from: "../versions.gradle"
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply from: "../jacoco.gradle"
-
+tryApplyFrom "../jacoco.gradle"
 
 android {
     compileSdkVersion 28
@@ -12,7 +26,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "${libraryVersion}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -67,3 +81,5 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+tryApplyFrom "./publish.gradle"
