@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="SushiCompoundButton">
         <attr name="controlColor" format="color" />
+        <attr name="titleColor" format="color" />
     </declare-styleable>
     <declare-styleable name="SushiCheckBox">
         <attr name="controlColor" />
@@ -14,9 +15,14 @@
     </declare-styleable>
     <declare-styleable name="SushiCheckableStrip">
         <attr name="controlColor" />
+        <attr name="titleColor" />
         <attr name="selector" format="enum">
             <enum name="radio" value="0" />
             <enum name="checkbox" value="1" />
+        </attr>
+        <attr name="textViewOrientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
         </attr>
         <attr name="android:checked" />
         <attr name="primaryText" format="string" />

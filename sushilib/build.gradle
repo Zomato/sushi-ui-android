@@ -1,9 +1,23 @@
+def rootConfiguration = rootProject.ext
+
+def tryApplyFrom(libName) {
+    try {
+        apply from: libName
+    } catch (e) {
+        println("Could not load publishing configuration")
+        e.printStackTrace()
+    }
+}
+
+// Maven Publishing Details
+ext.libraryGroupId = 'com.zomato.sushilib'
+ext.libraryArtifactId = 'sushilib-android'
+
 apply from: "../versions.gradle"
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply from: "../jacoco.gradle"
-
+tryApplyFrom "../jacoco.gradle"
 
 android {
     compileSdkVersion 28
@@ -11,8 +25,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode rootConfiguration.global_version_code
+        versionName rootConfiguration.global_version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -43,6 +57,10 @@ android {
             includeAndroidResources = true
         }
     }
+
+    lintOptions{
+        baseline file ('lint-baseline.xml')
+    }
 }
 
 dependencies {
@@ -63,3 +81,5 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+tryApplyFrom "./publish.gradle"
