@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sushi_spacing_between_small"
                 android:gravity="center"
-                android:text="v14 is coming"
+                android:text="v16 is coming"
                 android:textAppearance="@style/TextAppearance.Sushi.Body" />
 
             <com.zomato.sushilib.atoms.textviews.SushiTextView
