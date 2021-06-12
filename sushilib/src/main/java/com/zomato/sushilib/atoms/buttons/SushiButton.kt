@@ -9,6 +9,7 @@ import android.util.TypedValue
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import androidx.annotation.StyleRes
+import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
 import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ButtonDimension
@@ -35,7 +36,7 @@ open class SushiButton @JvmOverloads constructor(
     @ButtonType
     private var buttonType: Int = ButtonType.SOLID
     @ColorInt
-    private var buttonColor: Int = getThemedColorFromAttr(context, R.attr.colorAccent)
+    private var buttonColor: Int = ContextCompat.getColor(context, R.color.sushi_red_500)
     @ColorInt
     private var customStrokeColor: Int = buttonColor
 
