@@ -36,7 +36,7 @@ open class SushiButton @JvmOverloads constructor(
     @ButtonType
     private var buttonType: Int = ButtonType.SOLID
     @ColorInt
-    private var buttonColor: Int = ContextCompat.getColor(context, R.color.sushi_red_500)
+    private var buttonColor: Int = getThemedColorFromAttr(context, R.attr.colorAccent)
     @ColorInt
     private var customStrokeColor: Int = buttonColor
 
