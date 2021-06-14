@@ -67,10 +67,10 @@ internal object ButtonStyleUtils {
     @JvmStatic
     fun SushiButton.applyRippleColor() {
         val buttonType = getButtonType()
-        rippleColor = when (buttonType) {
-            ButtonType.SOLID -> getButtonRippleStateList(if (getButtonColor() == Color.WHITE) ContextCompat.getColor(context, R.color.sushi_grey_500) else Color.WHITE)
-            ButtonType.OUTLINE -> getButtonRippleStateList(getButtonColor())
-            else -> getButtonRippleStateList(getButtonColor())
+        if(buttonType == ButtonType.SOLID) {
+            rippleColor =  getButtonRippleStateList(if (getButtonColor() == Color.WHITE) ContextCompat.getColor(context, R.color.sushi_grey_500) else Color.WHITE)
+        }else if(buttonType == ButtonType.OUTLINE) {
+            rippleColor = getButtonRippleStateList(getButtonColor())
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (buttonType == ButtonType.TEXT) {
