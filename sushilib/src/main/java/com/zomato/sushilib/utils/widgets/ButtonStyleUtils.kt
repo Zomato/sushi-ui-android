@@ -63,6 +63,7 @@ internal object ButtonStyleUtils {
      * Apply ripple color to the button.
      * For buttonType = [ButtonType.SOLID] we use a white alpha ripple
      * otherwise we use a ripple based on the button's [SushiButton.getButtonColor]
+     * Need to fix recycling issue in case of multiple buttons in a list being recycled
      */
     @JvmStatic
     fun SushiButton.applyRippleColor() {
