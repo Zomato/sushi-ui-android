@@ -152,7 +152,6 @@ open class SushiButton @JvmOverloads constructor(
     }
 
     fun setButtonDimension(@ButtonDimension size: Int) {
-        if (size == buttonDimension) return
         buttonDimension = size
         reapplySizes()
     }
