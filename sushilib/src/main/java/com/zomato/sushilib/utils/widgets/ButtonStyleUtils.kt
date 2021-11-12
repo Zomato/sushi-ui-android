@@ -67,24 +67,28 @@ internal object ButtonStyleUtils {
      */
     @JvmStatic
     fun SushiButton.applyRippleColor() {
-        val buttonType = getButtonType()
-        if (buttonType == ButtonType.SOLID) {
-            rippleColor = getButtonRippleStateList(
-                if (getButtonColor() == Color.WHITE) ContextCompat.getColor(
-                    context,
-                    R.color.sushi_grey_500
-                ) else Color.WHITE
-            )
-        } else if (buttonType == ButtonType.OUTLINE) {
-            rippleColor = getButtonRippleStateList(getButtonColor())
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (buttonType == ButtonType.TEXT) {
-                stateListAnimator =
-                    AnimatorInflater.loadStateListAnimator(context, R.animator.sushi_text_button_click_animator)
-            } else {
-                stateListAnimator = null
+        try {
+            val buttonType = getButtonType()
+            if (buttonType == ButtonType.SOLID) {
+                rippleColor = getButtonRippleStateList(
+                    if (getButtonColor() == Color.WHITE) ContextCompat.getColor(
+                        context,
+                        R.color.sushi_grey_500
+                    ) else Color.WHITE
+                )
+            } else if (buttonType == ButtonType.OUTLINE) {
+                rippleColor = getButtonRippleStateList(getButtonColor())
             }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (buttonType == ButtonType.TEXT) {
+                    stateListAnimator =
+                        AnimatorInflater.loadStateListAnimator(context, R.animator.sushi_text_button_click_animator)
+                } else {
+                    stateListAnimator = null
+                }
+            }
+        }catch (e: IllegalArgumentException) {
+            // todo: Add logging on firebase
         }
     }
 
