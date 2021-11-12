@@ -67,7 +67,7 @@ internal object ButtonStyleUtils {
      */
     @JvmStatic
     fun SushiButton.applyRippleColor() {
-        try {
+//        try {
             val buttonType = getButtonType()
             if (buttonType == ButtonType.SOLID) {
                 rippleColor = getButtonRippleStateList(
@@ -87,9 +87,9 @@ internal object ButtonStyleUtils {
                     stateListAnimator = null
                 }
             }
-        }catch (e: IllegalArgumentException) {
-            // todo: Add logging on firebase
-        }
+//        } catch (e: IllegalArgumentException) {
+//            // todo: Add logging on firebase
+//        }
     }
 
     @JvmStatic
