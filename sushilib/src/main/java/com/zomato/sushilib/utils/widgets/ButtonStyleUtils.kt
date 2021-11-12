@@ -13,6 +13,7 @@ import com.zomato.sushilib.R
 import com.zomato.sushilib.annotations.ButtonType
 import com.zomato.sushilib.atoms.buttons.SushiButton
 import com.zomato.sushilib.utils.widgets.TextViewUtils.setCompoundDrawableTintListCompat
+import java.lang.IllegalArgumentException
 
 /**
  * A collection of static functions that help
@@ -67,7 +68,7 @@ internal object ButtonStyleUtils {
      */
     @JvmStatic
     fun SushiButton.applyRippleColor() {
-//        try {
+        try {
             val buttonType = getButtonType()
             if (buttonType == ButtonType.SOLID) {
                 rippleColor = getButtonRippleStateList(
@@ -87,9 +88,9 @@ internal object ButtonStyleUtils {
                     stateListAnimator = null
                 }
             }
-//        } catch (e: IllegalArgumentException) {
-//            // todo: Add logging on firebase
-//        }
+        } catch (e: IllegalArgumentException) {
+            // todo: Add logging on firebase
+        }
     }
 
     @JvmStatic
