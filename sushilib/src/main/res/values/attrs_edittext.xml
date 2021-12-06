@@ -8,6 +8,6 @@
         <attr name="drawablePadding" />
         <attr name="drawableTint" />
         <attr name="android:inputType" />
-        <attr name="editTextHintSize" format="dimension" />
+        <attr name="editTextSize" format="dimension" />
     </declare-styleable>
 </resources>

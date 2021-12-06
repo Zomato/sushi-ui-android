@@ -59,11 +59,11 @@ open class SushiTextInputField @JvmOverloads constructor(
             if (attrInputType != -1) {
                 editText.inputType = attrInputType
             }
-            val attrEditTextHintSize = it.getDimension(R.styleable.SushiTextInputField_editTextHintSize, 0f)
-            if (attrEditTextHintSize != 0f) {
+            val attrEditTextSize = it.getDimension(R.styleable.SushiTextInputField_editTextSize, 0f)
+            if (attrEditTextSize != 0f) {
                 editText.setTextSize(
                     TypedValue.COMPLEX_UNIT_PX,
-                    attrEditTextHintSize
+                    attrEditTextSize
                 )
             }
             editText.applyDrawables(
