@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.LayoutDirection
+import android.util.TypedValue
 import android.view.MotionEvent
 import androidx.annotation.AttrRes
 import androidx.core.content.ContextCompat
@@ -57,6 +58,13 @@ open class SushiTextInputField @JvmOverloads constructor(
             )
             if (attrInputType != -1) {
                 editText.inputType = attrInputType
+            }
+            val attrEditTextHintSize = it.getDimension(R.styleable.SushiTextInputField_editTextHintSize, 0f)
+            if (attrEditTextHintSize != 0f) {
+                editText.setTextSize(
+                    TypedValue.COMPLEX_UNIT_PX,
+                    attrEditTextHintSize
+                )
             }
             editText.applyDrawables(
                 attrs, defStyleAttr,
