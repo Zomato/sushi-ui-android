@@ -8,6 +8,49 @@
         <attr name="drawablePadding" />
         <attr name="drawableTint" />
         <attr name="android:inputType" />
-        <attr name="editTextSize" format="dimension" />
+        <attr format="enum" name="editTextType">
+            <enum name="LIGHT_100" value="01"/>
+            <enum name="LIGHT_200" value="02"/>
+            <enum name="LIGHT_300" value="03"/>
+            <enum name="LIGHT_400" value="04"/>
+            <enum name="LIGHT_500" value="05"/>
+            <enum name="LIGHT_600" value="06"/>
+            <enum name="LIGHT_700" value="07"/>
+            <enum name="LIGHT_800" value="08"/>
+            <enum name="LIGHT_900" value="09"/>
+
+            <enum name="REGULAR_100" value="11"/>
+            <enum name="REGULAR_200" value="12"/>
+            <enum name="REGULAR_300" value="13"/>
+            <enum name="REGULAR_400" value="14"/>
+            <enum name="REGULAR_500" value="15"/>
+            <enum name="REGULAR_600" value="16"/>
+            <enum name="REGULAR_700" value="17"/>
+            <enum name="REGULAR_800" value="18"/>
+            <enum name="REGULAR_900" value="19"/>
+
+            <enum name="MEDIUM_100" value="21"/>
+            <enum name="MEDIUM_200" value="22"/>
+            <enum name="MEDIUM_300" value="23"/>
+            <enum name="MEDIUM_400" value="24"/>
+            <enum name="MEDIUM_500" value="25"/>
+            <enum name="MEDIUM_600" value="26"/>
+            <enum name="MEDIUM_700" value="27"/>
+            <enum name="MEDIUM_800" value="28"/>
+            <enum name="MEDIUM_900" value="29"/>
+
+            <enum name="SEMIBOLD_100" value="31"/>
+            <enum name="SEMIBOLD_200" value="32"/>
+            <enum name="SEMIBOLD_300" value="33"/>
+            <enum name="SEMIBOLD_400" value="34"/>
+            <enum name="SEMIBOLD_500" value="35"/>
+            <enum name="SEMIBOLD_600" value="36"/>
+            <enum name="SEMIBOLD_700" value="37"/>
+            <enum name="SEMIBOLD_800" value="38"/>
+            <enum name="SEMIBOLD_900" value="39"/>
+
+            <enum name="BOLD_400" value="44"/>
+            <enum name="BOLD_500" value="45"/>
+        </attr>
     </declare-styleable>
 </resources>
