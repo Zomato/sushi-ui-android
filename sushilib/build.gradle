@@ -11,7 +11,7 @@ def tryApplyFrom(libName) {
 
 // Maven Publishing Details
 ext.libraryGroupId = 'com.zomato.sushilib'
-ext.libraryArtifactId = 'sushilib-android'
+ext.libraryArtifactId = 'sushilib'
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
@@ -39,6 +39,11 @@ android {
         }
         debug {
             testCoverageEnabled true
+        }
+        external {
+            // Copy all configuration from release buildType.
+            initWith release
+            minifyEnabled true
         }
     }
 
