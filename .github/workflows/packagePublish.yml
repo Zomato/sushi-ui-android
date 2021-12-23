@@ -58,7 +58,7 @@ jobs:
         if: success()
         uses: Zomato/treeware@master
         with:
-          prod_branch: master
+          prod_branch: dev
           should_release: true
           drafter_path: .github/release-template.yml
           assets: ${{ env.AAR_PATH }}#${{ env.FILE_NAME }}
