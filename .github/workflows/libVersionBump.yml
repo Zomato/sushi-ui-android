@@ -4,6 +4,7 @@ on: [ workflow_dispatch ]
 
 env:
   READ_ARTIFACTS_TOKEN: ${{ secrets.READ_ARTIFACTS_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   versionBump:
@@ -11,46 +12,20 @@ jobs:
 
     steps:
       - name: Cancel previous job
-        uses: styfle/cancel-workflow-action@0.4.1
+        uses: styfle/cancel-workflow-action@0.8.0
         with:
           access_token: ${{ secrets.GITHUB_TOKEN }}
+          ignore_sha: true
 
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          submodules: true
 
-      - name: Set up JDK 1.8
-        uses: actions/setup-java@v1
+      - name: Get tag and create release PR
+        uses: Zomato/android-lib-release-action@master
         with:
-          java-version: 1.8
-
-      - name: Get upcoming tag and commit
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # version bump
-          versionFile="version.properties"
-          chmod +x scripts/version_bump.sh
-          scripts/version_bump.sh $versionFile
-          version_name=$($GITHUB_WORKSPACE/scripts/get-app-version.sh $GITHUB_WORKSPACE/version.properties)
-          echo "version name: $version_name"
-          release_version=release/v$version_name
-          echo "UPCOMING_TAG=$release_version" >> $GITHUB_ENV
-
-      - name: Pull request on master
-        if: success()
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          base_branch="master"
-          secondary_branch=${{ env.UPCOMING_TAG }}
-          pr_allow_empty="true"
-          pr_title="Going live | $secondary_branch"
-          chmod +x scripts/get-changelog.sh
-          pr_body=$(scripts/get-changelog.sh $base_branch $secondary_branch)
-          echo "pr body: $pr_body"
-          args=( "$GITHUB_TOKEN" "$secondary_branch" "$base_branch" "$pr_allow_empty" "$pr_title" "$pr_body" )
-          chmod +x scripts/createpr.sh
-          scripts/createpr.sh "${args[@]}"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_branch: dev
+          main_branch: master
+          version_file_path: version.properties

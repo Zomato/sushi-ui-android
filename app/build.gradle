@@ -1,16 +1,18 @@
-apply from: "../versions.gradle"
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply from: "../jacoco.gradle"
 
+def rootConfiguration = rootProject.ext
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion rootConfiguration.compileSdkVersion
+
     defaultConfig {
         applicationId "com.zomato.sushiapp"
-        minSdkVersion 21
-        targetSdkVersion 29
+        minSdkVersion rootConfiguration.minSdkVersion
+        targetSdkVersion rootConfiguration.targetSdkVersion
+
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -26,8 +28,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     testOptions {
@@ -44,17 +46,17 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':sushilib')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'androidx.viewpager:viewpager:1.0.0'
-    implementation 'androidx.fragment:fragment:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "androidx.appcompat:appcompat:${rootConfiguration.appCompatVersion}"
+    implementation "com.google.android.material:material:${rootConfiguration.materialVersion}"
+    implementation "androidx.viewpager:viewpager:${rootConfiguration.viewPagerVersion}"
+    implementation "androidx.fragment:fragment:${rootConfiguration.fragmentVersion}"
+    implementation "androidx.constraintlayout:constraintlayout:${rootConfiguration.constraintLayoutVersion}"
 
-    testImplementation "org.robolectric:robolectric:$robolectric_version"
-    testImplementation 'junit:junit:4.12'
+    testImplementation "org.robolectric:robolectric:${rootConfiguration.robolectricVersion}"
+    testImplementation "junit:junit:${rootConfiguration.jUnitVersion}"
 
-    androidTestUtil 'androidx.test:orchestrator:1.1.0'
-    androidTestImplementation 'androidx.test:rules:1.1.0'
-    androidTestImplementation 'androidx.test:runner:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestUtil "androidx.test:orchestrator:1.1.0"
+    androidTestImplementation "androidx.test:rules:${rootConfiguration.testRunnerVersion}"
+    androidTestImplementation "androidx.test:runner:${rootConfiguration.testRunnerVersion}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${rootConfiguration.espressoVersion}"
 }
