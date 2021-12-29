@@ -27,7 +27,7 @@ object ResourceThemeResolver {
      * @param defStyleRes A style resource id
      */
     @JvmStatic
-    fun getThemeWrappedContext(context: Context?, @StyleRes defStyleRes: Int = 0): Context? {
+    fun getThemeWrappedContext(context: Context, @StyleRes defStyleRes: Int = 0): Context {
         return (if (defStyleRes == 0) {
             context
         } else {

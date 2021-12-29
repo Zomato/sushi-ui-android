@@ -137,6 +137,7 @@ internal object ButtonStyleUtils {
     @JvmStatic
     private fun getButtonRippleStateList(@ColorInt color: Int): ColorStateList {
 //        <item android:alpha="0.16" android:color="?attr/colorAccent" android:state_pressed="true"/>
+//        <item android:alpha="0.16" android:color="?attr/colorAccent" android:state_enabled="true"/>
 //        <item android:alpha="0.12" android:color="?attr/colorAccent" android:state_focused="true" android:state_hovered="true"/>
 //        <item android:alpha="0.12" android:color="?attr/colorAccent" android:state_focused="true"/>
 //        <item android:alpha="0.04" android:color="?attr/colorAccent" android:state_hovered="true"/>
@@ -145,12 +146,14 @@ internal object ButtonStyleUtils {
         return ColorStateList(
             arrayOf(
                 intArrayOf(android.R.attr.state_pressed),
+                intArrayOf(android.R.attr.state_enabled),
                 intArrayOf(android.R.attr.state_focused, android.R.attr.state_hovered),
                 intArrayOf(android.R.attr.state_focused),
                 intArrayOf(android.R.attr.state_hovered),
                 intArrayOf()
             ),
             intArrayOf(
+                ColorUtils.setAlphaComponent(color, ((0.16 * 255).toInt())),
                 ColorUtils.setAlphaComponent(color, ((0.16 * 255).toInt())),
                 ColorUtils.setAlphaComponent(color, ((0.12 * 255).toInt())),
                 ColorUtils.setAlphaComponent(color, ((0.12 * 255).toInt())),
