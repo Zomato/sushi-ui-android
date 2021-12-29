@@ -23,7 +23,7 @@ import com.zomato.sushilib.utils.widgets.TextViewUtils.applyDrawables
  * Copyright (c) 2019 Zomato Media Pvt. Ltd.
  */
 open class SushiTag @JvmOverloads constructor(
-    ctx: Context?, attrs: AttributeSet?,
+    ctx: Context, attrs: AttributeSet?,
     @AttrRes defStyleAttr: Int = R.attr.tagStyle,
     @StyleRes defStyleRes: Int = R.style.Widget_Sushi_Tag
 ) : SushiTextView(ctx, attrs, defStyleAttr, defStyleRes), DrawableSetters {
