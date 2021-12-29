@@ -20,8 +20,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          submodules: true
-          fetch-depth: 0
 
       - name: Get tag and create release PR
         uses: Zomato/android-lib-release-action@master
