@@ -7,6 +7,7 @@ on:
 
 env:
   READ_ARTIFACTS_TOKEN: ${{ secrets.READ_ARTIFACTS_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   publish:
@@ -14,19 +15,32 @@ jobs:
 
     steps:
       - name: Cancel previous job
-        uses: styfle/cancel-workflow-action@0.4.1
+        uses: styfle/cancel-workflow-action@0.8.0
         with:
           access_token: ${{ secrets.GITHUB_TOKEN }}
+          ignore_sha: true
 
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          submodules: true
 
-      - name: Set up JDK 1.8
-        uses: actions/setup-java@v1
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
         with:
-          java-version: 1.8
+          java-version: 11
+          distribution: 'adopt'
+
+      - name: Setup env
+        run: |
+          source version.properties
+          version=$(echo $VERSION_NAME)
+          echo "VERSION_NAME=$version" >> $GITHUB_ENV
+
+          aar_file="sushilib/build/outputs/aar/sushilib-release.aar"
+          file_name="sushi-v$version"
+
+          echo "AAR_PATH=$aar_file" >> $GITHUB_ENV
+          echo "FILE_NAME=$file_name" >> $GITHUB_ENV
 
       - name: Build with Gradle
         run: |
@@ -37,22 +51,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          ./gradlew publish
-          echo "New release: ${{ env.UPCOMING_TAG }} is now live!"
+          ./gradlew sushilib:publish
 
-      - name: Tag release
+      - name: Release library
         if: success()
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          version_name=v$($GITHUB_WORKSPACE/scripts/get-app-version.sh $GITHUB_WORKSPACE/version.properties)
-          chmod +x scripts/release_tag.sh
-          scripts/release_tag.sh $version_name
+        uses: Zomato/treeware@master
+        with:
+          prod_branch: dev
+          should_release: true
+          drafter_path: .github/release-template.yml
+          assets: ${{ env.AAR_PATH }}#${{ env.FILE_NAME }}
+          version_name: ${{ env.VERSION_NAME }}
 
-      - name: Master branch syncup
-        if: success()
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          chmod +x scripts/merge.sh
-          scripts/merge.sh dev master
+      - name: Master branch syncup PR
+        uses: Zomato/android-lib-release-action@v5
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_branch: dev
+          main_branch: master
+          version_file_path: version.properties
+          create_sync_pr: true

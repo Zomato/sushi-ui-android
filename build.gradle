@@ -1,6 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    apply from: "./versions.gradle"
+    ext.kotlin_version = '1.4.0'
+    ext.android_plugin_version = '7.0.3'
+    ext.jacoco_version = '0.8.1'
 
     repositories {
         google()
@@ -26,6 +28,25 @@ allprojects {
 ext {
     def props = new Properties()
     file("version.properties").withInputStream { props.load(it) }
+
+    compileSdkVersion = 30
+    minSdkVersion = 21
+    targetSdkVersion = 30
+
+    materialVersion = '1.4.0'
+    appCompatVersion = '1.3.1'
+    constraintLayoutVersion = '2.1.2'
+    viewPagerVersion = '1.0.0'
+    fragmentVersion = '1.0.0'
+
+    espressoVersion = '3.3.0'
+    jUnitVersion = '4.13.1'
+    robolectricVersion = '4.3'
+    assertJVersion = '2.4.0'
+    assertJAndroidVersion = '1.1.1'
+    testRunnerVersion = '1.2.0'
+    mockitoVersion = '2.19.0'
+    assertJCoreVersion = '1.7.1'
 
     global_version_code = props.getProperty("VERSION_CODE").toInteger()
     global_version_name = props.get("VERSION_NAME")

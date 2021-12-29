@@ -16,7 +16,7 @@ import com.zomato.sushilib.utils.widgets.DrawableSetters
 import com.zomato.sushilib.utils.widgets.TextViewUtils
 
 open class SushiTextView @JvmOverloads constructor(
-    ctx: Context?, attrs: AttributeSet? = null,
+    ctx: Context, attrs: AttributeSet? = null,
     @AttrRes defStyleAttr: Int = 0,
     @StyleRes defStyleRes: Int = 0
 ) : AppCompatTextView(
