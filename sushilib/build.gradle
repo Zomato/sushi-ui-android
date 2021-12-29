@@ -19,11 +19,11 @@ apply plugin: 'kotlin-android-extensions'
 tryApplyFrom "../jacoco.gradle"
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion rootConfiguration.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion rootConfiguration.minSdkVersion
+        targetSdkVersion rootConfiguration.targetSdkVersion
         versionCode rootConfiguration.global_version_code
         versionName rootConfiguration.global_version_name
 

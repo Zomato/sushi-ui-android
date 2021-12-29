@@ -6,11 +6,13 @@ apply from: "../jacoco.gradle"
 def rootConfiguration = rootProject.ext
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion rootConfiguration.compileSdkVersion
+
     defaultConfig {
         applicationId "com.zomato.sushiapp"
-        minSdkVersion 21
-        targetSdkVersion 31
+        minSdkVersion rootConfiguration.minSdkVersion
+        targetSdkVersion rootConfiguration.targetSdkVersion
+
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

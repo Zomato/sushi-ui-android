@@ -29,6 +29,10 @@ ext {
     def props = new Properties()
     file("version.properties").withInputStream { props.load(it) }
 
+    compileSdkVersion = 30
+    minSdkVersion = 21
+    targetSdkVersion = 30
+
     materialVersion = '1.0.0'
     appCompatVersion = '1.1.0'
     constraintLayoutVersion = '2.0.4'
