@@ -21,8 +21,8 @@ class ColorPaletteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Sample code to see how color builder works
-        ColorBuilder(context!!, "red", 100).build()
-        ColorBuilder(context!!).setColor(ColorName.BLUE).setTint(300).build()
+        ColorBuilder(requireContext(), ColorName.RED, 100).build()
+        ColorBuilder(requireContext()).setColor(ColorName.BLUE).setTint(300).build()
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_color_palette, container, false)
