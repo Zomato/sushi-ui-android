@@ -2,11 +2,9 @@ apply plugin: 'maven-publish'
 def rootConfiguration = rootProject.ext
 def GITHUB_TOKEN = System.getenv("GITHUB_TOKEN")
 
-publish.dependsOn build
-
 publishing {
     publications {
-        aar(MavenPublication) {
+        "releaseAar"(MavenPublication) {
             groupId "$libraryGroupId"
             version rootConfiguration.global_version_name
             artifactId "$libraryArtifactId"
