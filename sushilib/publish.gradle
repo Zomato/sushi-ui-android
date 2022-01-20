@@ -2,6 +2,15 @@ apply plugin: 'maven-publish'
 def rootConfiguration = rootProject.ext
 def GITHUB_TOKEN = System.getenv("GITHUB_TOKEN")
 
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    archiveClassifier.set('sources')
+}
+
+artifacts {
+    archives sourcesJar
+}
+
 publishing {
     publications {
         def variants = ["release", "external"]
@@ -12,8 +21,12 @@ publishing {
                 artifactId "${libraryArtifactId}-${variant}"
                 ext.variant = variant
 
-                if(variant != 'external')
-                    artifact("$buildDir/outputs/mapping/external/mapping.txt") { classifier 'mapping'}
+                if (variant != 'external') {
+                    // Following artifacts will not be published into external repo
+                    artifact sourcesJar
+                    // Mapping will be only published in case of external variant but we will send it to zomato repo
+                    artifact("$buildDir/outputs/mapping/external/mapping.txt") { classifier 'mapping' }
+                }
                 artifact "$buildDir/outputs/aar/${project.name}-${variant}.aar"
 
                 pom.withXml {
