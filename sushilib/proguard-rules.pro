@@ -20,8 +20,8 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keeppackagenames
--keepclasseswithmembers class com.zomato.sushilib.atoms.** { public *; }
--keepclasseswithmembers class com.zomato.sushilib.molecules.** { public *; }
--keepclasseswithmembers class com.zomato.sushilib.annotations.** { public *; }
--keepclasseswithmembers class com.zomato.sushilib.utils.** { public *; }
--keepclasseswithmembers class com.zomato.sushilib.BuildConfig { public *; }
+-keep class com.zomato.sushilib.atoms.** { public *; }
+-keep class com.zomato.sushilib.molecules.** { public *; }
+-keep class com.zomato.sushilib.annotations.** { public *; }
+-keep class com.zomato.sushilib.utils.** { public *; }
+-keep class com.zomato.sushilib.BuildConfig { public *; }

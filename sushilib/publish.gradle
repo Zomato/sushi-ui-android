@@ -62,13 +62,10 @@ publishing {
         }
         maven {
             name = "external"
-            credentials(HttpHeaderCredentials) {
-                name = "Authorization"
-                value = "token ${GITHUB_TOKEN}"
-            }
-            url = "https://maven.pkg.github.com/Zomato-External/android-maven-publication"
-            authentication {
-                header(HttpHeaderAuthentication)
+            url = "https://zartifacts-***REMOVED***.d.codeartifact.ap-southeast-1.amazonaws.com/maven/zomato-android-libs"
+            credentials{
+                username = "aws"
+                password = System.getenv("CODEARTIFACT_AUTH_TOKEN")
             }
         }
     }
