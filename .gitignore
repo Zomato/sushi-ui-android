@@ -31,11 +31,7 @@
 .idea/**/dbnavigator.xml
 
 # Gradle
-.idea/**/gradle.xml
-.idea/**/libraries
-.idea/compiler.xml
-.idea/jarRepositories.xml
-.idea/misc.xml
+**/.idea/*
 
 # CMake
 cmake-build-debug/
