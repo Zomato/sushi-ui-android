@@ -18,7 +18,10 @@ publishing {
             "${variant}Aar"(MavenPublication) {
                 groupId "$libraryGroupId"
                 version rootConfiguration.global_version_name
-                artifactId "${libraryArtifactId}-${variant}"
+                if(variant == "external")
+                    artifactId "${libraryArtifactId}-${variant}"
+                else
+                    artifactId "$libraryArtifactId"
                 ext.variant = variant
 
                 if (variant != 'external') {
