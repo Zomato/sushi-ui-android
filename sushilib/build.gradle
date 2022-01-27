@@ -40,6 +40,11 @@ android {
         debug {
             testCoverageEnabled true
         }
+        external {
+            // Copy all configuration from release buildType.
+            initWith release
+            minifyEnabled true
+        }
     }
 
     compileOptions {
