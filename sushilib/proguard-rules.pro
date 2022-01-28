@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-repackageclasses com.zomato.sushilib # will move obscufated classes to package dir rather than root dir
+-keep class com.zomato.sushilib.atoms.** { public *; }
+-keep class com.zomato.sushilib.molecules.** { public *; }
+-keep class com.zomato.sushilib.annotations.** { public *; }
+-keep class com.zomato.sushilib.utils.** { public *; }
+-keep class com.zomato.sushilib.BuildConfig { public *; }
