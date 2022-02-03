@@ -27,8 +27,12 @@ publishing {
                 if (variant != 'external') {
                     // Following artifacts will not be published into external repo
                     artifact sourcesJar
-                    // Mapping will be only published in case of external variant but we will send it to zomato repo
-                    artifact("$buildDir/outputs/mapping/external/mapping.txt") { classifier 'mapping' }
+                    // In case of external release, we do not publish mapping.txt
+                    // So, a copy of it is maintained with Release's Maven central.
+                    def externalMappingFile = "$buildDir/outputs/mapping/external/mapping.txt"
+                    File file = new File(externalMappingFile)
+                    if (file.exists())
+                        artifact(externalMappingFile) { classifier 'mapping' }
                 }
                 artifact "$buildDir/outputs/aar/${project.name}-${variant}.aar"
 
