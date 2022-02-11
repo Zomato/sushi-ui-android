@@ -36,10 +36,6 @@ jobs:
       - name: Lint
         run: ./gradlew lintDebug
 
-      - name: Unit Test
-        if: success()
-        run: ./gradlew testDebugUnitTest  --no-daemon --max-workers 2
-
       - name: Build with Gradle
         if: success()
         run: ./gradlew assembleDebug
