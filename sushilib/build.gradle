@@ -1,0 +1,89 @@
+def rootConfiguration = rootProject.ext
+
+def tryApplyFrom(libName) {
+    try {
+        apply from: libName
+    } catch (e) {
+        println("Could not load publishing configuration")
+        e.printStackTrace()
+    }
+}
+
+// Maven Publishing Details
+ext.libraryGroupId = 'com.zomato.sushilib'
+ext.libraryArtifactId = 'sushi-ui-android'
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+tryApplyFrom "../jacoco.gradle"
+
+android {
+    compileSdkVersion rootConfiguration.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootConfiguration.minSdkVersion
+        targetSdkVersion rootConfiguration.targetSdkVersion
+        versionCode rootConfiguration.global_version_code
+        versionName rootConfiguration.global_version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-consumer-rules.pro'
+        }
+        debug {
+            testCoverageEnabled true
+        }
+        external {
+            // Copy all configuration from release buildType.
+            initWith release
+            minifyEnabled true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+        // Animations slow down test startup time
+        animationsDisabled true
+        unitTests {
+            returnDefaultValues = true
+            includeAndroidResources = true
+        }
+    }
+
+    lintOptions{
+        baseline file ('lint-baseline.xml')
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:${rootConfiguration.appCompatVersion}"
+    implementation "com.google.android.material:material:${rootConfiguration.materialVersion}"
+
+    testImplementation "junit:junit:${rootConfiguration.jUnitVersion}"
+    testImplementation "org.mockito:mockito-core:${rootConfiguration.mockitoVersion}"
+    testImplementation "org.robolectric:robolectric:${rootConfiguration.robolectricVersion}"
+
+    androidTestUtil "androidx.test:orchestrator:1.1.0"
+    androidTestImplementation "androidx.test:rules:${rootConfiguration.testRunnerVersion}"
+    androidTestImplementation "androidx.test:runner:${rootConfiguration.testRunnerVersion}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${rootConfiguration.espressoVersion}"
+}
+repositories {
+    mavenCentral()
+}
+
+tryApplyFrom "./publish.gradle"

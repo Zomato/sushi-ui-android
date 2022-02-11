@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- To Use in Default Style -->
+    <attr name="tagStyle" format="reference" />
+    <attr name="ratingTagStyle" format="reference" />
+    <attr name="circleIconTextStyle" format="reference" />
+    <attr name="sushiIconAppearance" format="reference" type="style" />
+
+    <!-- Rating States for ColorStateList -->
+    <attr name="state_rating_1" format="boolean" />
+    <attr name="state_rating_2" format="boolean" />
+    <attr name="state_rating_3" format="boolean" />
+    <attr name="state_rating_4" format="boolean" />
+    <attr name="state_rating_5" format="boolean" />
+
+</resources>

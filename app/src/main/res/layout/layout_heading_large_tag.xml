@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/sushi_spacing_loose"
+    android:paddingBottom="@dimen/sushi_spacing_loose">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Heading text with rating"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/sushi_textsize_800"
+            app:textFontWeight="medium" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What do you think about this large rating tag"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/sushi_textsize_300"
+            app:textFontWeight="regular" />
+
+
+    </LinearLayout>
+    <com.zomato.sushilib.molecules.tags.SushiTag
+        android:layout_margin="@dimen/sushi_spacing_mini"
+        android:id="@+id/tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tagColor="@color/sushi_green_500"
+        android:text="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+</LinearLayout>

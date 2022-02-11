@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.typography.TypographyStyleFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Medium -->
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:text="Text Medium 900"
+            app:textFontWeight="medium"
+            android:textSize="@dimen/sushi_textsize_900" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:text="Text Medium 800"
+            app:textFontWeight="medium"
+            android:textSize="@dimen/sushi_textsize_800" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:text="Text Medium 700"
+            app:textFontWeight="medium"
+            android:textSize="@dimen/sushi_textsize_700" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:text="Text Medium 600"
+            app:textFontWeight="medium"
+            android:textSize="@dimen/sushi_textsize_600" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:text="Text Medium 500"
+            app:textFontWeight="medium"
+            android:textSize="@dimen/sushi_textsize_500" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:text="Text Medium 400"
+            app:textFontWeight="medium"
+            android:textSize="@dimen/sushi_textsize_400" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:text="Text Medium 300"
+            app:textFontWeight="medium"
+            android:textSize="@dimen/sushi_textsize_300" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:text="Text Medium 200"
+            app:textFontWeight="medium"
+            android:textSize="@dimen/sushi_textsize_200" />
+
+        <com.zomato.sushilib.atoms.textviews.SushiTextView
+            style="@style/AppTheme.TextPreviewStrip"
+            android:text="Text Medium 100"
+            app:textFontWeight="medium"
+            android:textSize="@dimen/sushi_textsize_100" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>

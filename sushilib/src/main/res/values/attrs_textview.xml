@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SushiTextView" >
+
+        <attr name="textFontWeight" format="enum">
+            <enum name="thin" value="100" />
+            <enum name="extralight" value="200" />
+            <enum name="light" value="300" />
+            <enum name="regular" value="400" />
+            <enum name="medium" value="500" />
+            <enum name="semibold" value="600" />
+            <enum name="bold" value="700" />
+            <enum name="extrabold" value="800" />
+        </attr>
+
+        <attr name="drawableLeft" format="reference" />
+        <attr name="drawableRight" format="reference" />
+        <attr name="drawableStart" format="reference" />
+        <attr name="drawableEnd" format="reference" />
+        <attr name="drawablePadding" format="dimension" />
+        <attr name="drawableTint" format="color" />
+
+    </declare-styleable>
+
+    <declare-styleable name="SushiCircleIconView">
+        <attr name="strokeColor" />
+    </declare-styleable>
+</resources>

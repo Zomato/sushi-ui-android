@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SushiTag">
+        <attr name="tagType" format="enum">
+            <!-- Values should be same as com.zomato.sushilib.annotations.TagType  -->
+            <enum name="rounded" value="0" />
+            <enum name="capsule" value="1" />
+            <enum name="rounded_outline" value="2" />
+            <enum name="capsule_outline" value="3" />
+            <enum name="rounded_dashed" value="4" />
+            <enum name="capsule_dashed" value="5" />
+        </attr>
+        <attr name="tagSize" format="enum">
+            <!-- Values should be same as com.zomato.sushilib.annotations.TagSize  -->
+            <enum name="large" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="small" value="2" />
+            <enum name="tiny" value="3" />
+            <enum name="nano" value="4" />
+        </attr>
+        <attr name="tagColor" format="color" />
+        <attr name="borderColor" format="color" />
+        <attr name="android:textColor" />
+        <attr name="android:paddingLeft" />
+        <attr name="android:paddingRight" />
+        <attr name="android:paddingTop" />
+        <attr name="android:paddingBottom" />
+        <attr name="android:padding" />
+
+
+    </declare-styleable>
+
+    <declare-styleable name="SushiRatingBar">
+        <attr name="tagType" />
+        <attr name="tagSize" />
+        <attr name="ratingTagStyle" />
+        <attr name="rating" format="float" />
+        <attr name="android:clickable" />
+
+        <!-- Drawables will simply be passed onto the internal tags -->
+        <attr name="drawableLeft" />
+        <attr name="drawableRight" />
+        <attr name="drawableStart" />
+        <attr name="drawableEnd" />
+        <attr name="drawablePadding" />
+
+    </declare-styleable>
+</resources>

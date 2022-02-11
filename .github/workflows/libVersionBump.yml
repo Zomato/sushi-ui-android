@@ -1,0 +1,31 @@
+name: Version Bump CI
+
+on : workflow_dispatch
+
+env:
+  READ_ARTIFACTS_TOKEN: ${{ secrets.READ_ARTIFACTS_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  versionBump:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cancel previous job
+        uses: styfle/cancel-workflow-action@0.8.0
+        with:
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+          ignore_sha: true
+
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get tag and create release PR
+        uses: Zomato/android-lib-release-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_branch: dev
+          main_branch: master
+          version_file_path: version.properties

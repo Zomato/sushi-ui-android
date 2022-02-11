@@ -1,0 +1,22 @@
+name-template: 'Release v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: '🚀 **Features** '
+    labels:
+      - 'New Feature'
+  - title: '🐛 **Bug Fixes** '
+    labels:
+      - 'Bug'
+      - 'Crash/ANR/Non-fatal'
+      - 'UI Fix'
+  - title: '🧰 **Tracking/Enhancements** '
+    labels:
+      - 'Enhancement'
+      - 'Tracking'
+  - title: '💻 **Platform** '
+    labels:
+      - 'Platform'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+template: |
+  ## 🌟 **What's new***
+  $CHANGES
