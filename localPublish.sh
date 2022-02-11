@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./gradlew sushilib:assemble
-./gradlew sushilib:publishToMavenLocal
+./gradlew sushilib:assembleRelease
+./gradlew sushilib:publishReleaseAarPublicationToMavenLocal

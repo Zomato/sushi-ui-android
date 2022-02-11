@@ -1,6 +1,6 @@
 name: Version Bump CI
 
-on: [ workflow_dispatch ]
+on : workflow_dispatch
 
 env:
   READ_ARTIFACTS_TOKEN: ${{ secrets.READ_ARTIFACTS_TOKEN }}
