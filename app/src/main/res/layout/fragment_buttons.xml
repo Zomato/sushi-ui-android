@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.buttons.ButtonsMainFragment">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.zomato.sushilib.organisms.navigation.SushiTabLayout
+            android:id="@+id/tabs_font_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_item_solid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solid" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_item_outline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Outline" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text" />
+        </com.zomato.sushilib.organisms.navigation.SushiTabLayout>
+    </androidx.viewpager.widget.ViewPager>
+
+</FrameLayout>

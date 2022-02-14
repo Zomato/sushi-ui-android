@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Sushi" parent="">
+        <!-- We do not want to inherit from BaseTextAppearance etc as that
+         sets a textSize here, which we do not want -->
+        <item name="android:fontFamily">?attr/fontFamilyRegular</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.Icon">
+        <item name="android:fontFamily">?attr/fontFamilyIcon</item>
+        <item name="fontFamily">?attr/fontFamilyIcon</item>
+    </style>
+
+    <!-- Basic Font Weight Styles -->
+    <style name="TextAppearance.Sushi.Thin">
+        <item name="android:fontFamily">?attr/fontFamilyThin</item>
+        <item name="fontFamily">?attr/fontFamilyThin</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.ExtraLight">
+        <item name="android:fontFamily">?attr/fontFamilyExtraLight</item>
+        <item name="fontFamily">?attr/fontFamilyExtraLight</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.Light">
+        <item name="android:fontFamily">?attr/fontFamilyLight</item>
+        <item name="fontFamily">?attr/fontFamilyLight</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.Regular">
+        <item name="android:fontFamily">?attr/fontFamilyRegular</item>
+        <item name="fontFamily">?attr/fontFamilyRegular</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.Medium">
+        <item name="android:fontFamily">?attr/fontFamilyMedium</item>
+        <item name="fontFamily">?attr/fontFamilyMedium</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.SemiBold">
+        <item name="android:fontFamily">?attr/fontFamilySemiBold</item>
+        <item name="fontFamily">?attr/fontFamilySemiBold</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.Bold">
+        <item name="android:fontFamily">?attr/fontFamilyBold</item>
+        <item name="fontFamily">?attr/fontFamilyBold</item>
+    </style>
+
+    <style name="TextAppearance.Sushi.ExtraBold">
+        <item name="android:fontFamily">?attr/fontFamilyExtraBold</item>
+        <item name="fontFamily">?attr/fontFamilyExtraBold</item>
+    </style>
+
+    <style name="Widget.Sushi.CircleIconView" parent="TextAppearance.Sushi.Icon">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/sushi_spacing_base</item>
+        <item name="android:textSize">@dimen/sushi_iconsize_500</item>
+    </style>
+
+</resources>

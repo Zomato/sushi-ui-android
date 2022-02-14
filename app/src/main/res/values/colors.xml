@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="statusBarColor">@color/sushi_grey_100</color>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SushiCircleImageView">
+        <attr name="android:scaleType" />
+    </declare-styleable>
+
+    <declare-styleable name="SushiRoundedImageView">
+        <attr name="android:scaleType" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="cornerRadiusTopLeft" format="dimension" />
+        <attr name="cornerRadiusTopRight" format="dimension" />
+        <attr name="cornerRadiusBottomLeft" format="dimension" />
+        <attr name="cornerRadiusBottomRight" format="dimension" />
+    </declare-styleable>
+</resources>

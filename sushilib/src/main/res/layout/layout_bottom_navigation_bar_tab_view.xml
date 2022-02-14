@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="@dimen/sushi_spacing_macro"
+        android:layout_marginBottom="@dimen/sushi_spacing_macro" />
+
+    <com.zomato.sushilib.atoms.textviews.SushiTextView
+        android:id="@+id/text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?android:textColorPrimary"
+        app:textFontWeight="medium"
+        android:layout_marginBottom="@dimen/sushi_spacing_macro"
+        android:textSize="@dimen/sushi_textsize_200" />
+</merge>

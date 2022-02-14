@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Sushi.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="fontFamily">?fontFamilyMedium</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="drawablePadding">@dimen/sushi_spacing_micro</item>
+        <item name="android:textColor">@null</item>
+    </style>
+
+</resources>

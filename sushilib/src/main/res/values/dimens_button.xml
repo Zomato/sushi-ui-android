@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="sushi_iconsize_500">18sp</dimen>
+    <dimen name="sushi_iconsize_300">14sp</dimen>
+    <dimen name="sushi_iconsize_200">12sp</dimen>
+
+    <dimen name="sushi_button_large_minheight">48dp</dimen>
+    <dimen name="sushi_button_medium_minheight">32dp</dimen>
+    <dimen name="sushi_button_small_minheight">25dp</dimen>
+
+    <dimen name="sushi_outline_button_stroke_width">1dp</dimen>
+    <dimen name="sushi_text_button_icon_padding">4dp</dimen>
+    <dimen name="sushi_button_icon_padding">8dp</dimen>
+</resources>
