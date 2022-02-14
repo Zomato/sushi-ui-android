@@ -75,7 +75,7 @@ publishing {
                 name = "Authorization"
                 value = "token ${GITHUB_TOKEN}"
             }
-            url = "https://maven.pkg.github.com/Zomato/Sushi-Android"
+            url = "https://maven.pkg.github.com/Zomato/sushi-ui-android"
             authentication {
                 header(HttpHeaderAuthentication)
             }
