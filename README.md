@@ -12,7 +12,7 @@ Add the Github Maven repository and the dependency in your app's build.gradle
 repositories {
     // ... google(), jcenter() etc
     maven {
-        url "https://maven.pkg.github.com/Zomato/Sushi-Android"
+        url "https://maven.pkg.github.com/Zomato/sushi-ui-android"
         credentials(HttpHeaderCredentials) {
             name = "Authorization"
             value = "token ${System.getenv("GITHUB_TOKEN")}"
@@ -33,7 +33,7 @@ dependencies {
 
 ## Documentation
 A delicious UI Kit to build Android apps. Made with ❤ by Zomato <br />
-<https://zomato.github.io/Sushi-Android/>
+<https://zomato.github.io/sushi-ui-android/>
 
 ## Testing & Coverage
 
