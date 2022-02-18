@@ -1,6 +1,7 @@
 apply plugin: 'maven-publish'
 def rootConfiguration = rootProject.ext
 def GITHUB_TOKEN = System.getenv("GITHUB_TOKEN")
+def AWS_OWNER = System.getenv("AWS_OWNER")
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
@@ -82,7 +83,7 @@ publishing {
         }
         maven {
             name = "external"
-            url = "https://zartifacts-***REMOVED***.d.codeartifact.ap-southeast-1.amazonaws.com/maven/zomato-android-libs"
+            url = "https://zartifacts-${AWS_OWNER}.d.codeartifact.ap-southeast-1.amazonaws.com/maven/zomato-android-libs"
             credentials{
                 username = "aws"
                 password = System.getenv("CODEARTIFACT_AUTH_TOKEN")
