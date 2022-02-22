@@ -59,3 +59,7 @@ Run all tests and get coverage report
 
 ## Publishing
 To publish this package, go to Actions tab of the repo and select "Version Bump CI" workflow. This workflow has to be manually triggered by clicking "Run Workflow" button. It will create a PR on "master" branch which after merge will generate and publish a new package.
+
+## License
+Licensed under the [Apache-2.0 License](LICENSE)
+
